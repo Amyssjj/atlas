@@ -75,6 +75,6 @@ Person cards and event stories show a picture from Wikimedia Commons (public dom
   `tools/illust_queries.json` (made by `tools/illust_queries.py` from each person's and event's `source`) and pushes the
   thumbnails to the `illustrations-raw` branch. GitHub's runners can reach Wikimedia; this environment cannot.
 - `tools/pack_illustrations.py <checkout of illustrations-raw>` writes `data/illustrations.json` (key → image, credit)
-  and `data/img/<0-63>.json` (WebP data URLs, loaded on demand). Images shared by more than 3 events are dropped as generic.
+  and `data/img/<0-11>.json` (WebP data URLs, loaded on demand). Images shared by more than 3 events are dropped as generic.
 - `data/illustrations-skip.json` lists keys whose picture was wrong (checked by eye: modern namesakes, stamps, logos).
   Pictures follow each entry's Wikipedia `source`, so a wrong `source` gives a wrong picture.

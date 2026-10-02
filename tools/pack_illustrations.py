@@ -10,7 +10,7 @@ from PIL import Image
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 P = lambda *a: os.path.join(ROOT, *a)
 RAW = sys.argv[1]
-BUCKETS, MAX_SHARED, BOX = 64, 3, (320, 280)
+BUCKETS, MAX_SHARED, BOX = 12, 3, (320, 280)
 
 meta = json.load(open(os.path.join(RAW, "meta.json")))
 skip = set(json.load(open(P("data/illustrations-skip.json")))) if os.path.exists(P("data/illustrations-skip.json")) else set()
