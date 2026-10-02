@@ -1518,7 +1518,29 @@ function hintText() {
   return typeof h === "function" ? h(state.era ? nameOf(state.era) : "") : h;
 }
 
+// Era labels sit centred on their band and may spill past it. They are placed current era first, then widest band
+// first, skipping any that would overlap one already placed; dragging the rail names the rest.
+function fitBandLabels() {
+  const bands = [...document.querySelectorAll("#bands .band")];
+  bands.forEach((b) => b.classList.remove("tight"));
+  const era = bands.filter((b) => b.classList.contains("era-band"));
+  for (const b of bands) if (!era.includes(b)) b.classList.toggle("tight", b.scrollWidth > b.clientWidth + 1);
+  if (!era.length) return;
+  const track = $("bands").getBoundingClientRect();
+  const items = era.map((b) => {
+    const r = b.getBoundingClientRect(), w = b.firstElementChild.getBoundingClientRect().width;
+    return { b, c: r.left + r.width / 2, w, span: r.width, cur: b.classList.contains("current") };
+  }).sort((x, y) => (y.cur - x.cur) || (y.span - x.span));
+  const placed = [];
+  for (const it of items) {
+    const a = it.c - it.w / 2 - 3, z = it.c + it.w / 2 + 3;
+    const fits = a >= track.left - 2 && z <= track.right + 2 && placed.every(([p, q]) => z <= p || a >= q);
+    if (fits) placed.push([a, z]);
+    it.b.classList.toggle("tight", !fits);
+  }
+}
 function buildRail() {
+  requestAnimationFrame(fitBandLabels);
   const pct = (p) => (p / SLIDER_MAX) * 100;
   const bands = $("bands");
   bands.innerHTML = "";
@@ -1779,8 +1801,10 @@ async function init() {
   const openEra = (o) => { $("era-more").setAttribute("aria-expanded", String(o)); document.querySelector(".era").classList.toggle("open", o); };
   $("era-more").addEventListener("click", () => openEra(!document.querySelector(".era").classList.contains("open")));
   map.on("click", () => { if (phone.matches) openEra(false); });
-  new ResizeObserver(() => document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px"))
-    .observe(document.querySelector(".rail"));
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
+    fitBandLabels();
+  }).observe(document.querySelector(".rail"));
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT") return;
     const i = state.eras.indexOf(state.era);
