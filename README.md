@@ -78,3 +78,10 @@ Person cards and event stories show a picture from Wikimedia Commons (public dom
   and `data/img/<0-11>.json` (WebP data URLs, loaded on demand). Images shared by more than 3 events are dropped as generic.
 - `data/illustrations-skip.json` lists keys whose picture was wrong (checked by eye: modern namesakes, stamps, logos).
   Pictures follow each entry's Wikipedia `source`, so a wrong `source` gives a wrong picture.
+
+## States that outlive their period
+
+A period's maps end with the period, so states that lasted into the next dynasty's first years are carried over:
+Wu on the Jin map 266–280 and Chen / Western Liang on the Sui map 581–589 (`tools/carry_states.py`), and the remaining
+Ten Kingdoms on the Northern Song map 960–979 (extra snapshots fd-960…fd-978 in data/states/five-dynasties.json).
+Their rulers are listed in the next period's layer file too.

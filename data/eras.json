@@ -313,7 +313,15 @@
    "snapshots": [
     {
      "from": 266,
-     "borders": "data/borders/western-jin.geojson"
+     "borders": "data/borders/western-jin-266.geojson",
+     "label": "266: Sima Yan ends the Wei and founds the Jin; Wu still holds the south",
+     "label_zh": "266年：司马炎代魏建晋，东吴仍据江南"
+    },
+    {
+     "from": 280,
+     "borders": "data/borders/western-jin.geojson",
+     "label": "280: Jin conquers Wu and reunites China",
+     "label_zh": "280年：晋灭吴，天下重归一统"
     },
     {
      "from": 317,
@@ -417,7 +425,21 @@
    "snapshots": [
     {
      "from": 581,
-     "borders": "data/borders/sui.geojson"
+     "borders": "data/borders/sui-581.geojson",
+     "label": "581: Yang Jian founds the Sui; Chen and the Western Liang client state remain",
+     "label_zh": "581年：杨坚建隋，南方陈朝与附庸西梁仍在"
+    },
+    {
+     "from": 587,
+     "borders": "data/borders/sui-587.geojson",
+     "label": "587: Sui abolishes the Western Liang",
+     "label_zh": "587年：隋废西梁"
+    },
+    {
+     "from": 589,
+     "borders": "data/borders/sui.geojson",
+     "label": "589: Sui conquers Chen and reunites China",
+     "label_zh": "589年：隋灭陈，南北统一"
     }
    ],
    "summary": "A short-lived dynasty that reunified north and south after nearly three centuries of division, and dug the Grand Canal.",
@@ -563,7 +585,45 @@
    "snapshots": [
     {
      "from": 960,
-     "borders": "data/borders/northern-song.geojson"
+     "borders": "data/borders/fd-960.geojson",
+     "label": "960: Zhao Kuangyin's Chenqiao mutiny ends the Later Zhou; the Song takes over its land",
+     "label_zh": "960年：赵匡胤陈桥兵变，取代后周，建立北宋"
+    },
+    {
+     "from": 963,
+     "borders": "data/borders/fd-963.geojson",
+     "label": "963: Song troops take Jingnan and Hunan (Wuping) in one campaign",
+     "label_zh": "963年：宋军假道灭荆南，又平定湖南武平"
+    },
+    {
+     "from": 965,
+     "borders": "data/borders/fd-965.geojson",
+     "label": "965: Later Shu surrenders; Meng Chang is taken to Kaifeng",
+     "label_zh": "965年：后蜀投降，孟昶被押往开封"
+    },
+    {
+     "from": 971,
+     "borders": "data/borders/fd-971.geojson",
+     "label": "971: Song conquers Southern Han; Đinh Bộ Lĩnh has unified Jiaozhi",
+     "label_zh": "971年：宋灭南汉；交趾已由丁部领统一"
+    },
+    {
+     "from": 975,
+     "borders": "data/borders/fd-975.geojson",
+     "label": "975: Jinling falls; Li Yu of Southern Tang surrenders",
+     "label_zh": "975年：金陵城破，南唐后主李煜出降"
+    },
+    {
+     "from": 978,
+     "borders": "data/borders/fd-978.geojson",
+     "label": "978: Wuyue and the Quan–Zhang circuit hand their land to the Song",
+     "label_zh": "978年：吴越钱俶、漳泉陈洪进纳土归宋"
+    },
+    {
+     "from": 979,
+     "borders": "data/borders/northern-song.geojson",
+     "label": "979: Northern Han falls; the Song has reunited China proper",
+     "label_zh": "979年：北汉灭亡，宋统一中原与南方"
     }
    ],
    "summary": "A civil dynasty run by examination graduates, with a booming commercial economy, printing and paper money, facing the Liao and Western Xia.",
