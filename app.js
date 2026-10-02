@@ -1520,6 +1520,9 @@ function hintText() {
 
 // Era labels sit centred on their band and may spill past it. They are placed current era first, then widest band
 // first, skipping any that would overlap one already placed; dragging the rail names the rest.
+// Landmark periods named first when space is short (the classic 夏商周 秦汉 唐宋元明清 sequence).
+const LANDMARKS = ["tang", "western-han", "ming", "qing", "qin", "northern-song", "yuan", "shang", "western-zhou", "xia", "spring-autumn", "warring-states"];
+const rank = (b) => { const i = LANDMARKS.indexOf(b.dataset.era); return i < 0 ? 99 : i; };
 function fitBandLabels() {
   const bands = [...document.querySelectorAll("#bands .band")];
   bands.forEach((b) => b.classList.remove("tight"));
@@ -1530,11 +1533,13 @@ function fitBandLabels() {
   const items = era.map((b) => {
     const r = b.getBoundingClientRect(), w = b.firstElementChild.getBoundingClientRect().width;
     return { b, c: r.left + r.width / 2, w, span: r.width, cur: b.classList.contains("current") };
-  }).sort((x, y) => (y.cur - x.cur) || (y.span - x.span));
-  const placed = [];
+  }).sort((x, y) => (y.cur - x.cur) || (rank(x.b) - rank(y.b)) || (y.span - x.span));
+  // Phones keep wide gaps between names so the rail reads as a few landmarks.
+  const gap = innerWidth <= 720 ? 7 : 3, placed = [];
   for (const it of items) {
-    const a = it.c - it.w / 2 - 3, z = it.c + it.w / 2 + 3;
-    const fits = a >= track.left - 2 && z <= track.right + 2 && placed.every(([p, q]) => z <= p || a >= q);
+    const a = it.c - it.w / 2 - gap, z = it.c + it.w / 2 + gap;
+    const inside = it.c - it.w / 2 >= track.left - 4 && it.c + it.w / 2 <= track.right + 4;
+    const fits = inside && (gap < 5 || it.cur || rank(it.b) < 99) && placed.every(([p, q]) => z <= p || a >= q);
     if (fits) placed.push([a, z]);
     it.b.classList.toggle("tight", !fits);
   }
