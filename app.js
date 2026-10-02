@@ -23,7 +23,7 @@ const state = {
   eras: [], events: [], places: [],
   detail: 2, cats: [],   // event detail level shown (1 大事, 2 要事, 3 细目) and category tags (empty: all)
   range: { start: -2070, end: 1912 },
-  year: 755,
+  year: -770,
   era: null,
   snapshot: null,       // borders path currently shown
   selected: "an-lushan",
