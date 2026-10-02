@@ -1,0 +1,1373 @@
+{
+ "about": "Five Dynasties and Ten Kingdoms, drawn from seed points (prefectures each state held) like zhou-states.json. Neighbours come from the backdrop file. Approximate, after the general outlines in Tan Qixiang's Historical Atlas of China.",
+ "radius": 2.0,
+ "backdrop": "data/borders/five-dynasties.geojson",
+ "states": {
+  "liang": {
+   "name": "Later Liang",
+   "zh": "后梁",
+   "color": "#3f6e8c"
+  },
+  "houtang": {
+   "name": "Later Tang",
+   "zh": "后唐",
+   "color": "#8a4f6e"
+  },
+  "houjin": {
+   "name": "Later Jin",
+   "zh": "后晋",
+   "color": "#4f7f5a"
+  },
+  "houhan": {
+   "name": "Later Han",
+   "zh": "后汉",
+   "color": "#9a6a3a"
+  },
+  "houzhou": {
+   "name": "Later Zhou",
+   "zh": "后周",
+   "color": "#5a4f8a"
+  },
+  "jin": {
+   "name": "Jin (Shatuo Li)",
+   "zh": "晋",
+   "color": "#7a5195"
+  },
+  "qi": {
+   "name": "Qi",
+   "zh": "岐",
+   "color": "#7d6b4a"
+  },
+  "yan": {
+   "name": "Yan (Liu Shouguang)",
+   "zh": "燕",
+   "color": "#4f8f86"
+  },
+  "zhao": {
+   "name": "Zhao (Chengde)",
+   "zh": "赵",
+   "color": "#8a8a5a",
+   "minor": true
+  },
+  "yiwu": {
+   "name": "Yiwu",
+   "zh": "义武",
+   "color": "#6a8aa0",
+   "minor": true
+  },
+  "beihan": {
+   "name": "Northern Han",
+   "zh": "北汉",
+   "color": "#a06a6a"
+  },
+  "wu": {
+   "name": "Wu",
+   "zh": "吴",
+   "color": "#b5523b"
+  },
+  "nantang": {
+   "name": "Southern Tang",
+   "zh": "南唐",
+   "color": "#c47a2c"
+  },
+  "wuyue": {
+   "name": "Wuyue",
+   "zh": "吴越",
+   "color": "#2f8a7a"
+  },
+  "min": {
+   "name": "Min",
+   "zh": "闽",
+   "color": "#9e4a6e"
+  },
+  "chu": {
+   "name": "Chu",
+   "zh": "楚",
+   "color": "#b8862b"
+  },
+  "wuping": {
+   "name": "Wuping (Hunan)",
+   "zh": "武平",
+   "color": "#c9a050"
+  },
+  "nanhan": {
+   "name": "Southern Han",
+   "zh": "南汉",
+   "color": "#4a7aa8"
+  },
+  "qianshu": {
+   "name": "Former Shu",
+   "zh": "前蜀",
+   "color": "#6f9460"
+  },
+  "houshu": {
+   "name": "Later Shu",
+   "zh": "后蜀",
+   "color": "#5a9a6a"
+  },
+  "jingnan": {
+   "name": "Jingnan",
+   "zh": "荆南",
+   "color": "#a07d5a",
+   "minor": true
+  },
+  "qingyuan": {
+   "name": "Qingyuan Circuit",
+   "zh": "清源军",
+   "color": "#b07090",
+   "minor": true
+  },
+  "khitan": {
+   "name": "Khitans",
+   "zh": "契丹",
+   "outsider": true,
+   "color": "#a07d5a"
+  },
+  "dingnan": {
+   "name": "Dingnan Circuit (Tangut)",
+   "zh": "定难军 (党项)",
+   "outsider": true
+  },
+  "tufan": {
+   "name": "Tibetan tribes",
+   "zh": "吐蕃诸部",
+   "outsider": true,
+   "color": "#6f9460"
+  },
+  "ganzhou": {
+   "name": "Ganzhou Uyghurs",
+   "zh": "甘州回鹘",
+   "outsider": true
+  },
+  "guiyi": {
+   "name": "Guiyi Circuit",
+   "zh": "归义军",
+   "outsider": true
+  },
+  "jinghai": {
+   "name": "Jinghai Circuit (Khuc clan)",
+   "zh": "静海军 (曲氏)",
+   "outsider": true
+  },
+  "ngo": {
+   "name": "Ngo dynasty",
+   "zh": "吴朝 (越)",
+   "outsider": true
+  },
+  "xinan": {
+   "name": "Southwestern tribes",
+   "zh": "西南诸蛮",
+   "outsider": true
+  }
+ },
+ "seeds": {
+  "kaifeng": [
+   114.3,
+   34.8
+  ],
+  "luoyang": [
+   112.45,
+   34.62
+  ],
+  "xuchang": [
+   113.8,
+   34.0
+  ],
+  "caizhou": [
+   114.0,
+   33.0
+  ],
+  "chenzhou": [
+   114.9,
+   33.7
+  ],
+  "huazhou": [
+   114.6,
+   35.5
+  ],
+  "weibo": [
+   115.15,
+   36.28
+  ],
+  "xiangzhou": [
+   114.35,
+   36.1
+  ],
+  "xingzhou": [
+   114.5,
+   37.06
+  ],
+  "hezhong": [
+   110.4,
+   34.85
+  ],
+  "jinzhou": [
+   111.5,
+   36.1
+  ],
+  "changan": [
+   108.9,
+   34.3
+  ],
+  "shangzhou": [
+   110.0,
+   33.8
+  ],
+  "dengzhou": [
+   112.1,
+   32.7
+  ],
+  "xiangyang": [
+   112.15,
+   32.0
+  ],
+  "anzhou": [
+   113.7,
+   31.3
+  ],
+  "qingzhou": [
+   118.5,
+   36.7
+  ],
+  "jinan": [
+   117.0,
+   36.65
+  ],
+  "yunzhou": [
+   115.9,
+   35.9
+  ],
+  "yanzhou": [
+   116.6,
+   35.4
+  ],
+  "xuzhou": [
+   117.2,
+   34.27
+  ],
+  "suzhou": [
+   117.0,
+   33.6
+  ],
+  "dengzhou_sd": [
+   120.4,
+   37.3
+  ],
+  "yizhou": [
+   118.4,
+   35.1
+  ],
+  "haizhou": [
+   119.2,
+   34.6
+  ],
+  "yanan": [
+   109.5,
+   36.6
+  ],
+  "jinyang": [
+   112.55,
+   37.87
+  ],
+  "xinzhou": [
+   112.7,
+   38.4
+  ],
+  "fenzhou": [
+   111.8,
+   37.27
+  ],
+  "shizhou": [
+   111.1,
+   37.5
+  ],
+  "daizhou": [
+   112.9,
+   39.07
+  ],
+  "datong": [
+   113.3,
+   40.1
+  ],
+  "shuozhou": [
+   112.4,
+   39.3
+  ],
+  "yuzhou": [
+   114.6,
+   39.8
+  ],
+  "xinzhou_n": [
+   115.2,
+   40.4
+  ],
+  "luzhou": [
+   113.1,
+   36.2
+  ],
+  "youzhou": [
+   116.4,
+   39.9
+  ],
+  "jizhou_ji": [
+   117.4,
+   40.0
+  ],
+  "zhuozhou": [
+   115.97,
+   39.48
+  ],
+  "yingmo": [
+   116.1,
+   38.6
+  ],
+  "cangzhou": [
+   116.8,
+   38.3
+  ],
+  "pingzhou": [
+   118.9,
+   39.9
+  ],
+  "tanzhou": [
+   116.8,
+   40.4
+  ],
+  "zhenzhou": [
+   114.5,
+   38.1
+  ],
+  "jizhou": [
+   115.6,
+   37.6
+  ],
+  "dingzhou": [
+   115.0,
+   38.5
+  ],
+  "fengxiang": [
+   107.4,
+   34.5
+  ],
+  "qinzhou": [
+   105.7,
+   34.6
+  ],
+  "binzhou": [
+   108.1,
+   35.05
+  ],
+  "jingzhou": [
+   107.35,
+   35.33
+  ],
+  "jiezhou": [
+   105.4,
+   33.4
+  ],
+  "lingzhou": [
+   106.2,
+   38.1
+  ],
+  "xiazhou": [
+   108.9,
+   37.9
+  ],
+  "youzhou_ordos": [
+   108.0,
+   39.3
+  ],
+  "yinzhou": [
+   109.9,
+   38.3
+  ],
+  "xining": [
+   101.8,
+   36.6
+  ],
+  "lanzhou": [
+   103.8,
+   36.06
+  ],
+  "liangzhou": [
+   102.6,
+   37.9
+  ],
+  "fuqi": [
+   99.6,
+   36.9
+  ],
+  "baylan": [
+   98.0,
+   36.0
+  ],
+  "heyuan": [
+   100.4,
+   35.0
+  ],
+  "ganzhou": [
+   100.45,
+   38.93
+  ],
+  "suzhou_jq": [
+   98.5,
+   39.7
+  ],
+  "shazhou": [
+   94.66,
+   40.14
+  ],
+  "guazhou": [
+   95.8,
+   40.5
+  ],
+  "yangzhou": [
+   119.4,
+   32.4
+  ],
+  "chuzhou": [
+   119.1,
+   33.5
+  ],
+  "shouzhou": [
+   116.8,
+   32.6
+  ],
+  "luzhou_hf": [
+   117.3,
+   31.86
+  ],
+  "haozhou": [
+   117.5,
+   32.9
+  ],
+  "guangzhou_gz": [
+   115.1,
+   32.1
+  ],
+  "shuzhou": [
+   117.05,
+   30.5
+  ],
+  "jinling": [
+   118.8,
+   32.05
+  ],
+  "changzhou": [
+   119.95,
+   31.8
+  ],
+  "xuanzhou": [
+   118.75,
+   30.95
+  ],
+  "ezhou": [
+   114.3,
+   30.55
+  ],
+  "jiangzhou": [
+   116.0,
+   29.7
+  ],
+  "hongzhou": [
+   115.9,
+   28.68
+  ],
+  "fuzhou_fz": [
+   116.36,
+   27.95
+  ],
+  "jizhou_ja": [
+   114.98,
+   27.1
+  ],
+  "qianzhou": [
+   114.9,
+   25.85
+  ],
+  "xinzhou_sr": [
+   117.95,
+   28.45
+  ],
+  "shezhou": [
+   118.4,
+   29.87
+  ],
+  "yuanzhou": [
+   114.4,
+   27.8
+  ],
+  "hangzhou": [
+   120.15,
+   30.27
+  ],
+  "suzhou_sz": [
+   120.6,
+   31.3
+  ],
+  "huzhou": [
+   120.1,
+   30.87
+  ],
+  "yuezhou": [
+   120.58,
+   30.0
+  ],
+  "mingzhou": [
+   121.55,
+   29.87
+  ],
+  "wuzhou": [
+   119.65,
+   29.08
+  ],
+  "quzhou": [
+   118.87,
+   28.94
+  ],
+  "taizhou": [
+   121.13,
+   28.85
+  ],
+  "wenzhou": [
+   120.7,
+   28.0
+  ],
+  "chuzhou_ls": [
+   119.9,
+   28.45
+  ],
+  "fuzhou": [
+   119.3,
+   26.08
+  ],
+  "jianzhou": [
+   118.3,
+   27.0
+  ],
+  "quanzhou": [
+   118.6,
+   24.9
+  ],
+  "zhangzhou": [
+   117.65,
+   24.5
+  ],
+  "tingzhou": [
+   116.37,
+   25.8
+  ],
+  "tanzhou_cs": [
+   112.94,
+   28.23
+  ],
+  "hengzhou": [
+   112.6,
+   26.9
+  ],
+  "yongzhou": [
+   111.6,
+   26.2
+  ],
+  "langzhou": [
+   111.7,
+   29.0
+  ],
+  "yuezhou_yy": [
+   113.1,
+   29.37
+  ],
+  "chenzhou_cz": [
+   113.0,
+   25.8
+  ],
+  "shaozhou_sy": [
+   111.47,
+   27.24
+  ],
+  "chenzhou_yl": [
+   110.4,
+   28.45
+  ],
+  "guizhou": [
+   110.29,
+   25.27
+  ],
+  "liuzhou": [
+   109.4,
+   24.33
+  ],
+  "yizhou_gx": [
+   108.65,
+   24.5
+  ],
+  "hezhou": [
+   111.55,
+   24.4
+  ],
+  "guangzhou": [
+   113.26,
+   23.13
+  ],
+  "shaozhou": [
+   113.6,
+   24.8
+  ],
+  "chaozhou": [
+   116.6,
+   23.66
+  ],
+  "huizhou": [
+   114.4,
+   23.1
+  ],
+  "gaozhou": [
+   110.85,
+   21.92
+  ],
+  "leizhou": [
+   110.1,
+   20.9
+  ],
+  "yazhou": [
+   109.8,
+   19.4
+  ],
+  "rongzhou": [
+   110.15,
+   22.63
+  ],
+  "yongzhou_nn": [
+   108.3,
+   22.8
+  ],
+  "wuzhou_wz": [
+   111.3,
+   23.48
+  ],
+  "qinzhou_qz": [
+   108.6,
+   21.95
+  ],
+  "chengdu": [
+   104.07,
+   30.67
+  ],
+  "mianzhou": [
+   104.7,
+   31.47
+  ],
+  "langzhou_lz": [
+   105.97,
+   31.58
+  ],
+  "yuzhou_cq": [
+   106.55,
+   29.56
+  ],
+  "jiazhou": [
+   103.8,
+   29.6
+  ],
+  "rongzhou_yb": [
+   104.6,
+   28.8
+  ],
+  "kuizhou": [
+   109.5,
+   31.0
+  ],
+  "xingyuan": [
+   107.0,
+   33.07
+  ],
+  "lizhou": [
+   105.83,
+   32.43
+  ],
+  "yazhou_ya": [
+   103.0,
+   30.0
+  ],
+  "qianzhou_ps": [
+   108.2,
+   29.3
+  ],
+  "jiangling": [
+   112.2,
+   30.35
+  ],
+  "xiazhou_yc": [
+   111.3,
+   30.7
+  ],
+  "jiaozhi": [
+   105.85,
+   21.03
+  ],
+  "aizhou": [
+   105.8,
+   19.8
+  ],
+  "guiyang": [
+   106.7,
+   26.6
+  ],
+  "bozhou": [
+   106.9,
+   27.7
+  ]
+ },
+ "snapshots": [
+  {
+   "id": "fd-907",
+   "from": 907,
+   "label": "907: Zhu Wen ends the Tang and founds the Later Liang; regional governors become kings",
+   "set": {
+    "liang": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan"
+    ],
+    "jin": [
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou",
+     "datong",
+     "shuozhou",
+     "yuzhou",
+     "xinzhou_n",
+     "luzhou"
+    ],
+    "yan": [
+     "youzhou",
+     "jizhou_ji",
+     "zhuozhou",
+     "yingmo",
+     "cangzhou",
+     "pingzhou",
+     "tanzhou"
+    ],
+    "zhao": [
+     "zhenzhou",
+     "jizhou"
+    ],
+    "yiwu": [
+     "dingzhou"
+    ],
+    "qi": [
+     "fengxiang",
+     "qinzhou",
+     "binzhou",
+     "jingzhou",
+     "jiezhou",
+     "lingzhou"
+    ],
+    "dingnan": [
+     "xiazhou",
+     "youzhou_ordos",
+     "yinzhou"
+    ],
+    "tufan": [
+     "xining",
+     "lanzhou",
+     "liangzhou",
+     "fuqi",
+     "baylan",
+     "heyuan"
+    ],
+    "ganzhou": [
+     "ganzhou",
+     "suzhou_jq"
+    ],
+    "guiyi": [
+     "shazhou",
+     "guazhou"
+    ],
+    "wu": [
+     "yangzhou",
+     "chuzhou",
+     "shouzhou",
+     "luzhou_hf",
+     "haozhou",
+     "guangzhou_gz",
+     "shuzhou",
+     "jinling",
+     "changzhou",
+     "xuanzhou",
+     "ezhou",
+     "jiangzhou",
+     "hongzhou",
+     "fuzhou_fz",
+     "jizhou_ja",
+     "qianzhou",
+     "xinzhou_sr",
+     "shezhou",
+     "yuanzhou"
+    ],
+    "wuyue": [
+     "hangzhou",
+     "suzhou_sz",
+     "huzhou",
+     "yuezhou",
+     "mingzhou",
+     "wuzhou",
+     "quzhou",
+     "taizhou",
+     "wenzhou",
+     "chuzhou_ls"
+    ],
+    "min": [
+     "fuzhou",
+     "jianzhou",
+     "quanzhou",
+     "zhangzhou",
+     "tingzhou"
+    ],
+    "chu": [
+     "tanzhou_cs",
+     "hengzhou",
+     "yongzhou",
+     "langzhou",
+     "yuezhou_yy",
+     "chenzhou_cz",
+     "shaozhou_sy",
+     "chenzhou_yl",
+     "guizhou",
+     "liuzhou",
+     "yizhou_gx",
+     "hezhou"
+    ],
+    "nanhan": [
+     "guangzhou",
+     "shaozhou",
+     "chaozhou",
+     "huizhou",
+     "gaozhou",
+     "leizhou",
+     "yazhou",
+     "rongzhou",
+     "yongzhou_nn",
+     "wuzhou_wz",
+     "qinzhou_qz"
+    ],
+    "qianshu": [
+     "chengdu",
+     "mianzhou",
+     "langzhou_lz",
+     "yuzhou_cq",
+     "jiazhou",
+     "rongzhou_yb",
+     "kuizhou",
+     "xingyuan",
+     "lizhou",
+     "yazhou_ya",
+     "qianzhou_ps"
+    ],
+    "jingnan": [
+     "jiangling",
+     "xiazhou_yc"
+    ],
+    "jinghai": [
+     "jiaozhi",
+     "aizhou"
+    ],
+    "xinan": [
+     "guiyang",
+     "bozhou"
+    ]
+   },
+   "names": {
+    "Uyghurs": [
+     "Tatar tribes",
+     "鞑靼诸部"
+    ],
+    "Tungus": [
+     "Jurchens",
+     "女真"
+    ],
+    "Tibetan Empire": [
+     "Tibetan tribes",
+     "吐蕃诸部"
+    ],
+    "Hainan": null
+   }
+  },
+  {
+   "id": "fd-913",
+   "from": 913,
+   "label": "913: Jin conquers Yan and takes Youzhou",
+   "set": {
+    "jin": [
+     "youzhou",
+     "jizhou_ji",
+     "zhuozhou",
+     "yingmo",
+     "cangzhou",
+     "pingzhou",
+     "tanzhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-916",
+   "from": 916,
+   "label": "915–916: Jin wins Weibo and the north bank of the Yellow River; Former Shu takes Qi's western prefectures; Abaoji proclaims the Khitan state",
+   "set": {
+    "jin": [
+     "weibo",
+     "xiangzhou",
+     "xingzhou"
+    ],
+    "qianshu": [
+     "qinzhou",
+     "jiezhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-923",
+   "from": 923,
+   "label": "923: Li Cunxu founds the Later Tang and destroys the Later Liang; Qi submits the next year",
+   "set": {
+    "houtang": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou",
+     "datong",
+     "shuozhou",
+     "yuzhou",
+     "xinzhou_n",
+     "luzhou",
+     "youzhou",
+     "jizhou_ji",
+     "zhuozhou",
+     "yingmo",
+     "cangzhou",
+     "pingzhou",
+     "tanzhou",
+     "zhenzhou",
+     "jizhou",
+     "dingzhou",
+     "fengxiang",
+     "binzhou",
+     "jingzhou",
+     "lingzhou"
+    ],
+    "khitan": [
+     "pingzhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-925",
+   "from": 925,
+   "label": "925: Later Tang conquers Former Shu; the Khitan destroy Balhae in 926",
+   "set": {
+    "houtang": [
+     "qinzhou",
+     "jiezhou",
+     "chengdu",
+     "mianzhou",
+     "langzhou_lz",
+     "yuzhou_cq",
+     "jiazhou",
+     "rongzhou_yb",
+     "kuizhou",
+     "xingyuan",
+     "lizhou",
+     "yazhou_ya",
+     "qianzhou_ps"
+    ]
+   },
+   "names": {
+    "Balhae": [
+     "Khitans",
+     "契丹"
+    ]
+   }
+  },
+  {
+   "id": "fd-934",
+   "from": 934,
+   "label": "934: Meng Zhixiang founds the Later Shu in Sichuan",
+   "set": {
+    "houshu": [
+     "chengdu",
+     "mianzhou",
+     "langzhou_lz",
+     "yuzhou_cq",
+     "jiazhou",
+     "rongzhou_yb",
+     "kuizhou",
+     "xingyuan",
+     "lizhou",
+     "yazhou_ya",
+     "qianzhou_ps"
+    ]
+   }
+  },
+  {
+   "id": "fd-936",
+   "from": 936,
+   "label": "936: Shi Jingtang founds the Later Jin and hands the Sixteen Prefectures to the Khitan; Dali replaces Nanzhao in 937",
+   "set": {
+    "houjin": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan",
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou",
+     "datong",
+     "shuozhou",
+     "yuzhou",
+     "xinzhou_n",
+     "luzhou",
+     "youzhou",
+     "jizhou_ji",
+     "zhuozhou",
+     "yingmo",
+     "cangzhou",
+     "tanzhou",
+     "zhenzhou",
+     "jizhou",
+     "dingzhou",
+     "fengxiang",
+     "qinzhou",
+     "binzhou",
+     "jingzhou",
+     "jiezhou",
+     "lingzhou"
+    ],
+    "khitan": [
+     "youzhou",
+     "jizhou_ji",
+     "zhuozhou",
+     "tanzhou",
+     "xinzhou_n",
+     "datong",
+     "shuozhou",
+     "yuzhou",
+     "yingmo"
+    ]
+   },
+   "names": {
+    "Nan-Zhao": [
+     "Dali",
+     "大理"
+    ]
+   }
+  },
+  {
+   "id": "fd-937",
+   "from": 937,
+   "label": "937: Li Bian founds the Southern Tang in place of Wu",
+   "set": {
+    "nantang": [
+     "yangzhou",
+     "chuzhou",
+     "shouzhou",
+     "luzhou_hf",
+     "haozhou",
+     "guangzhou_gz",
+     "shuzhou",
+     "jinling",
+     "changzhou",
+     "xuanzhou",
+     "ezhou",
+     "jiangzhou",
+     "hongzhou",
+     "fuzhou_fz",
+     "jizhou_ja",
+     "qianzhou",
+     "xinzhou_sr",
+     "shezhou",
+     "yuanzhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-939",
+   "from": 939,
+   "label": "939: After the Bach Dang victory, Ngo Quyen rules Annam as an independent king",
+   "set": {
+    "ngo": [
+     "jiaozhi",
+     "aizhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-947",
+   "from": 947,
+   "label": "947: The Khitan sack Kaifeng and rename their state Liao; Liu Zhiyuan founds the Later Han; Min has been divided between Southern Tang and Wuyue",
+   "set": {
+    "houhan": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan",
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou",
+     "luzhou",
+     "cangzhou",
+     "zhenzhou",
+     "jizhou",
+     "dingzhou",
+     "fengxiang",
+     "qinzhou",
+     "binzhou",
+     "jingzhou",
+     "jiezhou",
+     "lingzhou"
+    ],
+    "nantang": [
+     "jianzhou",
+     "tingzhou"
+    ],
+    "wuyue": [
+     "fuzhou"
+    ],
+    "qingyuan": [
+     "quanzhou",
+     "zhangzhou"
+    ],
+    "houshu": [
+     "qinzhou",
+     "jiezhou"
+    ]
+   },
+   "names": {
+    "Khitans": [
+     "Liao",
+     "辽"
+    ],
+    "Balhae": [
+     "Liao",
+     "辽"
+    ]
+   }
+  },
+  {
+   "id": "fd-951",
+   "from": 951,
+   "label": "951: Guo Wei founds the Later Zhou and the Liu family holds out as Northern Han; Southern Tang destroys Chu and Southern Han takes its Guangxi lands",
+   "set": {
+    "houzhou": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan",
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou",
+     "luzhou",
+     "cangzhou",
+     "zhenzhou",
+     "jizhou",
+     "dingzhou",
+     "fengxiang",
+     "binzhou",
+     "jingzhou",
+     "lingzhou"
+    ],
+    "beihan": [
+     "jinyang",
+     "xinzhou",
+     "fenzhou",
+     "shizhou",
+     "daizhou"
+    ],
+    "nantang": [
+     "tanzhou_cs",
+     "hengzhou",
+     "yongzhou",
+     "langzhou",
+     "yuezhou_yy",
+     "chenzhou_cz",
+     "shaozhou_sy",
+     "chenzhou_yl"
+    ],
+    "nanhan": [
+     "guizhou",
+     "liuzhou",
+     "yizhou_gx",
+     "hezhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-952",
+   "from": 952,
+   "label": "952: Hunan rises and drives out Southern Tang; the Wuping Circuit rules it",
+   "set": {
+    "wuping": [
+     "tanzhou_cs",
+     "hengzhou",
+     "yongzhou",
+     "langzhou",
+     "yuezhou_yy",
+     "chenzhou_cz",
+     "shaozhou_sy",
+     "chenzhou_yl"
+    ]
+   }
+  },
+  {
+   "id": "fd-958",
+   "from": 958,
+   "label": "955–958: Later Zhou takes four prefectures from Later Shu and all Southern Tang land north of the Yangtze",
+   "set": {
+    "houzhou": [
+     "qinzhou",
+     "jiezhou",
+     "yangzhou",
+     "chuzhou",
+     "shouzhou",
+     "luzhou_hf",
+     "haozhou",
+     "guangzhou_gz",
+     "shuzhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-959",
+   "from": 959,
+   "label": "959: Chai Rong retakes Ying and Mo prefectures from the Liao, then dies",
+   "set": {
+    "houzhou": [
+     "yingmo"
+    ]
+   }
+  }
+ ]
+}

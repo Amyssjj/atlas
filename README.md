@@ -1,0 +1,67 @@
+# Dynasty Atlas (history-map prototype)
+
+An interactive 3D map for learning Chinese history. Pick a year on the timeline and the map shows that era's borders, its cities, and the events that happened up to that year.
+
+## Run it
+
+It is a static site with no build step and no API keys.
+
+```sh
+cd history-map
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+Opening `index.html` directly from disk will not work, because the browser blocks `fetch()` of local files.
+
+The page opens in Chinese; the English button (or `?lang=en`) switches language and the choice is remembered. Every text field has an English and a Chinese version.
+
+The timeline has three zoom levels (+/− buttons, the mouse wheel over the rail, or the + and − keys): all of history, one dynasty (each segment is one border map), and a few decades.
+
+Above the event list a filter picks the detail level (大事 key events only, 要事 adds major ones, 细目 shows all) a country when the period has several (国家, from each event's `states`), and topic tags (战争, 政治, 改革, 起义, 外交, 经济, 文化, 科技, 社会; several may be on). It applies to the list, the map and the timeline ticks, and is remembered in the browser (`localStorage` key `atlas-events`).
+
+Three map layers can be switched on and off: 君主 (the ruler under each country's name, and in the era card), 军队 (a card at each battle site with the sides, generals, troop numbers, unit types and result), and 路线 (campaigns, journeys, trade routes, canals and walls). Four more layers are off by default: 名人 (thinkers, poets, scientists and others shown while alive, with a card), 都城·人口 (capitals with a star, and a population chart in the era card), 宗教思想 (temples, grottoes, academies and schools, which stay on the map once founded) and 发明 (inventions, likewise cumulative). Troop numbers are mostly the traditional figures from the histories and are often inflated; the cards say so.
+
+## How it is put together
+
+| Path | What it holds |
+| --- | --- |
+| `index.html`, `style.css`, `app.js` | The page. MapLibre GL JS 5.24 is loaded from jsDelivr. |
+| `data/eras.json` | Eras from Xia to Qing: year range (negative = BCE), glyph, summary (and `summary_zh`), an optional caveat `note`, and `snapshots`, a list of border files with the year each takes over. |
+| `data/events.json` | Events: year (and optional `endYear`), coordinates, English and Chinese title, place and summary (`x` and `x_zh`), Wikipedia link, a `category` (war, politics, reform, rebellion, diplomacy, economy, culture, science, society) and a `level` (1 key, 2 major, 3 detail) used by the event filter, plus links: `places` (city ids, a places.json id without its `-N`), `people` (person ids from the layers) and `states` (polity keys of the period, as in the layer's `polities`). City cards, person cards and the 国家 filter are built from these links, so new events show up there automatically. 1,654 events. |
+| `data/details/<era>.json` | The story view for each event, loaded when its era opens: `story`/`story_zh` paragraphs, `why`/`why_zh`, `people`, an optional classical `quote`, and `source_zh` (Chinese Wikipedia). |
+| `data/layers/<era>.json` | Map overlays, loaded per era and switched on and off under 图层 / Layers: `rulers` (polity `name` as in the border files → reigns with `from`/`to`), `armies` (war event id → sides with commanders, troops, unit types and result) and `routes` (campaigns, journeys, trade routes, canals and walls as lines with the years they show; campaigns and journeys grow along their path year by year). Built from batches in `data/work2/` by `tools/merge_layers.py`; `people` and `capitals` are added from `data/work3/` by `tools/merge_overlays.py`. |
+| `data/overlays.json` | Overlays that build up over time and are loaded once: `population` (census figures and estimates), `faith` (religious sites and schools of thought) and `inventions`. Built by `tools/merge_overlays.py`. |
+| `tools/link_events.py` | Fills `places`, `people` and `states` for events that lack them (`--all` recomputes every event, e.g. after adding cities or people; `"linked": "hand"` protects a hand-edited event). Cities by distance and place name, people by Chinese name within their lifetime, countries by the border map at that year plus country names in the text. `merge_events.py` runs it after each merge. |
+| `tools/merge_events.py` | `python3 tools/merge_events.py <dir>` adds batches of events (`<era-id>.json` lists) to `events.json`, checking category, level, year, coordinates and duplicates, and tags older reform and uprising events. 1,140 events from 资治通鉴-style coverage were added this way; they have a summary but no long story (AI-drafted, not source-checked). |
+| `tools/merge_content.py` | Merges content batches written to `data/work/<era>.json` (Chinese era text, event patches, new events, details) into the files above. |
+| `data/places.json` | 212 entries for 136 important cities and military strongholds (城市 toggle), one per period: the name the city had then, its role (capital, secondary capital, major city, port, military stronghold 军事重镇), the years (`from`, `to`), the modern name and a short note. Written by `tools/build_cities.py`; AI-drafted and not source-checked. |
+| `data/borders/*.geojson` | Border snapshots, generated by `tools/build_borders.py` (needs shapely). The feature with `"focus": true` is the main dynasty; the rest are neighbours. Each feature has `name`, `name_zh` and a `label` point. |
+| `data/states/*.json` | Territories of the periods of rival states (Spring and Autumn and Warring States in `zhou-states.json`, Northern and Southern Dynasties in `north-south.json`, Five Dynasties and Ten Kingdoms in `five-dynasties.json`) as seed points (places each state held) and a list of snapshots saying which seeds change hands. `tools/build_states.py` turns these into `data/borders/sa-*`, `ws-*`, `ns-*` and `fd-*.geojson`. To move a city from one state to another at a given year, add one line to a snapshot. A spec can name a `backdrop` border file whose neighbours are drawn around the seeded states, and a snapshot's `names` renames states or neighbours from then on (e.g. Khitan to Liao in 947). |
+| `tiles/terrarium/` | Elevation tiles (zoom 2 to 6, roughly 60–145°E, 10–55°N), so the map works offline and inside a sandboxed page. |
+| `tiles/pack/` | More detailed elevation: zoom 7 for the whole map and zoom 8 for China proper (95–127°E, 18–46°N), packed into one archive per parent tile because the page host limits the number of files. Each archive is a 1x1 PNG (the host serves only standard file types) whose private `tpAk` chunk holds a 4-byte index length, a JSON index and the tile PNGs; `tools/pack_tiles.py` builds them. `app.js` serves them through a custom `atlas://` tile protocol; beyond zoom 8, or outside the zoom 8 area, it enlarges the parent tile. |
+| `tiles/sat/` | Satellite imagery (the default 卫星影像 look): Sentinel-2 L2A 120 m cloud-free mosaic, August 2020, baked to JPEG tiles at zoom 2–8 (whole map) and 9 (China proper), with the sea coloured by depth from the elevation tiles. Packed like `tiles/pack/` (whole zoom per archive below 7, 8x8 tiles at 7–8, 16x16 at 9). Rebuild with `tools/imagery/fetch_s2.py` (downloads the RGB bands at 480 m, or 240 m with argument `2`), `tools/imagery/bake_tiles.py` (`Z9=1 FACTOR=2` for zoom 9) and `tools/pack_tiles.py <tiles> tiles/sat --all`. The imagery is modern: cities, fields and reservoirs of today show up. |
+| `data/geo/` | Modern rivers and lakes from Natural Earth 10m (built by `tools/build_geo.py`) and `features.json`, the names of major rivers, mountains, plains, plateaus, deserts and seas shown by the 山川 / Landscape switch. |
+
+`data/roads.json` holds 25 major official roads (官道): Qin highways (直道, 驰道, 五尺道), Shu roads, the Han–Tang post roads, the Tang–Tibet road, tea-horse roads and the Yuan–Qing trunk post roads, each with its years of use and main stations. Written by `tools/build_roads.py` (AI-drafted, not source-checked); lines join the main stations only, so they are schematic.
+
+`data/clans.json` holds 33 local elite groups (豪族/士人集团) for the 豪族 layer, from 丰沛集团 to 北洋集团. Each is one of five kinds: great clans (门阀士族), regional blocs, military cliques, court factions or merchant guilds. Every group has the years it mattered, its home seats, its families and its key people. The tinted area is the hull of the home seats; seats more than 3.5° apart become separate patches, so the area is a sketch of where the group came from, not a border. The file is written by `tools/build_clans.py` (AI-drafted, not source-checked).
+
+`data/walls.json` holds 13 Great Walls (长城) for the 长城 layer, from 楚方城 and 齐长城 to 明长城, with the years each was manned and its rough length. A wall in use is drawn as a dark line with battlement ticks and a label; after it was abandoned it stays as faint dashes. The lines join well-known points only. The file is written by `tools/build_walls.py` (AI-drafted, not source-checked). Wall lines in the per-era route data are no longer drawn, since this layer replaces them.
+
+The ledger has two tabs: 事件 (events) and 君主 (rulers). The ruler tab lists the reigns of one country from `data/layers/<era>.json`, picked from a dropdown (main dynasties first; `polities` in each layer file, added by `tools/add_polity_names.py`, gives their Chinese names). Clicking a ruler narrows the timeline to that reign (decades zoom with the window set to the reign, labelled with the ruler's name); zooming or panning clears it.
+
+Only markers that fit the chosen year show on the map: events while they are current (the list keeps the rest), faith sites and inventions of the current era (or decades window) up to the year, people alive, capitals in use and passes standing. `data/passes.json` holds 37 famous passes (关隘) with founding years, what they guard and battles fought there, written by `tools/build_passes.py` (AI-drafted, not source-checked; founding years approximate).
+
+Markers are decluttered after every change and as the map moves (`declutter()` in `app.js`): markers within 18 px of a more important one fold into it, which shows a "+N" badge that opens a list of everything there; labels that would collide with a more important label or icon are hidden until you zoom in (hover the icon to see one). Priority: current events, capitals, people, this era's inventions and faith sites, cities, older events, older sites, landscape names.
+
+To add an era, add a snapshot to `tools/build_borders.py` (or hand-make a GeoJSON) and an entry in `eras.json`; eras must be back to back with no gaps. The timeline gives each era a width by the square root of its length, so the 15-year Qin and the 268-year Qing are both clickable. To add an event, append an object to `events.json`. The code reads everything from these files.
+
+## Data sources and known limits
+
+- **Imagery**: Sentinel-2 L2A 120 m mosaic 2020, contains modified Copernicus Sentinel data processed by Sentinel Hub (CC BY 4.0), from the AWS open data bucket `sentinel-s2-l2a-mosaic-120`.
+- **Terrain**: Mapzen / AWS Terrain Tiles (terrarium encoding). Elevation, coastlines and rivers are modern (rivers and lakes from Natural Earth), so the old Yellow River courses, the shifting lakes and the old coastlines are not shown.
+- **Borders**: [historical-basemaps](https://github.com/aourednik/historical-basemaps) (GPL-3.0), clipped to East Asia and simplified. They are coarse, and several early snapshots are cultural zones rather than states. `tools/build_borders.py` relabels the source and lists every fix. Neighbours get Chinese historical names (匈奴, 鲜卑, 突厥, 回鹘, 后金, 暹罗 ...) from the `ZH` table in `tools/build_borders.py`, with era-specific names per snapshot (e.g. 林邑 before 757, 占城 after; 高丽 vs 朝鲜). Hand-drawn approximations (marked `approx: true`): the Xianbei steppe (25–316), the Later Jin (1616–1643), the Shang core, the Wei/Shu/Wu split, and the Song–Jin line along the Huai River. Spring and Autumn, Warring States, Northern and Southern Dynasties, and Five Dynasties and Ten Kingdoms borders are drawn from seed points (see above) after the general outlines in Tan Qixiang's atlas, so their edges are only indicative. Known gaps: the c. 700 Tang border leaves out the Hexi Corridor and Western Regions; Qin borders reuse the c. 200 BCE Han outline.
+- **Events and places**: written for this prototype, each event linking to a Wikipedia article for further reading. The stories, finer events and Chinese text were drafted with an AI model from general knowledge and have not been checked line by line against sources; uncertain dates are marked circa. The Wikipedia links could not be tested from the build machine, so the page opens them through Wikipedia search, which lands on the article when the title exists and on search results otherwise.
+
+A better border source for Chinese dynasties is CHGIS (Harvard China Historical GIS), which has prefecture-level data by year. Using it is a natural next step.
