@@ -844,7 +844,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   pointer-events: auto;
 }
 .stand-plate {
-  transform-origin: 50% 100%; transform: perspective(820px) rotateX(18deg);
+  transform-origin: 50% 100%; transform: perspective(820px) rotateX(7deg);
   animation: stand-up .42s ease-out; pointer-events: none;
 }
 .stand-plate.empty { display: none; animation: none; }
@@ -855,8 +855,8 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   box-shadow: 0 10px 18px rgba(20, 30, 35, 0.28);
 }
 @keyframes stand-up {
-  from { transform: perspective(820px) rotateX(70deg); }
-  to { transform: perspective(820px) rotateX(18deg); }
+  from { transform: perspective(820px) rotateX(16deg); }
+  to { transform: perspective(820px) rotateX(7deg); }
 }
 @media (prefers-reduced-motion: reduce) { .stand-plate { animation: none; } }
 .stand-body {

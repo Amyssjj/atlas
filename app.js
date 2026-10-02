@@ -1213,8 +1213,8 @@ async function fillIllus(root) {
       if (!line) { line = document.createElement("p"); line.className = "stand-credit"; body.prepend(line); }
       line.innerHTML = caption;
       // The tilt plays when the picture arrives, not on the empty frame.
-      // Drop the animation once it finishes so the card rests on the 18° transform.
-      // A MapLibre fly can rebuild the card mid-rise; the timeout keeps that rebuild from sitting on the flat keyframe.
+      // Drop the animation once it finishes so the card rests on the 7° transform.
+      // A MapLibre fly can rebuild the card mid-rise; the timeout keeps that rebuild from sitting on the steeper keyframe.
       plate.classList.remove("empty");
       const settle = () => { plate.style.animation = "none"; };
       plate.style.animation = "none";
