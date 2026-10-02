@@ -83,7 +83,7 @@ A better border source for Chinese dynasties is CHGIS (Harvard China Historical 
 
 ## Illustrations
 
-Person cards and event stories show a picture from Wikimedia Commons (public domain or CC licences only, credited under the image).
+Person cards, event stories and the on-map picture show an image from Wikimedia Commons (public domain or CC licences only, credited under the image). Clicking a map pin opens that picture standing at the pin — the photograph leans about 7°, the caption stays flat — and the ledger story stays as it was. A person, or an event that is mainly one person, prefers that person's portrait. A site, tomb or excavated object prefers the picture packed for that entry.
 - `.github/workflows/illustrations.yml` (run by hand on GitHub) runs `tools/fetch_illustrations.py` on the pages in
   `tools/illust_queries.json` (made by `tools/illust_queries.py` from each person's and event's `source`) and pushes the
   thumbnails to the `illustrations-raw` branch. GitHub's runners can reach Wikimedia; this environment cannot.

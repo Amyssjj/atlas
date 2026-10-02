@@ -169,8 +169,9 @@ function applyLang() {
 }
 
 async function setLang(lang) {
+  const reopen = standWhat === "event" && state.reading ? state.selected : null;
   state.lang = lang;
-  popup?.remove();
+  closeStand();
   try { localStorage.setItem("atlas-lang", lang); } catch {}
   applyLang();
   setEra(state.era, true);
@@ -183,6 +184,7 @@ async function setLang(lang) {
   renderGeo();
   renderLedger();
   emit("lang", { lang });
+  if (reopen) showEventStand(reopen);
 }
 
 // A border file, or one map out of a bundle when the path ends in #<id> (tools/carve_states.py writes those).
@@ -914,8 +916,15 @@ function setEra(era, quiet) {
   $("scale-hint").textContent = hintText();
   loadDetails(era);
   state.layerData = null;
-  popup?.remove();
-  loadLayers(era).then((d) => { if (state.era === era) { state.layerData = d; renderOverlays(); if (state.tab === "events" && !state.reading) renderLedger(); } });
+  closeStand();
+  loadLayers(era).then((d) => {
+    if (state.era !== era) return;
+    state.layerData = d;
+    renderOverlays();
+    // The picture may have opened before this era's people and troop cards were loaded.
+    if (standWhat === "event" && state.selected) showEventStand(state.selected);
+    if (state.tab === "events" && !state.reading) renderLedger();
+  });
   if (!quiet) {
     buildEventMarkers();
     if (!state.reading) renderLedger();
@@ -1056,46 +1065,197 @@ function renderOverlays() {
 
 /* People, capitals, religion & thought, inventions: small markers that open a card. */
 
-let popup;
-function showCard(lngLat, html) {
+// "event" while the open picture belongs to the selected event, so a language change can rebuild it.
+let popup, standWhat = null;
+function closeStand() {
+  standWhat = null;
   popup?.remove();
-  popup = new maplibregl.Popup({ className: "atlas-pop", maxWidth: "300px", offset: 14, focusAfterOpen: false })
-    .setLngLat(lngLat).setHTML(html).addTo(map);
-  fillIllus(popup.getElement());
+  popup = null;
+}
+function showCard(lngLat, html, keys, offsetX = 0) {
+  popup?.remove();
+  const el = document.createElement("div");
+  el.className = "mk-stand";
+  const illuKeys = (keys || []).filter(Boolean);
+  // The photograph leans back on its own plane. The words stay on an untilted plate so they stay sharp:
+  // a MapLibre marker's rotateX/rotateZ blurs text, which is why this card is positioned like flatCard.
+  el.innerHTML = `<div class="stand-plate${illuKeys.length ? "" : " empty"}">${illuKeys.length ? illuSlot(illuKeys) : ""}</div>` +
+    `<div class="stand-body"><button type="button" class="stand-close" aria-label="${esc(t("close"))}">×</button>${html}</div>` +
+    `<i class="stand-stem" aria-hidden="true"></i>`;
+  el.querySelector(".stand-close").addEventListener("click", (e) => { e.stopPropagation(); closeStand(); });
+  el.addEventListener("click", (e) => e.stopPropagation());
+  el.addEventListener("wheel", (e) => e.stopPropagation(), { passive: true });
+  standWhat = "card";
+  // A map click in this same turn (a road or wall) should not immediately dismiss the card it opened.
+  map._standGuard = true;
+  clearTimeout(map._standGuardTimer);
+  map._standGuardTimer = setTimeout(() => { map._standGuard = false; }, 0);
+  popup = flatCard(el, lngLat, 2, offsetX);
+  fillIllus(el);
   // Event lists open at the city's current period and jump to that moment when clicked.
-  const list = popup.getElement().querySelector(".pc-events"), now = list?.querySelector(".now");
+  const list = el.querySelector(".pc-events"), now = list?.querySelector(".now");
   if (now) list.scrollTop = now.parentElement.offsetTop - list.offsetTop - 4;
-  popup.getElement().querySelectorAll("[data-ev]").forEach((b) => b.addEventListener("click", () => {
-    popup?.remove();
+  el.querySelectorAll("[data-ev]").forEach((b) => b.addEventListener("click", () => {
+    const id = b.dataset.ev;
     state.reading = false;
-    selectEvent(b.dataset.ev);
+    selectEvent(id);
   }));
 }
 /* ---------- illustrations ---------- */
-// data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
+// data/illustrations.json maps "p:<person id>" / "e:<event id>" (and, once packed, f:/i:/s:/r:/w:/c: for
+// faith, inventions, passes, roads, walls and clans) to an image. Pictures sit in data/img/<bucket>.json
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
-let illuIndex = null;
+// A slot may list several keys separated by "|"; the first one that has a picture wins.
+// "page:<Wikipedia title>" reuses an image already packed for that article.
+let illuIndex = null, illuPages = null;
 const illuBuckets = {};
 function illuSlot(key) {
-  return `<figure class="illu" data-illu="${esc(key)}" hidden></figure>`;
+  const keys = (Array.isArray(key) ? key : [key]).filter(Boolean).join("|");
+  return `<figure class="illu" data-illu="${esc(keys)}" hidden></figure>`;
+}
+function wikiPageKey(url) {
+  const m = url && String(url).match(/wikipedia\.org\/wiki\/([^?#]+)/);
+  if (!m) return "";
+  try { return "page:" + decodeURIComponent(m[1]).replace(/_/g, " ").replace(/\|/g, "/"); }
+  catch { return ""; }
+}
+// A site, tomb or excavated object, rather than a battle or a life. Shared with tools/illust_queries.py.
+const ARTIFACT_RE = /遗址|出土|墓葬|马王堆|三星堆|石峁|兵马俑|甲骨|方尊|竹简|简牍|金印|牙璋|漆棺|编钟|青铜/;
+const ARTIFACT_PLACE_RE = /出土|墓葬|遗址|三星堆|石峁|马王堆/;
+function isArtifactEntry(o) {
+  const blob = ["title", "title_zh", "name", "name_zh", "summary", "summary_zh", "place", "place_zh", "note", "note_zh"]
+    .map((k) => o[k]).filter(Boolean).join("\n");
+  if (!ARTIFACT_RE.test(blob)) return false;
+  if (["war", "diplomacy", "rebellion"].includes(o.category) && !ARTIFACT_PLACE_RE.test(blob)) return false;
+  return true;
+}
+function personLeadsEvent(id, ev) {
+  const blob = `${ev.title || ""}\n${ev.title_zh || ""}`;
+  if (ev.category === "war" || ev.category === "diplomacy") {
+    const p = (state.layerData?.people || []).find((x) => x.id === id);
+    if (!p) return false;
+    return [p.name_zh, p.name].filter((n) => n && n.length > 1).some((n) => blob.toLowerCase().includes(String(n).toLowerCase()));
+  }
+  return true;
+}
+// Person-centred entries prefer that person's portrait. A site or excavated object prefers the article's
+// own picture (an artifact, once the illustrations workflow has packed one). Later keys are fallbacks.
+function eventIlluKeys(ev) {
+  const page = wikiPageKey(ev.source);
+  if (isArtifactEntry(ev)) return ["e:" + ev.id, page].filter(Boolean);
+  const ids = ev.people || [];
+  const keys = [];
+  if (ids.length === 1 && personLeadsEvent(ids[0], ev)) keys.push("p:" + ids[0]);
+  keys.push("e:" + ev.id);
+  if (ids.length === 1 && !keys.includes("p:" + ids[0])) keys.push("p:" + ids[0]);
+  if (page) keys.push(page);
+  return keys;
+}
+function markerIlluKeys(prefix, item) {
+  return [prefix + item.id, wikiPageKey(item.source)].filter(Boolean);
+}
+function illuPageMap(idx) {
+  if (illuPages) return illuPages;
+  illuPages = {};
+  for (const id of Object.values(idx.keys || {})) {
+    const page = idx.images[id]?.page;
+    if (!page) continue;
+    const n = page.trim().toLowerCase();
+    if (!illuPages[n]) illuPages[n] = id;
+  }
+  return illuPages;
+}
+function resolveIllu(idx, key) {
+  if (key.startsWith("page:")) {
+    const id = illuPageMap(idx)[key.slice(5).trim().toLowerCase()];
+    return id ? [id, idx.images[id]] : [];
+  }
+  const id = idx.keys[key];
+  return id && idx.images[id] ? [id, idx.images[id]] : [];
 }
 async function fillIllus(root) {
   const slots = [...root.querySelectorAll("figure[data-illu]:not(.done)")];
   if (!slots.length) return;
   illuIndex ||= loadJSON("data/illustrations.json").catch(() => ({ keys: {}, images: {} }));
   const idx = await illuIndex;
+  if (!root.isConnected) return;
   for (const fig of slots) {
     fig.classList.add("done");
-    const id = idx.keys[fig.dataset.illu], im = idx.images[id];
-    if (!im) continue;
+    if (!fig.isConnected) continue;
+    let id, im;
+    for (const key of fig.dataset.illu.split("|")) {
+      if (!key) continue;
+      [id, im] = resolveIllu(idx, key);
+      if (im) break;
+    }
+    const plate = fig.closest(".stand-plate");
+    if (!im) {
+      fig.remove();
+      if (plate && !plate.querySelector("img")) plate.classList.add("empty");
+      continue;
+    }
     illuBuckets[im.b] ||= loadJSON(`data/img/${im.b}.json`).catch(() => ({}));
     const src = (await illuBuckets[im.b])[id];
-    if (!src) continue;
+    if (!fig.isConnected) continue;
+    if (!src) {
+      fig.remove();
+      if (plate && !plate.querySelector("img")) plate.classList.add("empty");
+      continue;
+    }
     const credit = [im.artist, im.license].filter(Boolean).join(" · ");
-    fig.innerHTML = `<img src="${src}" alt="${esc(im.page)}" style="aspect-ratio:${im.w}/${im.h}">` +
-      `<figcaption><a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a></figcaption>`;
+    const img = `<img src="${src}" alt="${esc(im.page)}" style="aspect-ratio:${im.w}/${im.h}">`;
+    const caption = `<a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a>`;
+    if (plate) {
+      // Credit stays on the flat plate, not on the tilted photograph, so the small type stays crisp.
+      fig.innerHTML = img;
+      const body = plate.parentElement.querySelector(".stand-body");
+      let line = body.querySelector(".stand-credit");
+      if (!line) { line = document.createElement("p"); line.className = "stand-credit"; body.prepend(line); }
+      line.innerHTML = caption;
+      // The tilt plays when the picture arrives, not on the empty frame.
+      // Drop the animation once it finishes so the card rests on the 18° transform.
+      // A MapLibre fly can rebuild the card mid-rise; the timeout keeps that rebuild from sitting on the flat keyframe.
+      plate.classList.remove("empty");
+      const settle = () => { plate.style.animation = "none"; };
+      plate.style.animation = "none";
+      void plate.offsetWidth;
+      plate.style.animation = "";
+      plate.addEventListener("animationend", settle, { once: true });
+      clearTimeout(plate._rise);
+      plate._rise = setTimeout(settle, 480);
+    } else fig.innerHTML = img + `<figcaption>${caption}</figcaption>`;
     fig.hidden = false;
   }
+  root._place?.();
+}
+// Picture standing at an event pin. The ledger story stays as it is. Shift aside when a troop card is there too.
+function standBesideOffset(lngLat) {
+  const army = document.querySelector(".mk-army.selected");
+  if (!army) return 0;
+  const p = map.project(lngLat);
+  const canvas = map.getCanvas().getBoundingClientRect();
+  const aw = army.offsetWidth || 272;
+  const sw = Math.min(innerWidth < 720 ? 240 : 260, innerWidth - 28);
+  const gap = 18;
+  const need = (aw + sw) / 2 + gap;
+  // Sit on the side of the troop card that has room, and stay inside the map.
+  let offset = (p.x - canvas.left >= need || p.x - canvas.left >= canvas.right - p.x) ? -need : need;
+  const left = p.x - sw / 2 + offset;
+  const right = p.x + sw / 2 + offset;
+  if (left < canvas.left + 8) offset += canvas.left + 8 - left;
+  if (right > canvas.right - 8) offset -= right - (canvas.right - 8);
+  return Math.round(offset);
+}
+function showEventStand(id) {
+  const ev = typeof id === "string" ? state.events.find((e) => e.id === id) : id;
+  if (!ev) return;
+  const when = ev.endYear ? `${fmtYear(ev.year, ev.circa)} – ${fmtYear(ev.endYear)}` : fmtYear(ev.year, ev.circa);
+  const cat = t("cat")[ev.category] || ev.category || "";
+  const beside = !!(state.show.armies && state.layerData?.armies?.[ev.id] && !state.closedArmies.has(ev.id));
+  showCard([ev.lon, ev.lat], `<div class="pc-kind">${esc(cat)} · ${esc(when)}</div>
+    <h4>${esc(titleOf(ev))}</h4><p class="stand-line">${esc(tx(ev, "place"))}</p>`,
+    eventIlluKeys(ev), beside ? standBesideOffset([ev.lon, ev.lat]) : 0);
+  standWhat = "event";
 }
 function wikiA(url) {
   return url ? `<a href="${esc(wikiLink(url))}" target="_blank" rel="noopener">${t("wiki")} ↗</a>` : "";
@@ -1104,9 +1264,10 @@ function pointMarkers(key, items, make) {
   (markers[key] || []).forEach((m) => m.remove());
   markers[key] = [];
   for (const it of items) {
-    const { el, card, anchor } = make(it);
+    const made = make(it);
+    const { el, card, anchor } = made;
     el.dataset.name = nameOf(it);
-    if (card) el.addEventListener("click", (e) => { e.stopPropagation(); showCard([it.lon, it.lat], card()); });
+    if (card) el.addEventListener("click", (e) => { e.stopPropagation(); showCard([it.lon, it.lat], card(), made.illu ? made.illu() : []); });
     markers[key].push(new maplibregl.Marker({ element: el, anchor: anchor || "center" }).setLngLat([it.lon, it.lat]).addTo(map));
   }
 }
@@ -1120,7 +1281,7 @@ function renderPeople() {
     el.className = "mk-person f-" + p.field;
     const nm = nameOf(p);
     el.innerHTML = `<i>${esc((p.name_zh || p.name).slice(0, 1))}</i><span>${esc(nm)}<small>${esc(t("fields")[p.field] || "")}</small></span>`;
-    return { el, anchor: "left", card: () => personCard(p) };
+    return { el, anchor: "left", card: () => personCard(p), illu: () => ["p:" + p.id] };
   });
 }
 function personLife(p) {
@@ -1130,7 +1291,7 @@ function personLife(p) {
 function personCard(p) {
   const works = (p.works || []).map((w) => zh() ? `《${esc(w.title_zh || w.title)}》` : `<i>${esc(w.title)}</i>`).join(zh() ? "" : ", ");
   const line = p.line_zh ? `<blockquote><span lang="zh-CN">${esc(p.line_zh)}</span>${!zh() && p.line_en ? `<em>${esc(p.line_en)}</em>` : ""}</blockquote>` : "";
-  return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
+  return `<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
     ${personEventList(p)}${checkNote(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
@@ -1168,7 +1329,7 @@ function cumulative(key, items, cls, glyph, kindLabel) {
     el.className = `${cls} k-${x.kind || x.field}` + (recent ? "" : " old");
     el.innerHTML = `<i>${glyph(x)}</i>` + (recent ? `<span>${esc(nameOf(x))}</span>` : "");
     el.title = `${fmtYear(x.year, x.circa)} · ${nameOf(x)}`;
-    return { el, anchor: recent ? "left" : "center", card: () => `<div class="pc-kind">${esc(kindLabel(x))} · ${fmtYear(x.year, x.circa)}</div>
+    return { el, anchor: recent ? "left" : "center", illu: () => markerIlluKeys(key === "faith" ? "f:" : "i:", x), card: () => `<div class="pc-kind">${esc(kindLabel(x))} · ${fmtYear(x.year, x.circa)}</div>
       <h4>${esc(nameOf(x))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? x.name : x.name_zh)}</span></h4>
       <p>${esc(tx(x, "summary"))}</p>${x.inventor ? `<p class="pc-works"><b>${t("inventor")}</b> ${esc(zh() ? x.inventor_zh || x.inventor : x.inventor)}</p>` : ""}
       <p class="pc-meta">${esc(tx(x, "place"))} ${wikiA(x.source)}</p>` };
@@ -1185,7 +1346,7 @@ function renderPasses() {
     const el = document.createElement("div");
     el.className = "mk-pass k-" + x.kind;
     el.innerHTML = `<i>关</i><span>${esc(nameOf(x))}</span>`;
-    return { el, anchor: "left", card: () => {
+    return { el, anchor: "left", illu: () => markerIlluKeys("s:", x), card: () => {
       const fought = x.battles.filter((b) => b.year <= state.year);
       return `<div class="pc-kind">${esc(t("pkinds")[x.kind] || "")} · ${esc(t("built")(fmtYear(x.from, x.circa)))}</div>
         <h4>${esc(nameOf(x))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? x.name : x.name_zh)}</span></h4>
@@ -1215,7 +1376,7 @@ function renderRoads() {
     el.className = "mk-road k-" + r.kind;
     el.textContent = nameOf(r);
     el.dataset.name = nameOf(r);
-    el.addEventListener("click", (e) => { e.stopPropagation(); showCard(r.via[Math.floor(r.via.length / 2)], roadCard(r)); });
+    el.addEventListener("click", (e) => { e.stopPropagation(); showCard(r.via[Math.floor(r.via.length / 2)], roadCard(r), markerIlluKeys("r:", r)); });
     // Label halfway along, between the two middle stations.
     const i = Math.floor((r.via.length - 1) / 2), a = r.via[i], b = r.via[Math.min(i + 1, r.via.length - 1)];
     markers.roads.push(new maplibregl.Marker({ element: el }).setLngLat([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]).addTo(map));
@@ -1241,7 +1402,7 @@ function renderClans() {
     el.className = "mk-clan k-" + g.kind;
     el.style.setProperty("--c", CLAN[g.kind][0]);
     el.innerHTML = `<i>${CLAN[g.kind][1]}</i><span>${esc(nameOf(g))}</span>`;
-    return { el, anchor: "left", card: () => clanCard(g) };
+    return { el, anchor: "left", illu: () => markerIlluKeys("c:", g), card: () => clanCard(g) };
   });
 }
 // Great Walls: those manned this year drawn in full with a label; those abandoned before now as faint ruins.
@@ -1267,7 +1428,7 @@ function renderWalls() {
     el.textContent = nameOf(w);
     el.dataset.name = nameOf(w);
     const p = w.paths[0], mid = p[Math.floor(p.length / 2)];
-    el.addEventListener("click", (e) => { e.stopPropagation(); showCard(mid, wallCard(w)); });
+    el.addEventListener("click", (e) => { e.stopPropagation(); showCard(mid, wallCard(w), markerIlluKeys("w:", w)); });
     markers.walls.push(new maplibregl.Marker({ element: el, anchor: "bottom", offset: [0, -6] }).setLngLat(mid).addTo(map));
   }
 }
@@ -1352,19 +1513,20 @@ function armiesHTML(a) {
 // A map-pinned card placed with plain whole-pixel left/top. MapLibre markers carry rotateX/rotateZ and
 // will-change: transform, which puts them on a GPU layer whose text some browsers leave blurry once the map
 // has been clicked or moved. Offers the getElement()/remove() that the marker code uses.
-function flatCard(el, lngLat, offsetY) {
+function flatCard(el, lngLat, offsetY, offsetX = 0) {
   el.classList.add("flat-card");
   map.getCanvasContainer().appendChild(el);
   const place = () => {
     const p = map.project(lngLat);
-    el.style.left = Math.round(p.x - el.offsetWidth / 2) + "px";
+    el.style.left = Math.round(p.x - el.offsetWidth / 2 + offsetX) + "px";
     el.style.top = Math.round(p.y - el.offsetHeight + offsetY) + "px";
   };
+  el._place = place;
   place();
   map.on("move", place);
   map.on("resize", place);
   requestAnimationFrame(place);
-  return { getElement: () => el, remove() { map.off("move", place); map.off("resize", place); el.remove(); } };
+  return { getElement: () => el, place, remove() { map.off("move", place); map.off("resize", place); el.remove(); } };
 }
 
 // Battle cards stand over the war site while the battle is current (or selected); at most three at once.
@@ -1387,7 +1549,12 @@ function renderArmies() {
       `<button type="button" class="army-close" aria-label="${t("close")}" title="${t("close")}">×</button></div>` + armiesHTML(data[ev.id]);
     el.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (e.target.closest(".army-close")) { state.closedArmies.add(ev.id); renderArmies(); return; }
+      if (e.target.closest(".army-close")) {
+        state.closedArmies.add(ev.id);
+        renderArmies();
+        if (ev.id === state.selected && standWhat === "event") showEventStand(ev.id);
+        return;
+      }
       openStory(ev.id);
     });
     markers.armies.push(flatCard(el, [ev.lon, ev.lat], -16));
@@ -1589,9 +1756,9 @@ function declutter() {
     }
     polities.push(r);
   }
-  // Labels: placed in priority order; battle cards are already taken space,
-  // and the territory names push away the landscape, road and route names.
-  const taken = markers.armies.map((m) => m.getElement().getBoundingClientRect());
+  // Labels: placed in priority order; battle cards, route labels and the standing picture are already taken space.
+  const taken = [...markers.armies, ...(markers.routes || [])].map((m) => m.getElement().getBoundingClientRect());
+  if (popup?.getElement?.()?.isConnected) taken.push(popup.getElement().getBoundingClientRect());
   // A label gives way to labels and icons of more important markers; it may cover a less important icon.
   for (const it of kept) {
     const span = it.labelOnly ? it.el : it.el.querySelector("span");
@@ -2030,7 +2197,7 @@ async function focusPerson(p) {
     await setYear(y);
   }
   map.flyTo({ center: [p.lon, p.lat], zoom: Math.min(Math.max(map.getZoom(), 5), 6), pitch: state.show3d ? 45 : 0, duration: 1400, essential: true });
-  map.once("moveend", () => showCard([p.lon, p.lat], personCard(p)));
+  map.once("moveend", () => showCard([p.lon, p.lat], personCard(p), ["p:" + p.id]));
 }
 async function scopeToRuler(polity, i) {
   stop();
@@ -2110,14 +2277,14 @@ async function renderStory() {
       <div class="story-sub" lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? ev.title : ev.title_zh)}</div>
       <button class="story-place" data-go="map"><i></i>${esc(tx(ev, "place"))}</button>
     </header>
-    ${illuSlot("e:" + ev.id)}
+    ${illuSlot(eventIlluKeys(ev))}
     <p class="story-lede">${esc(tx(ev, "summary"))}</p>
     <div class="story-body"><p class="muted">${t("loading")}</p></div>`;
   box.scrollTop = 0;
   fillIllus(box);
   box.onclick = (e) => {
     const go = e.target.closest("[data-go]")?.dataset.go;
-    if (go === "back") { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); }
+    if (go === "back") { state.reading = false; $("app").classList.remove("tour-reading"); closeStand(); renderLedger(); }
     if (go === "prev" && prev) openStory(prev.id);
     if (go === "next" && next) openStory(next.id);
     if (go === "map") flyToEvent(ev);
@@ -2223,6 +2390,7 @@ async function selectEvent(id) {
   renderLedger();
   flyToEvent(ev);
   emit("event", { id, event: ev });
+  showEventStand(ev);
 }
 
 async function goToEra(era) {
@@ -2848,11 +3016,11 @@ async function init() {
   map.on("move", () => scheduleDeclutter(120));
   map.on("click", "road-hit", (e) => {
     const r = state.roads.find((x) => x.id === e.features[0]?.properties.id);
-    if (r) showCard(e.lngLat, roadCard(r));
+    if (r) { e.preventDefault?.(); showCard(e.lngLat, roadCard(r), markerIlluKeys("r:", r)); }
   });
   map.on("click", "wall-hit", (e) => {
     const w = state.walls.find((x) => x.id === e.features[0]?.properties.id);
-    if (w) showCard(e.lngLat, wallCard(w));
+    if (w) { e.preventDefault?.(); showCard(e.lngLat, wallCard(w), markerIlluKeys("w:", w)); }
   });
   map.on("mouseenter", "wall-hit", () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", "wall-hit", () => (map.getCanvas().style.cursor = ""));
@@ -3045,7 +3213,11 @@ async function init() {
   // Phone: tools and layer switches sit behind one button; the sheet and era bar size themselves to the timeline.
   const openEra = (o) => { $("era-more").setAttribute("aria-expanded", String(o)); document.querySelector(".era").classList.toggle("open", o); };
   $("era-more").addEventListener("click", () => openEra(!document.querySelector(".era").classList.contains("open")));
-  map.on("click", () => { if (phone.matches) openEra(false); });
+  map.on("click", (e) => {
+    if (phone.matches) openEra(false);
+    if (map._standGuard) return;
+    closeStand();
+  });
   new ResizeObserver(() => {
     document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
     sizeTrack();
@@ -3061,7 +3233,10 @@ async function init() {
     if (e.key === "PageUp" && state.eras[i - 1]) goToEra(state.eras[i - 1]);
     if (e.key === "+" || e.key === "=") setZoom(state.zoom + 1);
     if (e.key === "-") setZoom(state.zoom - 1);
-    if (e.key === "Escape" && state.reading) { state.reading = false; renderLedger(); }
+    if (e.key === "Escape") {
+      if (popup) closeStand();
+      if (state.reading) { state.reading = false; renderLedger(); }
+    }
     if (e.key === " ") { e.preventDefault(); play(); }
   });
 }

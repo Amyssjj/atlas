@@ -3826,8 +3826,9 @@
 },
 "e:shimao-stone-city": {
 "wiki": "en",
-"title": "Shimao (site)",
-"zh": null
+"title": "Shimao",
+"zh": null,
+"prefer": "artifact"
 },
 "e:feast-at-juntai": {
 "wiki": "en",
@@ -3837,7 +3838,8 @@
 "e:lajia-disaster": {
 "wiki": "en",
 "title": "Lajia",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:houyi-usurps-xia": {
 "wiki": "en",
@@ -3857,12 +3859,14 @@
 "e:erlitou": {
 "wiki": "en",
 "title": "Erlitou culture",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:qijia-copper": {
 "wiki": "en",
 "title": "Qijia culture",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:jie-of-xia": {
 "wiki": "en",
@@ -3902,7 +3906,8 @@
 "e:panlongcheng": {
 "wiki": "en",
 "title": "Panlongcheng",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:zhongding-moves-to-ao": {
 "wiki": "en",
@@ -3927,7 +3932,8 @@
 "e:oracle-bones": {
 "wiki": "en",
 "title": "Oracle bone script",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:wu-ding-appoints-fu-yue": {
 "wiki": "en",
@@ -3947,27 +3953,32 @@
 "e:sanxingdui": {
 "wiki": "en",
 "title": "Sanxingdui",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:fu-hao": {
 "wiki": "en",
 "title": "Fu Hao",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:xingan-dayangzhou-tomb": {
 "wiki": "en",
-"title": "Wucheng culture",
-"zh": null
+"title": "Dayangzhou site",
+"zh": null,
+"prefer": "artifact"
 },
 "e:four-goat-square-zun": {
 "wiki": "en",
-"title": "Four-goat square zun",
-"zh": null
+"title": "Four-goat Square Zun",
+"zh": null,
+"prefer": "artifact"
 },
 "e:houmuwu-ding": {
 "wiki": "en",
 "title": "Houmuwu ding",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:wu-yi-shoots-heaven": {
 "wiki": "en",
@@ -4037,7 +4048,8 @@
 "e:duke-of-shao-founds-yan": {
 "wiki": "en",
 "title": "Yan (state)",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:jizi-goes-to-joseon": {
 "wiki": "en",
@@ -4077,7 +4089,8 @@
 "e:he-zun": {
 "wiki": "en",
 "title": "He zun",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:rites-and-music-of-zhou": {
 "wiki": "en",
@@ -4167,7 +4180,8 @@
 "e:mao-gong-ding": {
 "wiki": "en",
 "title": "Mao Gong ding",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:battle-of-qianmu": {
 "wiki": "en",
@@ -4442,7 +4456,8 @@
 "e:jin-moves-to-xintian": {
 "wiki": "en",
 "title": "Houma",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:wu-learns-chariot-warfare": {
 "wiki": "en",
@@ -4517,7 +4532,8 @@
 "e:zichan-law-code": {
 "wiki": "en",
 "title": "Zichan",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:king-ling-of-chu-dies": {
 "wiki": "en",
@@ -4702,7 +4718,8 @@
 "e:marquis-yi-zeng": {
 "wiki": "en",
 "title": "Marquis Yi of Zeng",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:chu-destroys-ju": {
 "wiki": "en",
@@ -4972,7 +4989,8 @@
 "e:guodian-chu-slips": {
 "wiki": "en",
 "title": "Guodian Chu Slips",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:king-huai-detained-in-qin": {
 "wiki": "en",
@@ -5312,7 +5330,8 @@
 "e:shuihudi-qin-slips": {
 "wiki": "en",
 "title": "Shuihudi Qin bamboo texts",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:land-self-reporting": {
 "wiki": "en",
@@ -5582,7 +5601,8 @@
 "e:ernian-statutes": {
 "wiki": "en",
 "title": "Zhangjiashan Han bamboo texts",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:zhao-tuo-emperor": {
 "wiki": "en",
@@ -5617,7 +5637,8 @@
 "e:mawangdui": {
 "wiki": "en",
 "title": "Mawangdui",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:abolish-mutilating-punishments": {
 "wiki": "en",
@@ -5776,8 +5797,9 @@
 },
 "e:mancheng-tombs": {
 "wiki": "en",
-"title": "Mancheng Han Tombs",
-"zh": null
+"title": "Jade burial suit",
+"zh": null,
+"prefer": "artifact"
 },
 "e:music-bureau": {
 "wiki": "en",
@@ -5822,7 +5844,8 @@
 "e:dian-submits": {
 "wiki": "en",
 "title": "Dian Kingdom",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:huzi-dike": {
 "wiki": "en",
@@ -6037,7 +6060,8 @@
 "e:mingtang-biyong": {
 "wiki": "en",
 "title": "Mingtang",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:wang-mang-regent": {
 "wiki": "en",
@@ -7107,7 +7131,8 @@
 "e:bamboo-annals": {
 "wiki": "en",
 "title": "Bamboo Annals",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:jin-wu": {
 "wiki": "en",
@@ -7687,7 +7712,8 @@
 "e:sasanian-embassy": {
 "wiki": "en",
 "title": "Sino-Iranian relations",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:yungang": {
 "wiki": "en",
@@ -9057,7 +9083,8 @@
 "e:famen-relic-873": {
 "wiki": "en",
 "title": "Famen Temple",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:huang-chao": {
 "wiki": "en",
@@ -11972,7 +11999,8 @@
 "e:oracle-bones-identified": {
 "wiki": "en",
 "title": "Oracle bone script",
-"zh": null
+"zh": null,
+"prefer": "artifact"
 },
 "e:boxers": {
 "wiki": "en",
@@ -12073,5 +12101,1624 @@
 "wiki": "en",
 "title": "Provisional Government of the Republic of China (1912)",
 "zh": null
+},
+"f:erlitou-turquoise-dragon": {
+"wiki": "en",
+"title": "Erlitou culture",
+"zh": "二里头绿松石龙形器"
+},
+"f:erlitou-divination": {
+"wiki": "en",
+"title": "Scapulimancy",
+"zh": "二里头的骨卜"
+},
+"f:erlitou-palace-temple": {
+"wiki": "en",
+"title": "Erlitou culture",
+"zh": "二里头一号宫殿"
+},
+"f:erlitou-bronze-plaques": {
+"wiki": "en",
+"title": "Erlitou culture",
+"zh": "二里头嵌绿松石铜牌饰"
+},
+"f:xibeigang-royal-cemetery": {
+"wiki": "en",
+"title": "Yinxu",
+"zh": "西北冈王陵区",
+"prefer": "artifact"
+},
+"f:shang-di-worship": {
+"wiki": "en",
+"title": "Shangdi",
+"zh": "商人的上帝与祖先崇拜",
+"prefer": "artifact"
+},
+"f:sanxingdui-pits": {
+"wiki": "en",
+"title": "Sanxingdui",
+"zh": "三星堆祭祀坑",
+"prefer": "artifact"
+},
+"f:zhouyuan-oracle-bones": {
+"wiki": "zh",
+"title": "周原甲骨",
+"zh": "周原甲骨",
+"prefer": "artifact"
+},
+"f:mandate-of-heaven": {
+"wiki": "en",
+"title": "Mandate of Heaven",
+"zh": "天命观"
+},
+"f:zhou-rites": {
+"wiki": "en",
+"title": "Rites of Zhou",
+"zh": "周代礼乐制度"
+},
+"f:jinsha-sun-bird": {
+"wiki": "en",
+"title": "Jinsha site",
+"zh": "金沙遗址与太阳神鸟",
+"prefer": "artifact"
+},
+"f:zhouyi": {
+"wiki": "en",
+"title": "I Ching",
+"zh": "《周易》"
+},
+"f:zichan-bronze-code": {
+"wiki": "en",
+"title": "Zichan",
+"zh": "子产铸刑书"
+},
+"f:louguantai": {
+"wiki": "en",
+"title": "Louguantai",
+"zh": "楼观台"
+},
+"f:spring-autumn-annals": {
+"wiki": "en",
+"title": "Spring and Autumn Annals",
+"zh": "《春秋》"
+},
+"f:qufu-confucius-temple": {
+"wiki": "en",
+"title": "Temple of Confucius, Qufu",
+"zh": "曲阜孔庙"
+},
+"f:mohist-school": {
+"wiki": "en",
+"title": "Mohism",
+"zh": "墨家"
+},
+"f:jixia-academy": {
+"wiki": "en",
+"title": "Jixia Academy",
+"zh": "稷下学宫"
+},
+"f:shang-yang-reforms": {
+"wiki": "en",
+"title": "Shang Yang",
+"zh": "商鞅变法"
+},
+"f:guodian-slips": {
+"wiki": "en",
+"title": "Guodian Chu Slips",
+"zh": "郭店楚简",
+"prefer": "artifact"
+},
+"f:qin-feng-shan": {
+"wiki": "en",
+"title": "Feng Shan",
+"zh": "泰山封禅"
+},
+"f:langya-stele": {
+"wiki": "en",
+"title": "Langya Stele",
+"zh": "琅琊台刻石"
+},
+"f:shuihudi-slips": {
+"wiki": "en",
+"title": "Shuihudi Qin bamboo texts",
+"zh": "睡虎地秦简",
+"prefer": "artifact"
+},
+"f:burning-of-books": {
+"wiki": "en",
+"title": "Burning of books and burying of scholars",
+"zh": "焚书坑儒"
+},
+"f:han-gaozu-qufu": {
+"wiki": "en",
+"title": "Temple of Confucius, Qufu",
+"zh": "汉高祖祭孔"
+},
+"f:mawangdui-texts": {
+"wiki": "en",
+"title": "Mawangdui Silk Texts",
+"zh": "马王堆帛书",
+"prefer": "artifact"
+},
+"f:imperial-academy": {
+"wiki": "en",
+"title": "Taixue",
+"zh": "太学"
+},
+"f:han-wudi-feng-shan": {
+"wiki": "en",
+"title": "Feng Shan",
+"zh": "汉武帝泰山封禅"
+},
+"f:shiqu-pavilion": {
+"wiki": "en",
+"title": "Shiqu Pavilion discussions",
+"zh": "石渠阁会议"
+},
+"f:yicun-sutra": {
+"wiki": "en",
+"title": "Buddhism in China",
+"zh": "伊存授经"
+},
+"f:xin-old-text": {
+"wiki": "en",
+"title": "Old Texts",
+"zh": "古文经学立于学官"
+},
+"f:xin-fuming": {
+"wiki": "en",
+"title": "Wang Mang",
+"zh": "符命与谶纬"
+},
+"f:xin-wangtian": {
+"wiki": "en",
+"title": "Wang Mang",
+"zh": "王田制"
+},
+"f:xin-nine-temples": {
+"wiki": "en",
+"title": "Wang Mang",
+"zh": "王莽九庙",
+"prefer": "artifact"
+},
+"f:chu-prince-ying-buddha": {
+"wiki": "en",
+"title": "Liu Ying (prince)",
+"zh": "楚王英奉佛"
+},
+"f:baima-si": {
+"wiki": "en",
+"title": "White Horse Temple",
+"zh": "白马寺"
+},
+"f:celestial-masters": {
+"wiki": "en",
+"title": "Way of the Celestial Masters",
+"zh": "天师道（五斗米道）"
+},
+"f:an-shigao-translations": {
+"wiki": "en",
+"title": "An Shigao",
+"zh": "安世高译经"
+},
+"f:laozi-temple-ku": {
+"wiki": "en",
+"title": "Laozi",
+"zh": "汉桓帝祭老子"
+},
+"f:xiping-stone-classics": {
+"wiki": "en",
+"title": "Xiping Stone Classics",
+"zh": "熹平石经"
+},
+"f:way-of-great-peace": {
+"wiki": "en",
+"title": "Yellow Turban Rebellion",
+"zh": "太平道"
+},
+"f:qufu-temple-restored": {
+"wiki": "en",
+"title": "Temple of Confucius, Qufu",
+"zh": "曹魏修孔庙"
+},
+"f:xuanxue": {
+"wiki": "en",
+"title": "Xuanxue",
+"zh": "玄学兴起"
+},
+"f:zhengshi-stone-classics": {
+"wiki": "zh",
+"title": "正始石经",
+"zh": "正始石经"
+},
+"f:jianchu-si": {
+"wiki": "en",
+"title": "Kang Senghui",
+"zh": "建初寺"
+},
+"f:dharmakala-vinaya": {
+"wiki": "zh",
+"title": "昙柯迦罗",
+"zh": "昙柯迦罗传戒"
+},
+"f:bamboo-grove": {
+"wiki": "en",
+"title": "Seven Sages of the Bamboo Grove",
+"zh": "竹林七贤"
+},
+"f:jin-guozixue": {
+"wiki": "en",
+"title": "Guozijian",
+"zh": "国子学"
+},
+"f:fotudeng-arrives": {
+"wiki": "en",
+"title": "Fotudeng",
+"zh": "佛图澄来华"
+},
+"f:maoshan-shangqing": {
+"wiki": "en",
+"title": "Shangqing School",
+"zh": "茅山上清派"
+},
+"f:mogao-caves": {
+"wiki": "en",
+"title": "Mogao Caves",
+"zh": "莫高窟"
+},
+"f:donglin-si": {
+"wiki": "en",
+"title": "Donglin Temple",
+"zh": "东林寺"
+},
+"f:maijishan": {
+"wiki": "en",
+"title": "Maijishan Grottoes",
+"zh": "麦积山石窟"
+},
+"f:bingling-si": {
+"wiki": "en",
+"title": "Bingling Temple",
+"zh": "炳灵寺石窟"
+},
+"f:kou-qianzhi-daoism": {
+"wiki": "en",
+"title": "Kou Qianzhi",
+"zh": "寇谦之北天师道"
+},
+"f:yungang-grottoes": {
+"wiki": "en",
+"title": "Yungang Grottoes",
+"zh": "云冈石窟"
+},
+"f:longmen-grottoes": {
+"wiki": "en",
+"title": "Longmen Grottoes",
+"zh": "龙门石窟"
+},
+"f:shaolin-si": {
+"wiki": "en",
+"title": "Shaolin Monastery",
+"zh": "少林寺"
+},
+"f:tongtai-si": {
+"wiki": "en",
+"title": "Jiming Temple",
+"zh": "同泰寺"
+},
+"f:tiantai-zhiyi": {
+"wiki": "en",
+"title": "Tiantai",
+"zh": "智顗入天台山"
+},
+"f:xuandu-guan": {
+"wiki": "en",
+"title": "Xuandu Temple",
+"zh": "玄都观"
+},
+"f:sanjie-jiao": {
+"wiki": "en",
+"title": "Sanjiejiao",
+"zh": "三阶教"
+},
+"f:guoqing-si": {
+"wiki": "en",
+"title": "Guoqing Temple",
+"zh": "国清寺"
+},
+"f:renshou-stupas": {
+"wiki": "en",
+"title": "Emperor Wen of Sui",
+"zh": "仁寿舍利塔"
+},
+"f:guozijian-sui": {
+"wiki": "en",
+"title": "Guozijian",
+"zh": "国子监"
+},
+"f:simen-ta": {
+"wiki": "en",
+"title": "Four Gates Pagoda",
+"zh": "四门塔"
+},
+"f:huaisheng-mosque": {
+"wiki": "en",
+"title": "Huaisheng Mosque",
+"zh": "怀圣寺"
+},
+"f:jokhang": {
+"wiki": "en",
+"title": "Jokhang",
+"zh": "大昭寺"
+},
+"f:big-wild-goose-pagoda": {
+"wiki": "en",
+"title": "Giant Wild Goose Pagoda",
+"zh": "大雁塔"
+},
+"f:wujing-zhengyi": {
+"wiki": "en",
+"title": "Kong Yingda",
+"zh": "五经正义"
+},
+"f:fengxian-temple": {
+"wiki": "en",
+"title": "Longmen Grottoes",
+"zh": "龙门奉先寺卢舍那大佛"
+},
+"f:leshan-buddha": {
+"wiki": "en",
+"title": "Leshan Giant Buddha",
+"zh": "乐山大佛"
+},
+"f:uyghur-manichaeism": {
+"wiki": "en",
+"title": "Uyghur Khaganate",
+"zh": "回鹘尊奉摩尼教"
+},
+"f:nestorian-stele": {
+"wiki": "en",
+"title": "Xi'an Stele",
+"zh": "大秦景教流行中国碑"
+},
+"f:shangjing-temples": {
+"wiki": "en",
+"title": "Abaoji",
+"zh": "辽上京孔子庙"
+},
+"f:shu-stone-classics": {
+"wiki": "en",
+"title": "Later Shu",
+"zh": "蜀石经"
+},
+"f:fayan-school": {
+"wiki": "en",
+"title": "Fayan Wenyi",
+"zh": "法眼宗"
+},
+"f:wuyue-stupas": {
+"wiki": "en",
+"title": "Wuyue",
+"zh": "钱弘俶八万四千塔"
+},
+"f:zhou-shizong-ban": {
+"wiki": "en",
+"title": "Emperor Shizong of Later Zhou",
+"zh": "后周世宗限佛"
+},
+"f:yunyan-pagoda": {
+"wiki": "en",
+"title": "Huqiu Tower",
+"zh": "虎丘云岩寺塔"
+},
+"f:kaibao-canon": {
+"wiki": "en",
+"title": "Kaibao Canon",
+"zh": "开宝藏"
+},
+"f:longxing-si": {
+"wiki": "en",
+"title": "Longxing Temple",
+"zh": "隆兴寺"
+},
+"f:yuelu-academy": {
+"wiki": "en",
+"title": "Yuelu Academy",
+"zh": "岳麓书院"
+},
+"f:qingjing-mosque": {
+"wiki": "en",
+"title": "Qingjing Mosque",
+"zh": "清净寺"
+},
+"f:iron-pagoda": {
+"wiki": "en",
+"title": "Iron Pagoda",
+"zh": "开封铁塔"
+},
+"f:yingxian-pagoda": {
+"wiki": "en",
+"title": "Pagoda of Fogong Temple",
+"zh": "应县木塔"
+},
+"f:sakya-monastery": {
+"wiki": "en",
+"title": "Sakya Monastery",
+"zh": "萨迦寺"
+},
+"f:wanshou-daozang": {
+"wiki": "en",
+"title": "Daozang",
+"zh": "政和万寿道藏"
+},
+"f:quanzhen": {
+"wiki": "en",
+"title": "Quanzhen School",
+"zh": "全真道"
+},
+"f:ehu-meeting": {
+"wiki": "en",
+"title": "Lu Jiuyuan",
+"zh": "鹅湖之会"
+},
+"f:dazu-baoding": {
+"wiki": "en",
+"title": "Dazu Rock Carvings",
+"zh": "大足石刻（宝顶山）"
+},
+"f:bailudong-revival": {
+"wiki": "en",
+"title": "White Deer Grotto Academy",
+"zh": "白鹿洞书院"
+},
+"f:tiantong-dogen": {
+"wiki": "en",
+"title": "Tiantong Temple",
+"zh": "天童寺"
+},
+"f:changchun-palace": {
+"wiki": "en",
+"title": "White Cloud Temple",
+"zh": "长春宫（白云观）"
+},
+"f:liangzhou-meeting": {
+"wiki": "en",
+"title": "Sakya Pandita",
+"zh": "凉州会盟"
+},
+"f:longhushan-zhang-zongyan": {
+"wiki": "en",
+"title": "Mount Longhu",
+"zh": "龙虎山"
+},
+"f:miaoying-white-dagoba": {
+"wiki": "en",
+"title": "Miaoying Temple",
+"zh": "妙应寺白塔"
+},
+"f:feilaifeng-yuan": {
+"wiki": "en",
+"title": "Feilai Feng",
+"zh": "飞来峰造像"
+},
+"f:montecorvino": {
+"wiki": "en",
+"title": "John of Montecorvino",
+"zh": "大都天主教堂"
+},
+"f:beijing-confucius-temple": {
+"wiki": "en",
+"title": "Temple of Confucius, Beijing",
+"zh": "北京孔庙"
+},
+"f:juyongguan-cloud-platform": {
+"wiki": "en",
+"title": "Cloud Platform at Juyong Pass",
+"zh": "居庸关云台"
+},
+"f:ganden-monastery": {
+"wiki": "en",
+"title": "Ganden Monastery",
+"zh": "甘丹寺"
+},
+"f:wudang-mountains": {
+"wiki": "en",
+"title": "Wudang Mountains",
+"zh": "武当山"
+},
+"f:temple-of-heaven": {
+"wiki": "en",
+"title": "Temple of Heaven",
+"zh": "天坛"
+},
+"f:id-kah-mosque": {
+"wiki": "en",
+"title": "Id Kah Mosque",
+"zh": "艾提尕尔清真寺"
+},
+"f:jingtang-education": {
+"wiki": "en",
+"title": "Hu Dengzhou",
+"zh": "胡登洲经堂教育"
+},
+"f:dazhao-hohhot": {
+"wiki": "en",
+"title": "Dazhao Temple (Hohhot)",
+"zh": "呼和浩特大召"
+},
+"f:ruins-of-st-pauls": {
+"wiki": "en",
+"title": "Ruins of St. Paul's",
+"zh": "澳门圣保禄教堂（大三巴）"
+},
+"f:donglin-academy": {
+"wiki": "en",
+"title": "Donglin movement",
+"zh": "东林书院"
+},
+"f:nantang-beijing": {
+"wiki": "en",
+"title": "Cathedral of the Immaculate Conception, Beijing",
+"zh": "北京南堂（宣武门天主堂）"
+},
+"f:potala-palace": {
+"wiki": "en",
+"title": "Potala Palace",
+"zh": "布达拉宫"
+},
+"f:labrang-monastery": {
+"wiki": "en",
+"title": "Labrang Monastery",
+"zh": "拉卜楞寺"
+},
+"f:yonghe-temple": {
+"wiki": "en",
+"title": "Yonghe Temple",
+"zh": "雍和宫"
+},
+"f:putuo-zongcheng": {
+"wiki": "en",
+"title": "Putuo Zongcheng Temple",
+"zh": "普陀宗乘之庙"
+},
+"f:morrison-mission": {
+"wiki": "en",
+"title": "Robert Morrison (missionary)",
+"zh": "马礼逊来华"
+},
+"f:jintian-uprising": {
+"wiki": "en",
+"title": "Jintian Uprising",
+"zh": "金田拜上帝会"
+},
+"f:wanmu-caotang": {
+"wiki": "en",
+"title": "Kang Youwei",
+"zh": "万木草堂"
+},
+"i:erlitou-bronze-vessels": {
+"wiki": "en",
+"title": "Erlitou culture",
+"zh": "二里头青铜礼器",
+"prefer": "artifact"
+},
+"i:oracle-bone-script": {
+"wiki": "en",
+"title": "Oracle bone script",
+"zh": "甲骨文",
+"prefer": "artifact"
+},
+"i:houmuwu-ding": {
+"wiki": "en",
+"title": "Houmuwu ding",
+"zh": "后母戊鼎",
+"prefer": "artifact"
+},
+"i:mao-gong-ding": {
+"wiki": "en",
+"title": "Mao Gong ding",
+"zh": "毛公鼎铭文",
+"prefer": "artifact"
+},
+"i:guo-iron-sword": {
+"wiki": "zh",
+"title": "虢国墓地",
+"zh": "虢国玉柄铁剑",
+"prefer": "artifact"
+},
+"i:halley-comet-record": {
+"wiki": "en",
+"title": "Halley's Comet",
+"zh": "哈雷彗星最早记录"
+},
+"i:jin-cast-iron-cauldron": {
+"wiki": "zh",
+"title": "铸刑鼎",
+"zh": "晋铸刑鼎"
+},
+"i:sword-of-goujian": {
+"wiki": "en",
+"title": "Sword of Goujian",
+"zh": "越王勾践剑",
+"prefer": "artifact"
+},
+"i:hangou-canal": {
+"wiki": "en",
+"title": "Grand Canal",
+"zh": "邗沟"
+},
+"i:zenghouyi-bells": {
+"wiki": "en",
+"title": "Bianzhong of Marquis Yi of Zeng",
+"zh": "曾侯乙编钟",
+"prefer": "artifact"
+},
+"i:dujiangyan": {
+"wiki": "en",
+"title": "Dujiangyan",
+"zh": "都江堰"
+},
+"i:zhengguo-canal": {
+"wiki": "en",
+"title": "Zhengguo Canal",
+"zh": "郑国渠"
+},
+"i:ban-liang-coin": {
+"wiki": "en",
+"title": "Ban Liang",
+"zh": "半两钱"
+},
+"i:lingqu-canal": {
+"wiki": "en",
+"title": "Lingqu",
+"zh": "灵渠"
+},
+"i:qin-great-wall": {
+"wiki": "en",
+"title": "Great Wall of China",
+"zh": "秦长城"
+},
+"i:qin-straight-road": {
+"wiki": "en",
+"title": "Qin Straight Road",
+"zh": "秦直道"
+},
+"i:terracotta-army": {
+"wiki": "en",
+"title": "Terracotta Army",
+"zh": "兵马俑",
+"prefer": "artifact"
+},
+"i:baqiao-paper": {
+"wiki": "en",
+"title": "History of paper",
+"zh": "灞桥纸",
+"prefer": "artifact"
+},
+"i:wuzhu-coin": {
+"wiki": "en",
+"title": "Wu Zhu",
+"zh": "五铢钱"
+},
+"i:jade-burial-suit": {
+"wiki": "en",
+"title": "Jade burial suit",
+"zh": "刘胜金缕玉衣"
+},
+"i:taichu-calendar": {
+"wiki": "en",
+"title": "Taichu Calendar",
+"zh": "太初历"
+},
+"i:seed-drill": {
+"wiki": "en",
+"title": "Seed drill",
+"zh": "耧车"
+},
+"i:sunspot-record": {
+"wiki": "en",
+"title": "Sunspot",
+"zh": "最早的太阳黑子记录"
+},
+"i:fan-shengzhi-shu": {
+"wiki": "en",
+"title": "Fan Shengzhi shu",
+"zh": "氾胜之书"
+},
+"i:xin-jialiang": {
+"wiki": "en",
+"title": "Liu Xin (scholar)",
+"zh": "新莽嘉量",
+"prefer": "artifact"
+},
+"i:xin-caliper": {
+"wiki": "en",
+"title": "Calipers",
+"zh": "新莽铜卡尺",
+"prefer": "artifact"
+},
+"i:xin-coins": {
+"wiki": "en",
+"title": "Xin dynasty coinage",
+"zh": "王莽货币"
+},
+"i:xin-autopsy": {
+"wiki": "en",
+"title": "History of anatomy",
+"zh": "王孙庆解剖"
+},
+"i:xin-gliding": {
+"wiki": "en",
+"title": "Wang Mang",
+"zh": "羽翼飞行试验"
+},
+"i:water-bellows-du-shi": {
+"wiki": "en",
+"title": "Du Shi",
+"zh": "杜诗水排"
+},
+"i:paper-cai-lun": {
+"wiki": "en",
+"title": "Cai Lun",
+"zh": "蔡伦改进造纸术",
+"prefer": "artifact"
+},
+"i:water-armillary-zhang-heng": {
+"wiki": "en",
+"title": "Zhang Heng",
+"zh": "张衡水运浑象"
+},
+"i:seismoscope-zhang-heng": {
+"wiki": "en",
+"title": "Seismometer",
+"zh": "候风地动仪"
+},
+"i:chain-pump-bi-lan": {
+"wiki": "en",
+"title": "Square-pallet chain pump",
+"zh": "翻车"
+},
+"i:wooden-ox": {
+"wiki": "en",
+"title": "Wooden ox",
+"zh": "木牛流马"
+},
+"i:south-pointing-chariot-ma-jun": {
+"wiki": "en",
+"title": "South-pointing chariot",
+"zh": "马钧指南车"
+},
+"i:liu-hui-pi": {
+"wiki": "en",
+"title": "Liu Hui",
+"zh": "刘徽割圆术"
+},
+"i:pei-xiu-cartography": {
+"wiki": "en",
+"title": "Pei Xiu",
+"zh": "裴秀制图六体"
+},
+"i:precession-yu-xi": {
+"wiki": "en",
+"title": "Yu Xi",
+"zh": "虞喜发现岁差"
+},
+"i:artemisia-malaria-ge-hong": {
+"wiki": "en",
+"title": "Artemisia annua",
+"zh": "青蒿治疟"
+},
+"i:stirrups-feng-sufu": {
+"wiki": "en",
+"title": "Stirrup",
+"zh": "双马镫",
+"prefer": "artifact"
+},
+"i:daming-calendar": {
+"wiki": "en",
+"title": "Zu Chongzhi",
+"zh": "大明历"
+},
+"i:pi-zu-chongzhi": {
+"wiki": "en",
+"title": "Zu Chongzhi",
+"zh": "祖冲之圆周率"
+},
+"i:qimin-yaoshu": {
+"wiki": "en",
+"title": "Qimin Yaoshu",
+"zh": "齐民要术"
+},
+"i:co-fusion-steel": {
+"wiki": "en",
+"title": "Qiwu Huaiwen",
+"zh": "綦毋怀文灌钢法"
+},
+"i:zhaozhou-bridge": {
+"wiki": "en",
+"title": "Anji Bridge",
+"zh": "赵州桥"
+},
+"i:huangji-calendar": {
+"wiki": "en",
+"title": "Liu Zhuo",
+"zh": "皇极历"
+},
+"i:grand-canal-sui": {
+"wiki": "en",
+"title": "Grand Canal (China)",
+"zh": "大运河"
+},
+"i:xinxiu-bencao": {
+"wiki": "en",
+"title": "Xinxiu Bencao",
+"zh": "新修本草"
+},
+"i:tang-sancai": {
+"wiki": "en",
+"title": "Tang dynasty tomb figures",
+"zh": "唐三彩"
+},
+"i:meridian-survey": {
+"wiki": "en",
+"title": "Yi Xing",
+"zh": "测量子午线"
+},
+"i:flying-money": {
+"wiki": "en",
+"title": "Flying cash",
+"zh": "飞钱"
+},
+"i:diamond-sutra": {
+"wiki": "en",
+"title": "Diamond Sutra",
+"zh": "金刚经印本"
+},
+"i:curved-plough": {
+"wiki": "en",
+"title": "Lu Guimeng",
+"zh": "曲辕犁"
+},
+"i:wuyue-flamethrower": {
+"wiki": "en",
+"title": "Pen Huo Qi",
+"zh": "猛火油柜"
+},
+"i:nine-classics-print": {
+"wiki": "en",
+"title": "Feng Dao",
+"zh": "国子监刻印九经"
+},
+"i:cao-yuanzhong-prints": {
+"wiki": "en",
+"title": "Cao Yuanzhong",
+"zh": "曹元忠雕印观音像"
+},
+"i:fire-lance": {
+"wiki": "en",
+"title": "Fire lance",
+"zh": "火枪",
+"prefer": "artifact"
+},
+"i:jiaozi": {
+"wiki": "en",
+"title": "Jiaozi (currency)",
+"zh": "交子"
+},
+"i:bronze-acupuncture-figure": {
+"wiki": "en",
+"title": "Wang Weiyi",
+"zh": "针灸铜人"
+},
+"i:wujing-zongyao": {
+"wiki": "en",
+"title": "Wujing Zongyao",
+"zh": "《武经总要》火药配方"
+},
+"i:movable-type": {
+"wiki": "en",
+"title": "Bi Sheng",
+"zh": "活字印刷术"
+},
+"i:jia-xian-triangle": {
+"wiki": "en",
+"title": "Jia Xian",
+"zh": "贾宪三角"
+},
+"i:magnetic-compass": {
+"wiki": "en",
+"title": "Compass",
+"zh": "指南针与磁偏角"
+},
+"i:su-song-clock": {
+"wiki": "en",
+"title": "Su Song",
+"zh": "水运仪象台"
+},
+"i:yingzao-fashi": {
+"wiki": "en",
+"title": "Yingzao Fashi",
+"zh": "营造法式"
+},
+"i:gengzhi-tu": {
+"wiki": "en",
+"title": "Gengzhitu",
+"zh": "耕织图"
+},
+"i:huizi": {
+"wiki": "en",
+"title": "Huizi",
+"zh": "会子"
+},
+"i:caishi-paddle-ships": {
+"wiki": "en",
+"title": "Battle of Caishi",
+"zh": "采石之战车船"
+},
+"i:thunderclap-bomb": {
+"wiki": "en",
+"title": "Thunder crash bomb",
+"zh": "震天雷"
+},
+"i:rain-gauge-qin": {
+"wiki": "en",
+"title": "Rain gauge",
+"zh": "天池盆测雨"
+},
+"i:tuhuoqiang": {
+"wiki": "en",
+"title": "Fire lance",
+"zh": "突火枪"
+},
+"i:gaocheng-observatory": {
+"wiki": "en",
+"title": "Gaocheng Astronomical Observatory",
+"zh": "登封观星台"
+},
+"i:shoushi-calendar": {
+"wiki": "en",
+"title": "Shoushi calendar",
+"zh": "授时历"
+},
+"i:huitong-canal": {
+"wiki": "en",
+"title": "Grand Canal",
+"zh": "会通河"
+},
+"i:wooden-movable-type": {
+"wiki": "en",
+"title": "Wang Zhen (inventor)",
+"zh": "木活字与转轮排字架"
+},
+"i:xanadu-gun": {
+"wiki": "en",
+"title": "Xanadu Gun",
+"zh": "元大德二年铜火铳"
+},
+"i:two-colour-printing": {
+"wiki": "en",
+"title": "Woodblock printing",
+"zh": "朱墨套印"
+},
+"i:yongle-encyclopedia": {
+"wiki": "en",
+"title": "Yongle Encyclopedia",
+"zh": "永乐大典"
+},
+"i:forbidden-city": {
+"wiki": "en",
+"title": "Forbidden City",
+"zh": "紫禁城"
+},
+"i:bronze-movable-type": {
+"wiki": "en",
+"title": "Movable type",
+"zh": "铜活字印刷"
+},
+"i:pan-jixun-river": {
+"wiki": "en",
+"title": "Pan Jixun",
+"zh": "潘季驯治河"
+},
+"i:equal-temperament": {
+"wiki": "en",
+"title": "Zhu Zaiyu",
+"zh": "十二平均律"
+},
+"i:suanfa-tongzong": {
+"wiki": "en",
+"title": "Cheng Dawei",
+"zh": "算法统宗"
+},
+"i:hongyi-cannon": {
+"wiki": "en",
+"title": "Battle of Ningyuan",
+"zh": "宁远之战红夷大炮"
+},
+"i:ten-bamboo-studio": {
+"wiki": "en",
+"title": "Ten Bamboo Studio Manual of Calligraphy and Painting",
+"zh": "十竹斋书画谱"
+},
+"i:verbiest-instruments": {
+"wiki": "en",
+"title": "Beijing Ancient Observatory",
+"zh": "南怀仁制天文仪器"
+},
+"i:kangxi-atlas": {
+"wiki": "en",
+"title": "Kangxi Atlas",
+"zh": "皇舆全览图"
+},
+"i:siku-quanshu": {
+"wiki": "en",
+"title": "Siku Quanshu",
+"zh": "四库全书"
+},
+"i:huanghu-steamship": {
+"wiki": "en",
+"title": "Xu Shou",
+"zh": "黄鹄号"
+},
+"i:jiangnan-arsenal": {
+"wiki": "en",
+"title": "Jiangnan Arsenal",
+"zh": "江南制造局"
+},
+"i:fuzhou-arsenal": {
+"wiki": "en",
+"title": "Foochow Arsenal",
+"zh": "福州船政局"
+},
+"i:tangxu-railway": {
+"wiki": "en",
+"title": "Kaiping Tramway",
+"zh": "唐胥铁路"
+},
+"i:dragon-dollar": {
+"wiki": "en",
+"title": "Chinese dragon dollar",
+"zh": "光绪元宝（龙洋）"
+},
+"s:hangu-qin": {
+"wiki": "en",
+"title": "Hangu Pass",
+"zh": "函谷关（秦）"
+},
+"s:hangu-han": {
+"wiki": "en",
+"title": "Hangu Pass",
+"zh": "函谷关（汉）"
+},
+"s:tongguan": {
+"wiki": "en",
+"title": "Tong Pass",
+"zh": "潼关"
+},
+"s:wuguan": {
+"wiki": "en",
+"title": "Wu Pass",
+"zh": "武关"
+},
+"s:xiaoguan": {
+"wiki": "en",
+"title": "Xiao Pass",
+"zh": "萧关"
+},
+"s:dasan": {
+"wiki": "en",
+"title": "Dasan Pass",
+"zh": "大散关"
+},
+"s:pujin": {
+"wiki": "en",
+"title": "Pujin Ferry",
+"zh": "蒲津关",
+"prefer": "artifact"
+},
+"s:hulao": {
+"wiki": "en",
+"title": "Hulao Pass",
+"zh": "虎牢关"
+},
+"s:yique": {
+"wiki": "en",
+"title": "Yique",
+"zh": "伊阙关"
+},
+"s:jianmen": {
+"wiki": "en",
+"title": "Jianmen Pass",
+"zh": "剑门关"
+},
+"s:yangping": {
+"wiki": "en",
+"title": "Yangping Pass",
+"zh": "阳平关"
+},
+"s:jiangguan": {
+"wiki": "en",
+"title": "Qutang Gorge",
+"zh": "瞿塘关（江关）"
+},
+"s:wusheng": {
+"wiki": "en",
+"title": "Wusheng Pass",
+"zh": "武胜关"
+},
+"s:jingxing": {
+"wiki": "en",
+"title": "Jingxing",
+"zh": "井陉关"
+},
+"s:tianjing": {
+"wiki": "en",
+"title": "Taihang Mountains",
+"zh": "天井关"
+},
+"s:niangzi": {
+"wiki": "en",
+"title": "Niangzi Pass",
+"zh": "娘子关"
+},
+"s:yanmen": {
+"wiki": "en",
+"title": "Yanmen Pass",
+"zh": "雁门关"
+},
+"s:pingxing": {
+"wiki": "en",
+"title": "Pingxing Pass",
+"zh": "平型关"
+},
+"s:ningwu": {
+"wiki": "en",
+"title": "Ningwu Pass",
+"zh": "宁武关"
+},
+"s:pianguan": {
+"wiki": "en",
+"title": "Pianguan County",
+"zh": "偏关"
+},
+"s:shahu": {
+"wiki": "en",
+"title": "Shahukou",
+"zh": "杀虎口"
+},
+"s:zhangjiakou": {
+"wiki": "en",
+"title": "Zhangjiakou",
+"zh": "张家口"
+},
+"s:juyong": {
+"wiki": "en",
+"title": "Juyong Pass",
+"zh": "居庸关"
+},
+"s:zijing": {
+"wiki": "en",
+"title": "Zijing Pass",
+"zh": "紫荆关"
+},
+"s:daoma": {
+"wiki": "en",
+"title": "Daoma Pass",
+"zh": "倒马关"
+},
+"s:gubeikou": {
+"wiki": "en",
+"title": "Gubeikou",
+"zh": "古北口"
+},
+"s:xifengkou": {
+"wiki": "en",
+"title": "Xifengkou",
+"zh": "喜峰口"
+},
+"s:shanhai": {
+"wiki": "en",
+"title": "Shanhai Pass",
+"zh": "山海关"
+},
+"s:waqiao": {
+"wiki": "en",
+"title": "Xiongxian",
+"zh": "瓦桥关"
+},
+"s:yumen": {
+"wiki": "en",
+"title": "Yumen Pass",
+"zh": "玉门关"
+},
+"s:yangguan": {
+"wiki": "en",
+"title": "Yangguan",
+"zh": "阳关"
+},
+"s:jiayu": {
+"wiki": "en",
+"title": "Jiayu Pass",
+"zh": "嘉峪关"
+},
+"s:tiemen": {
+"wiki": "en",
+"title": "Tiemenguan",
+"zh": "铁门关"
+},
+"s:meiguan": {
+"wiki": "en",
+"title": "Meiguan",
+"zh": "梅关"
+},
+"s:xianxia": {
+"wiki": "en",
+"title": "Xianxia Pass",
+"zh": "仙霞关"
+},
+"s:kunlun": {
+"wiki": "en",
+"title": "Kunlun Pass",
+"zh": "昆仑关"
+},
+"s:zhennan": {
+"wiki": "en",
+"title": "Friendship Pass",
+"zh": "镇南关"
+},
+"r:zhidao": {
+"wiki": "en",
+"title": "Qin Straight Road",
+"zh": "秦直道"
+},
+"r:chidao-east": {
+"wiki": "en",
+"title": "Qin Imperial Highways",
+"zh": "秦驰道·东方道"
+},
+"r:chidao-north": {
+"wiki": "en",
+"title": "Qin Imperial Highways",
+"zh": "秦驰道·燕赵道"
+},
+"r:chidao-south": {
+"wiki": "en",
+"title": "Qin Imperial Highways",
+"zh": "秦驰道·南方道"
+},
+"r:wuchi": {
+"wiki": "en",
+"title": "Wuchi Road",
+"zh": "五尺道"
+},
+"r:jinniu": {
+"wiki": "en",
+"title": "Shu Roads",
+"zh": "金牛道（蜀道）"
+},
+"r:baoxie": {
+"wiki": "en",
+"title": "Baoxie Road",
+"zh": "褒斜道"
+},
+"r:liangjing": {
+"wiki": "en",
+"title": "Chang'an",
+"zh": "两京大道"
+},
+"r:hexi": {
+"wiki": "en",
+"title": "Hexi Corridor",
+"zh": "河西驿道"
+},
+"r:bianhe": {
+"wiki": "en",
+"title": "Grand Canal (China)",
+"zh": "汴河驿道"
+},
+"r:hedong": {
+"wiki": "en",
+"title": "Taihang Mountains",
+"zh": "河东道（太行驿路）"
+},
+"r:lingnan": {
+"wiki": "en",
+"title": "Lingnan",
+"zh": "湘粤驿道"
+},
+"r:dayu": {
+"wiki": "en",
+"title": "Meiguan",
+"zh": "大庾岭道（梅岭古道）"
+},
+"r:tangbo": {
+"wiki": "en",
+"title": "Tang–Tibet Ancient Road",
+"zh": "唐蕃古道"
+},
+"r:shendu": {
+"wiki": "en",
+"title": "Southern Silk Road",
+"zh": "灵关道—博南道（蜀身毒道）"
+},
+"r:chama-sc": {
+"wiki": "en",
+"title": "Tea Horse Road",
+"zh": "茶马古道·川藏道"
+},
+"r:chama-yn": {
+"wiki": "en",
+"title": "Tea Horse Road",
+"zh": "茶马古道·滇藏道"
+},
+"r:yuan-shangdu": {
+"wiki": "en",
+"title": "Xanadu",
+"zh": "两都驿路"
+},
+"r:guanma-south": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "官马南路（京—广）"
+},
+"r:guanma-east": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "官马东路（京—闽）"
+},
+"r:guanma-west": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "官马西路（京—陕—川）"
+},
+"r:guanma-nw": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "官马西北路（陕—甘—新）"
+},
+"r:guanma-ne": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "官马北路（京—盛京）"
+},
+"r:guanma-sw": {
+"wiki": "en",
+"title": "Yizhan",
+"zh": "滇黔驿道"
+},
+"r:xianggui": {
+"wiki": "en",
+"title": "Lingqu",
+"zh": "湘桂驿道"
+},
+"w:chu-fangcheng": {
+"wiki": "zh",
+"title": "楚长城",
+"zh": "楚方城"
+},
+"w:qi-wall": {
+"wiki": "en",
+"title": "Great Wall of Qi",
+"zh": "齐长城"
+},
+"w:wei-hexi": {
+"wiki": "zh",
+"title": "魏长城",
+"zh": "魏河西长城"
+},
+"w:qin-zhaowang": {
+"wiki": "zh",
+"title": "秦长城",
+"zh": "秦昭王长城"
+},
+"w:zhao-north": {
+"wiki": "zh",
+"title": "赵长城",
+"zh": "赵北长城"
+},
+"w:yan-north": {
+"wiki": "zh",
+"title": "燕长城",
+"zh": "燕北长城"
+},
+"w:qin-wall": {
+"wiki": "en",
+"title": "Great Wall of China#History",
+"zh": "秦长城（万里长城）"
+},
+"w:han-wall": {
+"wiki": "zh",
+"title": "汉长城",
+"zh": "汉长城"
+},
+"w:wei-liuzhen": {
+"wiki": "zh",
+"title": "北魏长城",
+"zh": "北魏六镇长城"
+},
+"w:qi-north": {
+"wiki": "zh",
+"title": "北齐长城",
+"zh": "北齐长城"
+},
+"w:sui-wall": {
+"wiki": "zh",
+"title": "隋长城",
+"zh": "隋长城"
+},
+"w:jin-jiehao": {
+"wiki": "en",
+"title": "Jin Great Wall",
+"zh": "金界壕"
+},
+"w:ming-wall": {
+"wiki": "en",
+"title": "Great Wall of China#Ming era",
+"zh": "明长城"
+},
+"c:fengpei": {
+"wiki": "zh",
+"title": "丰沛集团",
+"zh": "丰沛集团"
+},
+"c:nanyang": {
+"wiki": "zh",
+"title": "云台二十八将",
+"zh": "南阳豪族"
+},
+"c:hebei-han": {
+"wiki": "zh",
+"title": "郭圣通",
+"zh": "河北豪族"
+},
+"c:liangzhou": {
+"wiki": "zh",
+"title": "凉州三明",
+"zh": "凉州集团"
+},
+"c:ruying": {
+"wiki": "zh",
+"title": "颍川荀氏",
+"zh": "汝颍士人"
+},
+"c:qiaopei": {
+"wiki": "zh",
+"title": "高平陵之变",
+"zh": "谯沛集团"
+},
+"c:huaisi": {
+"wiki": "zh",
+"title": "淮泗集团",
+"zh": "淮泗集团"
+},
+"c:wusi": {
+"wiki": "zh",
+"title": "吴郡四姓",
+"zh": "江东大族"
+},
+"c:jingzhou-shu": {
+"wiki": "zh",
+"title": "蜀汉",
+"zh": "荆州集团"
+},
+"c:yizhou": {
+"wiki": "zh",
+"title": "谯周",
+"zh": "益州本土士人"
+},
+"c:qiaoxing": {
+"wiki": "zh",
+"title": "门阀政治",
+"zh": "侨姓门阀"
+},
+"c:beifu": {
+"wiki": "zh",
+"title": "北府兵",
+"zh": "北府兵集团"
+},
+"c:xifu": {
+"wiki": "zh",
+"title": "桓温",
+"zh": "荆州西府"
+},
+"c:daibei": {
+"wiki": "zh",
+"title": "北魏孝文帝改革",
+"zh": "代北勋贵"
+},
+"c:shandong": {
+"wiki": "zh",
+"title": "五姓七家",
+"zh": "山东士族"
+},
+"c:liuzhen": {
+"wiki": "zh",
+"title": "六镇之乱",
+"zh": "六镇勋贵"
+},
+"c:guanlong": {
+"wiki": "zh",
+"title": "关陇集团",
+"zh": "关陇集团"
+},
+"c:guanzhong": {
+"wiki": "zh",
+"title": "河东裴氏",
+"zh": "关中郡姓"
+},
+"c:hesuo": {
+"wiki": "zh",
+"title": "河朔三镇",
+"zh": "河朔三镇"
+},
+"c:shatuo": {
+"wiki": "zh",
+"title": "沙陀",
+"zh": "沙陀集团"
+},
+"c:jiangxi": {
+"wiki": "zh",
+"title": "唐宋八大家",
+"zh": "江西士大夫"
+},
+"c:luoshushuo": {
+"wiki": "zh",
+"title": "洛蜀党争",
+"zh": "洛蜀朔党"
+},
+"c:shihou": {
+"wiki": "zh",
+"title": "汉人世侯",
+"zh": "汉人世侯"
+},
+"c:huaixi": {
+"wiki": "zh",
+"title": "淮西勋贵",
+"zh": "淮西集团"
+},
+"c:zhedong": {
+"wiki": "zh",
+"title": "刘基",
+"zh": "浙东集团"
+},
+"c:jinshang": {
+"wiki": "zh",
+"title": "晋商",
+"zh": "晋商"
+},
+"c:huishang": {
+"wiki": "zh",
+"title": "徽商",
+"zh": "徽商"
+},
+"c:donglin": {
+"wiki": "zh",
+"title": "东林党",
+"zh": "东林党"
+},
+"c:qichuzhe": {
+"wiki": "zh",
+"title": "明朝党争",
+"zh": "齐楚浙党"
+},
+"c:liaodong": {
+"wiki": "zh",
+"title": "关宁铁骑",
+"zh": "辽东将门"
+},
+"c:xiangjun": {
+"wiki": "zh",
+"title": "湘军",
+"zh": "湘军集团"
+},
+"c:huaijun": {
+"wiki": "zh",
+"title": "淮军",
+"zh": "淮军集团"
+},
+"c:beiyang": {
+"wiki": "zh",
+"title": "北洋军阀",
+"zh": "北洋集团"
 }
 }
