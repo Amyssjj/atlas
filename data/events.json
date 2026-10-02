@@ -16299,7 +16299,7 @@
   ],
   "people": [],
   "states": [
-   "Jin"
+   "Cheng Han"
   ]
  },
  {
@@ -16396,8 +16396,7 @@
    "shi-le"
   ],
   "states": [
-   "Han Zhao",
-   "Jin"
+   "Han Zhao"
   ]
  },
  {
@@ -16514,6 +16513,7 @@
    "liu-kun"
   ],
   "states": [
+   "Dai",
    "Han Zhao"
   ]
  },
@@ -16610,7 +16610,9 @@
   "people": [
    "liu-kun"
   ],
-  "states": []
+  "states": [
+   "Han Zhao"
+  ]
  },
  {
   "id": "jin-zhun-coup",
@@ -16654,7 +16656,9 @@
   "people": [
    "shi-le"
   ],
-  "states": []
+  "states": [
+   "Later Zhao"
+  ]
  },
  {
   "id": "zu-ti-dies",
@@ -16676,7 +16680,7 @@
    "zu-ti"
   ],
   "states": [
-   "Eastern Jin"
+   "Later Zhao"
   ]
  },
  {
@@ -16750,7 +16754,8 @@
    "shi-le"
   ],
   "states": [
-   "Eastern Jin"
+   "Han Zhao",
+   "Later Zhao"
   ]
  },
  {
@@ -16773,7 +16778,7 @@
   ],
   "people": [],
   "states": [
-   "Eastern Jin"
+   "Later Zhao"
   ]
  },
  {
@@ -16796,7 +16801,7 @@
   ],
   "people": [],
   "states": [
-   "Eastern Jin"
+   "Later Zhao"
   ]
  },
  {
@@ -16816,7 +16821,9 @@
   "source": "https://en.wikipedia.org/wiki/Former_Yan",
   "places": [],
   "people": [],
-  "states": []
+  "states": [
+   "Former Yan"
+  ]
  },
  {
   "id": "shiyijian-dai",
@@ -16835,7 +16842,10 @@
   "source": "https://en.wikipedia.org/wiki/Tuoba_Shiyijian",
   "places": [],
   "people": [],
-  "states": []
+  "states": [
+   "Dai",
+   "Later Zhao"
+  ]
  },
  {
   "id": "yan-sacks-hwando",
@@ -16881,6 +16891,7 @@
    "huan-wen"
   ],
   "states": [
+   "Cheng Han",
    "Eastern Jin"
   ]
  },
@@ -16903,7 +16914,7 @@
   ],
   "people": [],
   "states": [
-   "Eastern Jin"
+   "Later Zhao"
   ]
  },
  {
@@ -16926,7 +16937,8 @@
   ],
   "people": [],
   "states": [
-   "Eastern Jin"
+   "Former Qin",
+   "Later Zhao"
   ]
  },
  {
@@ -16948,7 +16960,9 @@
    "dingzhou"
   ],
   "people": [],
-  "states": []
+  "states": [
+   "Former Yan"
+  ]
  },
  {
   "id": "lanting",
@@ -16997,7 +17011,7 @@
    "wang-meng"
   ],
   "states": [
-   "Eastern Jin"
+   "Former Qin"
   ]
  },
  {
@@ -17047,7 +17061,7 @@
    "wang-meng"
   ],
   "states": [
-   "Eastern Jin"
+   "Former Qin"
   ]
  },
  {
@@ -17094,7 +17108,7 @@
   ],
   "people": [],
   "states": [
-   "Northern Liang"
+   "Former Liang"
   ]
  },
  {
@@ -17116,7 +17130,7 @@
    "huan-wen"
   ],
   "states": [
-   "Eastern Jin"
+   "Former Yan"
   ]
  },
  {
@@ -17141,7 +17155,8 @@
    "wang-meng"
   ],
   "states": [
-   "Eastern Jin"
+   "Former Qin",
+   "Former Yan"
   ]
  },
  {
@@ -17189,7 +17204,8 @@
   ],
   "people": [],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Former Qin"
   ]
  },
  {
@@ -17213,7 +17229,9 @@
    "fu-jian"
   ],
   "states": [
-   "Eastern Jin"
+   "Dai",
+   "Former Liang",
+   "Former Qin"
   ]
  },
  {
@@ -17339,7 +17357,8 @@
    "xie-xuan"
   ],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Former Qin"
   ]
  },
  {
@@ -17361,7 +17380,10 @@
    "dingzhou"
   ],
   "people": [],
-  "states": []
+  "states": [
+   "Former Qin",
+   "Later Yan"
+  ]
  },
  {
   "id": "fu-jian-killed",
@@ -17383,7 +17405,8 @@
    "fu-jian"
   ],
   "states": [
-   "Eastern Jin"
+   "Former Qin",
+   "Later Qin"
   ]
  },
  {
@@ -17402,7 +17425,9 @@
   "source": "https://en.wikipedia.org/wiki/Emperor_Daowu_of_Northern_Wei",
   "places": [],
   "people": [],
-  "states": []
+  "states": [
+   "Northern Wei"
+  ]
  },
  {
   "id": "later-liang-founded",
@@ -17425,7 +17450,9 @@
   "people": [
    "kumarajiva"
   ],
-  "states": []
+  "states": [
+   "Later Liang (Sixteen Kingdoms)"
+  ]
  },
  {
   "id": "battle-of-canhe",
@@ -17444,7 +17471,10 @@
   "source": "https://en.wikipedia.org/wiki/Battle_of_Canhe_Slope",
   "places": [],
   "people": [],
-  "states": []
+  "states": [
+   "Later Yan",
+   "Northern Wei"
+  ]
  },
  {
   "id": "northern-liang-founded",
@@ -17466,6 +17496,7 @@
   ],
   "people": [],
   "states": [
+   "Later Liang (Sixteen Kingdoms)",
    "Northern Liang"
   ]
  },
@@ -17512,7 +17543,9 @@
    "datong"
   ],
   "people": [],
-  "states": []
+  "states": [
+   "Northern Wei"
+  ]
  },
  {
   "id": "faxian",
@@ -17536,7 +17569,7 @@
    "faxian"
   ],
   "states": [
-   "Eastern Jin"
+   "Later Qin"
   ]
  },
  {
@@ -17583,7 +17616,9 @@
    "dunhuang"
   ],
   "people": [],
-  "states": []
+  "states": [
+   "Western Liang (Sixteen Kingdoms)"
+  ]
  },
  {
   "id": "kumarajiva",
@@ -17606,7 +17641,7 @@
    "kumarajiva"
   ],
   "states": [
-   "Eastern Jin"
+   "Later Qin"
   ]
  },
  {
@@ -17723,7 +17758,10 @@
   "source": "https://en.wikipedia.org/wiki/Helian_Bobo",
   "places": [],
   "people": [],
-  "states": []
+  "states": [
+   "Later Qin",
+   "Xia (Helian)"
+  ]
  },
  {
   "id": "southern-yan",
@@ -17746,7 +17784,8 @@
    "liu-yu"
   ],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Southern Yan"
   ]
  },
  {
@@ -17817,7 +17856,8 @@
    "liu-yu"
   ],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Qiao Shu"
   ]
  },
  {
@@ -17864,7 +17904,8 @@
    "liu-yu"
   ],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Later Qin"
   ]
  },
  {
@@ -17887,7 +17928,8 @@
    "liu-yu"
   ],
   "states": [
-   "Eastern Jin"
+   "Eastern Jin",
+   "Northern Wei"
   ]
  },
  {
@@ -17912,7 +17954,7 @@
    "liu-yu"
   ],
   "states": [
-   "Eastern Jin"
+   "Xia (Helian)"
   ]
  },
  {
@@ -36235,7 +36277,7 @@
   ],
   "people": [],
   "states": [
-   "Qing"
+   "Southern Ming"
   ]
  },
  {
@@ -36376,7 +36418,7 @@
   ],
   "people": [],
   "states": [
-   "Southern Ming and Three Feudatories"
+   "Southern Ming"
   ]
  },
  {
@@ -36494,6 +36536,7 @@
    "zheng-chenggong"
   ],
   "states": [
+   "Kingdom of Tungning",
    "Qing"
   ]
  },
@@ -36519,7 +36562,8 @@
    "wu-sangui"
   ],
   "states": [
-   "Southern Ming and Three Feudatories"
+   "Qing",
+   "Southern Ming"
   ]
  },
  {
@@ -36619,8 +36663,7 @@
    "wu-sangui"
   ],
   "states": [
-   "Qing",
-   "Southern Ming and Three Feudatories"
+   "Qing"
   ]
  },
  {
@@ -36643,8 +36686,7 @@
   ],
   "people": [],
   "states": [
-   "Qing",
-   "Southern Ming and Three Feudatories"
+   "Qing"
   ]
  },
  {

@@ -1,0 +1,1000 @@
+{
+ "about": "Sixteen Kingdoms, carved out of the Western/Eastern Jin base maps by tools/carve_states.py. Approximate; seed points are commanderies, owners follow the general outlines in Tan Qixiang's atlas. AI-drafted.",
+ "radius": 3.0,
+ "seeds": {
+  "luoyang": [
+   112.45,
+   34.62
+  ],
+  "changan": [
+   108.9,
+   34.3
+  ],
+  "ye": [
+   114.35,
+   36.3
+  ],
+  "xiangguo": [
+   114.5,
+   37.06
+  ],
+  "jinyang": [
+   112.55,
+   37.85
+  ],
+  "pingyang": [
+   111.5,
+   36.08
+  ],
+  "shangdang": [
+   113.1,
+   36.2
+  ],
+  "xihe": [
+   111.1,
+   37.5
+  ],
+  "yanmen": [
+   112.9,
+   39.0
+  ],
+  "pingcheng": [
+   113.3,
+   40.08
+  ],
+  "shengle": [
+   111.6,
+   40.4
+  ],
+  "shuofang": [
+   108.85,
+   37.99
+  ],
+  "youzhou": [
+   116.4,
+   39.9
+  ],
+  "zhongshan": [
+   115.0,
+   38.5
+  ],
+  "bohai": [
+   116.8,
+   38.1
+  ],
+  "leling": [
+   117.2,
+   37.7
+  ],
+  "liaoxi": [
+   118.9,
+   40.0
+  ],
+  "longcheng": [
+   120.45,
+   41.57
+  ],
+  "liaodong": [
+   123.2,
+   41.27
+  ],
+  "qingzhou": [
+   118.5,
+   36.7
+  ],
+  "dongping": [
+   116.4,
+   35.9
+  ],
+  "jibei": [
+   115.0,
+   35.8
+  ],
+  "yanzhou": [
+   116.6,
+   35.4
+  ],
+  "xuzhou": [
+   117.2,
+   34.27
+  ],
+  "liang": [
+   115.6,
+   34.4
+  ],
+  "chenliu": [
+   114.4,
+   34.6
+  ],
+  "xuchang": [
+   113.8,
+   34.0
+  ],
+  "huaiyang": [
+   114.9,
+   33.7
+  ],
+  "runan": [
+   114.3,
+   33.0
+  ],
+  "nanyang": [
+   112.5,
+   33.0
+  ],
+  "hongnong": [
+   110.9,
+   34.5
+  ],
+  "hedong": [
+   111.0,
+   35.0
+  ],
+  "anding": [
+   107.4,
+   35.33
+  ],
+  "beidi": [
+   109.0,
+   35.0
+  ],
+  "yuanchuan": [
+   106.3,
+   36.0
+  ],
+  "tianshui": [
+   105.7,
+   34.58
+  ],
+  "longxi": [
+   104.6,
+   35.0
+  ],
+  "fuhan": [
+   103.2,
+   35.6
+  ],
+  "jincheng": [
+   103.8,
+   36.06
+  ],
+  "xiping": [
+   101.78,
+   36.62
+  ],
+  "guzang": [
+   102.64,
+   37.93
+  ],
+  "zhangye": [
+   100.45,
+   38.93
+  ],
+  "jiuquan": [
+   98.5,
+   39.73
+  ],
+  "dunhuang": [
+   94.66,
+   40.14
+  ],
+  "wudu": [
+   105.5,
+   33.8
+  ],
+  "hanzhong": [
+   107.0,
+   33.07
+  ],
+  "weixing": [
+   109.0,
+   32.7
+  ],
+  "shangyong": [
+   110.2,
+   32.6
+  ],
+  "xiangyang": [
+   112.15,
+   32.0
+  ],
+  "yiyang": [
+   114.1,
+   32.1
+  ],
+  "chengdu": [
+   104.06,
+   30.66
+  ],
+  "baxi": [
+   105.97,
+   31.58
+  ],
+  "jiangzhou": [
+   106.55,
+   29.56
+  ],
+  "jianning": [
+   103.8,
+   25.5
+  ],
+  "ningzhou": [
+   102.7,
+   25.0
+  ],
+  "zangke": [
+   106.7,
+   26.6
+  ],
+  "jiangling": [
+   112.2,
+   30.35
+  ],
+  "wuchang": [
+   114.9,
+   30.4
+  ],
+  "changsha": [
+   112.98,
+   28.2
+  ],
+  "lingling": [
+   111.6,
+   26.4
+  ],
+  "guiyang": [
+   113.0,
+   25.8
+  ],
+  "xunyang": [
+   116.0,
+   29.7
+  ],
+  "yuzhang": [
+   115.9,
+   28.68
+  ],
+  "shouchun": [
+   116.8,
+   32.57
+  ],
+  "hefei": [
+   117.3,
+   31.8
+  ],
+  "guangling": [
+   119.4,
+   32.4
+  ],
+  "jiankang": [
+   118.8,
+   32.06
+  ],
+  "wu": [
+   120.6,
+   31.3
+  ],
+  "kuaiji": [
+   120.6,
+   30.0
+  ],
+  "dongyang": [
+   119.65,
+   29.1
+  ],
+  "linhai": [
+   121.1,
+   28.9
+  ],
+  "jianan": [
+   119.3,
+   26.1
+  ],
+  "guangzhou": [
+   113.26,
+   23.13
+  ],
+  "cangwu": [
+   111.3,
+   23.5
+  ],
+  "yulin": [
+   109.3,
+   22.6
+  ],
+  "jiaozhi": [
+   105.85,
+   21.0
+  ]
+ },
+ "states": {
+  "xijin": {
+   "name": "Jin",
+   "zh": "西晋"
+  },
+  "dongjin": {
+   "name": "Eastern Jin",
+   "zh": "东晋"
+  },
+  "hanzhao": {
+   "name": "Han Zhao",
+   "zh": "汉赵",
+   "color": "#8a4f6e",
+   "focus": true
+  },
+  "chenghan": {
+   "name": "Cheng Han",
+   "zh": "成汉",
+   "color": "#6f9460",
+   "focus": true
+  },
+  "houzhao": {
+   "name": "Later Zhao",
+   "zh": "后赵",
+   "color": "#9a6a3a",
+   "focus": true
+  },
+  "qianliang": {
+   "name": "Former Liang",
+   "zh": "前凉",
+   "color": "#4f8f86",
+   "focus": true
+  },
+  "murong": {
+   "name": "Murong Xianbei",
+   "zh": "慕容鲜卑",
+   "color": "#a07d5a",
+   "focus": false
+  },
+  "qianyan": {
+   "name": "Former Yan",
+   "zh": "前燕",
+   "color": "#5f87a3",
+   "focus": true
+  },
+  "ranwei": {
+   "name": "Ran Wei",
+   "zh": "冉魏",
+   "color": "#a3727a",
+   "focus": true
+  },
+  "qianqin": {
+   "name": "Former Qin",
+   "zh": "前秦",
+   "color": "#7a5195",
+   "focus": true
+  },
+  "houyan": {
+   "name": "Later Yan",
+   "zh": "后燕",
+   "color": "#3f6e8c",
+   "focus": true
+  },
+  "houqin": {
+   "name": "Later Qin",
+   "zh": "后秦",
+   "color": "#9e4a6e",
+   "focus": true
+  },
+  "xiyan": {
+   "name": "Western Yan",
+   "zh": "西燕",
+   "color": "#7d6b4a",
+   "focus": true
+  },
+  "xiqin": {
+   "name": "Western Qin",
+   "zh": "西秦",
+   "color": "#b8862b",
+   "focus": true
+  },
+  "houliang": {
+   "name": "Later Liang (Sixteen Kingdoms)",
+   "zh": "后凉",
+   "color": "#4f7f5a",
+   "focus": true
+  },
+  "nanliang": {
+   "name": "Southern Liang",
+   "zh": "南凉",
+   "color": "#8a8a5a",
+   "focus": true
+  },
+  "beiliang": {
+   "name": "Northern Liang",
+   "zh": "北凉",
+   "color": "#2f8a7a",
+   "focus": true
+  },
+  "xiliang": {
+   "name": "Western Liang (Sixteen Kingdoms)",
+   "zh": "西凉",
+   "color": "#b07090",
+   "focus": true
+  },
+  "nanyan": {
+   "name": "Southern Yan",
+   "zh": "南燕",
+   "color": "#c47a2c",
+   "focus": true
+  },
+  "beiwei": {
+   "name": "Northern Wei",
+   "zh": "北魏",
+   "color": "#5a4f8a",
+   "focus": true
+  },
+  "xia": {
+   "name": "Xia (Helian)",
+   "zh": "夏",
+   "color": "#a06a6a",
+   "focus": true
+  },
+  "beiyan": {
+   "name": "Northern Yan",
+   "zh": "北燕",
+   "color": "#6a8aa0",
+   "focus": true
+  },
+  "qiaoshu": {
+   "name": "Qiao Shu",
+   "zh": "谯蜀",
+   "color": "#5a9a6a",
+   "focus": true
+  },
+  "dai": {
+   "name": "Dai",
+   "zh": "代",
+   "color": "#9a8a4a",
+   "focus": true
+  }
+ },
+ "snapshots": [
+  {
+   "id": "sk-304",
+   "from": 304,
+   "label": "304: Liu Yuan founds the Han (Han Zhao) in Bingzhou; Li Xiong founds Cheng in Shu",
+   "label_zh": "304年：刘渊在并州建汉（汉赵），李雄在蜀建成",
+   "base": "data/borders/western-jin.geojson",
+   "area": [
+    "Jin",
+    "Han Zhao"
+   ],
+   "rest": "xijin",
+   "set": {
+    "hanzhao": [
+     "xihe",
+     "shuofang"
+    ],
+    "chenghan": [
+     "chengdu"
+    ],
+    "dai": [
+     "shengle"
+    ]
+   }
+  },
+  {
+   "id": "sk-311",
+   "from": 311,
+   "label": "311: Yongjia catastrophe: Han Zhao sacks Luoyang; Cheng holds most of Shu",
+   "label_zh": "311年：永嘉之乱，汉赵攻陷洛阳；成汉据有蜀地",
+   "set": {
+    "hanzhao": [
+     "pingyang",
+     "hedong",
+     "shangdang",
+     "luoyang",
+     "hongnong",
+     "xiangguo",
+     "ye",
+     "jibei",
+     "chenliu"
+    ],
+    "chenghan": [
+     "baxi",
+     "jiangzhou"
+    ],
+    "dai": [
+     "pingcheng",
+     "yanmen"
+    ]
+   }
+  },
+  {
+   "id": "sk-316",
+   "from": 316,
+   "label": "316: Chang'an falls; the Western Jin ends. Shi Le, still a Han Zhao general, holds Hebei",
+   "label_zh": "316年：长安陷落，西晋灭亡；石勒（尚为汉赵将领）据有河北",
+   "set": {
+    "hanzhao": [
+     "changan",
+     "anding",
+     "beidi",
+     "jinyang",
+     "youzhou",
+     "zhongshan",
+     "bohai",
+     "leling",
+     "tianshui"
+    ],
+    "chenghan": [
+     "hanzhong"
+    ]
+   }
+  },
+  {
+   "id": "sk-317",
+   "from": 317,
+   "label": "317: Sima Rui rules from Jiankang (Eastern Jin); Zhang Shi holds Liangzhou (Former Liang); the Murong rule Liaodong",
+   "label_zh": "317年：司马睿在建康建立东晋；张寔据凉州（前凉）；慕容部据辽东",
+   "base": "data/borders/eastern-jin.geojson",
+   "area": [
+    "Eastern Jin",
+    "Sixteen Kingdoms",
+    "Northern Liang"
+   ],
+   "rest": "dongjin",
+   "set": {
+    "qianliang": [
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "jincheng",
+     "xiping"
+    ],
+    "murong": [
+     "longcheng",
+     "liaodong",
+     "liaoxi"
+    ]
+   }
+  },
+  {
+   "id": "sk-319",
+   "from": 319,
+   "label": "319: Han Zhao splits: Liu Yao rules from Chang'an (Former Zhao), Shi Le founds the Later Zhao at Xiangguo",
+   "label_zh": "319年：汉赵分裂，刘曜都长安（前赵），石勒在襄国建立后赵",
+   "set": {
+    "houzhao": [
+     "xiangguo",
+     "ye",
+     "jinyang",
+     "shangdang",
+     "youzhou",
+     "zhongshan",
+     "bohai",
+     "leling",
+     "jibei",
+     "chenliu"
+    ]
+   }
+  },
+  {
+   "id": "sk-325",
+   "from": 325,
+   "label": "323–325: Later Zhao takes Qingzhou and the lands between the Yellow River and the Huai",
+   "label_zh": "323–325年：后赵夺取青州及河南、淮北之地",
+   "set": {
+    "houzhao": [
+     "qingzhou",
+     "dongping",
+     "yanzhou",
+     "xuzhou",
+     "liang",
+     "huaiyang",
+     "xuchang",
+     "runan"
+    ]
+   }
+  },
+  {
+   "id": "sk-329",
+   "from": 329,
+   "label": "329: Later Zhao destroys the Former Zhao and rules the north",
+   "label_zh": "329年：后赵灭前赵，统一北方大部",
+   "set": {
+    "houzhao": [
+     "xihe",
+     "shuofang",
+     "pingyang",
+     "hedong",
+     "luoyang",
+     "hongnong",
+     "changan",
+     "anding",
+     "beidi",
+     "tianshui",
+     "longxi",
+     "yuanchuan",
+     "nanyang"
+    ]
+   }
+  },
+  {
+   "id": "sk-337",
+   "from": 337,
+   "label": "337: Murong Huang proclaims the Former Yan",
+   "label_zh": "337年：慕容皝称燕王，建立前燕",
+   "set": {
+    "qianyan": [
+     "longcheng",
+     "liaodong",
+     "liaoxi"
+    ]
+   }
+  },
+  {
+   "id": "sk-347",
+   "from": 347,
+   "label": "347: Huan Wen conquers Cheng Han for the Eastern Jin",
+   "label_zh": "347年：桓温伐蜀，东晋灭成汉",
+   "set": {
+    "dongjin": [
+     "chengdu",
+     "baxi",
+     "jiangzhou",
+     "hanzhong"
+    ]
+   }
+  },
+  {
+   "id": "sk-352",
+   "from": 352,
+   "label": "350–352: Later Zhao collapses: Ran Min's Wei rises and falls, Former Yan takes Hebei, Fu Jian founds the Former Qin at Chang'an",
+   "label_zh": "350–352年：后赵崩溃，冉魏兴亡，前燕入主河北，苻健在长安建立前秦",
+   "set": {
+    "qianyan": [
+     "youzhou",
+     "zhongshan",
+     "bohai",
+     "leling",
+     "xiangguo",
+     "ye",
+     "jibei",
+     "xihe",
+     "shangdang",
+     "jinyang"
+    ],
+    "qianqin": [
+     "changan",
+     "anding",
+     "beidi",
+     "hongnong",
+     "tianshui",
+     "longxi",
+     "yuanchuan",
+     "hedong",
+     "pingyang"
+    ],
+    "dongjin": [
+     "xuzhou",
+     "liang",
+     "huaiyang",
+     "xuchang",
+     "runan",
+     "nanyang",
+     "qingzhou",
+     "dongping",
+     "yanzhou",
+     "chenliu",
+     "luoyang",
+     "nanyang"
+    ],
+    "dai": [
+     "shuofang"
+    ]
+   }
+  },
+  {
+   "id": "sk-366",
+   "from": 366,
+   "label": "358–366: Former Yan takes Bingzhou and pushes the Eastern Jin back from Henan and Luoyang",
+   "label_zh": "358–366年：前燕取并州，又从东晋手中夺回河南与洛阳",
+   "set": {
+    "qianyan": [
+     "jinyang",
+     "shangdang",
+     "xihe",
+     "qingzhou",
+     "dongping",
+     "yanzhou",
+     "chenliu",
+     "luoyang",
+     "xuchang",
+     "huaiyang",
+     "liang",
+     "runan"
+    ]
+   }
+  },
+  {
+   "id": "sk-370",
+   "from": 370,
+   "label": "370: Former Qin conquers the Former Yan",
+   "label_zh": "370年：前秦灭前燕",
+   "set": {
+    "qianqin": [
+     "youzhou",
+     "zhongshan",
+     "bohai",
+     "leling",
+     "xiangguo",
+     "ye",
+     "jibei",
+     "jinyang",
+     "shangdang",
+     "xihe",
+     "qingzhou",
+     "dongping",
+     "yanzhou",
+     "chenliu",
+     "luoyang",
+     "xuchang",
+     "huaiyang",
+     "liang",
+     "runan",
+     "longcheng",
+     "liaodong",
+     "liaoxi"
+    ]
+   }
+  },
+  {
+   "id": "sk-376",
+   "from": 376,
+   "label": "373–376: Former Qin takes Shu and Hanzhong, then the Former Liang and Dai, and unites the north",
+   "label_zh": "373–376年：前秦取蜀与汉中，又灭前凉和代，统一北方",
+   "set": {
+    "qianqin": [
+     "chengdu",
+     "baxi",
+     "jiangzhou",
+     "hanzhong",
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "jincheng",
+     "xiping",
+     "fuhan",
+     "shuofang",
+     "shengle",
+     "pingcheng",
+     "yanmen",
+     "wudu"
+    ]
+   }
+  },
+  {
+   "id": "sk-386",
+   "from": 386,
+   "label": "383–386: After the Fei River the Former Qin breaks apart: Later Yan, Later Qin, Western Yan, Western Qin, Later Liang and the Northern Wei; Jin retakes Henan and Shu",
+   "label_zh": "383–386年：淝水之战后前秦瓦解，后燕、后秦、西燕、西秦、后凉、北魏并起；东晋收复河南与蜀",
+   "set": {
+    "houyan": [
+     "zhongshan",
+     "youzhou",
+     "bohai",
+     "leling",
+     "xiangguo",
+     "ye",
+     "longcheng",
+     "liaodong",
+     "liaoxi",
+     "jibei"
+    ],
+    "houqin": [
+     "changan",
+     "anding",
+     "beidi",
+     "hongnong",
+     "tianshui"
+    ],
+    "xiyan": [
+     "shangdang",
+     "pingyang",
+     "jinyang",
+     "xihe",
+     "hedong"
+    ],
+    "xiqin": [
+     "fuhan",
+     "jincheng",
+     "longxi"
+    ],
+    "houliang": [
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "xiping"
+    ],
+    "beiwei": [
+     "shengle",
+     "pingcheng",
+     "yanmen",
+     "shuofang"
+    ],
+    "qianqin": [
+     "yuanchuan",
+     "wudu"
+    ],
+    "dongjin": [
+     "chengdu",
+     "baxi",
+     "jiangzhou",
+     "hanzhong",
+     "qingzhou",
+     "dongping",
+     "yanzhou",
+     "xuzhou",
+     "liang",
+     "chenliu",
+     "luoyang",
+     "xuchang",
+     "huaiyang",
+     "runan"
+    ]
+   }
+  },
+  {
+   "id": "sk-394",
+   "from": 394,
+   "label": "394: Later Yan destroys the Western Yan; Later Qin finishes the Former Qin",
+   "label_zh": "394年：后燕灭西燕，后秦灭前秦",
+   "set": {
+    "houyan": [
+     "shangdang",
+     "pingyang",
+     "jinyang",
+     "xihe"
+    ],
+    "houqin": [
+     "yuanchuan",
+     "hedong",
+     "wudu"
+    ]
+   }
+  },
+  {
+   "id": "sk-400",
+   "from": 400,
+   "label": "396–400: Northern Wei overruns the Later Yan heartland; Southern Yan in Shandong; Southern Liang, Northern Liang and Western Liang split the Hexi corridor; Later Qin takes Luoyang",
+   "label_zh": "396–400年：北魏攻占后燕腹地；南燕立国于山东；南凉、北凉、西凉分据河西；后秦夺取洛阳",
+   "set": {
+    "beiwei": [
+     "jinyang",
+     "shangdang",
+     "pingyang",
+     "xihe",
+     "zhongshan",
+     "xiangguo",
+     "ye",
+     "bohai",
+     "youzhou"
+    ],
+    "houyan": [
+     "longcheng",
+     "liaodong",
+     "liaoxi"
+    ],
+    "nanyan": [
+     "qingzhou",
+     "dongping",
+     "leling",
+     "jibei"
+    ],
+    "nanliang": [
+     "xiping"
+    ],
+    "beiliang": [
+     "zhangye"
+    ],
+    "xiliang": [
+     "dunhuang",
+     "jiuquan"
+    ],
+    "houqin": [
+     "luoyang",
+     "xuchang",
+     "chenliu",
+     "hongnong",
+     "jincheng",
+     "fuhan",
+     "longxi"
+    ]
+   }
+  },
+  {
+   "id": "sk-407",
+   "from": 407,
+   "label": "403–407: Later Liang falls; Qiao Zong holds Shu; Helian Bobo founds Xia; Feng Ba takes the Later Yan throne (Northern Yan)",
+   "label_zh": "403–407年：后凉灭亡；谯纵据蜀；赫连勃勃建夏；冯跋夺取后燕（北燕）",
+   "set": {
+    "nanliang": [
+     "guzang"
+    ],
+    "qiaoshu": [
+     "chengdu",
+     "baxi",
+     "jiangzhou"
+    ],
+    "xia": [
+     "shuofang"
+    ],
+    "beiyan": [
+     "longcheng",
+     "liaodong",
+     "liaoxi"
+    ],
+    "xiqin": [
+     "fuhan",
+     "jincheng"
+    ]
+   }
+  },
+  {
+   "id": "sk-413",
+   "from": 413,
+   "label": "410–413: Liu Yu destroys the Southern Yan and retakes Shu for the Eastern Jin; Northern Liang takes Guzang",
+   "label_zh": "410–413年：刘裕灭南燕，东晋收复蜀地；北凉夺取姑臧",
+   "set": {
+    "dongjin": [
+     "qingzhou",
+     "dongping",
+     "leling",
+     "jibei",
+     "chengdu",
+     "baxi",
+     "jiangzhou"
+    ],
+    "beiliang": [
+     "guzang"
+    ],
+    "xiqin": [
+     "xiping"
+    ]
+   }
+  },
+  {
+   "id": "sk-417",
+   "from": 417,
+   "label": "417: Liu Yu takes Luoyang and Chang'an: the Later Qin falls",
+   "label_zh": "417年：刘裕攻克洛阳、长安，后秦灭亡",
+   "set": {
+    "dongjin": [
+     "luoyang",
+     "xuchang",
+     "chenliu",
+     "hongnong",
+     "changan",
+     "anding",
+     "beidi",
+     "tianshui",
+     "yuanchuan",
+     "hedong",
+     "wudu"
+    ],
+    "xiqin": [
+     "longxi"
+    ]
+   }
+  },
+  {
+   "id": "sk-418",
+   "from": 418,
+   "label": "418: Xia drives the Jin out of Chang'an",
+   "label_zh": "418年：夏攻取长安，晋军退出关中",
+   "set": {
+    "xia": [
+     "changan",
+     "anding",
+     "beidi",
+     "yuanchuan"
+    ]
+   }
+  }
+ ]
+}
