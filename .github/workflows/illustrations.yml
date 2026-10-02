@@ -1,0 +1,20 @@
+# Fetches free-licensed Wikipedia lead images for people and events onto the `illustrations-raw` branch.
+# Run by hand (Actions → Illustrations → Run workflow); tools/pack_illustrations.py turns the result into data/img/.
+name: Illustrations
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/fetch_illustrations.py /tmp/out
+      - name: Commit to illustrations-raw
+        run: |
+          cd /tmp/out
+          git init -q -b illustrations-raw
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add -A && git commit -q -m "Raw illustrations from ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" illustrations-raw
