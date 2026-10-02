@@ -585,6 +585,7 @@ function showCard(lngLat, html) {
   popup?.remove();
   popup = new maplibregl.Popup({ className: "atlas-pop", maxWidth: "300px", offset: 14, focusAfterOpen: false })
     .setLngLat(lngLat).setHTML(html).addTo(map);
+  fillIllus(popup.getElement());
   // Event lists open at the city's current period and jump to that moment when clicked.
   const list = popup.getElement().querySelector(".pc-events"), now = list?.querySelector(".now");
   if (now) list.scrollTop = now.parentElement.offsetTop - list.offsetTop - 4;
@@ -593,6 +594,32 @@ function showCard(lngLat, html) {
     state.reading = false;
     selectEvent(b.dataset.ev);
   }));
+}
+/* ---------- illustrations ---------- */
+// data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
+// as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
+let illuIndex = null;
+const illuBuckets = {};
+function illuSlot(key) {
+  return `<figure class="illu" data-illu="${esc(key)}" hidden></figure>`;
+}
+async function fillIllus(root) {
+  const slots = [...root.querySelectorAll("figure[data-illu]:not(.done)")];
+  if (!slots.length) return;
+  illuIndex ||= loadJSON("data/illustrations.json").catch(() => ({ keys: {}, images: {} }));
+  const idx = await illuIndex;
+  for (const fig of slots) {
+    fig.classList.add("done");
+    const id = idx.keys[fig.dataset.illu], im = idx.images[id];
+    if (!im) continue;
+    illuBuckets[im.b] ||= loadJSON(`data/img/${im.b}.json`).catch(() => ({}));
+    const src = (await illuBuckets[im.b])[id];
+    if (!src) continue;
+    const credit = [im.artist, im.license].filter(Boolean).join(" · ");
+    fig.innerHTML = `<img src="${src}" alt="${esc(im.page)}" style="aspect-ratio:${im.w}/${im.h}">` +
+      `<figcaption><a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a></figcaption>`;
+    fig.hidden = false;
+  }
 }
 function wikiA(url) {
   return url ? `<a href="${esc(wikiLink(url))}" target="_blank" rel="noopener">${t("wiki")} ↗</a>` : "";
@@ -626,7 +653,7 @@ function personLife(p) {
 function personCard(p) {
   const works = (p.works || []).map((w) => zh() ? `《${esc(w.title_zh || w.title)}》` : `<i>${esc(w.title)}</i>`).join(zh() ? "" : ", ");
   const line = p.line_zh ? `<blockquote><span lang="zh-CN">${esc(p.line_zh)}</span>${!zh() && p.line_en ? `<em>${esc(p.line_en)}</em>` : ""}</blockquote>` : "";
-  return `<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
+  return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
     ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA(p.source)}</p>`;
@@ -1400,9 +1427,11 @@ async function renderStory() {
       <div class="story-sub" lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? ev.title : ev.title_zh)}</div>
       <button class="story-place" data-go="map"><i></i>${esc(tx(ev, "place"))}</button>
     </header>
+    ${illuSlot("e:" + ev.id)}
     <p class="story-lede">${esc(tx(ev, "summary"))}</p>
     <div class="story-body"><p class="muted">${t("loading")}</p></div>`;
   box.scrollTop = 0;
+  fillIllus(box);
   box.onclick = (e) => {
     const go = e.target.closest("[data-go]")?.dataset.go;
     if (go === "back") { state.reading = false; renderLedger(); }
