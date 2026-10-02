@@ -85,3 +85,6 @@ A period's maps end with the period, so states that lasted into the next dynasty
 Wu on the Jin map 266–280 and Chen / Western Liang on the Sui map 581–589 (`tools/carry_states.py`), and the remaining
 Ten Kingdoms on the Northern Song map 960–979 (extra snapshots fd-960…fd-978 in data/states/five-dynasties.json).
 Their rulers are listed in the next period's layer file too.
+The Sixteen Kingdoms (304–418, `data/states/sixteen-kingdoms.json`) and the early Qing rivals (Shun, Great Xi, Southern
+Ming, Lu regency, Zheng Taiwan, the Three Feudatories, 1644–1681, `data/states/early-qing.json`) are carved out of the
+Jin and 1650 Qing base maps by `tools/carve_states.py`: seed points per commandery/prefecture, owners per snapshot.
