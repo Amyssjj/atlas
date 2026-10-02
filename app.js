@@ -1673,6 +1673,10 @@ async function init() {
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
     customAttribution: "Terrain: Mapzen/AWS Terrain Tiles · Borders: historical-basemaps (GPL-3.0)" }), "bottom-left");
+  // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
+  const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+  map.once("load", foldAttribution);
+  map.once("idle", foldAttribution);
   map.on("move", () => scheduleDeclutter(120));
   map.on("click", "road-hit", (e) => {
     const r = state.roads.find((x) => x.id === e.features[0]?.properties.id);

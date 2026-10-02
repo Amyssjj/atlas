@@ -738,3 +738,6 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .band.era-band { overflow: visible; padding: 0; }
 .band.era-band > b { position: absolute; top: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .band.tight.scrub > b { visibility: visible; z-index: 1; background: var(--panel-solid); padding: 0 2px; border-radius: 3px; }
+/* Bands whose label was dropped also lose their divider, so a crowded rail shows only the named periods. */
+.band.era-band.tight { border-left-color: transparent; }
+.band.era-band.tight.current, .band.era-band.tight.scrub { border-left-color: var(--rule); }
