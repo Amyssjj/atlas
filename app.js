@@ -1726,7 +1726,14 @@ async function init() {
     renderLedger();
   });
   $("ledger-toggle").addEventListener("click", () => collapseLedger(!$("ledger").classList.contains("collapsed")));
-  if (matchMedia("(max-width: 720px)").matches) collapseLedger(true);
+  const phone = matchMedia("(max-width: 720px)");
+  if (phone.matches) collapseLedger(true);
+  // Phone: tools and layer switches sit behind one button; the sheet and era bar size themselves to the timeline.
+  const openEra = (o) => { $("era-more").setAttribute("aria-expanded", String(o)); document.querySelector(".era").classList.toggle("open", o); };
+  $("era-more").addEventListener("click", () => openEra(!document.querySelector(".era").classList.contains("open")));
+  map.on("click", () => { if (phone.matches) openEra(false); });
+  new ResizeObserver(() => document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px"))
+    .observe(document.querySelector(".rail"));
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT") return;
     const i = state.eras.indexOf(state.era);

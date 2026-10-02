@@ -342,29 +342,56 @@ html:lang(en) .mk-polity.minor small { display: none; }
   .mk-event.active i::after { animation: none; }
 }
 
-/* Phone */
+/* Phone: compact era bar (tools and layers behind a button), ledger as a bottom sheet above the timeline. */
+.era-more { display: none; }
+#app { height: 100dvh; }
 @media (max-width: 720px) {
-  .era { top: 12px; left: 12px; width: calc(100% - 24px); padding: 10px 12px; gap: 2px 12px; }
-  .seal { width: 44px; height: 44px; font-size: 28px; }
-  .era-year { font-size: 20px; }
-  .era-summary, .era-note, .note { display: none; }
-  .era-snap { font-size: 11px; margin-top: 2px; }
-  .maplibregl-ctrl-bottom-left { display: none; }
-  .rail { left: 12px; right: 12px; bottom: 12px; padding: 8px 12px 10px; }
-  .band b { font-size: 11px; }
-  .scale-hint { display: none; }
-  .era-tools { gap: 4px; }
-  .era-tools .chip { padding: 5px 8px; }
-  .rail { grid-template-columns: auto 1fr; }
-  .zoom { grid-column: 1 / -1; grid-row: auto; justify-content: center; }
-  .ledger {
-    top: auto; left: 12px; right: 12px; bottom: 140px; width: auto;
-    max-height: 46%;
+  .era {
+    top: calc(8px + env(safe-area-inset-top)); left: 8px; width: calc(100% - 16px);
+    padding: 8px 10px; gap: 0 10px; box-sizing: border-box;
   }
-  .ledger.collapsed .ev-list, .ledger.collapsed .story { display: none; }
-  .ledger-toggle { display: inline-block; }
-}
+  .seal { width: 38px; height: 38px; font-size: 24px; grid-row: span 2; box-shadow: inset 0 0 0 2px var(--cinnabar), inset 0 0 0 3px var(--cinnabar-ink); }
+  .seal.double { font-size: 14px; }
+  .era-name { font-size: 15px; padding-right: 64px; }
+  .era-zh { display: none; }
+  .era-year { font-size: 18px; }
+  .era-ruler { font-size: 12px; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .era-summary, .era-note, .note, .era-snap { display: none; }
+  .era-more { display: inline-block; position: absolute; top: 8px; right: 10px; }
+  .era-more[aria-expanded="true"] { background: var(--jade-soft); border-color: var(--jade); color: var(--jade); }
+  .era:not(.open) .era-tools, .era:not(.open) .era-layers { display: none; }
+  .era.open { max-height: calc(100dvh - var(--rail-h, 120px) - 40px); overflow-y: auto; }
+  .era.open .era-summary, .era.open .era-snap { display: block; }
+  .era-tools { gap: 6px; }
+  .era-tools .chip, .era-layers .chip { padding: 7px 10px; font-size: 13px; }
+  .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { display: none; }
 
+  .rail {
+    left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom));
+    padding: 6px 10px 8px; gap: 2px 8px; grid-template-columns: auto 1fr auto;
+  }
+  .play { width: 36px; height: 36px; grid-row: 1; }
+  .band b { font-size: 11px; }
+  .scale { display: none; }
+  .zoom { grid-column: 3; grid-row: 1; gap: 2px; }
+  #pan-prev, #pan-next { display: none; }
+  .zlevel { min-width: 34px; font-size: 11px; }
+  .zbtn { width: 30px; height: 30px; }
+
+  .ledger {
+    top: auto; left: 8px; right: 8px; width: auto;
+    bottom: calc(var(--rail-h, 64px) + 14px + env(safe-area-inset-bottom));
+    max-height: calc(100dvh - var(--rail-h, 64px) - 110px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+  .ledger:not(.collapsed) { height: 52dvh; }
+  .ledger-head { padding: 8px 12px 6px; align-items: center; }
+  .ledger.collapsed .ledger-head { border-bottom: 0; }
+  .ledger.collapsed .ev-list, .ledger.collapsed .story, .ledger.collapsed .ev-filter,
+  .ledger.collapsed .rulers { display: none; }
+  .ledger-toggle { display: inline-block; }
+
+  .atlas-pop { max-width: calc(100vw - 24px) !important; }
+}
 /* Overlay layers */
 .era-layers { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px; }
 .era-layers > span { font: 600 11px/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
@@ -435,8 +462,11 @@ html:lang(en) .mk-polity .ruler { font-family: var(--font-body); font-weight: 60
 
 @media (max-width: 720px) {
   .era-layers > span { display: none; }
-  .mk-army { width: 232px; }
-  .mk-army.selected { width: 252px; }
+  /* Battle cards shrink to their title until tapped. */
+  .mk-army { width: 170px; padding: 6px 8px; }
+  .mk-army .army-title { margin-bottom: 0; font-size: 13px; }
+  .mk-army:not(.selected) > :not(.army-title) { display: none; }
+  .mk-army.selected { width: min(260px, calc(100vw - 40px)); }
   .mk-army .army-note { display: none; }
 }
 .maplibregl-marker.mk-army { z-index: 5; }
@@ -664,3 +694,9 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .story-tags .tag-city { color: var(--cinnabar); }
 .ef-country { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
 .ef-country select { flex: 1; min-width: 0; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--panel-solid); color: inherit; font: 500 13px var(--font-display); }
+
+@media (max-width: 720px) {
+  .ev-filter { padding: 6px 12px; gap: 5px; }
+  .ef-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .ef-cats .chip { flex: none; }
+}
