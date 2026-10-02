@@ -70,14 +70,15 @@ A better border source for Chinese dynasties is CHGIS (Harvard China Historical 
 
 ## Illustrations
 
-Person cards and event stories show a picture from Wikimedia Commons (public domain or CC licences only, credited under the image).
+Person cards, event stories and the on-map picture show an image from Wikimedia Commons (public domain or CC licences only, credited under the image). Clicking a map pin opens that picture standing at the pin — the photograph tilts back, the caption stays flat — and the ledger story stays as it was. A person, or an event that is mainly one person, prefers that person's portrait (`p:<id>`). A site, tomb or excavated object prefers the picture packed for that entry (`e:<id>`, or `f:` / `i:` / `s:` for a faith site, invention or pass); if none is packed yet, the page reuses an image already stored for the same Wikipedia article. When nothing is packed the card still opens, with no empty frame.
 - `.github/workflows/illustrations.yml` (run by hand on GitHub) runs `tools/fetch_illustrations.py` on the pages in
-  `tools/illust_queries.json` (made by `tools/illust_queries.py` from each person's and event's `source`) and pushes the
-  thumbnails to the `illustrations-raw` branch. GitHub's runners can reach Wikimedia; this environment cannot.
+  `tools/illust_queries.json` (made by `tools/illust_queries.py` from each person's, event's, faith site's, invention's and pass's `source`, and from roads, walls and clans) and pushes the
+  thumbnails to the `illustrations-raw` branch. Entries marked `"prefer": "artifact"` ask for an excavated-object photograph when the article has one, instead of a map or a lead image that is only a locator.
 - `tools/pack_illustrations.py <checkout of illustrations-raw>` writes `data/illustrations.json` (key → image, credit)
-  and `data/img/<0-11>.json` (WebP data URLs, loaded on demand). Images shared by more than 3 events are dropped as generic.
+  and `data/img/<0-11>.json` (WebP data URLs, loaded on demand). Add `--merge` to keep pictures already packed and only add new keys. Images shared by more than 3 events are dropped as generic.
 - `data/illustrations-skip.json` lists keys whose picture was wrong (checked by eye: modern namesakes, stamps, logos).
   Pictures follow each entry's Wikipedia `source`, so a wrong `source` gives a wrong picture.
+- Faith sites, inventions, passes and any event that still has no file (including some excavation pages whose English article has no lead image) get pictures only after that workflow run and a pack. The page does not load Wikimedia at view time.
 
 ## States that outlive their period
 
