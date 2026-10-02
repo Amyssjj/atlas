@@ -470,6 +470,7 @@ async function setYear(year, opts = {}) {
   $("year").textContent = num;
   $("year-suffix").textContent = suffix;
   if (!opts.fromSlider) $("slider").value = yearToPos(state.year);
+  revealYear(true);
   const snap = snapshotFor(era, state.year);
   const label = tx(snap, "label");
   $("era-snap").textContent = label ? t("map") + label : "";
@@ -1497,14 +1498,17 @@ async function goToEra(era) {
 /* ---------- timeline rail ---------- */
 
 // Floating tag over the rail while dragging: the period (and map snapshot when zoomed in) and the year.
+// It lives in the rail, not the (scrollable) track, so it isn't clipped when the track pages sideways.
 function showScrubTag(p, y) {
   let tag = $("scrub-tag");
-  if (!tag) { tag = document.createElement("div"); tag.id = "scrub-tag"; tag.className = "scrub-tag"; document.querySelector(".track").appendChild(tag); }
+  if (!tag) { tag = document.createElement("div"); tag.id = "scrub-tag"; tag.className = "scrub-tag"; document.querySelector(".rail").appendChild(tag); }
   const era = eraFor(y);
   const snap = state.zoom ? [...era.snapshots].reverse().find((s) => s.from <= y) : null;
   tag.innerHTML = `<b>${esc(nameOf(era))}</b> <span>${fmtYear(y)}</span>` + (snap && tx(snap, "label") ? `<small>${esc(tx(snap, "label"))}</small>` : "");
   tag.hidden = false;
-  tag.style.left = `clamp(56px, ${(p / SLIDER_MAX) * 100}%, calc(100% - 56px))`;
+  const t = document.querySelector(".track").getBoundingClientRect(), r = document.querySelector(".rail").getBoundingClientRect();
+  const x = t.left + (p / SLIDER_MAX) * t.width - r.left;
+  tag.style.left = `clamp(56px, ${x}px, calc(100% - 56px))`;
   document.querySelectorAll(".band.era-band").forEach((b) => b.classList.toggle("scrub", b.dataset.era === era.id));
 }
 function hideScrubTag() {
@@ -1535,7 +1539,7 @@ function fitBandLabels() {
     return { b, c: r.left + r.width / 2, w, span: r.width, cur: b.classList.contains("current") };
   }).sort((x, y) => (y.cur - x.cur) || (rank(x.b) - rank(y.b)) || (y.span - x.span));
   // Phones keep wide gaps between names so the rail reads as a few landmarks.
-  const gap = innerWidth <= 720 ? 7 : 3, placed = [];
+  const gap = innerWidth <= 720 && !pagedRail() ? 7 : 3, placed = [];
   for (const it of items) {
     const a = it.c - it.w / 2 - gap, z = it.c + it.w / 2 + gap;
     const inside = it.c - it.w / 2 >= track.left - 4 && it.c + it.w / 2 <= track.right + 4;
@@ -1544,8 +1548,23 @@ function fitBandLabels() {
     it.b.classList.toggle("tight", !fits);
   }
 }
+// Phones, whole-history view: the track is wider than the screen and pages sideways, so every period gets its name.
+const pagedRail = () => state.zoom === 0 && innerWidth <= 720;
+function sizeTrack() {
+  const view = $("track-view"), track = document.querySelector(".track");
+  track.style.width = pagedRail() ? Math.round(view.clientWidth * 3.6) + "px" : "";
+}
+// Keep the current year in view on a paged track.
+function revealYear(smooth) {
+  if (!pagedRail()) return;
+  const view = $("track-view"), x = (yearToPos(state.year) / SLIDER_MAX) * document.querySelector(".track").offsetWidth;
+  const m = view.clientWidth / 5;
+  if (x < view.scrollLeft + m || x > view.scrollLeft + view.clientWidth - m)
+    view.scrollTo({ left: x - view.clientWidth / 2, behavior: smooth ? "smooth" : "auto" });
+}
 function buildRail() {
-  requestAnimationFrame(fitBandLabels);
+  sizeTrack();
+  requestAnimationFrame(() => { fitBandLabels(); revealYear(false); });
   const pct = (p) => (p / SLIDER_MAX) * 100;
   const bands = $("bands");
   bands.innerHTML = "";
@@ -1722,28 +1741,50 @@ async function init() {
     const y = posToYear(+e.target.value);
     if (y !== state.year) setYear(y, { fromSlider: true });
   });
-  const track = document.querySelector(".track");
+  const track = document.querySelector(".track"), view = $("track-view");
   let scrub = null;
   const posAt = (x) => { const r = track.getBoundingClientRect(); return Math.max(0, Math.min(SLIDER_MAX - 1e-6, ((x - r.left) / r.width) * SLIDER_MAX)); };
-  $("bands").addEventListener("pointerdown", (e) => { scrub = { x: e.clientX, id: e.pointerId, moved: false }; });
+  // The thumb follows the finger (setting value fires no input event); the map waits for the drop.
+  const scrubTo = (x) => { const p = posAt(x); scrub.year = posToYear(p); $("slider").value = p; showScrubTag(p, scrub.year); };
+  // Near either edge of a paged track the view scrolls on its own, faster the closer the finger is to the edge.
+  const edgeScroll = () => {
+    if (!scrub || !scrub.moved) return;
+    const r = view.getBoundingClientRect(), zone = 36;
+    const v = scrub.lastX < r.left + zone ? -(r.left + zone - scrub.lastX) : scrub.lastX > r.right - zone ? scrub.lastX - (r.right - zone) : 0;
+    if (v && view.scrollWidth > view.clientWidth) { view.scrollLeft += v * 0.5; scrubTo(scrub.lastX); }
+    scrub.raf = requestAnimationFrame(edgeScroll);
+  };
+  track.addEventListener("pointerdown", (e) => {
+    // With a mouse on the whole-width rail the native slider handles its own drags.
+    if (e.target === $("slider") && !pagedRail()) return;
+    scrub = { x: e.clientX, lastX: e.clientX, id: e.pointerId, moved: false, onButton: !!e.target.closest(".band, .tick") };
+  });
   addEventListener("pointermove", (e) => {
     if (!scrub || e.pointerId !== scrub.id) return;
+    scrub.lastX = e.clientX;
     if (!scrub.moved && Math.abs(e.clientX - scrub.x) < 6) return;
-    if (!scrub.moved) { scrub.moved = true; stop(); try { $("bands").setPointerCapture(e.pointerId); } catch {} }
-    const p = posAt(e.clientX);
-    scrub.year = posToYear(p);
-    showScrubTag(p, scrub.year);
+    if (!scrub.moved) { scrub.moved = true; stop(); try { track.setPointerCapture(e.pointerId); } catch {} scrub.raf = requestAnimationFrame(edgeScroll); }
+    scrubTo(e.clientX);
   });
   addEventListener("pointerup", (e) => {
     if (!scrub || e.pointerId !== scrub.id) return;
     const s = scrub; scrub = null;
-    if (!s.moved) return;
+    cancelAnimationFrame(s.raf);
+    if (!s.moved) {
+      // A tap on the slider line jumps there; a tap on a band or tick keeps its own click.
+      if (!s.onButton) setYear(posToYear(posAt(e.clientX)));
+      return;
+    }
     hideScrubTag();
     // Swallow the click that follows the drag, so the band under the finger doesn't also fire.
     addEventListener("click", (c) => { c.stopPropagation(); c.preventDefault(); }, { capture: true, once: true });
     setTimeout(() => setYear(s.year), 0);
   });
-  addEventListener("pointercancel", () => { scrub = null; hideScrubTag(); });
+  addEventListener("pointercancel", () => {
+    if (scrub) cancelAnimationFrame(scrub.raf);
+    scrub = null; hideScrubTag();
+    $("slider").value = yearToPos(state.year);
+  });
   $("play").addEventListener("click", play);
   $("zoom-in").addEventListener("click", () => setZoom(state.zoom + 1));
   $("zoom-out").addEventListener("click", () => setZoom(state.zoom - 1));
@@ -1812,6 +1853,7 @@ async function init() {
   map.on("click", () => { if (phone.matches) openEra(false); });
   new ResizeObserver(() => {
     document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
+    sizeTrack();
     fitBandLabels();
   }).observe(document.querySelector(".rail"));
   document.addEventListener("keydown", (e) => {

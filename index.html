@@ -79,10 +79,12 @@
     <button class="play" id="play" aria-label="Play timeline">
       <svg viewBox="0 0 16 16" id="play-icon"><path d="M4 2l10 6-10 6z"/></svg>
     </button>
-    <div class="track">
-      <div class="bands" id="bands"></div>
-      <div class="ticks" id="ticks"></div>
-      <input type="range" id="slider" min="0" max="1000" step="any" value="0" aria-label="Year">
+    <div class="track-view" id="track-view">
+      <div class="track">
+        <div class="bands" id="bands"></div>
+        <div class="ticks" id="ticks"></div>
+        <input type="range" id="slider" min="0" max="1000" step="any" value="0" aria-label="Year">
+      </div>
     </div>
     <div class="scale"><span id="scale-start"></span><span class="scale-hint" id="scale-hint"></span><span id="scale-end"></span></div>
     <div class="zoom" role="group" id="zoom">
