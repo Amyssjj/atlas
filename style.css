@@ -476,7 +476,7 @@ html:lang(en) .mk-polity .ruler { font-family: var(--font-body); font-weight: 60
   .mk-army.selected { width: min(260px, calc(100vw - 40px)); }
   .mk-army .army-note { display: none; }
 }
-.maplibregl-marker.mk-army { z-index: 5; }
+.mk-army.flat-card { position: absolute; z-index: 5; }
 .maplibregl-marker.mk-route { z-index: 2; }
 
 /* People, capitals, faith, inventions */
