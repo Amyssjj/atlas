@@ -15732,7 +15732,8 @@
    "yang-hu"
   ],
   "states": [
-   "Jin"
+   "Jin",
+   "Wu"
   ]
  },
  {
@@ -15781,7 +15782,7 @@
    "yang-hu"
   ],
   "states": [
-   "Jin"
+   "Wu"
   ]
  },
  {
@@ -15806,7 +15807,8 @@
    "wang-jun"
   ],
   "states": [
-   "Jin"
+   "Jin",
+   "Wu"
   ]
  },
  {
@@ -15852,7 +15854,8 @@
    "wang-jun"
   ],
   "states": [
-   "Jin"
+   "Jin",
+   "Wu"
   ]
  },
  {
@@ -15875,7 +15878,8 @@
   ],
   "people": [],
   "states": [
-   "Jin"
+   "Jin",
+   "Wu"
   ]
  },
  {
@@ -20932,7 +20936,7 @@
   ],
   "people": [],
   "states": [
-   "Sui Empire"
+   "Chen"
   ]
  },
  {
@@ -21074,7 +21078,8 @@
   ],
   "people": [],
   "states": [
-   "Sui Empire"
+   "Sui Empire",
+   "Western Liang"
   ]
  },
  {
@@ -21100,6 +21105,7 @@
    "yang-guang"
   ],
   "states": [
+   "Chen",
    "Sui Empire"
   ]
  },
@@ -27155,6 +27161,7 @@
   ],
   "people": [],
   "states": [
+   "Jingnan",
    "Song"
   ]
  },
@@ -27178,6 +27185,7 @@
   ],
   "people": [],
   "states": [
+   "Later Shu",
    "Song"
   ]
  },
@@ -27201,7 +27209,8 @@
   ],
   "people": [],
   "states": [
-   "Song"
+   "Song",
+   "Southern Han"
   ]
  },
  {
@@ -27269,7 +27278,8 @@
   ],
   "people": [],
   "states": [
-   "Song"
+   "Song",
+   "Southern Tang"
   ]
  },
  {
@@ -27338,7 +27348,8 @@
   ],
   "people": [],
   "states": [
-   "Song"
+   "Song",
+   "Wuyue"
   ]
  },
  {
@@ -27362,7 +27373,8 @@
    "yelu-xiuge"
   ],
   "states": [
-   "Liao"
+   "Liao",
+   "Northern Han"
   ]
  },
  {
@@ -27386,6 +27398,7 @@
   "people": [],
   "states": [
    "Liao",
+   "Northern Han",
    "Song"
   ]
  },

@@ -158,6 +158,10 @@
    "name": "Southwestern tribes",
    "zh": "西南诸蛮",
    "outsider": true
+  },
+  "song": {
+   "name": "Song",
+   "zh": "北宋"
   }
  },
  "seeds": {
@@ -1366,6 +1370,186 @@
    "set": {
     "houzhou": [
      "yingmo"
+    ]
+   }
+  },
+  {
+   "id": "fd-960",
+   "from": 960,
+   "label": "960: Zhao Kuangyin's Chenqiao mutiny ends the Later Zhou; the Song takes over its land",
+   "label_zh": "960年：赵匡胤陈桥兵变，取代后周，建立北宋",
+   "set": {
+    "song": [
+     "kaifeng",
+     "luoyang",
+     "xuchang",
+     "caizhou",
+     "chenzhou",
+     "huazhou",
+     "weibo",
+     "xiangzhou",
+     "xingzhou",
+     "hezhong",
+     "jinzhou",
+     "changan",
+     "shangzhou",
+     "dengzhou",
+     "xiangyang",
+     "anzhou",
+     "qingzhou",
+     "jinan",
+     "yunzhou",
+     "yanzhou",
+     "xuzhou",
+     "suzhou",
+     "dengzhou_sd",
+     "yizhou",
+     "haizhou",
+     "yanan",
+     "luzhou",
+     "yingmo",
+     "cangzhou",
+     "zhenzhou",
+     "jizhou",
+     "dingzhou",
+     "fengxiang",
+     "qinzhou",
+     "binzhou",
+     "jingzhou",
+     "jiezhou",
+     "lingzhou",
+     "yangzhou",
+     "chuzhou",
+     "shouzhou",
+     "luzhou_hf",
+     "haozhou",
+     "guangzhou_gz",
+     "shuzhou"
+    ]
+   },
+   "names": {
+    "Silla": [
+     "Goryeo",
+     "高丽"
+    ]
+   }
+  },
+  {
+   "id": "fd-963",
+   "from": 963,
+   "label": "963: Song troops take Jingnan and Hunan (Wuping) in one campaign",
+   "label_zh": "963年：宋军假道灭荆南，又平定湖南武平",
+   "set": {
+    "song": [
+     "tanzhou_cs",
+     "hengzhou",
+     "yongzhou",
+     "langzhou",
+     "yuezhou_yy",
+     "chenzhou_cz",
+     "shaozhou_sy",
+     "chenzhou_yl",
+     "jiangling",
+     "xiazhou_yc"
+    ]
+   }
+  },
+  {
+   "id": "fd-965",
+   "from": 965,
+   "label": "965: Later Shu surrenders; Meng Chang is taken to Kaifeng",
+   "label_zh": "965年：后蜀投降，孟昶被押往开封",
+   "set": {
+    "song": [
+     "chengdu",
+     "mianzhou",
+     "langzhou_lz",
+     "yuzhou_cq",
+     "jiazhou",
+     "rongzhou_yb",
+     "kuizhou",
+     "xingyuan",
+     "lizhou",
+     "yazhou_ya",
+     "qianzhou_ps"
+    ]
+   }
+  },
+  {
+   "id": "fd-971",
+   "from": 971,
+   "label": "971: Song conquers Southern Han; Đinh Bộ Lĩnh has unified Jiaozhi",
+   "label_zh": "971年：宋灭南汉；交趾已由丁部领统一",
+   "set": {
+    "song": [
+     "guizhou",
+     "liuzhou",
+     "yizhou_gx",
+     "hezhou",
+     "guangzhou",
+     "shaozhou",
+     "chaozhou",
+     "huizhou",
+     "gaozhou",
+     "leizhou",
+     "yazhou",
+     "rongzhou",
+     "yongzhou_nn",
+     "wuzhou_wz",
+     "qinzhou_qz"
+    ]
+   },
+   "names": {
+    "Ngo dynasty": [
+     "Jiaozhi (Đại Cồ Việt)",
+     "交趾"
+    ]
+   }
+  },
+  {
+   "id": "fd-975",
+   "from": 975,
+   "label": "975: Jinling falls; Li Yu of Southern Tang surrenders",
+   "label_zh": "975年：金陵城破，南唐后主李煜出降",
+   "set": {
+    "song": [
+     "jinling",
+     "changzhou",
+     "xuanzhou",
+     "ezhou",
+     "jiangzhou",
+     "hongzhou",
+     "fuzhou_fz",
+     "jizhou_ja",
+     "qianzhou",
+     "xinzhou_sr",
+     "shezhou",
+     "yuanzhou",
+     "jianzhou",
+     "tingzhou"
+    ]
+   }
+  },
+  {
+   "id": "fd-978",
+   "from": 978,
+   "label": "978: Wuyue and the Quan–Zhang circuit hand their land to the Song",
+   "label_zh": "978年：吴越钱俶、漳泉陈洪进纳土归宋",
+   "set": {
+    "song": [
+     "hangzhou",
+     "suzhou_sz",
+     "huzhou",
+     "yuezhou",
+     "mingzhou",
+     "wuzhou",
+     "quzhou",
+     "taizhou",
+     "wenzhou",
+     "chuzhou_ls",
+     "fuzhou",
+     "quanzhou",
+     "zhangzhou"
     ]
    }
   }
