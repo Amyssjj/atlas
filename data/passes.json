@@ -1,0 +1,813 @@
+[
+{
+"id": "hangu-qin",
+"name": "Hangu Pass (Qin)",
+"name_zh": "函谷关（秦）",
+"lon": 110.92,
+"lat": 34.63,
+"from": -550,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Eastern gate of Qin and Guanzhong",
+"guards_zh": "秦国东大门、关中门户",
+"summary": "A narrow defile in the loess between the Yellow River and the Qinling hills; for a century the eastern states' armies broke against it. After the Han moved the pass east (114 BCE) and Tong Pass took over (196), the old site remained a famous landmark.",
+"summary_zh": "黄河与崤山之间的深谷窄道，“一夫当关，万夫莫开”。相传老子西出函谷关，应关令尹喜之请著《道德经》。战国时东方诸国多次合纵攻秦，都止步于此。汉代关址东移、东汉末潼关兴起后，旧关成为名胜古迹。",
+"battles": [
+{
+"year": -500,
+"name": "Laozi writes the Daodejing for the gatekeeper Yin Xi (legend)",
+"name_zh": "老子出关，为尹喜著《道德经》（传说）"
+},
+{
+"year": -318,
+"name": "Coalition of five states repulsed",
+"name_zh": "五国合纵攻秦，败于函谷"
+},
+{
+"year": -241,
+"name": "Last coalition against Qin fails",
+"name_zh": "最后一次合纵攻秦失败"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Hangu_Pass"
+},
+{
+"id": "hangu-han",
+"name": "Hangu Pass (Han)",
+"name_zh": "函谷关（汉）",
+"lon": 112.13,
+"lat": 34.72,
+"from": -114,
+"to": 907,
+"circa": true,
+"kind": "pass",
+"guards": "Eastern approach to Luoyang and Chang'an",
+"guards_zh": "洛阳以西、关中东出要道",
+"summary": "Moved east to Xin'an in 114 BCE, it is said because a general wanted his home to count as 'within the pass'.",
+"summary_zh": "公元前114年东移至新安，相传因楼船将军杨仆耻为“关外民”而请迁。东汉为洛阳八关之一。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Hangu_Pass"
+},
+{
+"id": "tongguan",
+"name": "Tong Pass",
+"name_zh": "潼关",
+"lon": 110.25,
+"lat": 34.54,
+"from": 196,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Main gate between the North China Plain and Guanzhong",
+"guards_zh": "关中东大门",
+"summary": "Built at the end of the Eastern Han where the Yellow River turns east; from then on the key to Chang'an from the east.",
+"summary_zh": "东汉末年设于黄河拐弯处，取代函谷关成为关中东门。“潼关失则长安危”。",
+"battles": [
+{
+"year": 211,
+"name": "Cao Cao defeats Ma Chao",
+"name_zh": "曹操破马超（潼关之战）"
+},
+{
+"year": 756,
+"name": "Geshu Han's army destroyed; An Lushan takes Chang'an",
+"name_zh": "哥舒翰出关兵败，长安失守"
+},
+{
+"year": 1643,
+"name": "Li Zicheng breaks the Ming defence",
+"name_zh": "李自成破潼关，孙传庭战死"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Tong_Pass"
+},
+{
+"id": "wuguan",
+"name": "Wu Pass",
+"name_zh": "武关",
+"lon": 110.61,
+"lat": 33.58,
+"from": -650,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Southeast gate of Guanzhong, toward Chu",
+"guards_zh": "关中东南门户、通南阳与楚地",
+"summary": "On the Dan River route from Guanzhong to Nanyang and the middle Yangtze; one of the 'four passes' of Qin.",
+"summary_zh": "秦“四塞”之一，扼丹江谷道，通南阳、荆楚。",
+"battles": [
+{
+"year": -299,
+"name": "King Huai of Chu lured to Wu Pass and seized",
+"name_zh": "楚怀王被诱入武关遭扣留"
+},
+{
+"year": -207,
+"name": "Liu Bang enters Guanzhong through Wu Pass",
+"name_zh": "刘邦由武关入关中"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Wu_Pass"
+},
+{
+"id": "xiaoguan",
+"name": "Xiao Pass",
+"name_zh": "萧关",
+"lon": 106.25,
+"lat": 36.0,
+"from": -300,
+"to": 1400,
+"circa": true,
+"kind": "pass",
+"guards": "Northwest gate of Guanzhong against the steppe",
+"guards_zh": "关中西北门户、防北方游牧",
+"summary": "Guarded the Jing River road from the Ordos and Gansu into Guanzhong; one of the 'four passes'.",
+"summary_zh": "秦“四塞”之一，扼泾水河谷，防匈奴等南下关中。唐诗多咏萧关。",
+"battles": [
+{
+"year": -166,
+"name": "Xiongnu break through and raid toward Chang'an",
+"name_zh": "匈奴老上单于入萧关，烽火通甘泉"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Xiao_Pass"
+},
+{
+"id": "dasan",
+"name": "Dasan Pass",
+"name_zh": "大散关",
+"lon": 106.95,
+"lat": 34.3,
+"from": -500,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Southwest gate of Guanzhong, road to Hanzhong and Shu",
+"guards_zh": "关中西南门户、通汉中巴蜀",
+"summary": "Where the Chencang road crosses the Qinling to Hanzhong; one of the 'four passes'.",
+"summary_zh": "秦“四塞”之一，陈仓道越秦岭入汉中处。陆游“铁马秋风大散关”。",
+"battles": [
+{
+"year": -206,
+"name": "Han Xin's secret march by Chencang",
+"name_zh": "暗度陈仓"
+},
+{
+"year": 1131,
+"name": "Wu Jie halts the Jin at Heshangyuan",
+"name_zh": "吴玠和尚原大破金兵"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Dasan_Pass"
+},
+{
+"id": "pujin",
+"name": "Pujin Pass",
+"name_zh": "蒲津关",
+"lon": 110.3,
+"lat": 34.83,
+"from": -300,
+"to": null,
+"circa": true,
+"kind": "gate",
+"guards": "Yellow River crossing between Shanxi and Guanzhong",
+"guards_zh": "晋陕之间黄河渡口",
+"summary": "A fortified crossing of the Yellow River; under the Tang an iron-chain pontoon bridge held by giant iron oxen spanned it here.",
+"summary_zh": "黄河重要渡口。唐开元年间铸铁牛系浮桥，铁牛今已出土。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Pujin_Ferry"
+},
+{
+"id": "hulao",
+"name": "Hulao Pass",
+"name_zh": "虎牢关",
+"lon": 113.22,
+"lat": 34.83,
+"from": -700,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Eastern gate of Luoyang",
+"guards_zh": "洛阳东大门",
+"summary": "Also called Sishui Pass; a loess bluff above the Yellow River on the road from the plain to Luoyang.",
+"summary_zh": "又名汜水关、成皋，扼黄河南岸东西大道，为洛阳东门。",
+"battles": [
+{
+"year": -203,
+"name": "Liu Bang and Xiang Yu stalemate at Chenggao",
+"name_zh": "楚汉相持成皋"
+},
+{
+"year": 621,
+"name": "Li Shimin captures Dou Jiande",
+"name_zh": "李世民虎牢之战擒窦建德"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Hulao_Pass"
+},
+{
+"id": "yique",
+"name": "Yique Pass",
+"name_zh": "伊阙关",
+"lon": 112.47,
+"lat": 34.56,
+"from": 184,
+"to": 900,
+"circa": true,
+"kind": "pass",
+"guards": "Southern gate of Luoyang",
+"guards_zh": "洛阳南大门",
+"summary": "The 'gate' cut by the Yi River south of Luoyang, one of the eight passes set in 184 against the Yellow Turbans; the Longmen caves line its cliffs.",
+"summary_zh": "伊水两山对峙如阙，东汉为防黄巾设“洛阳八关”之一。龙门石窟即开凿于此。",
+"battles": [
+{
+"year": -293,
+"name": "Bai Qi destroys the Han-Wei army",
+"name_zh": "白起伊阙之战大破韩魏"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Yique"
+},
+{
+"id": "jianmen",
+"name": "Jianmen Pass",
+"name_zh": "剑门关",
+"lon": 105.56,
+"lat": 32.2,
+"from": 221,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Northern gate of Sichuan",
+"guards_zh": "蜀地北门",
+"summary": "A cleft in the sheer cliffs of the Jianmen range on the Shu road; 'one man guards it, ten thousand cannot pass' (Li Bai).",
+"summary_zh": "大小剑山间断崖如门，诸葛亮设阁道守之。李白“一夫当关，万夫莫开”。",
+"battles": [
+{
+"year": 263,
+"name": "Jiang Wei holds Zhong Hui at Jiange",
+"name_zh": "姜维据剑阁拒钟会"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Jianmen_Pass"
+},
+{
+"id": "yangping",
+"name": "Yangping Pass",
+"name_zh": "阳平关",
+"lon": 106.62,
+"lat": 33.15,
+"from": 190,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Western gate of Hanzhong",
+"guards_zh": "汉中西门",
+"summary": "Key to the Hanzhong basin from the west and north; the contest for Hanzhong turned on it.",
+"summary_zh": "汉中盆地西部门户，三国时争夺汉中的关键。",
+"battles": [
+{
+"year": 215,
+"name": "Cao Cao defeats Zhang Lu",
+"name_zh": "曹操阳平关破张鲁"
+},
+{
+"year": 219,
+"name": "Liu Bei takes Hanzhong (Mount Dingjun nearby)",
+"name_zh": "刘备夺汉中，定军山斩夏侯渊"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Yangping_Pass"
+},
+{
+"id": "jiangguan",
+"name": "Qutang Pass",
+"name_zh": "瞿塘关（江关）",
+"lon": 109.55,
+"lat": 31.04,
+"from": -280,
+"to": null,
+"circa": true,
+"kind": "gate",
+"guards": "Upper Yangtze gorge between Shu and Chu",
+"guards_zh": "长江三峡入蜀门户",
+"summary": "At Kuimen, the entrance of the Three Gorges; whoever held it controlled the river route between Sichuan and the middle Yangtze.",
+"summary_zh": "夔门天下雄，扼长江三峡西口，为川楚水路咽喉。",
+"battles": [
+{
+"year": 222,
+"name": "Liu Bei retreats to Baidi after Yiling",
+"name_zh": "夷陵败后刘备退守白帝城"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Qutang_Gorge"
+},
+{
+"id": "wusheng",
+"name": "Wusheng Pass",
+"name_zh": "武胜关",
+"lon": 114.07,
+"lat": 31.73,
+"from": 500,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Road between the Huai plain and the Han River",
+"guards_zh": "中原与江汉之间要道",
+"summary": "One of the 'three passes of Yiyang' through the Dabie and Tongbai hills, on the main road from Henan to Wuhan.",
+"summary_zh": "“义阳三关”之一，扼大别山、桐柏山之间南北孔道。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Wusheng_Pass"
+},
+{
+"id": "jingxing",
+"name": "Jingxing Pass",
+"name_zh": "井陉关",
+"lon": 114.2,
+"lat": 38.05,
+"from": -300,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Taihang crossing between Shanxi and the Hebei plain",
+"guards_zh": "太行八陉之一、晋冀通道",
+"summary": "One of the eight passages (陉) through the Taihang; also called Tumen Pass.",
+"summary_zh": "太行八陉之第五陉，又称土门关，连通山西与河北平原。",
+"battles": [
+{
+"year": -204,
+"name": "Han Xin's battle with his back to the river",
+"name_zh": "韩信背水之战破赵"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Jingxing"
+},
+{
+"id": "tianjing",
+"name": "Tianjing Pass",
+"name_zh": "天井关",
+"lon": 112.85,
+"lat": 35.48,
+"from": -200,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Taihang crossing from Shangdang to Luoyang",
+"guards_zh": "太行陉、上党通洛阳",
+"summary": "On the Taihang road from the Shangdang uplands down to the Yellow River and Luoyang.",
+"summary_zh": "又名太行关，自上党南下河内、洛阳的要道。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Taihang_Mountains"
+},
+{
+"id": "niangzi",
+"name": "Niangzi Pass",
+"name_zh": "娘子关",
+"lon": 113.95,
+"lat": 37.97,
+"from": 620,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Eastern gate of Shanxi",
+"guards_zh": "山西东大门",
+"summary": "Said to be named for Princess Pingyang, sister of Tang Taizong, whose 'Lady's Army' held it.",
+"summary_zh": "相传因唐平阳公主率“娘子军”驻守得名，为晋东门户。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Niangzi_Pass"
+},
+{
+"id": "yanmen",
+"name": "Yanmen Pass",
+"name_zh": "雁门关",
+"lon": 112.88,
+"lat": 39.19,
+"from": -300,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Northern gate of Shanxi against the steppe",
+"guards_zh": "晋北门户、防北方游牧",
+"summary": "Guarding the Juzhu mountains between Datong and Taiyuan; 'the first pass of the world' to the Tang.",
+"summary_zh": "扼勾注山，自大同南下太原必经之地，号“天下九塞，雁门为首”。",
+"battles": [
+{
+"year": 615,
+"name": "Emperor Yang of Sui besieged by the Turks",
+"name_zh": "隋炀帝雁门被围"
+},
+{
+"year": 986,
+"name": "Yang Ye's last campaign against the Liao",
+"name_zh": "杨业抗辽"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Yanmen_Pass"
+},
+{
+"id": "pingxing",
+"name": "Pingxing Pass",
+"name_zh": "平型关",
+"lon": 113.92,
+"lat": 39.33,
+"from": 1400,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Inner Great Wall between Shanxi and Hebei",
+"guards_zh": "内长城关口、晋冀之间",
+"summary": "A gate in the Ming inner Great Wall on the road east from Datong.",
+"summary_zh": "明内长城关口，扼大同东去要道。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Pingxing_Pass"
+},
+{
+"id": "ningwu",
+"name": "Ningwu Pass",
+"name_zh": "宁武关",
+"lon": 112.3,
+"lat": 39.0,
+"from": 1450,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "One of the 'outer three passes' of Shanxi",
+"guards_zh": "明“外三关”之一",
+"summary": "Ming fortress between Yanmen and Pianguan; with them the 'outer three passes'.",
+"summary_zh": "明代与雁门、偏关合称“外三关”。",
+"battles": [
+{
+"year": 1644,
+"name": "Zhou Yuji's last stand against Li Zicheng",
+"name_zh": "周遇吉死守宁武关"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Ningwu_Pass"
+},
+{
+"id": "pianguan",
+"name": "Pianguan",
+"name_zh": "偏关",
+"lon": 111.5,
+"lat": 39.44,
+"from": 1390,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Where the Great Wall meets the Yellow River",
+"guards_zh": "长城与黄河交汇处",
+"summary": "Westernmost of the outer three passes, where the Wall comes down to the Yellow River bend.",
+"summary_zh": "外三关之一，长城在此临黄河。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Pianguan_County"
+},
+{
+"id": "shahu",
+"name": "Shahu Pass",
+"name_zh": "杀虎口",
+"lon": 112.43,
+"lat": 40.33,
+"from": 1544,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Great Wall gate to Mongolia (later a trade gate)",
+"guards_zh": "长城关口、走西口通道",
+"summary": "Ming 'Kill the Hu' gate; under the Qing a customs post on the road of Shanxi migrants 'going west' to Inner Mongolia.",
+"summary_zh": "明称杀胡口，清改杀虎口，成为“走西口”通道和税关。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Shahukou"
+},
+{
+"id": "zhangjiakou",
+"name": "Zhangjiakou",
+"name_zh": "张家口",
+"lon": 114.88,
+"lat": 40.84,
+"from": 1429,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Great Wall gate on the tea road to Mongolia",
+"guards_zh": "长城关口、张库大道起点",
+"summary": "Ming fort and horse market; later the start of the tea caravans to Kyakhta.",
+"summary_zh": "明设堡与马市，清为张库商道起点。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Zhangjiakou"
+},
+{
+"id": "juyong",
+"name": "Juyong Pass",
+"name_zh": "居庸关",
+"lon": 116.07,
+"lat": 40.29,
+"from": -300,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Northwest gate of Beijing",
+"guards_zh": "北京西北门户",
+"summary": "A 20-km gorge through the Jundu hills, the main road from the Mongolian plateau to Beijing.",
+"summary_zh": "军都山中长约二十公里的关沟，北京西北屏障。",
+"battles": [
+{
+"year": 1213,
+"name": "Mongols break through to Zhongdu",
+"name_zh": "蒙古破居庸关围中都"
+},
+{
+"year": 1644,
+"name": "Li Zicheng enters, Beijing falls",
+"name_zh": "李自成入居庸关，北京陷落"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Juyong_Pass"
+},
+{
+"id": "zijing",
+"name": "Zijing Pass",
+"name_zh": "紫荆关",
+"lon": 115.17,
+"lat": 39.43,
+"from": 960,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "One of Beijing's 'inner three passes'",
+"guards_zh": "明“内三关”之一",
+"summary": "With Juyong and Daoma, one of the inner three passes shielding Beijing from the west.",
+"summary_zh": "与居庸、倒马合称“内三关”。",
+"battles": [
+{
+"year": 1449,
+"name": "Esen breaks through after Tumu",
+"name_zh": "土木之变后也先破紫荆关逼北京"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Zijing_Pass"
+},
+{
+"id": "daoma",
+"name": "Daoma Pass",
+"name_zh": "倒马关",
+"lon": 114.65,
+"lat": 39.03,
+"from": 960,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Inner three passes, southwest of Beijing",
+"guards_zh": "明“内三关”之一",
+"summary": "'Horse-tumbling pass', so steep that horses fell on it.",
+"summary_zh": "山路险峻，马行至此常跌倒，故名。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Daoma_Pass"
+},
+{
+"id": "gubeikou",
+"name": "Gubeikou",
+"name_zh": "古北口",
+"lon": 117.15,
+"lat": 40.69,
+"from": 555,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Northeast gate of Beijing toward Rehe",
+"guards_zh": "北京东北门户",
+"summary": "Gate in the wall on the road from Beijing to the Rehe uplands and Manchuria.",
+"summary_zh": "北京通往热河、东北的要口。",
+"battles": [
+{
+"year": 1550,
+"name": "Altan Khan raids to Beijing (Gengxu crisis)",
+"name_zh": "庚戌之变，俺答由古北口入犯"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Gubeikou"
+},
+{
+"id": "xifengkou",
+"name": "Xifengkou",
+"name_zh": "喜峰口",
+"lon": 118.4,
+"lat": 40.4,
+"from": 1400,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Great Wall gate on the Luan River",
+"guards_zh": "滦河河谷长城关口",
+"summary": "Where the Luan River valley cuts the wall, a route between the Hebei plain and the Liao lands.",
+"summary_zh": "滦河穿长城处，通辽西、蒙古。",
+"battles": [
+{
+"year": 1629,
+"name": "Hong Taiji raids through the wall to Beijing",
+"name_zh": "己巳之变，皇太极破长城入关"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Xifengkou"
+},
+{
+"id": "shanhai",
+"name": "Shanhai Pass",
+"name_zh": "山海关",
+"lon": 119.75,
+"lat": 40.01,
+"from": 1381,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Where the Great Wall meets the sea; gate to Manchuria",
+"guards_zh": "长城东端、东北门户",
+"summary": "Built by Xu Da in 1381 between the Yan hills and the Bohai: 'the first pass under heaven'.",
+"summary_zh": "1381年徐达所筑，依山傍海，号“天下第一关”。",
+"battles": [
+{
+"year": 1644,
+"name": "Wu Sangui lets the Qing through; Li Zicheng defeated",
+"name_zh": "吴三桂引清兵入关，一片石之战败李自成"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Shanhai_Pass"
+},
+{
+"id": "waqiao",
+"name": "Waqiao Pass",
+"name_zh": "瓦桥关",
+"lon": 116.1,
+"lat": 39.0,
+"from": 959,
+"to": 1127,
+"circa": true,
+"kind": "gate",
+"guards": "Song frontier against the Liao",
+"guards_zh": "宋辽边界“三关”之一",
+"summary": "One of the three river passes Emperor Shizong of Later Zhou took from the Liao; under the Song, the front line held with flooded paddies.",
+"summary_zh": "后周世宗北伐收复的“三关”之一，北宋以塘泺水网据守防辽。",
+"battles": [
+{
+"year": 959,
+"name": "Later Zhou retakes the three passes",
+"name_zh": "周世宗北伐取三关"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Xiongxian"
+},
+{
+"id": "yumen",
+"name": "Jade Gate",
+"name_zh": "玉门关",
+"lon": 93.86,
+"lat": 40.35,
+"from": -110,
+"to": 1000,
+"circa": true,
+"kind": "gate",
+"guards": "Han gate to the Western Regions (northern road)",
+"guards_zh": "汉通西域门户（北道）",
+"summary": "Westernmost gate of the Han wall, through which jade from Khotan came; the Tang gate later moved east near Guazhou.",
+"summary_zh": "汉长城西端关口，西域和田玉由此入关；唐代关址东移至瓜州附近。王之涣“春风不度玉门关”。",
+"battles": [
+{
+"year": 102,
+"name": "Ban Chao asks to return 'alive through the Jade Gate'",
+"name_zh": "班超“但愿生入玉门关”"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Yumen_Pass"
+},
+{
+"id": "yangguan",
+"name": "Yang Pass",
+"name_zh": "阳关",
+"lon": 94.07,
+"lat": 39.93,
+"from": -110,
+"to": 1000,
+"circa": true,
+"kind": "gate",
+"guards": "Han gate to the Western Regions (southern road)",
+"guards_zh": "汉通西域门户（南道）",
+"summary": "South of the Jade Gate, the start of the southern Silk Road along the Kunlun.",
+"summary_zh": "玉门关之南，丝路南道起点。王维“西出阳关无故人”。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Yangguan"
+},
+{
+"id": "jiayu",
+"name": "Jiayu Pass",
+"name_zh": "嘉峪关",
+"lon": 98.22,
+"lat": 39.8,
+"from": 1372,
+"to": null,
+"circa": true,
+"kind": "wall",
+"guards": "Western end of the Ming Great Wall",
+"guards_zh": "明长城西端",
+"summary": "Built in 1372 in the Hexi Corridor's narrowest point; the end of China proper for Ming travellers.",
+"summary_zh": "1372年建于河西走廊最窄处，明长城西起点，号“天下雄关”。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Jiayu_Pass"
+},
+{
+"id": "tiemen",
+"name": "Iron Gate Pass",
+"name_zh": "铁门关",
+"lon": 86.2,
+"lat": 41.85,
+"from": 630,
+"to": 900,
+"circa": true,
+"kind": "gate",
+"guards": "Gorge on the Silk Road north of Korla",
+"guards_zh": "丝路中道峡谷关口",
+"summary": "A Tang pass in the Konqi River gorge between Karashahr and Korla.",
+"summary_zh": "唐设于孔雀河峡谷，焉耆与库尔勒之间。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Tiemenguan"
+},
+{
+"id": "meiguan",
+"name": "Mei Pass",
+"name_zh": "梅关",
+"lon": 114.3,
+"lat": 25.27,
+"from": 716,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Dayu ridge road between Jiangxi and Guangdong",
+"guards_zh": "赣粤间大庾岭商道",
+"summary": "Zhang Jiuling cut a road over the Dayu ridge in 716; the Song built the gate. The main road to Guangzhou for a thousand years.",
+"summary_zh": "716年张九龄开凿大庾岭路，宋代立关。此后千年为岭南通中原主道。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Meiguan"
+},
+{
+"id": "xianxia",
+"name": "Xianxia Pass",
+"name_zh": "仙霞关",
+"lon": 118.62,
+"lat": 28.32,
+"from": 878,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Mountain road between Zhejiang and Fujian",
+"guards_zh": "浙闽之间山道",
+"summary": "Huang Chao's rebels cut a road through the Xianxia hills into Fujian in 878.",
+"summary_zh": "878年黄巢军开仙霞岭路入闽，为浙闽咽喉。",
+"battles": [],
+"source": "https://en.wikipedia.org/wiki/Xianxia_Pass"
+},
+{
+"id": "kunlun",
+"name": "Kunlun Pass",
+"name_zh": "昆仑关",
+"lon": 108.55,
+"lat": 23.06,
+"from": 1000,
+"to": null,
+"circa": true,
+"kind": "pass",
+"guards": "Northern gate of Yongzhou (Nanning)",
+"guards_zh": "邕州（南宁）北门",
+"summary": "Guarding the road into the Nanning basin.",
+"summary_zh": "扼邕州北面通道。",
+"battles": [
+{
+"year": 1053,
+"name": "Di Qing's night attack defeats Nong Zhigao",
+"name_zh": "狄青夜袭昆仑关破侬智高"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Kunlun_Pass"
+},
+{
+"id": "zhennan",
+"name": "Zhennan Pass",
+"name_zh": "镇南关",
+"lon": 106.75,
+"lat": 22.01,
+"from": 1100,
+"to": null,
+"circa": true,
+"kind": "gate",
+"guards": "Border gate to Vietnam",
+"guards_zh": "中越边关",
+"summary": "On the road from Guangxi to Hanoi; today's Friendship Pass.",
+"summary_zh": "广西通安南的边关，今友谊关。",
+"battles": [
+{
+"year": 1885,
+"name": "Feng Zicai defeats the French",
+"name_zh": "冯子材镇南关大捷"
+}
+],
+"source": "https://en.wikipedia.org/wiki/Friendship_Pass"
+}
+]

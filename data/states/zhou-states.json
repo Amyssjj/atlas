@@ -1,0 +1,218 @@
+{
+  "about": "Spring and Autumn and Warring States territories, drawn from seed points. Each seed is a place (lon, lat) that a state held; tools/build_states.py grows each seed into a cell (Voronoi, limited to a radius and clipped to land) and merges cells by owner. Snapshots list only the seeds that change hands since the previous snapshot. Approximate, after the general outlines in Tan Qixiang's Historical Atlas of China.",
+  "radius": 2.0,
+  "states": {
+    "zhou":     { "name": "Zhou royal domain", "zh": "周",   "color": "#c9a227" },
+    "jin":      { "name": "Jin",       "zh": "晋",   "color": "#7a5195" },
+    "zhao":     { "name": "Zhao",      "zh": "赵",   "color": "#2f6f8f" },
+    "wei":      { "name": "Wei",       "zh": "魏",   "color": "#5b8c3a" },
+    "han":      { "name": "Han",       "zh": "韩",   "color": "#c0703f" },
+    "qi":       { "name": "Qi",        "zh": "齐",   "color": "#2f8f83" },
+    "chu":      { "name": "Chu",       "zh": "楚",   "color": "#a33e3e" },
+    "qin":      { "name": "Qin",       "zh": "秦",   "color": "#3d3d4f" },
+    "yan":      { "name": "Yan",       "zh": "燕",   "color": "#4f6db8" },
+    "lu":       { "name": "Lu",        "zh": "鲁",   "color": "#9a7b4f", "minor": true },
+    "song":     { "name": "Song",      "zh": "宋",   "color": "#b08a2e" },
+    "wey":      { "name": "Wey",       "zh": "卫",   "color": "#8a6f9e", "minor": true },
+    "zheng":    { "name": "Zheng",     "zh": "郑",   "color": "#5f9a9a", "minor": true },
+    "chen":     { "name": "Chen",      "zh": "陈",   "color": "#9c6b6b", "minor": true },
+    "cai":      { "name": "Cai",       "zh": "蔡",   "color": "#7f9c5a", "minor": true },
+    "cao":      { "name": "Cao",       "zh": "曹",   "color": "#a08f6a", "minor": true },
+    "wu":       { "name": "Wu",        "zh": "吴",   "color": "#2e7d4f" },
+    "yue":      { "name": "Yue",       "zh": "越",   "color": "#5e9a2a" },
+    "zhongshan":{ "name": "Zhongshan", "zh": "中山", "color": "#8c7a4a", "minor": true },
+    "ba":       { "name": "Ba",        "zh": "巴",   "color": "#7e5a3a" },
+    "shu":      { "name": "Shu",       "zh": "蜀",   "color": "#9a5f2e" },
+    "xu":       { "name": "Xu",        "zh": "徐",   "color": "#8a8a5a", "minor": true },
+    "guo":      { "name": "Guo",       "zh": "虢",   "color": "#8f8f8f", "minor": true },
+    "xing":     { "name": "Xing",      "zh": "邢",   "color": "#8f8f8f", "minor": true },
+    "ju":       { "name": "Ju",        "zh": "莒",   "color": "#8f8f8f", "minor": true },
+    "lai":      { "name": "Lai",       "zh": "莱",   "color": "#8f8f8f", "minor": true },
+    "yong":     { "name": "Yong",      "zh": "庸",   "color": "#8f8f8f", "minor": true },
+    "shen":     { "name": "Shen",      "zh": "申",   "color": "#8f8f8f", "minor": true },
+    "sui":      { "name": "Sui",       "zh": "随",   "color": "#8f8f8f", "minor": true },
+    "huang":    { "name": "Huang",     "zh": "黄",   "color": "#8f8f8f", "minor": true },
+    "dai":      { "name": "Dai",       "zh": "代",   "color": "#2f6f8f", "minor": true },
+    "rong":     { "name": "Rong peoples",   "zh": "戎",   "outsider": true },
+    "di":       { "name": "Di peoples",     "zh": "狄",   "outsider": true },
+    "yiqu":     { "name": "Yiqu",           "zh": "义渠", "outsider": true },
+    "shanrong": { "name": "Shanrong",       "zh": "山戎", "outsider": true },
+    "donghu":   { "name": "Donghu",         "zh": "东胡", "outsider": true },
+    "linhu":    { "name": "Linhu and Loufan", "zh": "林胡 · 楼烦", "outsider": true },
+    "huaiyi":   { "name": "Huai Yi",        "zh": "淮夷", "outsider": true },
+    "man":      { "name": "Man peoples",    "zh": "蛮",   "outsider": true },
+    "baiyue":   { "name": "Baiyue",         "zh": "百越", "outsider": true },
+    "xiongnu":  { "name": "Xiongnu",        "zh": "匈奴", "outsider": true }
+  },
+  "seeds": {
+    "zhou": [112.45, 34.68], "zhou_e": [113.0, 34.75],
+    "jin_jiang": [111.35, 35.62], "jin_linfen": [111.5, 36.1], "jin_yuncheng": [111.0, 35.05], "jin_jincheng": [112.85, 35.5],
+    "jin_taiyuan": [112.5, 37.8], "jin_changzhi": [113.1, 36.2], "jin_xinzhou": [112.7, 38.45], "jin_luliang": [111.15, 37.5],
+    "jin_hexi": [110.4, 35.4], "jin_sanmen": [111.2, 34.78], "jin_xinxiang": [113.9, 35.3], "jin_handan": [114.5, 36.6],
+    "jin_xingtai": [114.5, 37.07], "jin_anyang": [114.35, 36.1], "jin_shijiazhuang": [114.5, 37.75], "jin_dai": [114.5, 39.8],
+    "jin_datong": [113.3, 40.1],
+    "qi_linzi": [118.35, 36.85], "qi_weifang": [119.1, 36.7], "qi_jinan": [117.0, 36.65], "qi_liaocheng": [115.98, 36.45],
+    "qi_jimo": [120.45, 36.39], "qi_yantai": [121.4, 37.5], "qi_lai": [120.3, 37.0], "qi_dezhou": [116.3, 37.45],
+    "qi_cangzhou": [116.85, 38.3], "qi_rizhao": [119.5, 35.4], "qi_ju": [118.83, 35.58], "qi_tai": [117.1, 36.2],
+    "lu_qufu": [116.99, 35.6], "lu_jining": [116.6, 35.4], "lu_feixian": [117.97, 35.27],
+    "song_shangqiu": [115.65, 34.41], "song_xuzhou": [117.18, 34.26], "song_suzhou": [116.98, 33.64], "song_bozhou": [115.78, 33.85],
+    "wey_zhaoge": [114.2, 35.6], "wey_puyang": [115.03, 35.77], "wey_hua": [114.5, 35.55],
+    "zheng": [113.73, 34.4], "zheng_xuchang": [113.85, 34.03], "zheng_kaifeng": [114.35, 34.8],
+    "chen": [114.88, 33.73], "cai": [114.26, 33.26], "cai_xin": [114.98, 32.75], "cao": [115.57, 35.07],
+    "yan_ji": [116.4, 39.9], "yan_yi": [115.5, 39.0], "yan_tang": [117.2, 39.1], "yan_chengde": [117.9, 40.95],
+    "yan_zhangjiakou": [114.9, 40.8], "yan_tangshan": [118.2, 39.6], "yan_jinzhou": [121.1, 41.1], "yan_liaoyang": [123.2, 41.3],
+    "yan_baoding": [115.47, 38.87],
+    "qin_tianshui": [105.7, 34.58], "qin_yong": [107.4, 34.52], "qin_xianyang": [108.7, 34.33], "qin_weinan": [109.5, 34.5],
+    "qin_baoji": [106.6, 34.6], "qin_tongchuan": [109.0, 35.1], "qin_hanzhong": [107.0, 33.07], "qin_ankang": [109.0, 32.7],
+    "qin_shangluo": [110.0, 33.9], "qin_yulin": [109.7, 38.3], "qin_yanan": [109.5, 36.6], "qin_lintao": [103.85, 35.37],
+    "qin_pingliang": [106.7, 35.5], "qin_qingyang": [107.6, 35.7],
+    "chu_ying": [112.17, 30.43], "chu_xiangyang": [112.14, 32.0], "chu_wan": [112.53, 33.0], "chu_yichang": [111.3, 30.7],
+    "chu_xiaogan": [113.9, 30.9], "chu_wuhan": [114.3, 30.55], "chu_suizhou": [113.37, 31.7], "chu_xinyang": [114.07, 32.13],
+    "chu_changsha": [112.98, 28.2], "chu_yueyang": [113.1, 29.37], "chu_changde": [111.7, 29.03], "chu_hengyang": [112.6, 26.9],
+    "chu_nanchang": [115.89, 28.68], "chu_jiujiang": [116.0, 29.7], "chu_anqing": [117.05, 30.5], "chu_hefei": [117.27, 31.86],
+    "chu_shouchun": [116.78, 32.58], "chu_huaiyin": [119.0, 33.6], "chu_tongren": [109.19, 27.7], "chu_luan": [116.5, 31.75],
+    "chu_yangzhou": [119.42, 32.39],
+    "wu_suzhou": [120.62, 31.3], "wu_nanjing": [118.78, 32.06], "wu_wuxi": [120.3, 31.57], "wu_changzhou": [119.95, 31.78],
+    "wu_zhenjiang": [119.45, 32.2], "wu_wuhu": [118.38, 31.33], "wu_huzhou": [120.1, 30.87],
+    "yue_shaoxing": [120.58, 30.0], "yue_hangzhou": [120.17, 30.25], "yue_ningbo": [121.55, 29.87], "yue_jinhua": [119.65, 29.08],
+    "yue_wenzhou": [120.67, 28.0], "yue_quzhou": [118.87, 28.94],
+    "zhongshan": [114.4, 38.45],
+    "ba_chongqing": [106.55, 29.56], "ba_wanzhou": [108.4, 30.8], "ba_fuling": [107.4, 29.7], "ba_langzhong": [105.97, 31.58],
+    "shu_chengdu": [104.06, 30.66], "shu_mianyang": [104.7, 31.47], "shu_leshan": [103.76, 29.55], "shu_yaan": [103.0, 30.0],
+    "xu": [118.2, 33.9], "huaiyi": [118.5, 33.3],
+    "rong_west": [104.0, 36.3], "rong_lanzhou": [103.2, 36.0], "yiqu": [107.0, 36.7], "di_north": [111.0, 39.5],
+    "linhu": [110.5, 40.5], "donghu": [119.5, 42.0], "shanrong": [117.5, 41.6], "baiyue": [115.5, 25.5], "minyue": [119.3, 26.1],
+    "yelang": [106.7, 26.6], "man_west": [110.2, 29.2]
+  },
+  "snapshots": [
+    { "id": "sa-770", "from": -770, "label": "770 BCE: the Zhou court moves east",
+      "set": {
+        "zhou": ["zhou", "zhou_e"],
+        "jin": ["jin_jiang", "jin_linfen", "jin_yuncheng"],
+        "guo": ["jin_sanmen"],
+        "di": ["jin_taiyuan", "jin_changzhi", "jin_xinzhou", "jin_luliang", "jin_shijiazhuang", "zhongshan", "jin_dai", "jin_datong", "jin_jincheng", "qi_cangzhou", "qin_yulin", "qin_yanan", "di_north"],
+        "xing": ["jin_xingtai"],
+        "wey": ["wey_zhaoge", "wey_hua", "wey_puyang", "jin_anyang", "jin_handan", "jin_xinxiang"],
+        "qi": ["qi_linzi", "qi_weifang", "qi_jinan", "qi_tai", "qi_dezhou"],
+        "lai": ["qi_lai", "qi_yantai", "qi_jimo"],
+        "ju": ["qi_ju", "qi_rizhao"],
+        "lu": ["lu_qufu", "lu_jining", "lu_feixian"],
+        "cao": ["cao", "qi_liaocheng"],
+        "song": ["song_shangqiu", "song_bozhou", "song_xuzhou", "song_suzhou"],
+        "zheng": ["zheng", "zheng_xuchang", "zheng_kaifeng"],
+        "chen": ["chen"], "cai": ["cai", "cai_xin"],
+        "yan": ["yan_ji", "yan_yi", "yan_baoding", "yan_tang"],
+        "shanrong": ["yan_chengde", "yan_zhangjiakou", "yan_tangshan", "shanrong"],
+        "donghu": ["yan_jinzhou", "yan_liaoyang", "donghu"],
+        "qin": ["qin_tianshui", "qin_baoji"],
+        "rong": ["qin_yong", "qin_xianyang", "qin_weinan", "qin_tongchuan", "qin_shangluo", "jin_hexi", "qin_lintao", "rong_west", "rong_lanzhou", "qin_pingliang"],
+        "yiqu": ["qin_qingyang", "yiqu"],
+        "linhu": ["linhu"],
+        "yong": ["qin_ankang"],
+        "chu": ["chu_yichang", "chu_xiangyang", "chu_ying", "chu_wuhan"],
+        "shen": ["chu_wan"], "sui": ["chu_suizhou", "chu_xiaogan"], "huang": ["chu_xinyang"],
+        "man": ["chu_changsha", "chu_yueyang", "chu_changde", "chu_hengyang", "chu_tongren", "man_west"],
+        "huaiyi": ["chu_anqing", "chu_hefei", "chu_luan", "chu_shouchun", "chu_huaiyin", "chu_yangzhou", "huaiyi"],
+        "xu": ["xu"],
+        "wu": ["wu_suzhou", "wu_wuxi", "wu_changzhou", "wu_zhenjiang", "wu_huzhou", "wu_nanjing", "wu_wuhu"],
+        "yue": ["yue_shaoxing", "yue_hangzhou", "yue_ningbo", "yue_jinhua"],
+        "baiyue": ["yue_wenzhou", "yue_quzhou", "chu_nanchang", "chu_jiujiang", "baiyue", "minyue", "yelang"],
+        "shu": ["shu_chengdu", "shu_mianyang", "shu_leshan", "shu_yaan", "qin_hanzhong"],
+        "ba": ["ba_chongqing", "ba_wanzhou", "ba_fuling", "ba_langzhong"]
+      } },
+    { "id": "sa-680", "from": -680, "label": "680 BCE: Qin takes the Wei valley, Chu turns north",
+      "set": {
+        "qin": ["qin_yong", "qin_xianyang", "qin_weinan", "qin_tongchuan"],
+        "chu": ["chu_wan", "chu_xinyang", "chu_xiaogan"],
+        "qi": ["qi_liaocheng"]
+      } },
+    { "id": "sa-600", "from": -600, "label": "600 BCE: Jin and Chu, the two great powers",
+      "set": {
+        "jin": ["jin_sanmen", "jin_hexi", "jin_jincheng", "jin_changzhi", "jin_xinxiang", "wey_zhaoge", "jin_anyang", "jin_handan", "jin_xingtai"],
+        "qin": ["qin_pingliang", "qin_shangluo"],
+        "chu": ["chu_suizhou", "qin_ankang", "chu_yueyang", "chu_changde", "chu_anqing", "chu_luan", "chu_hefei", "chu_shouchun"]
+      } },
+    { "id": "sa-512", "from": -512, "label": "512 BCE: Wu destroys Xu and rises in the southeast",
+      "set": {
+        "qi": ["qi_lai", "qi_yantai", "qi_jimo"],
+        "jin": ["jin_taiyuan", "jin_luliang", "jin_xinzhou"],
+        "zhongshan": ["zhongshan", "jin_shijiazhuang"],
+        "wu": ["xu", "huaiyi", "chu_huaiyin", "chu_yangzhou"],
+        "chu": ["chu_jiujiang", "chu_changsha"],
+        "yue": ["yue_quzhou"]
+      } },
+    { "id": "ws-475", "from": -475, "label": "475 BCE: Yue destroys Wu, Jin is run by its ministers",
+      "set": {
+        "yue": ["wu_suzhou", "wu_wuxi", "wu_changzhou", "wu_zhenjiang", "wu_huzhou", "wu_nanjing", "wu_wuhu", "xu", "chu_huaiyin", "chu_yangzhou"],
+        "chu": ["chen", "cai", "cai_xin", "huaiyi"],
+        "jin": ["jin_dai", "jin_datong"],
+        "song": ["cao"]
+      } },
+    { "id": "ws-453", "from": -453, "label": "453 BCE: Han, Zhao and Wei divide Jin",
+      "set": {
+        "zhao": ["jin_taiyuan", "jin_xinzhou", "jin_dai", "jin_datong", "jin_handan", "jin_xingtai", "jin_luliang"],
+        "wei": ["jin_yuncheng", "jin_hexi", "jin_sanmen", "wey_zhaoge", "jin_anyang", "jin_xinxiang"],
+        "han": ["jin_linfen", "jin_jincheng", "jin_changzhi"],
+        "jin": ["jin_jiang"],
+        "chu": ["qi_ju", "qi_rizhao"]
+      } },
+    { "id": "ws-375", "from": -375, "label": "375 BCE: Han absorbs Zheng, Wei is the strongest state",
+      "set": {
+        "han": ["zheng", "zheng_xuchang", "jin_jiang"],
+        "wei": ["zheng_kaifeng"],
+        "chu": ["qin_hanzhong"],
+        "qi": ["qi_ju", "qi_rizhao"]
+      } },
+    { "id": "ws-316", "from": -316, "label": "316 BCE: Qin takes Ba and Shu, Chu takes the old Wu lands",
+      "set": {
+        "qin": ["jin_hexi", "jin_sanmen", "shu_chengdu", "shu_mianyang", "shu_leshan", "shu_yaan", "ba_chongqing", "ba_wanzhou", "ba_fuling", "ba_langzhong", "qin_yanan", "qin_yulin"],
+        "chu": ["wu_suzhou", "wu_wuxi", "wu_changzhou", "wu_zhenjiang", "wu_huzhou", "wu_nanjing", "wu_wuhu", "xu", "chu_huaiyin", "chu_yangzhou", "yue_hangzhou"]
+      } },
+    { "id": "ws-296", "from": -296, "label": "296 BCE: Zhao annexes Zhongshan and pushes north, Yan expands to Liaodong",
+      "set": {
+        "zhao": ["zhongshan", "jin_shijiazhuang", "linhu", "di_north"],
+        "qin": ["qin_hanzhong", "qin_ankang", "chu_wan"],
+        "yan": ["yan_chengde", "yan_zhangjiakou", "yan_tangshan", "yan_jinzhou", "yan_liaoyang"],
+        "xiongnu": ["shanrong"]
+      } },
+    { "id": "ws-286", "from": -286, "label": "286 BCE: Qi annexes Song",
+      "set": {
+        "qi": ["song_shangqiu", "song_xuzhou", "song_suzhou", "song_bozhou", "cao"],
+        "qin": ["jin_yuncheng"]
+      } },
+    { "id": "ws-278", "from": -278, "label": "278 BCE: Qin takes the Chu capital Ying",
+      "set": {
+        "qin": ["chu_ying", "chu_yichang", "chu_xiangyang", "qin_lintao", "rong_west", "rong_lanzhou"],
+        "wei": ["song_shangqiu", "cao"],
+        "chu": ["song_xuzhou", "song_suzhou", "song_bozhou"]
+      } },
+    { "id": "ws-260", "from": -260, "label": "260 BCE: Changping, Qin takes Shangdang",
+      "set": {
+        "qin": ["jin_changzhi", "jin_jincheng", "jin_linfen", "yiqu", "qin_qingyang", "chu_suizhou", "chu_changde"]
+      } },
+    { "id": "ws-256", "from": -256, "label": "256 BCE: Qin ends the Zhou, Chu annexes Lu",
+      "set": {
+        "qin": ["zhou", "zhou_e", "jin_taiyuan", "jin_luliang"],
+        "chu": ["lu_qufu", "lu_jining", "lu_feixian"]
+      } },
+    { "id": "ws-230", "from": -230, "label": "230 BCE: Qin destroys Han",
+      "set": {
+        "qin": ["zheng", "zheng_xuchang", "jin_jiang", "wey_zhaoge", "jin_anyang", "jin_xinxiang", "wey_hua", "jin_xinzhou"]
+      } },
+    { "id": "ws-228", "from": -228, "label": "228 BCE: Qin takes Handan, Zhao survives only in Dai",
+      "set": {
+        "qin": ["jin_handan", "jin_xingtai", "zhongshan", "jin_shijiazhuang"],
+        "dai": ["jin_dai", "jin_datong", "linhu", "di_north"]
+      } },
+    { "id": "ws-225", "from": -225, "label": "225 BCE: Qin floods Daliang and ends Wei",
+      "set": { "qin": ["zheng_kaifeng", "song_shangqiu", "cao"] } },
+    { "id": "ws-223", "from": -223, "label": "223 BCE: Qin conquers Chu",
+      "set": {
+        "qin": ["chu_xiaogan", "chu_wuhan", "chu_xinyang", "chu_changsha", "chu_yueyang", "chu_hengyang", "chu_nanchang", "chu_jiujiang", "chu_anqing", "chu_hefei", "chu_shouchun", "chu_huaiyin", "chu_luan", "chu_yangzhou", "chen", "cai", "cai_xin", "huaiyi", "xu", "song_xuzhou", "song_suzhou", "song_bozhou", "lu_qufu", "lu_jining", "lu_feixian", "wu_suzhou", "wu_wuxi", "wu_changzhou", "wu_zhenjiang", "wu_huzhou", "wu_nanjing", "wu_wuhu", "yue_hangzhou", "qi_ju", "qi_rizhao", "chu_tongren"]
+      } },
+    { "id": "ws-222", "from": -222, "label": "222 BCE: Yan and Dai fall, only Qi remains",
+      "set": {
+        "qin": ["yan_ji", "yan_yi", "yan_baoding", "yan_tang", "yan_chengde", "yan_zhangjiakou", "yan_tangshan", "yan_jinzhou", "yan_liaoyang", "jin_dai", "jin_datong", "linhu", "di_north", "yue_shaoxing", "yue_ningbo", "yue_jinhua", "yue_quzhou"]
+      } }
+  ]
+}

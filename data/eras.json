@@ -1,0 +1,693 @@
+{
+ "range": {
+  "start": -2070,
+  "end": 1912
+ },
+ "eras": [
+  {
+   "id": "xia",
+   "name": "Xia",
+   "name_zh": "夏",
+   "glyph": "夏",
+   "start": -2070,
+   "end": -1601,
+   "snapshots": [
+    {
+     "from": -2070,
+     "borders": "data/borders/xia.geojson"
+    }
+   ],
+   "summary": "The first dynasty of the traditional histories. Archaeologists link it with the Erlitou culture of the Yi-Luo basin, but no Xia writing has been found.",
+   "note": "Date range is traditional; the territory shown is the Erlitou culture area.",
+   "summary_zh": "传统史书中的第一个王朝。考古学家常把它和伊洛河流域的二里头文化联系在一起，但至今没有发现夏代的文字。",
+   "note_zh": "起止年代采用传统说法；地图上的范围是二里头文化的分布区。"
+  },
+  {
+   "id": "shang",
+   "name": "Shang",
+   "name_zh": "商",
+   "glyph": "商",
+   "start": -1600,
+   "end": -1047,
+   "snapshots": [
+    {
+     "from": -1600,
+     "borders": "data/borders/shang.geojson"
+    }
+   ],
+   "summary": "A bronze-age kingdom on the Yellow River plain whose kings left the oracle bone inscriptions, the earliest Chinese writing.",
+   "note": "Shang territory is a hand-drawn sketch of its core area.",
+   "summary_zh": "黄河下游平原上的一个青铜时代王国。商王留下了甲骨卜辞，这是已知最早的汉字。",
+   "note_zh": "商的疆域是对其核心地区的手绘示意。"
+  },
+  {
+   "id": "western-zhou",
+   "name": "Western Zhou",
+   "name_zh": "西周",
+   "glyph": "周",
+   "start": -1046,
+   "end": -771,
+   "snapshots": [
+    {
+     "from": -1046,
+     "borders": "data/borders/western-zhou.geojson"
+    }
+   ],
+   "summary": "The Zhou overthrew Shang and ruled from Haojing through relatives and allies given fiefs, under the idea of the Mandate of Heaven.",
+   "summary_zh": "周人推翻商朝，定都镐京，把土地分封给宗亲和盟友进行统治，并以“天命”之说为自己的统治正名。"
+  },
+  {
+   "id": "spring-autumn",
+   "name": "Spring and Autumn",
+   "name_zh": "春秋",
+   "glyph": "春秋",
+   "start": -770,
+   "end": -476,
+   "snapshots": [
+    {
+     "from": -770,
+     "borders": "data/borders/sa-770.geojson",
+     "label": "770 BCE: the Zhou court moves east",
+     "label_zh": "公元前770年：周王室东迁"
+    },
+    {
+     "from": -680,
+     "borders": "data/borders/sa-680.geojson",
+     "label": "680 BCE: Qin takes the Wei valley, Chu turns north",
+     "label_zh": "公元前680年：秦人占据渭河谷地，楚国向北扩张"
+    },
+    {
+     "from": -600,
+     "borders": "data/borders/sa-600.geojson",
+     "label": "600 BCE: Jin and Chu, the two great powers",
+     "label_zh": "公元前600年：晋、楚两强对峙"
+    },
+    {
+     "from": -512,
+     "borders": "data/borders/sa-512.geojson",
+     "label": "512 BCE: Wu destroys Xu and rises in the southeast",
+     "label_zh": "公元前512年：吴灭徐国，在东南崛起"
+    }
+   ],
+   "summary": "The Zhou king moved east to Luoyi and lost real power. Rival states such as Qi, Jin, Chu and Wu competed to be hegemon. Confucius lived at the end of this age.",
+   "note": "State borders are approximate, drawn from capitals and key cities.",
+   "summary_zh": "周王东迁洛邑后，逐渐失去实权。齐、晋、楚、吴等诸侯国相互争夺霸主地位。孔子生活在这个时代的末期。",
+   "note_zh": "各国边界为大致范围，依据都城和重要城邑绘制。"
+  },
+  {
+   "id": "warring-states",
+   "name": "Warring States",
+   "name_zh": "战国",
+   "glyph": "战国",
+   "start": -475,
+   "end": -222,
+   "snapshots": [
+    {
+     "from": -475,
+     "borders": "data/borders/ws-475.geojson",
+     "label": "475 BCE: Yue destroys Wu, Jin is run by its ministers",
+     "label_zh": "前475年：越国灭吴，晋国大权落入卿族之手"
+    },
+    {
+     "from": -453,
+     "borders": "data/borders/ws-453.geojson",
+     "label": "453 BCE: Han, Zhao and Wei divide Jin",
+     "label_zh": "前453年：韩、赵、魏三家瓜分晋国"
+    },
+    {
+     "from": -375,
+     "borders": "data/borders/ws-375.geojson",
+     "label": "375 BCE: Han absorbs Zheng, Wei is the strongest state",
+     "label_zh": "前375年：韩国灭郑，魏国最为强盛"
+    },
+    {
+     "from": -316,
+     "borders": "data/borders/ws-316.geojson",
+     "label": "316 BCE: Qin takes Ba and Shu, Chu takes the old Wu lands",
+     "label_zh": "前316年：秦国夺取巴蜀，楚国占据旧吴之地"
+    },
+    {
+     "from": -296,
+     "borders": "data/borders/ws-296.geojson",
+     "label": "296 BCE: Zhao annexes Zhongshan and pushes north, Yan expands to Liaodong",
+     "label_zh": "前296年：赵国灭中山、向北扩张，燕国拓地至辽东"
+    },
+    {
+     "from": -286,
+     "borders": "data/borders/ws-286.geojson",
+     "label": "286 BCE: Qi annexes Song",
+     "label_zh": "前286年：齐国灭宋"
+    },
+    {
+     "from": -278,
+     "borders": "data/borders/ws-278.geojson",
+     "label": "278 BCE: Qin takes the Chu capital Ying",
+     "label_zh": "前278年：秦军攻占楚都郢"
+    },
+    {
+     "from": -260,
+     "borders": "data/borders/ws-260.geojson",
+     "label": "260 BCE: Changping, Qin takes Shangdang",
+     "label_zh": "前260年：长平之战，秦国夺取上党"
+    },
+    {
+     "from": -256,
+     "borders": "data/borders/ws-256.geojson",
+     "label": "256 BCE: Qin ends the Zhou, Chu annexes Lu",
+     "label_zh": "前256年：秦灭周，楚灭鲁"
+    },
+    {
+     "from": -230,
+     "borders": "data/borders/ws-230.geojson",
+     "label": "230 BCE: Qin destroys Han",
+     "label_zh": "前230年：秦灭韩"
+    },
+    {
+     "from": -228,
+     "borders": "data/borders/ws-228.geojson",
+     "label": "228 BCE: Qin takes Handan, Zhao survives only in Dai",
+     "label_zh": "前228年：秦军攻下邯郸，赵国只剩代地一隅"
+    },
+    {
+     "from": -225,
+     "borders": "data/borders/ws-225.geojson",
+     "label": "225 BCE: Qin floods Daliang and ends Wei",
+     "label_zh": "前225年：秦军引水灌大梁，魏国灭亡"
+    },
+    {
+     "from": -223,
+     "borders": "data/borders/ws-223.geojson",
+     "label": "223 BCE: Qin conquers Chu",
+     "label_zh": "前223年：秦灭楚"
+    },
+    {
+     "from": -222,
+     "borders": "data/borders/ws-222.geojson",
+     "label": "222 BCE: Yan and Dai fall, only Qi remains",
+     "label_zh": "前222年：燕、代相继灭亡，六国只剩齐国"
+    }
+   ],
+   "summary": "Seven large states fought wars of conquest. Reforms made Qin the strongest, and the Hundred Schools of Thought flourished.",
+   "note": "State borders are approximate, drawn from capitals and key cities.",
+   "summary_zh": "七个大国相互攻伐兼并。各国纷纷变法图强，秦国由此成为最强者；诸子百家也在这一时期竞相争鸣。",
+   "note_zh": "各国疆界只是大致范围，依据都城和重要城市绘出。"
+  },
+  {
+   "id": "qin",
+   "name": "Qin",
+   "name_zh": "秦",
+   "glyph": "秦",
+   "start": -221,
+   "end": -207,
+   "snapshots": [
+    {
+     "from": -221,
+     "borders": "data/borders/qin.geojson"
+    }
+   ],
+   "summary": "The First Emperor unified China, standardised script, coins and weights, and linked the northern walls. The dynasty fell soon after his death.",
+   "summary_zh": "秦始皇统一中国，统一了文字、货币和度量衡，并把北方各国的长城连成一体。他死后没过几年，秦朝就灭亡了。"
+  },
+  {
+   "id": "western-han",
+   "name": "Western Han",
+   "name_zh": "西汉",
+   "glyph": "汉",
+   "start": -206,
+   "end": 8,
+   "snapshots": [
+    {
+     "from": -206,
+     "borders": "data/borders/western-han-early.geojson"
+    },
+    {
+     "from": -111,
+     "borders": "data/borders/western-han.geojson"
+    },
+    {
+     "from": -60,
+     "borders": "data/borders/western-han-wr.geojson",
+     "label": "60 BCE: Protectorate of the Western Regions",
+     "label_zh": "前60年：设立西域都护府"
+    }
+   ],
+   "summary": "Liu Bang founded a dynasty that set the pattern for imperial China. Emperor Wu pushed into Central Asia and the Silk Road opened.",
+   "summary_zh": "刘邦建立的汉朝为此后两千年的帝制中国定下了基本格局。汉武帝向中亚开拓，丝绸之路由此打通。"
+  },
+  {
+   "id": "xin",
+   "name": "Xin",
+   "name_zh": "新",
+   "glyph": "新",
+   "start": 9,
+   "end": 24,
+   "snapshots": [
+    {
+     "from": 9,
+     "borders": "data/borders/xin.geojson"
+    }
+   ],
+   "summary": "Wang Mang seized the throne and tried sweeping reforms. Floods of the Yellow River and peasant revolts brought him down.",
+   "summary_zh": "王莽篡夺皇位，推行了一系列激进的改革。黄河决口泛滥，各地农民纷纷起义，最终推翻了他的统治。"
+  },
+  {
+   "id": "eastern-han",
+   "name": "Eastern Han",
+   "name_zh": "东汉",
+   "glyph": "汉",
+   "start": 25,
+   "end": 219,
+   "snapshots": [
+    {
+     "from": 25,
+     "borders": "data/borders/eastern-han.geojson",
+     "label_zh": "汉朝撤出西域"
+    },
+    {
+     "from": 74,
+     "borders": "data/borders/eastern-han-wr.geojson",
+     "label": "Ban Chao and Ban Yong restore Han control of the Western Regions",
+     "label_zh": "班超、班勇父子先后恢复汉朝对西域的控制"
+    },
+    {
+     "from": 107,
+     "borders": "data/borders/eastern-han.geojson",
+     "label": "Han withdraws from the Western Regions",
+     "label_zh": "汉朝撤出西域"
+    },
+    {
+     "from": 123,
+     "borders": "data/borders/eastern-han-wr.geojson",
+     "label": "Ban Chao and Ban Yong restore Han control of the Western Regions",
+     "label_zh": "班超、班勇父子先后恢复汉朝对西域的控制"
+    }
+   ],
+   "summary": "The Han was restored with its capital at Luoyang. Paper was improved and Buddhism arrived, but court factions and the Yellow Turbans broke the dynasty apart.",
+   "summary_zh": "汉朝在洛阳复兴，史称东汉。这一时期造纸术得到改进，佛教传入中原，但外戚与宦官轮番专权，加上黄巾起义，最终使王朝分崩离析。"
+  },
+  {
+   "id": "three-kingdoms",
+   "name": "Three Kingdoms",
+   "name_zh": "三国",
+   "glyph": "三国",
+   "start": 220,
+   "end": 265,
+   "snapshots": [
+    {
+     "from": 220,
+     "borders": "data/borders/three-kingdoms.geojson"
+    }
+   ],
+   "summary": "Wei in the north, Shu Han in Sichuan and Wu in the south each claimed the empire.",
+   "note": "The lines between Wei, Shu and Wu are approximate.",
+   "summary_zh": "魏据北方，蜀汉占四川，吴守江南，三国各自称帝，都自认是天下正统。",
+   "note_zh": "魏、蜀、吴之间的边界只是大致示意。"
+  },
+  {
+   "id": "jin",
+   "name": "Jin",
+   "name_zh": "晋",
+   "glyph": "晋",
+   "start": 266,
+   "end": 419,
+   "snapshots": [
+    {
+     "from": 266,
+     "borders": "data/borders/western-jin.geojson"
+    },
+    {
+     "from": 317,
+     "borders": "data/borders/eastern-jin.geojson"
+    }
+   ],
+   "summary": "The Sima family reunified China in 280, but civil war and invasions drove the court south to Jiankang in 317 while the north split into the Sixteen Kingdoms.",
+   "summary_zh": "司马氏于280年统一全国，但不久便陷入宗室内战和外族入侵。317年，晋室南迁建康，北方则分裂为十六国。"
+  },
+  {
+   "id": "north-south",
+   "name": "Northern and Southern Dynasties",
+   "name_zh": "南北朝",
+   "glyph": "南北",
+   "start": 420,
+   "end": 580,
+   "snapshots": [
+    {
+     "from": 420,
+     "borders": "data/borders/ns-420.geojson",
+     "label": "420: Liu Yu founds the Song; the north is still split among the last of the Sixteen Kingdoms",
+     "label_zh": "420年：刘裕建立宋朝；北方仍由十六国的最后几个政权分据"
+    },
+    {
+     "from": 439,
+     "borders": "data/borders/ns-439.geojson",
+     "label": "439: Northern Wei has conquered Xia, Northern Yan and Northern Liang, uniting the north",
+     "label_zh": "439年：北魏先后灭夏、北燕和北凉，统一北方"
+    },
+    {
+     "from": 469,
+     "borders": "data/borders/ns-469.geojson",
+     "label": "466–469: Northern Wei takes Shandong and the land north of the Huai from Song",
+     "label_zh": "466–469年：北魏从刘宋手中夺取山东和淮北"
+    },
+    {
+     "from": 479,
+     "borders": "data/borders/ns-479.geojson",
+     "label": "479: Xiao Daocheng founds the Southern Qi in place of Song",
+     "label_zh": "479年：萧道成代宋建立南齐"
+    },
+    {
+     "from": 502,
+     "borders": "data/borders/ns-502.geojson",
+     "label": "502: Xiao Yan founds the Liang; Northern Wei has taken Nanyang, Shouchun and soon Hanzhong",
+     "label_zh": "502年：萧衍建立梁朝；北魏已夺取南阳、寿春，不久又取汉中"
+    },
+    {
+     "from": 534,
+     "borders": "data/borders/ns-534.geojson",
+     "label": "534: Northern Wei splits into Eastern Wei (at Ye) and Western Wei (at Chang'an)",
+     "label_zh": "534年：北魏分裂为东魏（都邺城）和西魏（都长安）"
+    },
+    {
+     "from": 550,
+     "borders": "data/borders/ns-550.geojson",
+     "label": "550: Northern Qi replaces Eastern Wei; during Hou Jing's revolt it takes the land between the Huai and the Yangtze",
+     "label_zh": "550年：北齐取代东魏，并趁侯景之乱夺取江淮之间的土地"
+    },
+    {
+     "from": 555,
+     "borders": "data/borders/ns-555.geojson",
+     "label": "553–555: Western Wei takes Sichuan and sacks Jiangling, leaving the Western Liang as its puppet",
+     "label_zh": "553–555年：西魏攻取蜀地，攻陷江陵，扶立西梁为傀儡"
+    },
+    {
+     "from": 557,
+     "borders": "data/borders/ns-557.geojson",
+     "label": "557: Chen Baxian founds the Chen; Yuwen Jue founds the Northern Zhou",
+     "label_zh": "557年：陈霸先建立陈朝；宇文觉建立北周"
+    },
+    {
+     "from": 573,
+     "borders": "data/borders/ns-573.geojson",
+     "label": "573: Chen's northern expedition retakes the land between the Huai and the Yangtze",
+     "label_zh": "573年：陈朝北伐，收复江淮之间的土地"
+    },
+    {
+     "from": 577,
+     "borders": "data/borders/ns-577.geojson",
+     "label": "577: Northern Zhou conquers Northern Qi and reunites the north",
+     "label_zh": "577年：北周灭北齐，重新统一北方"
+    },
+    {
+     "from": 579,
+     "borders": "data/borders/ns-579.geojson",
+     "label": "578–579: Northern Zhou takes the land north of the Yangtze from Chen",
+     "label_zh": "578–579年：北周从陈朝手中夺取长江以北的土地"
+    }
+   ],
+   "summary": "A north ruled by Xianbei dynasties such as the Northern Wei faced a series of southern dynasties at Jiankang. Buddhism spread across both.",
+   "summary_zh": "北方由北魏等鲜卑人建立的王朝统治，南方则在建康相继更替了几个王朝，南北长期对峙。佛教在南北两地都广为流传。"
+  },
+  {
+   "id": "sui",
+   "name": "Sui",
+   "name_zh": "隋",
+   "glyph": "隋",
+   "start": 581,
+   "end": 617,
+   "snapshots": [
+    {
+     "from": 581,
+     "borders": "data/borders/sui.geojson"
+    }
+   ],
+   "summary": "A short-lived dynasty that reunified north and south after nearly three centuries of division, and dug the Grand Canal.",
+   "summary_zh": "一个短命的王朝，却结束了南北近三百年的分裂，重新统一了中国，还开凿了大运河。"
+  },
+  {
+   "id": "tang",
+   "name": "Tang",
+   "name_zh": "唐",
+   "glyph": "唐",
+   "start": 618,
+   "end": 906,
+   "snapshots": [
+    {
+     "from": 618,
+     "borders": "data/borders/tang-618.geojson"
+    },
+    {
+     "from": 640,
+     "borders": "data/borders/tang-700.geojson",
+     "label": "640 onward: Anxi and Beiting Protectorates",
+     "label_zh": "640年起：设立安西、北庭都护府"
+    },
+    {
+     "from": 756,
+     "borders": "data/borders/tang-756.geojson",
+     "label": "After 755: the protectorates hold out, cut off by Tibet",
+     "label_zh": "755年后：西域都护府仍在坚守，但被吐蕃隔断"
+    },
+    {
+     "from": 790,
+     "borders": "data/borders/tang-800.geojson",
+     "label": "790 onward: the Western Regions are lost",
+     "label_zh": "790年起：西域尽失"
+    }
+   ],
+   "summary": "A cosmopolitan empire reaching into Central Asia along the Silk Road. The An Lushan rebellion of 755 broke central power, and Tibet took the Hexi Corridor.",
+   "summary_zh": "一个开放包容的大帝国，势力沿丝绸之路深入中亚。755年爆发的安史之乱摧毁了中央权威，吐蕃趁机夺取了河西走廊。"
+  },
+  {
+   "id": "five-dynasties",
+   "name": "Five Dynasties and Ten Kingdoms",
+   "name_zh": "五代十国",
+   "glyph": "五代",
+   "start": 907,
+   "end": 959,
+   "snapshots": [
+    {
+     "from": 907,
+     "borders": "data/borders/fd-907.geojson",
+     "label": "907: Zhu Wen ends the Tang and founds the Later Liang; regional governors become kings",
+     "label_zh": "907年：朱温灭唐建立后梁，各地节度使纷纷称王"
+    },
+    {
+     "from": 913,
+     "borders": "data/borders/fd-913.geojson",
+     "label": "913: Jin conquers Yan and takes Youzhou",
+     "label_zh": "913年：晋灭燕，夺取幽州"
+    },
+    {
+     "from": 916,
+     "borders": "data/borders/fd-916.geojson",
+     "label": "915–916: Jin wins Weibo and the north bank of the Yellow River; Former Shu takes Qi's western prefectures; Abaoji proclaims the Khitan state",
+     "label_zh": "915–916年：晋夺取魏博和黄河以北地区；前蜀夺取岐国西部诸州；阿保机建立契丹国"
+    },
+    {
+     "from": 923,
+     "borders": "data/borders/fd-923.geojson",
+     "label": "923: Li Cunxu founds the Later Tang and destroys the Later Liang; Qi submits the next year",
+     "label_zh": "923年：李存勖建立后唐，灭后梁；次年岐国归附"
+    },
+    {
+     "from": 925,
+     "borders": "data/borders/fd-925.geojson",
+     "label": "925: Later Tang conquers Former Shu; the Khitan destroy Balhae in 926",
+     "label_zh": "925年：后唐灭前蜀；926年契丹灭渤海"
+    },
+    {
+     "from": 934,
+     "borders": "data/borders/fd-934.geojson",
+     "label": "934: Meng Zhixiang founds the Later Shu in Sichuan",
+     "label_zh": "934年：孟知祥在四川建立后蜀"
+    },
+    {
+     "from": 936,
+     "borders": "data/borders/fd-936.geojson",
+     "label": "936: Shi Jingtang founds the Later Jin and hands the Sixteen Prefectures to the Khitan; Dali replaces Nanzhao in 937",
+     "label_zh": "936年：石敬瑭建立后晋，把燕云十六州割给契丹；937年大理取代南诏"
+    },
+    {
+     "from": 937,
+     "borders": "data/borders/fd-937.geojson",
+     "label": "937: Li Bian founds the Southern Tang in place of Wu",
+     "label_zh": "937年：李昪取代吴国，建立南唐"
+    },
+    {
+     "from": 939,
+     "borders": "data/borders/fd-939.geojson",
+     "label": "939: After the Bach Dang victory, Ngo Quyen rules Annam as an independent king",
+     "label_zh": "939年：白藤江大捷后，吴权在安南称王自立"
+    },
+    {
+     "from": 947,
+     "borders": "data/borders/fd-947.geojson",
+     "label": "947: The Khitan sack Kaifeng and rename their state Liao; Liu Zhiyuan founds the Later Han; Min has been divided between Southern Tang and Wuyue",
+     "label_zh": "947年：契丹攻破开封，改国号为辽；刘知远建立后汉；闽国已被南唐和吴越瓜分"
+    },
+    {
+     "from": 951,
+     "borders": "data/borders/fd-951.geojson",
+     "label": "951: Guo Wei founds the Later Zhou and the Liu family holds out as Northern Han; Southern Tang destroys Chu and Southern Han takes its Guangxi lands",
+     "label_zh": "951年：郭威建立后周，刘氏退守太原建立北汉；南唐灭楚，南汉夺取楚国在广西的土地"
+    },
+    {
+     "from": 952,
+     "borders": "data/borders/fd-952.geojson",
+     "label": "952: Hunan rises and drives out Southern Tang; the Wuping Circuit rules it",
+     "label_zh": "952年：湖南军民起兵赶走南唐，由武平军统治"
+    },
+    {
+     "from": 958,
+     "borders": "data/borders/fd-958.geojson",
+     "label": "955–958: Later Zhou takes four prefectures from Later Shu and all Southern Tang land north of the Yangtze",
+     "label_zh": "955–958年：后周夺取后蜀四州及南唐在长江以北的全部土地"
+    },
+    {
+     "from": 959,
+     "borders": "data/borders/fd-959.geojson",
+     "label": "959: Chai Rong retakes Ying and Mo prefectures from the Liao, then dies",
+     "label_zh": "959年：柴荣从辽朝收复瀛、莫二州，随后病逝"
+    }
+   ],
+   "summary": "Five short dynasties followed each other in the north while ten kingdoms ruled the south. The Khitan Liao took the Sixteen Prefectures around modern Beijing.",
+   "summary_zh": "北方五个短命王朝相继更替，南方则有十个政权割据一方。契丹建立的辽朝夺取了今北京周围的燕云十六州。"
+  },
+  {
+   "id": "northern-song",
+   "name": "Northern Song",
+   "name_zh": "北宋",
+   "glyph": "宋",
+   "start": 960,
+   "end": 1126,
+   "snapshots": [
+    {
+     "from": 960,
+     "borders": "data/borders/northern-song.geojson"
+    }
+   ],
+   "summary": "A civil dynasty run by examination graduates, with a booming commercial economy, printing and paper money, facing the Liao and Western Xia.",
+   "summary_zh": "一个由科举出身的文官治理的王朝，商业经济繁荣，印刷术和纸币广泛使用，北面和西北面分别与辽和西夏对峙。"
+  },
+  {
+   "id": "southern-song",
+   "name": "Southern Song",
+   "name_zh": "南宋",
+   "glyph": "南宋",
+   "start": 1127,
+   "end": 1270,
+   "snapshots": [
+    {
+     "from": 1127,
+     "borders": "data/borders/southern-song-jin.geojson"
+    },
+    {
+     "from": 1234,
+     "borders": "data/borders/southern-song-mongol.geojson"
+    }
+   ],
+   "summary": "After the Jurchen Jin took Kaifeng, the Song court ruled the south from Lin'an (Hangzhou), the richest city in the world.",
+   "note": "The Song border along the Huai River is approximate.",
+   "summary_zh": "金军攻陷开封后，宋室南渡，以临安（今杭州）为都城统治南方。当时的临安是世界上最富庶的城市。",
+   "note_zh": "图中宋金沿淮河的边界为大致示意。"
+  },
+  {
+   "id": "yuan",
+   "name": "Yuan",
+   "name_zh": "元",
+   "glyph": "元",
+   "start": 1271,
+   "end": 1367,
+   "snapshots": [
+    {
+     "from": 1271,
+     "borders": "data/borders/yuan-1271.geojson"
+    },
+    {
+     "from": 1279,
+     "borders": "data/borders/yuan.geojson"
+    }
+   ],
+   "summary": "Kublai Khan founded a Mongol dynasty with its capital at Dadu (Beijing) and conquered the Southern Song in 1279. Tibet was governed through the Xuanzheng Yuan; Xinjiang mostly belonged to the Chagatai Khanate.",
+   "summary_zh": "忽必烈建立蒙古人统治的元朝，定都大都（今北京），1279年灭南宋。吐蕃由宣政院管辖，新疆大部分属于察合台汗国。"
+  },
+  {
+   "id": "ming",
+   "name": "Ming",
+   "name_zh": "明",
+   "glyph": "明",
+   "start": 1368,
+   "end": 1643,
+   "snapshots": [
+    {
+     "from": 1368,
+     "borders": "data/borders/ming.geojson"
+    },
+    {
+     "from": 1616,
+     "borders": "data/borders/ming-1616.geojson",
+     "label": "1616: Nurhaci founds the Later Jin",
+     "label_zh": "1616年：努尔哈赤建立后金"
+    },
+    {
+     "from": 1621,
+     "borders": "data/borders/ming-1621.geojson",
+     "label": "1621: Later Jin takes Liaodong",
+     "label_zh": "1621年：后金攻取辽东"
+    },
+    {
+     "from": 1636,
+     "borders": "data/borders/ming-1636.geojson",
+     "label": "1636: Hong Taiji renames his state Qing",
+     "label_zh": "1636年：皇太极改国号为清"
+    }
+   ],
+   "summary": "Zhu Yuanzhang drove out the Mongols. The Ming rebuilt the Great Wall, sent Zheng He's fleets across the Indian Ocean and built the Forbidden City.",
+   "note": "Ming ties with Tibet (乌思藏) ran through titles and tribute. Whether Tibet was part of the Ming is debated, so it is drawn outside.",
+   "summary_zh": "朱元璋推翻蒙古人的统治，建立明朝。明朝重修长城，派郑和率船队远航印度洋，还修建了紫禁城。",
+   "note_zh": "明朝与西藏（乌思藏）的关系主要通过封授名号和朝贡维系。西藏是否属于明朝版图，学界尚有争论，因此图中画在明朝疆域之外。"
+  },
+  {
+   "id": "qing",
+   "name": "Qing",
+   "name_zh": "清",
+   "glyph": "清",
+   "start": 1644,
+   "end": 1912,
+   "snapshots": [
+    {
+     "from": 1644,
+     "borders": "data/borders/qing-1650.geojson",
+     "label": "1644: the Qing take Beijing",
+     "label_zh": "1644年：清军进入北京"
+    },
+    {
+     "from": 1683,
+     "borders": "data/borders/qing-1683.geojson",
+     "label": "1683: Taiwan and Mongolia join the Qing",
+     "label_zh": "1683年：台湾和蒙古归入清朝"
+    },
+    {
+     "from": 1720,
+     "borders": "data/borders/qing-1720.geojson",
+     "label": "1720: Qing troops enter Lhasa",
+     "label_zh": "1720年：清军进入拉萨"
+    },
+    {
+     "from": 1759,
+     "borders": "data/borders/qing-1800.geojson",
+     "label": "1759: Qing conquers Xinjiang",
+     "label_zh": "1759年：清朝平定新疆"
+    },
+    {
+     "from": 1860,
+     "borders": "data/borders/qing-1900.geojson",
+     "label": "1860 onward: territory lost to Russia",
+     "label_zh": "1860年以后：领土被沙俄割占"
+    }
+   ],
+   "summary": "The Manchu Qing built the largest Chinese empire, then faced rebellion and Western and Japanese imperialism. It ended with the abdication of the last emperor in 1912.",
+   "summary_zh": "满洲人建立的清朝缔造了疆域最大的中华帝国，后来却饱受内乱和西方列强、日本的侵略。1912年末代皇帝退位，清朝灭亡。"
+  }
+ ]
+}

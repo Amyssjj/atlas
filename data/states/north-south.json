@@ -1,0 +1,1089 @@
+{
+ "about": "Northern and Southern Dynasties, drawn from seed points (prefectures each state held) like zhou-states.json. Neighbours come from the backdrop file. Approximate, after the general outlines in Tan Qixiang's Historical Atlas of China.",
+ "radius": 2.3,
+ "backdrop": "data/borders/north-south.geojson",
+ "states": {
+  "song": {
+   "name": "Liu Song",
+   "zh": "刘宋",
+   "color": "#b5523b"
+  },
+  "qi": {
+   "name": "Southern Qi",
+   "zh": "南齐",
+   "color": "#c47a2c"
+  },
+  "liang": {
+   "name": "Liang",
+   "zh": "梁",
+   "color": "#9e4a6e"
+  },
+  "chen": {
+   "name": "Chen",
+   "zh": "陈",
+   "color": "#b8862b"
+  },
+  "westliang": {
+   "name": "Western Liang",
+   "zh": "西梁",
+   "color": "#c99a6a",
+   "minor": true
+  },
+  "wei": {
+   "name": "Northern Wei",
+   "zh": "北魏",
+   "color": "#3f6e8c"
+  },
+  "eastwei": {
+   "name": "Eastern Wei",
+   "zh": "东魏",
+   "color": "#4f7f5a"
+  },
+  "westwei": {
+   "name": "Western Wei",
+   "zh": "西魏",
+   "color": "#6a5a9c"
+  },
+  "northqi": {
+   "name": "Northern Qi",
+   "zh": "北齐",
+   "color": "#2f8a7a"
+  },
+  "northzhou": {
+   "name": "Northern Zhou",
+   "zh": "北周",
+   "color": "#5a4f8a"
+  },
+  "beiyan": {
+   "name": "Northern Yan",
+   "zh": "北燕",
+   "color": "#8a6a3a",
+   "minor": true
+  },
+  "beiliang": {
+   "name": "Northern Liang",
+   "zh": "北凉",
+   "color": "#7a8a3a",
+   "minor": true
+  },
+  "xiliang": {
+   "name": "Western Liang (Sixteen Kingdoms)",
+   "zh": "西凉",
+   "color": "#9a7a5a",
+   "minor": true
+  },
+  "xia": {
+   "name": "Xia (Helian)",
+   "zh": "夏",
+   "color": "#6d4c3d",
+   "minor": true
+  },
+  "xiqin": {
+   "name": "Western Qin",
+   "zh": "西秦",
+   "color": "#5a7a6a",
+   "minor": true
+  },
+  "qiuchi": {
+   "name": "Chouchi",
+   "zh": "仇池",
+   "color": "#8a7a6a",
+   "minor": true
+  },
+  "tuyuhun": {
+   "name": "Tuyuhun",
+   "zh": "吐谷浑",
+   "outsider": true
+  },
+  "cuan": {
+   "name": "Cuan clan",
+   "zh": "爨氏",
+   "outsider": true
+  },
+  "vanxuan": {
+   "name": "Van Xuan (Early Ly)",
+   "zh": "万春 (前李)",
+   "outsider": true
+  }
+ },
+ "seeds": {
+  "pingcheng": [
+   113.3,
+   40.1
+  ],
+  "shengle": [
+   111.9,
+   40.4
+  ],
+  "woye": [
+   108.3,
+   40.9
+  ],
+  "wuchuan": [
+   111.4,
+   41.1
+  ],
+  "huaihuang": [
+   114.8,
+   41.1
+  ],
+  "jinyang": [
+   112.55,
+   37.87
+  ],
+  "pingyang": [
+   111.5,
+   36.1
+  ],
+  "shangdang": [
+   113.1,
+   36.2
+  ],
+  "hedong": [
+   110.4,
+   34.9
+  ],
+  "youzhou": [
+   116.4,
+   39.9
+  ],
+  "zhongshan": [
+   115.0,
+   38.5
+  ],
+  "ye": [
+   114.3,
+   36.3
+  ],
+  "jizhou": [
+   115.6,
+   37.6
+  ],
+  "cangzhou": [
+   116.8,
+   38.3
+  ],
+  "longcheng": [
+   120.45,
+   41.57
+  ],
+  "liaoxi": [
+   119.2,
+   40.2
+  ],
+  "qingzhou": [
+   118.5,
+   36.7
+  ],
+  "jinan": [
+   117.0,
+   36.65
+  ],
+  "donglai": [
+   120.4,
+   37.3
+  ],
+  "yanzhou": [
+   116.6,
+   35.4
+  ],
+  "langya": [
+   118.4,
+   35.1
+  ],
+  "pengcheng": [
+   117.2,
+   34.27
+  ],
+  "huatai": [
+   114.6,
+   35.5
+  ],
+  "luoyang": [
+   112.45,
+   34.62
+  ],
+  "xuchang": [
+   113.8,
+   34.0
+  ],
+  "ruyang": [
+   114.0,
+   33.0
+  ],
+  "chenliu": [
+   114.3,
+   34.8
+  ],
+  "changan": [
+   108.9,
+   34.3
+  ],
+  "anding": [
+   107.0,
+   35.5
+  ],
+  "yanan": [
+   109.5,
+   36.6
+  ],
+  "tongwan": [
+   108.9,
+   37.9
+  ],
+  "lingwu": [
+   106.2,
+   38.1
+  ],
+  "tianshui": [
+   105.7,
+   34.6
+  ],
+  "fuhan": [
+   103.2,
+   35.6
+  ],
+  "jincheng": [
+   103.8,
+   36.4
+  ],
+  "guzang": [
+   102.6,
+   37.9
+  ],
+  "zhangye": [
+   100.45,
+   38.93
+  ],
+  "jiuquan": [
+   98.5,
+   39.7
+  ],
+  "dunhuang": [
+   94.66,
+   40.14
+  ],
+  "xiping": [
+   101.8,
+   36.6
+  ],
+  "fuqi": [
+   99.6,
+   36.9
+  ],
+  "bailan": [
+   98.0,
+   36.0
+  ],
+  "heyuan": [
+   100.4,
+   35.0
+  ],
+  "wudu": [
+   105.4,
+   33.4
+  ],
+  "hanzhong": [
+   107.0,
+   33.07
+  ],
+  "shangluo": [
+   110.0,
+   33.8
+  ],
+  "chengdu": [
+   104.07,
+   30.67
+  ],
+  "mianzhou": [
+   104.7,
+   31.47
+  ],
+  "langzhong": [
+   105.97,
+   31.58
+  ],
+  "jiangzhou": [
+   106.55,
+   29.56
+  ],
+  "jianwei": [
+   103.8,
+   29.6
+  ],
+  "yibin": [
+   104.6,
+   28.8
+  ],
+  "kuizhou": [
+   109.5,
+   31.0
+  ],
+  "xichang": [
+   102.2,
+   27.9
+  ],
+  "kunming": [
+   102.7,
+   25.05
+  ],
+  "qujing": [
+   103.8,
+   25.5
+  ],
+  "dali": [
+   100.2,
+   25.6
+  ],
+  "zangke": [
+   106.7,
+   26.6
+  ],
+  "nanyang": [
+   112.5,
+   33.0
+  ],
+  "xiangyang": [
+   112.15,
+   32.0
+  ],
+  "jiangling": [
+   112.2,
+   30.35
+  ],
+  "yiling": [
+   111.3,
+   30.7
+  ],
+  "xiakou": [
+   114.3,
+   30.55
+  ],
+  "yiyang": [
+   114.07,
+   32.13
+  ],
+  "changsha": [
+   112.94,
+   28.23
+  ],
+  "hengyang": [
+   112.6,
+   26.9
+  ],
+  "lingling": [
+   111.6,
+   26.2
+  ],
+  "wuling": [
+   111.7,
+   29.0
+  ],
+  "shouchun": [
+   116.8,
+   32.6
+  ],
+  "hefei": [
+   117.3,
+   31.86
+  ],
+  "huaiyin": [
+   119.0,
+   33.6
+  ],
+  "guangling": [
+   119.4,
+   32.4
+  ],
+  "zhongli": [
+   117.5,
+   32.9
+  ],
+  "jiankang": [
+   118.8,
+   32.05
+  ],
+  "wuxing": [
+   120.1,
+   30.87
+  ],
+  "kuaiji": [
+   120.58,
+   30.0
+  ],
+  "wujun": [
+   120.6,
+   31.3
+  ],
+  "xuancheng": [
+   118.75,
+   30.95
+  ],
+  "xunyang": [
+   116.0,
+   29.7
+  ],
+  "yuzhang": [
+   115.9,
+   28.68
+  ],
+  "linchuan": [
+   116.36,
+   27.95
+  ],
+  "luling": [
+   114.98,
+   27.1
+  ],
+  "nankang": [
+   114.9,
+   25.85
+  ],
+  "dongyang": [
+   119.65,
+   29.08
+  ],
+  "yongjia": [
+   120.7,
+   28.0
+  ],
+  "jianan": [
+   118.3,
+   27.0
+  ],
+  "jinan_fj": [
+   119.3,
+   26.08
+  ],
+  "quanzhou": [
+   118.6,
+   24.9
+  ],
+  "panyu": [
+   113.26,
+   23.13
+  ],
+  "shixing": [
+   113.6,
+   24.8
+  ],
+  "gaoliang": [
+   111.95,
+   21.86
+  ],
+  "hepu": [
+   109.2,
+   21.66
+  ],
+  "cangwu": [
+   111.3,
+   23.48
+  ],
+  "guilin": [
+   110.29,
+   25.27
+  ],
+  "yulin": [
+   110.0,
+   22.6
+  ],
+  "jinxing": [
+   108.3,
+   22.8
+  ],
+  "zhuyai": [
+   109.8,
+   19.4
+  ],
+  "chaozhou": [
+   116.6,
+   23.66
+  ],
+  "jiaozhi": [
+   105.85,
+   21.03
+  ],
+  "jiuzhen": [
+   105.8,
+   19.8
+  ]
+ },
+ "snapshots": [
+  {
+   "id": "ns-420",
+   "from": 420,
+   "label": "420: Liu Yu founds the Song; the north is still split among the last of the Sixteen Kingdoms",
+   "set": {
+    "song": [
+     "luoyang",
+     "huatai",
+     "xuchang",
+     "ruyang",
+     "chenliu",
+     "qingzhou",
+     "jinan",
+     "donglai",
+     "yanzhou",
+     "langya",
+     "pengcheng",
+     "hanzhong",
+     "shangluo",
+     "nanyang",
+     "xiangyang",
+     "jiangling",
+     "yiling",
+     "xiakou",
+     "yiyang",
+     "changsha",
+     "hengyang",
+     "lingling",
+     "wuling",
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli",
+     "jiankang",
+     "wuxing",
+     "kuaiji",
+     "wujun",
+     "xuancheng",
+     "xunyang",
+     "yuzhang",
+     "linchuan",
+     "luling",
+     "nankang",
+     "dongyang",
+     "yongjia",
+     "jianan",
+     "jinan_fj",
+     "quanzhou",
+     "panyu",
+     "shixing",
+     "gaoliang",
+     "hepu",
+     "cangwu",
+     "guilin",
+     "yulin",
+     "jinxing",
+     "zhuyai",
+     "chaozhou",
+     "jiaozhi",
+     "jiuzhen",
+     "chengdu",
+     "mianzhou",
+     "langzhong",
+     "jiangzhou",
+     "jianwei",
+     "yibin",
+     "kuizhou",
+     "xichang",
+     "kunming",
+     "qujing",
+     "dali",
+     "zangke"
+    ],
+    "wei": [
+     "pingcheng",
+     "shengle",
+     "woye",
+     "wuchuan",
+     "huaihuang",
+     "jinyang",
+     "pingyang",
+     "shangdang",
+     "hedong",
+     "youzhou",
+     "zhongshan",
+     "ye",
+     "jizhou",
+     "cangzhou"
+    ],
+    "beiyan": [
+     "longcheng",
+     "liaoxi"
+    ],
+    "xia": [
+     "tongwan",
+     "lingwu",
+     "yanan",
+     "changan",
+     "anding"
+    ],
+    "xiqin": [
+     "fuhan",
+     "jincheng",
+     "tianshui",
+     "xiping"
+    ],
+    "beiliang": [
+     "guzang",
+     "zhangye"
+    ],
+    "xiliang": [
+     "jiuquan",
+     "dunhuang"
+    ],
+    "qiuchi": [
+     "wudu"
+    ],
+    "tuyuhun": [
+     "fuqi",
+     "bailan",
+     "heyuan"
+    ]
+   }
+  },
+  {
+   "id": "ns-439",
+   "from": 439,
+   "label": "439: Northern Wei has conquered Xia, Northern Yan and Northern Liang, uniting the north",
+   "set": {
+    "wei": [
+     "tongwan",
+     "lingwu",
+     "yanan",
+     "changan",
+     "anding",
+     "longcheng",
+     "liaoxi",
+     "fuhan",
+     "jincheng",
+     "tianshui",
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "luoyang",
+     "huatai",
+     "xuchang",
+     "chenliu"
+    ],
+    "tuyuhun": [
+     "xiping"
+    ]
+   }
+  },
+  {
+   "id": "ns-469",
+   "from": 469,
+   "label": "466–469: Northern Wei takes Shandong and the land north of the Huai from Song",
+   "set": {
+    "wei": [
+     "qingzhou",
+     "jinan",
+     "donglai",
+     "yanzhou",
+     "langya",
+     "pengcheng",
+     "ruyang",
+     "wudu"
+    ]
+   }
+  },
+  {
+   "id": "ns-479",
+   "from": 479,
+   "label": "479: Xiao Daocheng founds the Southern Qi in place of Song",
+   "set": {
+    "qi": [
+     "hanzhong",
+     "shangluo",
+     "nanyang",
+     "xiangyang",
+     "jiangling",
+     "yiling",
+     "xiakou",
+     "yiyang",
+     "changsha",
+     "hengyang",
+     "lingling",
+     "wuling",
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli",
+     "jiankang",
+     "wuxing",
+     "kuaiji",
+     "wujun",
+     "xuancheng",
+     "xunyang",
+     "yuzhang",
+     "linchuan",
+     "luling",
+     "nankang",
+     "dongyang",
+     "yongjia",
+     "jianan",
+     "jinan_fj",
+     "quanzhou",
+     "panyu",
+     "shixing",
+     "gaoliang",
+     "hepu",
+     "cangwu",
+     "guilin",
+     "yulin",
+     "jinxing",
+     "zhuyai",
+     "chaozhou",
+     "jiaozhi",
+     "jiuzhen",
+     "chengdu",
+     "mianzhou",
+     "langzhong",
+     "jiangzhou",
+     "jianwei",
+     "yibin",
+     "kuizhou",
+     "xichang",
+     "kunming",
+     "qujing",
+     "dali",
+     "zangke"
+    ]
+   }
+  },
+  {
+   "id": "ns-502",
+   "from": 502,
+   "label": "502: Xiao Yan founds the Liang; Northern Wei has taken Nanyang, Shouchun and soon Hanzhong",
+   "set": {
+    "liang": [
+     "hanzhong",
+     "shangluo",
+     "nanyang",
+     "xiangyang",
+     "jiangling",
+     "yiling",
+     "xiakou",
+     "yiyang",
+     "changsha",
+     "hengyang",
+     "lingling",
+     "wuling",
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli",
+     "jiankang",
+     "wuxing",
+     "kuaiji",
+     "wujun",
+     "xuancheng",
+     "xunyang",
+     "yuzhang",
+     "linchuan",
+     "luling",
+     "nankang",
+     "dongyang",
+     "yongjia",
+     "jianan",
+     "jinan_fj",
+     "quanzhou",
+     "panyu",
+     "shixing",
+     "gaoliang",
+     "hepu",
+     "cangwu",
+     "guilin",
+     "yulin",
+     "jinxing",
+     "zhuyai",
+     "chaozhou",
+     "jiaozhi",
+     "jiuzhen",
+     "chengdu",
+     "mianzhou",
+     "langzhong",
+     "jiangzhou",
+     "jianwei",
+     "yibin",
+     "kuizhou",
+     "xichang",
+     "kunming",
+     "qujing",
+     "dali",
+     "zangke"
+    ],
+    "wei": [
+     "nanyang",
+     "shouchun",
+     "hanzhong",
+     "yiyang"
+    ]
+   }
+  },
+  {
+   "id": "ns-534",
+   "from": 534,
+   "label": "534: Northern Wei splits into Eastern Wei (at Ye) and Western Wei (at Chang'an)",
+   "set": {
+    "eastwei": [
+     "pingcheng",
+     "shengle",
+     "wuchuan",
+     "huaihuang",
+     "jinyang",
+     "pingyang",
+     "shangdang",
+     "youzhou",
+     "zhongshan",
+     "ye",
+     "jizhou",
+     "cangzhou",
+     "longcheng",
+     "liaoxi",
+     "qingzhou",
+     "jinan",
+     "donglai",
+     "yanzhou",
+     "langya",
+     "pengcheng",
+     "luoyang",
+     "huatai",
+     "xuchang",
+     "chenliu",
+     "ruyang",
+     "nanyang"
+    ],
+    "westwei": [
+     "woye",
+     "hedong",
+     "tongwan",
+     "lingwu",
+     "yanan",
+     "changan",
+     "anding",
+     "fuhan",
+     "jincheng",
+     "tianshui",
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "wudu",
+     "shangluo"
+    ],
+    "liang": [
+     "shouchun",
+     "hanzhong",
+     "yiyang"
+    ]
+   }
+  },
+  {
+   "id": "ns-550",
+   "from": 550,
+   "label": "550: Northern Qi replaces Eastern Wei; during Hou Jing's revolt it takes the land between the Huai and the Yangtze",
+   "set": {
+    "northqi": [
+     "luoyang",
+     "huatai",
+     "xuchang",
+     "ruyang",
+     "chenliu",
+     "qingzhou",
+     "jinan",
+     "donglai",
+     "yanzhou",
+     "langya",
+     "pengcheng",
+     "nanyang",
+     "pingcheng",
+     "shengle",
+     "wuchuan",
+     "huaihuang",
+     "jinyang",
+     "pingyang",
+     "shangdang",
+     "youzhou",
+     "zhongshan",
+     "ye",
+     "jizhou",
+     "cangzhou",
+     "longcheng",
+     "liaoxi",
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli",
+     "yiyang"
+    ],
+    "vanxuan": [
+     "jiaozhi",
+     "jiuzhen"
+    ]
+   },
+   "names": {
+    "Ruanruan": [
+     "Turks",
+     "突厥"
+    ]
+   }
+  },
+  {
+   "id": "ns-555",
+   "from": 555,
+   "label": "553–555: Western Wei takes Sichuan and sacks Jiangling, leaving the Western Liang as its puppet",
+   "set": {
+    "westwei": [
+     "hanzhong",
+     "chengdu",
+     "mianzhou",
+     "langzhong",
+     "jiangzhou",
+     "jianwei",
+     "yibin",
+     "xichang",
+     "xiangyang"
+    ],
+    "westliang": [
+     "jiangling",
+     "yiling"
+    ],
+    "cuan": [
+     "kunming",
+     "qujing",
+     "dali"
+    ]
+   }
+  },
+  {
+   "id": "ns-557",
+   "from": 557,
+   "label": "557: Chen Baxian founds the Chen; Yuwen Jue founds the Northern Zhou",
+   "set": {
+    "chen": [
+     "xiakou",
+     "changsha",
+     "hengyang",
+     "lingling",
+     "wuling",
+     "jiankang",
+     "wuxing",
+     "kuaiji",
+     "wujun",
+     "xuancheng",
+     "xunyang",
+     "yuzhang",
+     "linchuan",
+     "luling",
+     "nankang",
+     "dongyang",
+     "yongjia",
+     "jianan",
+     "jinan_fj",
+     "quanzhou",
+     "panyu",
+     "shixing",
+     "gaoliang",
+     "hepu",
+     "cangwu",
+     "guilin",
+     "yulin",
+     "jinxing",
+     "zhuyai",
+     "chaozhou",
+     "kuizhou",
+     "zangke"
+    ],
+    "northzhou": [
+     "hanzhong",
+     "shangluo",
+     "xiangyang",
+     "chengdu",
+     "mianzhou",
+     "langzhong",
+     "jiangzhou",
+     "jianwei",
+     "yibin",
+     "xichang",
+     "woye",
+     "hedong",
+     "tongwan",
+     "lingwu",
+     "yanan",
+     "changan",
+     "anding",
+     "fuhan",
+     "jincheng",
+     "tianshui",
+     "guzang",
+     "zhangye",
+     "jiuquan",
+     "dunhuang",
+     "wudu"
+    ]
+   }
+  },
+  {
+   "id": "ns-573",
+   "from": 573,
+   "label": "573: Chen's northern expedition retakes the land between the Huai and the Yangtze",
+   "set": {
+    "chen": [
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli"
+    ]
+   }
+  },
+  {
+   "id": "ns-577",
+   "from": 577,
+   "label": "577: Northern Zhou conquers Northern Qi and reunites the north",
+   "set": {
+    "northzhou": [
+     "luoyang",
+     "huatai",
+     "xuchang",
+     "ruyang",
+     "chenliu",
+     "qingzhou",
+     "jinan",
+     "donglai",
+     "yanzhou",
+     "langya",
+     "pengcheng",
+     "nanyang",
+     "yiyang",
+     "pingcheng",
+     "shengle",
+     "wuchuan",
+     "huaihuang",
+     "jinyang",
+     "pingyang",
+     "shangdang",
+     "youzhou",
+     "zhongshan",
+     "ye",
+     "jizhou",
+     "cangzhou",
+     "longcheng",
+     "liaoxi"
+    ]
+   }
+  },
+  {
+   "id": "ns-579",
+   "from": 579,
+   "label": "578–579: Northern Zhou takes the land north of the Yangtze from Chen",
+   "set": {
+    "northzhou": [
+     "shouchun",
+     "hefei",
+     "huaiyin",
+     "guangling",
+     "zhongli"
+    ]
+   }
+  }
+ ]
+}
