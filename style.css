@@ -788,3 +788,16 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .army-title .army-close:hover { color: var(--cinnabar); }
 @media (max-width: 720px) { .era.open .era-zh { display: block; grid-column: 1 / -1; margin-top: 6px; font-size: 13px; } }
 .era-zh span { white-space: nowrap; }
+
+/* Illustrations (Wikimedia Commons, packed by tools/pack_illustrations.py) */
+.illu { margin: 0 0 8px; }
+.story .illu { margin: 12px 0 0; }
+.illu img { display: block; width: 100%; max-height: 220px; object-fit: contain; background: rgba(0,0,0,.05); border-radius: 6px; }
+/* On map cards the picture is a thumbnail beside the name, so the card stays short. */
+.atlas-pop .illu { float: right; width: 92px; margin: 16px 0 6px 10px; }
+.atlas-pop .illu img { max-height: 120px; }
+.atlas-pop .illu figcaption { font-size: 9.5px; }
+@media (max-width: 720px) { .story .illu img { max-height: 180px; } }
+.illu figcaption { margin-top: 3px; font-size: 10.5px; line-height: 1.3; color: var(--muted, #888); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.illu figcaption a { color: inherit; text-decoration: none; }
+.illu figcaption a:hover { text-decoration: underline; }

@@ -67,3 +67,14 @@ To add an era, add a snapshot to `tools/build_borders.py` (or hand-make a GeoJSO
 - **Events and places**: written for this prototype, each event linking to a Wikipedia article for further reading. The stories, finer events and Chinese text were drafted with an AI model from general knowledge and have not been checked line by line against sources; uncertain dates are marked circa. The Wikipedia links could not be tested from the build machine, so the page opens them through Wikipedia search, which lands on the article when the title exists and on search results otherwise.
 
 A better border source for Chinese dynasties is CHGIS (Harvard China Historical GIS), which has prefecture-level data by year. Using it is a natural next step.
+
+## Illustrations
+
+Person cards and event stories show a picture from Wikimedia Commons (public domain or CC licences only, credited under the image).
+- `.github/workflows/illustrations.yml` (run by hand on GitHub) runs `tools/fetch_illustrations.py` on the pages in
+  `tools/illust_queries.json` (made by `tools/illust_queries.py` from each person's and event's `source`) and pushes the
+  thumbnails to the `illustrations-raw` branch. GitHub's runners can reach Wikimedia; this environment cannot.
+- `tools/pack_illustrations.py <checkout of illustrations-raw>` writes `data/illustrations.json` (key → image, credit)
+  and `data/img/<0-63>.json` (WebP data URLs, loaded on demand). Images shared by more than 3 events are dropped as generic.
+- `data/illustrations-skip.json` lists keys whose picture was wrong (checked by eye: modern namesakes, stamps, logos).
+  Pictures follow each entry's Wikipedia `source`, so a wrong `source` gives a wrong picture.
