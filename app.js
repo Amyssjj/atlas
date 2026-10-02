@@ -872,11 +872,22 @@ function armiesHTML(a) {
 // A marker anchored by its middle or bottom is shifted by -50% / -100% of its own size; when that size has a
 // fractional height (line heights like 1.35 x 12px) the card lands between pixels and its text blurs. Round the
 // height up to whole pixels once it is laid out.
-function crisp(el) {
-  requestAnimationFrame(() => {
-    el.style.height = "";
-    el.style.height = Math.ceil(el.getBoundingClientRect().height) + "px";
-  });
+// A map-pinned card placed with plain whole-pixel left/top. MapLibre markers carry rotateX/rotateZ and
+// will-change: transform, which puts them on a GPU layer whose text some browsers leave blurry once the map
+// has been clicked or moved. Offers the getElement()/remove() that the marker code uses.
+function flatCard(el, lngLat, offsetY) {
+  el.classList.add("flat-card");
+  map.getCanvasContainer().appendChild(el);
+  const place = () => {
+    const p = map.project(lngLat);
+    el.style.left = Math.round(p.x - el.offsetWidth / 2) + "px";
+    el.style.top = Math.round(p.y - el.offsetHeight + offsetY) + "px";
+  };
+  place();
+  map.on("move", place);
+  map.on("resize", place);
+  requestAnimationFrame(place);
+  return { getElement: () => el, remove() { map.off("move", place); map.off("resize", place); el.remove(); } };
 }
 
 // Battle cards stand over the war site while the battle is current (or selected); at most three at once.
@@ -900,8 +911,7 @@ function renderArmies() {
       if (e.target.closest(".army-close")) { state.closedArmies.add(ev.id); renderArmies(); return; }
       openStory(ev.id);
     });
-    markers.armies.push(new maplibregl.Marker({ element: el, anchor: "bottom", offset: [0, -16] }).setLngLat([ev.lon, ev.lat]).addTo(map));
-    crisp(el);
+    markers.armies.push(flatCard(el, [ev.lon, ev.lat], -16));
   }
 }
 
