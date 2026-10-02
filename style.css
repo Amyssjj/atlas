@@ -740,8 +740,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 /* Bands whose label was dropped also lose their divider, so a crowded rail shows only the named periods. */
 .band.era-band.tight { border-left-color: transparent; }
 @media (max-width: 720px) {
-  /* Phone, whole-history view: only a few spaced names, no dividers or event ticks; the drag tag does the rest. */
-  [data-zoom="all"] .band.era-band { border-left-color: transparent; }
+  /* Phone, whole-history view: no event ticks; the drag tag does the rest. */
   [data-zoom="all"] .ticks { display: none; }
   [data-zoom="all"] .bands { height: 26px; }
 }
