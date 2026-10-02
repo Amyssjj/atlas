@@ -19,12 +19,15 @@
     <h1 class="era-name" id="era-name">Spring and Autumn</h1>
     <div class="era-zh" id="era-zh"></div>
     <div class="era-year"><span id="year">770</span><small id="year-suffix">BCE</small></div>
-    <button class="chip era-more" id="era-more" aria-expanded="false" data-i18n="layers">Layers</button>
     <p class="era-summary" id="era-summary"></p>
     <p class="era-ruler" id="era-ruler" hidden></p>
     <p class="era-snap" id="era-snap" hidden></p>
     <p class="era-note" id="era-note" hidden></p>
-    <div class="lang-switch" id="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="en" lang="en">EN</button><button type="button" data-lang="zh" lang="zh-CN">中文</button></div>
+    <div class="era-corner">
+      <button type="button" class="chip search-open" id="search-open" aria-label="Search" title="Search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <div class="lang-switch" id="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="en" lang="en">EN</button><button type="button" data-lang="zh" lang="zh-CN">中文</button></div>
+      <button type="button" class="chip era-more" id="era-more" aria-expanded="false" data-i18n="layers">Layers</button>
+    </div>
     <div class="era-layers" role="group" aria-labelledby="layers-label">
       <span id="layers-label" class="sr-only" data-i18n="layers">Layers</span>
       <div class="lg"><span data-i18n="g_map">Map</span>
@@ -57,6 +60,10 @@
     <div class="pop-chart" id="pop-chart" hidden></div>
   </section>
 
+  <div class="search panel" id="search" role="dialog" aria-label="Search" hidden>
+    <div class="search-bar"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="search-q" type="text" enterkeyhint="search" autocomplete="off" spellcheck="false"><button type="button" class="zbtn" id="search-close" aria-label="Close">×</button></div>
+    <div class="search-results" id="search-results"></div>
+  </div>
   <aside class="ledger panel" id="ledger">
     <div class="ledger-head">
       <div class="ledger-tabs" role="tablist">

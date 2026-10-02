@@ -49,6 +49,8 @@ Three map layers can be switched on and off: 君主 (the ruler under each countr
 
 `data/walls.json` holds 13 Great Walls (长城) for the 长城 layer, from 楚方城 and 齐长城 to 明长城, with the years each was manned and its rough length. A wall in use is drawn as a dark line with battlement ticks and a label; after it was abandoned it stays as faint dashes. The lines join well-known points only. The file is written by `tools/build_walls.py` (AI-drafted, not source-checked). Wall lines in the per-era route data are no longer drawn, since this layer replaces them.
 
+A search box (magnifier button in the era panel, or `/` or Ctrl/Cmd+K) finds years (`755`, `前221`, `221 BC`), periods, people, rulers, cities and events; people and rulers come from all layer files, loaded on first use. Battle cards have a × that hides that card until its event is picked again.
+
 The ledger has two tabs: 事件 (events) and 君主 (rulers). The ruler tab lists the reigns of one country from `data/layers/<era>.json`, picked from a dropdown (main dynasties first; `polities` in each layer file, added by `tools/add_polity_names.py`, gives their Chinese names). Clicking a ruler narrows the timeline to that reign (decades zoom with the window set to the reign, labelled with the ruler's name); zooming or panning clears it.
 
 Only markers that fit the chosen year show on the map: events while they are current (the list keeps the rest), faith sites and inventions of the current era (or decades window) up to the year, people alive, capitals in use and passes standing. `data/passes.json` holds 37 famous passes (关隘) with founding years, what they guard and battles fought there, written by `tools/build_passes.py` (AI-drafted, not source-checked; founding years approximate).

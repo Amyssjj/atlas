@@ -35,6 +35,7 @@ const state = {
   details: {},          // era id -> promise of { event id -> detail }
   scale: [],            // [{era, p0, p1}] slider positions per era (zoom "all")
   zoom: 0,
+  closedArmies: new Set(),
   win: null,            // [start, end] years shown on the rail when zoomed in
   lang: "zh",
   show3d: true, showSat: true, showNeighbours: true, showPlaces: true, showGeo: true,
@@ -70,7 +71,7 @@ const UI = {
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" },
-    people_l: "人物", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", close: "关闭", search: "搜索", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -92,7 +93,7 @@ const UI = {
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" },
-    people_l: "People", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", close: "Close", search: "Search", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -131,6 +132,8 @@ function applyLang() {
   $("slider").setAttribute("aria-label", t("year"));
   $("play").setAttribute("aria-label", state.playing ? t("pause") : t("play"));
   $("ledger-toggle").textContent = $("ledger").classList.contains("collapsed") ? t("show") : t("hide");
+  $("search-open").title = $("search-open").ariaLabel = t("search");
+  $("search-q").placeholder = t("searchPh");
 }
 
 async function setLang(lang) {
@@ -846,20 +849,26 @@ function crisp(el) {
 }
 
 // Battle cards stand over the war site while the battle is current (or selected); at most three at once.
+// A card closed with × stays closed until its event is picked again.
 function renderArmies() {
   markers.armies.forEach((m) => m.remove());
   markers.armies = [];
   const data = state.layerData?.armies;
   if (!state.show.armies || !data || !state.era) return;
   const evs = visibleEvents()
-    .filter((ev) => data[ev.id] && ev.year <= state.year && (isActive(ev, state.year) || ev.id === state.selected))
+    .filter((ev) => data[ev.id] && !state.closedArmies.has(ev.id) && ev.year <= state.year && (isActive(ev, state.year) || ev.id === state.selected))
     .sort((a, b) => (b.id === state.selected) - (a.id === state.selected) || b.year - a.year)
     .slice(0, 3);
   for (const ev of evs) {
     const el = document.createElement("div");
     el.className = "mk-army" + (ev.id === state.selected ? " selected" : "");
-    el.innerHTML = `<div class="army-title">${esc(titleOf(ev))}<span>${fmtYear(ev.year, ev.circa)}</span></div>` + armiesHTML(data[ev.id]);
-    el.addEventListener("click", (e) => { e.stopPropagation(); openStory(ev.id); });
+    el.innerHTML = `<div class="army-title">${esc(titleOf(ev))}<span>${fmtYear(ev.year, ev.circa)}</span>` +
+      `<button type="button" class="army-close" aria-label="${t("close")}" title="${t("close")}">×</button></div>` + armiesHTML(data[ev.id]);
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (e.target.closest(".army-close")) { state.closedArmies.add(ev.id); renderArmies(); return; }
+      openStory(ev.id);
+    });
     markers.armies.push(new maplibregl.Marker({ element: el, anchor: "bottom", offset: [0, -16] }).setLngLat([ev.lon, ev.lat]).addTo(map));
     crisp(el);
   }
@@ -1195,7 +1204,6 @@ function renderPlaces() {
 function renderLedger() {
   if (!state.era) return;
   $("ev-filter").hidden = true;
-  if (state.reading && state.selected) state.tab = "events";
   for (const k of ["events", "rulers", "people"]) $("tab-" + k).setAttribute("aria-selected", String(state.tab === k));
   $("rulers").hidden = state.tab !== "rulers";
   $("people").hidden = state.tab !== "people";
@@ -1470,6 +1478,7 @@ async function selectEvent(id) {
   stop();
   const ev = state.events.find((e) => e.id === id);
   state.selected = id;
+  state.closedArmies.delete(id);
   // An event outside the decades window: move the window to it.
   if (state.zoom === 2 && (ev.year < state.win[0] || ev.year > state.win[1])) {
     state.scope = null;
@@ -1495,6 +1504,106 @@ async function goToEra(era) {
     const cam = map.cameraForBounds(b, { padding: { top: 120, bottom: 140, left: 60, right: innerWidth > 720 ? 380 : 60 } });
     if (cam) map.flyTo({ ...cam, zoom: Math.min(cam.zoom, 5), pitch: state.show3d ? 45 : 0, bearing: -6, duration: 1600, essential: true });
   }
+}
+
+/* ---------- search: events, people, rulers, cities, periods and years ---------- */
+
+// Everyone and every ruler sits in the per-period layer files; they are loaded on the first search.
+let searchIndex = null;
+async function buildSearchIndex() {
+  const layers = await Promise.all(state.eras.map((e) => loadLayers(e).then((L) => [e, L])));
+  const people = [], seen = new Set(), rulers = [];
+  for (const [era, L] of layers) {
+    for (const p of L.people || []) if (!seen.has(p.id)) { seen.add(p.id); people.push({ p, era }); }
+    // A ruler whose reign spans two periods is listed in both layers; keep the first.
+    for (const [polity, list] of Object.entries(L.rulers || {})) list.forEach((r, i) => {
+      const k = `${r.name_zh || r.name}|${r.from}`;
+      if (!seen.has(k)) { seen.add(k); rulers.push({ r, i, polity, era, pz: L.polities?.[polity]?.name_zh }); }
+    });
+  }
+  const cities = new Map();
+  for (const c of state.places) { const k = cityId(c); if (!cities.has(k)) cities.set(k, []); cities.get(k).push(c); }
+  return { people, rulers, cities: [...cities.values()] };
+}
+// "755", "755年", "前221", "公元前221年", "-221", "221 BC", "221bce"
+function parseYear(q) {
+  const m = q.replace(/\s+/g, "").match(/^(公元前|前|-|bc|bce)?(\d{1,4})(年|bc|bce|ce|ad)?$/i);
+  if (!m) return null;
+  const bc = /^(公元前|前|-|bc|bce)$/i.test(m[1] || "") || /^(bc|bce)$/i.test(m[3] || "");
+  const y = bc ? -+m[2] : +m[2];
+  return y >= state.range.start && y <= state.range.end ? y : null;
+}
+function searchResults(q) {
+  const low = q.toLowerCase(), has = (...xs) => xs.some((x) => x && String(x).toLowerCase().includes(low));
+  const out = [];
+  const y = parseYear(q);
+  if (y != null) out.push({ g: "time", year: y, title: fmtYear(y), sub: `${nameOf(eraFor(y))} · ${t("jumpYear")}`, go: () => jumpToYear(y) });
+  for (const e of state.eras) if (has(e.name, e.name_zh, e.glyph))
+    out.push({ g: "era", year: e.start, title: nameOf(e), sub: `${fmtYear(e.start)} – ${fmtYear(e.end)}`, go: () => goToEra(e) });
+  if (searchIndex) {
+    for (const { p, era } of searchIndex.people.filter(({ p }) => has(p.name_zh, p.name)).slice(0, 10))
+      out.push({ g: "person", year: p.born ?? p.died, title: nameOf(p), sub: `${t("fields")[p.field] || ""} · ${personLife(p)}`, go: () => jumpToPerson(p, era) });
+    for (const { r, i, polity, era, pz } of searchIndex.rulers.filter(({ r }) => has(r.name_zh, r.name, r.title_zh, r.title)).slice(0, 10))
+      out.push({ g: "ruler", year: r.from, title: zh() ? `${r.title_zh || r.title} ${r.name_zh || ""}` : `${r.title || r.name}`,
+        sub: `${zh() ? pz || polity : polity} · ${fmtYear(r.from)} – ${fmtYear(r.to)}`, go: () => jumpToRuler(polity, i, era) });
+    for (const list of searchIndex.cities.filter((l) => l.some((c) => has(c.name_zh, c.name, c.modern_zh, c.modern))).slice(0, 8)) {
+      const c = list.find((c) => has(c.name_zh, c.name)) || list[0];
+      out.push({ g: "city", year: c.from, title: nameOf(c), sub: zh() ? `今${c.modern_zh || c.modern}` : `modern ${c.modern}`, go: () => jumpToCity(c) });
+    }
+  }
+  // Events named in the title first, then those that only happened at a matching place; key events first.
+  const evs = state.events.map((ev) => [ev, has(ev.title_zh, ev.title) ? 0 : has(ev.place_zh, ev.place) ? 1 : 2]).filter(([, m]) => m < 2)
+    .sort((a, b) => a[1] - b[1] || (a[0].level || 1) - (b[0].level || 1)).slice(0, 15);
+  for (const [ev] of evs) out.push({ g: "event", year: ev.year, title: titleOf(ev), sub: tx(ev, "place"), go: () => openStory(ev.id) });
+  return out;
+}
+let searchHits = [], searchOn = 0;
+function renderSearch() {
+  const q = $("search-q").value.trim(), box = $("search-results");
+  if (!q) { box.innerHTML = ""; searchHits = []; return; }
+  searchHits = searchResults(q);
+  searchOn = 0;
+  if (!searchHits.length) { box.innerHTML = `<p class="empty">${t("noResults")}</p>`; return; }
+  let html = "", g = null;
+  searchHits.forEach((h, i) => {
+    if (h.g !== g) { g = h.g; html += `<h5>${t("sgroups")[g]}</h5>`; }
+    html += `<button type="button" data-i="${i}" class="${i === 0 ? "on" : ""}"><span>${h.year != null ? fmtYear(h.year) : ""}</span><b>${esc(h.title)}</b>${h.sub ? `<small>${esc(h.sub)}</small>` : ""}</button>`;
+  });
+  box.innerHTML = html;
+}
+async function openSearch() {
+  $("search").hidden = false;
+  $("search-q").placeholder = t("searchPh");
+  $("search-q").focus();
+  $("search-q").select();
+  if (!searchIndex) { searchIndex = await buildSearchIndex(); renderSearch(); }
+}
+function closeSearch() { $("search").hidden = true; }
+function pickSearch(i) { const h = searchHits[i]; if (!h) return; closeSearch(); h.go(); }
+async function jumpToYear(y) {
+  stop();
+  state.selected = null; state.reading = false; state.scope = null;
+  if (state.zoom && !inWindow(y)) { state.win = windowFor(state.zoom, y); refreshTimeline(); }
+  await setYear(y);
+  renderLedger();
+}
+async function jumpToPerson(p, era) {
+  const [a, b] = personSpan(p);
+  await jumpToYear(Math.max(era.start, Math.min(era.end, Math.round((a + b) / 2))));
+  focusPerson(p);
+}
+async function jumpToRuler(polity, i, era) {
+  const r = (await loadLayers(era)).rulers[polity][i];
+  await jumpToYear(Math.max(era.start, Math.min(era.end, r.from)));
+  state.layerData = await loadLayers(era);
+  state.tab = "rulers";
+  scopeToRuler(polity, i);
+  renderLedger();
+}
+async function jumpToCity(c) {
+  if (state.year < c.from || state.year > c.to) await jumpToYear(Math.max(c.from, state.range.start));
+  map.flyTo({ center: [c.lon, c.lat], zoom: Math.max(map.getZoom(), 5), duration: 1200, essential: true });
+  map.once("moveend", () => showCard([c.lon, c.lat], placeCard(c)));
 }
 
 /* ---------- timeline rail ---------- */
@@ -1869,11 +1978,26 @@ async function init() {
     $("ledger-toggle").setAttribute("aria-expanded", String(!c));
   };
   for (const k of ["events", "rulers", "people"]) $("tab-" + k).addEventListener("click", () => {
+    // The open story survives a look at the other tabs; the events tab clicked again goes back to the list.
+    if (k === "events" && state.tab === "events") state.reading = false;
     state.tab = k;
     saveView();
-    if (k === "events") state.reading = false;
     collapseLedger(false);
     renderLedger();
+  });
+  $("search-open").addEventListener("click", openSearch);
+  $("search-close").addEventListener("click", closeSearch);
+  $("search-q").addEventListener("input", renderSearch);
+  $("search-results").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) pickSearch(+b.dataset.i); });
+  $("search-q").addEventListener("keydown", (e) => {
+    const n = searchHits.length;
+    if (e.key === "Escape") return closeSearch();
+    if (e.key === "Enter") return pickSearch(searchOn);
+    if (!n || (e.key !== "ArrowDown" && e.key !== "ArrowUp")) return;
+    e.preventDefault();
+    searchOn = (searchOn + (e.key === "ArrowDown" ? 1 : n - 1)) % n;
+    $("search-results").querySelectorAll("[data-i]").forEach((b) => b.classList.toggle("on", +b.dataset.i === searchOn));
+    $("search-results").querySelector(".on")?.scrollIntoView({ block: "nearest" });
   });
   $("ledger-toggle").addEventListener("click", () => collapseLedger(!$("ledger").classList.contains("collapsed")));
   const phone = matchMedia("(max-width: 720px)");
@@ -1889,6 +2013,7 @@ async function init() {
   }).observe(document.querySelector(".rail"));
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT") return;
+    if (e.key === "/" || ((e.metaKey || e.ctrlKey) && e.key === "k")) { e.preventDefault(); return openSearch(); }
     const i = state.eras.indexOf(state.era);
     if (e.key === "ArrowRight") setYear(state.year + 1);
     if (e.key === "ArrowLeft") setYear(state.year - 1);
