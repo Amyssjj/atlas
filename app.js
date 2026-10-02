@@ -1496,6 +1496,23 @@ async function goToEra(era) {
 
 /* ---------- timeline rail ---------- */
 
+// Floating tag over the rail while dragging: the period (and map snapshot when zoomed in) and the year.
+function showScrubTag(p, y) {
+  let tag = $("scrub-tag");
+  if (!tag) { tag = document.createElement("div"); tag.id = "scrub-tag"; tag.className = "scrub-tag"; document.querySelector(".track").appendChild(tag); }
+  const era = eraFor(y);
+  const snap = state.zoom ? [...era.snapshots].reverse().find((s) => s.from <= y) : null;
+  tag.innerHTML = `<b>${esc(nameOf(era))}</b> <span>${fmtYear(y)}</span>` + (snap && tx(snap, "label") ? `<small>${esc(tx(snap, "label"))}</small>` : "");
+  tag.hidden = false;
+  tag.style.left = `clamp(56px, ${(p / SLIDER_MAX) * 100}%, calc(100% - 56px))`;
+  document.querySelectorAll(".band.era-band").forEach((b) => b.classList.toggle("scrub", b.dataset.era === era.id));
+}
+function hideScrubTag() {
+  const tag = $("scrub-tag");
+  if (tag) tag.hidden = true;
+  document.querySelectorAll(".band.scrub").forEach((b) => b.classList.remove("scrub"));
+}
+
 function hintText() {
   const h = t("hint")[state.zoom];
   return typeof h === "function" ? h(state.era ? nameOf(state.era) : "") : h;
@@ -1660,11 +1677,42 @@ async function init() {
     if (ev) map.easeTo({ center: [ev.lon - 4, ev.lat - 3], duration: 0 });
   });
 
+  // Dragging the rail (slider, era bands or ticks) shows a tag with the period and year under the finger.
+  // On touch screens the map moves when the finger lifts; with a mouse the slider still updates live.
+  const coarse = matchMedia("(pointer: coarse)").matches;
   $("slider").addEventListener("input", (e) => {
     stop();
     const y = posToYear(+e.target.value);
+    showScrubTag(+e.target.value, y);
+    if (!coarse && y !== state.year) setYear(y, { fromSlider: true });
+  });
+  $("slider").addEventListener("change", (e) => {
+    hideScrubTag();
+    const y = posToYear(+e.target.value);
     if (y !== state.year) setYear(y, { fromSlider: true });
   });
+  const track = document.querySelector(".track");
+  let scrub = null;
+  const posAt = (x) => { const r = track.getBoundingClientRect(); return Math.max(0, Math.min(SLIDER_MAX - 1e-6, ((x - r.left) / r.width) * SLIDER_MAX)); };
+  $("bands").addEventListener("pointerdown", (e) => { scrub = { x: e.clientX, id: e.pointerId, moved: false }; });
+  addEventListener("pointermove", (e) => {
+    if (!scrub || e.pointerId !== scrub.id) return;
+    if (!scrub.moved && Math.abs(e.clientX - scrub.x) < 6) return;
+    if (!scrub.moved) { scrub.moved = true; stop(); try { $("bands").setPointerCapture(e.pointerId); } catch {} }
+    const p = posAt(e.clientX);
+    scrub.year = posToYear(p);
+    showScrubTag(p, scrub.year);
+  });
+  addEventListener("pointerup", (e) => {
+    if (!scrub || e.pointerId !== scrub.id) return;
+    const s = scrub; scrub = null;
+    if (!s.moved) return;
+    hideScrubTag();
+    // Swallow the click that follows the drag, so the band under the finger doesn't also fire.
+    addEventListener("click", (c) => { c.stopPropagation(); c.preventDefault(); }, { capture: true, once: true });
+    setTimeout(() => setYear(s.year), 0);
+  });
+  addEventListener("pointercancel", () => { scrub = null; hideScrubTag(); });
   $("play").addEventListener("click", play);
   $("zoom-in").addEventListener("click", () => setZoom(state.zoom + 1));
   $("zoom-out").addEventListener("click", () => setZoom(state.zoom - 1));
