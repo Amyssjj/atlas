@@ -40,9 +40,14 @@ eras = json.load(open(P("data/eras.json")))["eras"]
 def era_of(y):
     return next((e for e in eras if e["start"] <= y <= e["end"]), eras[-1] if y > 0 else eras[0])
 _maps, _layers = {}, {}
+def load_borders(path):
+    """A border file, or one map of a bundle when the path ends in #<id> (see tools/carve_states.py)."""
+    f, _, key = path.partition("#")
+    d = json.load(open(P(f)))
+    return d[key] if key else d
 def borders(path):
     if path not in _maps:
-        _maps[path] = [(f["properties"]["name"], shape(f["geometry"])) for f in json.load(open(P(path)))["features"] if f.get("geometry")]
+        _maps[path] = [(f["properties"]["name"], shape(f["geometry"])) for f in load_borders(path)["features"] if f.get("geometry")]
     return _maps[path]
 def layer(era):
     if era["id"] not in _layers: _layers[era["id"]] = json.load(open(P(f"data/layers/{era['id']}.json")))

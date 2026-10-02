@@ -32,6 +32,7 @@ const state = {
   rulerPolity: null,    // country shown in the ruler list
   scope: null,          // the reign the timeline is narrowed to: { polity, i, label }
   borders: {},          // borders path -> GeoJSON
+  bundles: {},          // border bundle file -> promise of {map id: GeoJSON}
   details: {},          // era id -> promise of { event id -> detail }
   scale: [],            // [{era, p0, p1}] slider positions per era (zoom "all")
   zoom: 0,
@@ -150,6 +151,14 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLedger();
+}
+
+// A border file, or one map out of a bundle when the path ends in #<id> (tools/carve_states.py writes those).
+async function loadBorders(path) {
+  const [file, key] = path.split("#");
+  if (!key) return loadJSON(file);
+  const bundle = await (state.bundles[file] || (state.bundles[file] = loadJSON(file)));
+  return bundle[key];
 }
 
 async function loadJSON(path) {
@@ -514,7 +523,7 @@ function setEra(era, quiet) {
 
 async function setSnapshot(path) {
   state.snapshot = path;
-  const gj = state.borders[path] || (state.borders[path] = await loadJSON(path));
+  const gj = state.borders[path] || (state.borders[path] = await loadBorders(path));
   if (state.snapshot !== path) return; // a newer request won
   map.getSource("borders")?.setData(gj);
   renderPolityLabels(gj);

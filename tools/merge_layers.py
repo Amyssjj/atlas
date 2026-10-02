@@ -13,6 +13,12 @@ UNITS = {"infantry", "cavalry", "chariots", "archers", "crossbows", "navy", "sie
 KINDS = {"campaign", "journey", "trade", "canal", "wall"}
 os.makedirs(P("data/layers"), exist_ok=True)
 
+def load_borders(path):
+    """A border file, or one map of a bundle when the path ends in #<id> (see tools/carve_states.py)."""
+    f, _, key = path.partition("#")
+    d = json.load(open(P(f)))
+    return d[key] if key else d
+
 for path in sorted(glob.glob(P("data/work2/*.json"))):
     if path.endswith("eras_index.json"):
         continue
@@ -20,7 +26,7 @@ for path in sorted(glob.glob(P("data/work2/*.json"))):
     era = eras[w["era"]]
     names = set()
     for s in era["snapshots"]:
-        names |= {f["properties"]["name"] for f in json.load(open(P(s["borders"])))["features"]}
+        names |= {f["properties"]["name"] for f in load_borders(s["borders"])["features"]}
     issues = []
     rulers = {}
     for name, reigns in w.get("rulers", {}).items():

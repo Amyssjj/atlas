@@ -9,7 +9,9 @@ Spec: {"radius", "seeds": {id: [lon, lat]}, "states": {id: {name, zh, color?, fo
 `base`, `area`, `extra` and `rest` carry over from the previous snapshot when left out. Every snapshot's `set` gives
 seeds a new owner (owners carry over). The carved area is the named base features plus land inside the `extra` boxes;
 each seed gets the part of it nearest to it (within `radius` degrees), and whatever no owned seed covers goes to `rest`.
-Base features outside the area are kept as they are. `names` renames a state from then on ({id: [name, zh]})."""
+Base features outside the area are kept as they are. `names` renames a state from then on ({id: [name, zh]}).
+All snapshots of a spec go into one bundle, data/borders/<spec name>.json ({snapshot id: FeatureCollection}), which
+data/eras.json points at as "data/borders/<spec name>.json#<snapshot id>" (the published page has a file limit)."""
 import json, os, re, sys
 from shapely.geometry import shape, mapping, MultiPoint, Point, box
 from shapely.ops import unary_union, voronoi_diagram
@@ -34,7 +36,7 @@ def build(spec_path):
     for poly in voronoi_diagram(MultiPoint(pts), envelope=env).geoms:
         for n, p in zip(names, pts):
             if poly.contains(p): vor[n] = poly.intersection(p.buffer(r, 32)); break
-    owner, cur, renames = {}, {}, {}
+    owner, cur, renames, bundle = {}, {}, {}, {}
     for snap in spec["snapshots"]:
         for k in ("base", "area", "extra", "rest"):
             if k in snap: cur[k] = snap[k]
@@ -69,9 +71,11 @@ def build(spec_path):
             if meta.get("color"): props["color"] = meta["color"]
             feats.append({"type": "Feature", "properties": props, "geometry": mapping(u)})
         feats.sort(key=lambda f: f["properties"]["focus"])
-        out = re.sub(r"(\d+\.\d{3})\d+", r"\1", json.dumps({"type": "FeatureCollection", "features": feats}, separators=(",", ":"), ensure_ascii=False))
-        open(P(f"data/borders/{snap['id']}.geojson"), "w").write(out)
+        bundle[snap["id"]] = {"type": "FeatureCollection", "features": feats}
         print(f"{snap['id']:12s} {', '.join(sorted(states[s]['zh'] for s in by))}")
+
+    out = re.sub(r"(\d+\.\d{3})\d+", r"\1", json.dumps(bundle, separators=(",", ":"), ensure_ascii=False))
+    open(P("data/borders", os.path.basename(spec_path)), "w").write(out)
 
 if __name__ == "__main__":
     for s in sys.argv[1:]: build(s)
