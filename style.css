@@ -70,7 +70,7 @@ body {
 .era {
   position: absolute;
   top: 16px; left: 16px;
-  width: min(320px, calc(100% - 32px));
+  width: min(360px, calc(100% - 32px));
   padding: 14px 16px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -99,7 +99,6 @@ body {
 .era-snap { grid-column: 1 / -1; margin: 6px 0 0; font-size: 12px; font-weight: 500; color: var(--jade); }
 .era-note { grid-column: 1 / -1; margin: 4px 0 0; font-size: 11px; color: var(--muted); font-style: italic; }
 .seal.double { font-size: 21px; letter-spacing: -0.02em; }
-.era-tools { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 
 .chip {
   appearance: none;
@@ -272,7 +271,6 @@ html:lang(zh-CN) .story-body p, html:lang(zh-CN) .story-lede { font-size: 15px; 
 .zbtn:not(:disabled):hover { border-color: var(--jade); color: var(--jade); }
 .zbtn[hidden] { display: none; }
 .zlevel { min-width: 52px; text-align: center; font: 600 12px/1 var(--font-body); color: var(--jade); }
-.lang { margin-left: auto; font-weight: 600; }
 input[type=range] { width: 100%; margin: 6px 0 0; accent-color: var(--jade); }
 .scale-hint { font-family: var(--font-body); }
 .scale {
@@ -352,18 +350,17 @@ html:lang(en) .mk-polity.minor small { display: none; }
   }
   .seal { width: 38px; height: 38px; font-size: 24px; grid-row: span 2; box-shadow: inset 0 0 0 2px var(--cinnabar), inset 0 0 0 3px var(--cinnabar-ink); }
   .seal.double { font-size: 14px; }
-  .era-name { font-size: 15px; padding-right: 64px; }
+  .era-name { font-size: 15px; }
   .era-zh { display: none; }
   .era-year { font-size: 18px; }
   .era-ruler { font-size: 12px; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .era-summary, .era-note, .note, .era-snap { display: none; }
   .era-more { display: inline-block; position: absolute; top: 8px; right: 10px; }
   .era-more[aria-expanded="true"] { background: var(--jade-soft); border-color: var(--jade); color: var(--jade); }
-  .era:not(.open) .era-tools, .era:not(.open) .era-layers { display: none; }
+  .era:not(.open) .era-layers { display: none; }
   .era.open { max-height: calc(100dvh - var(--rail-h, 120px) - 40px); overflow-y: auto; }
   .era.open .era-summary, .era.open .era-snap { display: block; }
-  .era-tools { gap: 6px; }
-  .era-tools .chip, .era-layers .chip { padding: 7px 10px; font-size: 13px; }
+  .era-layers .chip { padding: 7px 10px; font-size: 13px; }
   .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { display: none; }
 
   .rail {
@@ -393,8 +390,19 @@ html:lang(en) .mk-polity.minor small { display: none; }
   .atlas-pop { max-width: calc(100vw - 24px) !important; }
 }
 /* Overlay layers */
-.era-layers { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px; }
-.era-layers > span { font: 600 11px/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+/* Layer switches, one row per kind: map, power, war, travel, culture. */
+.era-layers { grid-column: 1 / -1; display: grid; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
+/* The row label hangs in a left gutter so wrapped chips line up under the first chip. */
+.lg { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding-left: 4.4em; }
+.lg > span { position: absolute; left: 0; top: 8px; font: 600 11px/1 var(--font-body); color: var(--muted); }
+html:lang(zh-CN) .lg { padding-left: 2.9em; }
+html:lang(zh-CN) .lg > span { letter-spacing: 0.1em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lang-switch { position: absolute; top: 12px; right: 12px; display: flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+.lang-switch button { appearance: none; border: 0; background: transparent; color: var(--muted); font: 600 11px/1 var(--font-body); padding: 5px 8px; cursor: pointer; }
+.lang-switch button + button { border-left: 1px solid var(--rule); }
+.lang-switch button[aria-pressed="true"] { background: var(--jade); color: #fff; }
+.era-name { padding-right: 80px; }
 .chip.layer[aria-pressed="true"] { background: rgba(185, 58, 38, 0.1); border-color: var(--cinnabar); color: var(--cinnabar); }
 .era-ruler { grid-column: 1 / -1; margin: 6px 0 0; font: 600 13px/1.35 var(--font-display); color: var(--ink); }
 
@@ -461,7 +469,6 @@ html:lang(en) .mk-polity .ruler { font-family: var(--font-body); font-weight: 60
 .mk-arrow.k-campaign { border-bottom-color: #b93a26; }
 
 @media (max-width: 720px) {
-  .era-layers > span { display: none; }
   /* Battle cards shrink to their title until tapped. */
   .mk-army { width: 170px; padding: 6px 8px; }
   .mk-army .army-title { margin-bottom: 0; font-size: 13px; }
@@ -696,6 +703,12 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .ef-country select { flex: 1; min-width: 0; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--panel-solid); color: inherit; font: 500 13px var(--font-display); }
 
 @media (max-width: 720px) {
+  .lang-switch { top: 10px; right: 84px; }
+  .era-more { width: 68px; text-align: center; }
+  .era-name { padding-right: 160px; }
+  .era-name { padding-right: 150px; }
+  html:lang(en) .lg { padding-left: 0; }
+  html:lang(en) .lg > span { position: static; width: 100%; }
   .ev-filter { padding: 6px 12px; gap: 5px; }
   .ef-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .ef-cats .chip { flex: none; }
