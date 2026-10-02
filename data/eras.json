@@ -325,121 +325,121 @@
     },
     {
      "from": 304,
-     "borders": "data/borders/sk-304.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-304",
      "label": "304: Liu Yuan founds the Han (Han Zhao) in Bingzhou; Li Xiong founds Cheng in Shu",
      "label_zh": "304年：刘渊在并州建汉（汉赵），李雄在蜀建成"
     },
     {
      "from": 311,
-     "borders": "data/borders/sk-311.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-311",
      "label": "311: Yongjia catastrophe: Han Zhao sacks Luoyang; Cheng holds most of Shu",
      "label_zh": "311年：永嘉之乱，汉赵攻陷洛阳；成汉据有蜀地"
     },
     {
      "from": 316,
-     "borders": "data/borders/sk-316.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-316",
      "label": "316: Chang'an falls; the Western Jin ends. Shi Le, still a Han Zhao general, holds Hebei",
      "label_zh": "316年：长安陷落，西晋灭亡；石勒（尚为汉赵将领）据有河北"
     },
     {
      "from": 317,
-     "borders": "data/borders/sk-317.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-317",
      "label": "317: Sima Rui rules from Jiankang (Eastern Jin); Zhang Shi holds Liangzhou (Former Liang); the Murong rule Liaodong",
      "label_zh": "317年：司马睿在建康建立东晋；张寔据凉州（前凉）；慕容部据辽东"
     },
     {
      "from": 319,
-     "borders": "data/borders/sk-319.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-319",
      "label": "319: Han Zhao splits: Liu Yao rules from Chang'an (Former Zhao), Shi Le founds the Later Zhao at Xiangguo",
      "label_zh": "319年：汉赵分裂，刘曜都长安（前赵），石勒在襄国建立后赵"
     },
     {
      "from": 325,
-     "borders": "data/borders/sk-325.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-325",
      "label": "323–325: Later Zhao takes Qingzhou and the lands between the Yellow River and the Huai",
      "label_zh": "323–325年：后赵夺取青州及河南、淮北之地"
     },
     {
      "from": 329,
-     "borders": "data/borders/sk-329.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-329",
      "label": "329: Later Zhao destroys the Former Zhao and rules the north",
      "label_zh": "329年：后赵灭前赵，统一北方大部"
     },
     {
      "from": 337,
-     "borders": "data/borders/sk-337.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-337",
      "label": "337: Murong Huang proclaims the Former Yan",
      "label_zh": "337年：慕容皝称燕王，建立前燕"
     },
     {
      "from": 347,
-     "borders": "data/borders/sk-347.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-347",
      "label": "347: Huan Wen conquers Cheng Han for the Eastern Jin",
      "label_zh": "347年：桓温伐蜀，东晋灭成汉"
     },
     {
      "from": 352,
-     "borders": "data/borders/sk-352.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-352",
      "label": "350–352: Later Zhao collapses: Ran Min's Wei rises and falls, Former Yan takes Hebei, Fu Jian founds the Former Qin at Chang'an",
      "label_zh": "350–352年：后赵崩溃，冉魏兴亡，前燕入主河北，苻健在长安建立前秦"
     },
     {
      "from": 366,
-     "borders": "data/borders/sk-366.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-366",
      "label": "358–366: Former Yan takes Bingzhou and pushes the Eastern Jin back from Henan and Luoyang",
      "label_zh": "358–366年：前燕取并州，又从东晋手中夺回河南与洛阳"
     },
     {
      "from": 370,
-     "borders": "data/borders/sk-370.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-370",
      "label": "370: Former Qin conquers the Former Yan",
      "label_zh": "370年：前秦灭前燕"
     },
     {
      "from": 376,
-     "borders": "data/borders/sk-376.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-376",
      "label": "373–376: Former Qin takes Shu and Hanzhong, then the Former Liang and Dai, and unites the north",
      "label_zh": "373–376年：前秦取蜀与汉中，又灭前凉和代，统一北方"
     },
     {
      "from": 386,
-     "borders": "data/borders/sk-386.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-386",
      "label": "383–386: After the Fei River the Former Qin breaks apart: Later Yan, Later Qin, Western Yan, Western Qin, Later Liang and the Northern Wei; Jin retakes Henan and Shu",
      "label_zh": "383–386年：淝水之战后前秦瓦解，后燕、后秦、西燕、西秦、后凉、北魏并起；东晋收复河南与蜀"
     },
     {
      "from": 394,
-     "borders": "data/borders/sk-394.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-394",
      "label": "394: Later Yan destroys the Western Yan; Later Qin finishes the Former Qin",
      "label_zh": "394年：后燕灭西燕，后秦灭前秦"
     },
     {
      "from": 400,
-     "borders": "data/borders/sk-400.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-400",
      "label": "396–400: Northern Wei overruns the Later Yan heartland; Southern Yan in Shandong; Southern Liang, Northern Liang and Western Liang split the Hexi corridor; Later Qin takes Luoyang",
      "label_zh": "396–400年：北魏攻占后燕腹地；南燕立国于山东；南凉、北凉、西凉分据河西；后秦夺取洛阳"
     },
     {
      "from": 407,
-     "borders": "data/borders/sk-407.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-407",
      "label": "403–407: Later Liang falls; Qiao Zong holds Shu; Helian Bobo founds Xia; Feng Ba takes the Later Yan throne (Northern Yan)",
      "label_zh": "403–407年：后凉灭亡；谯纵据蜀；赫连勃勃建夏；冯跋夺取后燕（北燕）"
     },
     {
      "from": 413,
-     "borders": "data/borders/sk-413.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-413",
      "label": "410–413: Liu Yu destroys the Southern Yan and retakes Shu for the Eastern Jin; Northern Liang takes Guzang",
      "label_zh": "410–413年：刘裕灭南燕，东晋收复蜀地；北凉夺取姑臧"
     },
     {
      "from": 417,
-     "borders": "data/borders/sk-417.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-417",
      "label": "417: Liu Yu takes Luoyang and Chang'an: the Later Qin falls",
      "label_zh": "417年：刘裕攻克洛阳、长安，后秦灭亡"
     },
     {
      "from": 418,
-     "borders": "data/borders/sk-418.geojson",
+     "borders": "data/borders/sixteen-kingdoms.json#sk-418",
      "label": "418: Xia drives the Jin out of Chang'an",
      "label_zh": "418年：夏攻取长安，晋军退出关中"
     }
@@ -833,97 +833,97 @@
    "snapshots": [
     {
      "from": 1644,
-     "borders": "data/borders/qm-1644.geojson",
+     "borders": "data/borders/early-qing.json#qm-1644",
      "label": "1644: Li Zicheng takes Beijing, then the Qing drive him out; Southern Ming rules from Nanjing; Zhang Xianzhong's Great Xi in Sichuan",
      "label_zh": "1644年：李自成攻入北京，清军入关将其逐出；南明弘光帝在南京即位；张献忠在四川建大西"
     },
     {
      "from": 1645,
-     "borders": "data/borders/qm-1645.geojson",
+     "borders": "data/borders/early-qing.json#qm-1645",
      "label": "1645: Qing armies take Xi'an and Nanjing; the Hongguang court falls; the Longwu emperor rules from Fuzhou and the Prince of Lu from Shaoxing",
      "label_zh": "1645年：清军攻占西安、南京，弘光政权覆灭；隆武帝在福州即位，鲁王在绍兴监国"
     },
     {
      "from": 1646,
-     "borders": "data/borders/qm-1646.geojson",
+     "borders": "data/borders/early-qing.json#qm-1646",
      "label": "1646: Qing take Zhejiang and Fujian; the Longwu emperor is killed; Zhang Xianzhong dies; the Yongli emperor is enthroned at Zhaoqing",
      "label_zh": "1646年：清军取浙江、福建，隆武帝遇害；张献忠战死；永历帝在肇庆即位"
     },
     {
      "from": 1647,
-     "borders": "data/borders/qm-1647.geojson",
+     "borders": "data/borders/early-qing.json#qm-1647",
      "label": "1647: Qing take Guangdong and Hunan; Great Xi forces under Sun Kewang move into Guizhou and Yunnan; Zheng Chenggong holds Xiamen for the Ming",
      "label_zh": "1647年：清军取广东、湖南；孙可望率大西军进入贵州、云南；郑成功据厦门奉明正朔"
     },
     {
      "from": 1648,
-     "borders": "data/borders/qm-1648.geojson",
+     "borders": "data/borders/early-qing.json#qm-1648",
      "label": "1648: Li Chengdong in Guangdong and Jin Shenghuan in Jiangxi go over to the Yongli emperor; Ming forces retake Hunan",
      "label_zh": "1648年：李成栋在广东、金声桓在江西反正归明；明军收复湖南"
     },
     {
      "from": 1650,
-     "borders": "data/borders/qm-1650.geojson",
+     "borders": "data/borders/early-qing.json#qm-1650",
      "label": "1649–1650: Qing retake Jiangxi and Hunan, then Guangzhou and Guilin",
      "label_zh": "1649–1650年：清军收复江西、湖南，又攻陷广州、桂林"
     },
     {
      "from": 1652,
-     "borders": "data/borders/qm-1652.geojson",
+     "borders": "data/borders/early-qing.json#qm-1652",
      "label": "1652: Sun Kewang brings the Yongli emperor to Guizhou; Li Dingguo retakes Guilin and southern Hunan",
      "label_zh": "1652年：孙可望迎永历帝入贵州；李定国收复桂林及湖南南部"
     },
     {
      "from": 1655,
-     "borders": "data/borders/qm-1655.geojson",
+     "borders": "data/borders/early-qing.json#qm-1655",
      "label": "1655: Qing retake Guangxi and southern Hunan; the Ming holds Yunnan and Guizhou",
      "label_zh": "1655年：清军夺回广西和湖南南部，南明退守云贵"
     },
     {
      "from": 1659,
-     "borders": "data/borders/qm-1659.geojson",
+     "borders": "data/borders/early-qing.json#qm-1659",
      "label": "1658–1659: Qing take Guizhou and Kunming; the Yongli emperor flees to Burma",
      "label_zh": "1658–1659年：清军攻取贵州、昆明，永历帝逃入缅甸"
     },
     {
      "from": 1662,
-     "borders": "data/borders/qm-1662.geojson",
+     "borders": "data/borders/early-qing.json#qm-1662",
      "label": "1662: The Yongli emperor is put to death in Kunming; Zheng Chenggong drives the Dutch from Taiwan",
      "label_zh": "1662年：永历帝在昆明被杀；郑成功驱逐荷兰人，收复台湾"
     },
     {
      "from": 1664,
-     "borders": "data/borders/qm-1664.geojson",
+     "borders": "data/borders/early-qing.json#qm-1664",
      "label": "1663–1664: Qing take Xiamen and Kinmen; the Zheng hold only Taiwan",
      "label_zh": "1663–1664年：清军攻取厦门、金门，郑氏仅保台湾"
     },
     {
      "from": 1674,
-     "borders": "data/borders/qm-1674.geojson",
+     "borders": "data/borders/early-qing.json#qm-1674",
      "label": "1673–1674: Revolt of the Three Feudatories: Wu Sangui rises in Yunnan and takes Guizhou, Sichuan, Hunan and Guangxi; Geng Jingzhong rises in Fujian; the Zheng return to the coast",
      "label_zh": "1673–1674年：三藩之乱：吴三桂起兵云南，占贵州、四川、湖南、广西；耿精忠在福建响应；郑经重返沿海"
     },
     {
      "from": 1676,
-     "borders": "data/borders/qm-1676.geojson",
+     "borders": "data/borders/early-qing.json#qm-1676",
      "label": "1676: Geng Jingzhong surrenders; Shang Zhixin rises in Guangdong",
      "label_zh": "1676年：耿精忠投降；尚之信在广东响应吴三桂"
     },
     {
      "from": 1678,
-     "borders": "data/borders/qm-1678.geojson",
+     "borders": "data/borders/early-qing.json#qm-1678",
      "label": "1677–1678: Shang Zhixin surrenders; Wu Sangui proclaims himself emperor of Zhou at Hengzhou and dies",
      "label_zh": "1677–1678年：尚之信投降；吴三桂在衡州称帝，国号周，随即病死"
     },
     {
      "from": 1680,
-     "borders": "data/borders/qm-1680.geojson",
+     "borders": "data/borders/early-qing.json#qm-1680",
      "label": "1679–1680: Qing retake Hunan, Guangxi and Sichuan; the Zheng lose Xiamen",
      "label_zh": "1679–1680年：清军收复湖南、广西、四川；郑氏丢失厦门"
     },
     {
      "from": 1681,
-     "borders": "data/borders/qm-1681.geojson",
+     "borders": "data/borders/early-qing.json#qm-1681",
      "label": "1681: Kunming falls and Wu Shifan dies; the revolt is over",
      "label_zh": "1681年：昆明城破，吴世璠自杀，三藩之乱平定"
     },
