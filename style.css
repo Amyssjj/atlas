@@ -786,3 +786,5 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   font: 400 16px/1 var(--font-body); padding: 0 0 0 6px; margin: -2px -4px 0 0;
 }
 .army-title .army-close:hover { color: var(--cinnabar); }
+@media (max-width: 720px) { .era.open .era-zh { display: block; grid-column: 1 / -1; margin-top: 6px; font-size: 13px; } }
+.era-zh span { white-space: nowrap; }

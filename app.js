@@ -71,7 +71,7 @@ const UI = {
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" },
-    people_l: "人物", close: "关闭", search: "搜索", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -93,7 +93,7 @@ const UI = {
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" },
-    people_l: "People", close: "Close", search: "Search", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -493,7 +493,9 @@ function setEra(era, quiet) {
   seal.textContent = era.glyph;
   seal.classList.toggle("double", era.glyph.length > 1);
   $("era-name").textContent = zh() ? era.name_zh : era.name;
-  $("era-zh").textContent = `${zh() ? era.name : era.name_zh} · ${fmtYear(era.start)} – ${fmtYear(era.end)}`;
+  // Each piece wraps whole: other-language name, span of years, length.
+  $("era-zh").innerHTML = [zh() ? era.name : era.name_zh, `${fmtYear(era.start)} – ${fmtYear(era.end)}`, t("lasted")(eraYears(era))]
+    .map((x) => `<span>${esc(x)}</span>`).join(" · ");
   $("era-summary").textContent = tx(era, "summary");
   const note = tx(era, "note");
   $("era-note").textContent = note;
@@ -542,6 +544,8 @@ function renderPolityLabels(gj) {
 
 /* ---------- overlay layers: rulers, armies, routes ---------- */
 
+// Length of a period in years; there is no year 0, so a span across it is one year shorter.
+const eraYears = (e) => e.end - e.start + 1 - (e.start < 0 && e.end > 0 ? 1 : 0);
 function loadLayers(era) {
   if (!state.layers[era.id]) state.layers[era.id] = loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
   return state.layers[era.id];
@@ -1688,7 +1692,7 @@ function buildRail() {
       b.style.left = pct(s.p0) + "%";
       b.style.width = pct(s.p1 - s.p0) + "%";
       b.innerHTML = `<b>${e.glyph}</b>`;
-      b.title = `${nameOf(e)} ${fmtYear(e.start)} – ${fmtYear(e.end)}`;
+      b.title = `${nameOf(e)} ${fmtYear(e.start)} – ${fmtYear(e.end)} · ${t("lasted")(eraYears(e))}`;
       b.addEventListener("click", () => goToEra(e));
       bands.appendChild(b);
     }
