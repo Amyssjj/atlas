@@ -435,6 +435,7 @@ function pan(dir) {
   refreshTimeline();
 }
 function refreshTimeline() {
+  saveView();
   buildRail();
   $("slider").value = yearToPos(state.year);
   buildEventMarkers();
@@ -471,6 +472,7 @@ async function setYear(year, opts = {}) {
   $("year-suffix").textContent = suffix;
   if (!opts.fromSlider) $("slider").value = yearToPos(state.year);
   revealYear(true);
+  saveView();
   const snap = snapshotFor(era, state.year);
   const label = tx(snap, "label");
   $("era-snap").textContent = label ? t("map") + label : "";
@@ -1660,8 +1662,32 @@ function toggle(btnId, key, fn) {
   $(btnId).addEventListener("click", () => {
     state[key] = !state[key];
     $(btnId).setAttribute("aria-pressed", String(state[key]));
+    try { localStorage.setItem("atlas-toggles", JSON.stringify({ show3d: state.show3d, showNeighbours: state.showNeighbours, showPlaces: state.showPlaces, showGeo: state.showGeo })); } catch {}
     fn();
   });
+}
+
+// Where the visitor was (year, timeline zoom, ledger tab, camera) is saved as they go and restored on the next visit.
+let saveTimer = 0;
+function saveView() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    if (!map) return;
+    const c = map.getCenter();
+    const view = { year: state.year, zoom: state.zoom, win: state.win, tab: state.tab,
+      cam: { center: [+c.lng.toFixed(3), +c.lat.toFixed(3)], zoom: +map.getZoom().toFixed(2), pitch: Math.round(map.getPitch()), bearing: Math.round(map.getBearing()) } };
+    try { localStorage.setItem("atlas-view", JSON.stringify(view)); } catch {}
+  }, 500);
+}
+function loadView() {
+  let v = null, tg = null;
+  try { v = JSON.parse(localStorage.getItem("atlas-view") || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
+  if (tg) for (const k of ["show3d", "showNeighbours", "showPlaces", "showGeo"]) if (typeof tg[k] === "boolean") state[k] = tg[k];
+  if (!v || typeof v.year !== "number") return null;
+  state.year = Math.max(state.range.start, Math.min(state.range.end, Math.round(v.year)));
+  if ([1, 2].includes(v.zoom) && Array.isArray(v.win) && v.win[0] <= state.year && state.year <= v.win[1]) { state.zoom = v.zoom; state.win = v.win; }
+  if (["events", "rulers", "people"].includes(v.tab)) state.tab = v.tab;
+  return v.cam && Array.isArray(v.cam.center) ? v.cam : null;
 }
 
 async function init() {
@@ -1685,11 +1711,12 @@ async function init() {
   state.events = events.sort((a, b) => a.year - b.year || (a.level || 1) - (b.level || 1));
   state.places = places;
   buildScale();
+  const cam = loadView();
 
   map = new maplibregl.Map({
     container: "map",
     style: buildStyle(),
-    center: [108, 33.5], zoom: 3.7, pitch: 52, bearing: -8,
+    center: cam?.center || [108, 33.5], zoom: cam?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
     maxPitch: 65, minZoom: 2.5, maxZoom: 9.5,
     maxBounds: [[45, -5], [165, 62]],
     attributionControl: false,
@@ -1714,12 +1741,15 @@ async function init() {
   map.on("mouseleave", "wall-hit", () => (map.getCanvas().style.cursor = ""));
   map.on("mouseenter", "road-hit", () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", "road-hit", () => (map.getCanvas().style.cursor = ""));
-  map.on("moveend", () => scheduleDeclutter());
+  map.on("moveend", () => { scheduleDeclutter(); saveView(); });
   map.on("zoomend", setTerrainForZoom);
   map.on("load", async () => {
     setTerrainForZoom();
     applyLook();
     renderGeo();
+    // Switches remembered from the last visit that the style starts with on.
+    if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
+    if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", "none");
     await setYear(state.year);
     buildRail();
     renderLedger();
@@ -1840,6 +1870,7 @@ async function init() {
   };
   for (const k of ["events", "rulers", "people"]) $("tab-" + k).addEventListener("click", () => {
     state.tab = k;
+    saveView();
     if (k === "events") state.reading = false;
     collapseLedger(false);
     renderLedger();
