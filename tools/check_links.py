@@ -26,7 +26,10 @@ urls = set()
 for e in json.load(open(os.path.join(ROOT, "data/events.json"))):
     if str(e.get("source", "")).startswith(PREFIX): urls.add(e["source"])
 for f in glob.glob(os.path.join(ROOT, "data/layers/*.json")):
-    for p in json.load(open(f)).get("people", []):
+    L = json.load(open(f))
+    # world-<region>.json bundles hold one layer file per period
+    for L in (L.values() if os.path.basename(f).startswith("world-") else [L]):
+      for p in L.get("people", []):
         if str(p.get("source", "")).startswith(PREFIX): urls.add(p["source"])
 title_of = {u: urllib.parse.unquote(u[len(PREFIX):].split("#")[0]).replace("_", " ") for u in urls}
 print(len(urls), "links")

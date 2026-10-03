@@ -410,7 +410,7 @@ function worldSnaps(start, end) {
 function setupRegions(eras, regions, worldIndex) {
   state.worldIndex = worldIndex;
   const byId = Object.fromEntries(eras.eras.map((e) => [e.id, { ...e, region: "china", layers: true }]));
-  const period = (r, p) => byId[p.id] || { ...p, region: r.id, worldMaps: true, snapshots: worldSnaps(p.start, p.end) };
+  const period = (r, p) => byId[p.id] || { ...p, region: r.id, worldMaps: true, layers: !!p.layers, snapshots: worldSnaps(p.start, p.end) };
   state.regions = regions.map((r) => ({ ...r, eras: r.periods.map((p) => period(r, p)) }));
   state.regionById = Object.fromEntries(state.regions.map((r) => [r.id, r]));
   const china = state.regionById.china;
@@ -684,7 +684,10 @@ function renderPolityLabels(gj) {
 const eraYears = (e) => e.end - e.start + 1 - (e.start < 0 && e.end > 0 ? 1 : 0);
 function loadLayers(era) {
   if (!era.layers) return Promise.resolve({});
-  if (!state.layers[era.id]) state.layers[era.id] = loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
+  // Periods of the other world regions share one file per region (the artifact caps its file count).
+  if (!state.layers[era.id]) state.layers[era.id] = era.worldMaps
+    ? (state.layers["world-" + era.region] ||= loadJSON(`data/layers/world-${era.region}.json`).catch(() => ({}))).then((b) => b[era.id] || {})
+    : loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
   return state.layers[era.id];
 }
 
@@ -815,6 +818,7 @@ function renderPeople() {
   });
 }
 function personLife(p) {
+  if (p.died == null && p.born != null) return zh() ? `${fmtYear(p.born, p.circa)}生` : `born ${fmtYear(p.born, p.circa)}`; // living
   return p.died != null ? t("life")(p.born != null ? fmtYear(p.born, p.circa) : "?", fmtYear(p.died, p.circa)) : (zh() ? "生卒不详" : "dates unknown");
 }
 function personCard(p) {
@@ -833,7 +837,7 @@ function personEventList(p) {
   return `<p class="pc-works"><b>${t("personEvents")(evs.length)}</b></p>${eventButtons(evs, (ev) => ev === last)}`;
 }
 // Years a person's marker is on the map: their life, or the 40 years before death when the birth year is unknown.
-const personSpan = (p) => p.show ? p.show : [p.born ?? p.died - 40, p.died];
+const personSpan = (p) => p.show ? p.show : [p.born ?? p.died - 40, p.died ?? state.range.end];
 
 function renderCapitals() {
   const list = shown("capitals") ? (state.layerData?.capitals || []) : [];
@@ -1537,7 +1541,7 @@ function renderPeopleTab() {
     box.innerHTML = `<div class="pp-groups">${groups.map((k) =>
         `<button class="chip" data-g="${k}" aria-pressed="${k === g}">${t("pgroups")[k]}</button>`).join("")}</div>
       <p class="rl-hint">${t("peopleHint")}</p><ol class="rl-list">${list.map((p, i) =>
-      `<li><button class="rl pp f-${esc(p.field)}" data-i="${i}"><span class="rl-years">${p.born != null ? fmtYear(p.born, p.circa) : "?"}<br>${p.died != null ? fmtYear(p.died, p.circa) : "?"}</span>
+      `<li><button class="rl pp f-${esc(p.field)}" data-i="${i}"><span class="rl-years">${p.born != null ? fmtYear(p.born, p.circa) : "?"}<br>${p.died != null ? fmtYear(p.died, p.circa) : p.born != null ? (zh() ? "今" : "now") : "?"}</span>
         <span class="rl-name">${esc(nameOf(p))}</span><span class="rl-sub">${esc(tx(p, "known_for"))}</span><span class="rl-len">${esc(t("fields")[p.field] || "")}</span></button></li>`).join("")}</ol>`;
     box.querySelectorAll(".rl").forEach((btn) => btn.addEventListener("click", () => focusPerson(box._list[+btn.dataset.i])));
     box.querySelectorAll("[data-g]").forEach((btn) => btn.addEventListener("click", () => { state.peopleGroup = btn.dataset.g; renderPeopleTab(); }));
@@ -1604,7 +1608,7 @@ function renderList() {
 }
 
 function loadDetails(era) {
-  if (!era.layers) return Promise.resolve({});
+  if (!era.layers || era.worldMaps) return Promise.resolve({});
   if (!state.details[era.id]) state.details[era.id] = loadJSON(`data/details/${era.id}.json`).catch(() => ({}));
   return state.details[era.id];
 }
@@ -1916,7 +1920,7 @@ function addTourLayers() {
 // Everyone and every ruler sits in the per-period layer files; they are loaded on the first search.
 let searchIndex = null;
 async function buildSearchIndex() {
-  const layers = await Promise.all(state.chinaEras.map((e) => loadLayers(e).then((L) => [e, L])));
+  const layers = await Promise.all(state.regions.flatMap((r) => r.eras).filter((e) => e.layers).map((e) => loadLayers(e).then((L) => [e, L])));
   const people = [], seen = new Set(), rulers = [];
   for (const [era, L] of layers) {
     for (const p of L.people || []) if (!seen.has(p.id)) { seen.add(p.id); people.push({ p, era }); }
@@ -2004,11 +2008,16 @@ async function jumpToYear(y) {
   renderLedger();
 }
 async function jumpToPerson(p, era) {
+  setMode(era.region);
   const [a, b] = personSpan(p);
   await jumpToYear(Math.max(era.start, Math.min(era.end, Math.round((a + b) / 2))));
   focusPerson(p);
 }
 async function jumpToRuler(polity, i, era) {
+  // A ruler of another region: switch the timeline there and bring the region into view.
+  const reg = state.regionById[era.region];
+  if (setMode(era.region) && reg?.polygon?.length)
+    map.fitBounds(polyBounds(reg.polygon), { padding: { top: 120, bottom: 140, left: 60, right: innerWidth > 720 ? 380 : 60 }, maxZoom: 5, duration: 1400 });
   const r = (await loadLayers(era)).rulers[polity][i];
   await jumpToYear(Math.max(era.start, Math.min(era.end, r.from)));
   state.layerData = await loadLayers(era);

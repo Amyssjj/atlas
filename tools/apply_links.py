@@ -44,7 +44,9 @@ for e in events: fix(e)
 json.dump(events, open(P("data/events.json"), "w"), ensure_ascii=False, indent=1)
 for f in sorted(glob.glob(P("data/layers/*.json"))):
     L = json.load(open(f))
-    for p in L.get("people", []): fix(p)
+    # world-<region>.json bundles hold one layer file per period
+    for x in (L.values() if os.path.basename(f).startswith("world-") else [L]):
+        for p in x.get("people", []): fix(p)
     json.dump(L, open(f, "w"), ensure_ascii=False, separators=(",", ":"))
 json.dump(fixes, open(P("tools/link_fixes.json"), "w"), ensure_ascii=False, indent=1)
 print(stats)
