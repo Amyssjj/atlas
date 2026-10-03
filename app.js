@@ -1946,12 +1946,20 @@ function toggleRegionPop(open) {
   }));
 }
 
+function setLean(on, remember) {
+  state.lean = on;
+  document.querySelector(".era").classList.toggle("lean", on);
+  if (innerWidth > 720) $("era-more").setAttribute("aria-expanded", String(!on));
+  if (remember) try { localStorage.setItem("atlas-lean", on ? "1" : "0"); } catch {}
+}
+
 /* ---------- compare: a second map of another region at the same year, side by side (top and bottom on phones) ---------- */
 
 function openCompare(id) {
   cmp.region = state.regionById[id] || state.regionById[cmp.region?.id] ||
     state.regionById[state.mode === "china" ? "europe" : "china"] || state.regions.find((r) => r.id !== state.mode);
   if (!cmp.region) return;
+  if (!cmp.on) { cmp.wasLean = state.lean; setLean(true); }
   cmp.on = true;
   document.body.classList.add("comparing");
   $("map2").hidden = $("cmp-card").hidden = false;
@@ -1977,6 +1985,7 @@ function openCompare(id) {
 }
 function closeCompare() {
   cmp.on = false;
+  setLean(!!cmp.wasLean);
   document.body.classList.remove("comparing");
   $("map2").hidden = $("cmp-card").hidden = true;
   cmp.popup?.remove();
@@ -3201,7 +3210,9 @@ async function init() {
   if (phone.matches) collapseLedger(true);
   // Phone: tools and layer switches sit behind one button; the sheet and era bar size themselves to the timeline.
   const openEra = (o) => { $("era-more").setAttribute("aria-expanded", String(o)); document.querySelector(".era").classList.toggle("open", o); };
-  $("era-more").addEventListener("click", () => openEra(!document.querySelector(".era").classList.contains("open")));
+  // On wide screens the same button folds the layer switches and period notes away (remembered).
+  $("era-more").addEventListener("click", () => phone.matches ? openEra(!document.querySelector(".era").classList.contains("open")) : setLean(!state.lean, true));
+  try { setLean(localStorage.getItem("atlas-lean") === "1"); } catch { setLean(false); }
   map.on("click", () => { if (phone.matches) openEra(false); });
   new ResizeObserver(() => {
     document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
