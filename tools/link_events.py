@@ -7,11 +7,14 @@ Usage: python3 tools/link_events.py          fills events that have no `places` 
 Fields you set by hand are kept unless you pass --all; to pin a hand-made list against --all, add `"linked": "hand"`.
 
 A city id is a places.json id without its "-N" suffix (all names of one city share it). An event goes to the nearest
-city within ~35 km, or within ~100 km to a city its place names. A person is linked when their Chinese name appears
-in the event's title, summary or story cast (data/details) and the event falls between 10 years before their birth
-and 50 years after their death, so namesakes in other periods are not picked up. A country is linked when the event lies inside its border on the
-period's map at that year, or when its Chinese name appears in the title or summary (after common words such as
-时代 or 清楚 are blanked out) while it has rulers."""
+city within ~35 km, or within ~100 km to a city its place names. A person is linked when one of their Chinese names
+appears in the event's title, summary or story cast (data/details) and the event falls between 10 years before their
+birth and 50 years after their death, so namesakes in other periods are not picked up. Their names are `name_zh`
+(either part of 高长恭（兰陵王）) plus any listed in `aliases_zh`, for the forms the texts use when `name_zh` carries a
+title: 汉光武帝刘秀 lists 刘秀 and 光武. Aliases are picked by hand, checked against the events in that window; a bare
+title such as 武帝 or 文帝 is only listed when nobody else in the window goes by it. A country is linked when the
+event lies inside its border on the period's map at that year, or when its Chinese name appears in the title or summary
+(after common words such as 时代 or 清楚 are blanked out) while it has rulers."""
 import glob, json, math, os, re, sys
 from shapely.geometry import Point, shape
 
@@ -34,7 +37,8 @@ people = {}
 for f in glob.glob(P("data/layers/*.json")):
     for p in json.load(open(f)).get("people", []):
         if p.get("died") is None: continue
-        people[p["id"]] = (p["name_zh"], (p["born"] if p.get("born") is not None else p["died"] - 70) - 10, p["died"] + 50)
+        names = {n for n in re.split(r"[（）]", p["name_zh"]) if n} | set(p.get("aliases_zh", []))
+        people[p["id"]] = (names, (p["born"] if p.get("born") is not None else p["died"] - 70) - 10, p["died"] + 50)
 
 eras = json.load(open(P("data/eras.json")))["eras"]
 def era_of(y):
@@ -84,7 +88,7 @@ def city_of(ev):
 def people_of(ev):
     text = ev.get("title_zh", "") + ev.get("summary_zh", "")
     cast = {x.get("name_zh") for x in details.get(ev["id"], {}).get("people", [])}
-    return sorted(i for i, (n, a, b) in people.items() if a <= ev["year"] <= b and (n in text or n in cast))
+    return sorted(i for i, (ns, a, b) in people.items() if a <= ev["year"] <= b and any(n in text or n in cast for n in ns))
 
 n = 0
 for ev in events:
