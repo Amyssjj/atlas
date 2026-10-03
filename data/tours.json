@@ -213,6 +213,93 @@
   ]
  },
  {
+  "id": "shang-bronze-cultures",
+  "era": "shang",
+  "start": -1450,
+  "end": -1100,
+  "path": false,
+  "title": "Bronze cultures of the Shang world",
+  "title_zh": "商代四方青铜",
+  "summary": "While the Shang kings cast bronze at Yin, other peoples from the Yangtze to the Sichuan basin built bronze cultures of their own.",
+  "summary_zh": "商王在殷都铸造青铜礼器的同时，长江中游、赣江流域和成都平原的人们也发展出各具特色的青铜文化。",
+  "steps": [
+   {
+    "year": -1450,
+    "at": [
+     114.27,
+     30.7
+    ],
+    "zoom": 4.6,
+    "event": "panlongcheng",
+    "text": "About 1450 BC: at Panlongcheng on the Yangtze, the bronzes look just like those of the Shang heartland. Shang culture had reached the river, probably following the copper of the south.",
+    "text_zh": "约前1450年，长江边的盘龙城出土的青铜器，器形和纹饰几乎与中原商器一样，说明商文化沿着获取南方铜料的道路伸展到了长江。"
+   },
+   {
+    "year": -1300,
+    "at": [
+     115.4,
+     27.98
+    ],
+    "zoom": 5.6,
+    "text": "About 1300 BC: at Wucheng on the Gan River a walled town casts its own bronzes and carves signs on pottery. Archaeologists call this the Wucheng culture, a neighbour of the Shang rather than a part of it.",
+    "text_zh": "约前1300年，赣江边的吴城有城墙、铸铜作坊，陶器上还刻有符号。考古学家称之为吴城文化，它是与商并存的邻居，而不是商的一部分。"
+   },
+   {
+    "year": -1250,
+    "at": [
+     114.31,
+     36.12
+    ],
+    "zoom": 6.2,
+    "text": "About 1250 BC: at Yin, the Shang capital, large foundries cast ritual vessels in piece moulds of clay. No other centre of the time made bronzes in such numbers or for so many kinds of rite.",
+    "text_zh": "约前1250年，商都殷的大型铸铜作坊用陶范分块合铸青铜礼器。同时代没有别的地方能铸出如此多的数量和如此多样的器类。"
+   },
+   {
+    "year": -1200,
+    "at": [
+     115.4,
+     27.75
+    ],
+    "zoom": 6.0,
+    "event": "xingan-dayangzhou-tomb",
+    "text": "About 1200 BC: a great tomb at Dayangzhou in Xingan held nearly 500 bronzes. Their tiger motifs and local shapes show that the Gan valley had its own bronze-casting tradition beside the Shang.",
+    "text_zh": "约前1200年，江西新干大洋洲的一座大墓随葬青铜器近五百件，器物上常见虎形装饰，器形也有本地特色，证明赣江流域拥有独立的青铜传统。"
+   },
+   {
+    "year": -1200,
+    "at": [
+     112.55,
+     28.25
+    ],
+    "zoom": 6.0,
+    "event": "four-goat-square-zun",
+    "text": "About 1200 BC: south of Lake Dongting, someone buried a square zun with four rams' heads at its shoulders, found at Ningxiang in 1938. Hunan bronzes of this time mix Shang forms with local animal designs.",
+    "text_zh": "约前1200年，洞庭湖以南的宁乡一带埋下了四羊方尊，1938年才被发现。这一时期的湖南青铜器把商式器形和当地的动物造型结合在一起。"
+   },
+   {
+    "year": -1200,
+    "at": [
+     104.2,
+     30.99
+    ],
+    "zoom": 5.8,
+    "event": "sanxingdui",
+    "text": "About 1200 BC: at Sanxingdui in the Sichuan basin, people buried a standing bronze figure over 2.6 metres tall, masks with protruding eyes and bronze trees. Nothing like them was made at Yin.",
+    "text_zh": "约前1200年，四川盆地的三星堆人在祭祀坑中埋下高约2.6米的青铜立人像、眼球凸出的纵目面具和青铜神树，这些都是殷都所没有的。"
+   },
+   {
+    "year": -1100,
+    "at": [
+     104.01,
+     30.68
+    ],
+    "zoom": 6.3,
+    "text": "About 1100 BC: as Sanxingdui declined, the centre of the Chengdu plain moved to Jinsha, now inside Chengdu. Its gold sun-bird foil and jade show the same beliefs carried on into Zhou times.",
+    "text_zh": "约前1100年起，三星堆逐渐衰落，成都平原的中心转移到今成都市内的金沙。金沙出土的太阳神鸟金箔和玉器，说明三星堆的信仰延续到了周代。"
+   }
+  ]
+ },
+ {
   "id": "wu-ding",
   "era": "shang",
   "start": -1250,
@@ -503,6 +590,107 @@
   ]
  },
  {
+  "id": "zhou-moves-east",
+  "era": "western-zhou",
+  "start": -780,
+  "end": -707,
+  "path": false,
+  "title": "The Zhou court moves east",
+  "title_zh": "平王东迁",
+  "summary": "Within a few decades the Zhou king loses his western capital, moves to Luoyi and is shot in the shoulder by a vassal.",
+  "summary_zh": "短短几十年间，周王失去了西都镐京，东迁洛邑，最后在战场上被诸侯射伤，王室威信一落千丈。",
+  "steps": [
+   {
+    "year": -780,
+    "at": [
+     107.63,
+     34.45
+    ],
+    "zoom": 5.0,
+    "event": "three-rivers-earthquake",
+    "text": "780 BC: an earthquake shakes the old Zhou homeland and the three rivers dry up. The court astrologer Boyang Fu reads it as a sign that the dynasty is failing.",
+    "text_zh": "前780年，周人故土发生大地震，泾、渭、洛三川枯竭。太史伯阳父认为这是阴阳失调的征兆，预言周朝将要灭亡。"
+   },
+   {
+    "year": -779,
+    "at": [
+     108.77,
+     34.23
+    ],
+    "zoom": 6.0,
+    "event": "king-you-and-bao-si",
+    "text": "779 BC: King You favours his consort Bao Si. He later sets aside Queen Shen and her son Yijiu, who flees to his mother's family in the state of Shen.",
+    "text_zh": "前779年，周幽王宠爱褒姒，后来废掉申后和太子宜臼，改立褒姒之子。宜臼逃到外祖父家申国，埋下了祸根。"
+   },
+   {
+    "year": -771,
+    "at": [
+     109.2,
+     34.37
+    ],
+    "zoom": 6.2,
+    "event": "haojing-falls",
+    "text": "771 BC: the Marquis of Shen, angry at his grandson's removal, brings the Quanrong against Haojing. The capital is sacked and King You is killed below Mount Li.",
+    "text_zh": "前771年，申侯为外孙被废而怨恨，联合缯国和犬戎进攻镐京。都城被攻破，周幽王逃到骊山下被杀，宗周故地从此落入戎人之手。"
+   },
+   {
+    "year": -770,
+    "at": [
+     105.18,
+     34.18
+    ],
+    "zoom": 5.4,
+    "event": "qin-becomes-state",
+    "text": "770 BC: Duke Xiang of Qin escorts the new king and is made a full vassal lord, with the right to the lands west of Qi if he can take them back from the Rong.",
+    "text_zh": "前770年，秦襄公率兵护送平王有功，被正式封为诸侯，并获准占有岐山以西被戎人占据的土地，秦国由此立国。"
+   },
+   {
+    "year": -770,
+    "at": [
+     112.42,
+     34.66
+    ],
+    "zoom": 5.6,
+    "event": "move-east",
+    "text": "770 BC: King Ping moves the court east to Luoyi, relying on Jin and Zheng for protection. The royal domain shrinks to the Luo valley and the Eastern Zhou begins.",
+    "text_zh": "前770年，周平王依靠晋、郑等诸侯的保护，把都城东迁到洛邑。王畿缩小到洛阳一带，周王从此依附诸侯，东周开始。"
+   },
+   {
+    "year": -722,
+    "at": [
+     114.18,
+     34.1
+    ],
+    "zoom": 6.0,
+    "event": "zheng-defeats-duan-at-yan",
+    "text": "722 BC: Duke Zhuang of Zheng, also a chief minister at the Zhou court, crushes his younger brother Duan at Yan. Zheng becomes the strongest power in the central plain.",
+    "text_zh": "前722年，身兼周王卿士的郑庄公在鄢地打败谋反的弟弟共叔段，稳固了国内。郑国随后成为中原最有实力的诸侯。"
+   },
+   {
+    "year": -720,
+    "at": [
+     112.45,
+     34.68
+    ],
+    "zoom": 6.0,
+    "event": "zhou-zheng-exchange-hostages",
+    "text": "720 BC: distrust between King Ping and Duke Zhuang grows so deep that the king and the duke exchange sons as hostages, as if they were equals.",
+    "text_zh": "前720年，周平王与郑庄公互不信任，竟然互相交换儿子作为人质。天子与诸侯平起平坐，王室的尊严大打折扣。"
+   },
+   {
+    "year": -707,
+    "at": [
+     113.77,
+     34.22
+    ],
+    "zoom": 6.2,
+    "event": "battle-of-xuge",
+    "text": "707 BC: King Huan leads Chen, Cai and Wey against Zheng and is beaten at Xuge; a Zheng archer hits him in the shoulder. After this no one fears the Zhou king's army.",
+    "text_zh": "前707年，周桓王率陈、蔡、卫联军讨伐郑国，在繻葛大败，郑将祝聃一箭射中周王肩膀。从此周天子再也不能号令诸侯。"
+   }
+  ]
+ },
+ {
   "id": "five-hegemons",
   "era": "spring-autumn",
   "start": -685,
@@ -611,6 +799,96 @@
     "event": "battle-of-bi",
     "text": "597 BC: King Zhuang routs the Jin army at Bi, by the Yellow River. Chu now leads the central states, and King Zhuang is counted among the five hegemons.",
     "text_zh": "前597年，楚庄王在黄河边的邲大败晋军，楚国势力深入中原，楚庄王跻身“春秋五霸”之列。"
+   }
+  ]
+ },
+ {
+  "id": "jin-chu-rivalry",
+  "era": "spring-autumn",
+  "start": -632,
+  "end": -546,
+  "path": false,
+  "title": "Jin and Chu contend",
+  "title_zh": "晋楚争霸",
+  "summary": "For almost a century the northern power Jin and the southern power Chu fight over the small states between them, until both agree to a truce.",
+  "summary_zh": "近百年间，北方的晋国和南方的楚国反复争夺夹在中间的郑、宋等小国，最后双方在宋国订立弭兵之约。",
+  "steps": [
+   {
+    "year": -632,
+    "at": [
+     115.4,
+     35.0
+    ],
+    "zoom": 5.4,
+    "event": "chengpu",
+    "text": "632 BC: Chu besieges Song; Jin answers by striking Chu's allies Cao and Wey. At Chengpu the Chu commander Ziyu attacks and loses. Chu is kept south of the Yellow River plain.",
+    "text_zh": "前632年，楚国围宋，晋国不直接救宋，而是攻打楚的盟国曹、卫。楚将子玉求战心切，在城濮被晋军击败，楚国北进受阻。"
+   },
+   {
+    "year": -597,
+    "at": [
+     113.5,
+     34.9
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-bi",
+    "text": "597 BC: Chu besieges Zheng for three months and Zheng submits. The Jin relief army arrives too late; its generals quarrel, and at Bi it is routed and scrambles to cross the Yellow River.",
+    "text_zh": "前597年，楚国围郑三个月，郑国投降。晋国援军来迟，将帅意见不合，在邲被楚军击败，士兵争相渡黄河逃命。"
+   },
+   {
+    "year": -594,
+    "at": [
+     115.65,
+     34.41
+    ],
+    "zoom": 6.0,
+    "event": "chu-besieges-song",
+    "text": "594 BC: Chu besieges Song for nine months until the city runs out of food. Jin does not dare to send help, and Song makes peace with Chu.",
+    "text_zh": "前594年，楚国围宋长达九个月，城中粮尽，到了交换孩子来吃的地步。晋国不敢出兵相救，宋国只得与楚讲和。"
+   },
+   {
+    "year": -584,
+    "at": [
+     120.4,
+     31.5
+    ],
+    "zoom": 5.2,
+    "event": "wu-learns-chariot-warfare",
+    "text": "584 BC: Wuchen, a Chu noble who fled to Jin, is sent to Wu to teach chariot warfare. Jin now has an ally on Chu's eastern flank, and Wu begins to raid Chu.",
+    "text_zh": "前584年，从楚国投奔晋国的巫臣出使吴国，教吴人乘车作战。晋国从此在楚国东面有了盟友，吴国开始不断侵扰楚国。"
+   },
+   {
+    "year": -575,
+    "at": [
+     114.18,
+     34.1
+    ],
+    "zoom": 6.2,
+    "event": "battle-of-yanling",
+    "text": "575 BC: Jin and Chu meet again at Yanling over Zheng. Jin wins; King Gong of Chu is hit in the eye by an arrow, and Chu withdraws.",
+    "text_zh": "前575年，晋楚两国为争夺郑国在鄢陵再次交战。晋军获胜，楚共王被晋将吕锜射中眼睛，楚军连夜撤退。"
+   },
+   {
+    "year": -573,
+    "at": [
+     111.37,
+     35.62
+    ],
+    "zoom": 5.6,
+    "event": "duke-dao-revives-jin",
+    "text": "573 BC: the young Duke Dao takes the Jin throne at Xintian and restores order. Jin wears Chu down by sending its armies in turns to Zheng, and Zheng finally stays with Jin.",
+    "text_zh": "前573年，年轻的晋悼公在新田即位，整顿内政。晋国分批轮番出兵郑国，使楚国疲于奔命，郑国最终归附晋国。"
+   },
+   {
+    "year": -546,
+    "at": [
+     115.65,
+     34.41
+    ],
+    "zoom": 5.0,
+    "event": "conference-of-song",
+    "text": "546 BC: at the call of Xiang Xu of Song, Jin, Chu and other states meet at Song and agree that the lesser states will pay respects to both. The great wars between Jin and Chu stop for decades.",
+    "text_zh": "前546年，宋国大夫向戌发起，晋、楚等国在宋都会盟，约定小国同时朝见晋、楚两国。此后数十年间，晋楚之间没有再发生大战。"
    }
   ]
  },
@@ -823,6 +1101,107 @@
   ]
  },
  {
+  "id": "partition-of-jin",
+  "era": "warring-states",
+  "start": -453,
+  "end": -344,
+  "path": false,
+  "title": "Jin splits in three",
+  "title_zh": "三家分晋",
+  "summary": "The great noble houses swallow Jin and Qi from within, and Wei, one of Jin's heirs, becomes the first leading power of the Warring States.",
+  "summary_zh": "大夫之家从内部吞并了晋国和齐国，由晋分出的魏国成为战国初期的头号强国。",
+  "steps": [
+   {
+    "year": -453,
+    "at": [
+     112.5,
+     37.8
+    ],
+    "zoom": 6.2,
+    "event": "jinyang",
+    "text": "453 BC: Zhi Bo, with Han and Wei, floods the Zhao stronghold of Jinyang. Zhao secretly wins over Han and Wei, the water is turned on Zhi's camp, and the three houses divide his lands.",
+    "text_zh": "前453年，智伯联合韩、魏引汾水围灌赵氏据守的晋阳。赵襄子暗中说服韩、魏倒戈，反引水淹智伯军营，三家灭智氏，瓜分其地。"
+   },
+   {
+    "year": -403,
+    "at": [
+     112.45,
+     34.68
+    ],
+    "zoom": 5.0,
+    "event": "three-jin",
+    "text": "403 BC: King Weilie of Zhou formally makes the heads of Han, Zhao and Wei lords of their own states. Sima Guang begins the Zizhi Tongjian with this year.",
+    "text_zh": "前403年，周威烈王正式册命韩虔、赵籍、魏斯为诸侯，承认了三家分晋的事实。司马光的《资治通鉴》就从这一年写起。"
+   },
+   {
+    "year": -386,
+    "at": [
+     118.35,
+     36.85
+    ],
+    "zoom": 6.0,
+    "event": "tian-qi",
+    "text": "386 BC: in Qi, the Tian family, descended from a refugee prince of Chen, had long won people over with generous grain loans. Now Tian He is recognised as lord of Qi.",
+    "text_zh": "前386年，齐国的田氏源自逃亡而来的陈国公子完，世代以“大斗出、小斗收”收买人心。这一年田和被周王列为诸侯，田氏代齐。"
+   },
+   {
+    "year": -376,
+    "at": [
+     111.47,
+     35.64
+    ],
+    "zoom": 6.0,
+    "event": "end-of-jin",
+    "text": "376 BC: Han, Zhao and Wei depose the last Duke of Jin and share out his remaining towns. Jin, which had led the lords for a century, disappears.",
+    "text_zh": "前376年，韩、赵、魏三家废黜晋静公，瓜分晋君仅剩的城邑，静公被废为平民。曾称霸中原百年的晋国就此灭亡。"
+   },
+   {
+    "year": -375,
+    "at": [
+     113.73,
+     34.4
+    ],
+    "zoom": 6.0,
+    "event": "han-zheng",
+    "text": "375 BC: Han conquers Zheng, the state that had led the central plain in the early Spring and Autumn, and moves its capital from Yangdi to Xinzheng.",
+    "text_zh": "前375年，韩国灭掉春秋初年曾经称雄的郑国，并把都城从阳翟迁到郑国旧都新郑，从此立足中原腹地。"
+   },
+   {
+    "year": -361,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 5.8,
+    "event": "daliang",
+    "text": "361 BC: King Hui of Wei moves his capital from Anyi in the west to Daliang on the plain, closer to the rich east but also to the rivalry of Qi.",
+    "text_zh": "前361年，魏惠王把都城从西边的安邑迁到东方平原上的大梁，靠近富庶的东方，也更直接地面对齐国的竞争。"
+   },
+   {
+    "year": -354,
+    "at": [
+     115.0,
+     35.2
+    ],
+    "zoom": 6.0,
+    "event": "guiling",
+    "text": "354 BC: Wei besieges Handan. Qi, advised by Sun Bin, strikes at Wei instead of going to Zhao, and beats the returning Wei army at Guiling.",
+    "text_zh": "前354年，魏军围攻赵都邯郸。齐国采用孙膑之计，不直接救赵，而是进攻魏国，在桂陵截击回援的魏军，史称“围魏救赵”。"
+   },
+   {
+    "year": -344,
+    "at": [
+     114.3,
+     34.75
+    ],
+    "zoom": 5.2,
+    "event": "fengze-assembly",
+    "text": "344 BC: King Hui gathers the lords at Fengze near Daliang and leads them to pay homage to the Zhou king. It is the high point of Wei; two years later comes defeat at Maling.",
+    "text_zh": "前344年，魏惠王在大梁附近的逢泽会合诸侯，率领他们朝见周天子，魏国的声势达到顶点。两年后魏军在马陵惨败，霸业衰落。"
+   }
+  ]
+ },
+ {
   "id": "warring-reforms",
   "era": "warring-states",
   "start": -445,
@@ -920,6 +1299,197 @@
     "event": "hu-fu",
     "text": "307 BC: King Wuling of Zhao orders his men to wear the trousers and short coats of the steppe and fight as mounted archers. Zhao's cavalry becomes the best among the states.",
     "text_zh": "前307年，赵武灵王下令改穿胡人的短衣长裤，学习骑马射箭，组建骑兵，赵国随后灭中山、拓地北方。"
+   }
+  ]
+ },
+ {
+  "id": "hundred-schools",
+  "era": "warring-states",
+  "start": -440,
+  "end": -233,
+  "path": false,
+  "title": "The Hundred Schools",
+  "title_zh": "百家争鸣",
+  "summary": "Thinkers of the Warring States travel between courts, argue at the Jixia academy and leave the books that shaped Chinese thought.",
+  "summary_zh": "战国时代的思想家奔走于各国之间，在稷下学宫辩论，留下了影响中国两千多年的著作。",
+  "steps": [
+   {
+    "year": -440,
+    "at": [
+     112.17,
+     30.43
+    ],
+    "zoom": 5.4,
+    "event": "mozi-stops-chu-attack",
+    "text": "440 BC: Mozi walks ten days and nights to the Chu capital Ying to stop an attack on Song. He defeats Gongshu Ban's siege engines in a model contest, and Chu gives up the war.",
+    "text_zh": "前440年，墨子听说楚国要攻宋，走了十天十夜赶到郢都，与公输班模拟攻守，九次挡住进攻，楚王只好罢兵。墨家主张兼爱、非攻。"
+   },
+   {
+    "year": -320,
+    "at": [
+     114.3,
+     34.8
+    ],
+    "zoom": 6.0,
+    "event": "mencius-meets-king-hui",
+    "text": "320 BC: Mencius of Zou reaches Daliang. King Hui asks how he will profit the state; Mencius replies that he speaks only of benevolence and righteousness.",
+    "text_zh": "前320年，邹国人孟子来到魏都大梁。梁惠王问他有什么能使魏国得利，孟子回答“何必曰利？亦有仁义而已矣”。"
+   },
+   {
+    "year": -319,
+    "at": [
+     118.33,
+     36.85
+    ],
+    "zoom": 6.4,
+    "event": "jixia",
+    "text": "319 BC: at Jixia, by a gate of Linzi, King Xuan of Qi gives scholars of every school houses and ranks. Their job is not to govern but to debate.",
+    "text_zh": "前319年，齐宣王在都城临淄的稷门外扩建学宫，供养各派学者，授予上大夫的待遇，让他们“不治而议论”，稷下成为百家争鸣的中心。"
+   },
+   {
+    "year": -300,
+    "at": [
+     115.65,
+     34.45
+    ],
+    "zoom": 6.0,
+    "event": "zhuangzi",
+    "text": "About 300 BC: Zhuang Zhou, once a minor official at Meng in Song, writes the Zhuangzi. Told that Chu wants him as minister, he says he would rather drag his tail in the mud like a free turtle.",
+    "text_zh": "约前300年，曾任宋国蒙地漆园吏的庄周著书立说。据《史记》记载，楚王派人请他做相，他宁愿像乌龟一样“曳尾于涂中”，自由自在。"
+   },
+   {
+    "year": -280,
+    "at": [
+     114.48,
+     36.6
+    ],
+    "zoom": 6.0,
+    "event": "gongsun-long-white-horse",
+    "text": "About 280 BC: in Handan, Gongsun Long argues that a white horse is not a horse, a puzzle about names and the things they stand for that made the School of Names famous.",
+    "text_zh": "约前280年，赵国的公孙龙提出“白马非马”之论，探讨名称与事物的关系。他是名家的代表人物，曾为平原君门客。"
+   },
+   {
+    "year": -270,
+    "at": [
+     118.35,
+     36.85
+    ],
+    "zoom": 5.6,
+    "event": "zou-yan-five-phases",
+    "text": "About 270 BC: the Jixia scholar Zou Yan explains the rise and fall of dynasties by the five phases, each overcoming the last. Qin later adopts water as its own virtue.",
+    "text_zh": "约前270年，稷下学者邹衍提出“五德终始”说，用金木水火土五行相胜来解释朝代更替。秦朝统一后就自认属“水德”，崇尚黑色。"
+   },
+   {
+    "year": -255,
+    "at": [
+     118.0,
+     34.73
+    ],
+    "zoom": 6.0,
+    "event": "xunzi-at-lanling",
+    "text": "255 BC: Xunzi, three times head of the Jixia scholars, becomes magistrate of Lanling in Chu. He teaches that human nature must be shaped by learning; Han Fei and Li Si are his students.",
+    "text_zh": "前255年，曾三次担任稷下祭酒的荀子被春申君任为兰陵令。他主张人性本恶，须靠礼和学习加以改造，韩非、李斯都出自他门下。"
+   },
+   {
+    "year": -233,
+    "at": [
+     108.71,
+     34.33
+    ],
+    "zoom": 5.0,
+    "event": "han-fei",
+    "text": "233 BC: Han Fei, a prince of Han, is sent to Qin, whose king had admired his writings. Slandered by Li Si, he dies in prison, but his Legalist ideas guide Qin's rule.",
+    "text_zh": "前233年，韩国公子韩非出使秦国。秦王嬴政曾读其著作而深为赞赏，但韩非遭李斯等人陷害，死于狱中，他的法家学说却成为秦的治国之道。"
+   }
+  ]
+ },
+ {
+  "id": "ancient-waterworks",
+  "era": "warring-states",
+  "start": -422,
+  "end": -214,
+  "path": false,
+  "title": "Canals and irrigation",
+  "title_zh": "战国水利工程",
+  "summary": "From the Zhang River to the Lingqu canal, irrigation works turn plains into granaries and link river systems for armies.",
+  "summary_zh": "从漳河十二渠到灵渠，战国与秦的水利工程把平原变成粮仓，也把不同水系连在一起。",
+  "steps": [
+   {
+    "year": -422,
+    "at": [
+     114.6,
+     36.33
+    ],
+    "zoom": 6.2,
+    "event": "ximen-bao-governs-ye",
+    "text": "422 BC: Ximen Bao, magistrate of Ye in Wei, ends the custom of giving brides to the River Lord by throwing the shamans in. He then digs twelve channels from the Zhang River to water the fields.",
+    "text_zh": "前422年，魏国邺令西门豹把主持“河伯娶妇”的巫婆投入漳河，破除陋习，又开凿十二条水渠引漳水灌溉，邺地农田由此富饶。"
+   },
+   {
+    "year": -360,
+    "at": [
+     114.3,
+     34.8
+    ],
+    "zoom": 5.4,
+    "event": "hong-canal",
+    "text": "About 360 BC: Wei begins the Hong canal from the Yellow River near Daliang, linking it to rivers that flow to the Huai. The plain gains a waterway for boats and grain.",
+    "text_zh": "约前360年，魏国在大梁附近开凿鸿沟，引黄河水向东南连通流入淮河的诸水。中原从此有了贯通黄河与淮河的水道。"
+   },
+   {
+    "year": -316,
+    "at": [
+     104.06,
+     30.66
+    ],
+    "zoom": 5.0,
+    "event": "qin-bashu",
+    "text": "316 BC: Qin conquers Shu and gains the Chengdu plain. The land is fertile, but the Min River pours out of the mountains and floods it again and again.",
+    "text_zh": "前316年，秦国派司马错灭蜀，得到成都平原。这里土地肥沃，但岷江出山后经常泛滥，成都平原上旱涝无常，难以充分利用。"
+   },
+   {
+    "year": -256,
+    "at": [
+     103.62,
+     31.0
+    ],
+    "zoom": 6.5,
+    "event": "dujiangyan",
+    "text": "About 256 BC: Li Bing, governor of Shu, splits the Min River with the Fish Mouth levee and cuts a channel through the hill at Baopingkou. Dujiangyan still waters the Chengdu plain today.",
+    "text_zh": "约前256年，蜀郡守李冰主持修建都江堰，用鱼嘴把岷江分为内外二江，凿开宝瓶口引水入成都平原。这项工程至今仍在发挥作用。"
+   },
+   {
+    "year": -246,
+    "at": [
+     108.75,
+     34.65
+    ],
+    "zoom": 6.0,
+    "event": "zhengguo-canal",
+    "text": "246 BC: Han sends the engineer Zheng Guo to Qin to start a huge canal, hoping to drain Qin's strength. The canal from the Jing River to the Luo instead makes the Wei plain rich.",
+    "text_zh": "前246年，韩国派水工郑国入秦，劝说秦国开凿大渠，想以此消耗秦的国力。这条引泾水入洛水的郑国渠，反而让关中成为沃野。"
+   },
+   {
+    "year": -237,
+    "at": [
+     108.72,
+     34.37
+    ],
+    "zoom": 5.6,
+    "event": "li-si-against-expulsion",
+    "text": "237 BC: when Zheng Guo's mission is exposed, Qin orders all foreigners out. Li Si's memorial against the expulsion changes the king's mind, and the canal is finished.",
+    "text_zh": "前237年，郑国的使命被识破，秦国下令驱逐客卿。李斯上《谏逐客书》，秦王收回成命，郑国也得以继续把渠修完。"
+   },
+   {
+    "year": -214,
+    "at": [
+     110.67,
+     25.6
+    ],
+    "zoom": 6.3,
+    "event": "lingqu",
+    "text": "214 BC: to supply the armies in the far south, Qin cuts the Lingqu canal at Xing'an, joining the Xiang River, which flows to the Yangtze, with the Li, which flows to the Pearl River.",
+    "text_zh": "前214年，为了给南征的秦军运送粮草，秦朝在今广西兴安开凿灵渠，连通北流入长江的湘江和南流入珠江的漓江。"
    }
   ]
  },
@@ -1036,6 +1606,104 @@
   ]
  },
  {
+  "id": "qu-yuan-and-chu",
+  "era": "warring-states",
+  "start": -313,
+  "end": -278,
+  "path": true,
+  "title": "Qu Yuan and Chu",
+  "title_zh": "屈原与楚",
+  "summary": "The poet-minister Qu Yuan argues for alliance with Qi, is pushed aside and exiled, and drowns himself as Qin takes the Chu capital.",
+  "summary_zh": "屈原主张联齐抗秦，却屡遭排挤和流放，在秦军攻破郢都后自沉汨罗江。",
+  "steps": [
+   {
+    "year": -313,
+    "at": [
+     112.17,
+     30.43
+    ],
+    "zoom": 5.0,
+    "event": "zhang-yi-deceives-chu",
+    "text": "313 BC: at Ying, Qu Yuan, once trusted by King Huai, has been pushed aside by slander. Zhang Yi of Qin now persuades the king to break with Qi, the ally Qu Yuan had backed.",
+    "text_zh": "前313年，在郢都，曾受楚怀王信任的屈原遭上官大夫谗害而被疏远。秦相张仪趁机诱使怀王与齐国断交，屈原主张的联齐抗秦之策落空。"
+   },
+   {
+    "year": -311,
+    "at": [
+     118.35,
+     36.85
+    ],
+    "zoom": 5.6,
+    "text": "About 311 BC: after Chu loses Hanzhong and two battles to Qin, Qu Yuan is sent as envoy to Qi at Linzi to mend the alliance that Zhang Yi had broken.",
+    "text_zh": "约前311年，楚国在丹阳、蓝田被秦打败、失去汉中之后，屈原奉命出使齐国都城临淄，设法修复被张仪破坏的齐楚联盟。"
+   },
+   {
+    "year": -305,
+    "at": [
+     112.4,
+     31.9
+    ],
+    "zoom": 6.0,
+    "event": "li-sao",
+    "text": "About 305 BC: estranged from the court, Qu Yuan lives north of the Han River. The Li Sao, his long poem of a loyal man rejected, is traditionally dated to these years.",
+    "text_zh": "约前305年，屈原被疏远后住在汉水以北。他的长诗《离骚》倾诉忠而被谤的悲愤，一般认为写于这一时期前后。"
+   },
+   {
+    "year": -299,
+    "at": [
+     112.17,
+     30.43
+    ],
+    "zoom": 5.6,
+    "event": "king-huai-detained-in-qin",
+    "text": "299 BC: back at court, Qu Yuan warns King Huai not to meet the King of Qin: Qin is a land of tigers and wolves. The king goes, is seized at the Wu Pass, and dies a captive.",
+    "text_zh": "前299年，秦王约楚怀王会面，屈原劝谏说“秦虎狼之国，不可信”。怀王不听，入武关后被扣留，最终死在秦国。"
+   },
+   {
+    "year": -296,
+    "at": [
+     112.9,
+     29.3
+    ],
+    "zoom": 5.4,
+    "text": "About 296 BC: under the new King Qingxiang, the chief minister Zilan has Qu Yuan banished south of the Yangtze. He crosses the river toward Lake Dongting.",
+    "text_zh": "约前296年，顷襄王即位后，令尹子兰等人再次进谗，屈原被放逐到江南。他渡过长江，来到洞庭湖一带，从此再没有回到郢都。"
+   },
+   {
+    "year": -290,
+    "at": [
+     110.6,
+     27.9
+    ],
+    "zoom": 6.0,
+    "text": "About 290 BC: in the poem Crossing the River, Qu Yuan travels up the Yuan River into the dark mountain forests of Xupu, where apes live and rain never stops.",
+    "text_zh": "约前290年，屈原在《涉江》中写自己溯沅水而上，进入溆浦一带山高林深、终日阴雨的地方，漂泊于沅、湘之间。"
+   },
+   {
+    "year": -278,
+    "at": [
+     112.17,
+     30.43
+    ],
+    "zoom": 5.2,
+    "event": "bai-qi-takes-ying",
+    "text": "278 BC: the Qin general Bai Qi takes Ying and burns the royal tombs at Yiling. Chu moves its capital to Chen. Qu Yuan mourns the lost city in Lament for Ying.",
+    "text_zh": "前278年，秦将白起攻破郢都，焚烧楚王陵墓所在的夷陵，楚国被迫迁都于陈。屈原写下《哀郢》，哀悼故都沦陷。"
+   },
+   {
+    "year": -278,
+    "at": [
+     113.1,
+     28.8
+    ],
+    "zoom": 6.4,
+    "event": "qu-yuan",
+    "text": "278 BC: with his homeland lost, Qu Yuan drowns himself in the Miluo River. Later tradition links the Dragon Boat Festival to the search for his body.",
+    "text_zh": "前278年，故国沦丧，屈原怀抱石头投入湘江支流汨罗江而死。后世相传，端午节划龙舟、包粽子，就是为了纪念他。"
+   }
+  ]
+ },
+ {
   "id": "qin-unification",
   "era": "warring-states",
   "start": -246,
@@ -1132,6 +1800,107 @@
     "event": "qin-unifies",
     "text": "221 BC: the realm is one. Ying Zheng takes the new title Huangdi, splits the land into 36 commanderies and standardises script, coins and weights.",
     "text_zh": "前221年，天下一统。嬴政自称“始皇帝”，分天下为三十六郡，统一文字、货币和度量衡。"
+   }
+  ]
+ },
+ {
+  "id": "qin-institutions",
+  "era": "qin",
+  "start": -221,
+  "end": -210,
+  "path": false,
+  "title": "How Qin built an empire",
+  "title_zh": "秦的工程与制度",
+  "summary": "In eleven years the Qin empire sets up commanderies, one script and a network of roads and walls, at a heavy cost in labour.",
+  "summary_zh": "秦统一后的十余年间，推行郡县制，统一文字，修筑驰道、直道和长城，但沉重的徭役也耗尽了民力。",
+  "steps": [
+   {
+    "year": -221,
+    "at": [
+     108.72,
+     34.36
+    ],
+    "zoom": 4.2,
+    "event": "qin-commanderies",
+    "text": "221 BC: ministers urge the emperor to give kingdoms to his sons. Li Si argues that this had ruined Zhou. Instead each commandery gets a governor, a commander and an inspector appointed from the capital.",
+    "text_zh": "前221年，丞相王绾等人请求分封皇子为王，李斯认为周朝正是亡于分封。秦始皇采纳李斯之议，各郡设守、尉、监，由朝廷任免。"
+   },
+   {
+    "year": -221,
+    "at": [
+     108.72,
+     34.37
+    ],
+    "zoom": 6.2,
+    "event": "unified-script",
+    "text": "221 BC: the many local scripts of the six states are replaced by the Qin small seal script, and carts are given one axle width so they can use the same ruts.",
+    "text_zh": "前221年，秦朝以秦国文字为基础，废除六国各不相同的写法，推行小篆；又规定车轴宽度一致，即“书同文、车同轨”。"
+   },
+   {
+    "year": -220,
+    "at": [
+     113.0,
+     35.0
+    ],
+    "zoom": 4.5,
+    "event": "imperial-highways",
+    "text": "220 BC: Qin begins the imperial highways, running from Xianyang east to the old lands of Yan and Qi and south to Wu and Chu, lined with pines, for tours and troops.",
+    "text_zh": "前220年，秦开始修筑驰道，以咸阳为中心，向东通到燕、齐故地，向南直达吴、楚故地，路旁种植青松，便于皇帝出巡和调动军队。"
+   },
+   {
+    "year": -217,
+    "at": [
+     113.77,
+     31.07
+    ],
+    "zoom": 6.2,
+    "event": "shuihudi-qin-slips",
+    "text": "217 BC: a local law clerk named Xi is buried at Shuihudi with over a thousand bamboo slips of Qin law. They show how closely the counties were run by written rules.",
+    "text_zh": "前217年，南郡的一个县吏“喜”去世，随葬一千多枚抄写秦律的竹简。这批睡虎地秦简显示，秦朝对县乡的管理细致而严格。"
+   },
+   {
+    "year": -215,
+    "at": [
+     109.8,
+     40.6
+    ],
+    "zoom": 5.0,
+    "event": "great-wall-qin",
+    "text": "215 BC: Meng Tian drives the Xiongnu out of the Ordos and joins the old walls of Qin, Zhao and Yan into one line from Lintao to Liaodong.",
+    "text_zh": "前215年，蒙恬率大军北击匈奴，夺取河套地区，并把秦、赵、燕三国旧长城连接起来，西起临洮，东至辽东，绵延万余里。"
+   },
+   {
+    "year": -214,
+    "at": [
+     113.27,
+     23.13
+    ],
+    "zoom": 5.0,
+    "event": "southern-commanderies",
+    "text": "214 BC: after years of hard fighting and with grain shipped through the new Lingqu canal, Qin takes the far south and sets up the Nanhai, Guilin and Xiang commanderies.",
+    "text_zh": "前214年，秦军南征百越，经过多年苦战，依靠新开的灵渠运粮，终于平定岭南，设南海、桂林、象郡三郡，并迁徙中原人口前往戍守。"
+   },
+   {
+    "year": -212,
+    "at": [
+     109.0,
+     37.5
+    ],
+    "zoom": 5.0,
+    "event": "qin-straight-road",
+    "text": "212 BC: Meng Tian builds the Straight Road from near Xianyang north to Jiuyuan on the Yellow River bend, cutting through hills and filling valleys so troops can reach the frontier fast.",
+    "text_zh": "前212年，蒙恬奉命修筑直道，从咸阳附近的云阳一直向北到黄河河套的九原，开山填谷，便于军队迅速到达北方边境。"
+   },
+   {
+    "year": -210,
+    "at": [
+     109.27,
+     34.38
+    ],
+    "zoom": 6.4,
+    "event": "terracotta-army",
+    "text": "210 BC: the emperor is buried at Mount Li. By the Shiji, convicts by the hundred thousand had worked on this tomb and the Epang palace, and its chamber held rivers of mercury.",
+    "text_zh": "前210年，秦始皇葬于骊山陵。据《史记》记载，修建骊山陵和阿房宫的刑徒多达七十余万人，墓室中用水银做成江河大海。"
    }
   ]
  },
@@ -1558,6 +2327,101 @@
   ]
  },
  {
+  "id": "seven-states-rebellion",
+  "era": "western-han",
+  "start": -155,
+  "end": -154,
+  "path": false,
+  "title": "Rebellion of the Seven States",
+  "title_zh": "七国之乱",
+  "summary": "When Emperor Jing cuts the kings' lands, seven kingdoms rise; Liang holds out and Zhou Yafu starves the rebels in three months.",
+  "summary_zh": "汉景帝削减诸侯王封地，吴楚等七国起兵叛乱。梁国死守，周亚夫断敌粮道，三个月平定叛乱。",
+  "steps": [
+   {
+    "year": -155,
+    "at": [
+     108.88,
+     34.3
+    ],
+    "zoom": 5.0,
+    "text": "155 BC: Chao Cuo, now imperial counsellor, urges Emperor Jing to cut the kingdoms down. If they are cut, they will rebel; if not, they will rebel anyway, only later and stronger.",
+    "text_zh": "前155年，晁错任御史大夫，向景帝建议削减诸侯王封地。他认为诸侯“削之亦反，不削亦反”，晚反祸更大。景帝开始削楚、赵等国土地。"
+   },
+   {
+    "year": -154,
+    "at": [
+     119.43,
+     32.4
+    ],
+    "zoom": 5.6,
+    "event": "seven-states",
+    "text": "154 BC: Liu Pi, King of Wu, rich from sea salt and copper coins, rises at Guangling, claiming to remove Chao Cuo. Chu, Zhao, Jiaoxi, Jiaodong, Zichuan and Jinan join him.",
+    "text_zh": "前154年，靠煮盐铸钱致富的吴王刘濞在广陵起兵，打出“诛晁错，清君侧”的旗号，楚、赵、胶西、胶东、淄川、济南六国响应。"
+   },
+   {
+    "year": -154,
+    "at": [
+     108.88,
+     34.3
+    ],
+    "zoom": 6.0,
+    "text": "154 BC: hoping the rebels will stop, Emperor Jing has Chao Cuo executed in his court robes at the eastern market of Chang'an. The kings keep marching.",
+    "text_zh": "前154年，景帝听从袁盎之言，以为杀了晁错叛军就会退兵，下令将晁错腰斩于长安东市。然而吴王已自称东帝，并不罢兵。"
+   },
+   {
+    "year": -154,
+    "at": [
+     115.66,
+     34.41
+    ],
+    "zoom": 6.2,
+    "event": "defense-of-suiyang",
+    "text": "154 BC: Wu and Chu break into Liang and besiege its capital Suiyang. Liu Wu, King of Liang and the emperor's brother, holds the walls and ties down the main rebel army.",
+    "text_zh": "前154年，吴楚联军攻入梁国，围攻都城睢阳。景帝的弟弟梁王刘武坚守城池，把叛军主力牢牢拖在梁地，使其无法西进。"
+   },
+   {
+    "year": -154,
+    "at": [
+     116.2,
+     35.2
+    ],
+    "zoom": 6.0,
+    "text": "154 BC: the commander Zhou Yafu fortifies Changyi to the northeast and refuses Liang's calls for help. Light cavalry slip south and cut the rebels' grain route from the Huai.",
+    "text_zh": "前154年，太尉周亚夫在睢阳东北的昌邑深沟高垒，不顾梁王求救坚守不出，同时派轻骑南下截断吴楚从淮河运粮的通道。"
+   },
+   {
+    "year": -154,
+    "at": [
+     116.35,
+     34.43
+    ],
+    "zoom": 6.2,
+    "text": "154 BC: hungry, the Wu and Chu armies turn on Zhou Yafu near Xiayi. They feint at the south-east corner of his camp; he guards the north-west, beats the real attack, and the rebels break.",
+    "text_zh": "前154年，断粮的吴楚军转而在下邑一带求战。他们佯攻营垒东南，周亚夫却加强西北，果然挡住主攻。叛军饥疲溃散。"
+   },
+   {
+    "year": -154,
+    "at": [
+     119.45,
+     32.2
+    ],
+    "zoom": 6.0,
+    "text": "154 BC: Liu Pi flees across the Yangtze to Dantu and the Dong Yue, bribed by Han, kill him. The other kings take their own lives within weeks.",
+    "text_zh": "前154年，吴王刘濞渡江逃到丹徒，投靠东越。东越人受汉朝收买，杀死刘濞。楚王、胶西王、赵王等其余六王也先后兵败自杀或被杀。"
+   },
+   {
+    "year": -154,
+    "at": [
+     114.0,
+     34.5
+    ],
+    "zoom": 4.3,
+    "text": "154 BC: the revolt is over in about three months. Kings now lose the right to appoint their own officials and live only on their revenues; real power passes to the court.",
+    "text_zh": "前154年，七国之乱约三个月即被平定。此后诸侯王不能再自行任免官吏，只能收取租税，权力集中到中央朝廷。"
+   }
+  ]
+ },
+ {
   "id": "zhang-qian",
   "era": "western-han",
   "start": -139,
@@ -1640,6 +2504,212 @@
     "event": "zhang-qian-wusun",
     "text": "After Han wins the Hexi corridor, he goes west again to the Wusun. His deputies visit many states; from now on envoys and trade caravans travel the road we call the Silk Road.",
     "text_zh": "汉朝夺得河西之后，张骞再次出使乌孙，副使分赴各国。此后使者和商队往来不绝，这条路后来被称为丝绸之路。"
+   }
+  ]
+ },
+ {
+  "id": "emperor-wu-frontiers",
+  "era": "western-han",
+  "start": -138,
+  "end": -108,
+  "path": false,
+  "title": "Emperor Wu's new frontiers",
+  "title_zh": "汉武帝开疆",
+  "summary": "Besides the wars with the Xiongnu, Emperor Wu's armies and envoys bring the south, the southwest, the Hexi corridor and northern Korea into the empire.",
+  "summary_zh": "除了北击匈奴，汉武帝还派兵遣使，把东南、岭南、西南夷、河西走廊和朝鲜半岛北部纳入汉朝版图。",
+  "steps": [
+   {
+    "year": -138,
+    "at": [
+     120.65,
+     28.0
+    ],
+    "zoom": 5.6,
+    "event": "dong-ou-moves-north",
+    "text": "138 BC: Minyue attacks its neighbour Dong'ou. Han sends troops from Kuaiji by sea; Minyue withdraws, and Dong'ou asks to move its whole people north to the Yangtze-Huai lands.",
+    "text_zh": "前138年，闽越攻打东瓯，汉朝派严助从会稽发兵渡海救援。闽越退兵后，东瓯请求举国内迁，被安置在江淮之间。"
+   },
+   {
+    "year": -135,
+    "at": [
+     106.2,
+     26.6
+    ],
+    "zoom": 5.6,
+    "event": "tang-meng-yelang",
+    "text": "135 BC: in Nanyue, the envoy Tang Meng tastes a sauce made in Shu and learns it came by river through Yelang. He goes to Yelang and opens a route from Shu toward the south.",
+    "text_zh": "前135年，唐蒙在南越吃到蜀地出产的枸酱，得知可经夜郎沿江而下直达番禺。他奉命出使夜郎，设立犍为郡，打通了巴蜀南下的道路。"
+   },
+   {
+    "year": -111,
+    "at": [
+     113.26,
+     23.13
+    ],
+    "zoom": 6.0,
+    "event": "nanyue",
+    "text": "111 BC: after the Nanyue chancellor Lü Jia kills his pro-Han king, Han armies converge on Panyu and take it. Nanyue becomes nine commanderies reaching into today's Vietnam.",
+    "text_zh": "前111年，南越丞相吕嘉杀死主张归汉的南越王，汉朝派路博德、杨仆等分路进攻，攻破番禺。南越故地设为九郡，南至今越南中部。"
+   },
+   {
+    "year": -111,
+    "at": [
+     104.5,
+     27.0
+    ],
+    "zoom": 5.0,
+    "event": "southwest-yi-commanderies",
+    "text": "111 BC: returning troops crush Qielan in the southwest and the king of Yelang comes to court. New commanderies such as Zangke and Yuexi are set up.",
+    "text_zh": "前111年，灭南越之后，汉军回师平定反叛的且兰，夜郎王入朝受封。汉朝在西南夷地区设立牂柯、越巂、沈黎等郡。"
+   },
+   {
+    "year": -111,
+    "at": [
+     97.0,
+     39.5
+    ],
+    "zoom": 4.6,
+    "event": "hexi-four-commanderies",
+    "text": "About 111 BC: the Hexi corridor, taken from the Xiongnu ten years before, is organised into commanderies, later four: Wuwei, Zhangye, Jiuquan and Dunhuang, guarding the road west.",
+    "text_zh": "约前111年，十年前从匈奴手中夺得的河西走廊陆续设郡，后来形成武威、张掖、酒泉、敦煌四郡，守护通往西域的道路。"
+   },
+   {
+    "year": -110,
+    "at": [
+     119.3,
+     26.08
+    ],
+    "zoom": 5.8,
+    "event": "minyue-conquered",
+    "text": "110 BC: Yushan, king of Dong Yue, rebels. Han armies close in and his own men kill him. Emperor Wu moves the people to the Yangtze-Huai lands, leaving the coast nearly empty.",
+    "text_zh": "前110年，东越王余善反汉，汉军分路进攻，东越人杀余善投降。汉武帝把东越百姓迁到江淮之间，闽地一时几乎空无人烟。"
+   },
+   {
+    "year": -109,
+    "at": [
+     102.6,
+     24.67
+    ],
+    "zoom": 6.0,
+    "event": "dian-submits",
+    "text": "109 BC: Han troops reach Lake Dian and the King of Dian submits. His land becomes Yizhou commandery, but he keeps his title and a gold seal, found at Shizhaishan in 1956.",
+    "text_zh": "前109年，汉军兵临滇池，滇王举国投降。汉在此设益州郡，仍赐滇王金印让他统治原有百姓。这枚“滇王之印”1956年在石寨山出土。"
+   },
+   {
+    "year": -108,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 5.4,
+    "event": "gojoseon",
+    "text": "108 BC: after a year of war by land and sea, Wiman Joseon falls and its capital Wanggeom is taken. Han sets up four commanderies, including Lelang around today's Pyongyang.",
+    "text_zh": "前108年，汉军水陆并进作战一年后，卫满朝鲜都城王险城被攻破。汉朝在此设乐浪、临屯、玄菟、真番四郡，乐浪郡治在今平壤附近。"
+   }
+  ]
+ },
+ {
+  "id": "sima-qian-travels",
+  "era": "western-han",
+  "start": -126,
+  "end": -91,
+  "path": true,
+  "title": "The travels of Sima Qian",
+  "title_zh": "司马迁游历",
+  "summary": "The historian Sima Qian tours the south and east at twenty, later serves as envoy to the southwest, and finishes the Shiji after his disgrace.",
+  "summary_zh": "司马迁二十岁时南游江淮、北涉齐鲁，后来奉使西南，受宫刑后发愤完成了《史记》。",
+  "steps": [
+   {
+    "year": -126,
+    "at": [
+     108.88,
+     34.3
+    ],
+    "zoom": 5.0,
+    "text": "About 126 BC: Sima Qian, son of the court astrologer Sima Tan and born at Longmen on the Yellow River, sets out from Chang'an at about twenty to see the places of the past.",
+    "text_zh": "约前126年，太史令司马谈之子、生于黄河龙门的司马迁，约二十岁时从长安出发远游，去实地考察古代史事发生的地方。"
+   },
+   {
+    "year": -126,
+    "at": [
+     119.1,
+     33.55
+    ],
+    "zoom": 6.0,
+    "text": "About 126 BC: at Huaiyin he hears local stories of Han Xin, whose mother's grave the poor young man had placed on high ground with room for ten thousand households around it.",
+    "text_zh": "约前126年，他南游江淮，到了韩信的家乡淮阴。当地人告诉他，韩信还是平民、贫贱时就把母亲葬在高敞之地，旁边可安置万户人家。"
+   },
+   {
+    "year": -126,
+    "at": [
+     120.61,
+     29.98
+    ],
+    "zoom": 6.2,
+    "text": "About 126 BC: further south he climbs Mount Kuaiji and looks for Yu's cave. By tradition Yu the Great, tamer of the floods, gathered the lords here and was buried here.",
+    "text_zh": "约前126年，他从江淮继续南下，登上会稽山探访禹穴。相传治水的大禹曾在这里大会诸侯，死后也葬在这里。"
+   },
+   {
+    "year": -126,
+    "at": [
+     113.1,
+     28.8
+    ],
+    "zoom": 6.0,
+    "text": "About 126 BC: he sails the Yuan and Xiang rivers and visits the pool where Qu Yuan drowned. He later writes that he wept, imagining the man.",
+    "text_zh": "约前126年，他乘船漂游沅水、湘水，到长沙一带探看屈原自沉的地方，后来在《史记》中写道“未尝不垂涕，想见其为人”。"
+   },
+   {
+    "year": -126,
+    "at": [
+     116.99,
+     35.6
+    ],
+    "zoom": 6.4,
+    "text": "About 126 BC: in Qufu he sees Confucius's temple, his carriage and robes, and students practising rites. He says he lingered there and could not bring himself to leave.",
+    "text_zh": "约前126年，他北渡汶水、泗水，到曲阜观看孔子庙堂、车服礼器和诸生演习礼仪，在那里流连徘徊，久久不忍离去。"
+   },
+   {
+    "year": -126,
+    "at": [
+     117.18,
+     34.26
+    ],
+    "zoom": 6.0,
+    "text": "About 126 BC: he runs into hardship around Xue and Pengcheng, visits Feng and Pei where Liu Bang and his men came from, and passes through the old lands of Liang and Chu on his way home.",
+    "text_zh": "约前126年，他在鄱、薛、彭城一带遭遇困厄，又经过刘邦君臣起家的丰、沛，再走过梁、楚故地，最后才返回长安。"
+   },
+   {
+    "year": -111,
+    "at": [
+     102.26,
+     27.9
+    ],
+    "zoom": 5.4,
+    "event": "southwest-yi-commanderies",
+    "text": "111 BC: now a palace attendant, Sima Qian is sent with the armies into the southwest, south of Ba and Shu, as far as the Qiong, Zuo and Kunming peoples.",
+    "text_zh": "前111年，已任郎中的司马迁奉命随军出使西南，到达巴、蜀以南的邛、笮、昆明等地，参与安置新设的郡县。"
+   },
+   {
+    "year": -110,
+    "at": [
+     112.45,
+     34.68
+    ],
+    "zoom": 6.0,
+    "text": "110 BC: returning, he finds his father dying at Luoyang, grieved to miss the emperor's sacrifice at Mount Tai. Sima Tan makes his son promise to finish the history he had begun.",
+    "text_zh": "前110年，他回来复命时，父亲司马谈因未能随武帝封禅而病重滞留洛阳。司马谈临终嘱托儿子继任太史令，完成自己未竟的史书。"
+   },
+   {
+    "year": -91,
+    "at": [
+     108.93,
+     34.27
+    ],
+    "zoom": 5.6,
+    "event": "shiji",
+    "text": "About 91 BC: punished with castration for defending the general Li Ling, Sima Qian lives on to finish the Shiji in Chang'an: 130 chapters from the Yellow Emperor to his own day.",
+    "text_zh": "约前91年，因替李陵辩护而受宫刑的司马迁忍辱发愤，在长安完成《史记》一百三十篇，记事上起黄帝，下至汉武帝时代。"
    }
   ]
  },
@@ -1924,6 +2994,117 @@
   ]
  },
  {
+  "id": "eastern-han-learning",
+  "era": "eastern-han",
+  "start": 68,
+  "end": 205,
+  "path": false,
+  "title": "Inventions and scholarship of Eastern Han",
+  "title_zh": "东汉的发明与学术",
+  "summary": "In and around Luoyang, Eastern Han scholars and craftsmen produce paper, the seismoscope, the first dynastic history and the first character dictionary.",
+  "summary_zh": "以洛阳为中心，东汉人造出了纸和地动仪，写成第一部断代史和第一部字典，医学也留下了传世经典。",
+  "steps": [
+   {
+    "year": 68,
+    "at": [
+     112.6,
+     34.72
+    ],
+    "zoom": 4.8,
+    "event": "white-horse",
+    "text": "68: according to tradition, two Indian monks arrive at Luoyang with sutras carried on a white horse, and Emperor Ming builds the White Horse Temple for them, remembered as China's first Buddhist temple.",
+    "text_zh": "68年，据传汉明帝遣使西行求法，天竺僧人摄摩腾、竺法兰用白马驮经来到洛阳，朝廷为他们修建白马寺，后世称为中国第一座佛寺。"
+   },
+   {
+    "year": 82,
+    "at": [
+     112.62,
+     34.72
+    ],
+    "zoom": 6.0,
+    "event": "hanshu-completed",
+    "text": "82: after some twenty years of work, Ban Gu, brother of Ban Chao, largely completes the Book of Han, the first history to cover a single dynasty. His sister Ban Zhao later finishes the missing parts.",
+    "text_zh": "82年前后，班超的哥哥班固用二十余年基本写成《汉书》，开创了只写一个朝代的断代史体例。他死后，妹妹班昭续成其中的八表和天文志。"
+   },
+   {
+    "year": 100,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 6.0,
+    "event": "shuowen",
+    "text": "100: Xu Shen finishes Shuowen Jiezi, which explains more than 9,000 characters and sorts them under 540 radicals, the first Chinese dictionary arranged by component.",
+    "text_zh": "100年，许慎写成《说文解字》，收字九千多个，按五百四十个部首编排，逐字分析字形、解释本义，是中国第一部按部首编排的字典。"
+   },
+   {
+    "year": 105,
+    "at": [
+     112.5,
+     34.6
+    ],
+    "zoom": 6.2,
+    "event": "cai-lun",
+    "text": "105: the palace official Cai Lun presents Emperor He with paper made from tree bark, hemp ends, rags and old fishing nets. Paper existed before, but his cheap method spreads it, and it becomes known as Marquis Cai paper.",
+    "text_zh": "105年，宦官蔡伦把用树皮、麻头、破布和旧渔网制成的纸献给汉和帝。此前已有纸，但他的方法原料便宜、易于推广，人称“蔡侯纸”。"
+   },
+   {
+    "year": 132,
+    "at": [
+     112.48,
+     34.64
+    ],
+    "zoom": 6.0,
+    "event": "zhang-heng",
+    "text": "132: Zhang Heng, the court astronomer who had already built a water-driven armillary sphere, makes a bronze seismoscope: eight dragons hold balls, and a ball dropping into a toad's mouth points toward a distant quake.",
+    "text_zh": "132年，曾造水运浑天仪的太史令张衡制成铜质地动仪。仪器外有八条龙口含铜珠，哪个方向发生地震，那条龙口中的铜珠就落入下方蟾蜍口中。"
+   },
+   {
+    "year": 138,
+    "at": [
+     104.6,
+     35.0
+    ],
+    "zoom": 5.2,
+    "event": "longxi-earthquake-detected",
+    "text": "138: one dragon drops its ball though no one in Luoyang feels a tremor. Days later a courier arrives reporting a quake in Longxi, far to the west, and the doubters are convinced.",
+    "text_zh": "138年，地动仪一条龙的铜珠落下，洛阳却毫无震感，众人怀疑。几天后驿使赶到，报告西面的陇西发生地震，大家这才信服。"
+   },
+   {
+    "year": 175,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 6.3,
+    "event": "xiping-classics",
+    "text": "175: Cai Yong and other scholars fix the standard text of the Confucian classics and have it carved on stone tablets outside the Imperial Academy. So many come to copy them that carriages jam the streets.",
+    "text_zh": "175年，蔡邕等人校定儒家经典文字，刻成石碑立于洛阳太学门外，史称熹平石经。前来观看抄写的车辆每天上千，堵塞了街道。"
+   },
+   {
+    "year": 200,
+    "at": [
+     115.78,
+     33.85
+    ],
+    "zoom": 5.6,
+    "text": "About 200: Hua Tuo of Qiao, the most famous doctor of his day, is said to operate on patients after numbing them with a drug called mafeisan, and devises exercises imitating five animals. He is later killed by Cao Cao.",
+    "text_zh": "约200年，谯县名医华佗据记载用“麻沸散”使病人麻醉后施行腹部手术，又创编模仿虎、鹿、熊、猿、鸟动作的“五禽戏”。他后来因不肯为曹操效力而被杀。"
+   },
+   {
+    "year": 205,
+    "at": [
+     112.53,
+     33.0
+    ],
+    "zoom": 5.4,
+    "event": "shanghan-lun",
+    "text": "About 205: Zhang Zhongjing of Nanyang, who lost most of his large clan to epidemics, writes the Treatise on Cold Damage. It shapes Chinese medicine to this day and earns him the title Sage of Medicine.",
+    "text_zh": "约205年，南阳人张仲景的家族二百多人在十年内死去三分之二，多死于伤寒。他写成《伤寒杂病论》，奠定辨证施治的方法，被尊为“医圣”。"
+   }
+  ]
+ },
+ {
   "id": "ban-chao",
   "era": "eastern-han",
   "start": 73,
@@ -2133,6 +3314,114 @@
   ]
  },
  {
+  "id": "guandu",
+  "era": "eastern-han",
+  "start": 196,
+  "end": 204,
+  "path": false,
+  "title": "The Battle of Guandu",
+  "title_zh": "官渡之战",
+  "summary": "Cao Cao, holding the emperor but outnumbered, breaks Yuan Shao, the strongest warlord in the north, and takes the Yellow River plain.",
+  "summary_zh": "挟天子而兵少的曹操以弱胜强，击败北方最强的袁绍，从此成为黄河流域的主人。",
+  "steps": [
+   {
+    "year": 196,
+    "at": [
+     113.85,
+     34.03
+    ],
+    "zoom": 4.6,
+    "event": "xian-to-xu",
+    "text": "196: Cao Cao brings the wandering Emperor Xian to Xu and makes it the capital. Orders now go out in the emperor's name, and military farms around Xu start filling Cao's granaries.",
+    "text_zh": "196年，曹操把流离的汉献帝迎到许县定都，从此以天子名义号令诸侯，又在许下屯田积粮。他的地盘夹在袁绍、袁术、吕布之间，四面受敌。"
+   },
+   {
+    "year": 199,
+    "at": [
+     116.1,
+     38.98
+    ],
+    "zoom": 5.2,
+    "event": "battle-of-yijing",
+    "text": "199: Yuan Shao tunnels under the towers of Yijing and Gongsun Zan burns himself to death. Yuan now holds four provinces north of the Yellow River and gathers some 100,000 picked troops to march on Xu.",
+    "text_zh": "199年，袁绍挖地道攻破易京，公孙瓒自焚而死。袁绍据有冀、青、幽、并四州，挑选精兵十万、骑兵一万，准备南下进攻许都。"
+   },
+   {
+    "year": 200,
+    "at": [
+     114.53,
+     35.58
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-baima",
+    "text": "Spring 200: Yuan's general Yan Liang besieges Baima on the south bank. Cao feints west as if to cross the river, Yuan splits his army to follow, and Cao races to Baima, where Guan Yu cuts down Yan Liang.",
+    "text_zh": "200年春，袁绍派颜良围攻黄河南岸的白马。曹操用荀攸之计，佯装西去延津渡河，袁绍分兵应对，曹军轻骑急趋白马，关羽在万军之中斩杀颜良。"
+   },
+   {
+    "year": 200,
+    "at": [
+     114.35,
+     35.38
+    ],
+    "zoom": 6.0,
+    "text": "200: Yuan's cavalry under Wen Chou and Liu Bei chase the retreating Cao near Yanjin. Cao leaves his baggage on the road as bait, and while the riders scatter to loot, fewer than 600 horsemen rout them and kill Wen Chou.",
+    "text_zh": "200年，文丑与刘备率骑兵在延津以南追击曹军。曹操故意把辎重丢在路上，袁军争抢之际，曹操以不满六百骑突然出击，大破袁军，斩杀文丑。"
+   },
+   {
+    "year": 200,
+    "at": [
+     114.07,
+     34.75
+    ],
+    "zoom": 6.2,
+    "text": "Autumn 200: the armies face each other at Guandu. Yuan builds earth mounds and rains arrows into Cao's camp; Cao answers with stone-throwing carts and trenches against the tunnels. Months pass and Cao's grain runs short.",
+    "text_zh": "200年秋，两军在官渡对峙。袁军堆土山、筑高橹向曹营放箭，曹军造发石车击毁；袁军挖地道，曹军掘长堑相拒。相持数月，曹军粮尽，曹操一度想退回许都，荀彧写信劝他坚持。"
+   },
+   {
+    "year": 200,
+    "at": [
+     114.05,
+     34.73
+    ],
+    "zoom": 6.5,
+    "text": "Winter 200: Yuan sends Chunyu Qiong with over 10,000 men to guard a great grain convoy at Wuchao. Yuan's adviser Xu You, angry that his family has been arrested, defects to Cao and tells him exactly where the grain is.",
+    "text_zh": "200年冬，袁绍派淳于琼率万余人押运粮车，屯在乌巢。谋士许攸因家人犯法被收押，愤而投奔曹操，献计偷袭乌巢。曹操听后大喜，决定亲自出击。"
+   },
+   {
+    "year": 200,
+    "at": [
+     114.37,
+     35.13
+    ],
+    "zoom": 6.3,
+    "event": "guandu",
+    "text": "Winter 200: Cao leads 5,000 men by night under Yuan's banners, takes Wuchao, kills Chunyu Qiong and burns all the grain. Yuan's generals Zhang He and Gao Lan defect, his army collapses, and he flees north with 800 riders.",
+    "text_zh": "200年冬，曹操亲率步骑五千，打着袁军旗号连夜奔袭乌巢，斩淳于琼，烧尽粮草。袁将张郃、高览随即投降，袁军全线崩溃，袁绍只带八百骑渡河北逃。"
+   },
+   {
+    "year": 201,
+    "at": [
+     115.95,
+     36.18
+    ],
+    "zoom": 5.6,
+    "text": "201: Cao parades his army along the Yellow River and smashes Yuan's force at Cangting. Yuan Shao never recovers; he falls ill and dies in 202 without naming an heir.",
+    "text_zh": "201年四月，曹操沿黄河耀兵，在仓亭再次击破袁绍军队。袁绍兵败后发病吐血，次年五月病死，生前没有确定继承人。"
+   },
+   {
+    "year": 204,
+    "at": [
+     114.37,
+     36.33
+    ],
+    "zoom": 5.0,
+    "event": "capture-of-ye",
+    "text": "204: Yuan Shao's sons Tan and Shang fight each other, and Cao picks them off. He floods Ye with the Zhang River and takes it, making the Yuan capital his own base for conquering the north.",
+    "text_zh": "204年，袁谭、袁尚兄弟相攻，曹操各个击破，引漳水灌邺城，八月攻克，自领冀州牧。袁氏的根据地成了曹操的大本营，北方统一已成定局。"
+   }
+  ]
+ },
+ {
   "id": "red-cliffs",
   "era": "three-kingdoms",
   "start": 207,
@@ -2215,6 +3504,221 @@
     "zoom": 4.2,
     "text": "Liu Bei takes the commanderies south of the Yangtze; Sun Quan keeps the lower river. Cao Cao never crosses the Yangtze again, and three states take shape.",
     "text_zh": "战后刘备取得荆州江南四郡，孙权稳守江东。曹操再未能渡江，三国鼎立的格局由此奠定。"
+   }
+  ]
+ },
+ {
+  "id": "liu-bei-shu-hanzhong",
+  "era": "three-kingdoms",
+  "start": 211,
+  "end": 219,
+  "path": false,
+  "title": "Liu Bei takes Shu and Hanzhong",
+  "title_zh": "刘备入蜀与汉中",
+  "summary": "Invited into Sichuan as a guest, Liu Bei takes the province from his host and then wins Hanzhong from Cao Cao.",
+  "summary_zh": "刘备以客军入蜀，反取益州，又从曹操手中夺下汉中，达到一生事业的顶峰。",
+  "steps": [
+   {
+    "year": 211,
+    "at": [
+     104.73,
+     31.47
+    ],
+    "zoom": 4.8,
+    "text": "211: afraid of Zhang Lu in Hanzhong, Liu Zhang, governor of Yi province, invites Liu Bei into Sichuan. Liu Bei leaves Zhuge Liang and Guan Yu in Jing province and is feasted by Liu Zhang at Fu for over a hundred days.",
+    "text_zh": "211年，益州牧刘璋害怕汉中张鲁来攻，听从张松、法正之议，迎刘备入蜀。刘备留诸葛亮、关羽守荆州，率军西上，刘璋在涪城与他欢宴百余日。"
+   },
+   {
+    "year": 212,
+    "at": [
+     105.85,
+     32.27
+    ],
+    "zoom": 5.8,
+    "text": "212: sent north to Jiameng to face Zhang Lu, Liu Bei avoids battle and wins over the locals instead. When Liu Zhang discovers Zhang Song's plot and executes him, Liu Bei turns his army south against his host.",
+    "text_zh": "212年，刘备北上葭萌防备张鲁，却按兵不战，广施恩德收买人心。刘璋发觉张松暗通刘备，将他处死，刘备随即翻脸，回师南下进攻刘璋。"
+   },
+   {
+    "year": 214,
+    "at": [
+     104.28,
+     30.98
+    ],
+    "zoom": 6.2,
+    "text": "214: Liu Zhang's son holds Luo for nearly a year. Pang Tong, Liu Bei's chief strategist alongside Zhuge Liang, is killed by a stray arrow leading an assault on the walls, aged thirty-six.",
+    "text_zh": "214年，刘璋之子刘循坚守雒城近一年。与诸葛亮齐名的军师庞统率众攻城，被流矢射中身亡，年仅三十六岁。雒城到这年夏天才被攻破。"
+   },
+   {
+    "year": 214,
+    "at": [
+     106.57,
+     29.56
+    ],
+    "zoom": 5.8,
+    "text": "214: Zhuge Liang, Zhang Fei and Zhao Yun come up the Yangzi from Jing province. At Jiangzhou Zhang Fei captures the old general Yan Yan, who refuses to bow, and Zhang Fei releases him in admiration.",
+    "text_zh": "214年，诸葛亮与张飞、赵云率军从荆州溯江西上。张飞攻破江州，俘获老将严颜，严颜宁死不屈，张飞敬佩其气节，亲自为他松绑，以礼相待。"
+   },
+   {
+    "year": 214,
+    "at": [
+     104.06,
+     30.66
+    ],
+    "zoom": 6.0,
+    "event": "liu-bei-takes-yi",
+    "text": "214: the armies join around Chengdu, and the famous general Ma Chao comes over to Liu Bei. After a siege of some weeks Liu Zhang opens the gates and Liu Bei becomes governor of Yi province.",
+    "text_zh": "214年，各路大军会师围攻成都，名将马超也来投奔，城中震恐。围城数十日后刘璋出城投降，刘备自领益州牧，终于有了自己的根据地。"
+   },
+   {
+    "year": 215,
+    "at": [
+     106.55,
+     33.15
+    ],
+    "zoom": 5.6,
+    "event": "cao-cao-hanzhong",
+    "text": "215: Cao Cao storms Yangping Pass and Zhang Lu surrenders. Hanzhong, the northern gate of Sichuan, is in Cao's hands; he leaves Xiahou Yuan and Zhang He to hold it.",
+    "text_zh": "215年，曹操攻破阳平关，张鲁投降，汉中归曹。汉中是蜀地的北大门，蜀中为之震动。曹操留夏侯渊、张郃镇守，自己返回北方。"
+   },
+   {
+    "year": 219,
+    "at": [
+     106.68,
+     33.13
+    ],
+    "zoom": 6.4,
+    "event": "battle-of-dingjun",
+    "text": "Early 219: after a year of stalemate, Liu Bei crosses the Mian River and camps on Mount Dingjun. When Xiahou Yuan comes to contest it, Huang Zhong charges down the slope and kills him.",
+    "text_zh": "219年正月，刘备与曹军在阳平关相持一年后，南渡沔水，依山扎营于定军山。夏侯渊来争，法正看准时机，黄忠居高临下猛攻，斩杀夏侯渊。"
+   },
+   {
+    "year": 219,
+    "at": [
+     107.03,
+     33.07
+    ],
+    "zoom": 6.0,
+    "text": "Spring 219: Cao Cao comes in person, but Liu Bei holds the passes and will not fight. With supplies failing, Cao withdraws his whole army from Hanzhong in the fifth month.",
+    "text_zh": "219年春，曹操亲率大军赶到汉中，刘备据险坚守，不与交战。曹军运粮困难，士卒逃亡，相持两个多月后，曹操于五月全军撤出汉中。"
+   },
+   {
+    "year": 219,
+    "at": [
+     106.65,
+     33.15
+    ],
+    "zoom": 5.2,
+    "event": "king-of-hanzhong",
+    "text": "Autumn 219: Liu Bei proclaims himself King of Hanzhong at Mianyang and leaves Wei Yan to hold the region. It is the high point of his career; within weeks Guan Yu marches on Fancheng.",
+    "text_zh": "219年七月，刘备在沔阳设坛，自称汉中王，留魏延镇守汉中。这是刘备一生事业的顶点；不久关羽北攻樊城，局势随即逆转。"
+   }
+  ]
+ },
+ {
+  "id": "yiling",
+  "era": "three-kingdoms",
+  "start": 219,
+  "end": 223,
+  "path": false,
+  "title": "The Battle of Yiling",
+  "title_zh": "夷陵之战",
+  "summary": "Guan Yu's loss of Jing province sets Liu Bei against Sun Quan; at Yiling the young Lu Xun burns the Shu camps and the Three Kingdoms settle into place.",
+  "summary_zh": "关羽失荆州，刘备倾国东征报仇；年轻的陆逊在夷陵火烧连营，三国格局从此定型。",
+  "steps": [
+   {
+    "year": 219,
+    "at": [
+     112.14,
+     32.04
+    ],
+    "zoom": 5.6,
+    "event": "fancheng",
+    "text": "Autumn 219: Guan Yu marches north from Jing province and besieges Cao Ren in Fancheng. Heavy rains flood the Han River, seven relief armies drown, Yu Jin surrenders and Pang De is executed.",
+    "text_zh": "219年秋，关羽从荆州北攻樊城。连日大雨，汉水暴涨，于禁所督七军被淹，于禁投降，庞德被斩。关羽威震华夏，曹操一度商议迁都避其锋芒。"
+   },
+   {
+    "year": 219,
+    "at": [
+     112.19,
+     30.35
+    ],
+    "zoom": 6.0,
+    "text": "Winter 219: Sun Quan strikes Guan Yu from behind. Lü Meng hides soldiers in boats disguised as merchant ships, seizes the river watchtowers by night, and the commanders of Gong'an and Jiangling surrender.",
+    "text_zh": "219年冬，孙权背盟偷袭荆州。吕蒙让士兵穿白衣扮成商人，藏在船中摇橹，夜袭江边的烽火台，公安守将士仁、江陵守将糜芳相继投降。"
+   },
+   {
+    "year": 219,
+    "at": [
+     111.87,
+     30.73
+    ],
+    "zoom": 6.3,
+    "text": "Winter 219: Guan Yu turns back, but his soldiers desert once they hear their families in Jiangling are well treated. He shelters in Maicheng, slips west, and is captured and beheaded with his son Guan Ping.",
+    "text_zh": "219年冬，关羽回师，吕蒙厚待将士家属，关羽部众纷纷离散。他退守麦城，向西突围，在临沮被吴将擒获，与儿子关平一同被杀。荆州尽归孙权。"
+   },
+   {
+    "year": 221,
+    "at": [
+     104.06,
+     30.66
+    ],
+    "zoom": 5.0,
+    "event": "shu-han",
+    "text": "221: after Cao Pi ends the Han, Liu Bei declares himself emperor of Han in Chengdu. Ignoring objections, he prepares to attack Wu, but Zhang Fei is murdered by his own officers before the army sets out.",
+    "text_zh": "221年，曹丕代汉之后，刘备在成都称帝，国号仍为汉，史称蜀汉。他不顾群臣劝阻，决意东征孙权，出发前张飞在阆中被部将杀害。"
+   },
+   {
+    "year": 221,
+    "at": [
+     110.7,
+     30.95
+    ],
+    "zoom": 5.6,
+    "text": "221: the Shu army comes down the Yangzi gorges, beats the Wu vanguard at Wu county and occupies Zigui. Sun Quan offers peace, is refused, and declares himself Cao Pi's vassal to avoid a war on two fronts.",
+    "text_zh": "221年，蜀军沿长江三峡东下，在巫县击破吴军前锋，进驻秭归。孙权求和被拒，于是向魏称臣，受封吴王，以免两面受敌。"
+   },
+   {
+    "year": 222,
+    "at": [
+     111.3,
+     30.7
+    ],
+    "zoom": 5.6,
+    "text": "222: Sun Quan gives command to the young Lu Xun. Lu pulls back out of the mountains and refuses battle for months. Liu Bei strings dozens of camps along the gorges; Cao Pi hears of it and predicts his defeat.",
+    "text_zh": "222年，孙权任命年轻的陆逊为大都督。陆逊退出山地，坚守不战七八个月。刘备沿山连营数十座，曹丕听说后断言：哪有七百里连营能抵御敌人的？"
+   },
+   {
+    "year": 222,
+    "at": [
+     111.43,
+     30.53
+    ],
+    "zoom": 6.3,
+    "event": "yiling",
+    "text": "Summer 222: with the Shu troops worn out in the heat, Lu Xun orders each soldier to carry a bundle of reeds and sets the camps alight. More than forty camps fall and the Shu army collapses.",
+    "text_zh": "222年夏，蜀军久驻疲惫，陆逊命士兵各持一把茅草，火攻蜀营，一举攻破四十多座营寨，在猇亭一带大败蜀军。蜀将冯习、张南等战死。"
+   },
+   {
+    "year": 223,
+    "at": [
+     109.57,
+     31.04
+    ],
+    "zoom": 6.0,
+    "event": "baidi-entrust",
+    "text": "223: Liu Bei escapes to Baidi, his rearguard burning armour to block the mountain road. Dying, he entrusts his son Liu Shan to Zhuge Liang, telling him to take the throne himself if the boy proves unfit.",
+    "text_zh": "223年，靠驿兵烧铠甲堵路逃回白帝城的刘备病重，托孤诸葛亮，说：“若嗣子可辅，辅之；如其不才，君可自取。”不久病逝。"
+   },
+   {
+    "year": 223,
+    "at": [
+     114.89,
+     30.39
+    ],
+    "zoom": 5.0,
+    "event": "deng-zhi-mission-wu",
+    "text": "Winter 223: Zhuge Liang sends Deng Zhi to Sun Quan at Wuchang. Wu breaks with Wei and renews the alliance with Shu, which holds until Shu falls forty years later.",
+    "text_zh": "223年冬，诸葛亮派邓芝出使武昌，说服孙权与魏断绝往来，吴蜀重新结盟。此后两国再未交兵，联盟一直维持到蜀汉灭亡。"
    }
   ]
  },
@@ -2519,6 +4023,203 @@
   ]
  },
  {
+  "id": "eastern-jin-gentlemen",
+  "era": "jin",
+  "start": 318,
+  "end": 405,
+  "path": false,
+  "title": "Wang Xizhi and the Eastern Jin gentlemen",
+  "title_zh": "王羲之与东晋名士",
+  "summary": "Exiled northern aristocrats make Jiankang and Kuaiji the home of a new elegance in calligraphy, painting, poetry and talk.",
+  "summary_zh": "南渡的士族在建康、会稽一带安家，书法、绘画、诗文与清谈都达到了新的高度。",
+  "steps": [
+   {
+    "year": 318,
+    "at": [
+     118.72,
+     31.98
+    ],
+    "zoom": 5.0,
+    "text": "Around 318: refugees from the north gather to drink at Xinting outside Jiankang. Zhou Yi sighs that the scenery is the same but the rivers and hills are not; Wang Dao rebukes the weepers and calls for recovering the north.",
+    "text_zh": "约318年，南渡士人常在建康城外的新亭聚饮。周顗叹息“风景不殊，正自有山河之异”，众人相对流泪，王导正色说应当合力恢复中原，何至于像囚徒一样相对哭泣。"
+   },
+   {
+    "year": 353,
+    "at": [
+     120.58,
+     30.0
+    ],
+    "zoom": 6.4,
+    "event": "lanting",
+    "text": "353: on the third day of the third month Wang Xizhi, governor of Kuaiji, gathers Xie An and some forty friends at the Orchid Pavilion. Cups float down a stream, poems are written, and Wang's preface becomes the most admired work of calligraphy.",
+    "text_zh": "353年三月三日，会稽内史王羲之与谢安、孙绰等四十余人在兰亭修禊，曲水流觞，饮酒赋诗。王羲之为诗集所写的《兰亭集序》被誉为“天下第一行书”。"
+   },
+   {
+    "year": 360,
+    "at": [
+     120.87,
+     29.95
+    ],
+    "zoom": 6.0,
+    "text": "360: Xie An, who has lived in retreat in the Eastern Hills of Kuaiji for years, finally takes office at past forty as an aide to Huan Wen. His return gives Chinese the idiom of a comeback from the Eastern Hills.",
+    "text_zh": "360年，长期隐居会稽东山、屡次拒绝征召的谢安，年过四十才出山，做了桓温的司马。“东山再起”这个成语就出自他的这次出仕。"
+   },
+   {
+    "year": 380,
+    "at": [
+     118.78,
+     32.05
+    ],
+    "zoom": 6.0,
+    "event": "gu-kaizhi",
+    "text": "About 380: Gu Kaizhi, the leading painter of Jiankang, holds that a portrait must capture the spirit through the form. Copies of his Admonitions scroll and Nymph of the Luo River still survive.",
+    "text_zh": "约380年，建康的画家顾恺之主张作画要“以形写神”，画人尤重点睛。他的《女史箴图》《洛神赋图》以摹本流传至今，是中国人物画的奠基之作。"
+   },
+   {
+    "year": 383,
+    "at": [
+     118.79,
+     32.02
+    ],
+    "zoom": 6.4,
+    "text": "383: as the battle on the Fei River is fought, Xie An sits playing weiqi at home in Jiankang. When the victory letter arrives he reads it and goes on playing, saying only that the youngsters have beaten the enemy.",
+    "text_zh": "383年淝水之战时，谢安正在建康家中与客人下棋。捷报送到，他看完随手放下，继续下棋，客人问起，只淡淡说：“小儿辈遂已破贼。”王谢两家宅第都在秦淮河南的乌衣巷。"
+   },
+   {
+    "year": 402,
+    "at": [
+     115.98,
+     29.56
+    ],
+    "zoom": 5.6,
+    "event": "huiyuan-lushan",
+    "text": "402: the monk Huiyuan, who has lived on Mount Lu for twenty years, gathers monks and lay scholars at Donglin Temple to vow rebirth in the Pure Land. Mount Lu becomes a centre of southern Buddhism.",
+    "text_zh": "402年，在庐山东林寺住了二十年的高僧慧远，与僧俗一百多人在阿弥陀佛像前立誓往生西方净土。庐山由此成为南方佛教与名士交往的中心。"
+   },
+   {
+    "year": 405,
+    "at": [
+     116.0,
+     29.7
+    ],
+    "zoom": 6.3,
+    "event": "tao-yuanming",
+    "text": "405: Tao Yuanming quits as magistrate of Pengze after some eighty days, unwilling to bow to a visiting inspector. He goes home to Chaisang below Mount Lu, writes Returning Home, and farms for the rest of his life.",
+    "text_zh": "405年，陶渊明做了八十多天彭泽县令，不愿为五斗米向督邮折腰，辞官回到庐山脚下的柴桑故里，写下《归去来兮辞》，从此躬耕田园。"
+   }
+  ]
+ },
+ {
+  "id": "eastern-jin-northern-campaigns",
+  "era": "jin",
+  "start": 347,
+  "end": 417,
+  "path": false,
+  "title": "Eastern Jin campaigns to the north",
+  "title_zh": "东晋北伐",
+  "summary": "Huan Wen and Liu Yu march north from the Yangzi and briefly retake Luoyang and Chang'an, but neither can hold the north.",
+  "summary_zh": "桓温、刘裕先后从江南北伐，一度收复洛阳、长安，却都没能守住中原。",
+  "steps": [
+   {
+    "year": 347,
+    "at": [
+     104.06,
+     30.66
+    ],
+    "zoom": 4.6,
+    "event": "huan-wen-shu",
+    "text": "347: Huan Wen, governor of Jing province, sails up the Yangzi and takes Chengdu, ending the Cheng-Han state. The victory makes him the most powerful man in the Eastern Jin and sets him on the road north.",
+    "text_zh": "347年，荆州刺史桓温溯江西上，攻入成都，成汉李势出降。桓温由此威名大振，成为东晋最有实力的权臣，也开始筹划北伐中原。"
+   },
+   {
+    "year": 354,
+    "at": [
+     109.32,
+     34.15
+    ],
+    "zoom": 6.0,
+    "text": "354: Huan Wen leads 40,000 men from Jiangling through Wu Pass into the Wei valley, beats the Former Qin army at Lantian and pushes on toward Chang'an.",
+    "text_zh": "354年，桓温率步骑四万从江陵出发，经武关进入关中，在蓝田大败前秦军队，兵锋直逼长安。这是东晋军队第一次打进关中。"
+   },
+   {
+    "year": 354,
+    "at": [
+     109.08,
+     34.27
+    ],
+    "zoom": 6.2,
+    "event": "huan-wen-first-expedition",
+    "text": "354: camped at Bashang, Huan Wen is welcomed by locals with oxen and wine. The scholar Wang Meng visits him, but Huan dares not attack Chang'an, and when Qin cuts the wheat early he retreats for lack of food.",
+    "text_zh": "354年，桓温进驻灞上，关中父老牵牛担酒迎接，说想不到今天又见到官军。王猛前来求见，但桓温不敢进攻长安，前秦抢割麦子，晋军缺粮只得撤退。"
+   },
+   {
+    "year": 356,
+    "at": [
+     112.45,
+     34.68
+    ],
+    "zoom": 6.0,
+    "event": "huan-wen-recovers-luoyang",
+    "text": "356: on his second campaign Huan Wen defeats the Qiang leader Yao Xiang on the Yi River and retakes Luoyang, repairing the Western Jin tombs. He urges the court to move back north, but it refuses.",
+    "text_zh": "356年，桓温第二次北伐，在伊水大败姚襄，收复洛阳，修复西晋皇陵。他上书请求还都洛阳，朝廷不敢答应。几年后洛阳又被前燕夺去。"
+   },
+   {
+    "year": 369,
+    "at": [
+     114.55,
+     35.67
+    ],
+    "zoom": 5.6,
+    "event": "fangtou",
+    "text": "369: the third campaign, against Former Yan, reaches Fangtou on the Yellow River. Murong Chui blocks him and his supply lines fail; retreating overland, he is ambushed at Xiangyi and loses some 30,000 men.",
+    "text_zh": "369年，桓温第三次北伐前燕，进至黄河边的枋头。慕容垂率军抵抗，晋军粮道断绝，焚船从陆路撤退，在襄邑遭伏击，损失三万多人。"
+   },
+   {
+    "year": 410,
+    "at": [
+     118.47,
+     36.7
+    ],
+    "zoom": 5.6,
+    "event": "southern-yan",
+    "text": "410: Liu Yu, a commander of humble birth who has crushed a rebellion and a usurper, takes Guanggu after a long siege. Southern Yan falls, its ruler Murong Chao is executed in Jiankang, and Shandong returns to Jin.",
+    "text_zh": "410年，出身寒微的刘裕北伐南燕，围攻广固大半年后破城，俘获南燕主慕容超，押回建康斩首。青齐一带重归东晋，刘裕声望大增。"
+   },
+   {
+    "year": 416,
+    "at": [
+     112.62,
+     34.72
+    ],
+    "zoom": 5.4,
+    "text": "416: Liu Yu sends his armies against Later Qin. Vanguards under Wang Zhen'e and Tan Daoji sweep up through the Huai and Henan, and Luoyang surrenders in the tenth month.",
+    "text_zh": "416年，刘裕兵分数路讨伐后秦。前锋王镇恶、檀道济一路势如破竹，十月攻克洛阳，这是洛阳六十年来第二次回到晋朝手中。"
+   },
+   {
+    "year": 417,
+    "at": [
+     114.5,
+     35.55
+    ],
+    "zoom": 6.0,
+    "event": "queyue-formation",
+    "text": "417: Liu Yu's fleet sails up the Yellow River while Northern Wei horsemen shadow it on the north bank. He lands a crescent of war-carts and crossbowmen there, and the Wei cavalry is cut to pieces.",
+    "text_zh": "417年，刘裕率水军溯黄河西上，北魏骑兵沿北岸尾随骚扰。刘裕派兵登上北岸，用一百辆战车布成“却月阵”，配合强弩大破魏军骑兵。"
+   },
+   {
+    "year": 417,
+    "at": [
+     108.93,
+     34.27
+    ],
+    "zoom": 5.0,
+    "event": "liu-yu-changan",
+    "text": "417: Wang Zhen'e sails his boats up the Wei River to the walls of Chang'an and Later Qin surrenders. But Liu Yu hurries home to seize power, and the next year the Xia state takes Chang'an.",
+    "text_zh": "417年，王镇恶率船队沿渭水直抵长安城下，后秦姚泓出降。但刘裕急于回建康夺权，留下少年儿子镇守，第二年长安就被夏国赫连勃勃夺走。"
+   }
+  ]
+ },
+ {
   "id": "fei-river",
   "era": "jin",
   "start": 357,
@@ -2720,6 +4421,191 @@
     "event": "faxian-returns",
     "text": "412: the ship lands south of Mount Lao, near today's Qingdao, and Faxian is home. He brings back many scriptures and writes a record of the thirty-odd countries he passed through.",
     "text_zh": "412年，海船漂到青州长广郡牢山（今青岛崂山）南岸，法显终于回国。他带回大批经律，写下《佛国记》，记述沿途三十余国的见闻。"
+   }
+  ]
+ },
+ {
+  "id": "cave-temples-road",
+  "era": "north-south",
+  "start": 366,
+  "end": 555,
+  "path": false,
+  "title": "The road of cave temples",
+  "title_zh": "石窟之路",
+  "summary": "Buddhist cave temples spread from Dunhuang along the Silk Road to the capitals of the north, changing style as they went.",
+  "summary_zh": "佛教石窟从敦煌沿丝绸之路一路东传到北方都城，风格也随之不断变化。",
+  "steps": [
+   {
+    "year": 366,
+    "at": [
+     94.81,
+     40.04
+    ],
+    "zoom": 5.0,
+    "event": "mogao",
+    "text": "366: according to a Tang inscription, the monk Yuezun sees a golden light like a thousand Buddhas on the cliffs near Dunhuang and cuts the first cave there. Mogao grows over the next thousand years.",
+    "text_zh": "366年，据唐代碑文记载，僧人乐僔路过敦煌鸣沙山，看到山崖上金光闪耀，状如千佛，于是开凿了第一个洞窟。此后千年间，莫高窟不断扩展。"
+   },
+   {
+    "year": 420,
+    "at": [
+     103.05,
+     35.8
+    ],
+    "zoom": 6.0,
+    "text": "420: in cave 169 at Binglingsi on the Yellow River, a painted inscription is dated to the Western Qin kingdom. It is the oldest dated inscription in any Chinese cave temple.",
+    "text_zh": "420年，黄河边的炳灵寺第169窟留下一则西秦建弘元年的墨书题记，这是中国石窟中现存最早的纪年题记，见证了佛教艺术沿河西走廊东传。"
+   },
+   {
+    "year": 460,
+    "at": [
+     113.12,
+     40.11
+    ],
+    "zoom": 6.0,
+    "event": "yungang",
+    "text": "460: at Yungang near Pingcheng the monk Tanyao directs five huge caves, each with a colossal Buddha said to stand for a Northern Wei emperor. Their broad faces and thin robes still recall Central Asian models.",
+    "text_zh": "460年起，昙曜在平城西郊云冈主持开凿五座大窟，史称“昙曜五窟”。大佛高达十余米，据说象征北魏五位皇帝，面相丰满、衣纹贴体，带有西域风格。"
+   },
+   {
+    "year": 500,
+    "at": [
+     112.47,
+     34.56
+    ],
+    "zoom": 6.2,
+    "text": "500: after the move to Luoyang the court starts the Binyang caves at Longmen in memory of Emperor Xiaowen and his empress. The figures are now slender and wrapped in Chinese-style robes.",
+    "text_zh": "500年，迁都洛阳后，北魏宣武帝下令在龙门为孝文帝和文昭皇太后开凿宾阳洞，前后用工八十多万。佛像变得清瘦修长、宽袍大袖，风格已明显汉化。"
+   },
+   {
+    "year": 538,
+    "at": [
+     94.81,
+     40.04
+    ],
+    "zoom": 6.2,
+    "text": "538: back at Dunhuang, cave 285 carries inscriptions from 538 and 539, the earliest dated cave at Mogao. Its paintings mix Indian gods with the slender Chinese style that had spread from Luoyang.",
+    "text_zh": "538年，莫高窟第285窟留下西魏大统四年、五年的题记，是莫高窟现存最早的纪年洞窟。窟中壁画把印度诸神和中原流行的清瘦风格融为一体。"
+   },
+   {
+    "year": 540,
+    "at": [
+     106.0,
+     34.35
+    ],
+    "zoom": 6.2,
+    "text": "540: the deposed Western Wei empress Yifu, forced to kill herself at Qinzhou, is buried in a niche cut into the cliff of Maijishan. The site near Tianshui flourished under Northern Wei and Western Wei patrons.",
+    "text_zh": "540年，被废的西魏文帝皇后乙弗氏在秦州被逼自尽，人们在麦积山崖壁上凿龛安葬。天水麦积山石窟在北魏、西魏时期兴盛，以泥塑佛像著称。"
+   },
+   {
+    "year": 555,
+    "at": [
+     114.2,
+     36.55
+    ],
+    "zoom": 6.0,
+    "text": "About 555: Northern Qi rulers cut the Xiangtang caves into Mount Gu, on the road between Ye and Jinyang. The figures grow fuller and rounder again, and whole sutras are carved into the rock.",
+    "text_zh": "约555年，北齐皇室在邺城通往晋阳的大道旁的鼓山开凿响堂山石窟。佛像又转向丰满圆润，并在石壁上大面积刻写佛经，下启隋唐风格。"
+   }
+  ]
+ },
+ {
+  "id": "northern-wei-unifies-north",
+  "era": "north-south",
+  "start": 386,
+  "end": 460,
+  "path": false,
+  "title": "Northern Wei unites the north",
+  "title_zh": "北魏统一北方",
+  "summary": "From a revived chieftaincy on the steppe edge, the Tuoba Xianbei build Northern Wei and in fifty years end the Sixteen Kingdoms.",
+  "summary_zh": "鲜卑拓跋部从塞外小国起家，建立北魏，五十多年间扫平群雄，结束十六国的混战。",
+  "steps": [
+   {
+    "year": 386,
+    "at": [
+     111.82,
+     40.38
+    ],
+    "zoom": 4.6,
+    "event": "northern-wei-founded",
+    "text": "386: with Former Qin falling apart after the Fei River, the sixteen-year-old Tuoba Gui revives his family's Dai state near Shengle and soon renames it Wei.",
+    "text_zh": "386年，淝水之战后前秦瓦解，十六岁的拓跋珪召集旧部复建代国，以盛乐为中心，同年改称魏王，北魏由此建立。"
+   },
+   {
+    "year": 395,
+    "at": [
+     112.5,
+     40.53
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-canhe",
+    "text": "395: Later Yan sends its crown prince Murong Bao against Wei. Tuoba Gui falls back, then catches the retreating Yan army at Canhe Slope by surprise and destroys it, killing tens of thousands of prisoners.",
+    "text_zh": "395年，后燕太子慕容宝率大军攻魏。拓跋珪先避其锋，待燕军撤退时在参合陂突然袭击，大破燕军，坑杀降卒数万。后燕从此由盛转衰。"
+   },
+   {
+    "year": 397,
+    "at": [
+     114.99,
+     38.52
+    ],
+    "zoom": 5.6,
+    "text": "397: after Murong Chui's death Tuoba Gui pours through the Taihang passes into the plain and takes Zhongshan, the Later Yan capital. Most of Hebei now belongs to Wei.",
+    "text_zh": "397年，后燕慕容垂死后，拓跋珪大举南下，出井陉进入河北平原，攻克后燕都城中山。河北大部归入北魏版图。"
+   },
+   {
+    "year": 398,
+    "at": [
+     113.3,
+     40.08
+    ],
+    "zoom": 6.0,
+    "event": "pingcheng-capital",
+    "text": "398: Tuoba Gui makes Pingcheng (Datong) his capital and takes the title of emperor. Over 100,000 people from the conquered east are moved in to farm and build the new city.",
+    "text_zh": "398年，拓跋珪定都平城（今山西大同），即皇帝位，营建宫室。他把新征服的东方各州吏民和工匠十余万口迁到京畿，开荒种地。"
+   },
+   {
+    "year": 427,
+    "at": [
+     108.85,
+     37.99
+    ],
+    "zoom": 6.0,
+    "event": "wei-takes-tongwan",
+    "text": "427: Emperor Taiwu attacks Tongwan, the white-walled capital of Xia. Feigning retreat, he draws the Xia army out of its fortress, crushes it in the field and takes the city.",
+    "text_zh": "427年，北魏太武帝亲征夏国都城统万城。这座城以蒸土夯筑，十分坚固。太武帝佯装撤退，诱夏军出城决战后大败之，攻克统万。"
+   },
+   {
+    "year": 436,
+    "at": [
+     120.45,
+     41.57
+    ],
+    "zoom": 5.6,
+    "event": "northern-yan-destroyed",
+    "text": "436: Wei armies close on Longcheng, capital of Northern Yan. Its ruler Feng Hong burns his palace and flees to Goguryeo, where he is later killed.",
+    "text_zh": "436年，魏军进逼北燕都城龙城（今辽宁朝阳），燕主冯弘焚烧宫殿，带领部众东逃高句丽，后被杀，北燕灭亡。"
+   },
+   {
+    "year": 439,
+    "at": [
+     102.64,
+     37.93
+    ],
+    "zoom": 5.2,
+    "event": "wei-unifies-north",
+    "text": "439: Emperor Taiwu crosses the desert to Guzang, capital of Northern Liang, and Juqu Mujian surrenders. The Sixteen Kingdoms are over; tens of thousands of Liangzhou families, monks and craftsmen are moved to Pingcheng.",
+    "text_zh": "439年，太武帝西征北凉，围攻都城姑臧，沮渠牧犍出降。十六国时代结束，北方归于一统。凉州的三万多户百姓及大批僧人、工匠被迁往平城。"
+   },
+   {
+    "year": 460,
+    "at": [
+     113.12,
+     40.11
+    ],
+    "zoom": 5.8,
+    "event": "yungang",
+    "text": "460: after a persecution of Buddhism under Taiwu and its restoration in 452, the monk Tanyao, himself from Liangzhou, begins the giant Buddhas of Yungang outside Pingcheng. The unified north now builds on an imperial scale.",
+    "text_zh": "460年，太武帝灭佛之后，文成帝重兴佛法，来自凉州的僧人昙曜主持在平城西郊开凿云冈石窟。统一后的北魏开始以帝国规模营造。"
    }
   ]
  },
@@ -2933,6 +4819,118 @@
     "event": "wei-splits",
     "text": "534: Emperor Xiaowu flees west to Yuwen Tai in the Wei valley, and Gao Huan sets up another emperor at Ye. Northern Wei splits into Eastern and Western Wei, later replaced by Northern Qi and Northern Zhou.",
     "text_zh": "534年，孝武帝西奔关中投靠宇文泰，高欢另立孝静帝并迁都邺城。北魏分裂为东魏和西魏，后来分别被北齐、北周取代。"
+   }
+  ]
+ },
+ {
+  "id": "eastern-western-wei",
+  "era": "north-south",
+  "start": 534,
+  "end": 577,
+  "path": false,
+  "title": "Eastern and Western Wei",
+  "title_zh": "东西魏争雄",
+  "summary": "For forty years the heirs of Gao Huan in Ye and of Yuwen Tai in Chang'an fight for the north, and the weaker west wins.",
+  "summary_zh": "邺城的高氏与长安的宇文氏争夺北方四十余年，起初较弱的西方最终胜出。",
+  "steps": [
+   {
+    "year": 534,
+    "at": [
+     114.38,
+     36.33
+    ],
+    "zoom": 4.6,
+    "event": "wei-splits",
+    "text": "534: the Northern Wei emperor flees west to Yuwen Tai, and Gao Huan sets up another emperor and moves the court to Ye. Some 400,000 households are marched off from Luoyang within days.",
+    "text_zh": "534年，北魏孝武帝西奔关中投靠宇文泰，高欢另立孝静帝，迁都邺城。诏书下达三天就动身，洛阳四十万户百姓狼狈上路。东魏由此建立。"
+   },
+   {
+    "year": 535,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 5.4,
+    "event": "xiaowu-poisoned",
+    "text": "535: in Chang'an Yuwen Tai poisons the emperor who fled to him and puts up a new one: Western Wei. It holds only the poorer Wei valley and has far fewer troops than the east.",
+    "text_zh": "535年，宇文泰毒杀投奔而来的孝武帝，在长安另立文帝，西魏建立。西魏只有关中、陇右，地瘠民贫，兵力远逊于东魏。"
+   },
+   {
+    "year": 537,
+    "at": [
+     110.3,
+     34.6
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-xiaoguan",
+    "text": "Early 537: Gao Huan attacks on three fronts and builds bridges over the Yellow River as a feint. Yuwen Tai slips out through Xiaoguan, falls on Dou Tai's column near Tong Pass, and Dou kills himself.",
+    "text_zh": "537年初，高欢三路进攻，在蒲坂架浮桥虚张声势。宇文泰识破其意，秘密出兵小关，突袭潼关一带的窦泰，窦泰兵败自杀，高欢只得撤桥退兵。"
+   },
+   {
+    "year": 537,
+    "at": [
+     109.95,
+     34.8
+    ],
+    "zoom": 6.2,
+    "event": "shayuan",
+    "text": "Winter 537: Gao Huan returns with a huge army. Yuwen Tai, with fewer than 10,000 men, hides troops in the reeds of the Shayuan sand flats by the Wei River. The ambush routs the east and takes some 70,000 prisoners.",
+    "text_zh": "537年冬，高欢率二十万大军再攻关中。宇文泰兵不满万，在渭河边沙苑的芦苇中设下伏兵，拦腰截击，东魏大败，被俘七万人。"
+   },
+   {
+    "year": 538,
+    "at": [
+     112.65,
+     34.85
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-heqiao",
+    "text": "538: the two sides clash at the Yellow River bridge north of Luoyang. The east's great general Gao Aocao is killed, but the west is beaten in the end; Yuwen Tai falls from his horse and barely escapes.",
+    "text_zh": "538年，东西魏在洛阳河桥、邙山一带激战。东魏名将高敖曹战死，但西魏最终失利，宇文泰坠马几乎被擒。洛阳在战火中残破不堪。"
+   },
+   {
+    "year": 543,
+    "at": [
+     112.5,
+     34.78
+    ],
+    "zoom": 6.2,
+    "event": "battle-of-mangshan-543",
+    "text": "543: when an eastern governor defects with Hulao, Yuwen Tai marches to receive him and is badly beaten at Mount Mang. To rebuild, he recruits local strongmen and their militias, the seed of the Fubing army.",
+    "text_zh": "543年，东魏将领高仲密以虎牢降西魏，宇文泰东进接应，在邙山大败。此后他广招关陇豪强的乡兵，这成为日后府兵制的来源。"
+   },
+   {
+    "year": 546,
+    "at": [
+     110.9,
+     35.6
+    ],
+    "zoom": 6.4,
+    "event": "yubi",
+    "text": "546: Gao Huan throws his full strength at Yubi. For fifty days Wei Xiaokuan answers every earth mound and tunnel; about 70,000 eastern soldiers die. Gao Huan withdraws to Jinyang and dies within weeks.",
+    "text_zh": "546年，高欢倾全力围攻玉璧。韦孝宽坚守五十天，对筑土山、挖地道、断水源一一化解，东魏战死病死七万人。高欢令斛律金唱《敕勒歌》稳定军心，退兵后不久病逝。"
+   },
+   {
+    "year": 550,
+    "at": [
+     112.0,
+     35.6
+    ],
+    "zoom": 4.4,
+    "event": "northern-qi",
+    "text": "550: Gao Huan's son Gao Yang deposes the eastern emperor and founds Northern Qi. In 557 Yuwen Tai's son does the same in the west and founds Northern Zhou. The rivalry goes on under new names.",
+    "text_zh": "550年，高欢之子高洋废东魏皇帝，建立北齐；557年，宇文泰之子宇文觉也代西魏建立北周。东西对峙换了国号，仍在继续。"
+   },
+   {
+    "year": 577,
+    "at": [
+     114.3,
+     36.3
+    ],
+    "zoom": 5.4,
+    "event": "zhou-conquers-qi",
+    "text": "577: Emperor Wu of Zhou, after taking Jinyang, storms Ye and captures the Qi rulers. The north is one state again for the first time since 534, and four years later his minister Yang Jian founds the Sui.",
+    "text_zh": "577年，北周武帝攻克晋阳后进兵邺城，俘获北齐后主，北齐灭亡。北方自534年分裂以来重归统一，四年后杨坚代周建隋。"
    }
   ]
  },
@@ -3589,6 +5587,434 @@
   ]
  },
  {
+  "id": "wu-zetian",
+  "era": "tang",
+  "start": 649,
+  "end": 706,
+  "path": false,
+  "title": "Wu Zetian",
+  "title_zh": "武则天",
+  "summary": "From a palace concubine in a nunnery to the only woman in Chinese history to reign as emperor in her own name.",
+  "summary_zh": "从感业寺的尼姑到皇后、天后，再到中国历史上唯一的正统女皇帝。",
+  "steps": [
+   {
+    "year": 649,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 6.2,
+    "text": "649: when Emperor Taizong dies, his young concubine Wu is sent with the others to Ganye convent in Chang'an. His son Gaozong, who had noticed her, visits and later brings her back to the palace.",
+    "text_zh": "649年，唐太宗去世，才人武氏按例出宫，到长安感业寺为尼。早已对她倾心的唐高宗到寺中进香时与她相见，不久将她接回宫中。"
+   },
+   {
+    "year": 655,
+    "at": [
+     108.93,
+     34.27
+    ],
+    "zoom": 6.0,
+    "event": "wu-becomes-empress",
+    "text": "655: Gaozong deposes Empress Wang and makes Wu empress. The senior ministers Zhangsun Wuji and Chu Suiliang, who opposed it, are exiled and later hounded to death.",
+    "text_zh": "655年，高宗废王皇后，立武昭仪为皇后。坚决反对的元老长孙无忌、褚遂良先后被贬，开国功臣集团从此失势。"
+   },
+   {
+    "year": 664,
+    "at": [
+     108.95,
+     34.27
+    ],
+    "zoom": 5.6,
+    "event": "shangguan-yi-executed",
+    "text": "664: the ailing Gaozong lets the empress handle state papers. When the minister Shangguan Yi drafts an edict to depose her, she finds out and he is executed. Court calls the couple the Two Sages.",
+    "text_zh": "664年，高宗多病，政事多由武后裁决。宰相上官仪替高宗起草废后诏书，被武后察觉后处死。此后帝后共同临朝，时称“二圣”。"
+   },
+   {
+    "year": 675,
+    "at": [
+     112.47,
+     34.56
+    ],
+    "zoom": 6.4,
+    "event": "longmen-vairocana",
+    "text": "675: the giant Vairocana Buddha at Fengxian Temple in the Longmen caves near Luoyang is finished. The empress had given twenty thousand strings of cash from her cosmetics money.",
+    "text_zh": "675年，洛阳龙门石窟奉先寺卢舍那大佛完工。据题记，皇后武氏曾捐助脂粉钱两万贯。洛阳此后成为她经营的政治中心。"
+   },
+   {
+    "year": 684,
+    "at": [
+     119.42,
+     32.39
+    ],
+    "zoom": 5.8,
+    "event": "li-jingye-rebellion",
+    "text": "684: after Gaozong's death, Wu deposes one son and makes another a figurehead. Li Jingye rises at Yangzhou; Luo Binwang's manifesto against her is so fine she blames ministers for neglecting its author.",
+    "text_zh": "684年，高宗死后，武太后废中宗、立睿宗，独揽大权。徐敬业在扬州起兵，骆宾王写下讨武檄文，她读后反而责怪宰相埋没了这样的人才。起兵三个月即被平定。"
+   },
+   {
+    "year": 690,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 5.8,
+    "event": "wu-zetian",
+    "text": "690: in Luoyang, renamed the Divine Capital, Wu takes the throne herself and names her dynasty Zhou. Informers and harsh officials have already broken the Tang princes and their supporters.",
+    "text_zh": "690年，武则天在已改称神都的洛阳正式称帝，改国号为周。此前她设铜匦鼓励告密，任用来俊臣等酷吏，打击了李唐宗室和反对者。"
+   },
+   {
+    "year": 698,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 6.2,
+    "text": "698: her chief minister Di Renjie persuades the aging empress to recall her exiled son Li Xian and name him heir, so that the throne will return to the Li family.",
+    "text_zh": "698年，宰相狄仁杰等人力劝年迈的武则天召回被废的庐陵王李显，立为太子，为皇位重回李唐铺平了道路。狄仁杰还向她举荐了张柬之等人。"
+   },
+   {
+    "year": 705,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 6.4,
+    "event": "shenlong-coup",
+    "text": "705: Zhang Jianzhi and other ministers lead palace guards into the palace, kill her favourites the Zhang brothers and force her to abdicate. Zhongzong restores the Tang; Wu dies that winter.",
+    "text_zh": "705年，张柬之等率禁军冲入宫中，诛杀武则天宠信的张易之、张昌宗兄弟，逼她传位。中宗复位，恢复唐国号。同年冬武则天病逝于洛阳上阳宫。"
+   },
+   {
+    "year": 706,
+    "at": [
+     108.21,
+     34.58
+    ],
+    "zoom": 6.2,
+    "text": "706: she is buried beside Gaozong in the Qianling tomb, carved into a mountain northwest of Chang'an. Before it stands a tall stone stele left without an inscription.",
+    "text_zh": "706年，武则天与高宗合葬于长安西北梁山上的乾陵。陵前立着一通没有刻字的“无字碑”，功过任由后人评说。"
+   }
+  ]
+ },
+ {
+  "id": "tang-and-tibet",
+  "era": "tang",
+  "start": 663,
+  "end": 851,
+  "path": false,
+  "title": "Tang and Tibet",
+  "title_zh": "唐与吐蕃",
+  "summary": "Two centuries of marriage alliances, wars and treaties between the Tang and the Tibetan empire.",
+  "summary_zh": "和亲、交战、会盟交替上演，唐与吐蕃争夺青海、河西和西域近两百年。",
+  "steps": [
+   {
+    "year": 663,
+    "at": [
+     100.2,
+     36.9
+    ],
+    "zoom": 5.0,
+    "text": "663: after Songtsen Gampo's death, the Tibetan regent Gar Tongtsen conquers the Tuyuhun kingdom around Kokonor. Tibet now borders the Tang directly from Qinghai to the Western Regions.",
+    "text_zh": "663年，松赞干布已去世多年，吐蕃大相禄东赞率军攻灭青海湖一带的吐谷浑。吐蕃从此与唐朝直接接壤，双方开始争夺青海和西域。"
+   },
+   {
+    "year": 670,
+    "at": [
+     99.9,
+     36.3
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-dafeichuan",
+    "text": "670: sent to restore the Tuyuhun, Xue Rengui's army is destroyed at Dafeichuan by the Tibetan general Gar Trinring. The Tang gives up the Four Garrisons of the Tarim for a time.",
+    "text_zh": "670年，唐派薛仁贵出兵青海，在大非川被吐蕃大将论钦陵击败，几乎全军覆没。唐朝一度放弃安西四镇，吐蕃势力伸入西域。"
+   },
+   {
+    "year": 710,
+    "at": [
+     91.1,
+     29.65
+    ],
+    "zoom": 5.6,
+    "event": "princess-jincheng-tibet",
+    "text": "710: Princess Jincheng is married to the young Tibetan king Tride Tsugtsen, renewing the marriage tie begun by Princess Wencheng seventy years earlier. War and peace still alternate, with a border and markets later fixed at the Red Ridge.",
+    "text_zh": "710年，唐中宗把金城公主嫁给吐蕃赞普赤德祖赞，延续了七十年前文成公主开始的和亲。此后双方仍时战时和，在赤岭一带划界互市。"
+   },
+   {
+    "year": 763,
+    "at": [
+     108.9,
+     34.25
+    ],
+    "zoom": 5.6,
+    "event": "tibet-changan",
+    "text": "763: with Tang armies pulled east against An Lushan, Tibet seizes the Longyou lands and in the tenth month storms Chang'an. It holds the capital for about fifteen days before Guo Ziyi forces it out.",
+    "text_zh": "763年，唐军东调平定安史之乱，吐蕃乘虚夺取陇右诸州，十月攻入长安，立金城公主的侄子李承宏为帝，盘踞约十五天才被郭子仪逼退。"
+   },
+   {
+    "year": 786,
+    "at": [
+     94.66,
+     40.14
+    ],
+    "zoom": 5.6,
+    "event": "dunhuang-tibet",
+    "text": "786: one by one the Hexi towns fall: Liangzhou, Ganzhou, Suzhou, Guazhou. Isolated Shazhou (Dunhuang) holds out for years before surrendering on terms. The Tang loses the corridor to the west.",
+    "text_zh": "786年，凉、甘、肃、瓜诸州已相继失陷，孤城沙州（今敦煌）坚守多年后，在吐蕃答应不迁徙居民的条件下投降。河西走廊全部落入吐蕃之手。"
+   },
+   {
+    "year": 787,
+    "at": [
+     106.68,
+     35.54
+    ],
+    "zoom": 6.0,
+    "event": "pingliang-ambush",
+    "text": "787: at a treaty meeting at Pingliang, the Tibetan general Zhang Gyaltsen springs an ambush. The Tang envoy Hun Jian barely escapes on horseback; many officials are captured.",
+    "text_zh": "787年，唐蕃在平凉会盟，吐蕃大相尚结赞事先埋伏兵马，在盟坛上突然劫盟。唐使浑瑊夺马逃回，副使崔汉衡等大批官员被俘。"
+   },
+   {
+    "year": 822,
+    "at": [
+     91.13,
+     29.65
+    ],
+    "zoom": 6.0,
+    "event": "tang-tibet-treaty",
+    "text": "821 to 822: exhausted by war, both sides swear a lasting peace, first in Chang'an and then in Lhasa. The treaty, inscribed in Chinese and Tibetan, still stands before the Jokhang temple.",
+    "text_zh": "821至822年，双方厌战，先后在长安和逻些（今拉萨）会盟，约定各守边界、互不侵犯。用汉藏两种文字刻成的唐蕃会盟碑至今立在拉萨大昭寺前。"
+   },
+   {
+    "year": 848,
+    "at": [
+     94.7,
+     40.18
+    ],
+    "zoom": 6.0,
+    "event": "zhang-yichao",
+    "text": "848: with the Tibetan empire collapsing into civil war, Zhang Yichao leads the people of Shazhou in revolt and drives out the Tibetan garrison, then retakes Guazhou and other towns.",
+    "text_zh": "848年，吐蕃王朝陷入内乱，沙州汉人张议潮率众起义，赶走吐蕃守将，接着收复瓜州等地，河西陷蕃六十多年后重新出现唐朝的旗帜。"
+   },
+   {
+    "year": 851,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 4.6,
+    "event": "guiyi-circuit",
+    "text": "851: Zhang Yichao's brother brings the maps and registers of eleven prefectures to Chang'an. The Tang creates the Returning Allegiance Army with Zhang as governor, ruling Dunhuang for generations.",
+    "text_zh": "851年，张议潮派哥哥张议潭带着瓜、沙等十一州的地图户籍入朝。唐朝设立归义军，以张议潮为节度使，张氏、曹氏此后世代统治敦煌。"
+   }
+  ]
+ },
+ {
+  "id": "li-bai-travels",
+  "era": "tang",
+  "start": 701,
+  "end": 762,
+  "path": true,
+  "title": "Li Bai's wanderings",
+  "title_zh": "李白的漫游",
+  "summary": "The restless poet's life on the road, from the far west to the Yangzi, the capital and back down the river.",
+  "summary_zh": "仗剑去国、辞亲远游，诗仙李白一生几乎都在路上。",
+  "steps": [
+   {
+    "year": 701,
+    "at": [
+     75.2,
+     42.8
+    ],
+    "zoom": 5.0,
+    "text": "701: Li Bai is born, by a widely held account at Suyab on the Chu river in Central Asia, then a Tang garrison town, where his family had lived for generations.",
+    "text_zh": "701年，李白出生。一种流行的说法认为他生于西域碎叶城（今吉尔吉斯斯坦托克马克附近），祖上久居西域，当时碎叶是唐朝的军镇。"
+   },
+   {
+    "year": 705,
+    "at": [
+     104.75,
+     31.78
+    ],
+    "zoom": 6.0,
+    "text": "705: the family moves to Changlong in Mianzhou (Jiangyou, Sichuan). Li Bai grows up here reading widely, fencing and visiting Daoist hermits in the hills.",
+    "text_zh": "705年前后，李白随父亲迁居绵州昌隆（今四川江油）。他在这里读书、学剑，常到山中寻访道士，度过了青少年时代。"
+   },
+   {
+    "year": 725,
+    "at": [
+     112.19,
+     30.35
+    ],
+    "zoom": 5.6,
+    "text": "725: aged about twenty-four, he leaves Sichuan by boat through the Three Gorges. At Jiangling he meets the Daoist master Sima Chengzhen, who praises his spirit.",
+    "text_zh": "725年，二十四五岁的李白“仗剑去国，辞亲远游”，乘船出三峡。在江陵，他见到了著名道士司马承祯，被称赞有“仙风道骨”。"
+   },
+   {
+    "year": 726,
+    "at": [
+     119.43,
+     32.39
+    ],
+    "zoom": 6.0,
+    "text": "726: he wanders down the Yangzi to Jinling and Yangzhou. By his own account he spends more than three hundred thousand cash in under a year, much of it helping poor scholars.",
+    "text_zh": "726年，李白东游金陵、扬州。据他自述，在扬州不到一年便散金三十余万，多用来接济落魄的文士，豪侠之名由此传开。"
+   },
+   {
+    "year": 742,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 6.0,
+    "text": "742: after years based at Anlu, where he married a former chancellor's granddaughter, he is summoned to Chang'an. He Zhizhang calls him a banished immortal and Xuanzong makes him a Hanlin attendant.",
+    "text_zh": "742年，在安陆成家、漫游多年的李白奉诏入长安。贺知章读其诗文称他为“谪仙人”，唐玄宗命他供奉翰林。但不到两年他便被“赐金放还”。"
+   },
+   {
+    "year": 744,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 5.4,
+    "event": "li-bai-du-fu",
+    "text": "744: having left court, he meets the younger Du Fu at Luoyang. With Gao Shi they ride and drink through the old lands of Liang and Song, a friendship Du Fu will write about all his life.",
+    "text_zh": "744年，离开长安的李白在洛阳与杜甫相遇，随后两人和高适同游梁宋（今开封、商丘一带），饮酒论诗。杜甫此后一生写了许多怀念李白的诗。"
+   },
+   {
+    "year": 757,
+    "at": [
+     116.0,
+     29.7
+    ],
+    "zoom": 5.8,
+    "event": "prince-yong-revolt",
+    "text": "757: during the An Lushan war he joins the staff of Prince Yong, whose fleet sails down the Yangzi. The prince is crushed as a rebel; Li Bai is jailed at Xunyang and sentenced to exile in Yelang.",
+    "text_zh": "757年，安史之乱中李白加入永王李璘的幕府。永王被肃宗视为叛乱而遭剿灭，李白在浔阳（今九江）下狱，次年被判流放夜郎。"
+   },
+   {
+    "year": 759,
+    "at": [
+     109.57,
+     31.04
+    ],
+    "zoom": 6.2,
+    "text": "759: travelling slowly upriver into exile, he reaches Baidicheng when an amnesty arrives. He turns back and races down the Gorges, the trip tradition links to his poem on leaving Baidi at dawn.",
+    "text_zh": "759年，李白流放途中行至白帝城，遇大赦获释，立即乘船东下。相传《早发白帝城》中“轻舟已过万重山”写的就是这次欢快的归程。"
+   },
+   {
+    "year": 762,
+    "at": [
+     118.49,
+     31.55
+    ],
+    "zoom": 6.0,
+    "text": "762: old and ill, Li Bai lodges with his kinsman Li Yangbing, magistrate of Dangtu on the Yangzi, and dies there. Li Yangbing collects and edits his poems.",
+    "text_zh": "762年，年老多病的李白投奔任当涂县令的族叔李阳冰，不久在当涂去世。临终前他把诗稿托付给李阳冰，后者编成《草堂集》。"
+   }
+  ]
+ },
+ {
+  "id": "du-fu-life",
+  "era": "tang",
+  "start": 712,
+  "end": 770,
+  "path": true,
+  "title": "The life of Du Fu",
+  "title_zh": "杜甫的一生",
+  "summary": "The poet-historian who lived through the fall of the High Tang and wrote it down.",
+  "summary_zh": "盛唐转衰的亲历者，杜甫用诗歌记下了安史之乱前后的时代，被称为“诗史”。",
+  "steps": [
+   {
+    "year": 712,
+    "at": [
+     113.02,
+     34.75
+    ],
+    "zoom": 6.0,
+    "text": "712: Du Fu is born at Gong county near Luoyang, into a family of officials; his grandfather Du Shenyan was a court poet of Empress Wu's day.",
+    "text_zh": "712年，杜甫生于河南巩县（今巩义）的官宦之家，祖父杜审言是武则天时期的著名诗人。他少年时便能作诗，青年时漫游吴越、齐赵。"
+   },
+   {
+    "year": 746,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 5.8,
+    "text": "746: he goes to Chang'an seeking office and stays ten years. He fails the examinations, presents poems to the powerful and lives poorly, watching the capital's luxury from outside.",
+    "text_zh": "746年，杜甫来到长安谋求仕进，一住就是十年。科举落第，献赋求官，过着“朝扣富儿门，暮随肥马尘”的困顿生活，看清了盛世背后的贫富悬殊。"
+   },
+   {
+    "year": 755,
+    "at": [
+     109.58,
+     34.95
+    ],
+    "zoom": 6.2,
+    "text": "Late 755: travelling to his family at Fengxian, he passes the emperor's pleasure palace at Lishan and writes of vermilion gates reeking of wine and meat while the poor freeze on the road. At home his infant son has starved.",
+    "text_zh": "755年冬，杜甫从长安去奉先县（今陕西蒲城）探家，途经骊山，写下“朱门酒肉臭，路有冻死骨”。到家时幼子已经饿死。不久安史之乱爆发。"
+   },
+   {
+    "year": 757,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 6.2,
+    "text": "757: captured by the rebels on his way to the new emperor, he is held in occupied Chang'an. In spring he writes Spring View: the nation is broken, but hills and rivers remain.",
+    "text_zh": "757年春，杜甫在投奔肃宗途中被叛军俘获，困在沦陷的长安，写下《春望》：“国破山河在，城春草木深。”"
+   },
+   {
+    "year": 757,
+    "at": [
+     107.39,
+     34.52
+    ],
+    "zoom": 6.0,
+    "text": "757: he escapes to the emperor's camp at Fengxiang, arriving in hemp sandals and ragged clothes, and is made a Reminder, a junior adviser at court.",
+    "text_zh": "757年四月，杜甫冒险逃出长安，穿着麻鞋破衣赶到凤翔行在拜见唐肃宗，被授为左拾遗。不久因上疏营救房琯触怒肃宗。"
+   },
+   {
+    "year": 759,
+    "at": [
+     105.72,
+     34.58
+    ],
+    "zoom": 5.8,
+    "text": "759: after writing the Three Officials and Three Partings about the war's conscripts, he gives up his post and heads west to Qinzhou, then south to Tonggu, where his family nearly starves.",
+    "text_zh": "759年，杜甫写下“三吏”“三别”后弃官西行，带着家人到秦州（今天水），冬天又南下同谷，靠挖野菜度日，年底翻越蜀道入川。"
+   },
+   {
+    "year": 760,
+    "at": [
+     104.03,
+     30.66
+    ],
+    "zoom": 6.2,
+    "text": "760: with friends' help he builds a thatched cottage by the Huanhua stream outside Chengdu. In these years of relative peace he writes of his garden and of the roof the autumn wind tore away.",
+    "text_zh": "760年，在亲友资助下，杜甫在成都浣花溪畔建起草堂，过了几年较安定的生活，写下《茅屋为秋风所破歌》等名篇。"
+   },
+   {
+    "year": 766,
+    "at": [
+     109.47,
+     31.02
+    ],
+    "zoom": 6.0,
+    "text": "766: he moves down the Yangzi to Kuizhou at the head of the Three Gorges. In under two years he writes some four hundred poems, including Climbing High and Autumn Meditations.",
+    "text_zh": "766年，杜甫沿长江东下，寓居夔州（今重庆奉节）。不到两年写诗四百多首，《登高》《秋兴八首》都作于此时。"
+   },
+   {
+    "year": 770,
+    "at": [
+     112.95,
+     28.4
+    ],
+    "zoom": 5.2,
+    "text": "770: drifting on the Xiang river between Tanzhou and Yuezhou, poor and ill, Du Fu dies on his boat that winter, aged fifty-nine. Later generations call him the Poet Sage and his verse a history in poetry.",
+    "text_zh": "770年冬，贫病交加的杜甫漂泊在湘江上，往来于潭州（今长沙）和岳州之间，最终病逝在船中，终年五十九岁。"
+   }
+  ]
+ },
+ {
   "id": "jianzhen",
   "era": "tang",
   "start": 742,
@@ -4016,6 +6442,228 @@
   ]
  },
  {
+  "id": "ten-kingdoms",
+  "era": "five-dynasties",
+  "start": 907,
+  "end": 951,
+  "path": false,
+  "title": "A tour of the Ten Kingdoms",
+  "title_zh": "十国巡礼",
+  "summary": "While the north changed dynasties five times, the south split into stable, prosperous regional states.",
+  "summary_zh": "北方五代更迭，南方十国却多能保境安民，经济文化反而持续发展。",
+  "steps": [
+   {
+    "year": 907,
+    "at": [
+     116.0,
+     29.0
+    ],
+    "zoom": 4.2,
+    "text": "907: when the Tang falls, the south is already divided among warlords who hold it for decades: Wu on the Huai, Wuyue, Min, Chu, Shu and soon Southern Han, with Northern Han later in the north.",
+    "text_zh": "907年唐朝灭亡时，南方已被各地节度使瓜分：吴据江淮，钱镠据两浙，马殷据湖南，王审知据福建，王建据四川。加上后来诸国，史称十国。"
+   },
+   {
+    "year": 907,
+    "at": [
+     112.97,
+     28.2
+    ],
+    "zoom": 6.0,
+    "event": "ma-yin-king-of-chu",
+    "text": "907: Ma Yin, made King of Chu at Changsha, lets farmers grow and sell tea freely to the north for horses and silk, and casts lead and iron coins that merchants must spend before leaving.",
+    "text_zh": "907年，马殷受封楚王，定都长沙。他让百姓自由种茶，贩往北方换回战马丝帛；又铸铅铁钱，商人出境用不了，只好买当地货物带走。"
+   },
+   {
+    "year": 909,
+    "at": [
+     119.3,
+     26.08
+    ],
+    "zoom": 6.0,
+    "event": "wang-shenzhi-prince-of-min",
+    "text": "909: Wang Shenzhi becomes Prince of Min at Fuzhou. He keeps peace with the northern courts, opens the harbour of Gantang and draws foreign merchant ships to Fujian.",
+    "text_zh": "909年，王审知受封闽王，定都福州。他对中原称臣，保境息民，开辟甘棠港，招来海外商船，福建由此兴盛起来。"
+   },
+   {
+    "year": 910,
+    "at": [
+     120.17,
+     30.23
+    ],
+    "zoom": 6.2,
+    "event": "qian-liu-seawall",
+    "text": "910: Qian Liu, King of Wuyue, builds a stone seawall at Hangzhou against the Qiantang tidal bore, using bamboo cages filled with rocks. Legend says his archers shot at the tide.",
+    "text_zh": "910年，吴越王钱镠在杭州修筑捍海石塘，用竹笼装石，层层垒筑，抵御钱塘江潮。民间流传着“钱王射潮”的故事。杭州从此日渐繁荣。"
+   },
+   {
+    "year": 917,
+    "at": [
+     113.26,
+     23.13
+    ],
+    "zoom": 6.0,
+    "event": "southern-han-founded",
+    "text": "917: Liu Yan proclaims himself emperor at Guangzhou, founding what becomes Southern Han. Rich from the sea trade, the court is famous for lavish palaces and, later, vast numbers of eunuchs.",
+    "text_zh": "917年，刘䶮在广州称帝，次年改国号为汉，史称南汉。南汉靠海外贸易致富，宫殿奢华，后期宦官人数之多为历代罕见。"
+   },
+   {
+    "year": 924,
+    "at": [
+     112.19,
+     30.35
+    ],
+    "zoom": 6.2,
+    "event": "gao-jixing-jingnan",
+    "text": "924: Gao Jixing is made Prince of Nanping at Jiangling. His tiny state, Jingnan, survives by bowing to everyone and seizing tribute passing through, earning the Gao family the nickname Gao the Rogue.",
+    "text_zh": "924年，高季兴受封南平王，据守江陵，史称荆南。地小兵弱的荆南向四方称臣，又截留各国过境的贡物，高氏因此被各国讥为“高无赖”。"
+   },
+   {
+    "year": 937,
+    "at": [
+     118.78,
+     32.05
+    ],
+    "zoom": 6.0,
+    "event": "southern-tang",
+    "text": "937: in Jinling (Nanjing), Xu Zhigao, who controls Wu, takes the throne as Li Bian and founds Southern Tang, the largest southern state, a centre of scholars, painters and poets.",
+    "text_zh": "937年，掌握吴国大权的徐知诰在金陵代吴称帝，改名李昪，国号唐，史称南唐。南唐是十国中最大的国家，文人、画家云集，后来出了词人李煜。"
+   },
+   {
+    "year": 940,
+    "at": [
+     104.07,
+     30.67
+    ],
+    "zoom": 6.0,
+    "event": "huajian-ji",
+    "text": "940: in Later Shu's Chengdu, Zhao Chongzuo compiles the Among the Flowers anthology of song lyrics. Sheltered by mountains, Sichuan stays rich and peaceful through most of the era.",
+    "text_zh": "940年，后蜀的赵崇祚在成都编成《花间集》，这是现存最早的文人词集。前蜀、后蜀凭借山川险阻，在乱世中保持了富庶安定。"
+   },
+   {
+    "year": 951,
+    "at": [
+     112.55,
+     37.87
+    ],
+    "zoom": 5.8,
+    "event": "northern-han-founded",
+    "text": "951: after the fall of Later Han, Liu Chong declares himself emperor at Taiyuan. His poor, mountain-bound Northern Han survives by serving the Khitan emperor as his nephew.",
+    "text_zh": "951年，后汉灭亡，刘崇在太原称帝，史称北汉。北汉地瘠民贫，依附契丹，自称“侄皇帝”，直到979年才被宋朝灭掉，是十国中最后亡国的。"
+   }
+  ]
+ },
+ {
+  "id": "rise-of-khitan",
+  "era": "five-dynasties",
+  "start": 907,
+  "end": 947,
+  "path": false,
+  "title": "The rise of the Khitan",
+  "title_zh": "契丹崛起",
+  "summary": "In forty years the Khitan went from steppe tribes to an empire that ruled part of north China and briefly took Kaifeng.",
+  "summary_zh": "四十年间，契丹从草原部落联盟发展为帝国，取得燕云十六州，一度入主开封。",
+  "steps": [
+   {
+    "year": 907,
+    "at": [
+     119.4,
+     43.6
+    ],
+    "zoom": 4.6,
+    "text": "907: Abaoji of the Yila clan becomes khagan of the Khitan confederation on the Xar Moron river, the same year the Tang falls. Chinese refugees from the wars bring farming and craft skills.",
+    "text_zh": "907年，就在唐朝灭亡这一年，迭剌部的耶律阿保机成为契丹各部的可汗。中原战乱，大批汉人逃入契丹，带来了农耕和手工技术。"
+   },
+   {
+    "year": 916,
+    "at": [
+     119.38,
+     43.97
+    ],
+    "zoom": 5.6,
+    "event": "abaoji",
+    "text": "916: refusing to hand power back to the tribal council, Abaoji proclaims himself emperor in the Chinese manner. Soon he builds a walled capital and has a Khitan script created from Chinese characters.",
+    "text_zh": "916年，阿保机拒绝按部落旧制让出汗位，仿照中原称帝，建元神册。他任用韩延徽等汉人，修建都城，并于920年参照汉字创制契丹大字。"
+   },
+   {
+    "year": 926,
+    "at": [
+     129.2,
+     44.0
+    ],
+    "zoom": 5.6,
+    "event": "balhae-falls",
+    "text": "926: Abaoji's armies take Huhan, capital of the Balhae kingdom in Manchuria, ending it after two centuries. He turns it into the Dongdan kingdom under his eldest son.",
+    "text_zh": "926年，阿保机亲征渤海国，攻破都城忽汗城，立国两百多年的渤海灭亡。他改渤海为东丹国，由太子耶律倍统治。"
+   },
+   {
+    "year": 926,
+    "at": [
+     125.17,
+     44.43
+    ],
+    "zoom": 6.0,
+    "event": "abaoji-dies",
+    "text": "926: on the way home Abaoji dies at Fuyu. His widow Empress Shulü takes control and passes over the eldest son for her favourite, Deguang. She is said to have cut off her own hand to bury with her husband.",
+    "text_zh": "926年，阿保机在回师途中死于扶余城。述律后临朝称制，据说她砍下自己一只手腕放入丈夫棺中，以代替殉葬。她扶立次子耶律德光继位。"
+   },
+   {
+    "year": 936,
+    "at": [
+     112.55,
+     37.87
+    ],
+    "zoom": 5.8,
+    "event": "sixteen-prefectures",
+    "text": "936: besieged in Taiyuan, the Later Tang general Shi Jingtang calls in Deguang, who rides south and smashes the besiegers. Shi becomes emperor of Later Jin and hands over the Sixteen Prefectures.",
+    "text_zh": "936年，被后唐军围困在太原的石敬瑭向契丹求援，耶律德光亲率骑兵南下，大破唐军，立石敬瑭为后晋皇帝。石敬瑭随即割让燕云十六州。"
+   },
+   {
+    "year": 938,
+    "at": [
+     116.4,
+     39.9
+    ],
+    "zoom": 5.6,
+    "event": "liao-southern-capital",
+    "text": "938: Youzhou (Beijing) becomes the Khitan Southern Capital. Deguang rules Chinese subjects by Chinese law and officials and Khitans by tribal custom, a dual system the Liao keeps.",
+    "text_zh": "938年，契丹把幽州升为南京。耶律德光逐步建立南北面官制度，以汉法治汉人、以契丹旧制治契丹人。长城一线从此不再是中原的屏障。"
+   },
+   {
+    "year": 945,
+    "at": [
+     115.48,
+     38.85
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-yangcheng",
+    "text": "945: Later Jin stops calling itself a vassal, and Deguang invades. At Yangcheng the Jin army breaks out and routs the Khitan; Deguang escapes on a camel.",
+    "text_zh": "945年，后晋拒绝继续称臣，契丹连年南侵。在阳城之战中，晋军奋力反击，契丹大败，耶律德光弃车骑着骆驼才得以逃脱。"
+   },
+   {
+    "year": 947,
+    "at": [
+     114.3,
+     34.8
+    ],
+    "zoom": 5.4,
+    "event": "liao-takes-kaifeng",
+    "text": "947: after the Jin commander Du Chongwei surrenders, Deguang enters Kaifeng and renames his state Liao. His troops' plundering, called grass gathering, sets off revolts, and he soon leaves.",
+    "text_zh": "947年初，晋军主帅杜重威投降，耶律德光进入开封，灭后晋，改国号为辽。契丹兵四出“打草谷”抢掠，各地纷纷反抗，他只得北撤。"
+   },
+   {
+    "year": 947,
+    "at": [
+     114.65,
+     37.88
+    ],
+    "zoom": 6.2,
+    "event": "deguang-dies",
+    "text": "947: Deguang falls ill and dies on the road north at Shahulin near Luancheng. Liao will hold the Sixteen Prefectures for nearly two centuries, but never again rules the central plain.",
+    "text_zh": "947年四月，耶律德光在北撤途中病死于栾城杀胡林。辽朝此后长期占据燕云十六州，但再也没能入主中原。"
+   }
+  ]
+ },
+ {
   "id": "song-unification",
   "era": "northern-song",
   "start": 960,
@@ -4128,6 +6776,114 @@
   ]
  },
  {
+  "id": "bianjing-prosperity",
+  "era": "northern-song",
+  "start": 960,
+  "end": 1126,
+  "path": false,
+  "title": "Kaifeng, the Song capital",
+  "title_zh": "汴京繁华",
+  "summary": "How a flat river city with no natural defences became the richest capital of its age.",
+  "summary_zh": "无险可守的汴京，凭借汴河漕运成为当时世界上最繁华的都城之一。",
+  "steps": [
+   {
+    "year": 960,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 5.0,
+    "text": "960: the new Song dynasty keeps Kaifeng as its capital. The city sits on open plain with no mountains to protect it, but the Bian canal links it to the grain of the Yangzi and Huai.",
+    "text_zh": "960年，宋朝沿袭后周，定都开封，称东京。这里地处平原、无险可守，但汴河直通江淮，漕运便利，朝廷只能以重兵驻守京城来弥补。"
+   },
+   {
+    "year": 976,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 5.8,
+    "text": "976: Emperor Taizu visits Luoyang and proposes moving the capital there, behind its hills and passes. His brother, the future Taizong, objects that security lies in virtue, not terrain, and Kaifeng stays.",
+    "text_zh": "976年，宋太祖西巡洛阳，想把都城迁到山河险固的洛阳。弟弟晋王赵光义以“在德不在险”劝阻，迁都之议作罢，开封从此成为北宋都城。"
+   },
+   {
+    "year": 1007,
+    "at": [
+     118.5,
+     33.0
+    ],
+    "zoom": 5.4,
+    "text": "About 1007: barges on the Bian canal, entering from the Huai river at Sizhou, carry some six million piculs of southern grain a year to feed Kaifeng's court, army and citizens.",
+    "text_zh": "1007年前后，汴河每年运送的江淮漕粮定为约六百万石。漕船从泗州一带由淮河进入汴河，源源不断北上，养活了京城的朝廷、禁军和百姓。"
+   },
+   {
+    "year": 1027,
+    "at": [
+     114.31,
+     34.8
+    ],
+    "zoom": 6.4,
+    "event": "bronze-acupuncture-figures",
+    "text": "1027: the court physician Wang Weiyi casts two life-size bronze figures marked with acupuncture points, used for teaching and examining students of medicine in the capital.",
+    "text_zh": "1027年，翰林医官王惟一主持铸成两具针灸铜人，身上刻有经络和穴位，用来教学和考核医生。这是开封作为全国学术中心的一个缩影。"
+   },
+   {
+    "year": 1088,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 6.4,
+    "event": "su-song-clock",
+    "text": "1088: Su Song and Han Gonglian begin building a water-driven astronomical clock tower in Kaifeng, combining an armillary sphere, a celestial globe and time-keeping figures.",
+    "text_zh": "1088年，苏颂与韩公廉在开封制造水运仪象台，以水力驱动，把观测天象的浑仪、演示天象的浑象和报时装置合为一体。"
+   },
+   {
+    "year": 1103,
+    "at": [
+     114.31,
+     34.8
+    ],
+    "zoom": 6.2,
+    "event": "yingzao-fashi",
+    "text": "1103: the court issues Li Jie's Treatise on Architectural Methods, setting standard timber modules and labour norms for the palaces, temples and offices being built across the capital.",
+    "text_zh": "1103年，朝廷颁行李诫编写的《营造法式》，统一规定建筑的用材等级、构造做法和工料定额，京城大兴土木都以此为准。"
+   },
+   {
+    "year": 1105,
+    "at": [
+     114.355,
+     34.795
+    ],
+    "zoom": 6.5,
+    "text": "Early 1100s: walled wards are long gone and shops line every street. Daxiangguo Temple opens its courtyards for a great market five times a month, and the night market by Zhou Bridge runs past midnight.",
+    "text_zh": "12世纪初，开封早已打破坊市界限，临街开店随处可见。大相国寺每月开放五次，供百姓交易；州桥一带的夜市一直营业到三更。"
+   },
+   {
+    "year": 1110,
+    "at": [
+     114.38,
+     34.79
+    ],
+    "zoom": 6.5,
+    "event": "qingming-scroll",
+    "text": "About 1110: Zhang Zeduan paints Along the River at Qingming, following the Bian canal from the countryside past the Rainbow Bridge into the city, crowded with boats, carts, shops and travellers.",
+    "text_zh": "约1110年，张择端绘成《清明上河图》，从城郊沿汴河画到虹桥和城门内外，船只、车马、店铺和行人密集，留下了北宋汴京的生动面貌。"
+   },
+   {
+    "year": 1126,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 5.0,
+    "event": "first-siege-kaifeng",
+    "text": "1126: Jin armies besiege Kaifeng twice and the city falls. Years later, in the south, Meng Yuanlao writes down his memories of it in the Dream of the Splendours of the Eastern Capital.",
+    "text_zh": "1126年，金军两次围攻开封，城破，繁华一朝散尽。后来孟元老在南方追忆往事，写成《东京梦华录》，记下了汴京的街市和节令风俗。"
+   }
+  ]
+ },
+ {
   "id": "chanyuan-treaty",
   "era": "northern-song",
   "start": 1004,
@@ -4223,6 +6979,222 @@
     "event": "qingli-peace",
     "text": "1044: Song and Xia make peace. Yuanhao accepts the title of vassal, and Song sends yearly gifts of silver, silk and tea. Song has now bought peace on both frontiers.",
     "text_zh": "1044年，宋夏议和：元昊向宋称臣，宋每年“赐”给西夏银、绢、茶。北宋以财物换取了西北和北方的和平。"
+   }
+  ]
+ },
+ {
+  "id": "su-dongpo-exile",
+  "era": "northern-song",
+  "start": 1037,
+  "end": 1101,
+  "path": true,
+  "title": "Su Dongpo's road of exile",
+  "title_zh": "苏东坡的贬谪之路",
+  "summary": "The great poet's career took him from Sichuan to the capital and then ever further south, to the island of Hainan.",
+  "summary_zh": "从四川眉山到京城，再一贬再贬直到海南，苏轼走遍半个中国，把每一处贬所都写进了诗文。",
+  "steps": [
+   {
+    "year": 1037,
+    "at": [
+     103.83,
+     30.05
+    ],
+    "zoom": 6.0,
+    "text": "1037: Su Shi is born in Meishan, Sichuan. In 1056 his father Su Xun takes him and his younger brother Su Zhe down the river and over the mountains to the capital.",
+    "text_zh": "1037年，苏轼生于眉州眉山（今四川眉山）。1056年，父亲苏洵带着他和弟弟苏辙出川，前往京城开封应考。"
+   },
+   {
+    "year": 1057,
+    "at": [
+     114.31,
+     34.8
+    ],
+    "zoom": 5.8,
+    "event": "su-brothers-jinshi",
+    "text": "1057: both brothers pass the palace examination in Kaifeng. The examiner Ouyang Xiu is so struck by Su Shi's essay that he predicts the young man will outshine him.",
+    "text_zh": "1057年，苏轼、苏辙兄弟同榜考中进士。主考官欧阳修读了苏轼的文章大为赞赏，说自己应当让此人出人头地。"
+   },
+   {
+    "year": 1076,
+    "at": [
+     119.4,
+     36.0
+    ],
+    "zoom": 6.0,
+    "text": "1076: opposed to Wang Anshi's reforms, Su had asked for posts away from the capital: Hangzhou in 1071, then Mizhou in Shandong. Here at Mid-Autumn he writes his famous lyric to the moon for his brother.",
+    "text_zh": "1076年，因反对新法自请外任的苏轼已先后任杭州通判、密州知州。这年中秋，他在密州写下《水调歌头·明月几时有》，怀念弟弟苏辙。"
+   },
+   {
+    "year": 1079,
+    "at": [
+     120.09,
+     30.87
+    ],
+    "zoom": 6.0,
+    "event": "crow-terrace-case",
+    "text": "1079: after governing Xuzhou, Su moves to Huzhou. Three months later censors arrest him for poems mocking the reforms and take him to their prison in Kaifeng: the Crow Terrace case.",
+    "text_zh": "1079年，苏轼在徐州任满后调任湖州，到任仅三个月，就被御史指控在诗文中讥讽新法，押解到开封御史台关押，史称乌台诗案，险些丧命。"
+   },
+   {
+    "year": 1082,
+    "at": [
+     114.87,
+     30.45
+    ],
+    "zoom": 6.2,
+    "event": "red-cliff-odes",
+    "text": "1082: exiled to Huangzhou as a minor militia official, he farms a plot on the eastern slope, calls himself Dongpo, and writes the two Red Cliff prose-poems after boating on the Yangtze.",
+    "text_zh": "1082年，苏轼贬居黄州已近三年，在城东坡地开荒种田，自号东坡居士。他泛舟赤壁，写下前后《赤壁赋》和《念奴娇·赤壁怀古》。"
+   },
+   {
+    "year": 1089,
+    "at": [
+     120.15,
+     30.25
+    ],
+    "zoom": 6.2,
+    "text": "1089: back in favour, he returns to Hangzhou as governor. He dredges the silting West Lake and uses the mud to build a long causeway, still called the Su Causeway.",
+    "text_zh": "1089年，旧党执政，苏轼以知州身份重回杭州。西湖淤塞严重，他组织疏浚，用挖出的淤泥和葑草筑成一道长堤，就是今天的苏堤。"
+   },
+   {
+    "year": 1094,
+    "at": [
+     114.41,
+     23.11
+    ],
+    "zoom": 6.0,
+    "text": "1094: Emperor Zhezong restores the reformers, and Su, now nearly sixty, is banished across the mountains to Huizhou in Guangdong, where he helps build bridges and praises the lychees.",
+    "text_zh": "1094年，宋哲宗亲政，重新起用新党，年近六十的苏轼被贬到岭南惠州。他在这里资助修桥，还写下“日啖荔枝三百颗”的诗句。"
+   },
+   {
+    "year": 1097,
+    "at": [
+     109.35,
+     19.73
+    ],
+    "zoom": 6.0,
+    "text": "1097: he is sent further still, to Danzhou on Hainan island, then the edge of the Song world. He lives in a thatched hut and teaches local students.",
+    "text_zh": "1097年，六十二岁的苏轼再被贬到海南儋州，这在当时几乎是流放的尽头。他住在简陋的茅屋里，与当地黎族、汉族百姓往来，并办学讲学，培养了不少学生。"
+   },
+   {
+    "year": 1101,
+    "at": [
+     119.97,
+     31.81
+    ],
+    "zoom": 5.0,
+    "event": "su-shi-death",
+    "text": "1101: pardoned by the new emperor Huizong, Su travels north again, but falls ill on the way and dies at Changzhou. He left work at the summit of Song poetry, lyrics, prose, calligraphy and painting.",
+    "text_zh": "1101年，宋徽宗即位后大赦，苏轼得以北归，但在途中染病，七月在常州去世。他留下的诗、词、文、书、画，几乎在每个领域都是宋代的高峰。"
+   }
+  ]
+ },
+ {
+  "id": "wang-anshi-reforms",
+  "era": "northern-song",
+  "start": 1047,
+  "end": 1086,
+  "path": false,
+  "title": "Wang Anshi's New Policies",
+  "title_zh": "王安石变法",
+  "summary": "A county magistrate's ideas become the boldest reform of the Song, and split the court for half a century.",
+  "summary_zh": "从县令的地方试验到全国变法，王安石的新法让北宋朝廷分裂成新旧两党，争斗延续数十年。",
+  "steps": [
+   {
+    "year": 1047,
+    "at": [
+     121.55,
+     29.87
+    ],
+    "zoom": 6.2,
+    "text": "1047: Wang Anshi becomes magistrate of Yin county (Ningbo). He repairs dykes and ponds and lends the county's grain to farmers in spring, to be repaid with interest after harvest.",
+    "text_zh": "1047年，王安石出任鄞县（今宁波）知县，修筑堤堰、疏浚陂塘，又把官仓存粮在春荒时借给农民，秋后加息归还，这是后来青苗法的雏形。"
+   },
+   {
+    "year": 1058,
+    "at": [
+     114.31,
+     34.8
+    ],
+    "zoom": 5.6,
+    "event": "wang-anshi-memorial",
+    "text": "1058: in Kaifeng he sends Emperor Renzong a memorial of some ten thousand characters, arguing that the laws must change and able officials be trained. The emperor files it away.",
+    "text_zh": "1058年，王安石在开封向宋仁宗呈上《言事书》，长达万言，主张改革法度、培养人才，以解决国家积贫积弱的困境，但仁宗没有采纳。"
+   },
+   {
+    "year": 1069,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 6.0,
+    "event": "wang-anshi",
+    "text": "1069: the young Emperor Shenzong makes Wang deputy chief minister and sets up a new Finance Planning Commission. The first laws follow, including the Green Sprouts loans: cheap state credit to farmers in spring.",
+    "text_zh": "1069年，二十出头的宋神宗任命王安石为参知政事，设立制置三司条例司主持变法，相继推出均输法和青苗法：青黄不接时由官府放贷，收成后取息二分。"
+   },
+   {
+    "year": 1072,
+    "at": [
+     114.31,
+     34.8
+    ],
+    "zoom": 6.4,
+    "event": "state-trade-law",
+    "text": "1070 to 1072: more laws follow. Villages are grouped into militia units, labour service is replaced by a cash tax, a State Trade Bureau buys unsold goods in Kaifeng, and land is resurveyed for fairer tax.",
+    "text_zh": "1070至1072年，新法接连推出：保甲法把农户编为保甲，农闲练兵；募役法让民户出钱代替服役；市易法在开封设市易务收购滞销货物；方田均税法清丈田亩，按土质定税。"
+   },
+   {
+    "year": 1072,
+    "at": [
+     103.86,
+     35.38
+    ],
+    "zoom": 5.6,
+    "event": "xihe-campaign",
+    "text": "1072: Wang Shao, backed by Wang Anshi, takes the Tao and Huang river valleys from Tibetan chiefs and founds the Xihe circuit, outflanking the Western Xia from the southwest.",
+    "text_zh": "1072年，在王安石支持下，王韶率军经营河湟，收复熙州、河州等地，设立熙河路。这是北宋少有的开疆拓土，目的是从侧翼牵制西夏。"
+   },
+   {
+    "year": 1074,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 6.0,
+    "text": "1074: after a long drought, the gatekeeper Zheng Xia sends the emperor a painting of starving refugees. The dowager empresses also attack the reforms, and Wang Anshi resigns to govern Jiangning.",
+    "text_zh": "1074年，北方大旱，看守京城城门的小官郑侠绘成《流民图》献给神宗，曹太后、高太后也哭诉新法扰民。王安石被迫罢相，出知江宁府。"
+   },
+   {
+    "year": 1076,
+    "at": [
+     118.8,
+     32.06
+    ],
+    "zoom": 6.0,
+    "text": "1076: recalled in 1075, Wang falls out with colleagues and loses his son, then retires for good to Jiangning (Nanjing). Shenzong runs the reforms himself and in the 1080s rebuilds the bureaucracy.",
+    "text_zh": "1076年，次年复相的王安石与同僚失和，又遭丧子之痛，再次罢相，从此退居江宁。神宗亲自主持新法，并在元丰年间改革官制，史称元丰改制。"
+   },
+   {
+    "year": 1084,
+    "at": [
+     112.45,
+     34.62
+    ],
+    "zoom": 6.0,
+    "event": "zizhi-tongjian",
+    "text": "1084: in Luoyang, the leading critic Sima Guang finishes the Comprehensive Mirror, a chronicle of 1,362 years. The work took nineteen years, fifteen of them spent in Luoyang away from the reformist court.",
+    "text_zh": "1084年，因反对新法退居洛阳十五年的司马光完成《资治通鉴》。全书二百九十四卷，记载战国至五代一千三百六十二年的历史，前后编修十九年。"
+   },
+   {
+    "year": 1086,
+    "at": [
+     114.35,
+     34.8
+    ],
+    "zoom": 4.8,
+    "event": "yuanyou-restoration",
+    "text": "1086: with Shenzong dead and the boy Zhezong on the throne, the regent Dowager Gao makes Sima Guang chief minister. He abolishes the new laws; both he and Wang Anshi die the same year.",
+    "text_zh": "1086年，神宗已死，高太后临朝，起用司马光为相，尽废新法，史称元祐更化。同年王安石、司马光相继去世，新旧党争却愈演愈烈，直到北宋末年。"
    }
   ]
  },
@@ -4447,6 +7419,330 @@
   ]
  },
  {
+  "id": "zhu-xi-academies",
+  "era": "southern-song",
+  "start": 1130,
+  "end": 1200,
+  "path": false,
+  "title": "Zhu Xi and the academies",
+  "title_zh": "朱熹与书院",
+  "summary": "The philosopher who shaped Confucian thought for seven centuries, and the private academies where he taught.",
+  "summary_zh": "朱熹在福建、江西、湖南的书院中讲学著述，他的理学影响了此后七百年的中国。",
+  "steps": [
+   {
+    "year": 1130,
+    "at": [
+     118.19,
+     26.17
+    ],
+    "zoom": 6.0,
+    "text": "1130: Zhu Xi is born at Youxi in Fujian, where his father, an official, had taken refuge from the wars in the north. After his father's death in 1143 he grows up at Wufu near the Wuyi mountains.",
+    "text_zh": "1130年，朱熹生于福建尤溪，父亲朱松为避战乱寓居于此。朱熹十四岁丧父，随母迁居崇安五夫里（今武夷山市），在那里求学成长。"
+   },
+   {
+    "year": 1160,
+    "at": [
+     118.17,
+     26.64
+    ],
+    "zoom": 6.2,
+    "text": "1160: after passing the jinshi exam young, Zhu walks to Yanping to become the student of Li Tong, heir to the teaching of the Cheng brothers, and turns away from Buddhism to Confucian learning.",
+    "text_zh": "1160年，早已考中进士的朱熹步行到延平（今南平），正式拜程颐的三传弟子李侗为师，从此专心于儒学，奠定了理学的根基。"
+   },
+   {
+    "year": 1167,
+    "at": [
+     112.94,
+     28.18
+    ],
+    "zoom": 6.2,
+    "text": "1167: Zhu travels to Changsha to debate with Zhang Shi at the Yuelu Academy. Their two months of discussion draw students from far and wide and make the academy famous.",
+    "text_zh": "1167年，朱熹到长沙岳麓书院拜访主讲张栻，两人论学两个多月，四方学者纷纷前来听讲，史称“朱张会讲”，岳麓书院由此闻名天下。"
+   },
+   {
+    "year": 1175,
+    "at": [
+     117.7,
+     28.2
+    ],
+    "zoom": 6.2,
+    "event": "goose-lake",
+    "text": "1175: at Goose Lake Temple in Jiangxi, Lü Zuqian brings Zhu together with Lu Jiuyuan. Zhu stresses careful study of things; Lu says this is fragmented and urges finding the moral mind within.",
+    "text_zh": "1175年，吕祖谦邀朱熹与陆九渊兄弟在铅山鹅湖寺论学。朱熹主张“格物致知”、读书穷理，陆九渊主张“发明本心”，讥朱学“支离”，双方不欢而散。"
+   },
+   {
+    "year": 1179,
+    "at": [
+     115.97,
+     29.45
+    ],
+    "zoom": 6.2,
+    "event": "white-deer-grotto-revival",
+    "text": "1179: as prefect of Nankang at the foot of Mount Lu, Zhu rebuilds the ruined White Deer Grotto Academy and writes its rules. Later he invites his rival Lu Jiuyuan to lecture there.",
+    "text_zh": "1179年，朱熹任南康军知军，在庐山脚下重建荒废的白鹿洞书院，亲订《白鹿洞书院揭示》作为学规，后来还请论敌陆九渊来书院讲学。"
+   },
+   {
+    "year": 1183,
+    "at": [
+     118.03,
+     27.73
+    ],
+    "zoom": 6.2,
+    "text": "1183: Zhu builds his own academy, the Wuyi Retreat, beside a stream in the Wuyi mountains. For years he teaches and writes here, drawing students from across the south.",
+    "text_zh": "1183年，朱熹在武夷山九曲溪畔建起武夷精舍，在此讲学著述多年，四方学子纷纷前来，武夷山成为理学重镇。"
+   },
+   {
+    "year": 1190,
+    "at": [
+     117.65,
+     24.51
+    ],
+    "zoom": 6.0,
+    "event": "four-books",
+    "text": "1190: as prefect of Zhangzhou he prints his commentaries on the Four Books. In the Yuan they become the basis of the civil service examinations, which they remain until 1905.",
+    "text_zh": "1190年，朱熹任漳州知州，刊印《四书章句集注》。元代以后，这部书成为科举考试的标准教材，一直沿用到清末。"
+   },
+   {
+    "year": 1196,
+    "at": [
+     120.17,
+     30.25
+    ],
+    "zoom": 5.6,
+    "event": "qingyuan-ban",
+    "text": "1196: after a short spell lecturing the emperor, Zhu is caught in a court feud. The minister Han Tuozhou bans his school as false learning and blacklists its followers.",
+    "text_zh": "1196年，此前只在朝中做了四十多天侍讲的朱熹卷入政争。权臣韩侂胄斥理学为“伪学”，列出“伪学逆党籍”，朱熹被夺职，门人受到打压，史称庆元党禁。"
+   },
+   {
+    "year": 1200,
+    "at": [
+     118.12,
+     27.33
+    ],
+    "zoom": 6.0,
+    "event": "zhu-xi-death",
+    "text": "1200: Zhu Xi dies at Kaoting in Jianyang, still under the ban, still revising his commentaries. Within a generation his teaching is honoured by the state.",
+    "text_zh": "1200年，朱熹在建阳考亭病逝，临终前仍在修改著作。党禁不久解除，他的学说在南宋后期被朝廷尊为正统。"
+   }
+  ]
+ },
+ {
+  "id": "genghis-khan",
+  "era": "southern-song",
+  "start": 1206,
+  "end": 1234,
+  "path": false,
+  "title": "Genghis Khan and the Mongol rise",
+  "title_zh": "成吉思汗崛起",
+  "summary": "How the Mongols united the steppe and within thirty years destroyed Western Xia and Jin and reached Central Asia.",
+  "summary_zh": "蒙古统一草原后，短短三十年内攻西夏、破金朝、征花剌子模，改变了亚洲的格局。",
+  "steps": [
+   {
+    "year": 1206,
+    "at": [
+     110.5,
+     48.5
+    ],
+    "zoom": 4.6,
+    "event": "genghis",
+    "text": "1206: at an assembly by the source of the Onon river, Temüjin, having united the Mongol and Turkic tribes of the steppe, is proclaimed Genghis Khan and reorganises his people into units of a thousand.",
+    "text_zh": "1206年，统一蒙古草原各部的铁木真在斡难河源召开大会，被推举为成吉思汗，建立大蒙古国，把部众编为千户，全民皆兵。"
+   },
+   {
+    "year": 1209,
+    "at": [
+     106.27,
+     38.47
+    ],
+    "zoom": 5.8,
+    "text": "1209: his first major campaign is against Western Xia. The Mongols besiege its capital Zhongxing (Yinchuan); the Xia king submits and gives a daughter in marriage.",
+    "text_zh": "1209年，成吉思汗首先进攻西夏，包围都城中兴府（今银川）。西夏国王纳女求和，表示臣服，蒙古从此解除了南侵金朝的侧翼威胁。"
+   },
+   {
+    "year": 1211,
+    "at": [
+     114.85,
+     40.95
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-yehuling",
+    "text": "1211: invading Jin, the Mongols crush a much larger Jin army at Yehuling, the Wild Fox Ridge north of Zhangjiakou, and break through into the plains north of the capital.",
+    "text_zh": "1211年，成吉思汗南下攻金，在野狐岭（今张家口北）大败数量远多于己的金军精锐，金军主力损失殆尽，蒙古骑兵长驱直入华北。"
+   },
+   {
+    "year": 1215,
+    "at": [
+     116.35,
+     39.88
+    ],
+    "zoom": 6.0,
+    "event": "zhongdu-falls",
+    "text": "1215: the Jin court has fled south to Kaifeng. Zhongdu, its northern capital at Beijing, falls after a long siege, and much of the city burns.",
+    "text_zh": "1215年，金宣宗已于上年南迁汴京，蒙古军攻陷金中都（今北京），宫室多被焚毁。金朝从此失去黄河以北的大片土地。"
+   },
+   {
+    "year": 1219,
+    "at": [
+     68.3,
+     42.85
+    ],
+    "zoom": 5.4,
+    "event": "mongol-khwarazm-campaign",
+    "text": "1219: after the governor of Otrar massacres a Mongol trade caravan and the Khwarazm shah kills his envoys, Genghis marches west. Otrar falls after a long siege.",
+    "text_zh": "1219年，因花剌子模讹答剌城的守将杀害蒙古商队、国王又杀了蒙古使者，成吉思汗亲率大军西征，首先围攻讹答剌城，数月后破城。"
+   },
+   {
+    "year": 1220,
+    "at": [
+     66.97,
+     39.65
+    ],
+    "zoom": 6.0,
+    "text": "1220: Bukhara and then Samarkand, the great Silk Road cities of Transoxiana, fall to the Mongols. Shah Muhammad flees and dies on an island in the Caspian.",
+    "text_zh": "1220年，蒙古军攻下布哈拉和花剌子模新都撒马尔罕，这些丝路名城遭到严重破坏。花剌子模国王摩诃末一路逃亡，死于里海的小岛上。"
+   },
+   {
+    "year": 1222,
+    "at": [
+     69.0,
+     35.0
+    ],
+    "zoom": 5.6,
+    "event": "qiu-chuji-meets-genghis",
+    "text": "1222: the Daoist master Qiu Chuji, summoned from Shandong, crosses Central Asia to meet Genghis in the Hindu Kush and urges him to value life and limit killing.",
+    "text_zh": "1222年，应召西行的全真道长丘处机在兴都库什山北的行营见到成吉思汗，劝他“敬天爱民”“清心寡欲”，减少杀戮。弟子把西行经历写成《长春真人西游记》。"
+   },
+   {
+    "year": 1227,
+    "at": [
+     106.2,
+     35.67
+    ],
+    "zoom": 5.8,
+    "event": "genghis-death",
+    "text": "1227: back in the east to punish Western Xia, Genghis Khan dies near the Liupan mountains. The Xia capital surrenders soon after and the Tangut state is wiped out.",
+    "text_zh": "1227年，成吉思汗在征讨西夏途中病逝于六盘山一带，西夏都城随即投降，立国近两百年的西夏灭亡。"
+   },
+   {
+    "year": 1234,
+    "at": [
+     114.36,
+     32.98
+    ],
+    "zoom": 6.0,
+    "event": "caizhou",
+    "text": "1234: under his son Ögedei, Mongol and Song armies besiege the last Jin emperor at Caizhou. He hangs himself and the Jin dynasty ends; the Mongols and Song now face each other.",
+    "text_zh": "1234年，成吉思汗之子窝阔台在位时，蒙古与南宋联军攻破蔡州，金哀宗自缢，金朝灭亡。蒙古与南宋随即正面相对，战争又持续了四十多年。"
+   }
+  ]
+ },
+ {
+  "id": "wen-tianxiang",
+  "era": "southern-song",
+  "start": 1236,
+  "end": 1283,
+  "path": true,
+  "title": "Wen Tianxiang",
+  "title_zh": "文天祥",
+  "summary": "The top scholar who raised an army for a dying dynasty, fought on after its fall, and chose death over service to Kublai.",
+  "summary_zh": "从状元到抗元统帅，文天祥在南宋覆亡之际奔走抗争，最终在大都从容就义。",
+  "steps": [
+   {
+    "year": 1236,
+    "at": [
+     114.99,
+     27.11
+    ],
+    "zoom": 6.0,
+    "text": "1236: Wen Tianxiang is born at Luling in Jizhou (Ji'an, Jiangxi). As a boy he admires the portraits of local worthies in the school shrine and resolves to join them.",
+    "text_zh": "1236年，文天祥生于吉州庐陵（今江西吉安）。少年时在学宫看到欧阳修等乡贤的画像，立志将来也要名列其中。"
+   },
+   {
+    "year": 1256,
+    "at": [
+     120.17,
+     30.25
+    ],
+    "zoom": 6.0,
+    "text": "1256: at twenty he takes first place in the palace examination in Lin'an. Emperor Lizong personally ranks his essay top of the list. Outspoken against powerful ministers, he is later dismissed more than once.",
+    "text_zh": "1256年，二十岁的文天祥在临安参加殿试，对策万言，被宋理宗亲自擢为状元。此后他多次因直言触怒权臣而被罢官。"
+   },
+   {
+    "year": 1275,
+    "at": [
+     114.93,
+     25.85
+    ],
+    "zoom": 5.8,
+    "text": "1275: as Mongol armies sweep down the Yangzi, Wen, governor of Ganzhou, answers the call to defend the throne. He spends his family fortune raising some ten thousand volunteers and marches to the capital.",
+    "text_zh": "1275年，元军沿长江东下，朝廷下诏各地勤王。时任赣州知州的文天祥捐出家财，招募义军万余人，率军赶赴临安。"
+   },
+   {
+    "year": 1276,
+    "at": [
+     120.2,
+     30.35
+    ],
+    "zoom": 6.2,
+    "event": "linan-falls",
+    "text": "1276: with Lin'an about to surrender, he is sent as envoy to the Mongol commander Bayan at Gaoting Hill. He argues defiantly and is detained, while the court gives up.",
+    "text_zh": "1276年，临安即将投降，文天祥以右丞相身份出使皋亭山元营，与元军统帅伯颜当面抗辩，被扣留。不久南宋朝廷开城投降。"
+   },
+   {
+    "year": 1276,
+    "at": [
+     119.45,
+     32.2
+    ],
+    "zoom": 6.0,
+    "text": "1276: taken north under guard, he escapes at Zhenjiang with a few companions, slips past Mongol patrols and sails down the coast to join the loyalists in Fujian. He records it all in his Compass poems.",
+    "text_zh": "1276年，文天祥被押解北上，在镇江夜里设法逃脱，历经艰险，从海路南下，到福建投奔新立的流亡朝廷。这段经历被他写成诗集《指南录》。"
+   },
+   {
+    "year": 1277,
+    "at": [
+     115.55,
+     26.95
+    ],
+    "zoom": 5.6,
+    "text": "1277: he leads a counter-attack from Fujian into southern Jiangxi and recovers several counties, but is routed at Kongkeng. His wife and children are captured.",
+    "text_zh": "1277年，文天祥从福建进军江西，一度收复赣南多个州县，各地纷纷响应。但在空坑被元军击败，妻子儿女被俘，他只身逃脱。"
+   },
+   {
+    "year": 1278,
+    "at": [
+     115.32,
+     22.97
+    ],
+    "zoom": 6.2,
+    "text": "1278: retreating along the Guangdong coast, he is surprised by Mongol troops at Wupoling near Haifeng while his men are eating. He tries to poison himself but survives and is captured.",
+    "text_zh": "1278年冬，文天祥率残部转战广东，在海丰五坡岭吃饭时被元军突袭俘虏。他吞下冰片想要自尽，却没有死成。"
+   },
+   {
+    "year": 1279,
+    "at": [
+     113.75,
+     22.35
+    ],
+    "zoom": 6.0,
+    "event": "yamen",
+    "text": "1279: carried by ship past Lingdingyang in the Pearl River estuary, he writes his poem asking only to leave a loyal heart in history. Days later he watches the Song fleet destroyed at Yamen.",
+    "text_zh": "1279年，元军押着文天祥经过珠江口的零丁洋，他写下《过零丁洋》：“人生自古谁无死，留取丹心照汗青。”随后他目睹了宋军在崖山覆灭。"
+   },
+   {
+    "year": 1283,
+    "at": [
+     116.39,
+     39.93
+    ],
+    "zoom": 5.6,
+    "event": "wen-tianxiang",
+    "text": "1283: after more than three years in a Dadu prison, where he writes the Song of the Righteous Spirit, he refuses Kublai's offer of office and is executed at the Chaishi market, aged forty-seven.",
+    "text_zh": "1283年初，在大都狱中被囚三年多、写下《正气歌》的文天祥，拒绝了忽必烈的劝降，在柴市从容就义，终年四十七岁。"
+   }
+  ]
+ },
+ {
   "id": "mongol-conquest-song",
   "era": "southern-song",
   "start": 1259,
@@ -4555,6 +7851,214 @@
     "event": "yamen",
     "text": "1279: at Yamen the Yuan fleet destroys the last Song ships. Lu Xiufu leaps into the sea carrying the boy emperor Zhao Bing, and the Song dynasty ends.",
     "text_zh": "1279年，元军在崖山海战中击溃最后的宋军船队，陆秀夫背着幼帝赵昺投海，南宋灭亡。"
+   }
+  ]
+ },
+ {
+  "id": "kublai-empire",
+  "era": "yuan",
+  "start": 1260,
+  "end": 1294,
+  "path": false,
+  "title": "Kublai Khan's empire",
+  "title_zh": "忽必烈的帝国",
+  "summary": "Kublai wins the khanship, builds Dadu, names the Yuan dynasty and sends fleets overseas, while canals and sea routes feed his new capital.",
+  "summary_zh": "忽必烈夺得汗位，营建大都，定国号大元，屡次渡海远征，又开海运、凿运河，供养新都。",
+  "steps": [
+   {
+    "year": 1260,
+    "at": [
+     116.18,
+     42.36
+    ],
+    "zoom": 4.6,
+    "event": "kublai-khan-1260",
+    "text": "1260: Kublai is acclaimed Great Khan at Kaiping and adopts a Chinese-style reign name. Advised by Liu Bingzhong and other Chinese scholars, he governs north China with Chinese institutions.",
+    "text_zh": "1260年，忽必烈在开平即大汗位，建年号“中统”。他重用刘秉忠等汉人谋士，采用汉地制度治理中原。"
+   },
+   {
+    "year": 1260,
+    "at": [
+     102.82,
+     47.2
+    ],
+    "zoom": 4.8,
+    "event": "toluid-civil-war",
+    "text": "1260: his younger brother Ariq Boke is also proclaimed khan at Karakorum. After four years of war, cut off from Chinese grain, Ariq Boke surrenders in 1264, and the Mongol empire splits for good.",
+    "text_zh": "1260年，留守草原的弟弟阿里不哥也在和林称汗。兄弟交战四年，阿里不哥因缺粮于1264年投降，蒙古帝国从此分裂。"
+   },
+   {
+    "year": 1267,
+    "at": [
+     116.4,
+     39.9
+    ],
+    "zoom": 6.2,
+    "event": "dadu-construction",
+    "text": "1267: Liu Bingzhong lays out a new city northeast of the old Jin capital. Dadu has square walls, palaces at the centre and a grid of streets, the plan of later Beijing.",
+    "text_zh": "1267年，忽必烈命刘秉忠在金中都东北另筑新城，即大都。城墙方正，宫城居中，街道整齐，奠定了后来北京城的格局。"
+   },
+   {
+    "year": 1271,
+    "at": [
+     116.4,
+     39.9
+    ],
+    "zoom": 5.0,
+    "event": "kublai",
+    "text": "1271: Kublai takes the dynastic name Great Yuan, from a phrase in the Book of Changes. The next year Dadu becomes the capital and Kaiping, renamed Shangdu, the summer residence.",
+    "text_zh": "1271年，忽必烈取《易经》“大哉乾元”之意，定国号为“大元”。次年大都定为首都，开平改称上都，作为夏都。"
+   },
+   {
+    "year": 1274,
+    "at": [
+     130.4,
+     33.6
+    ],
+    "zoom": 5.6,
+    "event": "bunei-invasion",
+    "text": "1274: a Yuan and Korean force crosses the sea and lands at Hakata Bay in Japan. After hard fighting with samurai it returns to the ships, and a storm wrecks much of the fleet.",
+    "text_zh": "1274年，元朝与高丽联军渡海在日本博多湾登陆，与日本武士激战后退回船上，夜间遭遇风暴，损失惨重而还。"
+   },
+   {
+    "year": 1281,
+    "at": [
+     130.2,
+     33.7
+    ],
+    "zoom": 5.2,
+    "event": "japan-invasion",
+    "text": "1281: a second invasion sails from Korea and from Qingyuan (Ningbo), more than 100,000 men in all. A typhoon sinks most of the ships and the expedition collapses.",
+    "text_zh": "1281年，元军再征日本，东路军从高丽、江南军从庆元（今宁波）出发，共十余万人。台风袭来，舰船大半沉没，远征彻底失败。"
+   },
+   {
+    "year": 1288,
+    "at": [
+     106.75,
+     20.9
+    ],
+    "zoom": 5.4,
+    "event": "battle-of-bach-dang-1288",
+    "text": "1288: on the third campaign against Dai Viet, Tran Hung Dao plants stakes in the Bach Dang river and traps the Yuan fleet at low tide. A 1293 expedition to Java also returns with nothing.",
+    "text_zh": "1288年，元军第三次征安南，陈兴道在白藤江底插下木桩，趁退潮围歼元朝水师。1293年远征爪哇的元军也无功而返。"
+   },
+   {
+    "year": 1289,
+    "at": [
+     115.7,
+     36.84
+    ],
+    "zoom": 5.4,
+    "event": "huitong-canal",
+    "text": "1289: the Huitong canal opens in Shandong, letting grain barges run north. Earlier Zhu Qing and Zhang Xuan had opened a sea route from the Yangzi mouth to Zhigu, which carried most of Dadu's grain.",
+    "text_zh": "1289年，会通河在山东开通，南方漕船可沿运河直达北方。此前朱清、张瑄已开辟从长江口到直沽的海运，大都的粮食主要靠海路运来。"
+   },
+   {
+    "year": 1294,
+    "at": [
+     116.4,
+     39.9
+    ],
+    "zoom": 4.4,
+    "event": "kublai-death",
+    "text": "1294: Kublai dies at Dadu. His grandson Temur stops the wars against Japan and Dai Viet. The capital and north-south supply lines Kublai built would serve the Ming and Qing as well.",
+    "text_zh": "1294年，忽必烈在大都去世，孙子铁穆耳即位为元成宗，停止对日本和安南用兵。他留下的大都和南北运输线，此后为明清两代沿用。"
+   }
+  ]
+ },
+ {
+  "id": "guo-shoujing",
+  "era": "yuan",
+  "start": 1262,
+  "end": 1293,
+  "path": false,
+  "title": "Guo Shoujing, astronomer and engineer",
+  "title_zh": "郭守敬",
+  "summary": "A water engineer from Xingtai measures the sky across the empire, writes the most accurate calendar of its age and brings boats into Dadu.",
+  "summary_zh": "邢台人郭守敬治水、观天，主持全国天文测量，编成《授时历》，又开通惠河让漕船直入大都。",
+  "steps": [
+   {
+    "year": 1262,
+    "at": [
+     114.5,
+     37.07
+    ],
+    "zoom": 6.0,
+    "text": "1262: Guo Shoujing of Xingtai, a student of Liu Bingzhong, is introduced to Kublai and presents six proposals for water works. He is put in charge of canals and rivers.",
+    "text_zh": "1262年，邢台人郭守敬经张文谦推荐面见忽必烈，提出六条水利建议，此后奉命主管各地河渠。他早年随刘秉忠学习天文、算学和水利。"
+   },
+   {
+    "year": 1264,
+    "at": [
+     106.27,
+     38.47
+    ],
+    "zoom": 5.6,
+    "text": "1264: sent to the old Western Xia lands, Guo restores the ancient Tanglai and Hanyan canals on the Ningxia plain, bringing large stretches of abandoned farmland back under irrigation.",
+    "text_zh": "1264年，郭守敬随张文谦到西夏故地，修复宁夏平原上的唐来渠、汉延渠等古渠，使大片荒废的农田重新得到灌溉。"
+   },
+   {
+    "year": 1276,
+    "at": [
+     116.39,
+     39.93
+    ],
+    "zoom": 6.2,
+    "text": "1276: the court orders a new calendar. Guo and Wang Xun set up an office at Dadu, and Guo first builds better instruments, including the simplified armillary and a tall gnomon.",
+    "text_zh": "1276年，元朝决定修订历法，郭守敬与王恂等人在大都设局。他先改造观测仪器，制成简仪、高表等十几种新仪器。"
+   },
+   {
+    "year": 1279,
+    "at": [
+     112.0,
+     34.0
+    ],
+    "zoom": 4.0,
+    "text": "1279: Guo organises a survey of the realm with 27 observing stations, from the South China Sea to the far north in Siberia, measuring the pole's height and the sun's shadow at each.",
+    "text_zh": "1279年，郭守敬主持“四海测验”，在全国设二十七处观测点，南到南海，北到北海（约在今西伯利亚），测量各地的北极高度和日影长短。"
+   },
+   {
+    "year": 1279,
+    "at": [
+     113.14,
+     34.4
+    ],
+    "zoom": 6.4,
+    "event": "gaocheng-observatory",
+    "text": "1279: at Gaocheng near Dengfeng, a central station gets a stone tower with a long measuring scale on the ground below, a giant gnomon for timing the solstices. It still stands.",
+    "text_zh": "1279年，河南登封告成镇建起观星台，这是测量中心之一。高大的台身和地上的“量天尺”组成巨型圭表，用来测量冬至、夏至的日影。"
+   },
+   {
+    "year": 1280,
+    "at": [
+     116.39,
+     39.93
+    ],
+    "zoom": 5.2,
+    "event": "shoushi-calendar",
+    "text": "1280: the Shoushi calendar is finished and issued the next year. Its year of 365.2425 days matches the Gregorian calendar adopted in Europe three centuries later, and it stays in use for over 300 years.",
+    "text_zh": "1280年，《授时历》编成，次年颁行。它以365.2425天为一年，与三百年后欧洲的格里高利历相同，此后沿用了三百多年。"
+   },
+   {
+    "year": 1292,
+    "at": [
+     116.22,
+     40.25
+    ],
+    "zoom": 6.4,
+    "text": "1292: Guo starts a new canal. He leads spring water from Baifu near Changping southwest into Wengshan lake (today's Kunming Lake) and on to Dadu, solving the canal's lack of water.",
+    "text_zh": "1292年，郭守敬主持开凿新河。他把昌平白浮泉等泉水引向西南，汇入瓮山泊（今昆明湖），再引入大都，解决了运河水源不足的难题。"
+   },
+   {
+    "year": 1293,
+    "at": [
+     116.38,
+     39.94
+    ],
+    "zoom": 6.5,
+    "event": "tonghui-river",
+    "text": "1293: the canal opens from Tongzhou to Jishuitan lake inside Dadu. Seeing the lake crowded with boats, Kublai names it the Tonghui river. Southern grain ships can now sail into the capital.",
+    "text_zh": "1293年，新河完工，从通州到大都城内的积水潭全线通航。忽必烈看到湖上帆船云集，赐名“通惠河”，南方漕船从此直达都城。"
    }
   ]
  },
@@ -4751,6 +8255,116 @@
     "event": "xu-da-takes-dadu",
     "text": "Autumn 1368: Xu Da's army enters Dadu. The last Yuan emperor has already fled north to Shangdu, and Mongol rule over China is over.",
     "text_zh": "1368年八月，徐达大军攻入大都，元顺帝已提前北逃上都，元朝在中原的统治结束。"
+   }
+  ]
+ },
+ {
+  "id": "hongwu-founding",
+  "era": "ming",
+  "start": 1368,
+  "end": 1393,
+  "path": false,
+  "title": "The Hongwu emperor builds the Ming",
+  "title_zh": "洪武开国",
+  "summary": "Zhu Yuanzhang drives out the Yuan, abolishes the chancellor, registers every household and field, and purges his own generals.",
+  "summary_zh": "朱元璋逐走元廷，废除丞相，清查户口田地，设卫所屯田，最后诛杀开国功臣。",
+  "steps": [
+   {
+    "year": 1368,
+    "at": [
+     118.78,
+     32.06
+    ],
+    "zoom": 5.0,
+    "event": "ming-founded",
+    "text": "1368: Zhu Yuanzhang, born a poor peasant, becomes emperor at Yingtian (Nanjing) and makes it his capital. He has refugees resettled on empty land and irrigation repaired after decades of war.",
+    "text_zh": "1368年，朱元璋在应天称帝，定都应天。出身贫苦农家的他下令招民垦荒、兴修水利，减轻战乱后百姓的负担。"
+   },
+   {
+    "year": 1368,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 5.8,
+    "event": "xu-da-takes-dadu",
+    "text": "1368: Xu Da takes Dadu and renames it Beiping. The Yuan emperor withdraws to the steppe, where the Northern Yuan lives on, and the northern frontier becomes the Ming's lasting worry.",
+    "text_zh": "1368年，徐达攻入大都，改名北平府。元顺帝退回草原，北元仍在漠北与明朝对峙，北方边防成为明朝的长期难题。"
+   },
+   {
+    "year": 1369,
+    "at": [
+     117.53,
+     32.87
+    ],
+    "zoom": 6.2,
+    "text": "1369: Zhu orders a grand Middle Capital built at his home town of Linhao (Fengyang). Work stops six years later as too costly, but its palace plan influenced the later Forbidden City.",
+    "text_zh": "1369年，朱元璋下令在家乡临濠（今安徽凤阳）营建中都，城池宫殿规模宏大。六年后因劳民伤财而停工，后来的北京宫城多仿照它的布局。"
+   },
+   {
+    "year": 1380,
+    "at": [
+     118.78,
+     32.06
+    ],
+    "zoom": 6.2,
+    "event": "hu-weiyong",
+    "text": "1380: chancellor Hu Weiyong is executed for treason. Zhu abolishes the Secretariat and the post of chancellor, and the six ministries now report straight to the emperor.",
+    "text_zh": "1380年，丞相胡惟庸以谋反罪被杀。朱元璋借此废除中书省和丞相，六部直接对皇帝负责，皇权空前集中。"
+   },
+   {
+    "year": 1381,
+    "at": [
+     118.79,
+     32.06
+    ],
+    "zoom": 4.8,
+    "event": "yellow-registers",
+    "text": "1381: every household in the empire is entered in the Yellow Registers. From 1387 land is surveyed and drawn in fish-scale maps, so taxes and labour service can be traced to each family and field.",
+    "text_zh": "1381年，朝廷在全国编造赋役黄册，登记每户人口和田产。1387年又丈量土地，绘成鱼鳞图册，赋税徭役从此有据可查。"
+   },
+   {
+    "year": 1381,
+    "at": [
+     102.71,
+     25.04
+    ],
+    "zoom": 5.2,
+    "event": "ming-conquest-of-yunnan",
+    "text": "1381: Fu Youde, Lan Yu and Mu Ying conquer Yunnan, and Mu Ying stays as its guardian. Across the empire hereditary soldier families man guard garrisons and farm their own land, Yunnan among the busiest.",
+    "text_zh": "1381年，傅友德、蓝玉、沐英率军平定云南，沐英留镇。明朝在各地遍设卫所，军户世代当兵，平时屯田自给，云南就是军屯最多的地区之一。"
+   },
+   {
+    "year": 1387,
+    "at": [
+     123.5,
+     43.5
+    ],
+    "zoom": 5.2,
+    "text": "1387: Feng Sheng leads a great army into Liaodong and at Jinshan forces the surrender of Naghachu, the Northern Yuan commander who had held the region for years. Liaodong becomes Ming land.",
+    "text_zh": "1387年，冯胜率大军出征辽东，在金山迫使盘踞多年的北元太尉纳哈出投降，辽东从此归入明朝。"
+   },
+   {
+    "year": 1388,
+    "at": [
+     117.7,
+     47.8
+    ],
+    "zoom": 5.0,
+    "event": "battle-of-buir-lake",
+    "text": "1388: Lan Yu crosses the desert and surprises the Northern Yuan court at Lake Buir, capturing many princes, officials and followers. The Northern Yuan never recovers.",
+    "text_zh": "1388年，蓝玉率军穿越大漠奔袭捕鱼儿海，大破北元主力，俘获大批北元皇族、官员和部众，北元从此一蹶不振。"
+   },
+   {
+    "year": 1393,
+    "at": [
+     118.79,
+     32.06
+    ],
+    "zoom": 6.0,
+    "event": "lan-yu-case",
+    "text": "1393: Lan Yu is executed for treason and some 15,000 people die with him. Together with the Hu Weiyong purge, almost all the founding generals are gone, leaving the throne weak against the prince of Yan.",
+    "text_zh": "1393年，蓝玉以谋反罪被杀，株连一万五千余人。加上胡惟庸案，开国功臣几乎被杀尽，为后来燕王起兵埋下隐患。"
    }
   ]
  },
@@ -5025,6 +8639,111 @@
   ]
  },
  {
+  "id": "wang-yangming",
+  "era": "ming",
+  "start": 1472,
+  "end": 1529,
+  "path": true,
+  "title": "Wang Yangming's road",
+  "title_zh": "王阳明",
+  "summary": "A philosopher who found the truth in his own mind while in exile, then crushed bandits and a princely rebellion.",
+  "summary_zh": "王阳明在贬谪中悟出“心即理”，又剿平南赣盗匪、平定宁王之乱，开创阳明心学。",
+  "steps": [
+   {
+    "year": 1472,
+    "at": [
+     121.15,
+     30.04
+    ],
+    "zoom": 6.2,
+    "text": "1472: Wang Shouren, later called Wang Yangming, is born into an official family at Yuyao in Zhejiang. As a boy he says his goal is to become a sage, not just to pass the exams.",
+    "text_zh": "1472年，王守仁出生在浙江余姚一个官宦人家，后人称他阳明先生。他少年时就立志要做“圣贤”，而不只是考取功名。"
+   },
+   {
+    "year": 1492,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 5.6,
+    "text": "About 1492: in his father's residence in the capital, he follows Zhu Xi's advice to investigate things and stares at bamboo for seven days. He learns nothing and falls ill, and begins to doubt the method.",
+    "text_zh": "约1492年，在京师父亲官署中，他按朱熹“格物致知”的教导，对着竹子苦思七天，一无所得，反而病倒，开始怀疑向外求理的路子。"
+   },
+   {
+    "year": 1508,
+    "at": [
+     106.59,
+     26.84
+    ],
+    "zoom": 6.0,
+    "event": "longchang",
+    "text": "1508: beaten and exiled for opposing the eunuch Liu Jin, he serves as a post-station keeper at Longchang in Guizhou. There he realises that principle is not found in outside things but in one's own mind.",
+    "text_zh": "1508年，因上疏得罪宦官刘瑾，他被廷杖后贬到贵州龙场驿。在蛮荒山中他忽然领悟：道理不必向外物去求，就在自己心中。"
+   },
+   {
+    "year": 1510,
+    "at": [
+     114.99,
+     27.11
+    ],
+    "zoom": 6.0,
+    "text": "1510: after Liu Jin falls, Wang becomes magistrate of Luling in Jiangxi. In seven months he clears old lawsuits and cuts levies, putting his ideas to work in government.",
+    "text_zh": "1510年，刘瑾倒台，王阳明出任江西庐陵知县。他在任七个月，清理积案、减轻摊派，开始把自己的学说用于治民。"
+   },
+   {
+    "year": 1517,
+    "at": [
+     114.93,
+     25.83
+    ],
+    "zoom": 5.8,
+    "text": "1517: as governor based at Ganzhou, he wipes out bandit strongholds in the hills where Jiangxi, Fujian, Guangdong and Hunan meet, then organises villages into mutual-security groups and covenants.",
+    "text_zh": "1517年，他以巡抚身份坐镇赣州，在赣、闽、粤、湘交界的山区剿平盘踞多年的盗匪，并推行十家牌法和乡约，安定地方。"
+   },
+   {
+    "year": 1519,
+    "at": [
+     115.86,
+     28.68
+    ],
+    "zoom": 6.0,
+    "event": "prince-of-ning-rebellion",
+    "text": "1519: the Prince of Ning rebels at Nanchang and sails down the Yangzi to attack Anqing. Wang gathers troops at Ji'an and storms the half-empty Nanchang, cutting the rebels off from their base.",
+    "text_zh": "1519年，宁王朱宸濠在南昌起兵，沿江东下进攻安庆。王阳明在吉安招集兵马，趁南昌空虚一举攻克，切断叛军后路。"
+   },
+   {
+    "year": 1519,
+    "at": [
+     116.0,
+     28.95
+    ],
+    "zoom": 6.2,
+    "text": "1519: the prince turns back, and Wang meets his fleet on Poyang Lake, breaks it with fire ships and captures the prince. The rebellion is over in little more than a month.",
+    "text_zh": "1519年，宁王回救南昌，王阳明在鄱阳湖畔与叛军决战，用火攻大败叛军，生擒宁王。从起兵到平定只用了一个多月。"
+   },
+   {
+    "year": 1522,
+    "at": [
+     120.58,
+     30.0
+    ],
+    "zoom": 6.2,
+    "text": "From 1522: back home in Shaoxing and Yuyao, Wang teaches crowds of students. He preaches extending one's innate knowledge and the unity of knowing and acting; his sayings are collected as the Chuanxi lu.",
+    "text_zh": "1522年起，王阳明在绍兴、余姚家中讲学，四方弟子云集。他以“致良知”为宗旨，主张知行合一，弟子将他的言论编成《传习录》。"
+   },
+   {
+    "year": 1529,
+    "at": [
+     114.36,
+     25.4
+    ],
+    "zoom": 6.0,
+    "text": "Early 1529: returning from pacifying Si'en and Tianzhou in Guangxi, he dies on a boat at Nan'an in Jiangxi. His last words: \"My mind is bright and clear. What more is there to say?\"",
+    "text_zh": "1529年初，他奉命平定广西思恩、田州之乱后北归，在江西南安舟中病逝。临终时留下遗言：“此心光明，亦复何言。”"
+   }
+  ]
+ },
+ {
   "id": "qi-jiguang-wokou",
   "era": "ming",
   "start": 1548,
@@ -5119,6 +8838,304 @@
     "event": "qi-great-wall",
     "text": "1568: Qi Jiguang is sent north to command the Jizhou frontier near Beijing. He trains troops and adds hollow brick watchtowers to the Great Wall, many of which still stand.",
     "text_zh": "1568年，戚继光北调总理蓟州等处练兵，镇守京师北门，在长城上加筑空心敌台，许多至今犹存。"
+   }
+  ]
+ },
+ {
+  "id": "zhang-juzheng-reforms",
+  "era": "ming",
+  "start": 1572,
+  "end": 1584,
+  "path": false,
+  "title": "Zhang Juzheng's reforms",
+  "title_zh": "张居正改革",
+  "summary": "For ten years a grand secretary runs the empire for a boy emperor, fills the treasury and reforms taxes, then is disgraced after death.",
+  "summary_zh": "张居正辅佐少年万历帝十年，整顿吏治、清丈田亩、推行一条鞭法，死后却被抄家。",
+  "steps": [
+   {
+    "year": 1572,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 5.0,
+    "text": "1572: the Longqing emperor dies and the ten-year-old Wanli emperor succeeds. Zhang Juzheng allies with the eunuch Feng Bao to oust Gao Gong and becomes senior grand secretary.",
+    "text_zh": "1572年，隆庆帝去世，十岁的万历帝即位。张居正联合宦官冯保逐走首辅高拱，自任内阁首辅，开始主持朝政。"
+   },
+   {
+    "year": 1573,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 6.0,
+    "event": "zhang-juzheng-reforms",
+    "text": "1573: Zhang introduces the evaluation law. Every office records its tasks with deadlines; the supervising secretaries check the ministries, and the Grand Secretariat checks them. Officials start getting things done.",
+    "text_zh": "1573年，张居正推行考成法：各衙门把应办的事登记在册，按期检查完成情况，由六科监督六部，内阁再监督六科，官员办事效率大增。"
+   },
+   {
+    "year": 1574,
+    "at": [
+     117.4,
+     40.05
+    ],
+    "zoom": 5.6,
+    "text": "About 1574: Zhang firmly backs Qi Jiguang at Jizhou and Li Chengliang in Liaodong. With trade at border markets since the 1571 peace with Altan Khan, the northern frontier stays quiet for years.",
+    "text_zh": "1574年前后，张居正执政，戚继光镇守蓟镇、李成梁镇守辽东，都得到他的全力支持。加上1571年俺答封贡后互市不断，北部边境多年安宁。"
+   },
+   {
+    "year": 1578,
+    "at": [
+     119.02,
+     33.6
+    ],
+    "zoom": 6.0,
+    "event": "pan-jixun-river",
+    "text": "1578: Pan Jixun takes charge of the Yellow River and the Huai for the third time. He narrows the channel so the current scours out silt, and strengthens the Gaojia dike so the clear Huai flushes the Yellow River.",
+    "text_zh": "1578年，潘季驯第三次主持治理黄河、淮河。他主张“束水攻沙”，加固高家堰，让清澈的淮水冲刷黄河泥沙，河道和漕运多年畅通。"
+   },
+   {
+    "year": 1580,
+    "at": [
+     113.0,
+     32.0
+    ],
+    "zoom": 4.2,
+    "event": "wanli-land-survey",
+    "text": "1580: Zhang orders all farmland in the empire remeasured. Large areas hidden by powerful families are put back on the tax rolls, spreading the burden more fairly and raising state income.",
+    "text_zh": "1580年，张居正下令在全国清丈田亩，查出大量被豪强隐瞒、未纳税的土地，赋税负担变得较为公平，国家收入明显增加。"
+   },
+   {
+    "year": 1581,
+    "at": [
+     120.2,
+     30.8
+    ],
+    "zoom": 5.2,
+    "event": "single-whip",
+    "text": "1581: the Single Whip method goes nationwide. Land tax, labour service and miscellaneous levies are merged into one silver payment by acreage. Tried first in the Yangzi delta, it reflects the flood of silver.",
+    "text_zh": "1581年，一条鞭法推行到全国：把田赋、徭役和各种杂税合并，折成白银按田亩征收。这一改革在江南等地早有试行，也反映了白银的大量流入。"
+   },
+   {
+    "year": 1582,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 6.2,
+    "event": "zhang-juzheng-dies",
+    "text": "1582: Zhang dies. The treasury is full and the state granaries are said to hold ten years of grain. But his heavy-handed rule had made many enemies, including the grown-up Wanli emperor.",
+    "text_zh": "1582年，张居正病逝。此时国库充盈，太仓存粮据说可支用十年。但他生前专权，得罪了许多官员，也让长大的万历帝心怀不满。"
+   },
+   {
+    "year": 1584,
+    "at": [
+     112.19,
+     30.35
+    ],
+    "zoom": 6.0,
+    "text": "1584: the emperor has Zhang's family estate at Jiangling in Hubei confiscated. His eldest son hangs himself and some relatives starve. Many of the reforms lapse, and Ming decline resumes.",
+    "text_zh": "1584年，万历帝下令查抄张居正在湖北江陵的家，长子张敬修自缢，家人有人饿死。他的许多改革措施随之废弛，明朝重新走向衰落。"
+   }
+  ]
+ },
+ {
+  "id": "wanli-three-campaigns",
+  "era": "ming",
+  "start": 1592,
+  "end": 1600,
+  "path": false,
+  "title": "Wanli's three great campaigns",
+  "title_zh": "万历三大征",
+  "summary": "In nine years the Ming crushes a mutiny in Ningxia, drives the Japanese out of Korea and destroys a rebel chieftain in Guizhou.",
+  "summary_zh": "九年之间，明朝平定宁夏哱拜之乱，援朝击退日本，又剿灭播州杨应龙，史称万历三大征。",
+  "steps": [
+   {
+    "year": 1592,
+    "at": [
+     106.27,
+     38.47
+    ],
+    "zoom": 6.0,
+    "event": "ordos-campaign",
+    "text": "Spring 1592: the Mongol-born officer Pubei mutinies at Ningxia. After months of siege Li Rusong and others flood the city with Yellow River water and take it in the autumn.",
+    "text_zh": "1592年春，蒙古降将哱拜在宁夏发动兵变。明军围城数月不下，李如松等引黄河水灌城，九月攻破宁夏城，叛乱平定。"
+   },
+   {
+    "year": 1592,
+    "at": [
+     129.04,
+     35.1
+    ],
+    "zoom": 5.4,
+    "text": "1592: Toyotomi Hideyoshi's armies land at Busan. Within two months they take Seoul and Pyongyang, and the Korean king flees to Uiju on the Yalu and begs the Ming for help.",
+    "text_zh": "1592年，日本丰臣秀吉派大军在朝鲜釜山登陆，两个月内攻陷汉城和平壤，朝鲜国王逃到义州，向明朝求援。"
+   },
+   {
+    "year": 1593,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 6.0,
+    "event": "imjin",
+    "text": "January 1593: fresh from Ningxia, Li Rusong leads a Ming army into Korea and, with heavy cannon, retakes Pyongyang. The Japanese fall back south and most of northern Korea is freed.",
+    "text_zh": "1593年正月，刚平定宁夏的李如松率明军入朝，用火炮猛攻，收复平壤。日军向南撤退，朝鲜北部随之恢复。"
+   },
+   {
+    "year": 1593,
+    "at": [
+     126.86,
+     37.68
+    ],
+    "zoom": 6.2,
+    "text": "1593: pressing on with light cavalry, Li is ambushed at Byeokjegwan north of Seoul and pulls back. The war stalls and both sides turn to peace talks.",
+    "text_zh": "1593年，李如松乘胜追击，轻骑冒进，在汉城以北的碧蹄馆遭日军伏击受挫。此后双方相持，转入议和。"
+   },
+   {
+    "year": 1597,
+    "at": [
+     129.31,
+     35.54
+    ],
+    "zoom": 5.6,
+    "text": "1597: talks collapse and Japan invades again. The Ming sends more troops and at the end of the year besieges the Japanese fort at Ulsan, without success. The armies deadlock in the south.",
+    "text_zh": "1597年，和谈破裂，日军再次大举进攻朝鲜。明朝增兵援朝，年底围攻日军据守的蔚山城，久攻不下，双方在朝鲜南部僵持。"
+   },
+   {
+    "year": 1598,
+    "at": [
+     127.87,
+     34.94
+    ],
+    "zoom": 6.0,
+    "event": "battle-of-noryang",
+    "text": "1598: Hideyoshi dies and the Japanese withdraw. Chen Lin, Deng Zilong and Korea's Yi Sun-sin intercept their fleet at Noryang. Deng and Yi die in the battle that ends the seven-year war.",
+    "text_zh": "1598年，丰臣秀吉病死，日军撤退。明将陈璘、邓子龙与朝鲜李舜臣在露梁海截击日军船队，邓子龙和李舜臣都战死，七年战争结束。"
+   },
+   {
+    "year": 1599,
+    "at": [
+     106.92,
+     27.7
+    ],
+    "zoom": 5.4,
+    "event": "bozhou-campaign",
+    "text": "1599: Yang Yinglong, the hereditary chieftain of Bozhou (Zunyi in Guizhou), rebels and raids Sichuan, Guizhou and Huguang. The court gathers troops from many provinces.",
+    "text_zh": "1599年，世袭播州（今贵州遵义）的土司杨应龙叛乱，攻掠四川、贵州、湖广各地。朝廷调集各省兵马准备进剿。"
+   },
+   {
+    "year": 1600,
+    "at": [
+     106.83,
+     27.79
+    ],
+    "zoom": 6.4,
+    "text": "1600: Li Hualong's eight columns storm Hailongtun, Yang's mountaintop fortress, and Yang kills himself. Bozhou becomes two prefectures. The three campaigns are over, but the treasury is nearly empty.",
+    "text_zh": "1600年，李化龙统率八路大军进剿，攻破杨应龙据守的山顶要塞海龙囤，杨应龙自杀。播州改设遵义、平越二府，三大征至此结束，国库也几乎耗尽。"
+   }
+  ]
+ },
+ {
+  "id": "xu-xiake",
+  "era": "ming",
+  "start": 1607,
+  "end": 1640,
+  "path": true,
+  "title": "Xu Xiake's travels",
+  "title_zh": "徐霞客游记",
+  "summary": "A gentleman from Jiangyin spends thirty years walking China's mountains and rivers and writes it all down.",
+  "summary_zh": "江阴人徐霞客三十多年遍游名山大川，写下兼具文学和地理价值的《徐霞客游记》。",
+  "steps": [
+   {
+    "year": 1607,
+    "at": [
+     120.28,
+     31.92
+    ],
+    "zoom": 6.0,
+    "text": "1607: Xu Hongzu of Jiangyin, known as Xu Xiake, turns his back on the exams and, encouraged by his mother, starts travelling, first around Lake Tai. He will spend thirty years on the road.",
+    "text_zh": "1607年，江阴人徐弘祖（号霞客）不愿走科举之路，在母亲鼓励下开始出游，先到太湖一带。此后三十多年，他几乎走遍了大半个中国。"
+   },
+   {
+    "year": 1613,
+    "at": [
+     121.08,
+     29.25
+    ],
+    "zoom": 6.2,
+    "text": "1613: he climbs Tiantai in Zhejiang and writes the diary that opens his travel records. China's national tourism day, 19 May, is set on the date that diary begins.",
+    "text_zh": "1613年，他游览浙江天台山，写下《游天台山日记》，这是游记的开篇。今天的“中国旅游日”就定在这篇日记开头的日子，5月19日。"
+   },
+   {
+    "year": 1616,
+    "at": [
+     118.17,
+     30.13
+    ],
+    "zoom": 6.0,
+    "text": "1616: he climbs Huangshan in the snow, and returns two years later to scale Tiandu and Lianhua peaks. The same year he visits the Wuyi mountains in Fujian and floats down the Nine Bend stream.",
+    "text_zh": "1616年，他冒雪登上黄山，两年后又再次登山，攀上天都峰和莲花峰。同年他还游历福建武夷山，乘竹筏沿九曲溪而下。"
+   },
+   {
+    "year": 1618,
+    "at": [
+     115.99,
+     29.56
+    ],
+    "zoom": 6.0,
+    "text": "1618: he explores Mount Lu in Jiangxi, climbing Wulao and Hanyang peaks and noting waterfalls, temples and paths in detail, before heading back to Huangshan.",
+    "text_zh": "1618年，他游览江西庐山，攀登五老峰、汉阳峰，详细记下山中的瀑布、寺院和道路，然后再上黄山。"
+   },
+   {
+    "year": 1623,
+    "at": [
+     110.08,
+     34.48
+    ],
+    "zoom": 5.6,
+    "text": "1623: he goes north to Songshan and Huashan, the central and western sacred peaks, then south to Wudang. He now pays attention to how ranges run and where rivers begin, not just the scenery.",
+    "text_zh": "1623年，他北上游览中岳嵩山、西岳华山，又南下湖北武当山。他已不满足于观赏风景，开始留心山脉走向和河流源头。"
+   },
+   {
+    "year": 1637,
+    "at": [
+     112.6,
+     26.9
+    ],
+    "zoom": 5.6,
+    "text": "1637: on his last and longest journey, begun the year before with the monk Jingwen, robbers attack their boat on the Xiang river in Hunan. They lose their money and Jingwen is hurt, but Xu goes on west.",
+    "text_zh": "1636年，五十岁的徐霞客与静闻和尚踏上最后一次远游。次年在湖南湘江上遭遇强盗，财物被劫，静闻受伤，他仍坚持西行。"
+   },
+   {
+    "year": 1637,
+    "at": [
+     110.29,
+     25.27
+    ],
+    "zoom": 6.2,
+    "text": "1637: around Guilin in Guangxi he explores the limestone caves one by one, measuring and describing them, among the earliest systematic studies of karst landscape anywhere.",
+    "text_zh": "1637年，他在广西桂林一带考察石灰岩溶洞，逐个丈量记录七星岩等岩洞，是世界上最早系统考察喀斯特地貌的人之一。"
+   },
+   {
+    "year": 1638,
+    "at": [
+     105.67,
+     25.99
+    ],
+    "zoom": 6.2,
+    "text": "1638: in Guizhou he reaches the Baishui river and describes the Huangguoshu falls as pearls pounded and jade shattered. The mountain roads are so hard that some days he covers only a few kilometres.",
+    "text_zh": "1638年，他进入贵州，在白水河畔看到黄果树瀑布，记下“捣珠崩玉，飞沫反涌”的壮观景象。贵州山高路险，他常常一天只走十几里。"
+   },
+   {
+    "year": 1639,
+    "at": [
+     100.37,
+     25.95
+    ],
+    "zoom": 5.8,
+    "text": "1639: he buries the ashes of Jingwen, who died on the road, on Jizu mountain in Yunnan and writes a gazetteer of it. Then his legs fail, and in 1640 the Lijiang prefect has him carried home.",
+    "text_zh": "1639年，他把途中病故的静闻的骨灰送到云南鸡足山安葬，并为此山编写山志。不久他双足病重不能行走，1640年由丽江知府派人送回江阴。"
    }
   ]
  },
@@ -5445,6 +9462,186 @@
   ]
  },
  {
+  "id": "yongzheng-reforms",
+  "era": "qing",
+  "start": 1723,
+  "end": 1735,
+  "path": false,
+  "title": "Yongzheng tightens the reins",
+  "title_zh": "雍正改革",
+  "summary": "In thirteen years the Yongzheng emperor reforms taxes, replaces native chieftains, sets up the Grand Council and fights the Dzungars.",
+  "summary_zh": "雍正帝在位十三年，改革赋税，改土归流，设立军机处，在西北与准噶尔交战。",
+  "steps": [
+   {
+    "year": 1723,
+    "at": [
+     116.4,
+     39.92
+    ],
+    "zoom": 5.0,
+    "event": "tanding-rumu",
+    "text": "1723: the new Yongzheng emperor folds the poll tax into the land tax, so the landless no longer pay it. The next year he brings the meltage surcharges officials had pocketed into the public treasury.",
+    "text_zh": "1723年，雍正帝即位，推行摊丁入亩，把人头税并入田赋，无地的人不再交丁银。次年又实行火耗归公，把地方私自加征的附加税收归国库。"
+   },
+   {
+    "year": 1726,
+    "at": [
+     102.71,
+     25.04
+    ],
+    "zoom": 5.4,
+    "event": "gaitu-guiliu",
+    "text": "1726: Ortai, governor-general of Yunnan and Guizhou, starts replacing hereditary native chieftains with regular appointed officials across Yunnan, Guizhou and Guangxi, bringing the southwest under direct rule.",
+    "text_zh": "1726年，鄂尔泰出任云贵总督，在云南、贵州、广西大规模改土归流：废除世袭土司，改派可以调换的流官，朝廷直接统治西南山区。"
+   },
+   {
+    "year": 1727,
+    "at": [
+     106.45,
+     50.36
+    ],
+    "zoom": 5.0,
+    "event": "treaty-of-kyakhta",
+    "text": "1727: the Treaty of Kyakhta fixes the border between Mongolia and Russian Siberia. Kyakhta becomes the trading post through which Chinese tea flows to Russia for the next century and more.",
+    "text_zh": "1727年，中俄签订《恰克图条约》，划定蒙古地区的中段边界，恰克图成为两国通商口岸，此后茶叶经这里大量输往俄国。"
+   },
+   {
+    "year": 1729,
+    "at": [
+     116.39,
+     39.92
+    ],
+    "zoom": 6.5,
+    "event": "grand-council",
+    "text": "1729: to run the war against the Dzungars, Yongzheng sets up a small office in the palace, later the Grand Council. A few trusted ministers see him daily and draft secret edicts, sidelining the Grand Secretariat.",
+    "text_zh": "1729年，为了指挥对准噶尔的战争，雍正在宫中设立军机房，后称军机处。几位亲信大臣每天面见皇帝，直接撰写密谕发往各地，内阁逐渐被架空。"
+   },
+   {
+    "year": 1731,
+    "at": [
+     91.2,
+     47.0
+    ],
+    "zoom": 5.0,
+    "text": "1731: misled by false reports, the general Furdan pushes deep into the Altai and is ambushed by the Dzungars at Khoton Nuur. The Qing army is nearly wiped out.",
+    "text_zh": "1731年，靖边大将军傅尔丹轻信敌情，率军深入，在和通泊遭准噶尔军伏击，清军损失惨重，几乎全军覆没。"
+   },
+   {
+    "year": 1732,
+    "at": [
+     102.84,
+     47.2
+    ],
+    "zoom": 5.4,
+    "text": "1732: when the Dzungars strike east into Khalkha, the Mongol prince Tseringe routs them near Erdene Zuu monastery. The two sides then drift toward a truce.",
+    "text_zh": "1732年，准噶尔军东进喀尔喀，额驸策棱率蒙古骑兵在光显寺（额尔德尼召）一带大败准噶尔军。双方此后逐渐停战议和。"
+   },
+   {
+    "year": 1735,
+    "at": [
+     108.52,
+     25.93
+    ],
+    "zoom": 5.8,
+    "text": "1735: Miao people around Guzhou in Guizhou rise against the new officials. Yongzheng dies that year, and the Qianlong emperor sends Zhang Guangsi to crush the revolt, a sign of what direct rule had cost.",
+    "text_zh": "1735年，贵州古州一带苗民不满新设官府的压迫，大规模起事。同年雍正帝去世，乾隆帝即位后派张广泗平定，改土归流的代价由此可见。"
+   }
+  ]
+ },
+ {
+  "id": "qianlong-southern-tour",
+  "era": "qing",
+  "start": 1751,
+  "end": 1751,
+  "path": true,
+  "title": "Qianlong's first southern tour",
+  "title_zh": "乾隆南巡",
+  "summary": "Following his grandfather Kangxi, the Qianlong emperor travels down the Grand Canal to Hangzhou, inspecting river works and courting the south.",
+  "summary_zh": "乾隆帝效仿祖父康熙，沿大运河南下杭州，视察河工，笼络江南士民。",
+  "steps": [
+   {
+    "year": 1751,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 5.0,
+    "text": "January 1751: the Qianlong emperor sets out from Beijing with the empress dowager on his first southern tour, modelled on his grandfather Kangxi's six tours. The stated aims: river works and the people's welfare.",
+    "text_zh": "1751年正月，乾隆帝奉皇太后从北京出发，开始第一次南巡。他效仿祖父康熙的六次南巡，名义上是视察河工、了解民情。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     117.0,
+     36.67
+    ],
+    "zoom": 5.6,
+    "text": "1751: the procession passes through Zhili into Shandong, via Dezhou and Jinan. Qianlong remits taxes in the places he passes through as a show of imperial favour.",
+    "text_zh": "1751年，南巡队伍经直隶进入山东，经过德州、济南南下。乾隆下令减免沿途所经地方的钱粮，以示恩惠。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     119.02,
+     33.6
+    ],
+    "zoom": 6.0,
+    "text": "1751: the imperial barges reach Qingkou, where the Yellow River, the Huai and the Grand Canal meet. Qianlong inspects the Gaojia dike; keeping the rivers tamed and the canal open is the core of every tour.",
+    "text_zh": "1751年，御舟到达黄河、淮河和运河交汇的清口。乾隆亲自察看高家堰等堤防，治理黄河、保障漕运是他历次南巡最重要的事务。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     119.43,
+     32.39
+    ],
+    "zoom": 6.2,
+    "text": "1751: at Yangzhou the rich salt merchants of the Huai region compete to build gardens and decorated pavilions for the emperor, and the city's garden culture flourishes as never before.",
+    "text_zh": "1751年，乾隆来到扬州。富甲天下的两淮盐商争相修建园林、搭设彩棚迎驾，扬州园林由此更加兴盛。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     120.62,
+     31.3
+    ],
+    "zoom": 6.2,
+    "text": "1751: he reaches prosperous Suzhou. A few years later the court painter Xu Yang paints the long scroll Prosperous Suzhou and a set of scrolls of the southern tour, records of the region's wealth.",
+    "text_zh": "1751年，他到达繁华的苏州。几年后宫廷画家徐扬绘成《姑苏繁华图》，又画《乾隆南巡图》，描绘了这一时期江南的富庶。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     120.15,
+     30.25
+    ],
+    "zoom": 6.2,
+    "text": "1751: in Hangzhou he tours West Lake and leaves poems carved in stone. On later tours he goes to Haining to inspect the Qiantang seawall and orders earthen dikes rebuilt in stone.",
+    "text_zh": "1751年，乾隆抵达杭州，游览西湖并题诗刻石。后来几次南巡他还到海宁察看钱塘江海塘，下令把土塘改建为坚固的鱼鳞石塘。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     118.79,
+     32.06
+    ],
+    "zoom": 6.0,
+    "text": "1751: on the way back he stops at Jiangning (Nanjing), pays respects at the tomb of the Ming founder and reviews the Banner garrison, courting southern scholars while showing his strength.",
+    "text_zh": "1751年，回程途中他到达江宁（今南京），祭拜明孝陵，又检阅驻防八旗，以此笼络江南士人、展示武力。"
+   },
+   {
+    "year": 1751,
+    "at": [
+     116.4,
+     39.91
+    ],
+    "zoom": 4.6,
+    "text": "Summer 1751: Qianlong returns to Beijing. He will tour the south five more times, the last in 1784. The six tours cost enormous sums, and in old age he reportedly admitted they had burdened the people.",
+    "text_zh": "1751年夏，乾隆回到北京。此后他又五次南巡，最后一次在1784年。六次南巡耗费巨大，据说他晚年也承认劳民伤财。"
+   }
+  ]
+ },
+ {
   "id": "qianlong-ten-campaigns",
   "era": "qing",
   "start": 1755,
@@ -5750,6 +9947,303 @@
   ]
  },
  {
+  "id": "self-strengthening",
+  "era": "qing",
+  "start": 1861,
+  "end": 1890,
+  "path": false,
+  "title": "The Self-Strengthening Movement",
+  "title_zh": "洋务运动",
+  "summary": "After the Opium Wars and the Taiping war, Qing officials build arsenals, shipyards, mines and a navy on the Western model.",
+  "summary_zh": "两次鸦片战争和太平天国战争之后，清朝官员仿效西方兴办军工、船厂、矿务和海军。",
+  "steps": [
+   {
+    "year": 1861,
+    "at": [
+     117.05,
+     30.5
+    ],
+    "zoom": 5.6,
+    "event": "self-strengthening",
+    "text": "1861: after taking Anqing from the Taiping, Zeng Guofan opens an arsenal there to copy Western guns. Xu Shou and Hua Hengfang work on steam engines and later build the Huanghu, China's first home-made steamship.",
+    "text_zh": "1861年，曾国藩攻下安庆后设立内军械所，试造洋枪洋炮。徐寿、华蘅芳等在这里试制轮船，后来造成中国第一艘自制的蒸汽轮船“黄鹄号”。"
+   },
+   {
+    "year": 1865,
+    "at": [
+     121.47,
+     31.23
+    ],
+    "zoom": 6.0,
+    "event": "jiangnan-arsenal",
+    "text": "1865: Zeng and Li Hongzhang found the Jiangnan Arsenal in Shanghai, the largest in the country, making guns, ammunition and steamships. Its translation bureau puts many Western science books into Chinese.",
+    "text_zh": "1865年，曾国藩、李鸿章在上海创办江南制造总局，制造枪炮弹药和轮船，是当时国内最大的军工厂。附设的翻译馆译出大批西方科技书籍。"
+   },
+   {
+    "year": 1866,
+    "at": [
+     119.45,
+     26.0
+    ],
+    "zoom": 6.0,
+    "text": "1866: Zuo Zongtang founds the Fuzhou Navy Yard at Mawei, run by Shen Baozhen. Its naval school trains a generation of officers and thinkers, including Yan Fu and Deng Shichang.",
+    "text_zh": "1866年，左宗棠奏请在福州马尾创办船政局，由沈葆桢主持，建造军舰。附设的船政学堂培养了严复、邓世昌等一批近代海军人才。"
+   },
+   {
+    "year": 1867,
+    "at": [
+     117.2,
+     39.13
+    ],
+    "zoom": 6.0,
+    "text": "1867: the Tianjin Machine Works is founded and later enlarged by Li Hongzhang. It makes gunpowder and ammunition for the Huai Army in the north and later for the Beiyang fleet.",
+    "text_zh": "1867年，天津机器局创办，后由李鸿章扩建，主要制造火药和枪炮弹药，供应北方的淮军和后来的北洋海军。"
+   },
+   {
+    "year": 1872,
+    "at": [
+     121.47,
+     31.23
+    ],
+    "zoom": 5.2,
+    "event": "china-merchants-steam",
+    "text": "1872: Li Hongzhang sets up the China Merchants Steam Navigation Company in Shanghai, merchant-run under official supervision, to compete with foreign lines on the Yangzi and the coast. The movement now seeks wealth as well as arms.",
+    "text_zh": "1872年，李鸿章在上海创办轮船招商局，采用官督商办的方式，与外国轮船公司争夺长江和沿海航运，洋务从军事转向求富。"
+   },
+   {
+    "year": 1878,
+    "at": [
+     118.18,
+     39.63
+    ],
+    "zoom": 6.2,
+    "text": "1878: Tong King-sing opens the Kaiping mines at Tangshan with modern machinery. The Tangxu railway, built in 1881 to haul the coal, is the first working railway China built for itself.",
+    "text_zh": "1878年，唐廷枢在河北唐山创办开平矿务局，用机器采煤。为运煤修建的唐胥铁路于1881年通车，是中国自建的第一条实用铁路。"
+   },
+   {
+    "year": 1888,
+    "at": [
+     122.18,
+     37.5
+    ],
+    "zoom": 5.8,
+    "event": "beiyang-fleet",
+    "text": "1888: the Beiyang fleet is formally established at Weihaiwei, based on Liugong island. With German-built ironclads such as Dingyuan and Zhenyuan, it is called the strongest navy in Asia.",
+    "text_zh": "1888年，北洋水师在威海卫正式成军，以刘公岛为基地，拥有从德国购买的定远、镇远等铁甲舰，号称亚洲第一。"
+   },
+   {
+    "year": 1890,
+    "at": [
+     114.27,
+     30.56
+    ],
+    "zoom": 5.4,
+    "text": "1890: Zhang Zhidong, governor-general at Wuchang, begins the Hanyang Iron Works, Asia's first large modern steel plant. Yet most of these ventures stayed under official control and achieved less than hoped.",
+    "text_zh": "1890年，湖广总督张之洞在汉阳开工兴建汉阳铁厂，几年后投产，是亚洲最早的大型近代钢铁企业。但洋务各业多由官府控制，成效有限。"
+   }
+  ]
+ },
+ {
+  "id": "xinjiang-reconquest",
+  "era": "qing",
+  "start": 1865,
+  "end": 1884,
+  "path": false,
+  "title": "Zuo Zongtang retakes Xinjiang",
+  "title_zh": "左宗棠收复新疆",
+  "summary": "After Yakub Beg and Russia carve up Xinjiang, Zuo Zongtang's army marches out of Gansu and wins it back, and Xinjiang becomes a province.",
+  "summary_zh": "阿古柏入侵、沙俄占据伊犁之后，左宗棠率军出关收复新疆，新疆随后建省。",
+  "steps": [
+   {
+    "year": 1865,
+    "at": [
+     75.99,
+     39.47
+    ],
+    "zoom": 5.2,
+    "text": "1865: amid uprisings across Xinjiang, Yakub Beg, an officer from the Khanate of Kokand, enters Kashgar. Within a few years his regime holds the southern oases and takes Urumqi.",
+    "text_zh": "1865年，趁新疆各地反清起事之机，中亚浩罕汗国的军官阿古柏进入喀什噶尔，逐步建立政权，几年间占据南疆，又攻占乌鲁木齐。"
+   },
+   {
+    "year": 1871,
+    "at": [
+     81.3,
+     43.9
+    ],
+    "zoom": 5.6,
+    "text": "1871: Russia occupies the Ili valley, claiming to hold it for the Qing until order returns. Russian officials begin governing it, and now northern Xinjiang is in foreign hands too.",
+    "text_zh": "1871年，沙俄以“代为收复”为名出兵占领伊犁地区，并在当地设官收税，新疆北部也落入外国之手。"
+   },
+   {
+    "year": 1875,
+    "at": [
+     103.83,
+     36.06
+    ],
+    "zoom": 5.0,
+    "text": "1875: at court, coastal defence and frontier defence compete for money. Zuo Zongtang argues Xinjiang must be saved and is put in charge, raising grain, funds and arms at Lanzhou.",
+    "text_zh": "1875年，朝中爆发“海防”与“塞防”之争。左宗棠力主收复新疆，被任命为钦差大臣督办新疆军务，在兰州筹粮筹饷，设机器局造枪炮。"
+   },
+   {
+    "year": 1876,
+    "at": [
+     98.5,
+     39.74
+    ],
+    "zoom": 5.6,
+    "text": "1876: Zuo moves his headquarters to Suzhou (Jiuquan) with a plan to take the north first and to prepare slowly but strike fast. Liu Jintang leads the main army out through Jiayu Pass.",
+    "text_zh": "1876年，左宗棠移驻肃州坐镇指挥，定下“先北后南、缓进急战”的方略。刘锦棠率湘军主力出嘉峪关西进。"
+   },
+   {
+    "year": 1876,
+    "at": [
+     87.62,
+     43.82
+    ],
+    "zoom": 6.0,
+    "event": "reconquest-of-xinjiang",
+    "text": "Summer 1876: Liu Jintang storms the fort of Gumudi and then retakes Urumqi and the nearby towns. Apart from Ili, the land north of the Tianshan is back under Qing control.",
+    "text_zh": "1876年夏，刘锦棠攻克古牧地，随即收复乌鲁木齐、昌吉等城，天山北路除伊犁外大体平定。"
+   },
+   {
+    "year": 1877,
+    "at": [
+     88.31,
+     43.36
+    ],
+    "zoom": 6.2,
+    "text": "Spring 1877: Qing troops take Dabancheng, the pass through the Tianshan, and then Turpan, opening the way south. Soon after, Yakub Beg dies suddenly at Korla and his state falls apart.",
+    "text_zh": "1877年春，清军攻克天山门户达坂城，又收复吐鲁番，打开了南疆大门。不久阿古柏在库尔勒突然死去，其政权迅速瓦解。"
+   },
+   {
+    "year": 1878,
+    "at": [
+     75.99,
+     39.47
+    ],
+    "zoom": 6.0,
+    "text": "Early 1878: Liu Jintang retakes Kashgar, Khotan and the other southern oases. Yakub Beg's state is gone and all of Xinjiang except Ili is recovered.",
+    "text_zh": "1878年初，刘锦棠收复喀什噶尔、和田等南疆城市，阿古柏政权彻底覆灭，新疆除伊犁外全部收复。"
+   },
+   {
+    "year": 1881,
+    "at": [
+     81.3,
+     43.9
+    ],
+    "zoom": 5.8,
+    "text": "1881: rejecting an earlier ruinous treaty, Zeng Jize renegotiates in St Petersburg and recovers most of Ili. Zuo had already moved to Hami, famously bringing his own coffin to show his resolve.",
+    "text_zh": "1881年，崇厚此前签订的丧权条约被否决，曾纪泽赴俄重新谈判，签订《中俄伊犁条约》，收回伊犁大部分地区。此前左宗棠已带着棺材出关到哈密，以示决心。"
+   },
+   {
+    "year": 1884,
+    "at": [
+     87.62,
+     43.82
+    ],
+    "zoom": 4.6,
+    "event": "xinjiang-province",
+    "text": "1884: Xinjiang becomes a province with its capital at Dihua (Urumqi) and Liu Jintang as first governor. It is now run with the same prefectures and counties as the rest of China.",
+    "text_zh": "1884年，清朝在新疆设省，以迪化（今乌鲁木齐）为省会，刘锦棠任首任巡抚，新疆从此实行与内地相同的郡县制度。"
+   }
+  ]
+ },
+ {
+  "id": "sino-french-war",
+  "era": "qing",
+  "start": 1883,
+  "end": 1885,
+  "path": false,
+  "title": "The Sino-French War",
+  "title_zh": "中法战争",
+  "summary": "France and the Qing fight over Vietnam on land and sea; the Qing wins at Zhennan Pass yet signs away its claim.",
+  "summary_zh": "中法两国为争夺越南在陆上和海上交战，清军取得镇南关大捷，最后却签约承认法国对越南的控制。",
+  "steps": [
+   {
+    "year": 1883,
+    "at": [
+     105.5,
+     21.14
+    ],
+    "zoom": 5.6,
+    "text": "1883: France forces Vietnam to accept a protectorate and attacks Liu Yongfu's Black Flag army and Qing troops on the Red River. In December it takes Son Tay and the war begins.",
+    "text_zh": "1883年，法国迫使越南接受保护，又进攻驻守红河的刘永福黑旗军和清军。年底法军攻陷山西，中法战争爆发。"
+   },
+   {
+    "year": 1884,
+    "at": [
+     106.07,
+     21.18
+    ],
+    "zoom": 5.8,
+    "text": "March 1884: the Qing garrison at Bac Ninh collapses almost without a fight. In Beijing the empress dowager Cixi uses the defeat to dismiss Prince Gong and the whole Grand Council.",
+    "text_zh": "1884年3月，驻守北宁的清军几乎不战而溃。消息传到北京，慈禧太后借机罢免恭亲王奕訢等全班军机大臣。"
+   },
+   {
+    "year": 1884,
+    "at": [
+     119.45,
+     26.0
+    ],
+    "zoom": 6.2,
+    "event": "battle-fuzhou",
+    "text": "August 1884: Admiral Courbet's squadron opens fire at Mawei near Fuzhou. In about half an hour the Fujian fleet is nearly destroyed and the navy yard is shelled.",
+    "text_zh": "1884年8月，孤拔率法国舰队在福州马尾突然开火，福建水师在半小时内几乎全军覆没，马尾船厂也遭炮击。"
+   },
+   {
+    "year": 1884,
+    "at": [
+     121.6,
+     25.15
+    ],
+    "zoom": 6.0,
+    "text": "1884: the French attack northern Taiwan. Liu Mingchuan gives up Keelung to concentrate his forces and in October beats off a landing at Tamsui. The next year Taiwan becomes a province.",
+    "text_zh": "1884年，法军进攻台湾北部。督办台湾军务的刘铭传弃守基隆，集中兵力，10月在淡水（沪尾）击退登陆法军。次年台湾建省。"
+   },
+   {
+    "year": 1885,
+    "at": [
+     121.72,
+     29.95
+    ],
+    "zoom": 6.0,
+    "text": "March 1885: the French squadron attacks the mouth of the Yong river at Zhenhai in Zhejiang and is driven off by shore batteries. In June Courbet dies of illness in the Penghu islands.",
+    "text_zh": "1885年3月，法国舰队进犯浙江镇海口，守军凭借炮台击退法舰。同年6月，法军统帅孤拔在澎湖病死。"
+   },
+   {
+    "year": 1885,
+    "at": [
+     106.76,
+     22.11
+    ],
+    "zoom": 6.2,
+    "event": "battle-of-zhennan-pass",
+    "text": "March 1885: the veteran Feng Zicai, nearly seventy, holds a long wall at Zhennan Pass and leads his men in hand-to-hand fighting. The French are routed and the land war turns.",
+    "text_zh": "1885年3月，年近七十的老将冯子材在镇南关筑起长墙固守，率部与法军肉搏，大败法军，扭转了陆上战局。"
+   },
+   {
+    "year": 1885,
+    "at": [
+     106.76,
+     21.85
+    ],
+    "zoom": 6.0,
+    "text": "1885: Qing troops follow up and retake Lang Son, a key town in northern Vietnam, as the French fall back. When the news reaches Paris, Jules Ferry's government falls.",
+    "text_zh": "1885年，清军乘胜追击，收复越南北部重镇谅山，法军全线后撤。消息传到巴黎，茹费理内阁因此倒台。"
+   },
+   {
+    "year": 1885,
+    "at": [
+     117.2,
+     39.13
+    ],
+    "zoom": 5.0,
+    "text": "June 1885: Li Hongzhang signs a treaty at Tianjin recognising the French protectorate over Vietnam and opening the border to trade. Critics said China had lost a war it had not lost.",
+    "text_zh": "1885年6月，李鸿章与法国代表在天津签订《中法新约》，承认法国对越南的保护，开放中越边境通商。清朝在军事占优时求和，被时人讥为不败而败。"
+   }
+  ]
+ },
+ {
   "id": "jiawu-to-xinhai",
   "era": "qing",
   "start": 1894,
@@ -5858,6 +10352,115 @@
     "event": "abdication",
     "text": "12 February 1912: Under pressure from Yuan Shikai, the child emperor Puyi abdicates. The Qing dynasty ends, and with it more than two thousand years of imperial rule.",
     "text_zh": "1912年2月12日，在袁世凯逼迫下，宣统帝溥仪退位，清朝灭亡，延续两千多年的帝制就此结束。"
+   }
+  ]
+ },
+ {
+  "id": "xinhai-1911",
+  "era": "qing",
+  "start": 1895,
+  "end": 1912,
+  "path": false,
+  "title": "The 1911 Revolution",
+  "title_zh": "辛亥革命",
+  "summary": "From failed plots in Guangzhou to the Wuchang rising, revolutionaries bring down the Qing within four months.",
+  "summary_zh": "革命党人从广州的屡次失败起义到武昌首义，短短四个月间推翻了清朝。",
+  "steps": [
+   {
+    "year": 1895,
+    "at": [
+     113.26,
+     23.13
+    ],
+    "zoom": 5.6,
+    "text": "1895: a year after founding the Revive China Society in Honolulu, Sun Yat-sen plans a rising in Guangzhou. The plot leaks, Lu Haodong is executed and Sun flees abroad.",
+    "text_zh": "1895年，孙中山前一年在檀香山创立兴中会后，策划在广州起义。因走漏消息而失败，陆皓东被捕遇害，孙中山流亡海外。"
+   },
+   {
+    "year": 1905,
+    "at": [
+     139.69,
+     35.68
+    ],
+    "zoom": 5.4,
+    "event": "tongmenghui",
+    "text": "1905: in Tokyo, Sun Yat-sen, Huang Xing and others merge several groups into the Tongmenghui. Its program: expel the Manchus, restore China, found a republic and equalise land rights.",
+    "text_zh": "1905年，孙中山、黄兴等在日本东京联合兴中会、华兴会等团体，成立中国同盟会，提出“驱除鞑虏，恢复中华，创立民国，平均地权”的纲领。"
+   },
+   {
+    "year": 1911,
+    "at": [
+     113.26,
+     23.13
+    ],
+    "zoom": 6.4,
+    "event": "huanghuagang-uprising",
+    "text": "April 1911: Huang Xing leads a suicide squad against the governor-general's office in Guangzhou and is beaten. Seventy-two of the dead are buried at Huanghuagang, and the defeat fires up the movement.",
+    "text_zh": "1911年4月，黄兴率敢死队攻打广州两广总督衙门，激战后失败。事后收殓的七十二位烈士葬在黄花岗，革命声势反而大振。"
+   },
+   {
+    "year": 1911,
+    "at": [
+     104.06,
+     30.66
+    ],
+    "zoom": 5.8,
+    "event": "railway-protection",
+    "text": "May 1911: the court nationalises the privately funded Sichuan railway to pledge it for foreign loans. Sichuan rises in protest; after a massacre in Chengdu in September, Hubei's New Army is sent in.",
+    "text_zh": "1911年5月，清廷宣布铁路国有，把民间集资的川汉铁路收回抵押借款，四川各界组织保路同志会。9月成都发生血案，清廷调湖北新军入川镇压。"
+   },
+   {
+    "year": 1911,
+    "at": [
+     114.3,
+     30.55
+    ],
+    "zoom": 6.2,
+    "event": "wuchang",
+    "text": "October 1911: a bomb goes off by accident in a Hankou safehouse and the members' list is seized. On the night of the 10th the engineers of the Wuchang New Army rise early, take Wuchang, then Hanyang and Hankou.",
+    "text_zh": "1911年10月，革命党人在汉口制造炸弹时意外爆炸，名册落入官府手中。10日晚武昌新军工程营被迫提前起义，次日占领武昌，汉阳、汉口随即光复。"
+   },
+   {
+    "year": 1911,
+    "at": [
+     111.0,
+     31.0
+    ],
+    "zoom": 4.6,
+    "text": "22 October 1911: Changsha in Hunan and Xi'an in Shaanxi declare independence on the same day. Jiangxi, Shanxi, Yunnan, Guizhou and others follow, and Qing rule crumbles.",
+    "text_zh": "1911年10月22日，湖南长沙和陕西西安同一天宣布独立。此后江西、山西、云南、贵州等省接连响应，清朝的统治迅速瓦解。"
+   },
+   {
+    "year": 1911,
+    "at": [
+     121.47,
+     31.23
+    ],
+    "zoom": 6.2,
+    "text": "Early November 1911: Chen Qimei's men seize Shanghai, and Jiangsu and Zhejiang declare for the revolution. The rich southeast is now on the revolutionary side.",
+    "text_zh": "1911年11月初，陈其美等在上海发动起义，光复上海，随后江苏、浙江也宣布独立，东南财富之区转向革命。"
+   },
+   {
+    "year": 1912,
+    "at": [
+     118.79,
+     32.06
+    ],
+    "zoom": 6.0,
+    "event": "roc-founded",
+    "text": "1 January 1912: Sun Yat-sen takes office as provisional president in Nanjing, which Jiangsu and Zhejiang forces had captured in early December. Delegates of seventeen provinces had elected him.",
+    "text_zh": "1912年1月1日，孙中山在南京就任临时大总统。此前江浙联军已于12月初攻克南京，十七省代表选举孙中山，南京成为民国首都。"
+   },
+   {
+    "year": 1912,
+    "at": [
+     116.39,
+     39.92
+    ],
+    "zoom": 4.4,
+    "event": "abdication",
+    "text": "12 February 1912: after north-south talks, the court accepts Yuan Shikai's terms of favourable treatment and abdicates. Sun resigns the next day, and Yuan becomes provisional president in Beijing.",
+    "text_zh": "1912年2月12日，经南北议和，清廷在袁世凯安排下接受优待条件，宣布退位。次日孙中山辞职，袁世凯随后在北京就任临时大总统。"
    }
   ]
  }
