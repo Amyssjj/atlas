@@ -42,8 +42,10 @@ for e in json.load(open(os.path.join(ROOT, "data/events.json"))):
     pg = pages.get(src.get(e.get("source")), {})
     wd, text = pg.get("wd", {}), pg.get("extract", "")
     circa = bool(e.get("circa"))
-    own = {k: wd[k] for k in ("P585", "P580", "P571") if k in wd}  # dates of the thing itself
+    own = {k: wd[k] for k in ("P585", "P580") if k in wd}  # dates of the event itself
     ends = wd.get("P582", []) + wd.get("P576", [])
+    # A source is often the article on a state or place: its founding and end years can confirm a year, never contradict it.
+    if not own and near(e["year"], wd.get("P571", []) + ends, circa): own = {"P571": wd["P571"]} if "P571" in wd else {"P576": ends}
     r = {"kind": "event", "key": e["id"], "id": e["id"], "year": e["year"], "end": e.get("endYear"), "title": e["title"],
          "page": src.get(e.get("source")), "wd": {k: v for k, v in wd.items() if k in ("P585", "P580", "P582", "P571", "P576")}}
     if own:
@@ -86,8 +88,6 @@ for f in sorted(glob.glob(os.path.join(ROOT, "data/layers/*.json"))):
                 else: checks.append("none")
             r["status"] = "mismatch" if "bad" in checks else "ok" if checks and "none" not in checks else "none"
             r["why"] = "dates differ from Wikidata" if r["status"] == "mismatch" else ""
-            if wd.get("zh") and p.get("name_zh") and not any(p["name_zh"] in z or z in p["name_zh"] for z in wd["zh"]):
-                r["zh_differs"] = True
             if r["status"] != "ok": r["extract"] = text[:900]
             report.append(r)
         for polity, rs in (L.get("rulers") or {}).items():
@@ -118,4 +118,4 @@ for f in sorted(glob.glob(os.path.join(ROOT, "data/layers/*.json"))):
 json.dump(report, open(sys.argv[2], "w"), ensure_ascii=False, indent=0)
 from collections import Counter
 print(Counter((r["kind"], r["status"]) for r in report))
-print("far places", sum(1 for r in report if r.get("far")), "zh names differ", sum(1 for r in report if r.get("zh_differs")))
+print("far places", sum(1 for r in report if r.get("far")))
