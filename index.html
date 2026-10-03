@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=71">
+<link rel="stylesheet" href="style.css?v=72">
 </head>
 <body>
 <div id="app">
@@ -53,6 +53,8 @@
       <div class="lg"><span data-i18n="g_move">Travel</span>
         <button class="chip layer" id="l-roads" aria-pressed="true" data-i18n="roads">Roads</button>
         <button class="chip layer" id="l-routes" aria-pressed="true" data-i18n="routes">Routes</button>
+        <button class="chip layer" id="l-exchange" aria-pressed="true" data-i18n="exchange">Exchange</button>
+        <button class="chip layer" id="l-spread" aria-pressed="true" data-i18n="spread">Spread</button>
       </div>
       <div class="lg"><span data-i18n="g_cul">Culture</span>
         <button class="chip layer" id="l-people" aria-pressed="true" data-i18n="people_l">People</button>
@@ -85,6 +87,7 @@
         <button class="tab" id="tab-events" role="tab" aria-selected="true" data-i18n="events">Events</button>
         <button class="tab" id="tab-rulers" role="tab" aria-selected="false" data-i18n="rulers">Rulers</button>
         <button class="tab" id="tab-people" role="tab" aria-selected="false" data-i18n="people_l">People</button>
+        <button class="tab" id="tab-world" role="tab" aria-selected="false" data-i18n="world_t">World</button>
       </div>
       <span id="ev-count"></span>
       <button class="chip ledger-toggle" id="ledger-toggle" aria-expanded="true">Hide</button>
@@ -94,6 +97,7 @@
     <div class="rulers" id="rulers" hidden></div>
     <div class="rulers" id="people" hidden></div>
     <div class="rulers tour-tab" id="tour-tab" hidden></div>
+    <div class="rulers world-tab" id="world" hidden></div>
     <article class="story" id="story" hidden></article>
     <p class="note" data-i18n="note">Borders are rough snapshots from the open historical-basemaps dataset, with some hand-drawn approximations. Terrain, coastlines and rivers are modern.</p>
   </aside>
@@ -120,6 +124,6 @@
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="app.js?v=71"></script>
+<script src="app.js?v=72"></script>
 </body>
 </html>
