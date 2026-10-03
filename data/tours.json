@@ -21943,5 +21943,857 @@
     "text_zh": "1945年，原子弹摧毁广岛和长崎，8月15日天皇宣布日本投降。"
    }
   ]
+ },
+ {
+  "id": "kr-south-korea-rise",
+  "region": "korea",
+  "era": "kr-divided",
+  "also": [],
+  "start": 1953,
+  "end": 2024,
+  "path": false,
+  "title": "South Korea: from ruins to democracy",
+  "title_zh": "韩国：从废墟到民主",
+  "summary": "After the Korean War, South Korea passes through student revolt, military rule and a fast industrial boom, then wins democracy and hosts the world.",
+  "summary_zh": "朝鲜战争之后，韩国经历学生革命、军人统治和高速工业化，最终赢得民主，走向世界舞台。",
+  "steps": [
+   {
+    "year": 1960,
+    "at": [
+     126.98,
+     37.57
+    ],
+    "zoom": 6.5,
+    "event": "kr-april-revolution",
+    "text": "1960: Students in Seoul rise against a rigged election. The April Revolution forces President Syngman Rhee to resign after twelve years in power.",
+    "text_zh": "1960年，汉城学生抗议选举舞弊，四一九革命迫使执政十二年的李承晚总统下台。"
+   },
+   {
+    "year": 1961,
+    "at": [
+     126.98,
+     37.57
+    ],
+    "zoom": 6.5,
+    "event": "kr-may-16",
+    "text": "1961: Major General Park Chung-hee seizes power in the May 16 coup. He will rule South Korea for eighteen years.",
+    "text_zh": "1961年，朴正熙少将发动五一六军事政变夺取政权，此后统治韩国长达十八年。"
+   },
+   {
+    "year": 1962,
+    "at": [
+     129.31,
+     35.54
+    ],
+    "zoom": 6.0,
+    "event": "kr-han-miracle",
+    "text": "1962: The first five-year plan launches export-led industry, and Ulsan grows from a fishing town into a centre of refining, shipbuilding and cars. This is the start of the Miracle on the Han River.",
+    "text_zh": "1962年，第一个五年经济计划启动出口导向的工业化，蔚山从渔村发展为炼油、造船和汽车工业中心，“汉江奇迹”由此开始。"
+   },
+   {
+    "year": 1970,
+    "at": [
+     128.73,
+     35.65
+    ],
+    "zoom": 6.0,
+    "event": "kr-saemaul",
+    "text": "1970: Park launches the Saemaul (New Village) Movement, in which villagers build roads, bridges and new roofs with state cement and steel.",
+    "text_zh": "1970年，朴正熙发起新村运动，农民利用政府提供的水泥和钢材修路架桥、翻新房屋。"
+   },
+   {
+    "year": 1979,
+    "at": [
+     126.98,
+     37.57
+    ],
+    "zoom": 6.5,
+    "event": "kr-park-assassinated",
+    "text": "1979: Park is shot dead at a dinner by his own intelligence chief, Kim Jae-gyu, ending his long rule.",
+    "text_zh": "1979年，朴正熙在晚宴上被中央情报部部长金载圭枪杀，长期统治就此结束。"
+   },
+   {
+    "year": 1980,
+    "at": [
+     126.92,
+     35.15
+    ],
+    "zoom": 6.0,
+    "event": "kr-gwangju",
+    "text": "1980: General Chun Doo-hwan extends martial law, and the people of Gwangju rise against it. Troops crush the uprising and hundreds die.",
+    "text_zh": "1980年，全斗焕将军扩大戒严，光州市民奋起反抗，军队血腥镇压，数百人遇难。"
+   },
+   {
+    "year": 1987,
+    "at": [
+     126.98,
+     37.57
+    ],
+    "zoom": 6.5,
+    "event": "kr-june-struggle",
+    "text": "1987: Weeks of nationwide protest in the June Democratic Struggle force the government to accept direct presidential elections.",
+    "text_zh": "1987年，席卷全国的六月民主运动迫使政府接受总统直选，韩国走上民主化道路。"
+   },
+   {
+    "year": 1988,
+    "at": [
+     127.07,
+     37.52
+    ],
+    "zoom": 6.5,
+    "event": "kr-seoul-olympics",
+    "text": "1988: Seoul hosts the Summer Olympics, showing the world a country transformed within one generation.",
+    "text_zh": "1988年，汉城举办夏季奥运会，向世界展示了一代人之间脱胎换骨的韩国。"
+   },
+   {
+    "year": 2024,
+    "at": [
+     126.91,
+     37.53
+    ],
+    "zoom": 6.5,
+    "event": "kr-martial-law-2024",
+    "text": "2024: President Yoon Suk Yeol declares martial law; the National Assembly votes it down within hours. He is impeached, and removed from office in 2025.",
+    "text_zh": "2024年，尹锡悦总统宣布紧急戒严，国会在数小时内表决解除。尹锡悦随后遭弹劾，并于2025年被罢免。"
+   }
+  ]
+ },
+ {
+  "id": "kr-north-korea-peninsula",
+  "region": "korea",
+  "era": "kr-divided",
+  "also": [],
+  "start": 1953,
+  "end": 2018,
+  "path": false,
+  "title": "North Korea and the divided peninsula",
+  "title_zh": "朝鲜与分裂的半岛",
+  "summary": "From the 1953 armistice, North Korea builds a closed state around Juche and the Kim family, while the two Koreas swing between hostility and talks.",
+  "summary_zh": "1953年停战后，朝鲜围绕主体思想和金氏家族建立起封闭的国家，南北关系则在对立与对话之间反复摇摆。",
+  "steps": [
+   {
+    "year": 1953,
+    "at": [
+     126.68,
+     37.96
+    ],
+    "zoom": 6.5,
+    "event": "kr-armistice",
+    "text": "1953: The armistice signed at Panmunjom stops the Korean War and creates the Demilitarized Zone. No peace treaty has ever followed.",
+    "text_zh": "1953年，交战双方在板门店签订停战协定，朝鲜战争停火并划定非军事区，此后始终没有签订和平条约。"
+   },
+   {
+    "year": 1955,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 6.0,
+    "event": "kr-juche",
+    "text": "1955: In Pyongyang, Kim Il-sung first speaks of Juche, self-reliance, which grows into the official ideology of North Korea.",
+    "text_zh": "1955年，金日成在平壤首次提出“主体”思想，强调自主自立，后来成为朝鲜的官方指导思想。"
+   },
+   {
+    "year": 1972,
+    "at": [
+     126.0,
+     38.5
+    ],
+    "zoom": 5.0,
+    "text": "1972: Seoul and Pyongyang issue the July 4 Joint Statement, agreeing that unification should be independent and peaceful. The thaw soon fades.",
+    "text_zh": "1972年，汉城与平壤发表《七四南北共同声明》，同意以自主、和平的方式实现统一，但缓和很快消退。"
+   },
+   {
+    "year": 1994,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 6.0,
+    "event": "kr-kim-il-sung-dies",
+    "text": "1994: Kim Il-sung dies and his son Kim Jong-il takes over. Floods and the loss of Soviet aid bring a famine that kills hundreds of thousands.",
+    "text_zh": "1994年，金日成逝世，其子金正日接掌权力。洪灾和苏联援助的断绝引发大饥荒，数十万人死亡。"
+   },
+   {
+    "year": 2000,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 6.0,
+    "event": "kr-summit-2000",
+    "text": "2000: South Korean President Kim Dae-jung flies to Pyongyang for the first inter-Korean summit, the high point of his Sunshine Policy.",
+    "text_zh": "2000年，韩国总统金大中飞赴平壤，与金正日举行首次南北首脑会谈，这是其阳光政策的高峰。"
+   },
+   {
+    "year": 2004,
+    "at": [
+     126.56,
+     37.97
+    ],
+    "zoom": 6.5,
+    "text": "2004: The Kaesong Industrial Complex opens just north of the border, where southern firms employ northern workers. It runs until 2016.",
+    "text_zh": "2004年，开城工业园区在军事分界线北侧投产，韩国企业雇用朝鲜工人生产，园区一直运营到2016年。"
+   },
+   {
+    "year": 2006,
+    "at": [
+     129.08,
+     41.28
+    ],
+    "zoom": 6.0,
+    "event": "kr-nuclear-test",
+    "text": "2006: North Korea sets off its first underground nuclear test at Punggye-ri, and the UN Security Council imposes sanctions.",
+    "text_zh": "2006年，朝鲜在丰溪里进行首次地下核试验，联合国安理会随即对其实施制裁。"
+   },
+   {
+    "year": 2011,
+    "at": [
+     125.75,
+     39.02
+    ],
+    "zoom": 6.0,
+    "text": "2011: Kim Jong-il dies and his young son Kim Jong-un becomes leader, the third generation of the family to rule.",
+    "text_zh": "2011年，金正日去世，其子金正恩接任最高领导人，成为金氏家族的第三代统治者。"
+   },
+   {
+    "year": 2018,
+    "at": [
+     126.68,
+     37.96
+    ],
+    "zoom": 6.5,
+    "event": "kr-panmunjom-2018",
+    "text": "2018: Moon Jae-in and Kim Jong-un meet at Panmunjom and pledge peace and denuclearisation, but talks with the United States stall the next year.",
+    "text_zh": "2018年，文在寅与金正恩在板门店会晤，发表宣言承诺推进半岛和平与无核化，但次年朝美谈判陷入僵局。"
+   }
+  ]
+ },
+ {
+  "id": "jp-postwar-showa",
+  "region": "japan",
+  "era": "jp-showa",
+  "also": [],
+  "start": 1945,
+  "end": 1989,
+  "path": false,
+  "title": "Postwar Japan: occupation to boom",
+  "title_zh": "战后日本：从占领到腾飞",
+  "summary": "Defeated in 1945, Japan is remade under American occupation, adopts a pacifist constitution and grows into the world's second largest economy.",
+  "summary_zh": "1945年战败后，日本在美军占领下进行改造，制定和平宪法，并发展为世界第二大经济体。",
+  "steps": [
+   {
+    "year": 1945,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-occupation",
+    "text": "1945: Allied forces under General MacArthur occupy Japan. They disband the army, break up the zaibatsu and give land to tenant farmers.",
+    "text_zh": "1945年，麦克阿瑟率领的盟军占领日本，解散军队，解散财阀，并把土地分给佃农。"
+   },
+   {
+    "year": 1947,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-constitution-1947",
+    "text": "1947: The new constitution takes effect. The emperor becomes a symbol of the nation, and Article 9 renounces war.",
+    "text_zh": "1947年，日本国宪法施行，天皇成为国家的象征，第九条宣布放弃战争。"
+   },
+   {
+    "year": 1951,
+    "at": [
+     -122.42,
+     37.78
+    ],
+    "zoom": 5.0,
+    "event": "jp-san-francisco",
+    "text": "1951: In San Francisco, Japan signs a peace treaty with 48 nations and a security treaty with the United States; it regains sovereignty in 1952.",
+    "text_zh": "1951年，日本在旧金山与48个国家签订和约，同时与美国签订安保条约，次年恢复主权。"
+   },
+   {
+    "year": 1955,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-economic-miracle",
+    "text": "1955: Rapid growth begins, near 10 percent a year. By 1968 Japan is the second largest economy in the capitalist world.",
+    "text_zh": "1955年，日本进入高速增长期，经济年均增长约10%，到1968年成为资本主义世界第二大经济体。"
+   },
+   {
+    "year": 1956,
+    "at": [
+     130.4,
+     32.21
+    ],
+    "zoom": 6.5,
+    "event": "jp-minamata",
+    "text": "1956: Minamata disease is identified, caused by mercury from a chemical plant, the grimmest cost of the boom.",
+    "text_zh": "1956年，熊本县确认水俣病，病因是化工厂排放的汞污染，这是经济高速增长最惨痛的代价。"
+   },
+   {
+    "year": 1964,
+    "at": [
+     139.71,
+     35.68
+    ],
+    "zoom": 6.5,
+    "event": "jp-tokyo-olympics-1964",
+    "text": "1964: Tokyo hosts Asia's first Olympics, and days earlier the Tokaido Shinkansen, the world's first high speed railway, opens to Osaka.",
+    "text_zh": "1964年，东京举办亚洲首次奥运会，开幕前几天，世界第一条高速铁路东海道新干线通车至大阪。"
+   },
+   {
+    "year": 1968,
+    "at": [
+     139.55,
+     35.32
+    ],
+    "zoom": 6.5,
+    "event": "jp-kawabata-nobel",
+    "text": "1968: Kawabata Yasunari, author of Snow Country, becomes the first Japanese writer to win the Nobel Prize in Literature.",
+    "text_zh": "1968年，《雪国》作者川端康成获得诺贝尔文学奖，是第一位获此奖的日本作家。"
+   },
+   {
+    "year": 1972,
+    "at": [
+     127.68,
+     26.21
+    ],
+    "zoom": 6.0,
+    "event": "jp-okinawa-reversion",
+    "text": "1972: The United States returns Okinawa to Japan, though large American bases stay on the island.",
+    "text_zh": "1972年，美国将冲绳的施政权交还日本，但大量美军基地仍保留在岛上。"
+   },
+   {
+    "year": 1985,
+    "at": [
+     -73.97,
+     40.76
+    ],
+    "zoom": 5.0,
+    "event": "jp-plaza-accord",
+    "text": "1985: At the Plaza Hotel in New York, five finance ministers agree to weaken the dollar. The yen soars, and cheap money at home feeds a bubble in shares and land.",
+    "text_zh": "1985年，五国财长在纽约广场饭店达成协议，促使美元贬值。日元大幅升值，国内的宽松政策催生了股市和地产泡沫。"
+   },
+   {
+    "year": 1989,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "text": "1989: Emperor Hirohito dies after 62 years on the throne, and the Showa era closes as the bubble nears its peak.",
+    "text_zh": "1989年，在位62年的裕仁天皇去世，昭和时代在泡沫经济接近顶峰时落幕。"
+   }
+  ]
+ },
+ {
+  "id": "jp-heisei-reiwa",
+  "region": "japan",
+  "era": "jp-heisei",
+  "also": [
+   "jp-reiwa"
+  ],
+  "start": 1989,
+  "end": 2025,
+  "path": false,
+  "title": "Heisei and Reiwa: Japan after the bubble",
+  "title_zh": "平成与令和：泡沫之后的日本",
+  "summary": "The bubble bursts, disasters strike and governments try reform after reform, as Japan moves from the Heisei era into Reiwa.",
+  "summary_zh": "泡沫破裂，灾害接踵而至，历届政府不断尝试改革，日本从平成时代走入令和时代。",
+  "steps": [
+   {
+    "year": 1991,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-bubble-burst",
+    "text": "1991: After peaking at the end of 1989, share and land prices collapse. Banks are left with bad loans, and the Lost Decade begins.",
+    "text_zh": "1991年，股价和地价在1989年底见顶后暴跌，银行背负大量坏账，日本进入“失去的十年”。"
+   },
+   {
+    "year": 1995,
+    "at": [
+     135.19,
+     34.69
+    ],
+    "zoom": 6.5,
+    "event": "jp-hanshin-earthquake",
+    "text": "1995: The Great Hanshin earthquake devastates Kobe and kills more than 6,400 people, exposing a slow government response.",
+    "text_zh": "1995年，阪神大地震重创神户，6400多人死亡，暴露出政府救灾反应迟缓。"
+   },
+   {
+    "year": 1995,
+    "at": [
+     139.75,
+     35.67
+    ],
+    "zoom": 6.5,
+    "event": "jp-sarin-attack",
+    "text": "1995: Members of the Aum Shinrikyo cult release sarin gas on Tokyo subway trains, killing 14 and injuring thousands.",
+    "text_zh": "1995年，奥姆真理教成员在东京地铁列车上释放沙林毒气，造成14人死亡、数千人受伤。"
+   },
+   {
+    "year": 2001,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-koizumi",
+    "text": "2001: Koizumi Junichiro becomes prime minister and pushes reforms such as postal privatisation; his visits to the Yasukuni Shrine strain ties with China and South Korea.",
+    "text_zh": "2001年，小泉纯一郎出任首相，推行邮政民营化等结构改革，但他参拜靖国神社，使日本与中韩两国关系紧张。"
+   },
+   {
+    "year": 2011,
+    "at": [
+     141.3,
+     38.43
+    ],
+    "zoom": 6.0,
+    "event": "jp-tohoku-earthquake",
+    "text": "2011: On 11 March a magnitude 9.0 earthquake strikes off Tohoku, and its tsunami leaves about 18,000 dead or missing.",
+    "text_zh": "2011年3月11日，东北近海发生9.0级地震，引发的海啸造成约1.8万人死亡或失踪。"
+   },
+   {
+    "year": 2011,
+    "at": [
+     141.03,
+     37.42
+    ],
+    "zoom": 6.5,
+    "event": "jp-fukushima",
+    "text": "2011: The tsunami knocks out cooling at the Fukushima Daiichi nuclear plant; three reactors melt down and more than 100,000 people are evacuated.",
+    "text_zh": "2011年，海啸导致福岛第一核电站冷却系统失灵，三座反应堆堆芯熔毁，十多万居民被迫撤离。"
+   },
+   {
+    "year": 2012,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-abenomics",
+    "text": "2012: Abe Shinzo returns as prime minister with Abenomics, three arrows of monetary easing, spending and reform aimed at ending deflation.",
+    "text_zh": "2012年，安倍晋三再度出任首相，推出货币宽松、财政刺激和结构改革“三支箭”，力图摆脱通货紧缩。"
+   },
+   {
+    "year": 2019,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-reiwa",
+    "text": "2019: Emperor Akihito abdicates, the first living abdication in two centuries. Naruhito takes the throne and the Reiwa era begins.",
+    "text_zh": "2019年，明仁天皇退位，这是两百年来首次天皇生前退位。德仁天皇即位，年号改为令和。"
+   },
+   {
+    "year": 2022,
+    "at": [
+     135.78,
+     34.69
+    ],
+    "zoom": 6.5,
+    "event": "jp-abe-assassination",
+    "text": "2022: Former prime minister Abe Shinzo is shot dead while giving a campaign speech in Nara.",
+    "text_zh": "2022年，前首相安倍晋三在奈良街头发表竞选演讲时遭枪击身亡。"
+   },
+   {
+    "year": 2025,
+    "at": [
+     139.75,
+     35.68
+    ],
+    "zoom": 6.0,
+    "event": "jp-takaichi",
+    "text": "2025: Takaichi Sanae becomes Japan's first woman prime minister after winning the leadership of the Liberal Democratic Party.",
+    "text_zh": "2025年，高市早苗当选自民党总裁后就任首相，成为日本历史上第一位女性首相。"
+   }
+  ]
+ },
+ {
+  "id": "sea-asean-era",
+  "region": "southeast-asia",
+  "era": "sea-asean",
+  "also": [
+   "sea-independence"
+  ],
+  "start": 1967,
+  "end": 2021,
+  "path": false,
+  "title": "Southeast Asia in the ASEAN era",
+  "title_zh": "东盟时代的东南亚",
+  "summary": "From the founding of ASEAN through war in Indochina, market reform, people power and financial crisis, Southeast Asia becomes one of the world's fastest growing regions.",
+  "summary_zh": "从东盟成立，到印度支那战火、市场改革、人民力量和金融危机，东南亚成长为世界上增长最快的地区之一。",
+  "steps": [
+   {
+    "year": 1967,
+    "at": [
+     100.49,
+     13.75
+    ],
+    "zoom": 6.0,
+    "event": "sea-asean-founded",
+    "text": "1967: Indonesia, Malaysia, the Philippines, Singapore and Thailand sign the Bangkok Declaration and found ASEAN.",
+    "text_zh": "1967年，印度尼西亚、马来西亚、菲律宾、新加坡和泰国签署《曼谷宣言》，成立东南亚国家联盟。"
+   },
+   {
+    "year": 1976,
+    "at": [
+     105.85,
+     21.03
+    ],
+    "zoom": 5.5,
+    "event": "sea-vietnam-reunified",
+    "text": "1976: North and South are formally reunited as the Socialist Republic of Vietnam, and Saigon is renamed Ho Chi Minh City.",
+    "text_zh": "1976年，越南南北正式统一为越南社会主义共和国，西贡改名胡志明市。"
+   },
+   {
+    "year": 1979,
+    "at": [
+     104.92,
+     11.56
+    ],
+    "zoom": 6.0,
+    "event": "sea-cambodian-vietnamese-war",
+    "text": "1979: Vietnamese troops take Phnom Penh and drive out the Khmer Rouge, then occupy Cambodia for ten years.",
+    "text_zh": "1979年，越南军队攻占金边，推翻红色高棉，此后占领柬埔寨长达十年。"
+   },
+   {
+    "year": 1986,
+    "at": [
+     121.06,
+     14.59
+    ],
+    "zoom": 6.0,
+    "event": "sea-people-power",
+    "text": "1986: Millions gather peacefully on EDSA in Manila; Ferdinand Marcos flees and Corazon Aquino becomes president.",
+    "text_zh": "1986年，数百万民众在马尼拉乙沙大道和平示威，马科斯出逃，科拉松·阿基诺就任总统。"
+   },
+   {
+    "year": 1986,
+    "at": [
+     105.85,
+     21.03
+    ],
+    "zoom": 5.5,
+    "event": "sea-doi-moi",
+    "text": "1986: Vietnam's Communist Party adopts Doi Moi, opening the economy to markets and foreign investment.",
+    "text_zh": "1986年，越南共产党六大决定实行革新开放，引入市场经济和外国投资。"
+   },
+   {
+    "year": 1997,
+    "at": [
+     100.49,
+     13.75
+    ],
+    "zoom": 5.5,
+    "event": "sea-asian-financial-crisis",
+    "text": "1997: The Thai baht collapses and a financial crisis sweeps through Indonesia, Malaysia and South Korea.",
+    "text_zh": "1997年，泰铢崩溃，金融危机迅速蔓延到印度尼西亚、马来西亚和韩国。"
+   },
+   {
+    "year": 1998,
+    "at": [
+     106.85,
+     -6.2
+    ],
+    "zoom": 6.0,
+    "event": "sea-fall-of-suharto",
+    "text": "1998: Riots and student protests force Suharto to resign after 32 years, and Indonesia turns to democratic reform.",
+    "text_zh": "1998年，骚乱和学生运动迫使执政32年的苏哈托辞职，印度尼西亚进入民主改革时期。"
+   },
+   {
+    "year": 2002,
+    "at": [
+     125.57,
+     -8.56
+    ],
+    "zoom": 6.0,
+    "event": "sea-timor-leste-independence",
+    "text": "2002: After a UN-run referendum and transition, Timor-Leste becomes the first new country of the 21st century.",
+    "text_zh": "2002年，经联合国主持的公投和过渡管理，东帝汶正式独立，成为21世纪第一个新国家。"
+   },
+   {
+    "year": 2020,
+    "at": [
+     105.85,
+     21.03
+    ],
+    "zoom": 4.0,
+    "event": "sea-rcep",
+    "text": "2020: The ten ASEAN states sign RCEP with China, Japan, South Korea, Australia and New Zealand, the largest free trade area in the world.",
+    "text_zh": "2020年，东盟十国与中国、日本、韩国、澳大利亚和新西兰签署《区域全面经济伙伴关系协定》，形成世界最大的自由贸易区。"
+   },
+   {
+    "year": 2021,
+    "at": [
+     96.13,
+     19.75
+    ],
+    "zoom": 6.0,
+    "event": "sea-myanmar-coup-2021",
+    "text": "2021: Myanmar's army detains Aung San Suu Kyi and seizes power, setting off mass protests and civil war.",
+    "text_zh": "2021年，缅甸军方扣押昂山素季等领导人夺取政权，引发大规模抗议和内战。"
+   }
+  ]
+ },
+ {
+  "id": "sa-partition-to-1971",
+  "region": "south-asia",
+  "era": "sa-independent",
+  "also": [],
+  "start": 1947,
+  "end": 1971,
+  "path": false,
+  "title": "Partition to Bangladesh",
+  "title_zh": "从印巴分治到孟加拉国独立",
+  "summary": "Independence splits British India into India and Pakistan; the new states fight over Kashmir, build their republics, and in 1971 Bangladesh is born.",
+  "summary_zh": "独立使英属印度分为印度和巴基斯坦，两国为克什米尔而战，各自建设国家，1971年孟加拉国诞生。",
+  "steps": [
+   {
+    "year": 1947,
+    "at": [
+     77.21,
+     28.61
+    ],
+    "zoom": 5.0,
+    "event": "sa-independence-partition",
+    "text": "1947: British India becomes independent as two states, India and Pakistan. About 15 million people flee across the new borders amid mass killing.",
+    "text_zh": "1947年，英属印度分为印度和巴基斯坦两个国家独立，约一千五百万人越过新边界逃难，伴随大规模屠杀。"
+   },
+   {
+    "year": 1947,
+    "at": [
+     74.8,
+     34.08
+    ],
+    "zoom": 6.0,
+    "event": "sa-kashmir-war-1947",
+    "text": "1947: Tribal fighters from Pakistan invade Kashmir, its maharaja accedes to India, and the first India Pakistan war leaves the valley divided by a ceasefire line.",
+    "text_zh": "1947年，来自巴基斯坦的部落武装进入克什米尔，土邦王公宣布加入印度，第一次印巴战争后克什米尔沿停火线分治。"
+   },
+   {
+    "year": 1948,
+    "at": [
+     77.21,
+     28.61
+    ],
+    "zoom": 6.0,
+    "event": "sa-gandhi-assassinated",
+    "text": "1948: Mahatma Gandhi is shot dead in New Delhi by the Hindu nationalist Nathuram Godse.",
+    "text_zh": "1948年，圣雄甘地在新德里被印度教民族主义者戈德塞枪杀身亡。"
+   },
+   {
+    "year": 1948,
+    "at": [
+     79.85,
+     6.93
+    ],
+    "zoom": 6.0,
+    "event": "sa-ceylon-independence",
+    "text": "1948: Ceylon gains independence peacefully as a dominion; it will take the name Sri Lanka in 1972.",
+    "text_zh": "1948年，锡兰和平独立，成为自治领，1972年改国名为斯里兰卡。"
+   },
+   {
+    "year": 1950,
+    "at": [
+     77.21,
+     28.61
+    ],
+    "zoom": 6.0,
+    "event": "sa-constitution-of-india",
+    "text": "1950: India's constitution, drafted under B. R. Ambedkar, takes effect. India becomes a republic and abolishes untouchability.",
+    "text_zh": "1950年，以安贝德卡尔为首起草的印度宪法生效，印度成为共和国，并宣布废除“不可接触”制度。"
+   },
+   {
+    "year": 1952,
+    "at": [
+     90.41,
+     23.81
+    ],
+    "zoom": 6.0,
+    "event": "sa-bengali-language-movement",
+    "text": "1952: In Dhaka, police fire on students demanding Bengali as a state language of Pakistan, the seed of Bengali nationalism.",
+    "text_zh": "1952年，达卡学生要求将孟加拉语定为巴基斯坦国语，遭警察开枪镇压，这成为孟加拉民族主义的起点。"
+   },
+   {
+    "year": 1962,
+    "at": [
+     91.87,
+     27.59
+    ],
+    "zoom": 6.0,
+    "event": "sa-sino-indian-war",
+    "text": "1962: A border dispute with China flares into a short war in the Himalayas; Chinese forces advance, then declare a ceasefire and pull back.",
+    "text_zh": "1962年，中印边界争端演变为喜马拉雅山区的短暂战争，中国军队推进后宣布停火并主动后撤。"
+   },
+   {
+    "year": 1965,
+    "at": [
+     74.5,
+     31.52
+    ],
+    "zoom": 6.0,
+    "event": "sa-indo-pak-1965",
+    "text": "1965: Fighting over Kashmir spreads to Punjab near Lahore. Talks at Tashkent in 1966 restore the old lines.",
+    "text_zh": "1965年，克什米尔冲突扩大到拉合尔附近的旁遮普前线，次年两国在塔什干谈判，恢复战前界线。"
+   },
+   {
+    "year": 1966,
+    "at": [
+     75.85,
+     30.9
+    ],
+    "zoom": 6.0,
+    "event": "sa-green-revolution",
+    "text": "1966: The Green Revolution begins in Punjab with high-yield wheat, irrigation and fertiliser, and India soon feeds itself.",
+    "text_zh": "1966年，绿色革命在旁遮普起步，推广高产小麦、灌溉和化肥，印度很快实现粮食自给。"
+   },
+   {
+    "year": 1971,
+    "at": [
+     90.41,
+     23.81
+    ],
+    "zoom": 6.0,
+    "event": "sa-bangladesh-liberation",
+    "text": "1971: East Pakistan rises against rule from the west. India intervenes, Pakistan's army surrenders in Dhaka, and Bangladesh is born.",
+    "text_zh": "1971年，东巴基斯坦反抗西巴统治，印度出兵干预，巴军在达卡投降，孟加拉国诞生。"
+   }
+  ]
+ },
+ {
+  "id": "sa-since-1971",
+  "region": "south-asia",
+  "era": "sa-independent",
+  "also": [],
+  "start": 1974,
+  "end": 2024,
+  "path": false,
+  "title": "South Asia since the 1970s",
+  "title_zh": "20世纪70年代以来的南亚",
+  "summary": "Nuclear tests, emergency rule, civil war in Sri Lanka, economic opening and a moon landing: the subcontinent's last half century.",
+  "summary_zh": "核试验、紧急状态、斯里兰卡内战、经济开放与登月，这是南亚次大陆最近半个世纪的历程。",
+  "steps": [
+   {
+    "year": 1974,
+    "at": [
+     71.75,
+     27.08
+    ],
+    "zoom": 6.0,
+    "event": "sa-smiling-buddha",
+    "text": "1974: India tests its first nuclear device at Pokhran in the Rajasthan desert, code named Smiling Buddha.",
+    "text_zh": "1974年，印度在拉贾斯坦沙漠的博格伦进行首次核试验，代号“微笑的佛陀”。"
+   },
+   {
+    "year": 1975,
+    "at": [
+     77.21,
+     28.61
+    ],
+    "zoom": 6.0,
+    "event": "sa-emergency",
+    "text": "1975: Prime Minister Indira Gandhi declares a state of Emergency, jailing opponents and censoring the press until she loses the 1977 election.",
+    "text_zh": "1975年，总理英迪拉·甘地宣布紧急状态，逮捕反对派并审查新闻，直到1977年大选失利。"
+   },
+   {
+    "year": 1983,
+    "at": [
+     80.01,
+     9.66
+    ],
+    "zoom": 6.0,
+    "event": "sa-sri-lanka-civil-war",
+    "text": "1983: After the Black July riots, the Tamil Tigers go to war with Sri Lanka's government for a Tamil state in the north and east.",
+    "text_zh": "1983年，“黑色七月”骚乱之后，泰米尔猛虎组织与斯里兰卡政府军开战，谋求在北部和东部建立泰米尔国家。"
+   },
+   {
+    "year": 1984,
+    "at": [
+     74.88,
+     31.62
+    ],
+    "zoom": 6.5,
+    "event": "sa-blue-star",
+    "text": "1984: The army storms the Golden Temple at Amritsar to remove Sikh militants; months later Indira Gandhi is killed by her Sikh bodyguards.",
+    "text_zh": "1984年，印军攻入阿姆利则金庙清剿锡克武装，数月后英迪拉·甘地被其锡克族卫兵刺杀。"
+   },
+   {
+    "year": 1991,
+    "at": [
+     77.21,
+     28.61
+    ],
+    "zoom": 6.0,
+    "event": "sa-liberalisation",
+    "text": "1991: Facing a currency crisis, Narasimha Rao and his finance minister Manmohan Singh scrap the licence raj and open India to trade and investment.",
+    "text_zh": "1991年，面对外汇危机，拉奥政府和财长曼莫汉·辛格取消许可证制度，降低关税，向外资开放。"
+   },
+   {
+    "year": 1998,
+    "at": [
+     71.75,
+     27.08
+    ],
+    "zoom": 5.0,
+    "event": "sa-nuclear-tests-1998",
+    "text": "1998: India carries out five nuclear tests at Pokhran and Pakistan answers at Chagai; both become declared nuclear powers.",
+    "text_zh": "1998年，印度在博格伦进行五次核试验，巴基斯坦随即在查盖进行核试验，两国都成为公开拥核国家。"
+   },
+   {
+    "year": 2008,
+    "at": [
+     85.32,
+     27.71
+    ],
+    "zoom": 6.0,
+    "event": "sa-nepal-republic",
+    "text": "2008: After a ten-year Maoist insurgency and mass protests, Nepal's assembly abolishes the Shah monarchy and declares a republic.",
+    "text_zh": "2008年，经过十年毛派武装斗争和大规模抗议，尼泊尔制宪会议废除沙阿王朝，宣布成立共和国。"
+   },
+   {
+    "year": 2009,
+    "at": [
+     80.8,
+     9.27
+    ],
+    "zoom": 6.0,
+    "text": "2009: Sri Lanka's army defeats the Tamil Tigers in the northeast, ending a 26-year civil war at a heavy cost in civilian lives.",
+    "text_zh": "2009年，斯里兰卡政府军在东北部击败泰米尔猛虎组织，持续26年的内战结束，平民伤亡惨重。"
+   },
+   {
+    "year": 2023,
+    "at": [
+     80.23,
+     13.72
+    ],
+    "zoom": 6.0,
+    "event": "sa-chandrayaan-3",
+    "text": "2023: Chandrayaan-3, launched from Sriharikota, lands near the Moon's south pole; India is the fourth country to land on the Moon.",
+    "text_zh": "2023年，从斯里赫里戈达发射的月船三号在月球南极附近着陆，印度成为第四个实现登月的国家。"
+   },
+   {
+    "year": 2024,
+    "at": [
+     90.41,
+     23.81
+    ],
+    "zoom": 6.0,
+    "event": "sa-hasina-ousted",
+    "text": "2024: Student protests against job quotas grow into a mass uprising in Bangladesh, and Prime Minister Sheikh Hasina resigns and flees to India.",
+    "text_zh": "2024年，孟加拉国学生反对公职配额的抗议演变为大规模起义，总理谢赫·哈西娜辞职并出逃印度。"
+   }
+  ]
  }
 ]
