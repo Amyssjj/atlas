@@ -859,3 +859,5 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .mk-geo.old { pointer-events: auto; cursor: pointer; }
 .mk-geo.g-coast { color: #3d6f8c; font-style: italic; font-size: 11px; letter-spacing: 0.1em; }
 .mk-geo[hidden] { display: none; }
+a.chip { text-decoration: none; display: inline-flex; align-items: center; }
+a.chip[hidden] { display: none; }

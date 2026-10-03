@@ -110,6 +110,39 @@ elevation tiles and data/geo/rivers.geojson). So a border moves onto a nearby ri
 plains. Coasts are kept as drawn. Snapped maps carry `"snapped": true`; rerun a generator to start from raw shapes.
 Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
 
+## Data packs
+
+The atlas can show another site's history on its world map. A **pack** is a folder of JSON files with a
+`manifest.json`, published by the app that owns the data; the atlas opens it with `?pack=<manifest URL>`:
+
+```
+https://atlas.daiyip.com/?pack=https://bible.daiyip.com/atlas/manifest.json
+https://atlas.daiyip.com/?pack=https://bible.daiyip.com/atlas/manifest.json&packonly=1
+```
+
+By default the pack is added to the atlas's own data: its periods become one more region, listed first so it wins
+inside its outline, and its events and tours sit beside China's. With `packonly=1` the pack is shown alone: the
+atlas's own events, tours, cities, per-period layers and overlays are left out, and the layer switches and ruler and
+people tabs that would be empty are hidden. Either way the world borders, terrain and imagery come from the atlas.
+
+Pack text is put into the page, so packs load only from the sites in `PACK_ORIGINS` in `app.js` (and from a local
+server while developing); a pack from anywhere else stops with a message. The pack's files must be served with
+`Access-Control-Allow-Origin` (GitHub Pages does this). Each pack remembers its own view in the browser
+(`atlas-view:<pack id>`), and a shared link keeps the `pack` address.
+
+Manifest, version 1 (`atlas: 1`; the atlas refuses other versions):
+
+| Key | Meaning |
+| --- | --- |
+| `id`, `name`, `name_zh` | Pack id (lowercase letters, digits, `-`; also the region id) and display name. |
+| `data.eras`, `data.events` | Required; paths relative to the manifest. Same shapes as `data/eras.json` (periods need no `snapshots`: the world maps are used) and `data/events.json`. |
+| `data.tours`, `data.places` | Optional, same shapes as `data/tours.json` and `data/places.json`. |
+| `region.polygon` | Outline `[[lon, lat], ...]` where the timeline switches to the pack's periods; `region.bounds` (`[[west, south], [east, north]]`) is used as a box when there is no polygon. |
+| `region.view` | First view without a link or remembered view: `center`, `zoom`, `year`. |
+| `range` | `{start, end}` of the pack's periods. |
+| `refs` | Optional link back to the pack's own site: events with `refs` and tour steps with `ref` get a link built from `url` with `{ref}` replaced; `label`, `label_zh` are its tooltip. The Bible pack uses it to open the verse in the reader. |
+| `attribution`, `note`, `note_zh` | Added to the map credits; `note` replaces the borders note in the ledger when the pack is shown alone. |
+
 ## Guided tours, old rivers and links
 
 - **Auto layers** (自动图层 chip, on by default): reading an event or showing a tour step switches on the layers its
