@@ -1,0 +1,126 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Via Egnatia",
+    "name_zh": "伊格那提亚大道",
+    "from": -146,
+    "text": "The Roman road across Macedonia. Paul walked it from Neapolis through Philippi and Amphipolis to Thessalonica.",
+    "text_zh": "横贯马其顿的罗马大道。保罗从尼亚坡里经腓立比、暗妃波里走到帖撒罗尼迦。"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      19.45,
+      41.32
+     ],
+     [
+      20.65,
+      41.11
+     ],
+     [
+      22.05,
+      40.8
+     ],
+     [
+      22.94,
+      40.64
+     ],
+     [
+      23.84,
+      40.82
+     ],
+     [
+      24.29,
+      41.01
+     ],
+     [
+      24.4,
+      40.94
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Via Sebaste",
+    "name_zh": "塞巴斯特大道",
+    "from": -6,
+    "text": "Augustus's road linking the colonies of Pisidia and Lycaonia: Antioch, Iconium and Lystra.",
+    "text_zh": "奥古斯都修建的道路，连接彼西底和吕高尼的殖民城：安提阿、以哥念、路司得。"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      30.7,
+      36.89
+     ],
+     [
+      30.55,
+      37.7
+     ],
+     [
+      31.19,
+      38.31
+     ],
+     [
+      32.49,
+      37.87
+     ],
+     [
+      32.385,
+      37.602
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Via Appia",
+    "name_zh": "亚壁古道",
+    "from": -312,
+    "text": "The oldest great Roman road. Paul came up it to Rome as a prisoner and was met at the Forum of Appius.",
+    "text_zh": "最古老的罗马大道。保罗作为囚犯沿此路上罗马，弟兄们在亚比乌市迎接他。"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      12.5,
+      41.88
+     ],
+     [
+      12.66,
+      41.72
+     ],
+     [
+      13.25,
+      41.28
+     ],
+     [
+      14.25,
+      41.08
+     ],
+     [
+      14.78,
+      41.13
+     ],
+     [
+      16.87,
+      41.12
+     ],
+     [
+      17.94,
+      40.63
+     ]
+    ]
+   }
+  }
+ ]
+}

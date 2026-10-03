@@ -82,7 +82,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", g_map: "地图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", g_map: "地图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -105,7 +105,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", g_map: "Map", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", g_map: "Map", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -156,6 +156,7 @@ function applyLang() {
   if (typeof tourCard === "function" && state.tour) tourCard();
   $("search-open").title = $("search-open").ariaLabel = t("search");
   $("search-q").placeholder = t("searchPh");
+  renamePackChips();
 }
 
 async function setLang(lang) {
@@ -172,6 +173,7 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLedger();
+  emit("lang", { lang });
 }
 
 // A border file, or one map out of a bundle when the path ends in #<id> (tools/carve_states.py writes those).
@@ -470,12 +472,13 @@ function addPack(manifest, eras, worldIndex, only) {
   state.eras = list;
   state.mode = id;
 }
+// Packs and plugins load only from this site, the sites in PACK_ORIGINS and a local server.
+const allowedOrigin = (u) => u.origin === location.origin || PACK_ORIGINS.includes(u.origin) || ["localhost", "127.0.0.1"].includes(u.hostname);
 // The manifest named by ?pack=, or null. Throws with a readable message when the pack cannot be used.
 async function openPack(url) {
   let u;
   try { u = new URL(url, location.href); } catch { throw new Error(`"${url}" is not a pack address.`); }
-  const local = ["localhost", "127.0.0.1"].includes(u.hostname);
-  if (u.origin !== location.origin && !PACK_ORIGINS.includes(u.origin) && !local) throw new Error(`Packs from ${u.origin} are not allowed.`);
+  if (!allowedOrigin(u)) throw new Error(`Packs from ${u.origin} are not allowed.`);
   const res = await fetch(u, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Could not load the pack (${res.status}).`);
   const manifest = await res.json();
@@ -502,6 +505,172 @@ function refLink(refs) {
 }
 function refLabel(ref) {
   return ref.replace(/^([1-3]?[A-Za-z]+)\.(\d+)\.(\d+)(?:-(\d+))?$/, (m, b, c, v, z) => `${b} ${c}:${v}${z ? "–" + z : ""}`);
+}
+
+/* ---------- pack layers and plugins ---------- */
+// A pack can bring its own map layers: GeoJSON the engine draws and filters by year (manifest "layers"), and code
+// (manifest "plugins": ES modules from the allowed sites) that gets the plugin API below. Each layer gets a switch in a
+// "Pack" group of the layers panel, remembered per pack. See README.md, "Pack layers and plugins".
+const PLUGIN_API = 1;
+const hooks = {};           // event name -> handlers: year, lang, event, tour-step, tour-end
+function emit(name, detail) {
+  for (const fn of hooks[name] || []) {
+    try { fn(detail); } catch (e) { console.error(`A plugin's "${name}" handler failed:`, e); }
+  }
+}
+const packLayers = [];      // { def, ids: MapLibre layer ids, on, chip, onToggle }
+const packLayerKey = () => `atlas-pack-layers:${state.pack?.manifest.id}`;
+// A feature counts in years [from, to), like the old river courses; either end may be left out.
+const packInYears = (y) => ["all", ["<=", ["coalesce", ["get", "from"], -1e6], y], [">", ["coalesce", ["get", "to"], 1e6], y]];
+const GEOM = { fill: ["Polygon", "MultiPolygon"], line: ["LineString", "MultiLineString", "Polygon", "MultiPolygon"], circle: ["Point", "MultiPoint"] };
+
+// One switch in the layers panel's "Pack" group (made on first use).
+function packChip(def, on, onClick) {
+  let g = $("lg-pack");
+  if (!g) {
+    g = document.createElement("div");
+    g.className = "lg";
+    g.id = "lg-pack";
+    g.innerHTML = `<span data-i18n="g_pack">${esc(t("g_pack"))}</span>`;
+    document.querySelector(".era-layers").append(g);
+  }
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip";
+  b.dataset.packLayer = def.id;
+  b.setAttribute("aria-pressed", String(on));
+  b.textContent = tx(def, "name") || def.id;
+  b.addEventListener("click", onClick);
+  g.append(b);
+  return b;
+}
+function renamePackChips() {
+  for (const L of packLayers) if (L.chip) L.chip.textContent = tx(L.def, "name") || L.def.id;
+}
+// Adds a GeoJSON layer drawn by the engine: polygons filled, lines and outlines stroked, points as dots.
+// def: { id, name, name_zh, data (URL or GeoJSON), color, opacity, width, dash, radius, on, years: [from, to] }.
+// Features may carry from/to (years), color, name/name_zh, text/text_zh and ref (a link through the pack's refs).
+function addPackLayer(def, base) {
+  if (!/^[a-z0-9-]+$/.test(def.id || "") || packLayers.some((L) => L.def.id === def.id)) throw new Error(`Layer id "${def.id}" is missing or taken.`);
+  const src = `pk-${def.id}`;
+  map.addSource(src, { type: "geojson", data: typeof def.data === "string" ? new URL(def.data, base).href : def.data || { type: "FeatureCollection", features: [] } });
+  const color = ["coalesce", ["get", "color"], def.color || "#b93a26"];
+  const paint = {
+    fill: { "fill-color": color, "fill-opacity": def.opacity ?? 0.22 },
+    line: { "line-color": color, "line-width": def.width ?? 2.5, "line-opacity": 0.9, ...(def.dash ? { "line-dasharray": def.dash } : {}) },
+    circle: { "circle-color": color, "circle-radius": def.radius ?? 5, "circle-stroke-color": "#fff8ee", "circle-stroke-width": 1.5 },
+  };
+  const before = map.getLayer("tour-path") ? "tour-path" : undefined;
+  const ids = [];
+  for (const kind of def.type ? [def.type] : ["fill", "line", "circle"]) {
+    const id = `${src}-${kind}`;
+    map.addLayer({ id, type: kind, source: src, paint: paint[kind], layout: kind === "line" ? { "line-cap": "round", "line-join": "round" } : {},
+      filter: ["in", ["geometry-type"], ["literal", GEOM[kind]]] }, before);
+    map.on("click", id, (e) => { const f = e.features[0]; if (f && (f.properties.name || f.properties.text)) showCard(e.lngLat, packFeatureCard(f.properties)); });
+    map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
+    ids.push(id);
+  }
+  return packEntry(def, ids);
+}
+// A pack layer's switch and remembered state; ids are its MapLibre layers (none for a plugin's plain toggle).
+function packEntry(def, ids) {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(packLayerKey()) || "{}"); } catch {}
+  const L = { def, ids, on: saved[def.id] ?? def.on !== false };
+  L.chip = def.chip === false ? null : packChip(def, L.on, () => setPackLayer(L, !L.on, true));
+  packLayers.push(L);
+  renderPackLayer(L);
+  return L;
+}
+function setPackLayer(L, on, remember) {
+  L.on = on;
+  L.chip?.setAttribute("aria-pressed", String(on));
+  if (remember) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(packLayerKey()) || "{}");
+      saved[L.def.id] = on;
+      localStorage.setItem(packLayerKey(), JSON.stringify(saved));
+    } catch {}
+  }
+  renderPackLayer(L);
+  L.onToggle?.(on);
+}
+function renderPackLayer(L) {
+  const y = state.year, [a, b] = L.def.years || [];
+  const vis = L.on && !(a != null && y < a) && !(b != null && y >= b) ? "visible" : "none";
+  for (const id of L.ids) {
+    if (!map.getLayer(id)) continue;
+    map.setLayoutProperty(id, "visibility", vis);
+    map.setFilter(id, ["all", ["in", ["geometry-type"], ["literal", GEOM[id.slice(id.lastIndexOf("-") + 1)]]], packInYears(y)]);
+  }
+}
+const renderPackLayers = () => packLayers.forEach(renderPackLayer);
+function packFeatureCard(p) {
+  const r = refLink(p.ref);
+  const years = p.from != null || p.to != null ? `<p class="pc-meta">${p.from != null ? fmtYear(p.from) : ""} – ${p.to != null ? fmtYear(p.to) : ""}</p>` : "";
+  return `<h4>${esc(tx(p, "name") || "")}</h4>${years}${p.text ? `<p>${esc(tx(p, "text"))}</p>` : ""}` +
+    (r ? `<p class="pc-meta"><a href="${esc(r.href)}" target="_blank" rel="noopener" title="${esc(r.label)}">${esc(refLabel(r.ref))} ↗</a></p>` : "");
+}
+
+// What a plugin gets: the map, read-only state, events, and a few ways to move the atlas and add to it.
+function pluginApi(src) {
+  const base = new URL(".", src).href;
+  return {
+    version: PLUGIN_API,
+    map,
+    maplibregl,
+    pack: state.pack.manifest,
+    get year() { return state.year; },
+    get era() { return state.era && { id: state.era.id, name: state.era.name, name_zh: state.era.name_zh, start: state.era.start, end: state.era.end }; },
+    get lang() { return state.lang; },
+    get tour() { return state.tour && { id: state.tour.id, index: state.tour.i, steps: state.tour.tr.steps, path: !!state.tour.tr.path }; },
+    // Text in the visitor's language: text(en, zh) or text(obj, "key") for obj.key / obj.key_zh.
+    text: (a, b) => (typeof a === "object" ? tx(a, b) : zh() && b ? b : a),
+    on(name, fn) { (hooks[name] ||= []).push(fn); return () => (hooks[name] = hooks[name].filter((f) => f !== fn)); },
+    setYear: (y) => setYear(y),
+    startTour: (id, step = 0) => startTour(id, step),
+    openEvent: (id) => state.events.some((e) => e.id === id) && openStory(id),
+    // Plugin code is trusted (it comes from an allowed site), so its card HTML goes in as is.
+    showCard: (lngLat, html) => showCard(lngLat, html),
+    addLayer: (def) => {
+      const L = addPackLayer(def, base);
+      return { get on() { return L.on; }, setData: (gj) => map.getSource(`pk-${def.id}`).setData(gj), show: (on = true) => setPackLayer(L, on), layerIds: L.ids };
+    },
+    // A switch in the layers panel that only reports clicks: addToggle({id, name, name_zh, on}, (on) => ...).
+    addToggle(def, fn) {
+      if (!/^[a-z0-9-]+$/.test(def.id || "") || packLayers.some((L) => L.def.id === def.id)) throw new Error(`Toggle id "${def.id}" is missing or taken.`);
+      const L = packEntry(def, []);
+      L.onToggle = fn;
+      fn(L.on);
+      return { get on() { return L.on; } };
+    },
+    url: (path) => new URL(path, base).href,
+    fetchJSON: (path) => fetch(new URL(path, base)).then((r) => { if (!r.ok) throw new Error(`${path}: ${r.status}`); return r.json(); }),
+  };
+}
+// Imports the pack's plugin modules (started early, so they load alongside the data).
+function importPlugins() {
+  return (state.pack?.manifest.plugins || []).map((p) => {
+    const u = new URL(p, state.pack.url);
+    if (!allowedOrigin(u)) return Promise.reject(new Error(`Plugins from ${u.origin} are not allowed.`));
+    return import(u.href).then((m) => ({ src: u.href, m }));
+  });
+}
+// Once the map has loaded: the manifest's layers, then each plugin's setup(atlas). A broken one is logged and skipped.
+async function startPlugins(imports) {
+  const base = state.pack.url;
+  for (const def of state.pack.manifest.layers || []) {
+    try { addPackLayer(def, base); } catch (e) { console.error(`Pack layer "${def.id}" was skipped:`, e); }
+  }
+  for (const r of await Promise.allSettled(imports)) {
+    if (r.status === "rejected") { console.error("A pack plugin did not load:", r.reason); continue; }
+    const { src, m } = r.value, setup = typeof m.default === "function" ? m.default : m.default?.setup || m.setup;
+    try {
+      if (typeof setup !== "function") throw new Error("it exports no setup function");
+      await setup(pluginApi(src));
+    } catch (e) { console.error(`The plugin ${src} failed to start:`, e); }
+  }
 }
 
 function inPoly(x, y, poly) {
@@ -675,6 +844,8 @@ async function setYear(year, opts = {}) {
   renderPlaces();
   renderOverlays();
   renderOldGeo();
+  renderPackLayers();
+  emit("year", { year: state.year, era: era.id, eraChanged });
 }
 
 function setEra(era, quiet) {
@@ -1812,6 +1983,7 @@ async function selectEvent(id) {
   renderArmies();
   renderLedger();
   flyToEvent(ev);
+  emit("event", { id, event: ev });
 }
 
 async function goToEra(era) {
@@ -1904,6 +2076,7 @@ async function tourStep(i) {
   if (state.zoom && !inWindow(s.year)) { state.scope = null; state.win = windowFor(state.zoom, s.year); refreshTimeline(); }
   map.flyTo({ center: s.at, zoom: s.zoom ?? 4.8, pitch: state.show3d ? s.pitch ?? 48 : 0, bearing: s.bearing ?? -8,
     padding: tourPadding(), duration: 2600, essential: true });
+  emit("tour-step", { id: tour.id, index: i, step: s, steps: tr.steps, path: !!tr.path });
   await setYear(s.year);
   if (state.tour === tour && tour.i === i) tourHighlight(s);
   renderArmies();
@@ -1978,6 +2151,7 @@ function endTour() {
   if (state.tab === "tours") renderToursTab();
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
   tourHighlight(null);
+  emit("tour-end", {});
   syncAuto();
   renderArmies();
   map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
@@ -2366,6 +2540,8 @@ async function init() {
     state.selected = null;
   }
   applyLang();
+  const plugins = importPlugins();
+  plugins.forEach((p) => p.catch(() => {}));  // reported once the map is up
   const pack = state.pack?.manifest, only = state.pack?.only;
   const [eras, events, places, packEras, packEvents] = await Promise.all([
     only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
@@ -2439,6 +2615,7 @@ async function init() {
     if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
     if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", "none");
     addTourLayers();
+    if (state.pack) await startPlugins(plugins);
     setMode(detectRegion(), true);
     state.ready = true;
     await setYear(state.year);
