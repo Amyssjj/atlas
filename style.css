@@ -595,6 +595,7 @@ html:lang(en) .mk-geo.g-river, html:lang(en) .mk-geo.g-lake { text-transform: no
 .maplibregl-marker.dc-hide { visibility: hidden; pointer-events: none; }
 .dc-nolabel > span { visibility: hidden; }
 .mk-geo.dc-nolabel { visibility: hidden; }
+.mk-route.dc-nolabel { visibility: hidden; }
 .dc-nolabel:hover > span { visibility: visible; }
 .maplibregl-marker:has(.dc-more) { z-index: 3; }
 .dc-more {

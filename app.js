@@ -962,7 +962,7 @@ function renderPolityLabels(gj) {
     if (zh()) el.innerHTML = p.name_zh ? esc(p.name_zh) : `<small>${esc(p.name)}</small>`;
     else el.innerHTML = `<span>${esc(p.name)}</span>` + (p.name_zh ? `<small lang="zh-CN">${esc(p.name_zh)}</small>` : "");
     markers.polities.push(new maplibregl.Marker({ element: el }).setLngLat(p.label).addTo(map));
-    markers.polityEls.push({ el, name: p.name, focus: p.focus, state: p.kind === "state" });
+    markers.polityEls.push({ el, name: p.name, focus: p.focus, state: p.kind === "state", area: p.area || 0, lat: p.label[1] });
   }
   updateRulers();
 }
@@ -1514,7 +1514,8 @@ function focusBounds() {
 // Markers that land on the same spot fold into the most important one, which shows a "+N" badge listing the rest;
 // labels that would overlap a more important label hide (hover the icon to see one). Re-run as the map moves,
 // so zooming in brings everything back.
-const DC_RADIUS = 18;
+// Icons closer than this fold into one with a +N badge; a phone gets a wider radius, as fingers need room.
+const dcRadius = () => (innerWidth <= 720 ? 26 : 18);
 function dcItems() {
   const out = [];
   const add = (m, kind, prio, opts = {}) => { const el = m.getElement(); if (el.isConnected) out.push({ m, el, kind, prio, ...opts }); };
@@ -1531,6 +1532,11 @@ function dcItems() {
   (markers.roads || []).forEach((m) => add(m, "road", 20, { fixed: true, labelOnly: true }));
   (markers.clans || []).forEach((m) => add(m, "clan", 55));
   (markers.walls || []).forEach((m) => add(m, "wall", 22, { fixed: true, labelOnly: true }));
+  // Route and spread names: the lines and arrows always show; the name only where there is room.
+  markers.routes.forEach((m) => {
+    const el = m.getElement();
+    if (el.classList.contains("mk-route")) add(m, "route", el.classList.contains("k-spread") ? 34 : 58, { fixed: true, labelOnly: true });
+  });
   // Finer landscape names (smaller ranges, basins) only from their zoom on.
   const z = map.getZoom();
   (markers.geo || []).forEach((m) => {
@@ -1546,7 +1552,7 @@ function declutter() {
   document.querySelectorAll(".dc-more").forEach((b) => b.remove());
   document.querySelectorAll(".dc-hide, .dc-nolabel").forEach((el) => el.classList.remove("dc-hide", "dc-nolabel"));
   const items = dcItems();
-  // Fold: an item whose icon sits within DC_RADIUS of a kept, more important icon joins that one's group.
+  // Fold: an item whose icon sits within dcRadius() of a kept, more important icon joins that one's group.
   const kept = [];
   for (const it of items) {
     const icon = it.el.querySelector("i") || it.el;
@@ -1555,25 +1561,45 @@ function declutter() {
     it.cx = (r.left + r.right) / 2; it.cy = (r.top + r.bottom) / 2;
     if (it.labelOnly || r.width === 0) { kept.push(it); continue; }
     // A city dot under a capital star says the same thing twice.
-    if (it.kind === "place" && kept.some((k) => k.kind === "capital" && Math.hypot(k.cx - it.cx, k.cy - it.cy) < DC_RADIUS)) {
+    if (it.kind === "place" && kept.some((k) => k.kind === "capital" && Math.hypot(k.cx - it.cx, k.cy - it.cy) < dcRadius())) {
       it.el.classList.add("dc-hide"); continue;
     }
-    const host = !it.fixed && kept.find((k) => !k.fixed && !k.labelOnly && Math.hypot(k.cx - it.cx, k.cy - it.cy) < DC_RADIUS);
+    const host = !it.fixed && kept.find((k) => !k.fixed && !k.labelOnly && Math.hypot(k.cx - it.cx, k.cy - it.cy) < dcRadius());
     if (host) { (host.group ||= [host]).push(it); it.el.classList.add("dc-hide"); }
     else kept.push(it);
   }
-  // Labels: placed in priority order; battle cards and route labels are already taken space,
-  // and the big territory names push away only the landscape names.
-  const taken = [...markers.armies, ...markers.routes].map((m) => m.getElement().getBoundingClientRect());
-  const polities = markers.polityEls.map((p) => p.el.getBoundingClientRect());
+  // How much text the screen can hold: labels keep a gap between them (wider on a phone), and past a budget
+  // set by the screen's area the less important ones show only their icon. Zooming in spreads the markers
+  // apart, so more names fit; zooming out shows fewer.
+  const phone = innerWidth <= 720, pad = phone ? 6 : 3;
+  let budget = Math.round((innerWidth * innerHeight) / (phone ? 9000 : 6000));
+  // Territory names: the main dynasty first, then by size. A name shows when its land is big enough on screen
+  // to hold it and it doesn't run into a more important name, so smaller states appear as you zoom in.
+  const ppd = (512 * 2 ** map.getZoom()) / 360;
+  const polities = [];
+  for (const p of [...markers.polityEls].sort((a, b) => b.focus - a.focus || b.area - a.area)) {
+    const r = p.el.getBoundingClientRect();
+    if (!r.width) continue;
+    const onScreen = p.area * ppd * ppd * Math.cos((p.lat * Math.PI) / 180);
+    if (!p.focus && (onScreen < r.width * r.height * (phone ? 4 : 2.5) || polities.some((t) => overlaps(r, t, pad)))) {
+      p.el.classList.add("dc-hide");
+      continue;
+    }
+    polities.push(r);
+  }
+  // Labels: placed in priority order; battle cards are already taken space,
+  // and the territory names push away the landscape, road and route names.
+  const taken = markers.armies.map((m) => m.getElement().getBoundingClientRect());
   // A label gives way to labels and icons of more important markers; it may cover a less important icon.
   for (const it of kept) {
     const span = it.labelOnly ? it.el : it.el.querySelector("span");
     const r = span?.getBoundingClientRect();
     if (r?.width) {
-      const blocked = taken.some((t) => overlaps(r, t)) || ((it.kind === "geo" || it.kind === "road") && polities.some((t) => overlaps(r, t)));
-      if (blocked) it.el.classList.add("dc-nolabel");
-      else taken.push(r);
+      const blocked = budget <= 0 || taken.some((t) => overlaps(r, t, pad)) ||
+        ((it.kind === "geo" || it.kind === "road" || it.kind === "route") && polities.some((t) => overlaps(r, t)));
+      // The open event's name always shows.
+      if (blocked && it.prio < 100) it.el.classList.add("dc-nolabel");
+      else { taken.push(r); budget--; }
     }
     if (!it.labelOnly && !it.fixed) taken.push(it.icon);
   }
