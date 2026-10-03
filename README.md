@@ -105,7 +105,8 @@ Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
 - **Tours** (导览, the first tab of the side panel; lists the current period's tours, then the rest by period):
   `data/tours.json`, 104 tours, each with an `era` id (a tour also lists under every period its years reach into, and under any in `also`) and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
   `path: true` draws the journey so far. The tour card flies the camera, moves the timeline and selects the step's event.
-  Tours are AI-drafted and not source-checked.
+  Each step lights up (gold) the states on the current map that its Chinese caption names, minus the period's own dynasty;
+  a step can override this with `highlight: [name_zh, ...]`. Tours are AI-drafted and not source-checked.
 - **Old Yellow River courses and shorelines**: `data/geo/old-rivers.geojson`, lines with `kind` (river/coast) and the years
   `[from, to)` they apply to. The modern lower Yellow River (east of 113.65°E) is a separate feature in rivers.geojson with
   `from: 1855`, hidden before then. Courses are schematic, drawn from the usual textbook sketches.

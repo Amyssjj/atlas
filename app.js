@@ -345,6 +345,11 @@ function buildStyle() {
         paint: { "line-color": "#f6f3e8", "line-width": 5, "line-opacity": 0.7, "line-blur": 1 } },
       { id: "focus-line", type: "line", source: "borders", filter: ["get", "focus"],
         paint: { "line-color": "#b93a26", "line-width": ["case", ["has", "color"], 1.4, 2.2] } },
+      // The states a tour step talks about (tourHighlight sets the filter).
+      { id: "hl-fill", type: "fill", source: "borders", filter: ["==", ["get", "name_zh"], "\u0000"],
+        paint: { "fill-color": "#f2c14e", "fill-opacity": 0.42 } },
+      { id: "hl-line", type: "line", source: "borders", filter: ["==", ["get", "name_zh"], "\u0000"], layout: { "line-join": "round" },
+        paint: { "line-color": "#f2c14e", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 3, 8, 6], "line-blur": 0.5 } },
       // Elite groups (豪族/士人集团): a soft tint over their home region with a dashed edge, coloured by kind.
       { id: "clan-fill", type: "fill", source: "clans", paint: { "fill-color": ["get", "color"], "fill-opacity": 0.3 } },
       { id: "clan-line", type: "line", source: "clans", layout: { "line-join": "round" },
@@ -1666,10 +1671,27 @@ async function tourStep(i) {
   map.flyTo({ center: s.at, zoom: s.zoom ?? 4.8, pitch: state.show3d ? s.pitch ?? 48 : 0, bearing: s.bearing ?? -8,
     padding: tourPadding(), duration: 2600, essential: true });
   await setYear(s.year);
+  if (state.tour === tour && tour.i === i) tourHighlight(s);
   renderArmies();
   renderLedger();
   saveView();
   if (tour.auto) map.once("moveend", () => { if (state.tour === tour && tour.auto) tour.timer = setTimeout(() => tourNext(), 3000 + tx(s, "text").length * (zh() ? 110 : 45)); });
+}
+// Light up every state on the current map that the step's caption names (齐 in "齐桓公任用管仲"), or the step's own
+// "highlight" list. The period's own dynasty (唐 on a Tang map) is left out: it would light up the whole map.
+// Everyday words that happen to contain a one-character state name (随后, 时代, 清楚, 越过, 卫青 …) are taken out first.
+const HL_STOP = /随后|随即|随着|跟随|伴随|唐代|宋代|时代|朝代|年代|古代|近代|后代|历代|世代|一代|五代|取代|代表|代替|替代|代价|交代|周游|周围|周边|四周|庄周|苏秦|秦岭|长安西|大理寺|陈兵|陈列|陈述|金字|金银|黄金|金属|金箔|金印|金牌|金人|韩非|韩信|清楚|痛楚|桥梁|栋梁|夏天|夏季|越过|越来越|超越|穿越|翻越|跨越|越南|整齐|一齐|齐心|齐全|晋升|晋见|辽阔|蔡伦|曹操|卫青|卫兵|守卫|保卫|护卫|侍卫|卫所|自卫|郑和|郑成功|魏征|赵匡胤/g;
+function tourHighlight(s) {
+  const gj = state.borders[state.snapshot];
+  let names = [];
+  const text = s ? s.text_zh.replace(HL_STOP, "") : "";
+  if (s && gj) {
+    const own = [state.era.name_zh, state.era.glyph];
+    names = (gj.features || []).map((f) => f.properties.name_zh).filter((n) => n && !own.includes(n) &&
+      (s.highlight ? s.highlight.includes(n) : n.split(/\s*[·(（)）]\s*/).some((part) => part && text.includes(part))));
+  }
+  const filter = ["in", ["get", "name_zh"], ["literal", [...new Set(names)]]];
+  for (const id of ["hl-fill", "hl-line"]) if (map.getLayer(id)) map.setFilter(id, filter);
 }
 function captionLead(text) {
   const m = zh() ? text.match(/^([^，。：:,]{0,18}?\d+[^，。：:,]{0,8}?)[，：:,]\s*/) || text.match(/^(约?前?\d+年)()/)
@@ -1718,6 +1740,7 @@ function endTour() {
   $("app").classList.remove("touring", "tour-reading");
   if (state.tab === "tours") renderToursTab();
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
+  tourHighlight(null);
   map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
   saveView();
 }
