@@ -120,7 +120,7 @@ Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
   off again afterwards. Clicking a dashed chip hides that layer for the current story or step; clicking again turns it on for good.
 
 - **Tours** (导览, the first tab of the side panel; lists the current period's tours, then the rest by period):
-  `data/tours.json`, 104 tours, each with an `era` id (a tour also lists under every period its years reach into, and under any in `also`) and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
+  `data/tours.json`, 197 tours (104 for China, 93 for the other 13 regions with a `region` field; the tab lists the current region's period first, then its other periods, then each other region), each with an `era` id (a tour also lists under every period its years reach into, and under any in `also`) and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
   `path: true` draws the journey so far. The tour card flies the camera, moves the timeline and selects the step's event.
   Each step lights up (gold) the states on the current map that its Chinese caption names, minus the period's own dynasty;
   a step can override this with `highlight: [name_zh, ...]`. Tours are AI-drafted and not source-checked.

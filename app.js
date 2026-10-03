@@ -1884,30 +1884,40 @@ async function goToEra(era) {
 let tours = null;
 const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
 // The 导览 tab: this period's tours first, then the rest grouped by period.
-const tourEra = (tr) => tr.era || state.chinaEras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
+const tourRegion = (tr) => tr.region || "china";
+const regionEras = (id) => state.regionById[id]?.eras || state.chinaEras;
+const tourEra = (tr) => tr.era || regionEras(tourRegion(tr)).find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
 // A tour also shows under every period its years reach into, and under any listed in `also` (官渡 under 三国).
 const tourIn = (tr, era) => tourEra(tr) === era.id || (tr.also || []).includes(era.id) || (tr.start <= era.end && tr.end >= era.start);
 function tourItem(tr, era) {
   const on = state.tour?.id === tr.id;
-  const home = era && tourEra(tr) !== era.id ? state.chinaEras.find((e) => e.id === tourEra(tr)) : null;
+  const home = era && tourEra(tr) !== era.id ? regionEras(tourRegion(tr)).find((e) => e.id === tourEra(tr)) : null;
   return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}${home ? ` · ${esc(nameOf(home))}` : ""}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
 }
 async function renderToursTab() {
   const list = await loadTours();
   if (state.tab !== "tours") return;
   const box = $("tour-tab");
-  const here = list.filter((tr) => state.era.region === "china" && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
+  // This region's tours for the period on screen, then its other periods, then the other regions.
+  const reg = state.mode === "world" ? null : state.era.region || state.mode;
+  const here = list.filter((tr) => reg && tourRegion(tr) === reg && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
   $("ev-count").textContent = t("tourCount")(here.length);
-  const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
+  const key = `${state.mode}|${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   let html = `<p class="rl-hint">${t("tourHint")}</p>`;
   html += here.length ? here.map((tr) => tourItem(tr, state.era)).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
-  const other = state.chinaEras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
-  if (other.length) {
-    const open = box.querySelector("details")?.open ? " open" : "";
-    html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
-      other.map(([e, l]) => `<h5>${esc(nameOf(e))}</h5>` + l.map((tr) => tourItem(tr)).join("")).join("") + `</details>`;
+  const group = (title, groups) => {
+    groups = groups.filter(([, l]) => l.length);
+    if (!groups.length) return "";
+    const n = groups.reduce((k, [, l]) => k + l.length, 0);
+    return `<details class="tour-more" data-g="${esc(title)}"${box.querySelector(`details[data-g="${title}"]`)?.open ? " open" : ""}><summary>${esc(title)}${zh() ? "（" : " ("}${n}${zh() ? "）" : ")"}</summary>` +
+      groups.map(([h, l]) => `<h5>${esc(h)}</h5>` + l.map((tr) => tourItem(tr)).join("")).join("") + `</details>`;
+  };
+  if (reg) html += group(t("toursOther"), regionEras(reg).filter((e) => e.id !== state.era.id).map((e) => [nameOf(e), list.filter((tr) => tourRegion(tr) === reg && tourEra(tr) === e.id)]));
+  for (const r of state.regions) if (r.id !== reg) {
+    const l = list.filter((tr) => tourRegion(tr) === r.id).sort((a, b) => a.start - b.start);
+    html += group(nameOf(r), regionEras(r.id).map((e) => [nameOf(e), l.filter((tr) => tourEra(tr) === e.id)]));
   }
   box.innerHTML = html + `<p class="tour-note">${t("drafted")}</p>`;
 }
@@ -1916,7 +1926,7 @@ async function startTour(id, i = 0) {
   if (!tr) return;
   stop(); closeSearch();
   state.tour = { id, tr, i: 0, auto: false };
-  setMode("china");
+  setMode(tourRegion(tr));
   $("tour").hidden = false;
   $("app").classList.add("touring");
   if (state.tab === "tours") renderToursTab();
