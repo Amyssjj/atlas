@@ -842,7 +842,8 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 @media (max-width: 720px) {
   .tour { bottom: calc(var(--rail-h, 64px) + 12px + env(safe-area-inset-bottom)); width: calc(100% - 16px); padding: 10px 12px; }
   .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
-  .touring .ledger { display: none; }
+  .touring:not(.tour-reading) .ledger { display: none; }
+  .touring.tour-reading .tour { display: none; }
 }
 @media (max-width: 720px) {
     .era-corner { gap: 4px; }
