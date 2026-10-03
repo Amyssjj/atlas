@@ -82,7 +82,7 @@ const UI = {
   zh: {
     title: "历代地图", events: "事件", hide: "收起", show: "展开", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川",
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
-    back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", wiki: "维基百科", wikiOther: "English Wikipedia",
+    fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
     notePack: "疆域为近似示意，取自开源 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
@@ -105,7 +105,7 @@ const UI = {
   en: {
     title: "Atlas", events: "Events", hide: "Hide", show: "Show", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
-    back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", wiki: "Wikipedia", wikiOther: "中文维基百科",
+    fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
     notePack: "Borders are approximate, from the open historical-basemaps dataset. Terrain, coastlines and rivers are modern.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
@@ -1133,7 +1133,7 @@ function personCard(p) {
   return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
-    ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
+    ${personEventList(p)}${checkNote(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
 }
 function personEventList(p) {
   const evs = personEvents(p);
@@ -1966,7 +1966,7 @@ function renderRulers() {
       <ol class="rl-list">${reigns.map((r, i) => {
         const [a, b] = rulerText(r);
         return `<li><button class="rl" data-i="${i}"><span class="rl-years">${fmtYear(r.from, r.circa)}<br>${fmtYear(r.to)}</span>
-          <span class="rl-name">${esc(a)}</span>${b ? `<span class="rl-sub">${esc(b)}</span>` : ""}<span class="rl-len">${t("reignLen")(r.to - r.from + 1)}</span></button></li>`;
+          <span class="rl-name">${esc(a)}</span>${b ? `<span class="rl-sub">${esc(b)}</span>` : ""}<span class="rl-len">${t("reignLen")(r.to - r.from + 1)}${checkMark(r)}</span></button></li>`;
       }).join("")}</ol>`;
     $("rl-select").addEventListener("change", (e) => { state.rulerPolity = e.target.value; renderRulers(); });
     box.querySelectorAll(".rl").forEach((btn) => btn.addEventListener("click", () => scopeToRuler(state.rulerPolity, +btn.dataset.i)));
@@ -2136,7 +2136,7 @@ async function renderStory() {
   const layer = home ? await loadLayers(home) : {};
   if (state.selected !== ev.id || !state.reading) return;
   const tags = linkTags(ev, layer);
-  if (!d) { body.innerHTML = tags + `<p class="muted">${t("noStory")}</p>` + links(ev, d); return; }
+  if (!d) { body.innerHTML = tags + `<p class="muted">${t("noStory")}</p>` + checkNote(ev) + links(ev, d); return; }
   const story = (zh() ? d.story_zh : d.story) || d.story || [];
   let html = story.map((p) => `<p>${esc(p)}</p>`).join("");
   if (d.quote?.zh) {
@@ -2154,7 +2154,7 @@ async function renderStory() {
       `<span>${esc(zh() ? p.role_zh || p.role : p.role)}${!zh() && p.name_zh ? ` · <span lang="zh-CN">${esc(p.name_zh)}</span>` : ""}</span></li>`).join("") +
       `</ul></section>`;
   }
-  body.innerHTML = tags + html + links(ev, d);
+  body.innerHTML = tags + html + checkNote(ev) + links(ev, d);
 }
 // The event's linked city and people (ev.places / ev.people) as chips that open their cards with all their events.
 function linkTags(ev, layer) {
@@ -2178,6 +2178,18 @@ function wikiLink(url) {
   return `https://${m[1]}.wikipedia.org/w/index.php?search=${encodeURIComponent(title)}`;
 }
 
+// Fact-check mark (tools/fact_check.py → apply_facts.py): checked, corrected (with what it was), doubtful, or not checked.
+function checkNote(x) {
+  const c = x?.check, s = c?.s || "none", L = t("fc");
+  const note = c ? tx(c, "n") : "";
+  const icon = { ok: "✓", fixed: "✎", doubt: "?", none: "·" }[s];
+  return `<p class="fc fc-${s}"><b>${icon}</b> ${esc(L[s])}${note ? `${zh() ? "：" : ": "}${esc(note)}` : ""}</p>`;
+}
+function checkMark(x) {
+  const s = x?.check?.s;
+  if (!s || s === "ok") return s ? `<span class="fc-mk fc-ok" title="${esc(t("fc").ok)}">✓</span>` : "";
+  return `<span class="fc-mk fc-${s}" title="${esc(t("fc")[s] + (tx(x.check, "n") ? ": " + tx(x.check, "n") : ""))}">${s === "fixed" ? "✎" : "?"}</span>`;
+}
 function links(ev, d) {
   const zhUrl = wikiLink(d?.source_zh || ev.source_zh), enUrl = wikiLink(ev.source);
   const main = zh() ? zhUrl || enUrl : enUrl || zhUrl;
