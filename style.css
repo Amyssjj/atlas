@@ -925,13 +925,13 @@ a.chip[hidden] { display: none; }
   .region-pop { top: 44px; right: 8px; }
 }
 /* Fact-check marks */
-.fc { margin: 10px 0 0; font-size: 11.5px; color: var(--muted); }
+.fc, html:lang(zh-CN) .story-body p.fc, .story-body p.fc { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); }
 .fc b { display: inline-grid; place-items: center; width: 15px; height: 15px; border-radius: 50%; font-size: 10px; margin-right: 2px; background: var(--rule); }
 .fc-ok b, .fc-mk.fc-ok { color: var(--jade); }
 .fc-ok b { background: var(--jade-soft); }
 .fc-fixed b { background: #e8d9b5; color: #8a5a00; }
 .fc-doubt b { background: #f3d6cf; color: var(--cinnabar); }
-.fc-doubt { color: var(--cinnabar); }
+.fc-doubt, .story-body p.fc-doubt { color: var(--cinnabar); }
 .fc-mk { margin-left: 4px; font-size: 10px; font-weight: 700; }
 .fc-mk.fc-fixed { color: #8a5a00; }
 .fc-mk.fc-doubt { color: var(--cinnabar); }
