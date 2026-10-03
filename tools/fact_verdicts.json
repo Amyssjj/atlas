@@ -1,0 +1,2117 @@
+[
+ {
+  "key": "eu-cycladic-culture",
+  "s": "ok"
+ },
+ {
+  "key": "eu-yamnaya",
+  "s": "ok"
+ },
+ {
+  "key": "eu-early-minoan",
+  "s": "ok"
+ },
+ {
+  "key": "na-old-copper-complex",
+  "s": "ok"
+ },
+ {
+  "key": "sam-valdivia",
+  "s": "ok"
+ },
+ {
+  "key": "eg-hieroglyphs",
+  "s": "fixed",
+  "set": {
+   "year": -3200
+  },
+  "n": "Was c. 2900 BC; earliest hieroglyphs (Abydos tomb U-j, Narmer era) date to c. 3250-3200 BC per Wikipedia/Wikidata.",
+  "n_zh": "原作约公元前2900年，据维基百科（阿拜多斯U-j墓等最早铭文约前3250—前3200年）改为前3200年。"
+ },
+ {
+  "key": "eu-bell-beaker",
+  "s": "ok"
+ },
+ {
+  "key": "ca-bmac",
+  "s": "ok"
+ },
+ {
+  "key": "qijia-copper",
+  "s": "ok"
+ },
+ {
+  "key": "ca-andronovo",
+  "s": "ok"
+ },
+ {
+  "key": "eu-linear-a",
+  "s": "ok"
+ },
+ {
+  "key": "sam-cupisnique",
+  "s": "ok"
+ },
+ {
+  "key": "eu-mycenaeans-take-knossos",
+  "s": "ok"
+ },
+ {
+  "key": "eu-urnfield",
+  "s": "ok"
+ },
+ {
+  "key": "me-phoenician-alphabet",
+  "s": "ok"
+ },
+ {
+  "key": "eu-hallstatt",
+  "s": "ok"
+ },
+ {
+  "key": "sam-paracas",
+  "s": "ok"
+ },
+ {
+  "key": "me-fall-of-samaria",
+  "s": "ok"
+ },
+ {
+  "key": "eg-assyrian-conquest",
+  "s": "ok"
+ },
+ {
+  "key": "me-babylonian-captivity",
+  "s": "ok"
+ },
+ {
+  "key": "ir-battle-of-the-eclipse",
+  "s": "ok"
+ },
+ {
+  "key": "conference-of-song",
+  "s": "ok"
+ },
+ {
+  "key": "jp-rice-reaches-kyushu",
+  "s": "ok"
+ },
+ {
+  "key": "ca-pazyryk",
+  "s": "ok"
+ },
+ {
+  "key": "mx-olmec-decline",
+  "s": "ok"
+ },
+ {
+  "key": "qin-issues-coins",
+  "s": "ok"
+ },
+ {
+  "key": "eu-alexander-campaign",
+  "s": "ok"
+ },
+ {
+  "key": "ying-yuan-gold",
+  "s": "ok"
+ },
+ {
+  "key": "qin-zhao",
+  "s": "ok"
+ },
+ {
+  "key": "qin-wei",
+  "s": "ok"
+ },
+ {
+  "key": "qin-chu",
+  "s": "ok"
+ },
+ {
+  "key": "qin-baiyue",
+  "s": "ok"
+ },
+ {
+  "key": "unified-weights-and-coins",
+  "s": "ok"
+ },
+ {
+  "key": "sam-nazca",
+  "s": "ok"
+ },
+ {
+  "key": "lulin",
+  "s": "ok"
+ },
+ {
+  "key": "battle-of-chengchang",
+  "s": "ok"
+ },
+ {
+  "key": "chimei-take-changan",
+  "s": "ok"
+ },
+ {
+  "key": "battle-of-jinwei-mountain",
+  "s": "ok"
+ },
+ {
+  "key": "sam-moche",
+  "s": "ok"
+ },
+ {
+  "key": "sa-sangam-literature",
+  "s": "ok"
+ },
+ {
+  "key": "battle-of-taoxi",
+  "s": "ok"
+ },
+ {
+  "key": "battle-of-duangu",
+  "s": "ok"
+ },
+ {
+  "key": "battle-of-yecheng",
+  "s": "ok"
+ },
+ {
+  "key": "sam-sican",
+  "s": "ok"
+ },
+ {
+  "key": "palace-examination",
+  "s": "ok"
+ },
+ {
+  "key": "sam-wari-collapse",
+  "s": "ok"
+ },
+ {
+  "key": "mx-tula-falls",
+  "s": "ok"
+ },
+ {
+  "key": "fuli",
+  "s": "ok"
+ },
+ {
+  "key": "sam-chancay",
+  "s": "ok"
+ },
+ {
+  "key": "eu-1237-mongol-invasion-of-rus",
+  "s": "ok"
+ },
+ {
+  "key": "linan-falls",
+  "s": "ok"
+ },
+ {
+  "key": "champa-campaign",
+  "s": "ok"
+ },
+ {
+  "key": "sam-muisca",
+  "s": "ok"
+ },
+ {
+  "key": "ca-black-death",
+  "s": "ok"
+ },
+ {
+  "key": "great-ming-code",
+  "s": "ok"
+ },
+ {
+  "key": "north-south-list-case",
+  "s": "ok"
+ },
+ {
+  "key": "mx-triple-alliance",
+  "s": "ok"
+ },
+ {
+  "key": "luchuan-campaigns",
+  "s": "ok"
+ },
+ {
+  "key": "sam-columbus-paria",
+  "s": "ok"
+ },
+ {
+  "key": "mx-noche-triste",
+  "s": "ok"
+ },
+ {
+  "key": "sam-inca-civil-war",
+  "s": "ok"
+ },
+ {
+  "key": "sam-atahualpa",
+  "s": "ok"
+ },
+ {
+  "key": "me-suleiman-takes-baghdad",
+  "s": "ok"
+ },
+ {
+  "key": "sam-arauco",
+  "s": "ok"
+ },
+ {
+  "key": "kangxi-bans-christianity",
+  "s": "ok"
+ },
+ {
+  "key": "ca-great-disaster",
+  "s": "ok"
+ },
+ {
+  "key": "dzungar",
+  "s": "ok"
+ },
+ {
+  "key": "altishahr-khojas",
+  "s": "ok"
+ },
+ {
+  "key": "sa-bengal-famine-1770",
+  "s": "ok"
+ },
+ {
+  "key": "sino-nepalese-war",
+  "s": "ok"
+ },
+ {
+  "key": "white-lotus",
+  "s": "ok"
+ },
+ {
+  "key": "na-lewis-and-clark",
+  "s": "ok"
+ },
+ {
+  "key": "nian-rebellion",
+  "s": "ok"
+ },
+ {
+  "key": "jp-kanagawa-convention",
+  "s": "ok"
+ },
+ {
+  "key": "eu-1861-italian-unification",
+  "s": "ok"
+ },
+ {
+  "key": "dungan-revolt",
+  "s": "ok"
+ },
+ {
+  "key": "na-alaska-purchase",
+  "s": "ok"
+ },
+ {
+  "key": "sam-conquest-desert",
+  "s": "ok"
+ },
+ {
+  "key": "constitutional-preparation",
+  "s": "ok"
+ },
+ {
+  "key": "na-ford-assembly-line",
+  "s": "ok"
+ },
+ {
+  "key": "ca-basmachi",
+  "s": "ok"
+ },
+ {
+  "key": "eg-rif-war",
+  "s": "ok"
+ },
+ {
+  "key": "eu-1941-the-holocaust",
+  "s": "ok"
+ },
+ {
+  "key": "na-manhattan-project",
+  "s": "ok"
+ },
+ {
+  "key": "mx-guatemalan-civil-war",
+  "s": "ok"
+ },
+ {
+  "key": "na-cuban-missile-crisis",
+  "s": "ok"
+ },
+ {
+  "key": "jp-astro-boy",
+  "s": "ok"
+ },
+ {
+  "key": "sam-dirty-war",
+  "s": "ok"
+ },
+ {
+  "key": "eu-1991-dissolution-of-the-ussr",
+  "s": "ok"
+ },
+ {
+  "key": "ca-independence",
+  "s": "ok"
+ },
+ {
+  "key": "eu-1995-schengen",
+  "s": "ok"
+ },
+ {
+  "key": "af-mali-war",
+  "s": "ok"
+ },
+ {
+  "key": "eu-2015-migrant-crisis",
+  "s": "ok"
+ },
+ {
+  "key": "eu-2016-brexit",
+  "s": "ok"
+ },
+ {
+  "key": "ir-twelve-day-war",
+  "s": "ok"
+ },
+ {
+  "key": "p|Yan Guang|-39|41",
+  "s": "doubt",
+  "n": "Wikipedia gives c. 1-75; Chinese sources give 39 BC-AD 41. Sources disagree.",
+  "n_zh": "英文维基作约1—75年，中文资料作前39—41年，说法分歧。"
+ },
+ {
+  "key": "p|An Shigao|None|180",
+  "s": "doubt",
+  "n": "Death year unknown; he is only attested as active c. 148-180.",
+  "n_zh": "卒年不详，仅知活动于约148—180年。"
+ },
+ {
+  "key": "Southern Xiongnu|Yufuluo|188|195",
+  "s": "ok"
+ },
+ {
+  "key": "Xianbei|Tanshihuai|156|181",
+  "s": "ok"
+ },
+ {
+  "key": "p|Yang Ningshi|873|954",
+  "s": "doubt",
+  "n": "Death year given as 954 in Chinese sources but 957 in Wikipedia/Wikidata.",
+  "n_zh": "卒年中文资料多作954年，英文维基作957年，说法不一。"
+ },
+ {
+  "key": "Later Liang|Zhu Wen|907|912",
+  "s": "ok"
+ },
+ {
+  "key": "Wuyue|Qian Yuanguan|932|941",
+  "s": "ok"
+ },
+ {
+  "key": "Wuyue|Qian Hongzuo|941|947",
+  "s": "ok"
+ },
+ {
+  "key": "Min|Wang Shenzhi|897|925",
+  "s": "ok"
+ },
+ {
+  "key": "Min|Wang Yanjun|926|935",
+  "s": "ok"
+ },
+ {
+  "key": "Jingnan|Gao Conghui|928|948",
+  "s": "ok"
+ },
+ {
+  "key": "Jingnan|Gao Baorong|948|960",
+  "s": "ok"
+ },
+ {
+  "key": "Northern Han|Liu Min|951|954",
+  "s": "ok"
+ },
+ {
+  "key": "Dingnan Circuit (Tangut)|Li Sijian|895|908",
+  "s": "doubt",
+  "n": "Start of reign uncertain; Li Sijian may have succeeded Li Sigong in 886 rather than 895.",
+  "n_zh": "始任年份不确定，李思谏或于886年继李思恭，而非895年。"
+ },
+ {
+  "key": "Ngo dynasty|Ngô Xương Văn|950|965",
+  "s": "ok"
+ },
+ {
+  "key": "Khitans|Yelü Abaoji|907|926",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Hyogong|897|912",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Sindeok|912|917",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Gyeongmyeong|917|924",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Gyeongae|924|927",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ge Hong|283|343",
+  "s": "ok"
+ },
+ {
+  "key": "p|Liu Kun|271|318",
+  "s": "ok"
+ },
+ {
+  "key": "Koguryo|Micheon|300|331",
+  "s": "ok"
+ },
+ {
+  "key": "Cheng Han|Li Shou|338|343",
+  "s": "ok"
+ },
+ {
+  "key": "Former Liang|Zhang Mao|320|324",
+  "s": "ok"
+ },
+ {
+  "key": "Former Liang|Zhang Jun|324|346",
+  "s": "ok"
+ },
+ {
+  "key": "Former Liang|Zhang Xuanjing|355|363",
+  "s": "ok"
+ },
+ {
+  "key": "Murong Xianbei|Murong Hui|285|333",
+  "s": "ok"
+ },
+ {
+  "key": "Former Yan|Murong Huang|337|348",
+  "s": "ok"
+ },
+ {
+  "key": "Former Qin|Fu Deng|386|394",
+  "s": "ok"
+ },
+ {
+  "key": "Later Yan|Murong Chui|384|396",
+  "s": "ok"
+ },
+ {
+  "key": "Later Yan|Murong Xi|401|407",
+  "s": "ok"
+ },
+ {
+  "key": "Later Qin|Yao Chang|384|393",
+  "s": "ok"
+ },
+ {
+  "key": "Later Qin|Yao Hong|416|417",
+  "s": "ok"
+ },
+ {
+  "key": "Western Yan|Murong Yong|386|394",
+  "s": "ok"
+ },
+ {
+  "key": "Western Qin|Qifu Chipan|412|428",
+  "s": "ok"
+ },
+ {
+  "key": "Later Liang (Sixteen Kingdoms)|Lü Zuan|399|401",
+  "s": "ok"
+ },
+ {
+  "key": "Southern Yan|Murong De|398|405",
+  "s": "ok"
+ },
+ {
+  "key": "Northern Yan|Feng Ba|409|430",
+  "s": "ok"
+ },
+ {
+  "key": "p|Xie Jin|1369|1415",
+  "s": "ok"
+ },
+ {
+  "key": "p|Chen Xianzhang|1428|1500",
+  "s": "ok"
+ },
+ {
+  "key": "Mongols (Northern Yuan)|Altan|1542|1582",
+  "s": "ok"
+ },
+ {
+  "key": "Oirat Confederation|Esen|1439|1454",
+  "s": "ok"
+ },
+ {
+  "key": "Joseon|Wang Chang|1388|1389",
+  "s": "ok"
+ },
+ {
+  "key": "p|Yuwen Tai|507|556",
+  "s": "ok"
+ },
+ {
+  "key": "Western Qin|Qifu Mumo|428|431",
+  "s": "ok"
+ },
+ {
+  "key": "Chouchi|Yang Sheng|394|425",
+  "s": "ok"
+ },
+ {
+  "key": "Southern Qi|Xiao Baojuan|498|501",
+  "s": "ok"
+ },
+ {
+  "key": "p|Li Gang|1083|1140",
+  "s": "ok"
+ },
+ {
+  "key": "p|Wu Jie|1093|1139",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang Chi|981|997",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang Song|997|1009",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang Heum|1031|1034",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang Un|1083|1094",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang Hae|1122|1146",
+  "s": "ok"
+ },
+ {
+  "key": "Jiaozhi (Đại Cồ Việt)|Ngô Xương Văn|950|965",
+  "s": "ok"
+ },
+ {
+  "key": "Jiaozhi (Đại Cồ Việt)|Lý Nhật Tôn|1054|1072",
+  "s": "ok"
+ },
+ {
+  "key": "Jiaozhi (Đại Cồ Việt)|Lý Càn Đức|1072|1127",
+  "s": "ok"
+ },
+ {
+  "key": "p|Zhang Cang|-256|-152",
+  "s": "ok"
+ },
+ {
+  "key": "Dzungar Khanate|Amursana|1755|1757",
+  "s": "ok"
+ },
+ {
+  "key": "Great Xi|Zhang Xianzhong|1644|1646",
+  "s": "ok"
+ },
+ {
+  "key": "Kingdom of Tungning|Zheng Jing|1662|1681",
+  "s": "ok"
+ },
+ {
+  "key": "Kingdom of Tungning|Zheng Keshuang|1681|1683",
+  "s": "ok"
+ },
+ {
+  "key": "Wu Zhou|Wu Sangui|1673|1678",
+  "s": "ok"
+ },
+ {
+  "key": "p|Zhong Hui|None|-1580",
+  "s": "doubt",
+  "n": "Matched page is Zhong Hui (225-264) of Cao Wei; entry with death c.1580 BC likely refers to Zhonghui, legendary minister of Tang of Shang; date legendary.",
+  "n_zh": "匹配页面为曹魏钟会(225-264)；约前1580年卒应指商汤大臣仲虺，年代属传说，无法核实。"
+ },
+ {
+  "key": "p|Pan Geng|None|-1277",
+  "s": "doubt",
+  "n": "Shang king; reign dates are reconstructed and vary widely between chronologies.",
+  "n_zh": "商王，在位年代为推算，各家年表差异较大。"
+ },
+ {
+  "key": "p|Daji|None|-1046",
+  "s": "ok"
+ },
+ {
+  "key": "Shang|Zi Zhao|-1250|-1192",
+  "s": "ok"
+ },
+ {
+  "key": "p|Chen Ziming|1190|1270",
+  "s": "ok"
+ },
+ {
+  "key": "p|Li Gao (Li Dongyuan)|1180|1251",
+  "s": "ok"
+ },
+ {
+  "key": "p|Guan Hanqing|1241|1320",
+  "s": "ok"
+ },
+ {
+  "key": "Kara Khitai Khaganate|Yelü Zhilugu|1178|1211",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wang O|1211|1213",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lý Càn Đức|1072|1127",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lý Dương Hoán|1128|1138",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lý Long Cán|1175|1210",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Trần Cảnh|1225|1258",
+  "s": "ok"
+ },
+ {
+  "key": "p|Wu Zixu|-559|-484",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Chou|-780|-746",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Guang|-717|-710",
+  "s": "fixed",
+  "set": {
+   "to": -709
+  },
+  "n": "Was 710 BC; Wikipedia and Shiji: Marquis Ai reigned until his capture by Quwo in 709 BC.",
+  "n_zh": "原作前710年；据维基百科及《史记》，晋哀侯于前709年被曲沃所俘，在位至前709年。"
+ },
+ {
+  "key": "Jin|Marquis Xiaozi of Jin|-709|-706",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Chong'er|-636|-628",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Huan|-627|-621",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Yigao|-620|-607",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Heitun|-606|-600",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Zhou|-572|-558",
+  "s": "ok"
+ },
+ {
+  "key": "Qi|Jiang Xiaobai|-685|-643",
+  "s": "ok"
+ },
+ {
+  "key": "Lu|Ji Xigu|-722|-712",
+  "s": "ok"
+ },
+ {
+  "key": "Lu|Ji Yun|-711|-694",
+  "s": "ok"
+ },
+ {
+  "key": "Lu|Ji Tong|-693|-662",
+  "s": "ok"
+ },
+ {
+  "key": "Lu|Ji Song|-509|-495",
+  "s": "ok"
+ },
+ {
+  "key": "Lu|Ji Jiang|-494|-468",
+  "s": "ok"
+ },
+ {
+  "key": "Wey|Ji Wan|-734|-719",
+  "s": "ok"
+ },
+ {
+  "key": "Wey|Ji Chi|-668|-660",
+  "s": "ok"
+ },
+ {
+  "key": "Qin|Ying Renhao|-659|-621",
+  "s": "ok"
+ },
+ {
+  "key": "Qin|Ying Ying|-620|-609",
+  "s": "ok"
+ },
+ {
+  "key": "Chu|Xiong Yi|-790|-764",
+  "s": "ok"
+ },
+ {
+  "key": "Chu|Xiong Xuan|-757|-741",
+  "s": "ok"
+ },
+ {
+  "key": "Wu|Shoumeng|-585|-561",
+  "s": "ok"
+ },
+ {
+  "key": "Wu|Liao|-526|-515",
+  "s": "ok"
+ },
+ {
+  "key": "Wu|Ji Guang|-514|-496",
+  "s": "ok"
+ },
+ {
+  "key": "Paekche|Buyeo Chang|554|598",
+  "s": "ok"
+ },
+ {
+  "key": "p|Wu Daozi|680|759",
+  "s": "ok"
+ },
+ {
+  "key": "p|Gao Shi|704|765",
+  "s": "ok"
+ },
+ {
+  "key": "Western Gokturk Khaganate|Ashina Helu|651|657",
+  "s": "ok"
+ },
+ {
+  "key": "Tibetan Empire|Songtsen Gampo|618|650",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Kim Chunchu|654|661",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Hyegong|765|780",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Kim Yangsang|780|785",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Munseong|839|857",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Heonan|857|861",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Gyeongmun|861|875",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Heongang|875|886",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Jeonggang|886|887",
+  "s": "ok"
+ },
+ {
+  "key": "p|Xiang Xiu|227|272",
+  "s": "ok"
+ },
+ {
+  "key": "Wei|Cao Pi|220|226",
+  "s": "ok"
+ },
+ {
+  "key": "Wei|Cao Rui|226|239",
+  "s": "ok"
+ },
+ {
+  "key": "Wei|Cao Mao|254|260",
+  "s": "ok"
+ },
+ {
+  "key": "p|Yang Zhu|-440|-360",
+  "s": "ok"
+ },
+ {
+  "key": "p|Zisi|-481|-402",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Zao|-474|-452",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Liu|-433|-416",
+  "s": "ok"
+ },
+ {
+  "key": "Jin|Ji Zhi|-415|-389",
+  "s": "ok"
+ },
+ {
+  "key": "Zhongshan|Cuo|-327|-313",
+  "s": "ok"
+ },
+ {
+  "key": "Yan|Kuai|-320|-316",
+  "s": "ok"
+ },
+ {
+  "key": "Qin|Ying Daozi|-414|-400",
+  "s": "ok"
+ },
+ {
+  "key": "Qin|Ying Shixi|-384|-362",
+  "s": "ok"
+ },
+ {
+  "key": "Han|Marquis Ai of Han|-376|-374",
+  "s": "ok"
+ },
+ {
+  "key": "Wei|Wei Su|-295|-277",
+  "s": "ok"
+ },
+ {
+  "key": "Zhao|Zhao Ji|-408|-400",
+  "s": "ok"
+ },
+ {
+  "key": "Zhao|Zhao Zhang|-386|-375",
+  "s": "ok"
+ },
+ {
+  "key": "Zhao|Zhao Zhong|-374|-350",
+  "s": "ok"
+ },
+ {
+  "key": "Zhao|Zhao Yu|-349|-326",
+  "s": "ok"
+ },
+ {
+  "key": "Xiongnu|Hulugu|-96|-85",
+  "s": "ok"
+ },
+ {
+  "key": "Xiongnu|Xulüquanqu|-68|-60",
+  "s": "ok"
+ },
+ {
+  "key": "Xiongnu|Tuqitang|-60|-58",
+  "s": "ok"
+ },
+ {
+  "key": "Nan-Yue|Zhao Mo|-137|-122",
+  "s": "ok"
+ },
+ {
+  "key": "Koguryo|Jumong|-37|-19",
+  "s": "ok"
+ },
+ {
+  "key": "Western Zhou realm|Gonghe Regency|-841|-828",
+  "s": "ok"
+ },
+ {
+  "key": "Scythians|Ateas|-360|-339",
+  "s": "ok"
+ },
+ {
+  "key": "Bactria|Demetrius I|-200|-180",
+  "s": "ok"
+ },
+ {
+  "key": "Bactria|Heliocles I|-145|-130",
+  "s": "ok"
+ },
+ {
+  "key": "p|Kujula Kadphises|1|80",
+  "s": "doubt",
+  "n": "Birth year unknown; only reign (c.30-80 CE) is attested, and death date varies (80-90 CE).",
+  "n_zh": "生年不详；仅在位年代(约30-80年)可考，卒年说法不一(80-90年)。"
+ },
+ {
+  "key": "p|Lokaksema|147|189",
+  "s": "doubt",
+  "n": "147-189 are floruit dates, not birth and death years; actual birth/death unknown.",
+  "n_zh": "147-189年为活动年代，非生卒年；实际生卒不详。"
+ },
+ {
+  "key": "p|Yujiulü Anagui|490|552",
+  "s": "doubt",
+  "n": "Birth year unattested (Wikipedia gives ?-552; Wikidata 472); only death in 552 is secure.",
+  "n_zh": "生年无记载(维基百科作?-552，维基数据作472年)；仅552年卒确定。"
+ },
+ {
+  "key": "Western Gokturk Khaganate|Istämi|552|576",
+  "s": "ok"
+ },
+ {
+  "key": "Western Gokturk Khaganate|Tardu|576|603",
+  "s": "ok"
+ },
+ {
+  "key": "Samanid Empire|Ahmad ibn Isma'il|907|914",
+  "s": "ok"
+ },
+ {
+  "key": "p|Mahmud al-Kashgari|1005|1102",
+  "s": "ok"
+ },
+ {
+  "key": "p|Tughlugh Timur|1312|1363",
+  "s": "ok"
+ },
+ {
+  "key": "Timurid Empire|Shah Rukh|1409|1447",
+  "s": "ok"
+ },
+ {
+  "key": "Chagatai Khanate|Khizr Khoja|1389|1399",
+  "s": "ok"
+ },
+ {
+  "key": "Bokhara Khanate|Muzaffar bin Nasrullah|1860|1885",
+  "s": "ok"
+ },
+ {
+  "key": "USSR|Joseph Stalin|1924|1953",
+  "s": "ok"
+ },
+ {
+  "key": "USSR|Leonid Brezhnev|1964|1982",
+  "s": "ok"
+ },
+ {
+  "key": "Kazakhstan|Kassym-Jomart Tokayev|2019|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Uzbekistan|Shavkat Mirziyoyev|2016|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Turkmenistan|Serdar Berdimuhamedow|2022|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Narmer|-3030|-2985",
+  "s": "doubt",
+  "n": "Narmer's birth and death years are unknown; he is dated only approximately (fl. c. 3100 BC) and chronologies vary.",
+  "n_zh": "那尔迈生卒年不详，仅能大致定于约前3100年，各年表不一。"
+ },
+ {
+  "key": "Egypt|Huni|-2637|-2613",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Sneferu|-2613|-2589",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Menkaure|-2532|-2503",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Kamose|-1555|-1550",
+  "s": "ok"
+ },
+ {
+  "key": "p|Pinedjem I|-1090|-1032",
+  "s": "ok"
+ },
+ {
+  "key": "Kush|Taharqa|-690|-664",
+  "s": "ok"
+ },
+ {
+  "key": "p|Petosiris|-380|-320",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Nepherites I|-399|-393",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Hakor|-393|-380",
+  "s": "ok"
+ },
+ {
+  "key": "Achaemenid Empire|Artaxerxes I|-465|-424",
+  "s": "ok"
+ },
+ {
+  "key": "Achaemenid Empire|Darius II|-423|-405",
+  "s": "ok"
+ },
+ {
+  "key": "Ptolemaic Kingdom|Alexander the Great|-332|-323",
+  "s": "ok"
+ },
+ {
+  "key": "Ptolemaic Kingdom|Ptolemy II Philadelphus|-283|-246",
+  "s": "ok"
+ },
+ {
+  "key": "Ptolemaic Kingdom|Ptolemy XII Auletes|-80|-58",
+  "s": "ok"
+ },
+ {
+  "key": "Numidia|Juba I|-60|-46",
+  "s": "ok"
+ },
+ {
+  "key": "Roman Empire|Augustus|-27|14",
+  "s": "ok"
+ },
+ {
+  "key": "Mauretania|Ptolemy of Mauretania|23|40",
+  "s": "ok"
+ },
+ {
+  "key": "p|Dihya|640|703",
+  "s": "ok"
+ },
+ {
+  "key": "Idrisid Caliphate|Idris I|788|791",
+  "s": "ok"
+ },
+ {
+  "key": "Idrisid Caliphate|Muhammad ibn Idris|828|836",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ibn al-Jazzar|895|979",
+  "s": "ok"
+ },
+ {
+  "key": "Tulunid Emirate|Harun ibn Khumarawayh|896|904",
+  "s": "ok"
+ },
+ {
+  "key": "Aghlabid Emirate|Abdallah II|902|903",
+  "s": "ok"
+ },
+ {
+  "key": "p|Jawhar al-Siqilli|928|992",
+  "s": "doubt",
+  "n": "Birth year unknown; Wikidata gives 911, other sources c. 928.",
+  "n_zh": "生年不详；维基数据作911年，另有约928年之说。"
+ },
+ {
+  "key": "p|Ibn Yunus|950|1009",
+  "s": "ok"
+ },
+ {
+  "key": "p|Badr al-Jamali|1015|1094",
+  "s": "ok"
+ },
+ {
+  "key": "Zirid dynasty|al-Mansur ibn Buluggin|984|996",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ibn al-Nafis|1213|1288",
+  "s": "ok"
+ },
+ {
+  "key": "p|Al-Busiri|1211|1294",
+  "s": "ok"
+ },
+ {
+  "key": "p|Khayr al-Din Pasha|1820|1890",
+  "s": "ok"
+ },
+ {
+  "key": "Egypt|Abdel Fattah el-Sisi|2014|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Libya|Muammar Gaddafi|1969|2011",
+  "s": "ok"
+ },
+ {
+  "key": "Algeria|Abdelmadjid Tebboune|2019|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Morocco|Mohammed VI|1999|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Lycurgus|-900|-800",
+  "s": "doubt",
+  "n": "Legendary figure; dates are traditional and vary widely (Wikidata c. 800-730 BC).",
+  "n_zh": "传说人物，年代为传统说法且分歧很大（维基数据作约前800至前730年）。"
+ },
+ {
+  "key": "Athens|Peisistratos|-561|-527",
+  "s": "ok"
+ },
+ {
+  "key": "Athens|Hippias|-527|-510",
+  "s": "ok"
+ },
+ {
+  "key": "Macedon|Alexander I|-498|-454",
+  "s": "ok"
+ },
+ {
+  "key": "Macedon|Archelaus I|-413|-399",
+  "s": "ok"
+ },
+ {
+  "key": "Sparta|Cleomenes I|-520|-490",
+  "s": "ok"
+ },
+ {
+  "key": "Sparta|Agesilaus II|-400|-360",
+  "s": "ok"
+ },
+ {
+  "key": "Macedon and Hellenic League|Alexander IV|-323|-309",
+  "s": "ok"
+ },
+ {
+  "key": "Syracuse|Hiero II|-270|-215",
+  "s": "ok"
+ },
+ {
+  "key": "Roman Republic|Julius Caesar|-49|-44",
+  "s": "ok"
+ },
+ {
+  "key": "Western Roman Empire|Honorius|395|423",
+  "s": "ok"
+ },
+ {
+  "key": "Frankish Kingdom|Chlothar I|511|561",
+  "s": "ok"
+ },
+ {
+  "key": "p|John Scotus Eriugena|815|877",
+  "s": "ok"
+ },
+ {
+  "key": "p|Hrotsvitha|935|1002",
+  "s": "doubt",
+  "n": "Death date unknown; Wikipedia gives c. 973, other sources c. 1000/1002.",
+  "n_zh": "卒年不详；维基百科作约973年，另有约1000/1002年之说。"
+ },
+ {
+  "key": "Carolingian Empire|Louis II|855|875",
+  "s": "ok"
+ },
+ {
+  "key": "East Francia|Otto II|973|983",
+  "s": "ok"
+ },
+ {
+  "key": "Holy Roman Empire|Otto IV|1198|1215",
+  "s": "ok"
+ },
+ {
+  "key": "England|Harold I Harefoot|1035|1040",
+  "s": "ok"
+ },
+ {
+  "key": "Grand Duchy of Moscow|Ivan I Kalita|1325|1340",
+  "s": "ok"
+ },
+ {
+  "key": "Grand Duchy of Moscow|Vasily II|1425|1462",
+  "s": "ok"
+ },
+ {
+  "key": "France|Louis-Napoléon Bonaparte|1848|1852",
+  "s": "ok"
+ },
+ {
+  "key": "West Germany|Konrad Adenauer|1949|1963",
+  "s": "ok"
+ },
+ {
+  "key": "Germany|Friedrich Merz|2025|2026",
+  "s": "ok"
+ },
+ {
+  "key": "France|Emmanuel Macron|2017|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Russia|Vladimir Putin|2012|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Puzur-Inshushinak|-2130|-2080",
+  "s": "doubt",
+  "n": "Dates very uncertain; Wikipedia gives death c. 2110 BC, not 2080 BC.",
+  "n_zh": "年代极不确定；维基百科作约前2110年卒，而非前2080年。"
+ },
+ {
+  "key": "Elam|Shutruk-Nakhunte|-1184|-1155",
+  "s": "ok"
+ },
+ {
+  "key": "Elam|Shilhak-Inshushinak|-1150|-1120",
+  "s": "ok"
+ },
+ {
+  "key": "Elam|Hutelutush-Inshushinak|-1120|-1110",
+  "s": "ok"
+ },
+ {
+  "key": "Media|Cyaxares|-625|-585",
+  "s": "ok"
+ },
+ {
+  "key": "Media|Astyages|-585|-550",
+  "s": "ok"
+ },
+ {
+  "key": "Achaemenid Empire|Cyrus II|-559|-530",
+  "s": "ok"
+ },
+ {
+  "key": "Achaemenid Empire|Artaxerxes III|-358|-338",
+  "s": "ok"
+ },
+ {
+  "key": "Seleucid Kingdom|Seleucus I Nicator|-305|-281",
+  "s": "ok"
+ },
+ {
+  "key": "Parthian Empire|Osroes I|109|129",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ibn al-Muqaffa|724|759",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ja'far ibn Yahya|767|803",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ali al-Rida|766|818",
+  "s": "ok"
+ },
+ {
+  "key": "p|Bayazid Bastami|804|874",
+  "s": "ok"
+ },
+ {
+  "key": "p|Istakhri|890|957",
+  "s": "ok"
+ },
+ {
+  "key": "p|Hassan-i Sabbah|1050|1124",
+  "s": "ok"
+ },
+ {
+  "key": "p|Sharaf al-Din Ali Yazdi|1370|1454",
+  "s": "ok"
+ },
+ {
+  "key": "Persia|Jafar Khan|1785|1789",
+  "s": "ok"
+ },
+ {
+  "key": "p|Sattar Khan|1868|1914",
+  "s": "fixed",
+  "set": {
+   "born": 1866
+  },
+  "n": "Was 1868; Wikipedia and Wikidata give 20 October 1866.",
+  "n_zh": "原作1868年，据维基百科与维基数据改为1866年。"
+ },
+ {
+  "key": "Afghanistan|Shah Shuja Durrani|1803|1809",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ali-Akbar Dehkhoda|1879|1956",
+  "s": "ok"
+ },
+ {
+  "key": "p|Nima Yooshij|1897|1960",
+  "s": "fixed",
+  "set": {
+   "born": 1895
+  },
+  "n": "Was 1897; Wikipedia and Wikidata give 11 November 1895.",
+  "n_zh": "原作1897年，据维基百科与维基数据改为1895年。"
+ },
+ {
+  "key": "Iran|Ali Khamenei|1989|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Afghanistan|Hibatullah Akhundzada|2021|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Yamatai|Himiko|189|248",
+  "s": "ok"
+ },
+ {
+  "key": "Oda and Toyotomi regimes|Toyotomi Hideyoshi|1582|1598",
+  "s": "ok"
+ },
+ {
+  "key": "Oda and Toyotomi regimes|Toyotomi Hideyori|1598|1600",
+  "s": "ok"
+ },
+ {
+  "key": "Empire of Japan|Hirohito|1926|1947",
+  "s": "ok"
+ },
+ {
+  "key": "Japan|Hirohito|1947|1989",
+  "s": "ok"
+ },
+ {
+  "key": "Japan|Naruhito|2019|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Gaya|Suro|42|199",
+  "s": "ok"
+ },
+ {
+  "key": "p|Jinheung of Silla|534|576",
+  "s": "ok"
+ },
+ {
+  "key": "p|Queen Seondeok of Silla|595|647",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Muyeol|654|661",
+  "s": "ok"
+ },
+ {
+  "key": "Silla|Munmu|661|681",
+  "s": "ok"
+ },
+ {
+  "key": "Balhae|Dae Hyeonseok|871|894",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Hyejong|943|945",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Jeongjong|945|949",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Gyeongjong|975|981",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Seongjong|981|997",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Mokjong|997|1009",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Hyeonjong|1009|1031",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Deokjong|1031|1034",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Seonjong|1083|1094",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Gangjong|1211|1213",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Wonjong|1259|1274",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Chunghye|1330|1332",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Chunghye|1339|1344",
+  "s": "ok"
+ },
+ {
+  "key": "Goryeo|Chang|1388|1389",
+  "s": "ok"
+ },
+ {
+  "key": "p|Hwang Jini|1506|1560",
+  "s": "doubt",
+  "n": "Dates uncertain; Wikipedia gives 1506-1567, Wikidata death 1544.",
+  "n_zh": "生卒不确定；维基百科作1506-1567年，维基数据卒年作1544年。"
+ },
+ {
+  "key": "p|Heo Jun|1539|1615",
+  "s": "ok"
+ },
+ {
+  "key": "Provisional Government of the Republic of Korea|Kim Gu|1940|1947",
+  "s": "ok"
+ },
+ {
+  "key": "Korea, Democratic People's Republic of|Kim Jong Un|2011|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Lady Six Sky|670|741",
+  "s": "ok"
+ },
+ {
+  "key": "p|Topiltzin Quetzalcoatl|895|947",
+  "s": "ok"
+ },
+ {
+  "key": "Toltec Empire|Topiltzin Quetzalcoatl|923|947",
+  "s": "ok"
+ },
+ {
+  "key": "Mixtecs|Eight Deer Jaguar Claw|1083|1115",
+  "s": "ok"
+ },
+ {
+  "key": "Aztec Empire|Cuauhtémoc|1520|1521",
+  "s": "ok"
+ },
+ {
+  "key": "p|Andrés de Urdaneta|1508|1568",
+  "s": "ok"
+ },
+ {
+  "key": "Viceroyalty of New Spain|Philip II|1556|1598",
+  "s": "ok"
+ },
+ {
+  "key": "Viceroyalty of New Spain|Philip IV|1621|1665",
+  "s": "ok"
+ },
+ {
+  "key": "Mexico|Claudia Sheinbaum|2024|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Uruk|Lugal-zage-si|-2358|-2334",
+  "s": "ok"
+ },
+ {
+  "key": "Ur|Mesannepada|-2560|-2525",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Sargon|-2334|-2279",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Rimush|-2278|-2270",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Manishtushu|-2269|-2255",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Shar-Kali-Sharri|-2217|-2193",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Dudu|-2189|-2169",
+  "s": "ok"
+ },
+ {
+  "key": "Akkadian Empire|Shu-Turul|-2168|-2154",
+  "s": "ok"
+ },
+ {
+  "key": "Babylon|Sumu-la-El|-1880|-1845",
+  "s": "ok"
+ },
+ {
+  "key": "p|Kikkuli|-1400|-1350",
+  "s": "doubt",
+  "n": "Only a floruit of c. 1400 BC is known; birth/death years are conjectural.",
+  "n_zh": "仅知其活跃于约公元前1400年，生卒年均为推测。"
+ },
+ {
+  "key": "p|Tushratta|-1380|-1335",
+  "s": "ok"
+ },
+ {
+  "key": "p|Tukulti-Ninurta I|-1260|-1197",
+  "s": "ok"
+ },
+ {
+  "key": "Hittites|Suppiluliuma I|-1344|-1322",
+  "s": "ok"
+ },
+ {
+  "key": "Kingdom of David and Solomon|David|-1010|-970",
+  "s": "ok"
+ },
+ {
+  "key": "Assyria|Ashur-bel-kala|-1073|-1056",
+  "s": "ok"
+ },
+ {
+  "key": "Pergamon|Attalus II|-159|-138",
+  "s": "ok"
+ },
+ {
+  "key": "p|Johanan ben Zakkai|-30|90",
+  "s": "doubt",
+  "n": "Life dates are traditional and very uncertain (1st century CE).",
+  "n_zh": "生卒年为传统说法，极不确定（公元1世纪）。"
+ },
+ {
+  "key": "p|Judah ha-Nasi|135|217",
+  "s": "ok"
+ },
+ {
+  "key": "Parthian Empire|Phraates III|-70|-57",
+  "s": "ok"
+ },
+ {
+  "key": "Judea|Herod the Great|-37|-4",
+  "s": "ok"
+ },
+ {
+  "key": "Buyid Emirate|Izz al-Dawla|967|978",
+  "s": "ok"
+ },
+ {
+  "key": "Buyid Emirate|Samsam al-Dawla|983|987",
+  "s": "ok"
+ },
+ {
+  "key": "p|Alexios I Komnenos|1057|1118",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ismail al-Jazari|1136|1206",
+  "s": "ok"
+ },
+ {
+  "key": "Kingdom of Jerusalem|Baldwin V|1185|1186",
+  "s": "ok"
+ },
+ {
+  "key": "Kingdom of Jerusalem|Sibylla and Guy|1186|1192",
+  "s": "ok"
+ },
+ {
+  "key": "p|Bayezid I|1360|1403",
+  "s": "ok"
+ },
+ {
+  "key": "Ottoman Empire|Orhan|1324|1362",
+  "s": "ok"
+ },
+ {
+  "key": "p|Ahmad bin Said al-Busaidi|1710|1783",
+  "s": "fixed",
+  "set": {
+   "born": 1694
+  },
+  "n": "Was 1710; Wikipedia and Wikidata give 1694 (c. 1693/94).",
+  "n_zh": "原作1710年，据维基百科和维基数据改为1694年。"
+ },
+ {
+  "key": "Oman|Said bin Sultan|1806|1856",
+  "s": "ok"
+ },
+ {
+  "key": "p|Amin al-Husseini|1897|1974",
+  "s": "ok"
+ },
+ {
+  "key": "Israel|Yitzhak Rabin|1992|1995",
+  "s": "ok"
+ },
+ {
+  "key": "Israel|Benjamin Netanyahu|2022|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Saudi Arabia|Salman|2015|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Turkey|Recep Tayyip Erdoğan|2014|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Iraq|Saddam Hussein|1979|2003",
+  "s": "ok"
+ },
+ {
+  "key": "p|Juan Ponce de León|1474|1521",
+  "s": "ok"
+ },
+ {
+  "key": "Powhatan Confederacy|Wahunsenacawh|1570|1618",
+  "s": "ok"
+ },
+ {
+  "key": "British American colonies|George II|1727|1760",
+  "s": "ok"
+ },
+ {
+  "key": "p|Amelia Earhart|1897|1937",
+  "s": "ok"
+ },
+ {
+  "key": "United States|George H. W. Bush|1989|1993",
+  "s": "ok"
+ },
+ {
+  "key": "Canada|Mark Carney|2025|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Pachacuti|1418|1471",
+  "s": "ok"
+ },
+ {
+  "key": "Neo-Inca State|Manco Inca Yupanqui|1533|1544",
+  "s": "ok"
+ },
+ {
+  "key": "Neo-Inca State|Túpac Amaru|1571|1572",
+  "s": "ok"
+ },
+ {
+  "key": "Brazil|John VI|1808|1821",
+  "s": "ok"
+ },
+ {
+  "key": "Brazil|Luiz Inácio Lula da Silva|2023|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Argentina|Javier Milei|2023|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Jivaka|-560|-480",
+  "s": "doubt",
+  "n": "Dates hinge on the disputed Buddha chronology; Wikipedia places him in the 5th century BC.",
+  "n_zh": "年代取决于有争议的佛陀年表；维基百科置于公元前5世纪。"
+ },
+ {
+  "key": "p|Makkhali Gosala|-580|-484",
+  "s": "doubt",
+  "n": "Dates hinge on disputed Buddha/Mahavira chronology (6th or 5th century BC).",
+  "n_zh": "年代取决于有争议的佛陀/大雄年表（公元前6或5世纪）。"
+ },
+ {
+  "key": "p|Amrapali|-560|-480",
+  "s": "doubt",
+  "n": "Semi-legendary; only 'around 500 BC' is known, tied to disputed Buddha chronology.",
+  "n_zh": "半传说人物，仅知约公元前500年，依赖有争议的佛陀年表。"
+ },
+ {
+  "key": "p|Devanampiya Tissa|-280|-207",
+  "s": "ok"
+ },
+ {
+  "key": "Mauryan Empire|Chandragupta Maurya|-322|-298",
+  "s": "ok"
+ },
+ {
+  "key": "p|Menander I|-165|-130",
+  "s": "doubt",
+  "n": "Birth year equals the start of his reign (c. 165/155 BC), so it is likely too late; true birth year unknown.",
+  "n_zh": "出生年与其即位年（约公元前165/155年）相同，可能偏晚，确切生年不详。"
+ },
+ {
+  "key": "p|Kharavela|-190|-150",
+  "s": "doubt",
+  "n": "Hathigumpha inscription is undated; scholars place him in the 2nd or 1st century BC.",
+  "n_zh": "哈提贡帕铭文无纪年，学者将其定于公元前2或1世纪。"
+ },
+ {
+  "key": "p|Charaka|-100|0",
+  "s": "doubt",
+  "n": "Dates are very uncertain; estimates range from before 100 BC to c. 200 CE.",
+  "n_zh": "年代极不确定，估计从公元前100年前到公元200年左右不等。"
+ },
+ {
+  "key": "p|Kanishka|100|150",
+  "s": "ok"
+ },
+ {
+  "key": "p|Aryadeva|170|250",
+  "s": "ok"
+ },
+ {
+  "key": "p|Samudragupta|318|375",
+  "s": "ok"
+ },
+ {
+  "key": "p|Banabhatta|600|660",
+  "s": "ok"
+ },
+ {
+  "key": "p|Narasimhavarman I|600|668",
+  "s": "ok"
+ },
+ {
+  "key": "p|Dandin|660|720",
+  "s": "ok"
+ },
+ {
+  "key": "p|Andal|700|730",
+  "s": "doubt",
+  "n": "Dating disputed: tradition and some scholars say 8th century, Wikidata gives 9th-10th century.",
+  "n_zh": "年代有争议：传统及部分学者认为8世纪，维基数据作9至10世纪。"
+ },
+ {
+  "key": "p|Lalitaditya Muktapida|699|760",
+  "s": "ok"
+ },
+ {
+  "key": "Rashtrakuta state|Khottiga|967|972",
+  "s": "ok"
+ },
+ {
+  "key": "Palas|Gopala|750|770",
+  "s": "ok"
+ },
+ {
+  "key": "p|Basava|1105|1167",
+  "s": "doubt",
+  "n": "Sources disagree: 1105-1167 vs 1131/1134-1196 (Wikipedia).",
+  "n_zh": "各说不一：1105-1167年与1131/1134-1196年（维基百科）。"
+ },
+ {
+  "key": "p|Jayadeva|1150|1220",
+  "s": "ok"
+ },
+ {
+  "key": "Chalukya Empire|Satyashraya|997|1008",
+  "s": "ok"
+ },
+ {
+  "key": "Chalukya Empire|Jayasimha II|1015|1042",
+  "s": "ok"
+ },
+ {
+  "key": "Chalukya Empire|Someshvara I|1042|1068",
+  "s": "ok"
+ },
+ {
+  "key": "Bahmani Kingdom|Firuz Shah Bahmani|1397|1422",
+  "s": "ok"
+ },
+ {
+  "key": "p|Shivaji|1630|1680",
+  "s": "ok"
+ },
+ {
+  "key": "p|Mahadaji Shinde|1730|1794",
+  "s": "ok"
+ },
+ {
+  "key": "Mysore|Hyder Ali|1761|1782",
+  "s": "ok"
+ },
+ {
+  "key": "British Raj|Lord Irwin|1926|1931",
+  "s": "ok"
+ },
+ {
+  "key": "Nepal|Jung Bahadur Rana|1846|1877",
+  "s": "ok"
+ },
+ {
+  "key": "Nepal|Ranodip Singh Kunwar|1877|1885",
+  "s": "ok"
+ },
+ {
+  "key": "Nepal|Padma Shumsher|1945|1948",
+  "s": "ok"
+ },
+ {
+  "key": "India|Narendra Modi|2014|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Pakistan|Shehbaz Sharif|2022|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Sri Lanka|Anura Kumara Dissanayake|2024|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Nanyue|Zhao Tuo|-203|-137",
+  "s": "ok"
+ },
+ {
+  "key": "Funan|Jayavarman|478|514",
+  "s": "ok"
+ },
+ {
+  "key": "Champa|Khu Liên|192|220",
+  "s": "ok"
+ },
+ {
+  "key": "p|Phùng Hưng|740|791",
+  "s": "ok"
+ },
+ {
+  "key": "Srivijaya Empire|Sri Indravarman|702|728",
+  "s": "ok"
+ },
+ {
+  "key": "Mataram|Sanjaya|732|746",
+  "s": "ok"
+ },
+ {
+  "key": "p|Vạn Hạnh|938|1018",
+  "s": "ok"
+ },
+ {
+  "key": "p|Lê Văn Thịnh|1050|1096",
+  "s": "doubt",
+  "n": "Birth year disputed: English Wikipedia gives 1038, other sources 1050.",
+  "n_zh": "生年有争议：英文维基百科作1038年，其他资料作1050年。"
+ },
+ {
+  "key": "Đại Việt|Lý Thánh Tông|1054|1072",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lý Nhân Tông|1072|1127",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lý Thần Tông|1128|1138",
+  "s": "ok"
+ },
+ {
+  "key": "Sukhothai|Ban Mueang|1270|1279",
+  "s": "ok"
+ },
+ {
+  "key": "Singhasari|Ken Arok (Rajasa)|1222|1227",
+  "s": "ok"
+ },
+ {
+  "key": "Majapahit|Raden Wijaya (Kertarajasa)|1293|1309",
+  "s": "ok"
+ },
+ {
+  "key": "Majapahit|Jayanegara|1309|1328",
+  "s": "ok"
+ },
+ {
+  "key": "Majapahit|Hayam Wuruk (Rajasanagara)|1350|1389",
+  "s": "ok"
+ },
+ {
+  "key": "p|Shin Maha Thilawuntha|1453|1520",
+  "s": "ok"
+ },
+ {
+  "key": "Malacca|Parameswara|1400|1414",
+  "s": "ok"
+ },
+ {
+  "key": "Malacca|Megat Iskandar Shah|1414|1424",
+  "s": "ok"
+ },
+ {
+  "key": "Ayutthaya|Trailokanat|1448|1488",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Hồ Hán Thương|1401|1407",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lê Nhân Tông|1442|1459",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Lê Hiến Tông|1497|1504",
+  "s": "ok"
+ },
+ {
+  "key": "p|Lê Hữu Trác (Hải Thượng Lãn Ông)|1724|1791",
+  "s": "ok"
+ },
+ {
+  "key": "Đại Việt|Trịnh Tùng|1570|1623",
+  "s": "ok"
+ },
+ {
+  "key": "Burmese kingdoms|Nyaungyan|1599|1605",
+  "s": "ok"
+ },
+ {
+  "key": "Nguyễn dynasty|Nguyễn Phúc Hồng Nhậm|1847|1883",
+  "s": "ok"
+ },
+ {
+  "key": "Indonesia|Prabowo Subianto|2024|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Thailand|Vajiralongkorn|2016|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Kush|Shabaka|-705|-690",
+  "s": "ok"
+ },
+ {
+  "key": "Kush|Tantamani|-664|-653",
+  "s": "ok"
+ },
+ {
+  "key": "Meroe|Natakamani|1|20",
+  "s": "doubt",
+  "n": "Reign dating disputed: older chronology c. 1 BC-AD 20, current view mid-1st century CE (Nero era).",
+  "n_zh": "在位年代有争议：旧说约公元前1年至公元20年，现多认为公元1世纪中叶（尼禄时代）。"
+ },
+ {
+  "key": "Ghana|Tunka Manin|1063|1076",
+  "s": "ok"
+ },
+ {
+  "key": "Mali|Sakura|1285|1300",
+  "s": "ok"
+ },
+ {
+  "key": "p|Muhammad al-Maghili|1440|1505",
+  "s": "ok"
+ },
+ {
+  "key": "Songhai|Sunni Baru|1492|1493",
+  "s": "ok"
+ },
+ {
+  "key": "Songhai|Askia Musa|1528|1531",
+  "s": "ok"
+ },
+ {
+  "key": "Songhai|Askia Muhammad Bani|1586|1588",
+  "s": "ok"
+ },
+ {
+  "key": "Ethiopia|Eskender|1478|1494",
+  "s": "ok"
+ },
+ {
+  "key": "Sokoto Caliphate|Usman dan Fodio|1804|1817",
+  "s": "ok"
+ },
+ {
+  "key": "Zulu|Dingane|1828|1840",
+  "s": "ok"
+ },
+ {
+  "key": "Zulu|Cetshwayo|1872|1879",
+  "s": "ok"
+ },
+ {
+  "key": "Union of South Africa|Louis Botha|1910|1919",
+  "s": "ok"
+ },
+ {
+  "key": "p|Jomo Kenyatta|1897|1978",
+  "s": "ok"
+ },
+ {
+  "key": "South Africa|Cyril Ramaphosa|2018|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Ethiopia|Abiy Ahmed|2018|2026",
+  "s": "ok"
+ },
+ {
+  "key": "Kenya|William Ruto|2022|2026",
+  "s": "ok"
+ },
+ {
+  "key": "p|Shao Kang|None|-1900",
+  "s": "doubt",
+  "n": "Legendary Xia king; dates are not historically established.",
+  "n_zh": "夏代传说君主，年代无史实可证。"
+ },
+ {
+  "key": "Xia|Lü Gui|-1630|-1600",
+  "s": "doubt",
+  "n": "Legendary last Xia ruler; traditional dates 1728-1675 BC differ from the c. 1600 BC end of Xia.",
+  "n_zh": "夏代传说末代君主；传统纪年为公元前1728-1675年，与约公元前1600年夏亡之说不同。"
+ },
+ {
+  "key": "p|Ma Zhiyuan|1250|1321",
+  "s": "ok"
+ },
+ {
+  "key": "Shogun Japan (Kamakura)|Hōjō Moritoki|1326|1333",
+  "s": "ok"
+ }
+]

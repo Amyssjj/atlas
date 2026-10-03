@@ -4,6 +4,9 @@ reachable from GitHub's runners but not from the build machine).
 For every event and person with an English Wikipedia `source`, and for every ruler (found by Wikipedia search), it
 saves the page's Wikidata dates, coordinates, Chinese label and the opening paragraph of the article.
 
+Reviewed verdicts for flagged items live in tools/fact_verdicts.json; re-apply with
+`python3 tools/apply_facts.py <report.json> tools/fact_verdicts.json`.
+
 Writes <out>/facts.json: {"pages": {title: {...}}, "src": {source url: title}, "rulers": {key: [title, ...]}}.
 tools/fact_check.py compares it with the data."""
 import glob, json, os, sys, time, urllib.parse, urllib.request
