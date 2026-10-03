@@ -103,7 +103,7 @@ Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
 ## Guided tours, old rivers and links
 
 - **Tours** (导览, the first tab of the side panel; lists the current period's tours, then the rest by period):
-  `data/tours.json`, 58 tours, each with an `era` id and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
+  `data/tours.json`, 103 tours, each with an `era` id and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
   `path: true` draws the journey so far. The tour card flies the camera, moves the timeline and selects the step's event.
   Tours are AI-drafted and not source-checked.
 - **Old Yellow River courses and shorelines**: `data/geo/old-rivers.geojson`, lines with `kind` (river/coast) and the years

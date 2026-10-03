@@ -212,7 +212,7 @@
    "id": "western-han",
    "name": "Western Han",
    "name_zh": "西汉",
-   "glyph": "汉",
+   "glyph": "西汉",
    "start": -206,
    "end": 8,
    "snapshots": [
@@ -254,7 +254,7 @@
    "id": "eastern-han",
    "name": "Eastern Han",
    "name_zh": "东汉",
-   "glyph": "汉",
+   "glyph": "东汉",
    "start": 25,
    "end": 219,
    "snapshots": [
@@ -307,7 +307,7 @@
    "id": "jin",
    "name": "Jin",
    "name_zh": "晋",
-   "glyph": "晋",
+   "glyph": "两晋",
    "start": 266,
    "end": 419,
    "snapshots": [
@@ -695,7 +695,7 @@
    "id": "northern-song",
    "name": "Northern Song",
    "name_zh": "北宋",
-   "glyph": "宋",
+   "glyph": "北宋",
    "start": 960,
    "end": 1126,
    "snapshots": [
