@@ -1,0 +1,232 @@
+[
+ {
+  "from": -3000,
+  "full": "data/world/-3000.json"
+ },
+ {
+  "from": -2000,
+  "full": "data/world/-2000.json",
+  "outer": "data/world/-2000-outer.json"
+ },
+ {
+  "from": -1500,
+  "full": "data/world/-1500.json",
+  "outer": "data/world/-1500-outer.json"
+ },
+ {
+  "from": -1000,
+  "full": "data/world/-1000.json",
+  "outer": "data/world/-1000-outer.json"
+ },
+ {
+  "from": -700,
+  "full": "data/world/-700.json",
+  "outer": "data/world/-700-outer.json"
+ },
+ {
+  "from": -500,
+  "full": "data/world/-500.json",
+  "outer": "data/world/-500-outer.json"
+ },
+ {
+  "from": -400,
+  "full": "data/world/-400.json",
+  "outer": "data/world/-400-outer.json"
+ },
+ {
+  "from": -323,
+  "full": "data/world/-323.json",
+  "outer": "data/world/-323-outer.json"
+ },
+ {
+  "from": -300,
+  "full": "data/world/-300.json",
+  "outer": "data/world/-300-outer.json"
+ },
+ {
+  "from": -200,
+  "full": "data/world/-200.json",
+  "outer": "data/world/-200-outer.json"
+ },
+ {
+  "from": -100,
+  "full": "data/world/-100.json",
+  "outer": "data/world/-100-outer.json"
+ },
+ {
+  "from": -1,
+  "full": "data/world/-1.json",
+  "outer": "data/world/-1-outer.json"
+ },
+ {
+  "from": 100,
+  "full": "data/world/100.json",
+  "outer": "data/world/100-outer.json"
+ },
+ {
+  "from": 200,
+  "full": "data/world/200.json",
+  "outer": "data/world/200-outer.json"
+ },
+ {
+  "from": 300,
+  "full": "data/world/300.json",
+  "outer": "data/world/300-outer.json"
+ },
+ {
+  "from": 400,
+  "full": "data/world/400.json",
+  "outer": "data/world/400-outer.json"
+ },
+ {
+  "from": 500,
+  "full": "data/world/500.json",
+  "outer": "data/world/500-outer.json"
+ },
+ {
+  "from": 600,
+  "full": "data/world/600.json",
+  "outer": "data/world/600-outer.json"
+ },
+ {
+  "from": 700,
+  "full": "data/world/700.json",
+  "outer": "data/world/700-outer.json"
+ },
+ {
+  "from": 800,
+  "full": "data/world/800.json",
+  "outer": "data/world/800-outer.json"
+ },
+ {
+  "from": 900,
+  "full": "data/world/900.json",
+  "outer": "data/world/900-outer.json"
+ },
+ {
+  "from": 1000,
+  "full": "data/world/1000.json",
+  "outer": "data/world/1000-outer.json"
+ },
+ {
+  "from": 1100,
+  "full": "data/world/1100.json",
+  "outer": "data/world/1100-outer.json"
+ },
+ {
+  "from": 1200,
+  "full": "data/world/1200.json",
+  "outer": "data/world/1200-outer.json"
+ },
+ {
+  "from": 1279,
+  "full": "data/world/1279.json",
+  "outer": "data/world/1279-outer.json"
+ },
+ {
+  "from": 1300,
+  "full": "data/world/1300.json",
+  "outer": "data/world/1300-outer.json"
+ },
+ {
+  "from": 1400,
+  "full": "data/world/1400.json",
+  "outer": "data/world/1400-outer.json"
+ },
+ {
+  "from": 1492,
+  "full": "data/world/1492.json",
+  "outer": "data/world/1492-outer.json"
+ },
+ {
+  "from": 1500,
+  "full": "data/world/1500.json",
+  "outer": "data/world/1500-outer.json"
+ },
+ {
+  "from": 1530,
+  "full": "data/world/1530.json",
+  "outer": "data/world/1530-outer.json"
+ },
+ {
+  "from": 1600,
+  "full": "data/world/1600.json",
+  "outer": "data/world/1600-outer.json"
+ },
+ {
+  "from": 1650,
+  "full": "data/world/1650.json",
+  "outer": "data/world/1650-outer.json"
+ },
+ {
+  "from": 1700,
+  "full": "data/world/1700.json",
+  "outer": "data/world/1700-outer.json"
+ },
+ {
+  "from": 1715,
+  "full": "data/world/1715.json",
+  "outer": "data/world/1715-outer.json"
+ },
+ {
+  "from": 1783,
+  "full": "data/world/1783.json",
+  "outer": "data/world/1783-outer.json"
+ },
+ {
+  "from": 1800,
+  "full": "data/world/1800.json",
+  "outer": "data/world/1800-outer.json"
+ },
+ {
+  "from": 1815,
+  "full": "data/world/1815.json",
+  "outer": "data/world/1815-outer.json"
+ },
+ {
+  "from": 1880,
+  "full": "data/world/1880.json",
+  "outer": "data/world/1880-outer.json"
+ },
+ {
+  "from": 1900,
+  "full": "data/world/1900.json",
+  "outer": "data/world/1900-outer.json"
+ },
+ {
+  "from": 1914,
+  "full": "data/world/1914.json"
+ },
+ {
+  "from": 1920,
+  "full": "data/world/1920.json"
+ },
+ {
+  "from": 1930,
+  "full": "data/world/1930.json"
+ },
+ {
+  "from": 1938,
+  "full": "data/world/1938.json"
+ },
+ {
+  "from": 1945,
+  "full": "data/world/1945.json"
+ },
+ {
+  "from": 1960,
+  "full": "data/world/1960.json"
+ },
+ {
+  "from": 1994,
+  "full": "data/world/1994.json"
+ },
+ {
+  "from": 2000,
+  "full": "data/world/2000.json"
+ },
+ {
+  "from": 2010,
+  "full": "data/world/2010.json"
+ }
+]

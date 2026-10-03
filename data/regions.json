@@ -1,0 +1,5437 @@
+{
+ "regions": [
+  {
+   "id": "china",
+   "name": "China",
+   "name_zh": "中国",
+   "color": "#c0392b",
+   "polygon": [
+    [
+     73.5,
+     39.5
+    ],
+    [
+     78.0,
+     41.0
+    ],
+    [
+     80.0,
+     42.5
+    ],
+    [
+     80.5,
+     45.0
+    ],
+    [
+     83.0,
+     47.0
+    ],
+    [
+     87.0,
+     49.0
+    ],
+    [
+     98.0,
+     52.0
+    ],
+    [
+     106.0,
+     50.3
+    ],
+    [
+     120.0,
+     53.0
+    ],
+    [
+     127.0,
+     53.3
+    ],
+    [
+     135.0,
+     48.4
+    ],
+    [
+     131.0,
+     42.9
+    ],
+    [
+     128.0,
+     42.0
+    ],
+    [
+     124.5,
+     40.1
+    ],
+    [
+     122.6,
+     37.2
+    ],
+    [
+     122.0,
+     25.3
+    ],
+    [
+     122.0,
+     22.0
+    ],
+    [
+     116.0,
+     22.6
+    ],
+    [
+     111.0,
+     18.0
+    ],
+    [
+     108.5,
+     18.0
+    ],
+    [
+     108.0,
+     21.6
+    ],
+    [
+     106.0,
+     22.5
+    ],
+    [
+     102.0,
+     22.0
+    ],
+    [
+     98.0,
+     24.0
+    ],
+    [
+     97.5,
+     28.0
+    ],
+    [
+     92.0,
+     27.8
+    ],
+    [
+     81.0,
+     30.0
+    ],
+    [
+     78.5,
+     32.5
+    ],
+    [
+     79.0,
+     35.5
+    ],
+    [
+     75.5,
+     37.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "cn-late-neolithic",
+     "start": -3000,
+     "end": -2071,
+     "name": "Late Neolithic",
+     "name_zh": "新石器时代晚期",
+     "glyph": "远古",
+     "short": "Late Neolithic",
+     "tiny": "Neolithic|Neo.",
+     "summary": "Farming villages grew into walled towns with jade and fine black pottery, as in the Liangzhu and Longshan cultures. Later histories place the legendary rulers Yao, Shun and Yu in this age.",
+     "summary_zh": "农耕村落发展成有城墙的聚落，良渚文化和龙山文化出现了精美的玉器和黑陶。后世传说中的尧、舜、禹就生活在这个时代。",
+     "focus": []
+    },
+    {
+     "id": "xia",
+     "start": -2070,
+     "end": -1601
+    },
+    {
+     "id": "shang",
+     "start": -1600,
+     "end": -1047
+    },
+    {
+     "id": "western-zhou",
+     "start": -1046,
+     "end": -771
+    },
+    {
+     "id": "spring-autumn",
+     "start": -770,
+     "end": -476
+    },
+    {
+     "id": "warring-states",
+     "start": -475,
+     "end": -222
+    },
+    {
+     "id": "qin",
+     "start": -221,
+     "end": -207
+    },
+    {
+     "id": "western-han",
+     "start": -206,
+     "end": 8
+    },
+    {
+     "id": "xin",
+     "start": 9,
+     "end": 24
+    },
+    {
+     "id": "eastern-han",
+     "start": 25,
+     "end": 219
+    },
+    {
+     "id": "three-kingdoms",
+     "start": 220,
+     "end": 265
+    },
+    {
+     "id": "jin",
+     "start": 266,
+     "end": 419
+    },
+    {
+     "id": "north-south",
+     "start": 420,
+     "end": 580
+    },
+    {
+     "id": "sui",
+     "start": 581,
+     "end": 617
+    },
+    {
+     "id": "tang",
+     "start": 618,
+     "end": 906
+    },
+    {
+     "id": "five-dynasties",
+     "start": 907,
+     "end": 959
+    },
+    {
+     "id": "northern-song",
+     "start": 960,
+     "end": 1126
+    },
+    {
+     "id": "southern-song",
+     "start": 1127,
+     "end": 1270
+    },
+    {
+     "id": "yuan",
+     "start": 1271,
+     "end": 1367
+    },
+    {
+     "id": "ming",
+     "start": 1368,
+     "end": 1643
+    },
+    {
+     "id": "qing",
+     "start": 1644,
+     "end": 1912
+    },
+    {
+     "id": "cn-roc",
+     "start": 1913,
+     "end": 1948,
+     "name": "Republic of China",
+     "name_zh": "中华民国",
+     "glyph": "民国",
+     "short": "Republic",
+     "tiny": "ROC|R.",
+     "summary": "After the 1911 Revolution ended imperial rule, China was split among warlords, reunified in name by the Nationalists, invaded by Japan and torn by civil war.",
+     "summary_zh": "辛亥革命结束了帝制。此后中国经历了军阀割据、国民政府统一、抗日战争和国共内战。",
+     "focus": [
+      "Chinese Warlords",
+      "Chinese warlords",
+      "Manchuria",
+      "Mongolia",
+      "Tibet",
+      "Xinjiang"
+     ]
+    },
+    {
+     "id": "cn-prc",
+     "start": 1949,
+     "end": 2026,
+     "name": "People's Republic of China",
+     "name_zh": "中华人民共和国",
+     "glyph": "中国",
+     "short": "PRC",
+     "tiny": "PRC|P.",
+     "summary": "Founded in 1949 under the Communist Party. After decades of planned economy and political campaigns, reform and opening from 1978 made China a leading industrial power.",
+     "summary_zh": "1949年由中国共产党建立。经历了计划经济和政治运动时期，1978年起实行改革开放，逐步成为世界重要的工业大国。",
+     "focus": [
+      "China",
+      "Taiwan",
+      "Mongolia"
+     ]
+    }
+   ],
+   "short_zh": "中国",
+   "short": "China"
+  },
+  {
+   "id": "korea",
+   "name": "Korea",
+   "name_zh": "朝鲜半岛",
+   "color": "#8e44ad",
+   "polygon": [
+    [
+     124.5,
+     40.1
+    ],
+    [
+     128.0,
+     42.0
+    ],
+    [
+     130.7,
+     42.4
+    ],
+    [
+     129.6,
+     40.5
+    ],
+    [
+     128.0,
+     38.6
+    ],
+    [
+     129.5,
+     36.5
+    ],
+    [
+     129.4,
+     35.1
+    ],
+    [
+     127.5,
+     34.3
+    ],
+    [
+     126.0,
+     34.3
+    ],
+    [
+     126.2,
+     36.0
+    ],
+    [
+     126.5,
+     37.4
+    ],
+    [
+     125.0,
+     37.7
+    ],
+    [
+     124.6,
+     38.6
+    ]
+   ],
+   "periods": [
+    {
+     "id": "kr-jeulmun",
+     "start": -3000,
+     "end": -1501,
+     "name": "Jeulmun Period",
+     "name_zh": "栉文土器时代",
+     "glyph": "栉文",
+     "short": "Jeulmun",
+     "tiny": "Jeulmun|Jm.",
+     "summary": "Neolithic villagers made comb-pattern pottery, fished along the coasts and began to farm millet.",
+     "summary_zh": "新石器时代的居民制作篦纹陶器，在沿海捕鱼采集，并开始种植粟类。",
+     "focus": [
+      "Koreans",
+      "Paleo-Koreans"
+     ]
+    },
+    {
+     "id": "kr-mumun",
+     "start": -1500,
+     "end": -401,
+     "name": "Mumun Period",
+     "name_zh": "无纹土器时代",
+     "glyph": "无纹",
+     "short": "Mumun",
+     "tiny": "Mumun|Mm.",
+     "summary": "Bronze Age farmers grew rice, built dolmens and lived in larger villages ruled by chiefs.",
+     "summary_zh": "青铜时代的农民种植水稻，修建支石墓，出现了由首领统治的大型村落。",
+     "focus": [
+      "Paleo-Koreans"
+     ]
+    },
+    {
+     "id": "kr-gojoseon",
+     "start": -400,
+     "end": -108,
+     "name": "Gojoseon",
+     "name_zh": "古朝鲜",
+     "glyph": "朝鲜",
+     "short": "Gojoseon",
+     "tiny": "Gojoseon|GJ",
+     "summary": "The first Korean state, centred in the northwest and Liaodong. Its last line, Wiman Joseon, fell to Emperor Wu of Han in 108 BC.",
+     "summary_zh": "朝鲜半岛最早的国家，中心在西北部和辽东一带。最后的卫满朝鲜于公元前108年被汉武帝所灭。",
+     "focus": [
+      "Gojoseon"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-proto-three",
+     "start": -107,
+     "end": 312,
+     "name": "Proto-Three Kingdoms",
+     "name_zh": "原三国时代",
+     "glyph": "三韩",
+     "short": "Proto-3 Kgdms",
+     "tiny": "Proto-3K|P3K",
+     "summary": "Han commanderies such as Lelang ruled the northwest, while Goguryeo rose in the north and the Samhan tribal leagues in the south gave rise to Baekje and Silla.",
+     "summary_zh": "汉朝在西北部设乐浪等郡，北方高句丽兴起，南方的马韩、辰韩、弁韩三韩部落联盟孕育了百济和新罗。",
+     "focus": [
+      "Koguryo",
+      "Silla",
+      "Paekche",
+      "Gaya"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-three-kingdoms",
+     "start": 313,
+     "end": 667,
+     "name": "Three Kingdoms",
+     "name_zh": "三国时代",
+     "glyph": "三国",
+     "short": "3 Kingdoms",
+     "tiny": "3 Kgdms|3K",
+     "summary": "After Goguryeo took Lelang in 313, Goguryeo, Baekje and Silla competed for the peninsula and adopted Buddhism and Chinese learning. Silla, allied with Tang, defeated the other two.",
+     "summary_zh": "313年高句丽攻灭乐浪郡后，高句丽、百济、新罗三国争雄，并接受了佛教和汉文化。新罗联合唐朝先后灭百济和高句丽。",
+     "focus": [
+      "Koguryo",
+      "Paekche",
+      "Silla",
+      "Gaya"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-unified-silla",
+     "start": 668,
+     "end": 891,
+     "name": "Unified Silla and Balhae",
+     "name_zh": "统一新罗与渤海",
+     "glyph": "新罗",
+     "short": "Unified Silla",
+     "tiny": "U. Silla|Silla",
+     "summary": "Silla ruled most of the peninsula from Gyeongju, with a flourishing Buddhist culture, while Balhae held the north and Manchuria.",
+     "summary_zh": "新罗以庆州为都统治半岛大部，佛教文化繁荣；北方和东北地区则由渤海国统治。",
+     "focus": [
+      "Silla",
+      "Silia",
+      "Parhae",
+      "Balhae"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-later-three",
+     "start": 892,
+     "end": 935,
+     "name": "Later Three Kingdoms",
+     "name_zh": "后三国时代",
+     "glyph": "后三",
+     "short": "Later 3 Kgdms",
+     "tiny": "L.3K|L3K",
+     "summary": "As Silla weakened, rebel states Later Baekje and Taebong (later Goryeo) split the peninsula until Goryeo reunified it in 936.",
+     "summary_zh": "新罗衰落后，后百济和泰封（后来的高丽）割据一方，936年由高丽重新统一。",
+     "focus": [
+      "Silla",
+      "Balhae"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-goryeo",
+     "start": 936,
+     "end": 1391,
+     "name": "Goryeo",
+     "name_zh": "高丽",
+     "glyph": "高丽",
+     "short": "Goryeo",
+     "tiny": "Goryeo|Gry",
+     "summary": "A Buddhist kingdom known for celadon and early metal movable type. It fought the Khitans and later became a vassal of the Mongol Yuan.",
+     "summary_zh": "崇奉佛教的王朝，以青瓷和早期金属活字闻名。曾抵抗契丹入侵，后来成为蒙古元朝的藩属。",
+     "focus": [
+      "Korea",
+      "Goryeo"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-joseon",
+     "start": 1392,
+     "end": 1896,
+     "name": "Joseon",
+     "name_zh": "朝鲜王朝",
+     "glyph": "朝鲜",
+     "short": "Joseon",
+     "tiny": "Joseon|Jsn",
+     "summary": "A Confucian kingdom founded by Yi Seong-gye with its capital at Hanseong (Seoul). King Sejong created the Hangul alphabet, and the state survived Japanese and Manchu invasions.",
+     "summary_zh": "李成桂建立的儒家王朝，定都汉城（今首尔）。世宗大王创制了谚文，王朝先后经受了日本和后金（清）的入侵。",
+     "focus": [
+      "Korea"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-korean-empire",
+     "start": 1897,
+     "end": 1909,
+     "name": "Korean Empire",
+     "name_zh": "大韩帝国",
+     "glyph": "大韩",
+     "short": "Korean Empire",
+     "tiny": "Empire|KE",
+     "summary": "Joseon renamed itself an empire to assert independence from Qing, but Japan made it a protectorate in 1905.",
+     "summary_zh": "朝鲜改称帝国，以表明脱离清朝独立，但1905年沦为日本的保护国。",
+     "focus": [
+      "Korea"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-japanese-rule",
+     "start": 1910,
+     "end": 1944,
+     "name": "Japanese Rule",
+     "name_zh": "日本殖民统治",
+     "glyph": "日据",
+     "short": "Japanese Rule",
+     "tiny": "Jpn. rule|JR",
+     "summary": "Japan annexed Korea in 1910 and ruled it as a colony until its defeat in 1945.",
+     "summary_zh": "1910年日本吞并朝鲜，进行殖民统治，直到1945年日本战败。",
+     "focus": [
+      "Empire of Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "kr-divided",
+     "start": 1945,
+     "end": 2026,
+     "name": "Divided Korea",
+     "name_zh": "南北分治",
+     "glyph": "南北",
+     "short": "Divided Korea",
+     "tiny": "Divided|N/S",
+     "summary": "Liberation in 1945 was followed by division into the Republic of Korea and the Democratic People's Republic of Korea and the Korean War of 1950 to 1953.",
+     "summary_zh": "1945年光复后，半岛分裂为大韩民国和朝鲜民主主义人民共和国，1950年至1953年爆发朝鲜战争。",
+     "focus": [
+      "Korea, Republic of",
+      "Korea, Democratic People's Republic of"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "朝鲜",
+   "short": "Korea"
+  },
+  {
+   "id": "japan",
+   "name": "Japan",
+   "name_zh": "日本",
+   "color": "#d35400",
+   "polygon": [
+    [
+     129.5,
+     31.0
+    ],
+    [
+     131.2,
+     30.8
+    ],
+    [
+     135.0,
+     33.3
+    ],
+    [
+     139.8,
+     34.8
+    ],
+    [
+     141.0,
+     38.0
+    ],
+    [
+     142.0,
+     40.0
+    ],
+    [
+     145.6,
+     43.2
+    ],
+    [
+     145.6,
+     44.4
+    ],
+    [
+     141.8,
+     45.6
+    ],
+    [
+     139.7,
+     42.4
+    ],
+    [
+     139.8,
+     40.0
+    ],
+    [
+     139.3,
+     38.0
+    ],
+    [
+     136.7,
+     37.4
+    ],
+    [
+     133.0,
+     35.7
+    ],
+    [
+     130.8,
+     34.5
+    ],
+    [
+     129.4,
+     33.4
+    ]
+   ],
+   "periods": [
+    {
+     "id": "jp-jomon",
+     "start": -3000,
+     "end": -301,
+     "name": "Jōmon Period",
+     "name_zh": "绳文时代",
+     "glyph": "绳文",
+     "short": "Jōmon",
+     "tiny": "Jōmon|Jm.",
+     "summary": "Hunter-gatherers lived in settled villages and made some of the world's oldest pottery, decorated with cord marks.",
+     "summary_zh": "以采集、狩猎和捕鱼为生的人们过着定居生活，制作带有绳纹的陶器，是世界上最早的陶器之一。",
+     "focus": [
+      "Jōmon",
+      "Late Jomon culture",
+      "Ainu"
+     ]
+    },
+    {
+     "id": "jp-yayoi",
+     "start": -300,
+     "end": 249,
+     "name": "Yayoi Period",
+     "name_zh": "弥生时代",
+     "glyph": "弥生",
+     "short": "Yayoi",
+     "tiny": "Yayoi|Yy.",
+     "summary": "Wet-rice farming, bronze and iron arrived from the continent. Small states appeared, including Yamatai, whose queen Himiko sent envoys to Wei.",
+     "summary_zh": "水稻种植和青铜器、铁器从大陆传入，出现了许多小国，其中邪马台国女王卑弥呼曾遣使曹魏。",
+     "focus": [
+      "Ainu"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-kofun",
+     "start": 250,
+     "end": 591,
+     "name": "Kofun Period",
+     "name_zh": "古坟时代",
+     "glyph": "古坟",
+     "short": "Kofun",
+     "tiny": "Kofun|Kf.",
+     "summary": "Rulers were buried in great keyhole-shaped mounds as the Yamato court extended its power over much of Japan.",
+     "summary_zh": "统治者葬于巨大的前方后圆坟，大和政权逐渐统一了日本大部分地区。",
+     "focus": [
+      "Yamato"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-asuka",
+     "start": 592,
+     "end": 709,
+     "name": "Asuka Period",
+     "name_zh": "飞鸟时代",
+     "glyph": "飞鸟",
+     "short": "Asuka",
+     "tiny": "Asuka|As.",
+     "summary": "Buddhism spread under Prince Shōtoku, and the Taika Reform of 645 began building a centralised state on the Tang model.",
+     "summary_zh": "圣德太子推广佛教，645年的大化改新开始仿照唐朝建立中央集权国家。",
+     "focus": [
+      "Yamato"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-nara",
+     "start": 710,
+     "end": 793,
+     "name": "Nara Period",
+     "name_zh": "奈良时代",
+     "glyph": "奈良",
+     "short": "Nara",
+     "tiny": "Nara",
+     "summary": "The court ruled from Heijō-kyō (Nara), a capital laid out like Chang'an, and compiled the first official histories.",
+     "summary_zh": "朝廷定都仿照长安规划的平城京（奈良），编纂了最早的官方史书。",
+     "focus": [
+      "Yamato",
+      "Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-heian",
+     "start": 794,
+     "end": 1184,
+     "name": "Heian Period",
+     "name_zh": "平安时代",
+     "glyph": "平安",
+     "short": "Heian",
+     "tiny": "Heian|Hn.",
+     "summary": "From Heian-kyō (Kyoto) the Fujiwara regents dominated the court, and a native aristocratic culture produced The Tale of Genji.",
+     "summary_zh": "朝廷迁都平安京（京都），藤原氏摄政掌权，贵族文化繁荣，诞生了《源氏物语》。",
+     "focus": [
+      "Japan",
+      "Imperial Japan (Fujiwara)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-kamakura",
+     "start": 1185,
+     "end": 1332,
+     "name": "Kamakura Period",
+     "name_zh": "镰仓时代",
+     "glyph": "镰仓",
+     "short": "Kamakura",
+     "tiny": "Kamakura|Kmk",
+     "summary": "The first warrior government, the Kamakura shogunate, ruled alongside the court and repelled two Mongol invasions.",
+     "summary_zh": "第一个武家政权镰仓幕府与朝廷并存，两次击退元军的入侵。",
+     "focus": [
+      "Imperial Japan (Fujiwara)",
+      "Shogun Japan (Kamakura)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-muromachi",
+     "start": 1333,
+     "end": 1466,
+     "name": "Muromachi Period",
+     "name_zh": "室町时代",
+     "glyph": "室町",
+     "short": "Muromachi",
+     "tiny": "Muromachi|Mrm",
+     "summary": "The Ashikaga shogunate ruled from Kyoto after a period of rival Northern and Southern Courts, and Zen culture flourished.",
+     "summary_zh": "经过南北朝对立，足利氏建立的室町幕府在京都执政，禅宗文化兴盛。",
+     "focus": [
+      "Shogun Japan (Kamakura)",
+      "Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-sengoku",
+     "start": 1467,
+     "end": 1572,
+     "name": "Sengoku Period",
+     "name_zh": "战国时代",
+     "glyph": "战国",
+     "short": "Sengoku",
+     "tiny": "Sengoku|Sgk",
+     "summary": "After the Ōnin War, regional warlords (daimyō) fought each other while the shogunate lost its power.",
+     "summary_zh": "应仁之乱以后，幕府失去控制，各地大名互相征战。",
+     "focus": [
+      "Japan",
+      "Japan (Warring States)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-azuchi-momoyama",
+     "start": 1573,
+     "end": 1602,
+     "name": "Azuchi-Momoyama Period",
+     "name_zh": "安土桃山时代",
+     "glyph": "桃山",
+     "short": "Azuchi-Momoyama",
+     "tiny": "Momoyama|AM",
+     "summary": "Oda Nobunaga and Toyotomi Hideyoshi reunified Japan. Hideyoshi also invaded Korea in the 1590s.",
+     "summary_zh": "织田信长和丰臣秀吉重新统一日本。丰臣秀吉在16世纪90年代两次出兵侵略朝鲜。",
+     "focus": [
+      "Japan (Warring States)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-edo",
+     "start": 1603,
+     "end": 1867,
+     "name": "Edo Period",
+     "name_zh": "江户时代",
+     "glyph": "江户",
+     "short": "Edo",
+     "tiny": "Edo",
+     "summary": "The Tokugawa shogunate ruled from Edo (Tokyo), kept long peace and limited foreign contact until American ships forced Japan open in 1853.",
+     "summary_zh": "德川幕府在江户（今东京）执政，维持了长期和平并实行锁国，直到1853年美国舰队叩关。",
+     "focus": [
+      "Tokugawa shogunate",
+      "Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-meiji",
+     "start": 1868,
+     "end": 1911,
+     "name": "Meiji Period",
+     "name_zh": "明治时代",
+     "glyph": "明治",
+     "short": "Meiji",
+     "tiny": "Meiji|Mj.",
+     "summary": "The Meiji Restoration built a modern industrial state and army. Japan defeated Qing China and Russia and annexed Korea.",
+     "summary_zh": "明治维新建立了近代工业国家和军队。日本先后战胜清朝和俄国，并吞并朝鲜。",
+     "focus": [
+      "Imperial Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-taisho",
+     "start": 1912,
+     "end": 1925,
+     "name": "Taishō Period",
+     "name_zh": "大正时代",
+     "glyph": "大正",
+     "short": "Taishō",
+     "tiny": "Taishō|Ts.",
+     "summary": "A brief era of party politics and mass culture, during which Japan joined the First World War on the Allied side.",
+     "summary_zh": "政党政治和大众文化发展的短暂时期，日本以协约国一方参加了第一次世界大战。",
+     "focus": [
+      "Empire of Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-showa",
+     "start": 1926,
+     "end": 1988,
+     "name": "Shōwa Period",
+     "name_zh": "昭和时代",
+     "glyph": "昭和",
+     "short": "Shōwa",
+     "tiny": "Shōwa|Sw.",
+     "summary": "Militarism led to wars of aggression in China and the Pacific and defeat in 1945. After the war Japan rebuilt as a democracy and an economic power.",
+     "summary_zh": "军国主义导致侵华战争和太平洋战争，1945年战败。战后日本实行民主改革，成为经济大国。",
+     "focus": [
+      "Empire of Japan",
+      "Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-heisei",
+     "start": 1989,
+     "end": 2018,
+     "name": "Heisei Period",
+     "name_zh": "平成时代",
+     "glyph": "平成",
+     "short": "Heisei",
+     "tiny": "Heisei|Hs.",
+     "summary": "The bubble economy burst and growth slowed, and the 2011 earthquake and tsunami struck the northeast.",
+     "summary_zh": "泡沫经济破灭，经济长期低迷。2011年东北地区发生大地震和海啸。",
+     "focus": [
+      "Japan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "jp-reiwa",
+     "start": 2019,
+     "end": 2026,
+     "name": "Reiwa Period",
+     "name_zh": "令和时代",
+     "glyph": "令和",
+     "short": "Reiwa",
+     "tiny": "Reiwa|Rw.",
+     "summary": "The current era, which began when Emperor Naruhito took the throne in 2019.",
+     "summary_zh": "2019年德仁天皇即位后开始的现今年号时代。",
+     "focus": [
+      "Japan"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "日本",
+   "short": "Japan"
+  },
+  {
+   "id": "southeast-asia",
+   "name": "Southeast Asia",
+   "name_zh": "东南亚",
+   "color": "#16a085",
+   "polygon": [
+    [
+     92.0,
+     20.5
+    ],
+    [
+     93.0,
+     24.0
+    ],
+    [
+     95.0,
+     27.5
+    ],
+    [
+     97.5,
+     28.0
+    ],
+    [
+     98.0,
+     24.0
+    ],
+    [
+     102.0,
+     22.0
+    ],
+    [
+     106.0,
+     22.5
+    ],
+    [
+     108.0,
+     21.6
+    ],
+    [
+     107.5,
+     19.5
+    ],
+    [
+     108.6,
+     17.6
+    ],
+    [
+     112.0,
+     16.0
+    ],
+    [
+     117.0,
+     20.0
+    ],
+    [
+     120.5,
+     20.2
+    ],
+    [
+     122.5,
+     18.8
+    ],
+    [
+     126.8,
+     10.0
+    ],
+    [
+     127.5,
+     2.0
+    ],
+    [
+     131.0,
+     -1.5
+    ],
+    [
+     131.0,
+     -8.5
+    ],
+    [
+     125.0,
+     -10.5
+    ],
+    [
+     115.0,
+     -9.2
+    ],
+    [
+     105.5,
+     -7.0
+    ],
+    [
+     95.0,
+     5.5
+    ],
+    [
+     97.5,
+     8.0
+    ],
+    [
+     98.3,
+     12.0
+    ],
+    [
+     97.5,
+     16.0
+    ],
+    [
+     94.5,
+     16.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "sea-neolithic",
+     "start": -3000,
+     "end": -1001,
+     "name": "Neolithic",
+     "name_zh": "新石器时代",
+     "glyph": "新石",
+     "short": "Neolithic",
+     "tiny": "Neolithic|Neo.",
+     "summary": "Rice farmers spread south through the mainland, while Austronesian seafarers settled the islands from Taiwan.",
+     "summary_zh": "稻作农民向中南半岛南部扩散，南岛语族航海者从台湾出发陆续定居海岛地区。",
+     "focus": [
+      "Austronesians",
+      "Austro-Asiatic rice cultures"
+     ]
+    },
+    {
+     "id": "sea-dong-son",
+     "start": -1000,
+     "end": 99,
+     "name": "Bronze and Iron Age",
+     "name_zh": "青铜与铁器时代",
+     "glyph": "铜鼓",
+     "short": "Bronze & Iron",
+     "tiny": "Bronze|B&I",
+     "summary": "Bronze and then iron spread across the region. The Đông Sơn culture of northern Vietnam made large bronze drums.",
+     "summary_zh": "青铜器和铁器在各地传播，越南北部的东山文化以大型铜鼓闻名。",
+     "focus": [
+      "Austro-Asiatic rice cultures",
+      "Austronesians",
+      "Mon-Khmer",
+      "Malays"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-funan",
+     "start": 100,
+     "end": 649,
+     "name": "Funan and Early States",
+     "name_zh": "扶南与早期国家",
+     "glyph": "扶南",
+     "short": "Funan",
+     "tiny": "Funan|Fn.",
+     "summary": "Trade between India and China gave rise to early states such as Funan on the Mekong delta, Champa and the Pyu cities, which adopted Indian religions and writing.",
+     "summary_zh": "印度与中国之间的海上贸易催生了湄公河三角洲的扶南、占城和骠国等早期国家，它们接受了印度的宗教和文字。",
+     "focus": [
+      "Funan",
+      "Champa",
+      "Dvaravati"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-srivijaya",
+     "start": 650,
+     "end": 801,
+     "name": "Srivijaya and Chenla",
+     "name_zh": "室利佛逝与真腊",
+     "glyph": "佛逝",
+     "short": "Srivijaya",
+     "tiny": "Srivijaya|Sv.",
+     "summary": "Srivijaya on Sumatra controlled the Strait of Malacca trade, Chenla ruled Cambodia, and Java built Borobudur.",
+     "summary_zh": "苏门答腊的室利佛逝控制马六甲海峡贸易，真腊统治柬埔寨，爪哇修建了婆罗浮屠。",
+     "focus": [
+      "Srivijaya Empire",
+      "Chen-La",
+      "Champa",
+      "Mataram",
+      "Dvaravati"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-angkor",
+     "start": 802,
+     "end": 1219,
+     "name": "Angkor Era",
+     "name_zh": "吴哥时代",
+     "glyph": "吴哥",
+     "short": "Angkor",
+     "tiny": "Angkor|Ak.",
+     "summary": "The Khmer Empire built Angkor and dominated the mainland, Pagan united Burma, and Đại Việt became independent from China.",
+     "summary_zh": "高棉帝国修建吴哥并称雄中南半岛，蒲甘王朝统一缅甸，越南脱离中国独立建立大越。",
+     "focus": [
+      "Khmer Empire",
+      "Srivijaya Empire",
+      "Kingdom of Pagan",
+      "Champa",
+      "Đại Việt"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-majapahit",
+     "start": 1220,
+     "end": 1399,
+     "name": "Majapahit and Sukhothai",
+     "name_zh": "满者伯夷与素可泰",
+     "glyph": "满者",
+     "short": "Majapahit",
+     "tiny": "Majapahit|Mj.",
+     "summary": "Thai kingdoms such as Sukhothai rose as Angkor declined, Mongol fleets attacked Đại Việt and Java, and Majapahit became the great power of the islands.",
+     "summary_zh": "吴哥衰落后，素可泰等泰族王国兴起；元军进攻越南和爪哇；满者伯夷成为海岛地区的强国。",
+     "focus": [
+      "Sukhothai",
+      "Khmer Empire",
+      "Đại Việt",
+      "Champa",
+      "Srivijaya Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-malacca",
+     "start": 1400,
+     "end": 1510,
+     "name": "Malacca and Ayutthaya",
+     "name_zh": "马六甲与阿瑜陀耶",
+     "glyph": "马六",
+     "short": "Malacca",
+     "tiny": "Malacca|Ml.",
+     "summary": "Malacca became the hub of Indian Ocean trade and spread Islam through the islands, while Ayutthaya ruled Siam. Zheng He's fleets visited the region.",
+     "summary_zh": "满剌加（马六甲）成为印度洋贸易中心，伊斯兰教在海岛传播；阿瑜陀耶统治暹罗。郑和船队多次到访。",
+     "focus": [
+      "Malacca",
+      "Ayutthaya",
+      "Đại Việt",
+      "Pegu",
+      "Champa"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-early-colonial",
+     "start": 1511,
+     "end": 1823,
+     "name": "Early European Presence",
+     "name_zh": "早期殖民时代",
+     "glyph": "早殖",
+     "short": "Early Colonial",
+     "tiny": "E.Colonial|EC",
+     "summary": "The Portuguese took Malacca in 1511, Spain colonised the Philippines and the Dutch VOC took Java, while mainland kingdoms such as Ayutthaya and Toungoo stayed independent.",
+     "summary_zh": "1511年葡萄牙占领马六甲，西班牙殖民菲律宾，荷兰东印度公司控制爪哇；阿瑜陀耶、东吁等大陆王国仍保持独立。",
+     "focus": [
+      "Ayutthaya",
+      "Đại Việt",
+      "Dutch East Indies",
+      "Philippines",
+      "Burmese kingdoms"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-colonial",
+     "start": 1824,
+     "end": 1940,
+     "name": "Colonial Era",
+     "name_zh": "殖民统治时代",
+     "glyph": "殖民",
+     "short": "Colonial Era",
+     "tiny": "Colonial|Col.",
+     "summary": "Britain took Burma and Malaya, France formed Indochina, the Dutch ruled Indonesia and the US took the Philippines. Only Siam stayed independent.",
+     "summary_zh": "英国占领缅甸和马来亚，法国建立法属印度支那，荷兰统治印度尼西亚，美国占领菲律宾，只有暹罗保持独立。",
+     "focus": [
+      "French Indochina",
+      "Netherlands Indies",
+      "Rattanakosin Kingdom",
+      "Malaya",
+      "Philippines"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-independence",
+     "start": 1941,
+     "end": 1975,
+     "name": "War and Independence",
+     "name_zh": "战争与独立",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Japan occupied the region in the Second World War. Independence followed, along with long wars in Vietnam, Laos and Cambodia that ended in 1975.",
+     "summary_zh": "二战期间日本占领东南亚。战后各国相继独立，越南、老挝、柬埔寨经历了长期战争，至1975年结束。",
+     "focus": [
+      "Indonesia",
+      "Vietnam",
+      "Thailand",
+      "Burma",
+      "Malaysia",
+      "Philippines"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sea-asean",
+     "start": 1976,
+     "end": 2026,
+     "name": "ASEAN Era",
+     "name_zh": "东盟时代",
+     "glyph": "东盟",
+     "short": "ASEAN Era",
+     "tiny": "ASEAN|AS.",
+     "summary": "Most states joined ASEAN and grew quickly through export industries and trade.",
+     "summary_zh": "多数国家加入东南亚国家联盟，依靠出口工业和贸易实现快速发展。",
+     "focus": [
+      "Indonesia",
+      "Vietnam",
+      "Thailand",
+      "Philippines",
+      "Malaysia",
+      "Burma"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "东南亚",
+   "short": "SE Asia"
+  },
+  {
+   "id": "south-asia",
+   "name": "Indian Subcontinent",
+   "name_zh": "印度次大陆",
+   "color": "#e67e22",
+   "polygon": [
+    [
+     61.5,
+     25.0
+    ],
+    [
+     62.0,
+     29.5
+    ],
+    [
+     66.5,
+     29.8
+    ],
+    [
+     69.3,
+     31.0
+    ],
+    [
+     70.5,
+     33.9
+    ],
+    [
+     71.2,
+     36.0
+    ],
+    [
+     74.5,
+     37.0
+    ],
+    [
+     75.5,
+     37.0
+    ],
+    [
+     79.0,
+     35.5
+    ],
+    [
+     78.5,
+     32.5
+    ],
+    [
+     81.0,
+     30.0
+    ],
+    [
+     92.0,
+     27.8
+    ],
+    [
+     95.0,
+     27.5
+    ],
+    [
+     93.0,
+     24.0
+    ],
+    [
+     92.0,
+     20.5
+    ],
+    [
+     87.0,
+     21.0
+    ],
+    [
+     85.0,
+     19.0
+    ],
+    [
+     80.3,
+     15.5
+    ],
+    [
+     80.0,
+     10.0
+    ],
+    [
+     82.0,
+     7.5
+    ],
+    [
+     81.5,
+     5.8
+    ],
+    [
+     79.8,
+     5.9
+    ],
+    [
+     77.5,
+     8.0
+    ],
+    [
+     76.0,
+     10.0
+    ],
+    [
+     73.0,
+     17.0
+    ],
+    [
+     72.5,
+     21.0
+    ],
+    [
+     70.0,
+     22.5
+    ],
+    [
+     67.0,
+     24.5
+    ]
+   ],
+   "periods": [
+    {
+     "id": "sa-early-harappan",
+     "start": -3000,
+     "end": -2601,
+     "name": "Early Harappan",
+     "name_zh": "早期哈拉帕文化",
+     "glyph": "早哈",
+     "short": "Early Harappan",
+     "tiny": "E.Harappan|EH",
+     "summary": "Farming towns in the Indus valley grew larger and began to share a common culture.",
+     "summary_zh": "印度河流域的农业城镇不断扩大，逐渐形成统一的文化面貌。",
+     "focus": [
+      "Indus valley civilization",
+      "Dravidians"
+     ]
+    },
+    {
+     "id": "sa-harappan",
+     "start": -2600,
+     "end": -1901,
+     "name": "Indus Valley Civilisation",
+     "name_zh": "印度河流域文明",
+     "glyph": "哈拉",
+     "short": "Harappan",
+     "tiny": "Harappan|IVC",
+     "summary": "Planned cities such as Harappa and Mohenjo-daro had drains, standard bricks and an undeciphered script.",
+     "summary_zh": "哈拉帕、摩亨佐·达罗等城市经过规划，有排水系统和统一的砖块，留下了尚未破译的文字。",
+     "focus": [
+      "Indus valley civilization",
+      "Dravidians"
+     ]
+    },
+    {
+     "id": "sa-late-harappan",
+     "start": -1900,
+     "end": -1501,
+     "name": "Late Harappan",
+     "name_zh": "晚期哈拉帕文化",
+     "glyph": "晚哈",
+     "short": "Late Harappan",
+     "tiny": "L.Harappan|LH",
+     "summary": "The great cities were abandoned, probably as rivers shifted and the climate dried, and people moved east to smaller villages.",
+     "summary_zh": "大城市逐渐被废弃，可能与河流改道和气候变干有关，人们向东迁到较小的村落。",
+     "focus": [
+      "Indus valley civilization",
+      "Dravidians"
+     ]
+    },
+    {
+     "id": "sa-vedic",
+     "start": -1500,
+     "end": -601,
+     "name": "Vedic Period",
+     "name_zh": "吠陀时代",
+     "glyph": "吠陀",
+     "short": "Vedic",
+     "tiny": "Vedic|Vd.",
+     "summary": "Indo-Aryan herders settled the Ganges plain. The Vedas were composed and the varna (caste) system took shape.",
+     "summary_zh": "雅利安人进入并定居恒河平原，创作了吠陀经典，种姓制度逐步形成。",
+     "focus": [
+      "Vedic Aryans",
+      "Dravidians"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-mahajanapadas",
+     "start": -600,
+     "end": -322,
+     "name": "Sixteen Great States",
+     "name_zh": "列国时代",
+     "glyph": "列国",
+     "short": "Mahajanapadas",
+     "tiny": "16 States|MJ",
+     "summary": "Sixteen kingdoms and republics competed on the Ganges plain, Magadha grew strongest, and the Buddha and Mahavira taught.",
+     "summary_zh": "恒河流域出现十六个大国，摩揭陀逐渐强大。佛陀和大雄（耆那教创始人）在这一时期传教。",
+     "focus": [
+      "Magadha",
+      "Kosala",
+      "Avanti",
+      "Kasi",
+      "Vatsa",
+      "Kuru",
+      "Gandhāra"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-maurya",
+     "start": -321,
+     "end": -185,
+     "name": "Maurya Empire",
+     "name_zh": "孔雀王朝",
+     "glyph": "孔雀",
+     "short": "Maurya",
+     "tiny": "Maurya|Mr.",
+     "summary": "Chandragupta founded the first empire over most of India. His grandson Ashoka turned to Buddhism and spread it by edicts and missions.",
+     "summary_zh": "旃陀罗笈多建立了第一个统一印度大部分地区的帝国。其孙阿育王皈依佛教，并大力传播佛教。",
+     "focus": [
+      "Mauryan Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-kushan",
+     "start": -184,
+     "end": 319,
+     "name": "Kushans and Satavahanas",
+     "name_zh": "贵霜与百乘王朝",
+     "glyph": "贵霜",
+     "short": "Kushan",
+     "tiny": "Kushan|Ksh.",
+     "summary": "India split into regional states. Greeks, Sakas and then the Kushans ruled the northwest, the Satavahanas ruled the Deccan, and Buddhist art flourished in Gandhara.",
+     "summary_zh": "印度重新分裂。西北部先后由希腊人、塞种人和贵霜人统治，德干由百乘王朝统治，犍陀罗佛教艺术兴盛。",
+     "focus": [
+      "Kushan Empire",
+      "Saka Kingdom",
+      "Satavahanihara",
+      "Kalinga",
+      "Chola"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-gupta",
+     "start": 320,
+     "end": 549,
+     "name": "Gupta Empire",
+     "name_zh": "笈多王朝",
+     "glyph": "笈多",
+     "short": "Gupta",
+     "tiny": "Gupta|Gp.",
+     "summary": "A classical age of Sanskrit literature, Hindu temples and mathematics, including the decimal place-value system.",
+     "summary_zh": "梵语文学、印度教神庙建筑和数学发展的古典时代，十进制位值记数法在此时成熟。",
+     "focus": [
+      "Gupta Empire",
+      "Satavahanihara"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-early-medieval",
+     "start": 550,
+     "end": 999,
+     "name": "Regional Kingdoms",
+     "name_zh": "列王纷争时代",
+     "glyph": "戒日",
+     "short": "Regional Kgdms",
+     "tiny": "Regional|RK",
+     "summary": "Harsha briefly united the north and received Xuanzang. Later the Palas, Pratiharas and Rashtrakutas fought for the Ganges plain, and the Pallavas and Cholas ruled the south.",
+     "summary_zh": "戒日王一度统一北印度，接待过玄奘。此后波罗、普腊蒂哈腊和罗湿陀罗拘陀争夺恒河流域，南方由帕拉瓦和朱罗统治。",
+     "focus": [
+      "Chalukyas",
+      "Pallavas",
+      "Kanauj",
+      "Palas",
+      "Gurjara Pratihara",
+      "Rashtrakuta state",
+      "Cholas"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-chola-ghaznavid",
+     "start": 1000,
+     "end": 1205,
+     "name": "Cholas and Turkic Raids",
+     "name_zh": "朱罗王朝与突厥入侵",
+     "glyph": "朱罗",
+     "short": "Cholas",
+     "tiny": "Cholas|Chl.",
+     "summary": "The Chola Empire dominated the south and sent fleets to Southeast Asia, while Ghaznavid and Ghurid armies raided and conquered the northwest.",
+     "summary_zh": "朱罗王朝称雄南印度，并派舰队远征东南亚；伽色尼王朝和古尔王朝从西北入侵北印度。",
+     "focus": [
+      "Chola Empire",
+      "Chalukya Empire",
+      "Palas",
+      "Rajput kingdoms",
+      "Ghaznavid Emirate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-delhi",
+     "start": 1206,
+     "end": 1525,
+     "name": "Delhi Sultanate",
+     "name_zh": "德里苏丹国",
+     "glyph": "德里",
+     "short": "Delhi Sultanate",
+     "tiny": "Delhi|DS",
+     "summary": "Turkic and Afghan Muslim dynasties ruled the north from Delhi, while Vijayanagara and the Bahmani sultanate held the Deccan.",
+     "summary_zh": "突厥和阿富汗穆斯林王朝以德里为中心统治北印度，德干地区则有毗奢耶那伽罗和巴赫曼尼苏丹国。",
+     "focus": [
+      "Sultanate of Delhi",
+      "Vijayanagara",
+      "Bahmani Kingdom",
+      "Orissa"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-mughal",
+     "start": 1526,
+     "end": 1706,
+     "name": "Mughal Empire",
+     "name_zh": "莫卧儿帝国",
+     "glyph": "莫卧",
+     "short": "Mughal",
+     "tiny": "Mughal|Mgh.",
+     "summary": "Babur founded the Mughal Empire. Under Akbar and his heirs it ruled almost all of India and built the Taj Mahal.",
+     "summary_zh": "巴布尔建立莫卧儿帝国。阿克巴及其后继者统治了几乎整个印度，修建了泰姬陵。",
+     "focus": [
+      "Mughal Empire",
+      "Vijayanagara",
+      "Bijapur",
+      "Golkonda"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-company",
+     "start": 1707,
+     "end": 1857,
+     "name": "Marathas and the Company",
+     "name_zh": "马拉塔与东印度公司",
+     "glyph": "公司",
+     "short": "Company Rule",
+     "tiny": "Company|Co.",
+     "summary": "After Aurangzeb died the Mughal Empire broke up. The Marathas rose, and the British East India Company won Bengal in 1757 and then most of India.",
+     "summary_zh": "奥朗则布死后莫卧儿帝国瓦解，马拉塔人崛起。英国东印度公司1757年夺取孟加拉，后来控制了印度大部分地区。",
+     "focus": [
+      "Maratha Confederacy",
+      "Mughal Empire",
+      "British East India Company",
+      "Mysore",
+      "Sikhs"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-raj",
+     "start": 1858,
+     "end": 1946,
+     "name": "British Raj",
+     "name_zh": "英属印度",
+     "glyph": "英印",
+     "short": "British Raj",
+     "tiny": "Raj|BR",
+     "summary": "After the 1857 uprising the British Crown ruled India directly. The Indian National Congress and Gandhi led the independence movement.",
+     "summary_zh": "1857年起义后英国王室直接统治印度。国大党和甘地领导了争取独立的运动。",
+     "focus": [
+      "British Raj",
+      "Ceylon",
+      "Nepal"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sa-independent",
+     "start": 1947,
+     "end": 2026,
+     "name": "Independent South Asia",
+     "name_zh": "独立后的南亚",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Partition created India and Pakistan in 1947. Sri Lanka became independent in 1948 and Bangladesh in 1971.",
+     "summary_zh": "1947年印巴分治，印度和巴基斯坦独立；1948年斯里兰卡独立，1971年孟加拉国独立。",
+     "focus": [
+      "India",
+      "Pakistan",
+      "Bangladesh",
+      "Sri Lanka",
+      "Nepal"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "南亚",
+   "short": "S. Asia"
+  },
+  {
+   "id": "central-asia-steppe",
+   "name": "Central Asia and the Steppe",
+   "name_zh": "中亚与草原",
+   "color": "#b7950b",
+   "polygon": [
+    [
+     53.0,
+     37.0
+    ],
+    [
+     54.0,
+     37.3
+    ],
+    [
+     57.0,
+     38.0
+    ],
+    [
+     60.0,
+     37.5
+    ],
+    [
+     61.2,
+     35.6
+    ],
+    [
+     62.5,
+     35.3
+    ],
+    [
+     64.5,
+     36.2
+    ],
+    [
+     67.5,
+     37.2
+    ],
+    [
+     70.0,
+     37.5
+    ],
+    [
+     71.5,
+     37.9
+    ],
+    [
+     74.5,
+     37.0
+    ],
+    [
+     73.5,
+     39.5
+    ],
+    [
+     78.0,
+     41.0
+    ],
+    [
+     80.0,
+     42.5
+    ],
+    [
+     80.5,
+     45.0
+    ],
+    [
+     83.0,
+     47.0
+    ],
+    [
+     87.0,
+     49.0
+    ],
+    [
+     83.0,
+     51.0
+    ],
+    [
+     76.0,
+     54.3
+    ],
+    [
+     70.0,
+     55.3
+    ],
+    [
+     61.0,
+     54.0
+    ],
+    [
+     61.0,
+     51.0
+    ],
+    [
+     55.0,
+     50.6
+    ],
+    [
+     50.0,
+     51.5
+    ],
+    [
+     47.0,
+     49.5
+    ],
+    [
+     47.0,
+     47.0
+    ],
+    [
+     49.0,
+     46.4
+    ],
+    [
+     51.5,
+     44.5
+    ],
+    [
+     51.0,
+     42.0
+    ],
+    [
+     53.0,
+     40.5
+    ]
+   ],
+   "periods": [
+    {
+     "id": "ca-chalcolithic",
+     "start": -3000,
+     "end": -2001,
+     "name": "Copper Age",
+     "name_zh": "铜石并用时代",
+     "glyph": "铜石",
+     "short": "Copper Age",
+     "tiny": "Copper|Cu",
+     "summary": "Farming towns of the Namazga culture grew in the southern oases, while herders on the steppe began to use wheeled carts.",
+     "summary_zh": "南部绿洲出现了纳马兹加文化的农业城镇，草原上的牧民开始使用轮车。",
+     "focus": [
+      "Namazga",
+      "Afanasevo"
+     ]
+    },
+    {
+     "id": "ca-bronze",
+     "start": -2000,
+     "end": -1001,
+     "name": "Bronze Age",
+     "name_zh": "青铜时代",
+     "glyph": "青铜",
+     "short": "Bronze Age",
+     "tiny": "Bronze|BA",
+     "summary": "The Oxus (Bactria-Margiana) civilisation flourished in the oases, and the Andronovo and Sintashta herders spread chariots and bronze across the steppe.",
+     "summary_zh": "阿姆河（巴克特里亚-马尔吉亚纳）文明在绿洲中繁荣，安德罗诺沃和辛塔什塔的牧民把战车和青铜技术传遍草原。",
+     "focus": [
+      "Oxus",
+      "Andronovo",
+      "Sintashta",
+      "Namazga",
+      "Karasuk culture"
+     ]
+    },
+    {
+     "id": "ca-saka",
+     "start": -1000,
+     "end": -330,
+     "name": "Scythians and Saka",
+     "name_zh": "斯基泰与塞人",
+     "glyph": "塞人",
+     "short": "Saka",
+     "tiny": "Saka|Sk.",
+     "summary": "Iranian-speaking horse nomads, the Saka and Scythians, ruled the steppe, while Sogdia and Bactria became provinces of the Persian Empire.",
+     "summary_zh": "操伊朗语的骑马游牧民族塞人和斯基泰人称雄草原，粟特和巴克特里亚成为波斯帝国的行省。",
+     "focus": [
+      "Iranian pastoralists",
+      "Karasuk culture",
+      "Scythians"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-greco-bactria",
+     "start": -329,
+     "end": -130,
+     "name": "Greco-Bactria",
+     "name_zh": "希腊-巴克特里亚",
+     "glyph": "大夏",
+     "short": "Greco-Bactria",
+     "tiny": "Bactria|GB",
+     "summary": "Alexander conquered Sogdia and Bactria, and Greek kings ruled the Greco-Bactrian kingdom (Daxia in Chinese records) while nomads held the steppe.",
+     "summary_zh": "亚历山大征服粟特和巴克特里亚，此后希腊人建立的巴克特里亚王国（中国史书称大夏）统治绿洲，草原仍由游牧民族控制。",
+     "focus": [
+      "Bactria",
+      "Scythians",
+      "Yuezhi"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-kushan",
+     "start": -129,
+     "end": 349,
+     "name": "Yuezhi and Kushans",
+     "name_zh": "大月氏与贵霜",
+     "glyph": "贵霜",
+     "short": "Kushan",
+     "tiny": "Kushan|Ksh.",
+     "summary": "The Yuezhi, driven west by the Xiongnu, founded the Kushan Empire. Zhang Qian's missions opened the Silk Road through the region.",
+     "summary_zh": "被匈奴击败西迁的大月氏建立了贵霜帝国。张骞出使西域后，丝绸之路经过这里连通东西。",
+     "focus": [
+      "Kushan Empire",
+      "Scythians",
+      "Yueban",
+      "Saka Kingdom"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-hephthalites",
+     "start": 350,
+     "end": 559,
+     "name": "Huns and Hephthalites",
+     "name_zh": "匈人与嚈哒",
+     "glyph": "嚈哒",
+     "short": "Hephthalites",
+     "tiny": "Hephth.|Hph.",
+     "summary": "Hunnic groups, above all the Hephthalites, ruled the oases and fought Sasanian Persia, while Sogdian merchants carried the Silk Road trade.",
+     "summary_zh": "以嚈哒为代表的匈人部族统治绿洲，与萨珊波斯连年交战；粟特商人主导着丝绸之路贸易。",
+     "focus": [
+      "Yueban",
+      "Kushan Principalities",
+      "Ruanruan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-turks",
+     "start": 560,
+     "end": 749,
+     "name": "Turkic Khaganates",
+     "name_zh": "突厥汗国",
+     "glyph": "突厥",
+     "short": "Turkic Khagans",
+     "tiny": "Turks|Tk.",
+     "summary": "The Göktürks crushed the Hephthalites and ruled the steppe. Tang China and then the Arab Umayyads extended their power into the region.",
+     "summary_zh": "突厥人消灭嚈哒，称雄草原。唐朝和阿拉伯倭马亚王朝先后把势力扩展到这里。",
+     "focus": [
+      "Western Gokturk Khaganate",
+      "Göktürks",
+      "Umayyad Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-samanid",
+     "start": 750,
+     "end": 999,
+     "name": "Abbasids and Samanids",
+     "name_zh": "阿拔斯与萨曼王朝",
+     "glyph": "萨曼",
+     "short": "Samanids",
+     "tiny": "Samanid|Sm.",
+     "summary": "After the Battle of Talas in 751 the region turned to Islam. The Persian Samanid dynasty made Bukhara and Samarkand centres of learning.",
+     "summary_zh": "751年怛罗斯之战后，中亚逐渐伊斯兰化。波斯人的萨曼王朝使布哈拉和撒马尔罕成为学术中心。",
+     "focus": [
+      "Abbasid Caliphate",
+      "Samanid Empire",
+      "Oghuz Turks"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-turkic-dynasties",
+     "start": 1000,
+     "end": 1218,
+     "name": "Karakhanids and Khwarazm",
+     "name_zh": "喀喇汗与花剌子模",
+     "glyph": "花剌",
+     "short": "Karakhanids",
+     "tiny": "Karakh.|Kk.",
+     "summary": "Turkic Muslim dynasties ruled the oases: the Karakhanids, the Seljuks, the Qara Khitai (Western Liao) and finally the Khwarazmian Empire.",
+     "summary_zh": "突厥穆斯林王朝统治绿洲地区，先后有喀喇汗王朝、塞尔柱王朝、西辽和花剌子模。",
+     "focus": [
+      "Karkhanids",
+      "Kara Khitai Khaganate",
+      "Khwarazmian dynasty",
+      "Kimek-Kipchak khaganate",
+      "Seljuk Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-mongol",
+     "start": 1219,
+     "end": 1369,
+     "name": "Mongol Rule",
+     "name_zh": "蒙古统治",
+     "glyph": "蒙古",
+     "short": "Mongol Rule",
+     "tiny": "Mongol|Mgl.",
+     "summary": "Genghis Khan destroyed Khwarazm. The region was then ruled by the Chagatai Khanate in the south and the Golden Horde on the western steppe.",
+     "summary_zh": "成吉思汗灭花剌子模。此后南部由察合台汗国统治，西部草原属金帐汗国。",
+     "focus": [
+      "Chagatai Khanate",
+      "Khanate of the Golden Horde",
+      "Mongol Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-timurid",
+     "start": 1370,
+     "end": 1506,
+     "name": "Timurid Empire",
+     "name_zh": "帖木儿帝国",
+     "glyph": "帖木",
+     "short": "Timurid",
+     "tiny": "Timurid|Tm.",
+     "summary": "Timur built an empire from Samarkand, and his heirs, such as Ulugh Beg, made it a centre of Persian and Turkic culture.",
+     "summary_zh": "帖木儿以撒马尔罕为中心建立帝国，其后继者（如兀鲁伯）使这里成为波斯和突厥文化的中心。",
+     "focus": [
+      "Timurid Empire",
+      "Timurid Emirates",
+      "White Horde",
+      "Chagatai Khanate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-khanates",
+     "start": 1507,
+     "end": 1864,
+     "name": "Uzbek and Kazakh Khanates",
+     "name_zh": "布哈拉诸汗国",
+     "glyph": "汗国",
+     "short": "Khanates",
+     "tiny": "Khanates|Kh.",
+     "summary": "The Uzbek Shaybanids took the oases, later divided into the khanates of Bukhara, Khiva and Kokand, while the Kazakh Khanate ruled the steppe.",
+     "summary_zh": "乌兹别克人的昔班尼王朝占领绿洲，后分为布哈拉、希瓦、浩罕三个汗国；哈萨克汗国统治草原。",
+     "focus": [
+      "Quazaq Khanate",
+      "Khiva Khanate",
+      "central Asian khanates"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-russian",
+     "start": 1865,
+     "end": 1917,
+     "name": "Russian Turkestan",
+     "name_zh": "沙俄统治",
+     "glyph": "沙俄",
+     "short": "Russian Rule",
+     "tiny": "Russia|Ru.",
+     "summary": "Russia took Tashkent in 1865 and conquered the khanates, making the region Russian Turkestan.",
+     "summary_zh": "1865年沙俄攻占塔什干，随后征服各汗国，把这里变为俄属突厥斯坦。",
+     "focus": [
+      "Russian Empire",
+      "Bokhara Khanate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-soviet",
+     "start": 1918,
+     "end": 1990,
+     "name": "Soviet Central Asia",
+     "name_zh": "苏联时期",
+     "glyph": "苏联",
+     "short": "Soviet Era",
+     "tiny": "Soviet|SU",
+     "summary": "The Soviet Union drew the borders of five republics, collectivised farms and grew cotton, which drained the Aral Sea.",
+     "summary_zh": "苏联划定了五个加盟共和国的边界，推行农业集体化和棉花种植，导致咸海萎缩。",
+     "focus": [
+      "USSR"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ca-independent",
+     "start": 1991,
+     "end": 2026,
+     "name": "Independent States",
+     "name_zh": "独立国家",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Kazakhstan, Uzbekistan, Turkmenistan, Kyrgyzstan and Tajikistan became independent when the Soviet Union broke up in 1991.",
+     "summary_zh": "1991年苏联解体，哈萨克斯坦、乌兹别克斯坦、土库曼斯坦、吉尔吉斯斯坦和塔吉克斯坦独立。",
+     "focus": [
+      "Kazakhstan",
+      "Uzbekistan",
+      "Turkmenistan",
+      "Kyrgyzstan",
+      "Tajikistan"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "中亚",
+   "short": "C. Asia"
+  },
+  {
+   "id": "iran",
+   "name": "Iranian Plateau",
+   "name_zh": "伊朗高原",
+   "color": "#2980b9",
+   "polygon": [
+    [
+     61.5,
+     25.0
+    ],
+    [
+     62.0,
+     29.5
+    ],
+    [
+     66.5,
+     29.8
+    ],
+    [
+     69.3,
+     31.0
+    ],
+    [
+     70.5,
+     33.9
+    ],
+    [
+     71.2,
+     36.0
+    ],
+    [
+     74.5,
+     37.0
+    ],
+    [
+     71.5,
+     37.9
+    ],
+    [
+     70.0,
+     37.5
+    ],
+    [
+     67.5,
+     37.2
+    ],
+    [
+     64.5,
+     36.2
+    ],
+    [
+     62.5,
+     35.3
+    ],
+    [
+     61.2,
+     35.6
+    ],
+    [
+     60.0,
+     37.5
+    ],
+    [
+     57.0,
+     38.0
+    ],
+    [
+     54.0,
+     37.3
+    ],
+    [
+     53.0,
+     37.0
+    ],
+    [
+     50.0,
+     37.4
+    ],
+    [
+     49.0,
+     38.4
+    ],
+    [
+     44.5,
+     39.5
+    ],
+    [
+     44.2,
+     37.5
+    ],
+    [
+     46.0,
+     33.0
+    ],
+    [
+     47.8,
+     31.3
+    ],
+    [
+     48.5,
+     30.0
+    ],
+    [
+     51.5,
+     27.8
+    ],
+    [
+     54.0,
+     26.5
+    ],
+    [
+     56.3,
+     27.0
+    ],
+    [
+     57.3,
+     25.7
+    ]
+   ],
+   "periods": [
+    {
+     "id": "ir-proto-elamite",
+     "start": -3000,
+     "end": -2701,
+     "name": "Proto-Elamite",
+     "name_zh": "原始埃兰时期",
+     "glyph": "原埃",
+     "short": "Proto-Elamite",
+     "tiny": "Pr.Elam|PE",
+     "summary": "Towns such as Susa and Anshan in southwest Iran used the Proto-Elamite script for accounts.",
+     "summary_zh": "伊朗西南部的苏萨、安善等城镇使用原始埃兰文字记账。",
+     "focus": [
+      "Elam"
+     ]
+    },
+    {
+     "id": "ir-old-elam",
+     "start": -2700,
+     "end": -1501,
+     "name": "Old Elamite Period",
+     "name_zh": "古埃兰",
+     "glyph": "埃兰",
+     "short": "Old Elam",
+     "tiny": "Old Elam|OE",
+     "summary": "Elam, centred on Susa and Anshan, traded and fought with the Mesopotamian states and sacked Ur around 2004 BC.",
+     "summary_zh": "以苏萨和安善为中心的埃兰与两河流域诸国时战时和，约公元前2004年攻陷乌尔。",
+     "focus": [
+      "Elam"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-middle-elam",
+     "start": -1500,
+     "end": -1001,
+     "name": "Middle Elamite Period",
+     "name_zh": "中埃兰",
+     "glyph": "中埃",
+     "short": "Middle Elam",
+     "tiny": "Mid.Elam|ME",
+     "summary": "Elam reached its height, built the ziggurat of Chogha Zanbil and raided Babylon.",
+     "summary_zh": "埃兰进入鼎盛时期，修建了恰高·占比尔神庙塔，并洗劫巴比伦。",
+     "focus": [
+      "Elam",
+      "Iranian pastoralists"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-medes",
+     "start": -1000,
+     "end": -551,
+     "name": "Elam and the Medes",
+     "name_zh": "新埃兰与米底",
+     "glyph": "米底",
+     "short": "Medes",
+     "tiny": "Medes|Md.",
+     "summary": "Iranian peoples settled the plateau. Assyria destroyed Elam, and the Medes built a kingdom that helped overthrow Assyria.",
+     "summary_zh": "伊朗诸部族定居高原。亚述摧毁了埃兰，米底人建立王国，并参与灭亡亚述。",
+     "focus": [
+      "Elam",
+      "Iranian pastoralists"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-achaemenid",
+     "start": -550,
+     "end": -331,
+     "name": "Achaemenid Empire",
+     "name_zh": "阿契美尼德王朝",
+     "glyph": "波斯",
+     "short": "Achaemenid",
+     "tiny": "Achaem.|Ach.",
+     "summary": "Cyrus the Great founded the Persian Empire, which under Darius I stretched from Egypt to the Indus, with royal roads and satrapies.",
+     "summary_zh": "居鲁士大帝建立波斯帝国。大流士一世时疆域从埃及延伸到印度河，修建御道，设立行省。",
+     "focus": [
+      "Achaemenid Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-seleucid",
+     "start": -330,
+     "end": -248,
+     "name": "Alexander and the Seleucids",
+     "name_zh": "亚历山大与塞琉古王朝",
+     "glyph": "塞琉",
+     "short": "Seleucid",
+     "tiny": "Seleucid|Sel.",
+     "summary": "Alexander conquered Persia, and after his death the Seleucid dynasty ruled Iran and spread Greek culture.",
+     "summary_zh": "亚历山大征服波斯，他死后塞琉古王朝统治伊朗，传播希腊文化。",
+     "focus": [
+      "Empire of Alexander",
+      "Seleucid Kingdom"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-parthian",
+     "start": -247,
+     "end": 223,
+     "name": "Parthian Empire",
+     "name_zh": "安息帝国",
+     "glyph": "安息",
+     "short": "Parthian",
+     "tiny": "Parthia|Pth.",
+     "summary": "The Parthians (Anxi in Chinese records) drove out the Seleucids, controlled the Silk Road between Rome and Han China and fought Rome for centuries.",
+     "summary_zh": "帕提亚人（中国史书称安息）赶走塞琉古王朝，控制罗马与汉朝之间的丝绸之路，与罗马长期争战。",
+     "focus": [
+      "Parthia",
+      "Parthian Empire",
+      "Suren Kingdom"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-sasanian",
+     "start": 224,
+     "end": 650,
+     "name": "Sasanian Empire",
+     "name_zh": "萨珊王朝",
+     "glyph": "萨珊",
+     "short": "Sasanian",
+     "tiny": "Sasanian|Ssn.",
+     "summary": "A Persian dynasty with Zoroastrianism as state religion. It was Rome's and Byzantium's great rival until the Arab conquest.",
+     "summary_zh": "以琐罗亚斯德教为国教的波斯王朝，是罗马和拜占庭的主要对手，后被阿拉伯人征服。",
+     "focus": [
+      "Persia",
+      "Sasanian Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-caliphate",
+     "start": 651,
+     "end": 820,
+     "name": "Arab Caliphates",
+     "name_zh": "阿拉伯帝国统治",
+     "glyph": "大食",
+     "short": "Caliphate",
+     "tiny": "Caliph.|Clf.",
+     "summary": "Iran became part of the Umayyad and then Abbasid Caliphates and slowly converted to Islam. Persians played a leading role in the Abbasid revolution.",
+     "summary_zh": "伊朗先后归入倭马亚王朝和阿拔斯王朝的版图，逐渐伊斯兰化。波斯人在阿拔斯革命中起了重要作用。",
+     "focus": [
+      "Umayyad Caliphate",
+      "Abbasid Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-intermezzo",
+     "start": 821,
+     "end": 1036,
+     "name": "Iranian Dynasties",
+     "name_zh": "伊朗诸王朝",
+     "glyph": "萨曼",
+     "short": "Iranian Dyn.",
+     "tiny": "Iranian|ID",
+     "summary": "Local dynasties such as the Tahirids, Saffarids, Samanids and Buyids ruled under nominal Abbasid authority, and Persian literature revived with Ferdowsi's Shahnameh.",
+     "summary_zh": "塔希尔、萨法尔、萨曼、白益等地方王朝在名义上尊奉阿拔斯哈里发。波斯语文学复兴，菲尔多西写成《列王纪》。",
+     "focus": [
+      "Saffarids",
+      "Samanid Empire",
+      "Buyid Emirate",
+      "Ghaznavid Emirate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-seljuk",
+     "start": 1037,
+     "end": 1219,
+     "name": "Seljuks and Khwarazm",
+     "name_zh": "塞尔柱与花剌子模",
+     "glyph": "塞尔",
+     "short": "Seljuks",
+     "tiny": "Seljuk|Slj.",
+     "summary": "The Seljuk Turks conquered Iran and took Baghdad in 1055. After their decline the Khwarazmian Empire ruled most of the plateau.",
+     "summary_zh": "塞尔柱突厥人征服伊朗，1055年进入巴格达。塞尔柱衰落后，花剌子模统治高原大部。",
+     "focus": [
+      "Seljuk Empire",
+      "Ghaznavid Emirate",
+      "Khwarazmian dynasty"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-ilkhanate",
+     "start": 1220,
+     "end": 1369,
+     "name": "Mongols and the Ilkhanate",
+     "name_zh": "蒙古与伊儿汗国",
+     "glyph": "伊儿",
+     "short": "Ilkhanate",
+     "tiny": "Ilkhan.|Ilk.",
+     "summary": "Mongol armies devastated Iran. Hulagu founded the Ilkhanate, which later converted to Islam and broke up after 1335.",
+     "summary_zh": "蒙古大军蹂躏伊朗。旭烈兀建立伊儿汗国，后来皈依伊斯兰教，1335年后分裂。",
+     "focus": [
+      "Ilkhanate",
+      "Mongol Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-timurid",
+     "start": 1370,
+     "end": 1500,
+     "name": "Timurids and Turkmen",
+     "name_zh": "帖木儿与土库曼诸部",
+     "glyph": "帖木",
+     "short": "Timurids",
+     "tiny": "Timurid|Tm.",
+     "summary": "Timur conquered Iran. His heirs ruled Herat in the east, while the Turkmen Black Sheep and White Sheep confederations held the west.",
+     "summary_zh": "帖木儿征服伊朗。其后裔统治东部的赫拉特，西部由土库曼人的黑羊王朝和白羊王朝控制。",
+     "focus": [
+      "Timurid Empire",
+      "Timurid Emirates",
+      "Emirate of the White Sheep Turks"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-safavid",
+     "start": 1501,
+     "end": 1735,
+     "name": "Safavid Empire",
+     "name_zh": "萨法维王朝",
+     "glyph": "萨法",
+     "short": "Safavid",
+     "tiny": "Safavid|Sfv.",
+     "summary": "Shah Ismail made Shia Islam the state religion. Under Shah Abbas the capital Isfahan became one of the great cities of the world.",
+     "summary_zh": "伊斯玛仪一世把什叶派定为国教。阿拔斯一世时，首都伊斯法罕成为世界名城。",
+     "focus": [
+      "Safavid Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-afsharid-zand",
+     "start": 1736,
+     "end": 1795,
+     "name": "Afsharids and Zands",
+     "name_zh": "阿夫沙尔与赞德王朝",
+     "glyph": "赞德",
+     "short": "Afshar & Zand",
+     "tiny": "Afshar|A&Z",
+     "summary": "Nader Shah restored Persian power and sacked Delhi. After him the Zand dynasty ruled from Shiraz, and the Durrani Empire made Afghanistan a separate state.",
+     "summary_zh": "纳迪尔沙重振波斯并攻陷德里。其后赞德王朝定都设拉子；杜兰尼王朝使阿富汗成为独立国家。",
+     "focus": [
+      "Persia",
+      "Afghanistan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-qajar",
+     "start": 1796,
+     "end": 1924,
+     "name": "Qajar Dynasty",
+     "name_zh": "恺加王朝",
+     "glyph": "恺加",
+     "short": "Qajar",
+     "tiny": "Qajar|Qj.",
+     "summary": "The Qajars ruled from Tehran but lost the Caucasus to Russia and fell under British and Russian influence. The 1906 revolution created a parliament.",
+     "summary_zh": "恺加王朝定都德黑兰，把高加索地区割让给俄国，受到英俄两国控制。1906年立宪革命建立了议会。",
+     "focus": [
+      "Persia",
+      "Afghanistan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-pahlavi",
+     "start": 1925,
+     "end": 1978,
+     "name": "Pahlavi Dynasty",
+     "name_zh": "巴列维王朝",
+     "glyph": "巴列",
+     "short": "Pahlavi",
+     "tiny": "Pahlavi|Phl.",
+     "summary": "Reza Shah and his son modernised Iran, renamed from Persia in 1935, with oil money and Western support.",
+     "summary_zh": "礼萨汗父子依靠石油收入和西方支持推行现代化，1935年国名由波斯改为伊朗。",
+     "focus": [
+      "Iran",
+      "Afghanistan"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ir-islamic-republic",
+     "start": 1979,
+     "end": 2026,
+     "name": "Islamic Republic",
+     "name_zh": "伊斯兰共和国",
+     "glyph": "伊斯",
+     "short": "Islamic Rep.",
+     "tiny": "Isl.Rep.|IR",
+     "summary": "The 1979 revolution overthrew the Shah and set up an Islamic Republic led by clerics. Afghanistan went through Soviet invasion and decades of war.",
+     "summary_zh": "1979年伊斯兰革命推翻国王，建立由宗教领袖主导的伊斯兰共和国。阿富汗则经历了苏联入侵和长期战乱。",
+     "focus": [
+      "Iran",
+      "Afghanistan"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "伊朗",
+   "short": "Iran"
+  },
+  {
+   "id": "middle-east",
+   "name": "Mesopotamia, the Levant, Anatolia and Arabia",
+   "name_zh": "两河流域、黎凡特、安纳托利亚与阿拉伯",
+   "color": "#7d6608",
+   "polygon": [
+    [
+     44.2,
+     37.5
+    ],
+    [
+     44.5,
+     39.5
+    ],
+    [
+     49.0,
+     38.4
+    ],
+    [
+     50.6,
+     40.4
+    ],
+    [
+     48.5,
+     41.8
+    ],
+    [
+     43.0,
+     43.2
+    ],
+    [
+     40.0,
+     43.4
+    ],
+    [
+     41.5,
+     41.5
+    ],
+    [
+     36.0,
+     42.0
+    ],
+    [
+     29.0,
+     41.2
+    ],
+    [
+     26.5,
+     40.3
+    ],
+    [
+     27.0,
+     37.0
+    ],
+    [
+     30.0,
+     36.2
+    ],
+    [
+     35.8,
+     35.5
+    ],
+    [
+     34.2,
+     31.3
+    ],
+    [
+     34.9,
+     29.5
+    ],
+    [
+     36.0,
+     28.0
+    ],
+    [
+     39.0,
+     22.0
+    ],
+    [
+     42.5,
+     16.0
+    ],
+    [
+     43.3,
+     12.7
+    ],
+    [
+     45.0,
+     12.8
+    ],
+    [
+     52.0,
+     16.0
+    ],
+    [
+     57.8,
+     19.0
+    ],
+    [
+     59.8,
+     22.5
+    ],
+    [
+     56.3,
+     26.3
+    ],
+    [
+     51.5,
+     24.0
+    ],
+    [
+     48.0,
+     29.5
+    ],
+    [
+     48.5,
+     30.0
+    ],
+    [
+     47.8,
+     31.3
+    ],
+    [
+     46.0,
+     33.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "me-early-dynastic",
+     "start": -3000,
+     "end": -2335,
+     "name": "Sumerian City-States",
+     "name_zh": "苏美尔城邦",
+     "glyph": "苏美",
+     "short": "Sumer",
+     "tiny": "Sumer|Sm.",
+     "summary": "Sumerian city-states such as Ur, Uruk and Lagash, each with its temple and king, wrote in cuneiform and fought over land and water.",
+     "summary_zh": "乌尔、乌鲁克、拉格什等苏美尔城邦各有神庙和国王，使用楔形文字，彼此争夺土地和水源。",
+     "focus": [
+      "Ur",
+      "city-states",
+      "Hurrian Kingdoms",
+      "Semites"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-akkad",
+     "start": -2334,
+     "end": -2155,
+     "name": "Akkadian Empire",
+     "name_zh": "阿卡德王国",
+     "glyph": "阿卡",
+     "short": "Akkad",
+     "tiny": "Akkad|Akk.",
+     "summary": "Sargon of Akkad united Mesopotamia into the first empire in history.",
+     "summary_zh": "阿卡德的萨尔贡统一了两河流域，建立了历史上第一个帝国。",
+     "focus": [
+      "Ur",
+      "city-states"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-ur-iii",
+     "start": -2154,
+     "end": -2005,
+     "name": "Third Dynasty of Ur",
+     "name_zh": "乌尔第三王朝",
+     "glyph": "乌尔",
+     "short": "Ur III",
+     "tiny": "Ur III|Ur",
+     "summary": "After the Gutian invasions, the kings of Ur restored Sumerian rule, built great ziggurats and issued the earliest known law code.",
+     "summary_zh": "库提人入侵之后，乌尔诸王重建苏美尔人的统治，修建大型塔庙，颁布了已知最早的法典。",
+     "focus": [
+      "Ur",
+      "city-states"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-old-babylonian",
+     "start": -2004,
+     "end": -1596,
+     "name": "Old Babylonian Period",
+     "name_zh": "古巴比伦王国",
+     "glyph": "巴比",
+     "short": "Old Babylon",
+     "tiny": "Babylon|OB",
+     "summary": "Amorite kingdoms competed until Hammurabi of Babylon united Mesopotamia and issued his law code. Assyria and the Hittites also rose.",
+     "summary_zh": "阿摩利人诸王国争雄，巴比伦国王汉谟拉比统一两河流域并颁布《汉谟拉比法典》。亚述和赫梯也在这时兴起。",
+     "focus": [
+      "Hittites",
+      "Canaan",
+      "Hurrian Kingdoms"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-hittite-kassite",
+     "start": -1595,
+     "end": -1178,
+     "name": "Hittites and Kassites",
+     "name_zh": "赫梯与加喜特巴比伦",
+     "glyph": "赫梯",
+     "short": "Hittites",
+     "tiny": "Hittite|Ht.",
+     "summary": "The Hittites, Mitanni, Kassite Babylon, Assyria and Egypt formed a system of great powers that ended in the Bronze Age collapse.",
+     "summary_zh": "赫梯、米坦尼、加喜特巴比伦、亚述和埃及形成大国并立的格局，最后在青铜时代末期的崩溃中瓦解。",
+     "focus": [
+      "Hittites",
+      "Babylonia",
+      "Assyria",
+      "Urartu",
+      "Phrygians"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-iron-age",
+     "start": -1177,
+     "end": -912,
+     "name": "Iron Age Kingdoms",
+     "name_zh": "腓尼基与希伯来诸国",
+     "glyph": "腓尼",
+     "short": "Iron Age",
+     "tiny": "Iron Age|IA",
+     "summary": "In the vacuum after the collapse, Phoenician cities spread the alphabet, and Aramaean, Israelite and Neo-Hittite kingdoms arose.",
+     "summary_zh": "大国崩溃后，腓尼基城邦传播了字母文字，阿拉米人、以色列人和新赫梯人建立了一批小国。",
+     "focus": [
+      "Arameans",
+      "Kingdom of David and Solomon",
+      "Phrygians",
+      "Assyria",
+      "Babylonia"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-neo-assyrian",
+     "start": -911,
+     "end": -627,
+     "name": "Neo-Assyrian Empire",
+     "name_zh": "新亚述帝国",
+     "glyph": "亚述",
+     "short": "Neo-Assyria",
+     "tiny": "Assyria|NA",
+     "summary": "Assyria built the largest empire yet, with an iron-armed standing army and the royal library at Nineveh.",
+     "summary_zh": "亚述建立了空前庞大的帝国，拥有铁制兵器装备的常备军，首都尼尼微建有王家图书馆。",
+     "focus": [
+      "Assyria",
+      "Babylonia",
+      "Urartu",
+      "Phrygians"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-neo-babylonian",
+     "start": -626,
+     "end": -540,
+     "name": "Neo-Babylonian Empire",
+     "name_zh": "新巴比伦王国",
+     "glyph": "新巴",
+     "short": "Neo-Babylon",
+     "tiny": "N.Babylon|NB",
+     "summary": "The Chaldeans and Medes destroyed Assyria. Nebuchadnezzar II rebuilt Babylon and took Jerusalem in 586 BC.",
+     "summary_zh": "迦勒底人与米底人联合灭亡亚述。尼布甲尼撒二世重建巴比伦城，并于公元前586年攻陷耶路撒冷。",
+     "focus": [
+      "Babylonia"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-achaemenid",
+     "start": -539,
+     "end": -331,
+     "name": "Persian Rule",
+     "name_zh": "波斯帝国统治",
+     "glyph": "波斯",
+     "short": "Persian Rule",
+     "tiny": "Persia|Prs.",
+     "summary": "Cyrus took Babylon in 539 BC, and the whole region became part of the Achaemenid Persian Empire.",
+     "summary_zh": "公元前539年居鲁士攻占巴比伦，整个地区并入阿契美尼德波斯帝国。",
+     "focus": [
+      "Achaemenid Empire",
+      "Saba"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-hellenistic",
+     "start": -330,
+     "end": -64,
+     "name": "Hellenistic Age",
+     "name_zh": "希腊化时代",
+     "glyph": "希化",
+     "short": "Hellenistic",
+     "tiny": "Hellen.|Hel.",
+     "summary": "After Alexander the Seleucid kingdom ruled from Antioch and Seleucia, and Greek cities spread across Anatolia and Syria.",
+     "summary_zh": "亚历山大之后，塞琉古王国以安条克和塞琉西亚为中心统治这里，希腊城市遍布安纳托利亚和叙利亚。",
+     "focus": [
+      "Empire of Alexander",
+      "Seleucid Kingdom",
+      "Pergamon",
+      "Nabatean Kingdom",
+      "Saba"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-roman-parthian",
+     "start": -63,
+     "end": 329,
+     "name": "Rome and Parthia",
+     "name_zh": "罗马与安息",
+     "glyph": "罗马",
+     "short": "Rome & Parthia",
+     "tiny": "Rome|R&P",
+     "summary": "Pompey made Syria a Roman province. Rome and Parthia fought over Mesopotamia and Armenia, and Christianity arose in Judea.",
+     "summary_zh": "庞培把叙利亚变为罗马行省。罗马与安息争夺两河流域和亚美尼亚，基督教在犹太地区兴起。",
+     "focus": [
+      "Roman Empire",
+      "Parthian Empire",
+      "Judea",
+      "Nabatean Kingdom",
+      "Armenia",
+      "Himyarite Kingdom"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-byzantine-sasanian",
+     "start": 330,
+     "end": 631,
+     "name": "Byzantium and Sasanians",
+     "name_zh": "拜占庭与萨珊",
+     "glyph": "拜占",
+     "short": "Byzantium",
+     "tiny": "Byzant.|Byz.",
+     "summary": "Constantinople became the capital of the Eastern Roman Empire, which fought Sasanian Persia for Mesopotamia. In Arabia, Muhammad began preaching Islam.",
+     "summary_zh": "君士坦丁堡成为东罗马帝国的首都，与萨珊波斯争夺两河流域。在阿拉伯半岛，穆罕默德开始传播伊斯兰教。",
+     "focus": [
+      "Eastern Roman Empire",
+      "Persia",
+      "Sasanian Empire",
+      "Himyarite Kingdom",
+      "Hejaz"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-rashidun",
+     "start": 632,
+     "end": 660,
+     "name": "Rashidun Caliphate",
+     "name_zh": "四大哈里发时期",
+     "glyph": "哈里",
+     "short": "Rashidun",
+     "tiny": "Rashidun|Rsh.",
+     "summary": "After Muhammad's death the first four caliphs conquered Syria, Iraq, Egypt and Persia, creating the Arab Empire.",
+     "summary_zh": "穆罕默德死后，前四位哈里发征服叙利亚、伊拉克、埃及和波斯，建立了阿拉伯帝国。",
+     "focus": [
+      "Sasanian Empire",
+      "Eastern Roman Empire",
+      "Hejaz"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-umayyad",
+     "start": 661,
+     "end": 749,
+     "name": "Umayyad Caliphate",
+     "name_zh": "倭马亚王朝",
+     "glyph": "倭马",
+     "short": "Umayyad",
+     "tiny": "Umayyad|Umy.",
+     "summary": "The Umayyads ruled from Damascus over an empire from Spain to Central Asia. It is called the White-robed Dashi in Chinese records.",
+     "summary_zh": "倭马亚王朝定都大马士革，疆域从西班牙延伸到中亚，中国史书称之为白衣大食。",
+     "focus": [
+      "Umayyad Caliphate",
+      "Byzantine Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-abbasid",
+     "start": 750,
+     "end": 1054,
+     "name": "Abbasid Caliphate",
+     "name_zh": "阿拔斯王朝",
+     "glyph": "阿拔",
+     "short": "Abbasid",
+     "tiny": "Abbasid|Abb.",
+     "summary": "The Abbasids built Baghdad, a centre of science and translation. Their real power faded after the 10th century.",
+     "summary_zh": "阿拔斯王朝（中国史书称黑衣大食）修建巴格达，使之成为科学和翻译运动的中心，10世纪以后实权逐渐衰落。",
+     "focus": [
+      "Abbasid Caliphate",
+      "Byzantine Empire",
+      "Fatimid Caliphate",
+      "Buyid Emirate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-seljuk-crusades",
+     "start": 1055,
+     "end": 1257,
+     "name": "Seljuks and Crusades",
+     "name_zh": "塞尔柱与十字军",
+     "glyph": "十字",
+     "short": "Seljuks",
+     "tiny": "Seljuk|Slj.",
+     "summary": "The Seljuk Turks took Baghdad and won Anatolia from Byzantium. European crusaders held Jerusalem from 1099 until Saladin retook it in 1187.",
+     "summary_zh": "塞尔柱突厥人进入巴格达，并从拜占庭手中夺取安纳托利亚。十字军1099年攻占耶路撒冷，1187年被萨拉丁收复。",
+     "focus": [
+      "Seljuk Empire",
+      "Byzantine Empire",
+      "Fatimid Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-mongol-mamluk",
+     "start": 1258,
+     "end": 1515,
+     "name": "Mongols and Mamluks",
+     "name_zh": "蒙古与马穆鲁克",
+     "glyph": "马穆",
+     "short": "Mamluks",
+     "tiny": "Mamluk|Mml.",
+     "summary": "The Mongols sacked Baghdad in 1258. The Mamluks held Syria, the Ilkhanate and then Timur ruled Iraq, and the Ottomans rose in Anatolia.",
+     "summary_zh": "1258年蒙古攻陷巴格达。马穆鲁克王朝控制叙利亚，伊儿汗国和帖木儿先后统治伊拉克，奥斯曼人在安纳托利亚崛起。",
+     "focus": [
+      "Ilkhanate",
+      "Mamluke Sultanate",
+      "Seljuk Caliphate",
+      "Ottoman Empire",
+      "Timurid Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-ottoman",
+     "start": 1516,
+     "end": 1838,
+     "name": "Ottoman Empire",
+     "name_zh": "奥斯曼帝国",
+     "glyph": "奥斯",
+     "short": "Ottoman",
+     "tiny": "Ottoman|Ott.",
+     "summary": "The Ottomans conquered Syria, Iraq and western Arabia and ruled them from Istanbul for four centuries.",
+     "summary_zh": "奥斯曼帝国征服叙利亚、伊拉克和阿拉伯半岛西部，从伊斯坦布尔统治这里长达四百年。",
+     "focus": [
+      "Ottoman Empire",
+      "Safavid Empire",
+      "Oman",
+      "Yemen"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-late-ottoman",
+     "start": 1839,
+     "end": 1917,
+     "name": "Tanzimat and Decline",
+     "name_zh": "坦齐马特与奥斯曼衰落",
+     "glyph": "改革",
+     "short": "Late Ottoman",
+     "tiny": "L.Ottoman|LO",
+     "summary": "The Ottomans tried Western-style reforms but kept losing ground, and the empire collapsed in the First World War.",
+     "summary_zh": "奥斯曼帝国推行西化改革，但仍不断衰落，最终在第一次世界大战中崩溃。",
+     "focus": [
+      "Ottoman Empire",
+      "Arabia",
+      "Oman"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-mandates",
+     "start": 1918,
+     "end": 1947,
+     "name": "Mandates and New States",
+     "name_zh": "委任统治与新国家",
+     "glyph": "委任",
+     "short": "Mandates",
+     "tiny": "Mandates|Mnd.",
+     "summary": "Britain and France ruled Iraq, Syria, Lebanon, Palestine and Jordan as mandates. The Republic of Turkey (1923) and Saudi Arabia (1932) were founded.",
+     "summary_zh": "英法以委任统治方式控制伊拉克、叙利亚、黎巴嫩、巴勒斯坦和约旦。土耳其共和国（1923年）和沙特阿拉伯（1932年）建立。",
+     "focus": [
+      "Turkey",
+      "Saudi Arabia",
+      "Mesopotamia (GB)",
+      "Syria (France)",
+      "Mandatory Palestine (GB)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "me-modern",
+     "start": 1948,
+     "end": 2026,
+     "name": "Modern Middle East",
+     "name_zh": "现代中东",
+     "glyph": "现代",
+     "short": "Modern",
+     "tiny": "Modern|Mod.",
+     "summary": "Israel was founded in 1948, followed by Arab-Israeli wars. Oil wealth transformed the Gulf states, and wars in Iraq and Syria shaped recent decades.",
+     "summary_zh": "1948年以色列建国，此后多次爆发中东战争。石油财富改变了海湾国家，伊拉克战争和叙利亚内战影响了近几十年的局势。",
+     "focus": [
+      "Turkey",
+      "Iraq",
+      "Syria",
+      "Saudi Arabia",
+      "Israel",
+      "Jordan"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "西亚",
+   "short": "W. Asia"
+  },
+  {
+   "id": "egypt-north-africa",
+   "name": "Egypt and North Africa",
+   "name_zh": "埃及与北非",
+   "color": "#ca6f1e",
+   "polygon": [
+    [
+     -10.0,
+     29.5
+    ],
+    [
+     -9.5,
+     32.5
+    ],
+    [
+     -6.0,
+     35.9
+    ],
+    [
+     -2.0,
+     35.3
+    ],
+    [
+     3.0,
+     37.0
+    ],
+    [
+     10.0,
+     37.4
+    ],
+    [
+     11.2,
+     37.1
+    ],
+    [
+     11.5,
+     33.5
+    ],
+    [
+     15.0,
+     33.2
+    ],
+    [
+     19.5,
+     31.0
+    ],
+    [
+     19.8,
+     32.5
+    ],
+    [
+     23.0,
+     33.0
+    ],
+    [
+     25.0,
+     31.8
+    ],
+    [
+     29.0,
+     31.3
+    ],
+    [
+     32.0,
+     31.6
+    ],
+    [
+     34.2,
+     31.3
+    ],
+    [
+     34.9,
+     29.5
+    ],
+    [
+     34.3,
+     28.0
+    ],
+    [
+     35.5,
+     24.0
+    ],
+    [
+     37.0,
+     22.0
+    ],
+    [
+     31.5,
+     22.0
+    ],
+    [
+     25.0,
+     22.0
+    ],
+    [
+     25.0,
+     27.0
+    ],
+    [
+     20.0,
+     28.0
+    ],
+    [
+     15.0,
+     29.0
+    ],
+    [
+     10.0,
+     30.0
+    ],
+    [
+     6.0,
+     31.0
+    ],
+    [
+     0.0,
+     30.0
+    ],
+    [
+     -5.0,
+     29.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "eg-early-dynastic",
+     "start": -3000,
+     "end": -2687,
+     "name": "Early Dynastic Egypt",
+     "name_zh": "古埃及早王朝",
+     "glyph": "早王",
+     "short": "Early Dynastic",
+     "tiny": "Early Dyn.|ED",
+     "summary": "Upper and Lower Egypt were united under the first pharaohs, with Memphis as capital and hieroglyphic writing in use.",
+     "summary_zh": "上下埃及统一于最早的法老之下，以孟菲斯为都城，开始使用象形文字。",
+     "focus": [
+      "Egypt"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-old-kingdom",
+     "start": -2686,
+     "end": -2182,
+     "name": "Old Kingdom",
+     "name_zh": "古埃及古王国",
+     "glyph": "古王",
+     "short": "Old Kingdom",
+     "tiny": "Old Kgdm|OK",
+     "summary": "The age of the pyramids, when pharaohs such as Khufu built the Great Pyramid of Giza.",
+     "summary_zh": "金字塔时代，胡夫等法老修建了吉萨大金字塔。",
+     "focus": [
+      "Egypt"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-first-intermediate",
+     "start": -2181,
+     "end": -2056,
+     "name": "First Intermediate Period",
+     "name_zh": "第一中间期",
+     "glyph": "一中",
+     "short": "1st Intermed.",
+     "tiny": "1st Int.|FIP",
+     "summary": "Royal power collapsed and local governors ruled Egypt in rival lines from Herakleopolis and Thebes.",
+     "summary_zh": "王权崩溃，各州长官割据，赫拉克利奥波利斯和底比斯两系王朝对立。",
+     "focus": [
+      "Egypt"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-middle-kingdom",
+     "start": -2055,
+     "end": -1651,
+     "name": "Middle Kingdom",
+     "name_zh": "古埃及中王国",
+     "glyph": "中王",
+     "short": "Middle Kingdom",
+     "tiny": "Mid.Kgdm|MK",
+     "summary": "Theban kings reunited Egypt, a classical age of literature, and expanded into Nubia.",
+     "summary_zh": "底比斯的国王重新统一埃及，这是古埃及文学的经典时代，并向南扩张到努比亚。",
+     "focus": [
+      "Egypt",
+      "Kerma"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-second-intermediate",
+     "start": -1650,
+     "end": -1551,
+     "name": "Second Intermediate Period",
+     "name_zh": "第二中间期",
+     "glyph": "二中",
+     "short": "2nd Intermed.",
+     "tiny": "2nd Int.|SIP",
+     "summary": "The Hyksos from the Levant ruled the Nile delta and brought the horse and chariot to Egypt.",
+     "summary_zh": "来自西亚的喜克索斯人统治尼罗河三角洲，把马和战车带到埃及。",
+     "focus": [
+      "Egypt"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-new-kingdom",
+     "start": -1550,
+     "end": -1070,
+     "name": "New Kingdom",
+     "name_zh": "古埃及新王国",
+     "glyph": "新王",
+     "short": "New Kingdom",
+     "tiny": "New Kgdm|NK",
+     "summary": "Egypt's imperial age, with conquests in the Levant and Nubia and pharaohs such as Hatshepsut, Akhenaten, Tutankhamun and Ramesses II.",
+     "summary_zh": "埃及的帝国时代，向西亚和努比亚扩张，著名法老有哈特谢普苏特、埃赫那吞、图坦卡蒙和拉美西斯二世。",
+     "focus": [
+      "Egypt",
+      "Kush"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-third-intermediate",
+     "start": -1069,
+     "end": -665,
+     "name": "Third Intermediate Period",
+     "name_zh": "第三中间期",
+     "glyph": "三中",
+     "short": "3rd Intermed.",
+     "tiny": "3rd Int.|TIP",
+     "summary": "Egypt split between priests at Thebes and kings in the delta. Libyan and then Kushite pharaohs ruled, and Phoenicians founded Carthage.",
+     "summary_zh": "埃及分裂为底比斯祭司集团和三角洲国王两部分，利比亚人和库施人先后为法老。腓尼基人建立了迦太基城。",
+     "focus": [
+      "Egypt",
+      "Kush"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-late-period",
+     "start": -664,
+     "end": -333,
+     "name": "Late Period",
+     "name_zh": "后期埃及",
+     "glyph": "后期",
+     "short": "Late Period",
+     "tiny": "Late|LP",
+     "summary": "Native Saite kings revived Egypt, but Persia conquered it in 525 BC. Carthage built a trading empire in the west.",
+     "summary_zh": "赛斯王朝一度复兴埃及，但公元前525年埃及被波斯征服。迦太基在西部建立了贸易帝国。",
+     "focus": [
+      "Egypt",
+      "Carthaginian Empire",
+      "Achaemenid Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-ptolemaic",
+     "start": -332,
+     "end": -31,
+     "name": "Ptolemaic Kingdom",
+     "name_zh": "托勒密王朝",
+     "glyph": "托勒",
+     "short": "Ptolemaic",
+     "tiny": "Ptolemaic|Ptl.",
+     "summary": "After Alexander, the Greek Ptolemies ruled Egypt from Alexandria, home of the great Library. Rome destroyed Carthage in 146 BC.",
+     "summary_zh": "亚历山大之后，希腊人托勒密家族以亚历山大城为都统治埃及，那里建有著名的图书馆。公元前146年罗马灭迦太基。",
+     "focus": [
+      "Ptolemaic Kingdom",
+      "Carthage",
+      "Carthaginian Empire",
+      "Numidia",
+      "Mauretania"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-roman",
+     "start": -30,
+     "end": 394,
+     "name": "Roman Egypt and Africa",
+     "name_zh": "罗马统治时期",
+     "glyph": "罗马",
+     "short": "Roman Rule",
+     "tiny": "Roman|Rom.",
+     "summary": "After Cleopatra, Egypt became Rome's granary, and the whole North African coast was ruled by Rome. Christianity spread from Alexandria.",
+     "summary_zh": "克娄巴特拉之后，埃及成为罗马的粮仓，整个北非沿海都归罗马统治。基督教从亚历山大城传播开来。",
+     "focus": [
+      "Roman Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-byzantine",
+     "start": 395,
+     "end": 640,
+     "name": "Byzantine Rule",
+     "name_zh": "拜占庭统治时期",
+     "glyph": "拜占",
+     "short": "Byzantine",
+     "tiny": "Byzant.|Byz.",
+     "summary": "Egypt belonged to the Eastern Roman Empire and its Coptic church. The Vandals held Carthage until Justinian retook it in 533.",
+     "summary_zh": "埃及属于东罗马帝国，科普特教会盛行。汪达尔人占据迦太基，直到533年查士丁尼收复。",
+     "focus": [
+      "Eastern Roman Empire",
+      "Western Roman Empire",
+      "Vandals"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-arab",
+     "start": 641,
+     "end": 867,
+     "name": "Arab Caliphates",
+     "name_zh": "阿拉伯帝国统治",
+     "glyph": "大食",
+     "short": "Arab Rule",
+     "tiny": "Arab|Ar.",
+     "summary": "Arab armies conquered Egypt and the Maghreb, which slowly adopted Islam and Arabic. Local dynasties such as the Aghlabids and Idrisids emerged.",
+     "summary_zh": "阿拉伯军队征服埃及和马格里布，当地逐渐伊斯兰化和阿拉伯化，出现了阿格拉布、伊德里斯等地方王朝。",
+     "focus": [
+      "Umayyad Caliphate",
+      "Abbasid Caliphate",
+      "Aghlabid Emirate",
+      "Idrisid Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-tulunid",
+     "start": 868,
+     "end": 968,
+     "name": "Tulunids and Ikhshidids",
+     "name_zh": "图伦与伊赫什德王朝",
+     "glyph": "图伦",
+     "short": "Tulunids",
+     "tiny": "Tulunid|Tl.",
+     "summary": "Turkic governors made Egypt self-governing under nominal Abbasid rule, and the Fatimids rose in Tunisia.",
+     "summary_zh": "突厥总督名义上服从阿拔斯王朝，实际上使埃及自治。法蒂玛王朝在突尼斯兴起。",
+     "focus": [
+      "Abbasid Caliphate",
+      "Aghlabid Emirate",
+      "Idrisid Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-fatimid",
+     "start": 969,
+     "end": 1170,
+     "name": "Fatimid Caliphate",
+     "name_zh": "法蒂玛王朝",
+     "glyph": "法蒂",
+     "short": "Fatimid",
+     "tiny": "Fatimid|Ftm.",
+     "summary": "A Shia caliphate that founded Cairo and al-Azhar. In the west the Almoravids rose in Morocco.",
+     "summary_zh": "什叶派的法蒂玛王朝建立开罗城和爱资哈尔清真寺。西部的摩洛哥兴起了穆拉比特王朝。",
+     "focus": [
+      "Fatimid Caliphate",
+      "Almoravid dynasty"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-ayyubid",
+     "start": 1171,
+     "end": 1249,
+     "name": "Ayyubid Dynasty",
+     "name_zh": "阿尤布王朝",
+     "glyph": "阿尤",
+     "short": "Ayyubid",
+     "tiny": "Ayyubid|Ayb.",
+     "summary": "Saladin ended the Fatimids and fought the crusaders, while the Almohads ruled the Maghreb and Spain.",
+     "summary_zh": "萨拉丁结束法蒂玛王朝并抗击十字军，穆瓦希德王朝统治马格里布和西班牙南部。",
+     "focus": [
+      "Almohad Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-mamluk",
+     "start": 1250,
+     "end": 1516,
+     "name": "Mamluk Sultanate",
+     "name_zh": "马穆鲁克王朝",
+     "glyph": "马穆",
+     "short": "Mamluk",
+     "tiny": "Mamluk|Mml.",
+     "summary": "Slave soldiers seized power in Cairo, stopped the Mongols at Ain Jalut in 1260 and drove out the last crusaders.",
+     "summary_zh": "奴隶出身的军人在开罗掌权，1260年在艾因扎鲁特击败蒙古军，并赶走了最后的十字军。",
+     "focus": [
+      "Mamluke Sultanate",
+      "Hafsid Caliphate",
+      "Morocco",
+      "Zayyanid Caliphate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-ottoman",
+     "start": 1517,
+     "end": 1804,
+     "name": "Ottoman Rule",
+     "name_zh": "奥斯曼帝国统治",
+     "glyph": "奥斯",
+     "short": "Ottoman Rule",
+     "tiny": "Ottoman|Ott.",
+     "summary": "The Ottomans conquered Egypt in 1517 and later Algiers, Tunis and Tripoli, while Morocco stayed independent. Napoleon invaded Egypt in 1798.",
+     "summary_zh": "1517年奥斯曼帝国征服埃及，后又控制阿尔及尔、突尼斯和的黎波里，摩洛哥保持独立。1798年拿破仑入侵埃及。",
+     "focus": [
+      "Ottoman Empire",
+      "Watassid Morocco",
+      "Morocco",
+      "Algiers",
+      "Tunis",
+      "Tripolitania"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-muhammad-ali",
+     "start": 1805,
+     "end": 1881,
+     "name": "Muhammad Ali Dynasty",
+     "name_zh": "穆罕默德·阿里王朝",
+     "glyph": "阿里",
+     "short": "Muhammad Ali",
+     "tiny": "M.Ali|MA",
+     "summary": "Muhammad Ali modernised Egypt's army and economy, and the Suez Canal opened in 1869. France conquered Algeria from 1830.",
+     "summary_zh": "穆罕默德·阿里推行改革，使埃及军队和经济近代化，1869年苏伊士运河通航。法国从1830年起侵占阿尔及利亚。",
+     "focus": [
+      "Ottoman Empire",
+      "Egypt",
+      "Algeria (FR)",
+      "Morocco"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-british",
+     "start": 1882,
+     "end": 1952,
+     "name": "British and French Rule",
+     "name_zh": "英法殖民时期",
+     "glyph": "英占",
+     "short": "Colonial Era",
+     "tiny": "Colonial|Col.",
+     "summary": "Britain occupied Egypt in 1882, which became a nominally independent kingdom in 1922, while France and Italy ruled the Maghreb and Libya.",
+     "summary_zh": "1882年英国占领埃及，1922年埃及成为名义上独立的王国；法国和意大利则统治马格里布和利比亚。",
+     "focus": [
+      "Egypt",
+      "Algeria",
+      "Libya",
+      "Tunisia",
+      "Morocco (France)"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eg-republic",
+     "start": 1953,
+     "end": 2026,
+     "name": "Modern North Africa",
+     "name_zh": "现代北非",
+     "glyph": "现代",
+     "short": "Modern",
+     "tiny": "Modern|Mod.",
+     "summary": "Egypt became a republic under Nasser and nationalised the Suez Canal. Morocco, Tunisia, Libya and Algeria won independence.",
+     "summary_zh": "埃及在纳赛尔领导下成为共和国，并将苏伊士运河收归国有。摩洛哥、突尼斯、利比亚和阿尔及利亚先后独立。",
+     "focus": [
+      "Egypt",
+      "Libya",
+      "Algeria",
+      "Tunisia",
+      "Morocco"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "北非",
+   "short": "N. Africa"
+  },
+  {
+   "id": "europe",
+   "name": "Europe and the Mediterranean",
+   "name_zh": "欧洲与地中海",
+   "color": "#1f618d",
+   "polygon": [
+    [
+     -9.5,
+     36.5
+    ],
+    [
+     -6.0,
+     36.0
+    ],
+    [
+     1.0,
+     38.0
+    ],
+    [
+     8.0,
+     38.8
+    ],
+    [
+     11.0,
+     38.0
+    ],
+    [
+     12.3,
+     36.6
+    ],
+    [
+     15.5,
+     36.5
+    ],
+    [
+     18.0,
+     39.5
+    ],
+    [
+     21.0,
+     36.2
+    ],
+    [
+     23.0,
+     34.8
+    ],
+    [
+     26.5,
+     34.8
+    ],
+    [
+     27.2,
+     36.0
+    ],
+    [
+     25.8,
+     38.5
+    ],
+    [
+     26.0,
+     40.2
+    ],
+    [
+     29.0,
+     41.3
+    ],
+    [
+     33.0,
+     42.2
+    ],
+    [
+     36.0,
+     42.4
+    ],
+    [
+     39.5,
+     43.6
+    ],
+    [
+     43.0,
+     43.5
+    ],
+    [
+     47.5,
+     43.0
+    ],
+    [
+     46.5,
+     46.5
+    ],
+    [
+     46.5,
+     49.5
+    ],
+    [
+     49.5,
+     51.8
+    ],
+    [
+     55.0,
+     51.0
+    ],
+    [
+     60.0,
+     52.0
+    ],
+    [
+     60.0,
+     68.0
+    ],
+    [
+     25.0,
+     71.0
+    ],
+    [
+     5.0,
+     62.0
+    ],
+    [
+     -11.0,
+     58.5
+    ],
+    [
+     -11.0,
+     51.5
+    ]
+   ],
+   "periods": [
+    {
+     "id": "eu-copper-age",
+     "start": -3000,
+     "end": -2001,
+     "name": "Copper Age",
+     "name_zh": "铜石并用时代",
+     "glyph": "巨石",
+     "short": "Copper Age",
+     "tiny": "Copper|Cu",
+     "summary": "Farmers built megaliths such as Stonehenge, copper working spread, and the Cycladic and early Minoan cultures appeared in the Aegean.",
+     "summary_zh": "农耕社会修建了巨石阵等巨石建筑，铜器加工技术传播开来，爱琴海出现了基克拉泽斯文化和早期米诺斯文化。",
+     "focus": [
+      "Minoan",
+      "Cycladic",
+      "Yamnaya culture",
+      "Beaker"
+     ]
+    },
+    {
+     "id": "eu-minoan",
+     "start": -2000,
+     "end": -1451,
+     "name": "Minoan Crete",
+     "name_zh": "米诺斯文明",
+     "glyph": "米诺",
+     "short": "Minoan",
+     "tiny": "Minoan|Mn.",
+     "summary": "Palace states such as Knossos on Crete traded across the Aegean, while bronze-using cultures spread through the rest of Europe.",
+     "summary_zh": "克里特岛上以克诺索斯为代表的王宫国家在爱琴海从事贸易，欧洲其他地区进入青铜时代。",
+     "focus": [
+      "Minoan",
+      "Cycladic",
+      "Únětice",
+      "Beaker"
+     ]
+    },
+    {
+     "id": "eu-mycenaean",
+     "start": -1450,
+     "end": -1101,
+     "name": "Mycenaean Greece",
+     "name_zh": "迈锡尼文明",
+     "glyph": "迈锡",
+     "short": "Mycenaean",
+     "tiny": "Mycen.|Myc.",
+     "summary": "Warrior kingdoms on the Greek mainland, such as Mycenae, wrote early Greek in Linear B. This is the world of the Trojan War legend.",
+     "summary_zh": "希腊本土的迈锡尼等王国使用线形文字B书写早期希腊语，特洛伊战争的传说就发生在这个时代。",
+     "focus": [
+      "Greek city-states",
+      "Urnfield cultures",
+      "Thrace"
+     ]
+    },
+    {
+     "id": "eu-greek-dark-age",
+     "start": -1100,
+     "end": -801,
+     "name": "Greek Dark Ages",
+     "name_zh": "希腊黑暗时代",
+     "glyph": "荷马",
+     "short": "Dark Ages",
+     "tiny": "Dark Age|DA",
+     "summary": "The palaces fell and writing was lost in Greece. Iron came into use, and the Homeric epics took shape in oral tradition.",
+     "summary_zh": "希腊的王宫被毁，文字失传。铁器开始使用，荷马史诗在口头流传中形成，因此也叫荷马时代。",
+     "focus": [
+      "Greek city-states",
+      "Urnfield cultures",
+      "Illyrians",
+      "Thrace"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-archaic-greece",
+     "start": -800,
+     "end": -501,
+     "name": "Archaic Greece",
+     "name_zh": "古风时代",
+     "glyph": "城邦",
+     "short": "Archaic Greece",
+     "tiny": "Archaic|Arc.",
+     "summary": "Greek city-states (poleis) arose and founded colonies around the Mediterranean, Rome was founded, and Celtic cultures spread north of the Alps.",
+     "summary_zh": "希腊城邦兴起，并在地中海沿岸广建殖民地；罗马建城；阿尔卑斯山以北凯尔特文化扩展。",
+     "focus": [
+      "Greek city-states",
+      "Etrurians",
+      "La Tène culture",
+      "Rome"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-classical-greece",
+     "start": -500,
+     "end": -323,
+     "name": "Classical Greece",
+     "name_zh": "古典希腊",
+     "glyph": "希腊",
+     "short": "Classical Greece",
+     "tiny": "Greece|Gr.",
+     "summary": "Athens and Sparta defeated Persia, Athenian democracy and philosophy flourished, and Macedon under Philip II and Alexander came to dominate Greece.",
+     "summary_zh": "雅典和斯巴达击败波斯，雅典民主政治和哲学繁荣。后来马其顿在腓力二世和亚历山大领导下控制了希腊。",
+     "focus": [
+      "Greek city-states",
+      "Rome",
+      "Etrurians",
+      "Carthaginian Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-hellenistic",
+     "start": -322,
+     "end": -147,
+     "name": "Hellenistic Age",
+     "name_zh": "希腊化时代",
+     "glyph": "希化",
+     "short": "Hellenistic",
+     "tiny": "Hellen.|Hel.",
+     "summary": "Alexander's successors ruled Greek kingdoms, while the Roman Republic conquered Italy and defeated Carthage in the Punic Wars.",
+     "summary_zh": "亚历山大的部将建立希腊化王国。罗马共和国统一意大利，并在布匿战争中打败迦太基。",
+     "focus": [
+      "Rome",
+      "Roman Republic",
+      "Macedon and Hellenic League",
+      "Carthage",
+      "Celts"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-roman-republic",
+     "start": -146,
+     "end": -28,
+     "name": "Late Roman Republic",
+     "name_zh": "罗马共和国晚期",
+     "glyph": "共和",
+     "short": "Roman Republic",
+     "tiny": "Republic|RR",
+     "summary": "Rome ruled the Mediterranean, but civil wars among generals such as Caesar ended the Republic.",
+     "summary_zh": "罗马成为地中海霸主，但恺撒等将领之间的内战最终终结了共和制。",
+     "focus": [
+      "Roman Republic",
+      "Rome"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-roman-empire",
+     "start": -27,
+     "end": 234,
+     "name": "Roman Empire",
+     "name_zh": "罗马帝国",
+     "glyph": "罗马",
+     "short": "Roman Empire",
+     "tiny": "Rome|R.",
+     "summary": "Augustus founded the Empire, and two centuries of Pax Romana followed, with roads, cities and law from Britain to Syria.",
+     "summary_zh": "屋大维建立罗马帝国，此后近两百年为“罗马和平”时期，从不列颠到叙利亚修建了道路和城市，推行罗马法。",
+     "focus": [
+      "Roman Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-late-roman",
+     "start": 235,
+     "end": 475,
+     "name": "Late Roman Empire",
+     "name_zh": "罗马帝国晚期",
+     "glyph": "晚罗",
+     "short": "Late Rome",
+     "tiny": "L.Rome|LR",
+     "summary": "After the third-century crisis, Constantine adopted Christianity and founded Constantinople. The empire split into East and West, and Germanic peoples migrated in.",
+     "summary_zh": "三世纪危机之后，君士坦丁皈依基督教，建立君士坦丁堡。帝国分裂为东西两部分，日耳曼人大举迁入。",
+     "focus": [
+      "Roman Empire",
+      "Western Roman Empire",
+      "Eastern Roman Empire",
+      "Hunnic Empire",
+      "Visigoths",
+      "Franks"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-early-middle-ages",
+     "start": 476,
+     "end": 799,
+     "name": "Early Middle Ages",
+     "name_zh": "中世纪早期",
+     "glyph": "法兰",
+     "short": "Early Mid. Ages",
+     "tiny": "Early MA|EMA",
+     "summary": "After the fall of the Western Empire in 476, Germanic kingdoms such as the Franks replaced Rome in the west, and Byzantium carried on in the east.",
+     "summary_zh": "476年西罗马帝国灭亡后，法兰克等日耳曼王国取而代之，东方的拜占庭帝国延续下来。",
+     "focus": [
+      "Frankish Kingdom",
+      "Eastern Roman Empire",
+      "Visigothic Kingdom",
+      "Lombard principalities",
+      "Avars"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-carolingian",
+     "start": 800,
+     "end": 999,
+     "name": "Carolingians and Vikings",
+     "name_zh": "加洛林与维京时代",
+     "glyph": "查理",
+     "short": "Carolingian",
+     "tiny": "Caroling.|Car.",
+     "summary": "Charlemagne was crowned emperor in 800. His empire split, Vikings raided and settled, and Otto I founded the Holy Roman Empire in 962.",
+     "summary_zh": "800年查理曼加冕称帝，其帝国后来分裂。维京人四处劫掠和定居。962年奥托一世建立神圣罗马帝国。",
+     "focus": [
+      "Carolingian Empire",
+      "Byzantine Empire",
+      "Emirate of Córdoba",
+      "Kyivan Rus",
+      "Bulgar Khanate"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-high-middle-ages",
+     "start": 1000,
+     "end": 1299,
+     "name": "High Middle Ages",
+     "name_zh": "中世纪盛期",
+     "glyph": "十字",
+     "short": "High Mid. Ages",
+     "tiny": "High MA|HMA",
+     "summary": "Population and towns grew, Gothic cathedrals and universities appeared, the Crusades began, and the Mongols overran Rus.",
+     "summary_zh": "人口和城市增长，出现哥特式大教堂和大学，十字军东征开始，蒙古人征服了罗斯。",
+     "focus": [
+      "Holy Roman Empire",
+      "Kingdom of France",
+      "England",
+      "Byzantine Empire",
+      "Kyivan Rus",
+      "Poland"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-late-middle-ages",
+     "start": 1300,
+     "end": 1452,
+     "name": "Late Middle Ages",
+     "name_zh": "中世纪晚期",
+     "glyph": "黑死",
+     "short": "Late Mid. Ages",
+     "tiny": "Late MA|LMA",
+     "summary": "The Black Death killed about a third of Europe, England and France fought the Hundred Years' War, and the Ottomans advanced into the Balkans.",
+     "summary_zh": "黑死病夺去了欧洲约三分之一人口，英法爆发百年战争，奥斯曼人进入巴尔干。",
+     "focus": [
+      "Holy Roman Empire",
+      "France",
+      "Castile",
+      "Poland-Lithuania",
+      "Grand Duchy of Moscow",
+      "Ottoman Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-renaissance",
+     "start": 1453,
+     "end": 1516,
+     "name": "Renaissance",
+     "name_zh": "文艺复兴",
+     "glyph": "文艺",
+     "short": "Renaissance",
+     "tiny": "Renaiss.|Ren.",
+     "summary": "Constantinople fell to the Ottomans, printing spread, the Italian Renaissance flourished, and Columbus and Vasco da Gama opened new sea routes.",
+     "summary_zh": "奥斯曼帝国攻占君士坦丁堡，印刷术传播，意大利文艺复兴繁荣，哥伦布和达·伽马开辟了新航路。",
+     "focus": [
+      "Holy Roman Empire",
+      "France",
+      "Castille",
+      "Portugal",
+      "Grand Duchy of Moscow",
+      "Ottoman Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-reformation",
+     "start": 1517,
+     "end": 1647,
+     "name": "Reformation",
+     "name_zh": "宗教改革",
+     "glyph": "宗改",
+     "short": "Reformation",
+     "tiny": "Reform.|Ref.",
+     "summary": "Luther's protest split Western Christianity, and religious wars ended with the Peace of Westphalia in 1648. Spain and Portugal built overseas empires.",
+     "summary_zh": "路德发起宗教改革，西方基督教会分裂，宗教战争到1648年《威斯特伐利亚和约》结束。西班牙和葡萄牙建立海外帝国。",
+     "focus": [
+      "Spain",
+      "France",
+      "Holy Roman Empire",
+      "England and Ireland",
+      "Poland-Lithuania",
+      "Tsardom of Muscovy"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-absolutism",
+     "start": 1648,
+     "end": 1788,
+     "name": "Absolutism and Enlightenment",
+     "name_zh": "专制与启蒙时代",
+     "glyph": "启蒙",
+     "short": "Enlightenment",
+     "tiny": "Enlight.|Enl.",
+     "summary": "Strong monarchs such as Louis XIV and Peter the Great ruled, the Scientific Revolution and the Enlightenment spread, and Britain became a great sea power.",
+     "summary_zh": "路易十四、彼得大帝等君主实行专制统治，科学革命和启蒙运动兴起，英国成为海上强国。",
+     "focus": [
+      "France",
+      "Austrian Empire",
+      "Holy Roman Empire",
+      "Spain",
+      "England and Ireland",
+      "Tsardom of Muscovy"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-revolution",
+     "start": 1789,
+     "end": 1814,
+     "name": "French Revolution and Napoleon",
+     "name_zh": "法国大革命与拿破仑",
+     "glyph": "革命",
+     "short": "Revolution",
+     "tiny": "Revol.|Rev.",
+     "summary": "The French Revolution overthrew the monarchy, and Napoleon's wars redrew the map of Europe until his defeat.",
+     "summary_zh": "法国大革命推翻了君主制，拿破仑的战争改变了欧洲版图，直到他最终战败。",
+     "focus": [
+      "France",
+      "United Kingdom",
+      "Austrian Empire",
+      "Prussia",
+      "Russian Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-industrial",
+     "start": 1815,
+     "end": 1913,
+     "name": "Industrial Age",
+     "name_zh": "工业革命与民族国家",
+     "glyph": "工业",
+     "short": "Industrial Age",
+     "tiny": "Industr.|Ind.",
+     "summary": "Industry spread from Britain, Italy and Germany were unified, and European empires ruled much of the world.",
+     "summary_zh": "工业革命从英国扩展到欧洲各地，意大利和德国完成统一，欧洲列强统治了世界大部分地区。",
+     "focus": [
+      "United Kingdom of Great Britain and Ireland",
+      "France",
+      "Germany",
+      "Austria Hungary",
+      "Italy",
+      "Russian Empire"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-world-wars",
+     "start": 1914,
+     "end": 1945,
+     "name": "World Wars",
+     "name_zh": "两次世界大战",
+     "glyph": "大战",
+     "short": "World Wars",
+     "tiny": "WWs|WW",
+     "summary": "Two world wars devastated Europe. The Russian Revolution created the Soviet Union, and fascism rose in Italy and Germany.",
+     "summary_zh": "两次世界大战使欧洲遭受重创。俄国革命建立了苏联，法西斯主义在意大利和德国兴起。",
+     "focus": [
+      "Germany",
+      "France",
+      "United Kingdom",
+      "Italy",
+      "USSR",
+      "Poland"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-cold-war",
+     "start": 1946,
+     "end": 1991,
+     "name": "Cold War",
+     "name_zh": "冷战",
+     "glyph": "冷战",
+     "short": "Cold War",
+     "tiny": "Cold War|CW",
+     "summary": "Europe was divided between the US-led West and the Soviet bloc, while Western Europe began to integrate economically.",
+     "summary_zh": "欧洲分裂为美国领导的西方阵营和苏联集团，西欧开始经济一体化。",
+     "focus": [
+      "USSR",
+      "France",
+      "West Germany",
+      "East Germany",
+      "United Kingdom",
+      "Italy"
+     ],
+     "layers": true
+    },
+    {
+     "id": "eu-european-union",
+     "start": 1992,
+     "end": 2026,
+     "name": "European Union",
+     "name_zh": "欧盟时代",
+     "glyph": "欧盟",
+     "short": "EU Era",
+     "tiny": "EU",
+     "summary": "After the Soviet Union broke up, the European Union grew eastward and adopted the euro. Russia's war in Ukraine began in 2022.",
+     "summary_zh": "苏联解体后，欧盟向东扩大并启用欧元。2022年俄乌战争爆发。",
+     "focus": [
+      "Germany",
+      "France",
+      "Russia",
+      "United Kingdom",
+      "Ukraine",
+      "Poland"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "欧洲",
+   "short": "Europe"
+  },
+  {
+   "id": "sub-saharan-africa",
+   "name": "Sub-Saharan Africa",
+   "name_zh": "撒哈拉以南非洲",
+   "color": "#6e2c00",
+   "polygon": [
+    [
+     -17.0,
+     21.0
+    ],
+    [
+     -10.0,
+     21.5
+    ],
+    [
+     0.0,
+     21.0
+    ],
+    [
+     10.0,
+     20.5
+    ],
+    [
+     20.0,
+     21.0
+    ],
+    [
+     24.0,
+     21.0
+    ],
+    [
+     31.5,
+     21.5
+    ],
+    [
+     37.0,
+     21.5
+    ],
+    [
+     38.5,
+     18.0
+    ],
+    [
+     42.8,
+     12.4
+    ],
+    [
+     45.0,
+     11.0
+    ],
+    [
+     51.3,
+     11.8
+    ],
+    [
+     48.0,
+     4.5
+    ],
+    [
+     42.0,
+     -1.0
+    ],
+    [
+     40.0,
+     -10.0
+    ],
+    [
+     40.5,
+     -15.0
+    ],
+    [
+     35.5,
+     -24.0
+    ],
+    [
+     32.0,
+     -29.0
+    ],
+    [
+     28.0,
+     -33.0
+    ],
+    [
+     19.5,
+     -35.0
+    ],
+    [
+     17.6,
+     -33.5
+    ],
+    [
+     14.5,
+     -23.0
+    ],
+    [
+     12.0,
+     -17.0
+    ],
+    [
+     13.0,
+     -6.0
+    ],
+    [
+     9.5,
+     -1.0
+    ],
+    [
+     9.5,
+     4.0
+    ],
+    [
+     2.0,
+     6.3
+    ],
+    [
+     -7.5,
+     4.3
+    ],
+    [
+     -13.5,
+     9.5
+    ],
+    [
+     -17.5,
+     15.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "ss-neolithic",
+     "start": -3000,
+     "end": -1001,
+     "name": "Late Stone Age",
+     "name_zh": "新石器时代",
+     "glyph": "新石",
+     "short": "Late Stone Age",
+     "tiny": "Stone Age|LSA",
+     "summary": "Cattle herders spread across the drying Sahel and East Africa, and the Kerma culture of Nubia became the first kingdom south of Egypt.",
+     "summary_zh": "放牧牛群的人群在日益干旱的萨赫勒和东非扩散，努比亚的克尔玛文化形成了埃及以南最早的王国。",
+     "focus": [
+      "Kerma",
+      "Bantu",
+      "Khoisan",
+      "West African cereal farmers"
+     ]
+    },
+    {
+     "id": "ss-early-iron",
+     "start": -1000,
+     "end": 99,
+     "name": "Early Iron Age",
+     "name_zh": "早期铁器时代",
+     "glyph": "铁器",
+     "short": "Early Iron Age",
+     "tiny": "Iron Age|EIA",
+     "summary": "Iron working spread, the Nok culture made terracotta sculptures, Bantu-speaking farmers moved south and east, and the Kingdom of Kush ruled from Napata and Meroë.",
+     "summary_zh": "冶铁技术传播，诺克文化留下陶塑，操班图语的农民向南、向东迁徙，库施王国以纳帕塔和麦罗埃为都城。",
+     "focus": [
+      "Kush",
+      "Meroe",
+      "West African cereal farmers",
+      "Ethiopian highland farmers"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-aksum",
+     "start": 100,
+     "end": 699,
+     "name": "Aksum and Early States",
+     "name_zh": "阿克苏姆时代",
+     "glyph": "阿克",
+     "short": "Aksum",
+     "tiny": "Aksum|Ak.",
+     "summary": "Aksum in Ethiopia traded across the Red Sea and adopted Christianity, while the Ghana Empire rose in the western Sahel.",
+     "summary_zh": "埃塞俄比亚的阿克苏姆王国从事红海贸易并接受了基督教，西部萨赫勒地区兴起了加纳帝国。",
+     "focus": [
+      "Axum",
+      "Meroe",
+      "Empire of Ghana",
+      "Makkura",
+      "Alwa"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-ghana",
+     "start": 700,
+     "end": 1234,
+     "name": "Ghana and the Swahili Coast",
+     "name_zh": "加纳帝国与斯瓦希里城邦",
+     "glyph": "加纳",
+     "short": "Ghana Empire",
+     "tiny": "Ghana|Gh.",
+     "summary": "Trans-Saharan gold trade made Ghana and Kanem rich, Swahili towns traded across the Indian Ocean, and Great Zimbabwe began to rise.",
+     "summary_zh": "跨撒哈拉的黄金贸易使加纳和加涅姆富强，斯瓦希里城邦从事印度洋贸易，大津巴布韦开始兴起。",
+     "focus": [
+      "Ghana",
+      "Kanem",
+      "Makkura",
+      "Islamic city-states",
+      "Great Zimbabwe",
+      "Takrur"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-mali",
+     "start": 1235,
+     "end": 1463,
+     "name": "Mali Empire",
+     "name_zh": "马里帝国",
+     "glyph": "马里",
+     "short": "Mali Empire",
+     "tiny": "Mali|Ml.",
+     "summary": "Sundiata founded Mali, whose king Mansa Musa became famous for his pilgrimage to Mecca. Timbuktu became a centre of Islamic learning.",
+     "summary_zh": "松迪亚塔建立马里帝国，曼萨·穆萨国王因朝觐麦加而闻名。廷巴克图成为伊斯兰学术中心。",
+     "focus": [
+      "Mali",
+      "Ethiopia",
+      "Great Zimbabwe",
+      "Kanem-Bornu",
+      "Benin",
+      "Islamic city-states"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-songhai",
+     "start": 1464,
+     "end": 1590,
+     "name": "Songhai Empire",
+     "name_zh": "桑海帝国",
+     "glyph": "桑海",
+     "short": "Songhai",
+     "tiny": "Songhai|Sgh.",
+     "summary": "Songhai became the largest West African empire, the Kingdom of Kongo met the Portuguese, and Mutapa ruled the Zimbabwe plateau.",
+     "summary_zh": "桑海成为西非最大的帝国，刚果王国与葡萄牙人接触，莫诺莫塔帕统治津巴布韦高原。",
+     "focus": [
+      "Songhai",
+      "Congo",
+      "Ethiopia",
+      "Mwenemutapa",
+      "Hausa States",
+      "Benin"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-slave-trade",
+     "start": 1591,
+     "end": 1806,
+     "name": "Atlantic Slave Trade",
+     "name_zh": "大西洋奴隶贸易时代",
+     "glyph": "奴贸",
+     "short": "Slave Trade",
+     "tiny": "Slave Tr.|ST",
+     "summary": "Morocco destroyed Songhai in 1591. Millions of Africans were shipped to the Americas, and coastal states such as Asante, Dahomey and Oyo grew strong.",
+     "summary_zh": "1591年摩洛哥灭桑海。数以百万计的非洲人被贩运到美洲，阿散蒂、达荷美、奥约等沿海国家强盛起来。",
+     "focus": [
+      "Oyo",
+      "Asante",
+      "Congo",
+      "Lunda",
+      "Luba",
+      "Ethiopia"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-late-precolonial",
+     "start": 1807,
+     "end": 1884,
+     "name": "Eve of Colonialism",
+     "name_zh": "殖民前夜",
+     "glyph": "前夜",
+     "short": "19th Century",
+     "tiny": "19th c.|19C",
+     "summary": "Britain banned the slave trade in 1807. Jihad states such as the Sokoto Caliphate and the Zulu kingdom rose, and Europeans explored the interior.",
+     "summary_zh": "1807年英国禁止奴隶贸易。索科托哈里发国和祖鲁王国等兴起，欧洲人深入内陆探险。",
+     "focus": [
+      "Sokoto Caliphate",
+      "Zulu",
+      "Asante",
+      "Ethiopia",
+      "Cape Colony",
+      "Sultanate of Zanzibar"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-colonial",
+     "start": 1885,
+     "end": 1956,
+     "name": "Colonial Rule",
+     "name_zh": "殖民统治时期",
+     "glyph": "殖民",
+     "short": "Colonial Rule",
+     "tiny": "Colonial|Col.",
+     "summary": "After the Berlin Conference European powers divided almost all of Africa. Only Ethiopia and Liberia stayed independent.",
+     "summary_zh": "柏林会议后欧洲列强瓜分了几乎整个非洲，只有埃塞俄比亚和利比里亚保持独立。",
+     "focus": [
+      "French West Africa",
+      "Belgian Congo",
+      "Nigeria",
+      "British East Africa",
+      "Union of South Africa",
+      "Abyssinia"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-independence",
+     "start": 1957,
+     "end": 1993,
+     "name": "Independence Era",
+     "name_zh": "独立运动时代",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Ghana led the way in 1957 and most colonies became independent by the 1970s, while South Africa kept apartheid until the early 1990s.",
+     "summary_zh": "1957年加纳率先独立，到20世纪70年代大多数殖民地获得独立；南非的种族隔离制度一直延续到90年代初。",
+     "focus": [
+      "Nigeria",
+      "Zaire",
+      "Ethiopia",
+      "Ghana",
+      "Kenya",
+      "South Africa"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ss-contemporary",
+     "start": 1994,
+     "end": 2026,
+     "name": "Contemporary Africa",
+     "name_zh": "当代非洲",
+     "glyph": "当代",
+     "short": "Contemporary",
+     "tiny": "Today|Now",
+     "summary": "South Africa became a multiracial democracy in 1994, the African Union was founded, and many economies grew fast despite conflicts.",
+     "summary_zh": "1994年南非建立多种族民主政权，非洲联盟成立。尽管冲突不断，许多国家经济增长迅速。",
+     "focus": [
+      "Nigeria",
+      "Ethiopia",
+      "South Africa",
+      "Kenya",
+      "Zaire",
+      "Tanzania, United Republic of"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "非洲",
+   "short": "Africa"
+  },
+  {
+   "id": "north-america",
+   "name": "North America",
+   "name_zh": "北美洲",
+   "color": "#1e8449",
+   "polygon": [
+    [
+     -117.1,
+     32.5
+    ],
+    [
+     -114.7,
+     32.7
+    ],
+    [
+     -111.0,
+     31.3
+    ],
+    [
+     -106.5,
+     31.8
+    ],
+    [
+     -103.0,
+     29.0
+    ],
+    [
+     -99.5,
+     27.5
+    ],
+    [
+     -97.2,
+     25.9
+    ],
+    [
+     -94.0,
+     29.5
+    ],
+    [
+     -89.0,
+     30.0
+    ],
+    [
+     -85.0,
+     29.5
+    ],
+    [
+     -81.0,
+     25.0
+    ],
+    [
+     -80.0,
+     26.5
+    ],
+    [
+     -75.5,
+     35.2
+    ],
+    [
+     -70.0,
+     41.5
+    ],
+    [
+     -60.0,
+     46.0
+    ],
+    [
+     -52.5,
+     47.0
+    ],
+    [
+     -60.0,
+     55.5
+    ],
+    [
+     -78.0,
+     62.5
+    ],
+    [
+     -95.0,
+     72.0
+    ],
+    [
+     -120.0,
+     73.0
+    ],
+    [
+     -141.0,
+     70.0
+    ],
+    [
+     -157.0,
+     71.0
+    ],
+    [
+     -166.0,
+     68.5
+    ],
+    [
+     -165.0,
+     60.0
+    ],
+    [
+     -152.0,
+     58.0
+    ],
+    [
+     -140.0,
+     59.5
+    ],
+    [
+     -130.0,
+     54.5
+    ],
+    [
+     -124.5,
+     48.5
+    ],
+    [
+     -124.5,
+     42.0
+    ],
+    [
+     -120.5,
+     34.5
+    ]
+   ],
+   "periods": [
+    {
+     "id": "na-archaic",
+     "start": -3000,
+     "end": -1001,
+     "name": "Archaic Period",
+     "name_zh": "古期",
+     "glyph": "古期",
+     "short": "Archaic",
+     "tiny": "Archaic|Arc.",
+     "summary": "Hunter-gatherers adapted to every environment, and in the lower Mississippi valley people built the earthworks of Poverty Point.",
+     "summary_zh": "狩猎采集者适应了各种环境，密西西比河下游的居民修建了波弗蒂角土丘群。",
+     "focus": [
+      "Archaic Amerindian hunter-gatherers",
+      "Poverty point culture",
+      "Plain bison hunters",
+      "Eastern North American hunter-gatherers"
+     ]
+    },
+    {
+     "id": "na-woodland",
+     "start": -1000,
+     "end": 799,
+     "name": "Woodland Period",
+     "name_zh": "林地时期",
+     "glyph": "林地",
+     "short": "Woodland",
+     "tiny": "Woodland|Wd.",
+     "summary": "Eastern peoples made pottery, began to farm and built burial mounds, as in the Adena and Hopewell cultures.",
+     "summary_zh": "东部各族开始制陶和农耕，阿德纳文化和霍普韦尔文化修建了大型墓葬土丘。",
+     "focus": [
+      "Adena Culture",
+      "Hopewell Culture",
+      "Plain bison hunters"
+     ]
+    },
+    {
+     "id": "na-mississippian",
+     "start": 800,
+     "end": 1491,
+     "name": "Mississippian Period",
+     "name_zh": "密西西比文化时期",
+     "glyph": "土丘",
+     "short": "Mississippian",
+     "tiny": "Mississ.|Msp.",
+     "summary": "Maize farming supported towns such as Cahokia with great platform mounds, while Ancestral Puebloans built cliff dwellings in the Southwest.",
+     "summary_zh": "玉米种植支撑起卡霍基亚等建有大型平台土丘的城镇，西南部的古普韦布洛人修建了崖居。",
+     "focus": [
+      "Anasazi",
+      "Mogollon",
+      "Eastern North American hunter-gatherers",
+      "Plain bison hunters"
+     ]
+    },
+    {
+     "id": "na-contact",
+     "start": 1492,
+     "end": 1606,
+     "name": "European Contact",
+     "name_zh": "欧洲人到来",
+     "glyph": "接触",
+     "short": "Contact",
+     "tiny": "Contact|Ct.",
+     "summary": "Spanish, French and English explorers arrived, and diseases such as smallpox killed a large share of Native Americans.",
+     "summary_zh": "西班牙、法国和英国探险者相继到来，天花等疾病造成大量印第安人死亡。",
+     "focus": [
+      "Iroquois",
+      "Cherokee",
+      "Huron",
+      "Apache",
+      "Navajo"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-colonial",
+     "start": 1607,
+     "end": 1762,
+     "name": "Colonial Era",
+     "name_zh": "殖民地时期",
+     "glyph": "殖民",
+     "short": "Colonial Era",
+     "tiny": "Colonial|Col.",
+     "summary": "England founded Jamestown in 1607 and France founded Quebec in 1608. Britain won North America from France in the Seven Years' War.",
+     "summary_zh": "1607年英国建立詹姆斯敦，1608年法国建立魁北克。英国在七年战争中从法国手中夺得北美。",
+     "focus": [
+      "New France",
+      "Virginia",
+      "Massachusetts Bay",
+      "British American colonies",
+      "Iroquois"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-revolution",
+     "start": 1763,
+     "end": 1788,
+     "name": "American Revolution",
+     "name_zh": "美国独立战争时期",
+     "glyph": "独立",
+     "short": "Revolution",
+     "tiny": "Revol.|Rev.",
+     "summary": "The thirteen colonies declared independence in 1776, won the war and wrote the US Constitution in 1787.",
+     "summary_zh": "十三个殖民地于1776年宣布独立，赢得独立战争，并于1787年制定《美国宪法》。",
+     "focus": [
+      "United States of America",
+      "Quebec",
+      "Rupert's Land"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-early-republic",
+     "start": 1789,
+     "end": 1860,
+     "name": "Westward Expansion",
+     "name_zh": "美国建国与西进运动",
+     "glyph": "西进",
+     "short": "Expansion",
+     "tiny": "Expans.|Exp.",
+     "summary": "The United States grew west through the Louisiana Purchase and war with Mexico, while British North America developed separately.",
+     "summary_zh": "美国通过路易斯安那购地和美墨战争向西扩张，英属北美则独立发展。",
+     "focus": [
+      "United States of America",
+      "United States",
+      "Canada",
+      "Rupert's Land"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-civil-war",
+     "start": 1861,
+     "end": 1877,
+     "name": "Civil War and Reconstruction",
+     "name_zh": "南北战争与重建",
+     "glyph": "内战",
+     "short": "Civil War",
+     "tiny": "Civil War|CW",
+     "summary": "The North defeated the Confederacy and slavery was abolished. Canada became a self-governing dominion in 1867.",
+     "summary_zh": "北方击败南方邦联，废除了奴隶制。1867年加拿大成为自治领。",
+     "focus": [
+      "United States of America",
+      "Canada"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-gilded-age",
+     "start": 1878,
+     "end": 1916,
+     "name": "Gilded Age",
+     "name_zh": "镀金时代与进步时代",
+     "glyph": "镀金",
+     "short": "Gilded Age",
+     "tiny": "Gilded|GA",
+     "summary": "Railways, factories and mass immigration made the United States the largest industrial economy.",
+     "summary_zh": "铁路、工厂和大规模移民使美国成为世界第一工业大国。",
+     "focus": [
+      "United States of America",
+      "United States",
+      "Canada"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-world-wars",
+     "start": 1917,
+     "end": 1945,
+     "name": "World Wars and Depression",
+     "name_zh": "世界大战与大萧条",
+     "glyph": "大战",
+     "short": "World Wars",
+     "tiny": "WWs|WW",
+     "summary": "The US entered both world wars, suffered the Great Depression and the New Deal, and emerged as a superpower.",
+     "summary_zh": "美国参加两次世界大战，经历了大萧条和罗斯福新政，成为超级大国。",
+     "focus": [
+      "United States",
+      "Canada"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-cold-war",
+     "start": 1946,
+     "end": 1991,
+     "name": "Cold War",
+     "name_zh": "冷战时期",
+     "glyph": "冷战",
+     "short": "Cold War",
+     "tiny": "Cold War|CW",
+     "summary": "The United States led the Western bloc against the Soviet Union, and the civil rights movement ended legal segregation.",
+     "summary_zh": "美国领导西方阵营与苏联对抗，民权运动结束了合法的种族隔离。",
+     "focus": [
+      "United States",
+      "Canada"
+     ],
+     "layers": true
+    },
+    {
+     "id": "na-contemporary",
+     "start": 1992,
+     "end": 2026,
+     "name": "Contemporary North America",
+     "name_zh": "当代北美",
+     "glyph": "当代",
+     "short": "Contemporary",
+     "tiny": "Today|Now",
+     "summary": "After the Cold War the US was the sole superpower, North American trade was integrated, and the digital economy boomed.",
+     "summary_zh": "冷战结束后美国成为唯一的超级大国，北美贸易一体化，数字经济蓬勃发展。",
+     "focus": [
+      "United States",
+      "Canada"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "北美",
+   "short": "N. America"
+  },
+  {
+   "id": "mesoamerica",
+   "name": "Mexico and Central America",
+   "name_zh": "墨西哥与中美洲",
+   "color": "#a04000",
+   "polygon": [
+    [
+     -117.1,
+     32.5
+    ],
+    [
+     -114.7,
+     32.7
+    ],
+    [
+     -111.0,
+     31.3
+    ],
+    [
+     -106.5,
+     31.8
+    ],
+    [
+     -103.0,
+     29.0
+    ],
+    [
+     -99.5,
+     27.5
+    ],
+    [
+     -97.2,
+     25.9
+    ],
+    [
+     -97.5,
+     22.0
+    ],
+    [
+     -94.5,
+     18.2
+    ],
+    [
+     -91.0,
+     19.0
+    ],
+    [
+     -90.5,
+     21.3
+    ],
+    [
+     -87.0,
+     21.6
+    ],
+    [
+     -88.0,
+     16.0
+    ],
+    [
+     -83.5,
+     15.0
+    ],
+    [
+     -83.5,
+     10.8
+    ],
+    [
+     -79.5,
+     9.6
+    ],
+    [
+     -77.5,
+     8.6
+    ],
+    [
+     -78.0,
+     7.2
+    ],
+    [
+     -80.0,
+     7.2
+    ],
+    [
+     -83.5,
+     8.3
+    ],
+    [
+     -85.5,
+     11.0
+    ],
+    [
+     -88.0,
+     13.0
+    ],
+    [
+     -92.0,
+     14.4
+    ],
+    [
+     -97.0,
+     15.8
+    ],
+    [
+     -104.0,
+     18.5
+    ],
+    [
+     -105.5,
+     20.0
+    ],
+    [
+     -110.0,
+     22.8
+    ],
+    [
+     -115.0,
+     25.0
+    ],
+    [
+     -118.0,
+     30.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "ma-archaic",
+     "start": -3000,
+     "end": -2001,
+     "name": "Archaic Period",
+     "name_zh": "古期",
+     "glyph": "古期",
+     "short": "Archaic",
+     "tiny": "Archaic|Arc.",
+     "summary": "Foragers domesticated maize, beans and squash and slowly settled in villages.",
+     "summary_zh": "采集狩猎者驯化了玉米、豆类和南瓜，逐渐定居下来。",
+     "focus": [
+      "Mesoamerican hunter-gatherers and maïze farmers"
+     ]
+    },
+    {
+     "id": "ma-early-formative",
+     "start": -2000,
+     "end": -1201,
+     "name": "Early Formative",
+     "name_zh": "前古典期早期",
+     "glyph": "形成",
+     "short": "Early Formative",
+     "tiny": "E.Form.|EF",
+     "summary": "Farming villages with pottery spread, and ranked societies with ceremonial centres appeared.",
+     "summary_zh": "使用陶器的农业村落普及，出现了有等级分化和祭祀中心的社会。",
+     "focus": [
+      "Maize farmers",
+      "Olmec"
+     ]
+    },
+    {
+     "id": "ma-olmec",
+     "start": -1200,
+     "end": -401,
+     "name": "Olmec Era",
+     "name_zh": "奥尔梅克文明",
+     "glyph": "奥尔",
+     "short": "Olmec",
+     "tiny": "Olmec|Ol.",
+     "summary": "The Olmecs of the Gulf coast built San Lorenzo and La Venta and carved colossal stone heads. Their art and beliefs spread across Mesoamerica.",
+     "summary_zh": "墨西哥湾沿岸的奥尔梅克人修建了圣洛伦索和拉文塔，雕刻巨石人头像，其艺术和信仰传遍中美洲。",
+     "focus": [
+      "Olmec",
+      "Maize farmers"
+     ]
+    },
+    {
+     "id": "ma-late-preclassic",
+     "start": -400,
+     "end": 249,
+     "name": "Late Preclassic",
+     "name_zh": "前古典期晚期",
+     "glyph": "前古",
+     "short": "Late Preclassic",
+     "tiny": "L.Precl.|LPC",
+     "summary": "Monte Albán ruled Oaxaca, early Maya cities such as El Mirador grew, writing and the calendar developed, and Teotihuacan began to rise.",
+     "summary_zh": "阿尔班山统治瓦哈卡，埃尔米拉多尔等早期玛雅城市兴起，文字和历法发展，特奥蒂瓦坎开始崛起。",
+     "focus": [
+      "Maya chiefdoms and states",
+      "Monte Albán",
+      "Teotihuacan",
+      "Zapotec"
+     ]
+    },
+    {
+     "id": "ma-classic",
+     "start": 250,
+     "end": 899,
+     "name": "Classic Period",
+     "name_zh": "古典期",
+     "glyph": "玛雅",
+     "short": "Classic Maya",
+     "tiny": "Classic|Cl.",
+     "summary": "Teotihuacan was the great city of central Mexico, and Maya city-states such as Tikal and Palenque raised temples and stelae with dated inscriptions.",
+     "summary_zh": "特奥蒂瓦坎是墨西哥中部的大城市，蒂卡尔、帕伦克等玛雅城邦修建神庙，竖立刻有纪年铭文的石碑。",
+     "focus": [
+      "Teotihuacan",
+      "Maya states",
+      "Maya city-states",
+      "Monte Albán",
+      "Veracruz civilization"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-toltec",
+     "start": 900,
+     "end": 1199,
+     "name": "Early Postclassic",
+     "name_zh": "托尔特克时期",
+     "glyph": "托尔",
+     "short": "Toltec",
+     "tiny": "Toltec|Tt.",
+     "summary": "The southern Maya cities were abandoned. The Toltecs ruled from Tula, and Chichén Itzá dominated Yucatán.",
+     "summary_zh": "南部玛雅城市衰落废弃，托尔特克人以图拉为中心称雄，奇琴伊察主导尤卡坦半岛。",
+     "focus": [
+      "Toltec Empire",
+      "Maya city-states",
+      "Mixtecs"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-late-postclassic",
+     "start": 1200,
+     "end": 1427,
+     "name": "Late Postclassic",
+     "name_zh": "后古典期晚期",
+     "glyph": "后古",
+     "short": "Late Postclassic",
+     "tiny": "L.Postcl.|LPC",
+     "summary": "Many small states competed, including Mixtec and Zapotec kingdoms and Mayapán. The Mexica founded Tenochtitlan.",
+     "summary_zh": "众多小国林立，有米斯特克、萨波特克诸国和玛雅潘。墨西加人建立了特诺奇蒂特兰城。",
+     "focus": [
+      "Mixtec Empire",
+      "Zapotec Empire",
+      "Maya city-states"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-aztec",
+     "start": 1428,
+     "end": 1520,
+     "name": "Aztec Empire",
+     "name_zh": "阿兹特克帝国",
+     "glyph": "阿兹",
+     "short": "Aztec",
+     "tiny": "Aztec|Az.",
+     "summary": "The Triple Alliance led by Tenochtitlan built a tribute empire over central Mexico.",
+     "summary_zh": "以特诺奇蒂特兰为首的三城同盟建立了统治墨西哥中部的纳贡帝国。",
+     "focus": [
+      "Aztec Empire",
+      "Mixtec Empire",
+      "Maya city-states"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-new-spain",
+     "start": 1521,
+     "end": 1820,
+     "name": "New Spain",
+     "name_zh": "新西班牙",
+     "glyph": "殖民",
+     "short": "New Spain",
+     "tiny": "N.Spain|NS",
+     "summary": "Cortés conquered the Aztecs in 1521. Spain ruled Mexico and Central America as the Viceroyalty of New Spain, and silver flowed to Europe and China.",
+     "summary_zh": "1521年科尔特斯征服阿兹特克。西班牙设新西班牙总督区统治墨西哥和中美洲，白银大量流向欧洲和中国。",
+     "focus": [
+      "Viceroyalty of New Spain"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-independence",
+     "start": 1821,
+     "end": 1909,
+     "name": "Independent Mexico",
+     "name_zh": "独立后的墨西哥",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Mexico and the Central American states became independent. Mexico lost its north to the United States and later lived under Porfirio Díaz.",
+     "summary_zh": "墨西哥和中美洲各国独立。墨西哥把北部领土割让给美国，后来经历了迪亚斯的长期统治。",
+     "focus": [
+      "Mexico",
+      "Guatemala",
+      "Honduras",
+      "Nicaragua",
+      "Costa Rica"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-revolution",
+     "start": 1910,
+     "end": 1939,
+     "name": "Mexican Revolution",
+     "name_zh": "墨西哥革命",
+     "glyph": "革命",
+     "short": "Revolution",
+     "tiny": "Revol.|Rev.",
+     "summary": "The revolution of 1910 overthrew Díaz, brought land reform and, under Cárdenas, the nationalisation of oil in 1938.",
+     "summary_zh": "1910年革命推翻了迪亚斯，此后推行土地改革，1938年卡德纳斯将石油收归国有。",
+     "focus": [
+      "Mexico",
+      "Guatemala",
+      "Honduras",
+      "Nicaragua"
+     ],
+     "layers": true
+    },
+    {
+     "id": "ma-modern",
+     "start": 1940,
+     "end": 2026,
+     "name": "Modern Mexico",
+     "name_zh": "现代墨西哥与中美洲",
+     "glyph": "现代",
+     "short": "Modern",
+     "tiny": "Modern|Mod.",
+     "summary": "Mexico industrialised and joined NAFTA, while Central America went through civil wars in the 1980s.",
+     "summary_zh": "墨西哥实现工业化并加入北美自由贸易协定，中美洲在20世纪80年代经历了内战。",
+     "focus": [
+      "Mexico",
+      "Guatemala",
+      "Honduras",
+      "Nicaragua",
+      "Costa Rica",
+      "Panama"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "中美",
+   "short": "Mesoamerica"
+  },
+  {
+   "id": "south-america",
+   "name": "South America",
+   "name_zh": "南美洲",
+   "color": "#117864",
+   "polygon": [
+    [
+     -77.2,
+     7.9
+    ],
+    [
+     -75.0,
+     11.0
+    ],
+    [
+     -72.0,
+     12.5
+    ],
+    [
+     -62.0,
+     10.7
+    ],
+    [
+     -60.0,
+     8.5
+    ],
+    [
+     -52.0,
+     5.0
+    ],
+    [
+     -50.0,
+     1.0
+    ],
+    [
+     -44.0,
+     -2.5
+    ],
+    [
+     -35.0,
+     -5.0
+    ],
+    [
+     -35.0,
+     -9.0
+    ],
+    [
+     -39.0,
+     -13.0
+    ],
+    [
+     -40.5,
+     -20.0
+    ],
+    [
+     -43.0,
+     -23.3
+    ],
+    [
+     -53.0,
+     -34.0
+    ],
+    [
+     -58.0,
+     -35.0
+    ],
+    [
+     -62.0,
+     -39.0
+    ],
+    [
+     -65.0,
+     -42.0
+    ],
+    [
+     -67.5,
+     -46.0
+    ],
+    [
+     -69.0,
+     -51.0
+    ],
+    [
+     -68.5,
+     -55.0
+    ],
+    [
+     -71.0,
+     -55.5
+    ],
+    [
+     -75.0,
+     -50.0
+    ],
+    [
+     -74.0,
+     -44.0
+    ],
+    [
+     -73.5,
+     -37.0
+    ],
+    [
+     -71.5,
+     -30.0
+    ],
+    [
+     -70.3,
+     -18.5
+    ],
+    [
+     -76.0,
+     -14.0
+    ],
+    [
+     -81.0,
+     -6.0
+    ],
+    [
+     -80.5,
+     -1.0
+    ],
+    [
+     -77.5,
+     4.0
+    ]
+   ],
+   "periods": [
+    {
+     "id": "sm-norte-chico",
+     "start": -3000,
+     "end": -1801,
+     "name": "Caral (Norte Chico)",
+     "name_zh": "卡拉尔文明",
+     "glyph": "卡拉",
+     "short": "Norte Chico",
+     "tiny": "Caral|NC",
+     "summary": "On Peru's coast, Caral and other Norte Chico towns built platform mounds and plazas without pottery, among the oldest cities in the Americas.",
+     "summary_zh": "秘鲁沿海的卡拉尔等北奇科城镇在还没有陶器时就修建了平台土丘和广场，是美洲最古老的城市之一。",
+     "focus": [
+      "Norte Chico",
+      "Valdivia"
+     ]
+    },
+    {
+     "id": "sm-initial",
+     "start": -1800,
+     "end": -901,
+     "name": "Initial Period",
+     "name_zh": "初始期",
+     "glyph": "初始",
+     "short": "Initial Period",
+     "tiny": "Initial|IP",
+     "summary": "Pottery and irrigation farming spread in the Andes, and large U-shaped temples were built on the coast.",
+     "summary_zh": "陶器和灌溉农业在安第斯地区普及，沿海修建了大型U形神庙。",
+     "focus": [
+      "El Paraiso",
+      "Chorrera",
+      "Chinchoros"
+     ]
+    },
+    {
+     "id": "sm-chavin",
+     "start": -900,
+     "end": -201,
+     "name": "Early Horizon (Chavín)",
+     "name_zh": "早期地平线（查文）",
+     "glyph": "查文",
+     "short": "Chavín",
+     "tiny": "Chavín|Ch.",
+     "summary": "The Chavín cult, centred on the temple of Chavín de Huántar, spread one art style across much of Peru.",
+     "summary_zh": "以查文·德万塔尔神庙为中心的查文信仰传遍秘鲁大部分地区，形成统一的艺术风格。",
+     "focus": [
+      "Chavin",
+      "Paracas",
+      "Chorrera"
+     ]
+    },
+    {
+     "id": "sm-early-intermediate",
+     "start": -200,
+     "end": 599,
+     "name": "Early Intermediate",
+     "name_zh": "早期中间期",
+     "glyph": "莫切",
+     "short": "Early Intermed.",
+     "tiny": "E.Int.|EIP",
+     "summary": "Regional cultures flourished, such as the Moche with their pyramids and portrait pottery and the Nazca with their desert lines.",
+     "summary_zh": "各地文化繁荣，如修建金字塔、制作人像陶器的莫切文化和留下地画的纳斯卡文化。",
+     "focus": [
+      "Moche",
+      "Nazca",
+      "Paracas"
+     ]
+    },
+    {
+     "id": "sm-middle-horizon",
+     "start": 600,
+     "end": 999,
+     "name": "Middle Horizon",
+     "name_zh": "中期地平线",
+     "glyph": "瓦里",
+     "short": "Middle Horizon",
+     "tiny": "Mid.Hor.|MH",
+     "summary": "Two states, Wari in the Peruvian highlands and Tiwanaku by Lake Titicaca, ruled much of the Andes.",
+     "summary_zh": "秘鲁高原的瓦里和的的喀喀湖畔的蒂瓦纳库两个国家统治了安第斯地区大部。",
+     "focus": [
+      "Huari Empire",
+      "Tiahuanaco Empire",
+      "Moche"
+     ]
+    },
+    {
+     "id": "sm-late-intermediate",
+     "start": 1000,
+     "end": 1437,
+     "name": "Late Intermediate",
+     "name_zh": "晚期中间期",
+     "glyph": "奇穆",
+     "short": "Late Intermed.",
+     "tiny": "L.Int.|LIP",
+     "summary": "After Wari and Tiwanaku fell, regional states arose, the largest being Chimor on the north coast with its capital Chan Chan.",
+     "summary_zh": "瓦里和蒂瓦纳库衰亡后，各地出现了地方国家，其中最大的是北部沿海以昌昌为都的奇穆王国。",
+     "focus": [
+      "Chimú Empire",
+      "Huari Empire",
+      "Tiahuanaco Empire",
+      "Andean states and chiefdoms",
+      "Aymara kingdoms"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-inca",
+     "start": 1438,
+     "end": 1532,
+     "name": "Inca Empire",
+     "name_zh": "印加帝国",
+     "glyph": "印加",
+     "short": "Inca",
+     "tiny": "Inca|Inc.",
+     "summary": "From Cusco, the Incas built the largest empire in the Americas, linked by roads and run without writing, using knotted cords (quipu).",
+     "summary_zh": "印加人以库斯科为中心建立了美洲最大的帝国，修建道路网，没有文字，用结绳（基普）记事。",
+     "focus": [
+      "Inca Empire",
+      "Chimú"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-colonial",
+     "start": 1533,
+     "end": 1809,
+     "name": "Spanish and Portuguese Rule",
+     "name_zh": "西葡殖民统治",
+     "glyph": "殖民",
+     "short": "Colonial Era",
+     "tiny": "Colonial|Col.",
+     "summary": "Pizarro conquered the Incas. Spain ruled through viceroyalties and mined silver at Potosí, while Portugal ruled Brazil with sugar plantations worked by enslaved Africans.",
+     "summary_zh": "皮萨罗征服印加。西班牙设总督区统治并开采波托西银矿，葡萄牙统治巴西，以非洲奴隶经营甘蔗种植园。",
+     "focus": [
+      "Viceroyalty of Peru",
+      "Portuguese Brazil",
+      "Viceroyalty of Brazil",
+      "Viceroyalty of New Granada",
+      "Viceroyalty of the Río de la Plata"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-independence",
+     "start": 1810,
+     "end": 1825,
+     "name": "Wars of Independence",
+     "name_zh": "独立战争",
+     "glyph": "独立",
+     "short": "Independence",
+     "tiny": "Indep.|Ind.",
+     "summary": "Bolívar and San Martín led wars that freed Spanish South America, and Brazil became an independent empire in 1822.",
+     "summary_zh": "玻利瓦尔和圣马丁领导独立战争，解放了西属南美；1822年巴西成为独立的帝国。",
+     "focus": [
+      "Viceroyalty of Peru",
+      "Viceroyalty of Brazil",
+      "Viceroyalty of New Granada"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-early-republics",
+     "start": 1826,
+     "end": 1929,
+     "name": "Early Republics",
+     "name_zh": "早期共和国",
+     "glyph": "共和",
+     "short": "Early Republics",
+     "tiny": "Republics|ER",
+     "summary": "New republics were often ruled by caudillos. They fought border wars and exported guano, nitrates, coffee and beef. Brazil abolished slavery in 1888.",
+     "summary_zh": "新生的共和国常由军事强人统治，彼此发生边界战争，出口鸟粪、硝石、咖啡和牛肉。巴西于1888年废除奴隶制。",
+     "focus": [
+      "Argentina",
+      "Kingdom of Brazil",
+      "Brazil",
+      "Chile",
+      "Peru",
+      "Colombia"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-populism",
+     "start": 1930,
+     "end": 1989,
+     "name": "Populism and Military Rule",
+     "name_zh": "民粹主义与军政府",
+     "glyph": "军政",
+     "short": "Military Rule",
+     "tiny": "Military|MR",
+     "summary": "The Depression brought populist leaders such as Vargas and Perón, followed by Cold War military dictatorships in most countries.",
+     "summary_zh": "大萧条后出现了瓦加斯、庇隆等民粹主义领袖，冷战时期多数国家又经历了军事独裁统治。",
+     "focus": [
+      "Brazil",
+      "Argentina",
+      "Chile",
+      "Peru",
+      "Colombia",
+      "Venezuela"
+     ],
+     "layers": true
+    },
+    {
+     "id": "sm-democratic",
+     "start": 1990,
+     "end": 2026,
+     "name": "Democratic Era",
+     "name_zh": "民主化时代",
+     "glyph": "民主",
+     "short": "Democracy",
+     "tiny": "Democr.|Dem.",
+     "summary": "Elected governments returned across the continent, and economies grew with commodity exports, much of them to China.",
+     "summary_zh": "南美各国恢复民选政府，经济依靠大宗商品出口增长，其中很大部分出口到中国。",
+     "focus": [
+      "Brazil",
+      "Argentina",
+      "Chile",
+      "Peru",
+      "Colombia",
+      "Venezuela"
+     ],
+     "layers": true
+    }
+   ],
+   "short_zh": "南美",
+   "short": "S. America"
+  }
+ ]
+}

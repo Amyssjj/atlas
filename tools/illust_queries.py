@@ -29,7 +29,8 @@ def add(out, key, obj):
     out[key] = q
 out = {}
 for f in sorted(glob.glob(P("data/layers/*.json"))):
-    for p in json.load(open(f)).get("people", []):
+    L = json.load(open(f))
+    for p in [p for x in (L.values() if "/world-" in f else [L]) for p in x.get("people", [])]:
         add(out, "p:" + p["id"], p)
 for e in json.load(open(P("data/events.json"))):
     add(out, "e:" + e["id"], e)

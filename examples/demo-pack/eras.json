@@ -1,0 +1,21 @@
+{
+ "range": {
+  "start": 31,
+  "end": 100
+ },
+ "eras": [
+  {
+   "id": "early-church",
+   "short": "Early Church",
+   "tiny": "Chr",
+   "name": "The Early Church",
+   "name_zh": "初期教会",
+   "glyph": "使徒",
+   "start": 31,
+   "end": 100,
+   "summary": "The apostles preach from Jerusalem to Rome. Paul's journeys plant churches across Asia Minor and Greece.",
+   "summary_zh": "使徒从耶路撒冷一直传道到罗马。保罗的旅程在小亚细亚和希腊各地建立教会。",
+   "snapshots": []
+  }
+ ]
+}

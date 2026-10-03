@@ -1,0 +1,1020 @@
+{
+ "about": "Early Qing: Shun, Great Xi, Southern Ming, the Lu regency, the Zheng in Taiwan and the Three Feudatories, carved out of the 1650 Qing base map by tools/carve_states.py. Approximate (prefecture seed points); AI-drafted.",
+ "radius": 3.0,
+ "seeds": {
+  "beijing": [
+   116.4,
+   39.9
+  ],
+  "tianjin": [
+   117.2,
+   39.1
+  ],
+  "baoding": [
+   115.47,
+   38.87
+  ],
+  "zhending": [
+   114.5,
+   38.1
+  ],
+  "daming": [
+   115.15,
+   36.28
+  ],
+  "shanhai": [
+   119.75,
+   40.0
+  ],
+  "taiyuan": [
+   112.55,
+   37.85
+  ],
+  "datong": [
+   113.3,
+   40.08
+  ],
+  "pingyang": [
+   111.5,
+   36.08
+  ],
+  "lu_an": [
+   113.1,
+   36.2
+  ],
+  "xian": [
+   108.9,
+   34.3
+  ],
+  "yanan": [
+   109.49,
+   36.6
+  ],
+  "yulin": [
+   109.73,
+   38.28
+  ],
+  "hanzhong": [
+   107.0,
+   33.07
+  ],
+  "pingliang": [
+   106.67,
+   35.54
+  ],
+  "lanzhou": [
+   103.8,
+   36.06
+  ],
+  "ganzhou": [
+   100.45,
+   38.93
+  ],
+  "xining": [
+   101.78,
+   36.62
+  ],
+  "suzhou_jq": [
+   98.5,
+   39.73
+  ],
+  "jinan": [
+   117.0,
+   36.65
+  ],
+  "qingzhou": [
+   118.5,
+   36.7
+  ],
+  "dengzhou": [
+   120.75,
+   37.8
+  ],
+  "yanzhou": [
+   116.6,
+   35.4
+  ],
+  "kaifeng": [
+   114.3,
+   34.8
+  ],
+  "luoyang": [
+   112.45,
+   34.62
+  ],
+  "nanyang": [
+   112.5,
+   33.0
+  ],
+  "runing": [
+   114.0,
+   33.0
+  ],
+  "guide": [
+   115.6,
+   34.4
+  ],
+  "weihui": [
+   114.07,
+   35.4
+  ],
+  "nanjing": [
+   118.8,
+   32.06
+  ],
+  "yangzhou": [
+   119.4,
+   32.4
+  ],
+  "huaian": [
+   119.0,
+   33.5
+  ],
+  "xuzhou": [
+   117.2,
+   34.27
+  ],
+  "fengyang": [
+   117.55,
+   32.87
+  ],
+  "luzhou_hf": [
+   117.3,
+   31.8
+  ],
+  "anqing": [
+   117.05,
+   30.5
+  ],
+  "huizhou": [
+   118.3,
+   29.87
+  ],
+  "suzhou": [
+   120.6,
+   31.3
+  ],
+  "songjiang": [
+   121.2,
+   31.0
+  ],
+  "changzhou": [
+   119.95,
+   31.78
+  ],
+  "hangzhou": [
+   120.15,
+   30.27
+  ],
+  "shaoxing": [
+   120.6,
+   30.0
+  ],
+  "ningbo": [
+   121.55,
+   29.87
+  ],
+  "taizhou": [
+   121.1,
+   28.9
+  ],
+  "jinhua": [
+   119.65,
+   29.1
+  ],
+  "wenzhou": [
+   120.67,
+   28.0
+  ],
+  "quzhou": [
+   118.87,
+   28.94
+  ],
+  "fuzhou": [
+   119.3,
+   26.08
+  ],
+  "jianning": [
+   118.32,
+   27.03
+  ],
+  "quanzhou": [
+   118.6,
+   24.9
+  ],
+  "zhangzhou": [
+   117.65,
+   24.5
+  ],
+  "tingzhou": [
+   116.36,
+   25.8
+  ],
+  "xiamen": [
+   118.09,
+   24.48
+  ],
+  "taiwan": [
+   120.3,
+   23.2
+  ],
+  "nanchang": [
+   115.9,
+   28.68
+  ],
+  "jiujiang": [
+   116.0,
+   29.7
+  ],
+  "guangxin": [
+   117.95,
+   28.45
+  ],
+  "ganzhou_jx": [
+   114.93,
+   25.85
+  ],
+  "jian": [
+   114.98,
+   27.1
+  ],
+  "wuchang": [
+   114.3,
+   30.55
+  ],
+  "xiangyang": [
+   112.15,
+   32.0
+  ],
+  "chengtian": [
+   112.6,
+   31.2
+  ],
+  "jingzhou": [
+   112.2,
+   30.35
+  ],
+  "yunyang": [
+   110.8,
+   32.6
+  ],
+  "changde": [
+   111.7,
+   29.03
+  ],
+  "yuezhou": [
+   113.1,
+   29.37
+  ],
+  "changsha": [
+   112.98,
+   28.2
+  ],
+  "hengzhou": [
+   112.6,
+   26.9
+  ],
+  "chenzhou": [
+   113.0,
+   25.8
+  ],
+  "yongzhou": [
+   111.6,
+   26.4
+  ],
+  "baoqing": [
+   111.47,
+   27.24
+  ],
+  "chenzhou_yl": [
+   110.4,
+   28.3
+  ],
+  "chengdu": [
+   104.06,
+   30.66
+  ],
+  "chongqing": [
+   106.55,
+   29.56
+  ],
+  "shunqing": [
+   106.08,
+   30.8
+  ],
+  "baoning": [
+   105.97,
+   31.58
+  ],
+  "kuizhou": [
+   109.5,
+   31.0
+  ],
+  "luzhou": [
+   105.44,
+   28.87
+  ],
+  "yazhou": [
+   103.0,
+   30.0
+  ],
+  "jianchang": [
+   102.27,
+   27.9
+  ],
+  "guangzhou": [
+   113.26,
+   23.13
+  ],
+  "zhaoqing": [
+   112.47,
+   23.05
+  ],
+  "shaozhou": [
+   113.6,
+   24.8
+  ],
+  "chaozhou": [
+   116.62,
+   23.66
+  ],
+  "huizhou_gd": [
+   114.4,
+   23.1
+  ],
+  "gaozhou": [
+   110.9,
+   21.65
+  ],
+  "leizhou": [
+   110.1,
+   20.9
+  ],
+  "qiongzhou": [
+   110.35,
+   20.02
+  ],
+  "guilin": [
+   110.29,
+   25.27
+  ],
+  "wuzhou": [
+   111.3,
+   23.5
+  ],
+  "nanning": [
+   108.3,
+   22.82
+  ],
+  "liuzhou": [
+   109.4,
+   24.33
+  ],
+  "sicheng": [
+   106.1,
+   24.3
+  ],
+  "guiyang": [
+   106.7,
+   26.6
+  ],
+  "zunyi": [
+   106.93,
+   27.7
+  ],
+  "anshun": [
+   105.93,
+   26.25
+  ],
+  "tongren": [
+   109.2,
+   27.7
+  ],
+  "kunming": [
+   102.7,
+   25.04
+  ],
+  "dali": [
+   100.23,
+   25.6
+  ],
+  "qujing": [
+   103.8,
+   25.5
+  ],
+  "yongchang": [
+   99.17,
+   25.1
+  ],
+  "tengyue": [
+   98.5,
+   25.0
+  ],
+  "lin_an": [
+   102.8,
+   23.6
+  ]
+ },
+ "states": {
+  "qing": {
+   "name": "Qing",
+   "zh": "清"
+  },
+  "shun": {
+   "name": "Shun",
+   "zh": "大顺",
+   "color": "#8a4f6e",
+   "focus": true
+  },
+  "xi": {
+   "name": "Great Xi",
+   "zh": "大西",
+   "color": "#7d6b4a",
+   "focus": true
+  },
+  "ming": {
+   "name": "Southern Ming",
+   "zh": "南明",
+   "color": "#c9a050",
+   "focus": true
+  },
+  "lu": {
+   "name": "Lu regency",
+   "zh": "鲁监国",
+   "color": "#b07090",
+   "focus": true
+  },
+  "dutch": {
+   "name": "Dutch Formosa",
+   "zh": "荷属台湾",
+   "color": "#6a8aa0",
+   "focus": false
+  },
+  "zheng": {
+   "name": "Kingdom of Tungning",
+   "zh": "明郑 (东宁)",
+   "color": "#2f8a7a",
+   "focus": true
+  },
+  "wuzhou": {
+   "name": "Wu Zhou",
+   "zh": "吴周",
+   "color": "#a06a6a",
+   "focus": true
+  },
+  "geng": {
+   "name": "Geng Jingzhong",
+   "zh": "耿精忠",
+   "color": "#5f87a3",
+   "focus": true
+  },
+  "shang": {
+   "name": "Shang Zhixin",
+   "zh": "尚之信",
+   "color": "#9a8a4a",
+   "focus": true
+  }
+ },
+ "snapshots": [
+  {
+   "id": "qm-1644",
+   "from": 1644,
+   "label": "1644: Li Zicheng takes Beijing, then the Qing drive him out; Southern Ming rules from Nanjing; Zhang Xianzhong's Great Xi in Sichuan",
+   "label_zh": "1644年：李自成攻入北京，清军入关将其逐出；南明弘光帝在南京即位；张献忠在四川建大西",
+   "base": "data/borders/qing-1650.geojson",
+   "area": [
+    "Qing",
+    "Southern Ming and Three Feudatories",
+    "Dutch Formosa"
+   ],
+   "rest": "qing",
+   "set": {
+    "shun": [
+     "pingyang",
+     "lu_an",
+     "xian",
+     "yanan",
+     "yulin",
+     "hanzhong",
+     "pingliang",
+     "lanzhou",
+     "ganzhou",
+     "xining",
+     "suzhou_jq",
+     "kaifeng",
+     "luoyang",
+     "nanyang",
+     "xiangyang",
+     "chengtian",
+     "yunyang",
+     "jingzhou",
+     "weihui"
+    ],
+    "xi": [
+     "chengdu",
+     "shunqing",
+     "chongqing",
+     "baoning",
+     "kuizhou",
+     "yazhou"
+    ],
+    "ming": [
+     "nanjing",
+     "yangzhou",
+     "huaian",
+     "xuzhou",
+     "fengyang",
+     "luzhou_hf",
+     "anqing",
+     "huizhou",
+     "suzhou",
+     "songjiang",
+     "changzhou",
+     "hangzhou",
+     "shaoxing",
+     "ningbo",
+     "taizhou",
+     "jinhua",
+     "wenzhou",
+     "quzhou",
+     "fuzhou",
+     "jianning",
+     "quanzhou",
+     "zhangzhou",
+     "tingzhou",
+     "xiamen",
+     "nanchang",
+     "jiujiang",
+     "guangxin",
+     "ganzhou_jx",
+     "jian",
+     "wuchang",
+     "yuezhou",
+     "changde",
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "chenzhou_yl",
+     "luzhou",
+     "jianchang",
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "gaozhou",
+     "leizhou",
+     "qiongzhou",
+     "guilin",
+     "wuzhou",
+     "nanning",
+     "liuzhou",
+     "sicheng",
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "yongchang",
+     "tengyue",
+     "lin_an",
+     "runing",
+     "guide"
+    ],
+    "dutch": [
+     "taiwan"
+    ]
+   }
+  },
+  {
+   "id": "qm-1645",
+   "from": 1645,
+   "label": "1645: Qing armies take Xi'an and Nanjing; the Hongguang court falls; the Longwu emperor rules from Fuzhou and the Prince of Lu from Shaoxing",
+   "label_zh": "1645年：清军攻占西安、南京，弘光政权覆灭；隆武帝在福州即位，鲁王在绍兴监国",
+   "set": {
+    "qing": [
+     "pingyang",
+     "lu_an",
+     "xian",
+     "yanan",
+     "yulin",
+     "hanzhong",
+     "pingliang",
+     "lanzhou",
+     "ganzhou",
+     "xining",
+     "suzhou_jq",
+     "kaifeng",
+     "luoyang",
+     "nanyang",
+     "xiangyang",
+     "chengtian",
+     "yunyang",
+     "weihui",
+     "runing",
+     "guide",
+     "nanjing",
+     "yangzhou",
+     "huaian",
+     "xuzhou",
+     "fengyang",
+     "luzhou_hf",
+     "anqing",
+     "huizhou",
+     "suzhou",
+     "songjiang",
+     "changzhou",
+     "hangzhou",
+     "wuchang",
+     "nanchang",
+     "jiujiang",
+     "yuezhou"
+    ],
+    "lu": [
+     "shaoxing",
+     "ningbo",
+     "taizhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1646",
+   "from": 1646,
+   "label": "1646: Qing take Zhejiang and Fujian; the Longwu emperor is killed; Zhang Xianzhong dies; the Yongli emperor is enthroned at Zhaoqing",
+   "label_zh": "1646年：清军取浙江、福建，隆武帝遇害；张献忠战死；永历帝在肇庆即位",
+   "set": {
+    "qing": [
+     "shaoxing",
+     "ningbo",
+     "taizhou",
+     "jinhua",
+     "wenzhou",
+     "quzhou",
+     "guangxin",
+     "jian",
+     "fuzhou",
+     "jianning",
+     "quanzhou",
+     "zhangzhou",
+     "tingzhou",
+     "chengdu",
+     "shunqing",
+     "baoning",
+     "jingzhou"
+    ],
+    "xi": [
+     "chongqing"
+    ]
+   }
+  },
+  {
+   "id": "qm-1647",
+   "from": 1647,
+   "label": "1647: Qing take Guangdong and Hunan; Great Xi forces under Sun Kewang move into Guizhou and Yunnan; Zheng Chenggong holds Xiamen for the Ming",
+   "label_zh": "1647年：清军取广东、湖南；孙可望率大西军进入贵州、云南；郑成功据厦门奉明正朔",
+   "set": {
+    "qing": [
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "gaozhou",
+     "leizhou",
+     "qiongzhou",
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "changde",
+     "yuezhou",
+     "chenzhou_yl",
+     "ganzhou_jx",
+     "chongqing",
+     "kuizhou",
+     "yazhou"
+    ],
+    "xi": [
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "lin_an"
+    ]
+   }
+  },
+  {
+   "id": "qm-1648",
+   "from": 1648,
+   "label": "1648: Li Chengdong in Guangdong and Jin Shenghuan in Jiangxi go over to the Yongli emperor; Ming forces retake Hunan",
+   "label_zh": "1648年：李成栋在广东、金声桓在江西反正归明；明军收复湖南",
+   "set": {
+    "ming": [
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "gaozhou",
+     "leizhou",
+     "qiongzhou",
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "changde",
+     "yuezhou",
+     "chenzhou_yl",
+     "nanchang",
+     "jiujiang",
+     "guangxin",
+     "ganzhou_jx",
+     "jian"
+    ]
+   }
+  },
+  {
+   "id": "qm-1650",
+   "from": 1650,
+   "label": "1649–1650: Qing retake Jiangxi and Hunan, then Guangzhou and Guilin",
+   "label_zh": "1649–1650年：清军收复江西、湖南，又攻陷广州、桂林",
+   "set": {
+    "qing": [
+     "nanchang",
+     "jiujiang",
+     "guangxin",
+     "ganzhou_jx",
+     "jian",
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "changde",
+     "yuezhou",
+     "chenzhou_yl",
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "guilin",
+     "wuzhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1652",
+   "from": 1652,
+   "label": "1652: Sun Kewang brings the Yongli emperor to Guizhou; Li Dingguo retakes Guilin and southern Hunan",
+   "label_zh": "1652年：孙可望迎永历帝入贵州；李定国收复桂林及湖南南部",
+   "set": {
+    "ming": [
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "lin_an",
+     "guilin",
+     "wuzhou",
+     "hengzhou",
+     "yongzhou",
+     "baoqing",
+     "chenzhou",
+     "chongqing",
+     "luzhou"
+    ],
+    "qing": [
+     "gaozhou",
+     "leizhou",
+     "qiongzhou",
+     "nanning"
+    ]
+   }
+  },
+  {
+   "id": "qm-1655",
+   "from": 1655,
+   "label": "1655: Qing retake Guangxi and southern Hunan; the Ming holds Yunnan and Guizhou",
+   "label_zh": "1655年：清军夺回广西和湖南南部，南明退守云贵",
+   "set": {
+    "qing": [
+     "guilin",
+     "wuzhou",
+     "hengzhou",
+     "yongzhou",
+     "baoqing",
+     "chenzhou",
+     "liuzhou",
+     "sicheng",
+     "chongqing"
+    ]
+   }
+  },
+  {
+   "id": "qm-1659",
+   "from": 1659,
+   "label": "1658–1659: Qing take Guizhou and Kunming; the Yongli emperor flees to Burma",
+   "label_zh": "1658–1659年：清军攻取贵州、昆明，永历帝逃入缅甸",
+   "set": {
+    "qing": [
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "lin_an",
+     "luzhou",
+     "jianchang"
+    ]
+   }
+  },
+  {
+   "id": "qm-1662",
+   "from": 1662,
+   "label": "1662: The Yongli emperor is put to death in Kunming; Zheng Chenggong drives the Dutch from Taiwan",
+   "label_zh": "1662年：永历帝在昆明被杀；郑成功驱逐荷兰人，收复台湾",
+   "set": {
+    "qing": [
+     "yongchang",
+     "tengyue"
+    ],
+    "zheng": [
+     "taiwan",
+     "xiamen"
+    ]
+   }
+  },
+  {
+   "id": "qm-1664",
+   "from": 1664,
+   "label": "1663–1664: Qing take Xiamen and Kinmen; the Zheng hold only Taiwan",
+   "label_zh": "1663–1664年：清军攻取厦门、金门，郑氏仅保台湾",
+   "set": {
+    "qing": [
+     "xiamen"
+    ]
+   }
+  },
+  {
+   "id": "qm-1674",
+   "from": 1674,
+   "label": "1673–1674: Revolt of the Three Feudatories: Wu Sangui rises in Yunnan and takes Guizhou, Sichuan, Hunan and Guangxi; Geng Jingzhong rises in Fujian; the Zheng return to the coast",
+   "label_zh": "1673–1674年：三藩之乱：吴三桂起兵云南，占贵州、四川、湖南、广西；耿精忠在福建响应；郑经重返沿海",
+   "set": {
+    "wuzhou": [
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "lin_an",
+     "yongchang",
+     "tengyue",
+     "chengdu",
+     "chongqing",
+     "shunqing",
+     "baoning",
+     "luzhou",
+     "jianchang",
+     "yazhou",
+     "kuizhou",
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "changde",
+     "yuezhou",
+     "chenzhou_yl",
+     "guilin",
+     "wuzhou",
+     "nanning",
+     "liuzhou",
+     "sicheng"
+    ],
+    "geng": [
+     "fuzhou",
+     "jianning",
+     "tingzhou"
+    ],
+    "zheng": [
+     "xiamen",
+     "quanzhou",
+     "zhangzhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1676",
+   "from": 1676,
+   "label": "1676: Geng Jingzhong surrenders; Shang Zhixin rises in Guangdong",
+   "label_zh": "1676年：耿精忠投降；尚之信在广东响应吴三桂",
+   "set": {
+    "qing": [
+     "fuzhou",
+     "jianning",
+     "tingzhou"
+    ],
+    "shang": [
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "gaozhou",
+     "leizhou",
+     "qiongzhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1678",
+   "from": 1678,
+   "label": "1677–1678: Shang Zhixin surrenders; Wu Sangui proclaims himself emperor of Zhou at Hengzhou and dies",
+   "label_zh": "1677–1678年：尚之信投降；吴三桂在衡州称帝，国号周，随即病死",
+   "set": {
+    "qing": [
+     "guangzhou",
+     "zhaoqing",
+     "shaozhou",
+     "chaozhou",
+     "huizhou_gd",
+     "gaozhou",
+     "leizhou",
+     "qiongzhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1680",
+   "from": 1680,
+   "label": "1679–1680: Qing retake Hunan, Guangxi and Sichuan; the Zheng lose Xiamen",
+   "label_zh": "1679–1680年：清军收复湖南、广西、四川；郑氏丢失厦门",
+   "set": {
+    "qing": [
+     "changsha",
+     "hengzhou",
+     "chenzhou",
+     "yongzhou",
+     "baoqing",
+     "changde",
+     "yuezhou",
+     "chenzhou_yl",
+     "guilin",
+     "wuzhou",
+     "nanning",
+     "liuzhou",
+     "sicheng",
+     "chengdu",
+     "chongqing",
+     "shunqing",
+     "baoning",
+     "luzhou",
+     "yazhou",
+     "kuizhou",
+     "xiamen",
+     "quanzhou",
+     "zhangzhou"
+    ]
+   }
+  },
+  {
+   "id": "qm-1681",
+   "from": 1681,
+   "label": "1681: Kunming falls and Wu Shifan dies; the revolt is over",
+   "label_zh": "1681年：昆明城破，吴世璠自杀，三藩之乱平定",
+   "set": {
+    "qing": [
+     "guiyang",
+     "zunyi",
+     "anshun",
+     "tongren",
+     "kunming",
+     "dali",
+     "qujing",
+     "lin_an",
+     "yongchang",
+     "tengyue",
+     "jianchang"
+    ]
+   }
+  }
+ ]
+}

@@ -3,12 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dynasty Atlas</title>
+<title>Atlas</title>
+<link rel="icon" href="docs/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="docs/img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="docs/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=52">
+<link rel="stylesheet" href="style.css?v=85">
 </head>
 <body>
 <div id="app">
@@ -24,12 +27,17 @@
     <p class="era-snap" id="era-snap" hidden></p>
     <p class="era-note" id="era-note" hidden></p>
     <div class="era-corner">
+      <button type="button" class="chip region-btn" id="region-btn" aria-expanded="false" aria-haspopup="true" data-i18n-title="goRegion" title="Go to region"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h12M8 2c2 2 2.6 4 2.6 6S10 12 8 14M8 2C6 4 5.4 6 5.4 8S6 12 8 14" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span id="region-name"></span></button>
       <button type="button" class="chip era-more" id="era-more" aria-expanded="false" data-i18n="layers">Layers</button>
-      <div class="lang-switch" id="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="en" lang="en">EN</button><button type="button" data-lang="zh" lang="zh-CN">中文</button></div>
+      <div class="lang-switch" id="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh" lang="zh-CN">中文</button><button type="button" data-lang="en" lang="en">EN</button></div>
       <button type="button" class="chip search-open" id="search-open" aria-label="Search" title="Search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button type="button" class="chip search-open" id="share-open" data-i18n-title="share" aria-label="Share" title="Share"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1.2-1.2a2.5 2.5 0 013.5 3.5L10.5 8M9 11.5l-1.2 1.2a2.5 2.5 0 01-3.5-3.5L5.5 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     </div>
+    <div class="region-pop" id="region-pop" role="menu" hidden></div>
+    <div class="share-box" id="share-box" hidden><span></span><input type="text" readonly aria-label="Link"></div>
     <div class="era-layers" role="group" aria-labelledby="layers-label">
       <span id="layers-label" class="sr-only" data-i18n="layers">Layers</span>
+      <div class="auto-row"><button type="button" class="switch" id="t-auto" aria-pressed="true"><i aria-hidden="true"></i><span data-i18n="autoLayers">Auto layers</span></button><small data-i18n="autoHint"></small></div>
       <div class="lg"><span data-i18n="g_map">Map</span>
         <button class="chip" id="t-3d" aria-pressed="true" data-i18n="t3d">3D terrain</button>
         <button class="chip" id="t-sat" aria-pressed="true" data-i18n="sat">Satellite</button>
@@ -50,6 +58,8 @@
       <div class="lg"><span data-i18n="g_move">Travel</span>
         <button class="chip layer" id="l-roads" aria-pressed="true" data-i18n="roads">Roads</button>
         <button class="chip layer" id="l-routes" aria-pressed="true" data-i18n="routes">Routes</button>
+        <button class="chip layer" id="l-exchange" aria-pressed="true" data-i18n="exchange">Exchange</button>
+        <button class="chip layer" id="l-spread" aria-pressed="true" data-i18n="spread">Spread</button>
       </div>
       <div class="lg"><span data-i18n="g_cul">Culture</span>
         <button class="chip layer" id="l-people" aria-pressed="true" data-i18n="people_l">People</button>
@@ -64,12 +74,27 @@
     <div class="search-bar"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="search-q" type="text" enterkeyhint="search" autocomplete="off" spellcheck="false"><button type="button" class="zbtn" id="search-close" aria-label="Close">×</button></div>
     <div class="search-results" id="search-results"></div>
   </div>
+  <div class="auto-strip panel" id="auto-strip" aria-live="polite" hidden></div>
+  <section class="tour panel" id="tour" aria-live="polite" hidden>
+    <div class="tour-bar"><i></i></div>
+    <div class="tour-head"><span class="tour-title"></span><span class="tour-count"></span><button type="button" class="zbtn tour-close" aria-label="Close">×</button></div>
+    <p><b class="tour-year"></b><span class="tour-text"></span></p>
+    <div class="tour-ctl">
+      <button type="button" class="chip tour-prev" data-i18n="tourPrev">Back</button>
+      <button type="button" class="chip tour-auto" data-i18n="tourPlay">Play</button>
+      <button type="button" class="chip tour-story" data-i18n="tourStory">Read the story</button>
+      <a class="chip tour-ref" target="_blank" rel="noopener" hidden></a>
+      <button type="button" class="chip tour-next" data-i18n="tourNext">Next</button>
+    </div>
+  </section>
   <aside class="ledger panel" id="ledger">
     <div class="ledger-head">
       <div class="ledger-tabs" role="tablist">
+        <button class="tab" id="tab-tours" role="tab" aria-selected="false" data-i18n="tours">Tours</button>
         <button class="tab" id="tab-events" role="tab" aria-selected="true" data-i18n="events">Events</button>
         <button class="tab" id="tab-rulers" role="tab" aria-selected="false" data-i18n="rulers">Rulers</button>
         <button class="tab" id="tab-people" role="tab" aria-selected="false" data-i18n="people_l">People</button>
+        <button class="tab" id="tab-world" role="tab" aria-selected="false" data-i18n="world_t">World</button>
       </div>
       <span id="ev-count"></span>
       <button class="chip ledger-toggle" id="ledger-toggle" aria-expanded="true">Hide</button>
@@ -78,6 +103,8 @@
     <ol class="ev-list" id="ev-list"></ol>
     <div class="rulers" id="rulers" hidden></div>
     <div class="rulers" id="people" hidden></div>
+    <div class="rulers tour-tab" id="tour-tab" hidden></div>
+    <div class="rulers world-tab" id="world" hidden></div>
     <article class="story" id="story" hidden></article>
     <p class="note" data-i18n="note">Borders are rough snapshots from the open historical-basemaps dataset, with some hand-drawn approximations. Terrain, coastlines and rivers are modern.</p>
   </aside>
@@ -104,6 +131,6 @@
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="app.js?v=53"></script>
+<script src="app.js?v=85"></script>
 </body>
 </html>

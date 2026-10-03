@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="9 9 82 82">
+<style>.c{fill:none;stroke:#000;stroke-linejoin:round;stroke-linecap:round}.f{fill:#000}.k{fill:none;stroke:#fff;stroke-linejoin:round}@media (prefers-color-scheme:dark){.c{stroke:#fff}.f{fill:#fff}.k{stroke:#000}}</style>
+<path class="c" d="M12 24L37 16L63 24L88 16V76L63 84L37 76L12 84Z" stroke-width="6"/>
+<path class="f" d="M37 16L63 24V84L37 76Z"/>
+<path class="c" d="M17 66L28 50L37 58M63 54L72 44L83 58" stroke-width="6"/>
+<path class="k" d="M37 58L50 40L63 54" stroke-width="6"/>
+</svg>
