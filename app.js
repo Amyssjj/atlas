@@ -15,9 +15,16 @@ const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "h
 const PACK_URL = new URLSearchParams(location.search).get("pack");
 // ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
 const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(location.search).get("packonly"));
-// Elevation tiles are bundled with the page (it may not load images from other sites): zoom 2-6 as PNG files,
+// Overview elevation tiles are bundled with the page (it works offline and in sandboxed previews): zoom 2-6 as PNG files,
 // zoom 7 (whole map) and 8 (China proper) packed into archives in tiles/pack/ and served through the
 // "atlas" protocol below. Satellite imagery (Sentinel-2, 2020) is packed the same way in tiles/sat/, every zoom.
+// Past the bundled zooms, tiles come from the original sources when the page can reach them (on atlas.daiyip.com it
+// can): elevation from AWS Terrain Tiles (SRTM and others, about 30 m), imagery from EOX Sentinel-2 cloudless 2016
+// (10 m, CC BY 4.0). Offline, or with ?offline=1, the bundled tiles are enlarged instead.
+const LIVE = new URLSearchParams(location.search).get("offline") === "1" ? null : {
+  dem: "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+  sat: "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/g/{z}/{y}/{x}.jpg",
+};
 const TILE_URL = "atlas://{z}/{x}/{y}";
 const SAT_URL = "atlas://sat/{z}/{x}/{y}";
 const SLIDER_MAX = 1000;
@@ -202,6 +209,18 @@ const RELIEF = [
 
 /* ---------- bundled elevation tiles ---------- */
 
+// A tile from the live source, or null. After a run of failures (offline, blocked) the source is left alone.
+const liveFails = { dem: 0, sat: 0 };
+async function liveTile(kind, z, x, y) {
+  if (!LIVE || liveFails[kind] >= 8) return null;
+  try {
+    const r = await fetch(LIVE[kind].replace("{z}", z).replace("{x}", x).replace("{y}", y), { signal: AbortSignal.timeout(8000) });
+    if (r.ok) { liveFails[kind] = 0; return await r.arrayBuffer(); }
+    if (r.status !== 404) liveFails[kind]++;
+  } catch { liveFails[kind]++; }
+  return null;
+}
+
 const packs = {};
 function loadPack(z, px, py, dir = "pack") {
   const key = `${dir}/${z}-${px}-${py}`;
@@ -230,16 +249,33 @@ async function demTile(z, x, y) {
   const p = await loadPack(z, x >> sh, y >> sh);
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
-  // Not bundled at this zoom: enlarge a quarter of the parent tile. Nearest-neighbour scaling keeps the
-  // colour-encoded elevations intact, where smoothing would mix them into nonsense.
+  const live = z > 5 && await liveTile("dem", z, x, y);
+  if (live) return live;
+  // Not bundled at this zoom and not reachable live: enlarge a quarter of the parent tile. The heights are decoded, interpolated
+  // bilinearly and encoded again (smoothing the colours themselves would mix them into nonsense, and plain
+  // pixel doubling turns slopes into steps that the hillshade draws as stripes).
   if (z === 0) return null;
   const parent = await demTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
-  const bmp = await createImageBitmap(new Blob([parent], { type: "image/png" }));
+  const bmp = await createImageBitmap(new Blob([parent], { type: "image/png" }), { colorSpaceConversion: "none", premultiplyAlpha: "none" });
   const c = new OffscreenCanvas(256, 256);
-  const g = c.getContext("2d");
-  g.imageSmoothingEnabled = false;
-  g.drawImage(bmp, (x & 1) * 128, (y & 1) * 128, 128, 128, 0, 0, 256, 256);
+  const g = c.getContext("2d", { willReadFrequently: true });
+  g.drawImage(bmp, 0, 0);
+  const src = g.getImageData(0, 0, 256, 256).data;
+  const h = new Float32Array(256 * 256);
+  for (let i = 0; i < h.length; i++) h[i] = src[i * 4] * 256 + src[i * 4 + 1] + src[i * 4 + 2] / 256;
+  const out = g.createImageData(256, 256), d = out.data;
+  const ox = (x & 1) * 128, oy = (y & 1) * 128;
+  for (let j = 0; j < 256; j++) {
+    const sy = Math.min(255, Math.max(0, oy + (j + 0.5) / 2 - 0.5)), y0 = Math.floor(sy), y1 = Math.min(255, y0 + 1), fy = sy - y0;
+    for (let i = 0; i < 256; i++) {
+      const sx = Math.min(255, Math.max(0, ox + (i + 0.5) / 2 - 0.5)), x0 = Math.floor(sx), x1 = Math.min(255, x0 + 1), fx = sx - x0;
+      const v = (h[y0 * 256 + x0] * (1 - fx) + h[y0 * 256 + x1] * fx) * (1 - fy) + (h[y1 * 256 + x0] * (1 - fx) + h[y1 * 256 + x1] * fx) * fy;
+      const k = (j * 256 + i) * 4, r = Math.floor(v / 256), gg = Math.floor(v - r * 256);
+      d[k] = r; d[k + 1] = gg; d[k + 2] = Math.round((v - r * 256 - gg) * 256) & 255; d[k + 3] = 255;
+    }
+  }
+  g.putImageData(out, 0, 0);
   return (await c.convertToBlob({ type: "image/png" })).arrayBuffer();
 }
 // Satellite tiles: zooms 1-3 are one archive each, 4-8 in 8x8 blocks (the world to zoom 5, East Asia beyond),
@@ -250,6 +286,8 @@ async function satTile(z, x, y) {
   const p = await loadPack(z, x >> sh, y >> sh, "sat");
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
+  const live = z > 5 && await liveTile("sat", z, x, y);
+  if (live) return live;
   if (z <= 1) return null;
   const parent = await satTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
@@ -304,13 +342,13 @@ function applyLook() {
 }
 
 function buildStyle() {
-  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8 };
+  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 10 };
   return {
     version: 8,
     sources: {
       dem, "dem-terrain": { ...dem },
-      sat: { type: "raster", tiles: [SAT_URL], tileSize: 256, maxzoom: 9,
-             attribution: "Imagery: Sentinel-2 2020, Copernicus/Sentinel Hub (CC BY 4.0)" },
+      sat: { type: "raster", tiles: [SAT_URL], tileSize: 256, maxzoom: 10,
+             attribution: "Imagery: Sentinel-2 2020, Copernicus/Sentinel Hub (CC BY 4.0); Sentinel-2 cloudless 2016 by EOX, s2maps.eu (CC BY 4.0)" },
       rivers: { type: "geojson", data: BASE + "data/geo/rivers.geojson" },
       lakes: { type: "geojson", data: BASE + "data/geo/lakes.geojson" },
       oldgeo: { type: "geojson", data: BASE + "data/geo/old-rivers.geojson" },
