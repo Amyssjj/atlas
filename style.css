@@ -799,7 +799,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 /* Top-right of the era panel: search, language, (phone) layers. */
 /* Its own row above the seal, so a long period name never runs under the buttons. */
 .era-corner { grid-column: 1 / -1; order: -1; display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: -4px -4px 4px 0; }
-.era-corner .lang-switch { margin-right: auto; }
+.era-corner .lang-switch { order: 1; }
 .search-open { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; }
 .search-open svg { width: 13px; height: 13px; }
 @media (max-width: 720px) {
