@@ -823,7 +823,7 @@ function personCard(p) {
   return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
-    ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA(p.source)}</p>`;
+    ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
 }
 function personEventList(p) {
   const evs = personEvents(p);
@@ -1711,7 +1711,7 @@ function wikiLink(url) {
 }
 
 function links(ev, d) {
-  const zhUrl = wikiLink(d?.source_zh), enUrl = wikiLink(ev.source);
+  const zhUrl = wikiLink(d?.source_zh || ev.source_zh), enUrl = wikiLink(ev.source);
   const main = zh() ? zhUrl || enUrl : enUrl || zhUrl;
   if (!main) return "";
   const other = zhUrl && enUrl ? (zh() ? enUrl : zhUrl) : null;
