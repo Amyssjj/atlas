@@ -5,7 +5,7 @@
  },
  "eras": [
   {
-   "id": "xia",
+   "id": "xia", "short": "Xia", "tiny": "Xia",
    "name": "Xia",
    "name_zh": "夏",
    "glyph": "夏",
@@ -23,7 +23,7 @@
    "note_zh": "起止年代采用传统说法；地图上的范围是二里头文化的分布区。"
   },
   {
-   "id": "shang",
+   "id": "shang", "short": "Shang", "tiny": "Shang",
    "name": "Shang",
    "name_zh": "商",
    "glyph": "商",
@@ -41,7 +41,7 @@
    "note_zh": "商的疆域是对其核心地区的手绘示意。"
   },
   {
-   "id": "western-zhou",
+   "id": "western-zhou", "short": "Zhou", "tiny": "Zhou",
    "name": "Western Zhou",
    "name_zh": "西周",
    "glyph": "周",
@@ -57,7 +57,7 @@
    "summary_zh": "周人推翻商朝，定都镐京，把土地分封给宗亲和盟友进行统治，并以“天命”之说为自己的统治正名。"
   },
   {
-   "id": "spring-autumn",
+   "id": "spring-autumn", "short": "Spring & Autumn", "tiny": "S&A",
    "name": "Spring and Autumn",
    "name_zh": "春秋",
    "glyph": "春秋",
@@ -95,7 +95,7 @@
    "note_zh": "各国边界为大致范围，依据都城和重要城邑绘制。"
   },
   {
-   "id": "warring-states",
+   "id": "warring-states", "short": "Warring States", "tiny": "Warring",
    "name": "Warring States",
    "name_zh": "战国",
    "glyph": "战国",
@@ -193,7 +193,7 @@
    "note_zh": "各国疆界只是大致范围，依据都城和重要城市绘出。"
   },
   {
-   "id": "qin",
+   "id": "qin", "short": "Qin", "tiny": "Q",
    "name": "Qin",
    "name_zh": "秦",
    "glyph": "秦",
@@ -209,7 +209,7 @@
    "summary_zh": "秦始皇统一中国，统一了文字、货币和度量衡，并把北方各国的长城连成一体。他死后没过几年，秦朝就灭亡了。"
   },
   {
-   "id": "western-han",
+   "id": "western-han", "short": "W. Han", "tiny": "W.Han|WH",
    "name": "Western Han",
    "name_zh": "西汉",
    "glyph": "西汉",
@@ -235,7 +235,7 @@
    "summary_zh": "刘邦建立的汉朝为此后两千年的帝制中国定下了基本格局。汉武帝向中亚开拓，丝绸之路由此打通。"
   },
   {
-   "id": "xin",
+   "id": "xin", "short": "Xin", "tiny": "X",
    "name": "Xin",
    "name_zh": "新",
    "glyph": "新",
@@ -251,7 +251,7 @@
    "summary_zh": "王莽篡夺皇位，推行了一系列激进的改革。黄河决口泛滥，各地农民纷纷起义，最终推翻了他的统治。"
   },
   {
-   "id": "eastern-han",
+   "id": "eastern-han", "short": "E. Han", "tiny": "E.Han|EH",
    "name": "Eastern Han",
    "name_zh": "东汉",
    "glyph": "东汉",
@@ -286,7 +286,7 @@
    "summary_zh": "汉朝在洛阳复兴，史称东汉。这一时期造纸术得到改进，佛教传入中原，但外戚与宦官轮番专权，加上黄巾起义，最终使王朝分崩离析。"
   },
   {
-   "id": "three-kingdoms",
+   "id": "three-kingdoms", "short": "3 Kingdoms", "tiny": "3K",
    "name": "Three Kingdoms",
    "name_zh": "三国",
    "glyph": "三国",
@@ -304,7 +304,7 @@
    "note_zh": "魏、蜀、吴之间的边界只是大致示意。"
   },
   {
-   "id": "jin",
+   "id": "jin", "short": "Jin", "tiny": "Jin",
    "name": "Jin",
    "name_zh": "晋",
    "glyph": "两晋",
@@ -448,7 +448,7 @@
    "summary_zh": "司马氏于280年统一全国，但不久便陷入宗室内战和外族入侵。317年，晋室南迁建康，北方则分裂为十六国。"
   },
   {
-   "id": "north-south",
+   "id": "north-south", "short": "N. & S.", "tiny": "N&S",
    "name": "Northern and Southern Dynasties",
    "name_zh": "南北朝",
    "glyph": "南北",
@@ -532,7 +532,7 @@
    "summary_zh": "北方由北魏等鲜卑人建立的王朝统治，南方则在建康相继更替了几个王朝，南北长期对峙。佛教在南北两地都广为流传。"
   },
   {
-   "id": "sui",
+   "id": "sui", "short": "Sui", "tiny": "Sui",
    "name": "Sui",
    "name_zh": "隋",
    "glyph": "隋",
@@ -562,7 +562,7 @@
    "summary_zh": "一个短命的王朝，却结束了南北近三百年的分裂，重新统一了中国，还开凿了大运河。"
   },
   {
-   "id": "tang",
+   "id": "tang", "short": "Tang", "tiny": "Tang",
    "name": "Tang",
    "name_zh": "唐",
    "glyph": "唐",
@@ -596,7 +596,7 @@
    "summary_zh": "一个开放包容的大帝国，势力沿丝绸之路深入中亚。755年爆发的安史之乱摧毁了中央权威，吐蕃趁机夺取了河西走廊。"
   },
   {
-   "id": "five-dynasties",
+   "id": "five-dynasties", "short": "5 Dynasties", "tiny": "5 Dyn.|5D",
    "name": "Five Dynasties and Ten Kingdoms",
    "name_zh": "五代十国",
    "glyph": "五代",
@@ -692,7 +692,7 @@
    "summary_zh": "北方五个短命王朝相继更替，南方则有十个政权割据一方。契丹建立的辽朝夺取了今北京周围的燕云十六州。"
   },
   {
-   "id": "northern-song",
+   "id": "northern-song", "short": "N. Song", "tiny": "N.Song|Song",
    "name": "Northern Song",
    "name_zh": "北宋",
    "glyph": "北宋",
@@ -746,7 +746,7 @@
    "summary_zh": "一个由科举出身的文官治理的王朝，商业经济繁荣，印刷术和纸币广泛使用，北面和西北面分别与辽和西夏对峙。"
   },
   {
-   "id": "southern-song",
+   "id": "southern-song", "short": "S. Song", "tiny": "S.Song|S.S.",
    "name": "Southern Song",
    "name_zh": "南宋",
    "glyph": "南宋",
@@ -768,7 +768,7 @@
    "note_zh": "图中宋金沿淮河的边界为大致示意。"
   },
   {
-   "id": "yuan",
+   "id": "yuan", "short": "Yuan", "tiny": "Yuan",
    "name": "Yuan",
    "name_zh": "元",
    "glyph": "元",
@@ -788,7 +788,7 @@
    "summary_zh": "忽必烈建立蒙古人统治的元朝，定都大都（今北京），1279年灭南宋。吐蕃由宣政院管辖，新疆大部分属于察合台汗国。"
   },
   {
-   "id": "ming",
+   "id": "ming", "short": "Ming", "tiny": "Ming",
    "name": "Ming",
    "name_zh": "明",
    "glyph": "明",
@@ -824,7 +824,7 @@
    "note_zh": "明朝与西藏（乌思藏）的关系主要通过封授名号和朝贡维系。西藏是否属于明朝版图，学界尚有争论，因此图中画在明朝疆域之外。"
   },
   {
-   "id": "qing",
+   "id": "qing", "short": "Qing", "tiny": "Qing",
    "name": "Qing",
    "name_zh": "清",
    "glyph": "清",

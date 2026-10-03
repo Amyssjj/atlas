@@ -111,6 +111,7 @@ const zh = () => state.lang === "zh";
 const tx = (o, k) => (zh() ? o[k + "_zh"] || o[k] : o[k] || o[k + "_zh"]) || "";
 const titleOf = (o) => (zh() ? o.title_zh || o.title : o.title);
 const nameOf = (o) => (zh() ? o.name_zh || o.name : o.name);
+const bandName = (e) => (zh() ? e.glyph : e.short || e.name); // the period on the timeline
 
 function fmtYear(y, circa) {
   const n = y === 0 ? 1 : Math.abs(y);
@@ -956,7 +957,9 @@ function renderArmies() {
   markers.armies = [];
   const data = state.layerData?.armies;
   if (!shown("armies") || !data || !state.era) return;
-  const evs = visibleEvents()
+  // On a tour only the current step's battle is shown; earlier steps' armies are cleared.
+  const step = state.tour?.tr.steps[state.tour.i];
+  const evs = step ? state.events.filter((ev) => ev.id === step.event && data[ev.id] && !state.closedArmies.has(ev.id)) : visibleEvents()
     .filter((ev) => data[ev.id] && !state.closedArmies.has(ev.id) && ev.year <= state.year && (isActive(ev, state.year) || ev.id === state.selected))
     .sort((a, b) => (b.id === state.selected) - (a.id === state.selected) || b.year - a.year)
     .slice(0, 3);
@@ -1777,6 +1780,7 @@ function endTour() {
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
   tourHighlight(null);
   syncAuto();
+  renderArmies();
   map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
   saveView();
 }
@@ -1982,10 +1986,14 @@ function buildRail() {
       b.dataset.era = e.id;
       b.style.left = pct(s.p0) + "%";
       b.style.width = pct(s.p1 - s.p0) + "%";
-      b.innerHTML = `<b>${e.glyph}</b>`;
+      b.innerHTML = `<b>${esc(bandName(e))}</b>`;
       b.title = `${nameOf(e)} ${fmtYear(e.start)} – ${fmtYear(e.end)} · ${t("lasted")(eraYears(e))}`;
       b.addEventListener("click", () => goToEra(e));
       bands.appendChild(b);
+      // English names are longer than the Chinese glyphs: fall back to the tiny form, then to nothing (the tooltip has it).
+      if (!zh() && b.scrollWidth > b.clientWidth + 1) {
+        for (const n of [...(e.tiny || "").split("|"), ""]) { b.firstChild.textContent = n; if (b.scrollWidth <= b.clientWidth + 1) break; }
+      }
     }
   } else {
     // Zoomed in: one segment per border snapshot, so each change of the map is one click away.
@@ -2001,7 +2009,7 @@ function buildRail() {
         b.dataset.from = s.from;
         b.style.left = pct(yearToPos(from)) + "%";
         b.style.width = pct(yearToPos(to + 1) - yearToPos(from)) + "%";
-        b.innerHTML = (i === 0 && s.from >= a ? `<b>${e.glyph}</b> ` : "") + `<span>${s.from >= a ? "" : "← "}${fmtYear(s.from)}</span>`;
+        b.innerHTML = (i === 0 && s.from >= a ? `<b>${esc(bandName(e))}</b> ` : "") + `<span>${s.from >= a ? "" : "← "}${fmtYear(s.from)}</span>`;
         b.title = tx(s, "label") || `${nameOf(e)} ${fmtYear(e.start)} – ${fmtYear(e.end)}`;
         b.addEventListener("click", () => { stop(); setYear(from); });
         bands.appendChild(b);

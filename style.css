@@ -243,6 +243,9 @@ html:lang(zh-CN) .story-body p, html:lang(zh-CN) .story-lede { font-size: 15px; 
 .band:hover { background: var(--jade-soft); }
 .band:focus-visible { outline: 2px solid var(--jade); outline-offset: -2px; }
 .band b { font: 600 13px/18px var(--font-display); color: var(--ink); }
+html[lang="en"] .band b { font: 600 11px/18px var(--font-body); letter-spacing: -0.02em; }
+html[lang="en"] .era-band { padding-left: 2px; }
+@media (max-width: 1100px) { html[lang="en"] .band b { font-size: 10px; } }
 .band.current { background: var(--jade-soft); }
 .band.current { color: var(--jade); }
 .band.current b { color: var(--jade); }
