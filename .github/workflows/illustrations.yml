@@ -1,4 +1,5 @@
-# Fetches free-licensed Wikipedia lead images for people and events onto the `illustrations-raw` branch.
+# Fetches free-licensed Wikipedia images for people, events and map points onto the `illustrations-raw` branch.
+# Queries with "prefer": "artifact" (sites, tombs, excavated objects) take an object photograph when the article has one.
 # Run by hand (Actions → Illustrations → Run workflow); tools/pack_illustrations.py turns the result into data/img/.
 name: Illustrations
 on: workflow_dispatch
