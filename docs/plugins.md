@@ -158,3 +158,30 @@ export default function setup(atlas) {
 ```
 
 Try it at `/?pack=examples/demo-pack/manifest.json&packonly=1#tour=paul-first&s=1`.
+
+## Embedding
+
+With `?embed=1` the atlas shows only the map and a small period label. The panels, the timeline and the tour card are
+hidden, and tours frame their stops for the whole map. Use it when the host page shows the story itself, beside the
+map.
+
+To move an embedded atlas without reloading it, let your pack's plugin listen to the host page with `postMessage`,
+and report back what the visitor does on the map:
+
+```js
+export default function setup(atlas) {
+  if (window.parent === window) return;                 // not embedded
+  const HOST = "https://example.org";                   // your app's site
+  addEventListener("message", (e) => {
+    if (e.source !== window.parent || e.origin !== HOST) return;
+    if (e.data.type === "tour") atlas.startTour(e.data.id, e.data.step);
+    if (e.data.type === "year") atlas.setYear(e.data.year);
+  });
+  atlas.on("tour-step", ({ id, index }) => window.parent.postMessage({ type: "tour-step", id, index }, HOST));
+}
+```
+
+Check the sender's origin on every message, and name your own site as the target when you post back. The Bible
+reader's [bridge plugin](https://github.com/daiyip/interactive-bible/blob/main/atlas/plugins/bridge.js) is a complete
+example: the reader starts tours and pins a verse's places, and the atlas sends back tour steps and clicked verses.
+
