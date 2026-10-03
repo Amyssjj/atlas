@@ -8,6 +8,13 @@
 // Years are integers; negative years are BCE. Text fields come in pairs: `x` (English) and `x_zh`.
 
 const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
+// Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
+// ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
+// server while developing). See README.md, "Data packs".
+const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "https://daiyip.github.io"];
+const PACK_URL = new URLSearchParams(location.search).get("pack");
+// ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
+const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(location.search).get("packonly"));
 // Elevation tiles are bundled with the page (it may not load images from other sites): zoom 2-6 as PNG files,
 // zoom 7 (whole map) and 8 (China proper) packed into archives in tiles/pack/ and served through the
 // "atlas" protocol below. Satellite imagery (Sentinel-2, 2020) is packed the same way in tiles/sat/, every zoom.
@@ -22,6 +29,8 @@ const ZOOMS = ["all", "era", "decades"];
 const state = {
   eras: [], events: [], places: [],
   mode: "china",        // the region whose periods the timeline shows, or "world" for plain calendar years
+  home: "china",        // the region the data belongs to: "china", or the open pack's id
+  pack: null,           // the open data pack: { url, manifest, only }
   chinaEras: [], regions: [], regionById: {}, worldEras: [], worldIndex: [], raw: {},
   detail: 2, cats: [],   // event detail level shown (1 大事, 2 要事, 3 细目) and category tags (empty: all)
   range: { start: -2070, end: 1912 },
@@ -67,6 +76,7 @@ const UI = {
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
+    notePack: "疆域为近似示意，取自开源 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
     zooms: ["全部", "朝代", "数十年"], country: "国家", reignLen: (n) => `${n}年`, rulerCount: (n) => `${n} 位`, noRulers: "本时期暂无君主资料", worldMap: (y) => `${y}前后的世界`, worldName: "世界 · 公元纪年", noRegionEvents: "这个地区的事件还在整理中，下一步加入。现在可以看各时期的疆域。", noPeople: "本时期暂无人物资料", peopleHint: "点击人物，地图飞到其居所并显示生平", pgroups: { all: "全部", mil: "军事", pol: "政治", cul: "思想文学", art: "艺术", sci: "科技" }, scopeHint: "点击君主，时间轴缩放到其在位期间", zoomIn: "放大时间轴", zoomOut: "缩小时间轴", earlier: "向前", later: "向后",
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
@@ -89,6 +99,7 @@ const UI = {
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
+    notePack: "Borders are approximate, from the open historical-basemaps dataset. Terrain, coastlines and rivers are modern.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
     zooms: ["All", "Dynasty", "Decades"], country: "Country", reignLen: (n) => `${n} yr${n > 1 ? "s" : ""}`, rulerCount: (n) => `${n} rulers`, noPeople: "No famous people listed for this period", peopleHint: "Click a person to fly to where they lived and read about them", pgroups: { all: "All", mil: "Military", pol: "Politics", cul: "Thought & letters", art: "Arts", sci: "Science" }, noRulers: "No rulers recorded for this period", worldMap: (y) => `the world around ${y}`, worldName: "World · calendar years", noRegionEvents: "Events for this region are still being written. For now you can follow its borders through the periods.", scopeHint: "Pick a ruler to narrow the timeline to their reign", zoomIn: "Zoom in", zoomOut: "Zoom out", earlier: "Earlier", later: "Later",
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
@@ -131,6 +142,8 @@ function applyLang() {
   document.documentElement.lang = zh() ? "zh-CN" : "en";
   document.title = t("title");
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  // A pack's own note replaces the China borders note.
+  if (state.pack?.only) document.querySelector('[data-i18n="note"]').textContent = tx(state.pack.manifest, "note") || t("notePack");
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   $("lang").querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
@@ -431,6 +444,66 @@ function setupRegions(eras, regions, worldIndex) {
   });
   state.eras = state.chinaEras;
 }
+// A pack's periods form one more region, drawn on the world maps. On its own (packonly) it is the only region;
+// otherwise it comes first, so inside its outline it wins over the atlas's regions.
+function addPack(manifest, eras, worldIndex, only) {
+  const id = manifest.id;
+  const list = eras.eras.map((e) => ({ ...e, region: id, worldMaps: true, focus: e.focus || [], snapshots: worldSnaps(e.start, e.end) }));
+  const R = manifest.region || {};
+  const [[w, so], [ea, n]] = R.bounds || [[-180, -85], [180, 85]];
+  const region = { id, name: manifest.name, name_zh: manifest.name_zh || manifest.name, color: manifest.color, eras: list,
+    polygon: R.polygon || [[w, so], [ea, so], [ea, n], [w, n]] };
+  const range = manifest.range || eras.range;
+  if (only) {
+    state.worldIndex = worldIndex;
+    state.regions = [region];
+    state.regionById = { [id]: region };
+    state.chinaEras = list;
+    state.worldEras = [];
+    state.range = range;
+    state.home = id;
+  } else {
+    state.regions.unshift(region);
+    state.regionById[id] = region;
+    state.range = { start: Math.min(state.range.start, range.start), end: Math.max(state.range.end, range.end) };
+  }
+  state.eras = list;
+  state.mode = id;
+}
+// The manifest named by ?pack=, or null. Throws with a readable message when the pack cannot be used.
+async function openPack(url) {
+  let u;
+  try { u = new URL(url, location.href); } catch { throw new Error(`"${url}" is not a pack address.`); }
+  const local = ["localhost", "127.0.0.1"].includes(u.hostname);
+  if (u.origin !== location.origin && !PACK_ORIGINS.includes(u.origin) && !local) throw new Error(`Packs from ${u.origin} are not allowed.`);
+  const res = await fetch(u, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`Could not load the pack (${res.status}).`);
+  const manifest = await res.json();
+  if (manifest.atlas !== 1) throw new Error(`This pack needs a newer atlas (format ${manifest.atlas}).`);
+  for (const k of ["eras", "events"]) if (!manifest.data?.[k]) throw new Error(`The pack has no ${k}.`);
+  if (!/^[a-z0-9-]+$/.test(manifest.id || "")) throw new Error("The pack has no valid id.");
+  return { url: u.href, manifest, only: PACK_ONLY };
+}
+// A file of the open pack by its manifest key (eras, events, tours, places).
+function packFile(key) {
+  const path = state.pack.manifest.data[key];
+  if (!path) return Promise.reject(new Error(`The pack has no ${key}.`));
+  return fetch(new URL(path, state.pack.url), { cache: "no-cache" }).then((r) => {
+    if (!r.ok) throw new Error(`Could not load the pack's ${key} (${r.status})`);
+    return r.json();
+  });
+}
+// A link from an event or tour step to the pack's own page for it (the Bible pack: the verse in the reader).
+function refLink(refs) {
+  const R = state.pack?.manifest.refs;
+  const ref = Array.isArray(refs) ? refs[0] : refs;
+  if (!R?.url || !ref) return null;
+  return { href: R.url.replace("{ref}", encodeURIComponent(ref)), label: (zh() && R.label_zh) || R.label || ref, ref };
+}
+function refLabel(ref) {
+  return ref.replace(/^([1-3]?[A-Za-z]+)\.(\d+)\.(\d+)(?:-(\d+))?$/, (m, b, c, v, z) => `${b} ${c}:${v}${z ? "–" + z : ""}`);
+}
+
 function inPoly(x, y, poly) {
   let inside = false;
   for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
@@ -446,7 +519,7 @@ function polyBounds(poly) {
 // Sample a grid over the open part of the map, the middle counting most; sea and unassigned land are left out.
 // A region with most of the rest wins; once chosen, a region keeps the timeline while it still holds a good share.
 function detectRegion() {
-  if (state.regions.length < 2) return "china";
+  if (state.regions.length < 2) return state.home;
   const c = map.getCanvas(), W = c.clientWidth - (innerWidth > 720 ? 380 : 0), H = c.clientHeight;
   const n = {};
   let tot = 0, hit = 0;
@@ -1248,7 +1321,7 @@ function visibleEvents() {
 // The open event always stays visible.
 function shownEvent(ev) {
   // Each region shows its own events; the world view shows all.
-  if (state.mode !== "world" && (ev.region || "china") !== state.mode) return false;
+  if (state.mode !== "world" && (ev.region || state.home) !== state.mode) return false;
   if (ev.id === state.selected) return true;
   // The country filter belongs to one period; events of other periods ignore it.
   const c = state.country;
@@ -1582,7 +1655,7 @@ function renderList() {
   const list = $("ev-list");
   const evs = visibleEvents();
   $("ev-count").textContent = state.zoom === 2 ? t("countWin")(evs.length) : t("count")(evs.length, nameOf(state.era));
-  list.innerHTML = evs.length || state.mode === "china" ? "" : `<li class="ev-empty">${t("noRegionEvents")}</li>`;
+  list.innerHTML = evs.length || state.mode === state.home || state.mode === state.pack?.manifest.id ? "" : `<li class="ev-empty">${t("noRegionEvents")}</li>`;
   for (const ev of evs) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -1712,6 +1785,8 @@ function wikiLink(url) {
 function links(ev, d) {
   const zhUrl = wikiLink(d?.source_zh), enUrl = wikiLink(ev.source);
   const main = zh() ? zhUrl || enUrl : enUrl || zhUrl;
+  const r = refLink(ev.refs);
+  if (r) return `<p class="story-links">` + ev.refs.map((ref) => `<a href="${esc(refLink(ref).href)}" title="${esc(r.label)}" target="_blank" rel="noopener">${esc(refLabel(ref))} ↗</a>`).join("") + `</p>`;
   if (!main) return "";
   const other = zhUrl && enUrl ? (zh() ? enUrl : zhUrl) : null;
   return `<p class="story-links"><a href="${esc(main)}" target="_blank" rel="noopener">${t("wiki")} ↗</a>` +
@@ -1759,28 +1834,35 @@ async function goToEra(era) {
 
 /* ---------- guided tours: data/tours.json, a camera path through years with narration ---------- */
 let tours = null;
-const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
+// The atlas's own tours and the pack's (marked with the pack's region), or the pack's alone.
+const loadTours = () => tours || (tours = Promise.all([
+  state.pack?.only ? [] : loadJSON("data/tours.json").catch(() => []),
+  state.pack?.manifest.data.tours ? packFile("tours").then((l) => l.map((tr) => ({ ...tr, region: state.pack.manifest.id }))).catch(() => []) : [],
+]).then(([a, b]) => [...a, ...b]));
+const tourRegion = (tr) => tr.region || state.home;
+const regionEras = (id) => state.regionById[id]?.eras || state.chinaEras;
 // The 导览 tab: this period's tours first, then the rest grouped by period.
-const tourEra = (tr) => tr.era || state.chinaEras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
+const tourEra = (tr) => tr.era || regionEras(tourRegion(tr)).find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
 // A tour also shows under every period its years reach into, and under any listed in `also` (官渡 under 三国).
 const tourIn = (tr, era) => tourEra(tr) === era.id || (tr.also || []).includes(era.id) || (tr.start <= era.end && tr.end >= era.start);
 function tourItem(tr, era) {
   const on = state.tour?.id === tr.id;
-  const home = era && tourEra(tr) !== era.id ? state.chinaEras.find((e) => e.id === tourEra(tr)) : null;
+  const home = era && tourEra(tr) !== era.id ? regionEras(tourRegion(tr)).find((e) => e.id === tourEra(tr)) : null;
   return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}${home ? ` · ${esc(nameOf(home))}` : ""}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
 }
 async function renderToursTab() {
   const list = await loadTours();
   if (state.tab !== "tours") return;
   const box = $("tour-tab");
-  const here = list.filter((tr) => state.era.region === "china" && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
+  const here = list.filter((tr) => state.era.region === tourRegion(tr) && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
   $("ev-count").textContent = t("tourCount")(here.length);
   const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   let html = `<p class="rl-hint">${t("tourHint")}</p>`;
   html += here.length ? here.map((tr) => tourItem(tr, state.era)).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
-  const other = state.chinaEras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
+  const other = state.regions.flatMap((r) => r.eras.filter((e) => e.id !== state.era.id)
+    .map((e) => [e, list.filter((tr) => tourRegion(tr) === r.id && tourEra(tr) === e.id)])).filter(([, l]) => l.length);
   if (other.length) {
     const open = box.querySelector("details")?.open ? " open" : "";
     html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
@@ -1793,7 +1875,7 @@ async function startTour(id, i = 0) {
   if (!tr) return;
   stop(); closeSearch();
   state.tour = { id, tr, i: 0, auto: false };
-  setMode("china");
+  setMode(tourRegion(tr));
   $("tour").hidden = false;
   $("app").classList.add("touring");
   if (state.tab === "tours") renderToursTab();
@@ -1862,6 +1944,9 @@ function tourCard() {
   box.querySelector(".tour-year").textContent = when || fmtYear(s.year);
   box.querySelector(".tour-text").textContent = rest;
   box.querySelector(".tour-story").hidden = !s.event;
+  const r = refLink(s.ref), a = box.querySelector(".tour-ref");
+  a.hidden = !r;
+  if (r) { a.href = r.href; a.title = r.label; a.textContent = `${refLabel(r.ref)} ↗`; }
   box.querySelector(".tour-prev").disabled = i === 0;
   box.querySelector(".tour-next").textContent = i === tr.steps.length - 1 ? t("tourEnd") : t("tourNext");
   box.querySelector(".tour-auto").textContent = tour.auto ? t("tourPause") : t("tourPlay");
@@ -2142,7 +2227,8 @@ function buildRail() {
     tk.addEventListener("click", () => openStory(ev.id));
     ticks.appendChild(tk);
   }
-  const [a, b] = state.zoom ? state.win : [state.range.start, state.range.end];
+  // The whole rail runs from the first period to the last (a pack's periods may cover less than the atlas's range).
+  const [a, b] = state.zoom ? state.win : [state.eras[0]?.start ?? state.range.start, state.eras.at(-1)?.end ?? state.range.end];
   $("scale-start").textContent = fmtYear(a);
   $("scale-end").textContent = fmtYear(b);
   $("scale-hint").textContent = hintText();
@@ -2202,12 +2288,14 @@ function saveView() {
     const c = map.getCenter();
     const view = { year: state.year, zoom: state.zoom, win: state.win, tab: state.tab,
       cam: { center: [+c.lng.toFixed(3), +c.lat.toFixed(3)], zoom: +map.getZoom().toFixed(2), pitch: Math.round(map.getPitch()), bearing: Math.round(map.getBearing()) } };
-    try { localStorage.setItem("atlas-view", JSON.stringify(view)); } catch {}
+    try { localStorage.setItem(viewKey(), JSON.stringify(view)); } catch {}
     // The address keeps the same view, so it can be copied or bookmarked.
     try { history.replaceState(null, "", "#" + viewHash()); } catch {}
   }, 500);
 }
 
+// Each pack remembers its own view.
+const viewKey = () => (state.pack ? `atlas-view:${state.pack.manifest.id}` : "atlas-view");
 // A link to the current view: #y=year&c=lng,lat,zoom,pitch,bearing&t=tab&e=open event&l=en
 function viewHash() {
   const c = map.getCenter();
@@ -2248,7 +2336,7 @@ async function shareView() {
 }
 function loadView() {
   let v = null, tg = null;
-  try { v = JSON.parse(localStorage.getItem("atlas-view") || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
+  try { v = JSON.parse(localStorage.getItem(viewKey()) || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
   if (tg) for (const k of ["show3d", "showNeighbours", "showPlaces", "showGeo"]) if (typeof tg[k] === "boolean") state[k] = tg[k];
   // A shared link wins over the remembered view.
   const link = readHash();
@@ -2273,35 +2361,57 @@ async function init() {
   if (new URLSearchParams(location.hash.slice(1)).get("l") === "en") state.lang = "en";
   // A link pasted into the same tab only changes the hash: start again from it.
   addEventListener("hashchange", () => { if (map && location.hash.slice(1) !== viewHash()) location.reload(); });
+  if (PACK_URL) {
+    state.pack = await openPack(PACK_URL);
+    state.selected = null;
+  }
   applyLang();
-  const [eras, events, places] = await Promise.all([
-    loadJSON("data/eras.json"), loadJSON("data/events.json"), loadJSON("data/places.json"),
+  const pack = state.pack?.manifest, only = state.pack?.only;
+  const [eras, events, places, packEras, packEvents] = await Promise.all([
+    only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
+    pack && packFile("eras"), pack && packFile("events"),
   ]);
-  state.overlays = await loadJSON("data/overlays.json").catch(() => state.overlays);
-  state.passes = await loadJSON("data/passes.json").catch(() => []);
-  state.roads = await loadJSON("data/roads.json").catch(() => []);
-  state.clans = await loadJSON("data/clans.json").catch(() => []);
-  state.walls = await loadJSON("data/walls.json").catch(() => []);
+  // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls) stay out of a pack shown alone.
+  if (!only) {
+    state.overlays = await loadJSON("data/overlays.json").catch(() => state.overlays);
+    state.passes = await loadJSON("data/passes.json").catch(() => []);
+    state.roads = await loadJSON("data/roads.json").catch(() => []);
+    state.clans = await loadJSON("data/clans.json").catch(() => []);
+    state.walls = await loadJSON("data/walls.json").catch(() => []);
+  }
   state.geo = await loadJSON("data/geo/features.json").catch(() => []);
   state.oldGeo = (await loadJSON("data/geo/old-rivers.geojson").catch(() => ({ features: [] }))).features;
   const [regions, worldIndex] = await Promise.all([
     loadJSON("data/regions.json").catch(() => ({ regions: [] })), loadJSON("data/world/index.json").catch(() => [])]);
-  setupRegions(eras, regions.regions, worldIndex);
+  if (!only) setupRegions(eras, regions.regions, worldIndex);
+  if (pack) {
+    addPack(pack, packEras, worldIndex, only);
+    for (const ev of packEvents) ev.region = pack.id;
+    events.push(...packEvents);
+    state.year = pack.region?.view?.year ?? packEras.eras[0]?.start ?? state.year;
+  }
+  if (only) {
+    // The per-period layers (rulers, armies, people...) and the atlas's overlays are not part of a pack yet.
+    for (const el of document.querySelectorAll(".era-layers .chip.layer, #tab-rulers, #tab-people")) el.hidden = true;
+    if (!places.length) $("t-places").hidden = true;
+    for (const g of document.querySelectorAll(".era-layers .lg")) g.hidden = ![...g.querySelectorAll(".chip")].some((c) => !c.hidden);
+  }
   state.events = events.sort((a, b) => a.year - b.year || (a.level || 1) - (b.level || 1));
   state.places = places;
   buildScale();
   const cam = loadView();
+  if (only && !["events", "tours"].includes(state.tab)) state.tab = "events";
 
   map = new maplibregl.Map({
     container: "map",
     style: buildStyle(),
-    center: cam?.center || [108, 33.5], zoom: cam?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
+    center: cam?.center || pack?.region?.view?.center || [108, 33.5], zoom: cam?.zoom ?? pack?.region?.view?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
     maxPitch: 65, minZoom: 1.6, maxZoom: 9.5,
     attributionControl: false,
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: "Terrain: Mapzen/AWS Terrain Tiles · Borders: historical-basemaps (GPL-3.0)" }), "bottom-left");
+    customAttribution: "Terrain: Mapzen/AWS Terrain Tiles · Borders: historical-basemaps (GPL-3.0)" + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);
