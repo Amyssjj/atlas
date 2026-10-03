@@ -15,6 +15,10 @@ const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "h
 const PACK_URL = new URLSearchParams(location.search).get("pack");
 // ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
 const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(location.search).get("packonly"));
+// ?embed=1: inside another site's page (an iframe) the atlas shows only the map and a small era label; the host page
+// shows the story and drives the atlas through a pack plugin (docs/plugins.md, "Embedding").
+const EMBED = new URLSearchParams(location.search).get("embed") === "1";
+if (EMBED) document.documentElement.classList.add("embed");
 // Overview elevation tiles are bundled with the page (it works offline and in sandboxed previews): zoom 2-6 as PNG files,
 // zoom 7 (whole map) and 8 (China proper) packed into archives in tiles/pack/ and served through the
 // "atlas" protocol below. Satellite imagery (Sentinel-2, 2020) is packed the same way in tiles/sat/, every zoom.
@@ -2525,6 +2529,7 @@ function tourCard() {
 }
 // Keep the spot clear of the tour card at the bottom and the ledger on the right.
 function tourPadding() {
+  if (EMBED) return { top: 50, bottom: 30, left: 30, right: 30 };
   const phone = innerWidth <= 720;
   const card = $("tour").offsetHeight || 160;
   return phone ? { top: 60, bottom: card + 40, left: 20, right: 20 } : { top: 60, bottom: card + 60, left: Math.min(380, innerWidth * 0.26), right: Math.min(380, innerWidth * 0.26) };

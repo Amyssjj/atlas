@@ -964,3 +964,13 @@ a.chip[hidden] { display: none; }
   .cmp-era { margin-top: 4px; }
   .cmp-ev { display: none; }
 }
+
+/* Embedded (?embed=1): the map and a small era label only. The host page tells the story. */
+html.embed .ledger, html.embed .rail, html.embed .tour, html.embed .search, html.embed .era-corner, html.embed .share-box,
+html.embed .era-layers, html.embed .era-summary, html.embed .era-ruler, html.embed .era-snap, html.embed .era-note,
+html.embed .era-zh, html.embed .pop-chart { display: none !important; }
+html.embed .era { top: 8px; left: 8px; width: auto; max-width: calc(100% - 16px); padding: 6px 12px 6px 8px; gap: 0 8px; }
+html.embed .era > .seal { width: 30px; height: 30px; font-size: 18px; grid-row: 1 / span 2; }
+html.embed .seal.double { font-size: 11px; }
+html.embed .era-name { font-size: 14px; grid-area: 1 / 2; }
+html.embed .era-year { font-size: 15px; grid-area: 2 / 2; }
