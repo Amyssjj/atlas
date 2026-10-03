@@ -44,6 +44,7 @@ const state = {
   layers: {},           // era id -> promise of { rulers, armies, routes }
   layerData: null,      // the current era's overlays once loaded
   auto: {},             // layers on only for the current story or tour step (syncAuto)
+  autoOff: {}, autoCtx: "",
   autoLayers: true,
   show: { rulers: true, armies: true, routes: true, people: true, capitals: false, faith: false, inventions: false, passes: true, roads: true, clans: true, walls: true },
   overlays: { population: [], faith: [], inventions: [] },
@@ -600,20 +601,23 @@ const AUTO_RULES = [
   [["inventions"], (c, x) => c === "science" || /发明|造纸|印刷|火药|指南|历法|地动仪|天文|算|医书|本草|农书|技术|瓷/.test(x)],
   [["clans"], (c, x) => /门阀|士族|世家|豪族|朋党|党争|党禁|商帮|集团|郡望/.test(x)],
 ];
+// A dashed (auto) chip clicked is switched off until the story or step changes; clicked again it is on for good.
 function syncAuto() {
-  let text = "", cat = null;
+  let text = "", cat = null, ctx = "";
   if (state.autoLayers) {
     const s = state.tour?.tr.steps[state.tour.i];
     const ev = state.events.find((e) => e.id === (s ? s.event : state.reading && state.selected));
+    ctx = s ? `${state.tour.id}|${state.tour.i}` : ev ? ev.id : "";
     if (s) text = s.text_zh; else if (ev) text = `${ev.title_zh} ${ev.summary_zh}`;
     if (ev) { cat = ev.category; text += ` ${ev.title_zh}`; }
   }
   const auto = {};
-  if (text) for (const [keys, test] of AUTO_RULES) if (test(cat, text)) for (const k of keys) auto[k] = true;
+  if (ctx !== state.autoCtx) { state.autoCtx = ctx; state.autoOff = {}; }
+  if (text) for (const [keys, test] of AUTO_RULES) if (test(cat, text)) for (const k of keys) if (!state.autoOff[k]) auto[k] = true;
+  for (const k of Object.keys(state.show)) $("l-" + k)?.classList.toggle("auto", !state.show[k] && !!auto[k]);
   const key = Object.keys(auto).sort().join();
   if (key === Object.keys(state.auto).sort().join()) return;
   state.auto = auto;
-  for (const k of Object.keys(state.show)) $("l-" + k)?.classList.toggle("auto", !state.show[k] && !!auto[k]);
   renderOverlays();
 }
 function renderOverlays() {
@@ -2319,9 +2323,11 @@ async function init() {
   for (const k of Object.keys(state.show)) {
     $("l-" + k).setAttribute("aria-pressed", String(state.show[k]));
     $("l-" + k).addEventListener("click", () => {
+      if (!state.show[k] && state.auto[k]) { state.autoOff[k] = true; return syncAuto(); }
       state.show[k] = !state.show[k];
       $("l-" + k).setAttribute("aria-pressed", String(state.show[k]));
       try { localStorage.setItem("atlas-layers", JSON.stringify(state.show)); } catch {}
+      $("l-" + k).classList.remove("auto");
       renderOverlays();
     });
   }
