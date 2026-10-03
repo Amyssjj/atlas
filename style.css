@@ -896,3 +896,28 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .mk-geo[hidden] { display: none; }
 a.chip { text-decoration: none; display: inline-flex; align-items: center; }
 a.chip[hidden] { display: none; }
+/* Region switcher: globe chip with the current region; its menu lists every region with this year's period. */
+.region-btn { display: inline-flex; align-items: center; gap: 4px; padding-inline: 8px; }
+.region-btn svg { width: 14px; height: 14px; flex: none; }
+.region-btn span { max-width: 6em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.region-pop {
+  position: absolute; z-index: 30; top: 48px; right: 12px; width: min(340px, calc(100vw - 32px));
+  max-height: min(70dvh, 520px); overflow-y: auto; padding: 6px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  background: var(--panel-solid); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.region-pop[hidden] { display: none; }
+.region-pop button {
+  display: grid; grid-template-columns: 10px 1fr; column-gap: 7px; align-items: center; text-align: left;
+  padding: 7px 8px; border: 0; border-radius: 8px; background: none; color: inherit; font: inherit; cursor: pointer;
+}
+.region-pop button:hover, .region-pop button:focus-visible { background: rgba(0, 0, 0, 0.06); }
+.region-pop button.here { background: color-mix(in srgb, var(--rc) 16%, transparent); }
+.region-pop i { width: 10px; height: 10px; border-radius: 50%; background: var(--rc); grid-row: span 2; }
+.region-pop b { font-size: 13px; font-weight: 600; line-height: 1.25; }
+.region-pop span { grid-column: 2; font-size: 11.5px; color: var(--muted); line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 720px) {
+  .region-btn { padding-inline: 6px; height: 30px; }
+  .region-btn span { max-width: 4.5em; font-size: 12px; }
+  .region-pop { top: 44px; right: 8px; }
+}

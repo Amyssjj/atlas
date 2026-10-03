@@ -278,7 +278,9 @@
       "Mongolia"
      ]
     }
-   ]
+   ],
+   "short_zh": "中国",
+   "short": "China"
   },
   {
    "id": "korea",
@@ -543,7 +545,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "朝鲜",
+   "short": "Korea"
   },
   {
    "id": "japan",
@@ -881,7 +885,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "日本",
+   "short": "Japan"
   },
   {
    "id": "southeast-asia",
@@ -1210,7 +1216,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "东南亚",
+   "short": "SE Asia"
   },
   {
    "id": "south-asia",
@@ -1610,7 +1618,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "南亚",
+   "short": "S. Asia"
   },
   {
    "id": "central-asia-steppe",
@@ -2012,7 +2022,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "中亚",
+   "short": "C. Asia"
   },
   {
    "id": "iran",
@@ -2440,7 +2452,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "伊朗",
+   "short": "Iran"
   },
   {
    "id": "middle-east",
@@ -2964,7 +2978,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "西亚",
+   "short": "W. Asia"
   },
   {
    "id": "egypt-north-africa",
@@ -3446,7 +3462,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "北非",
+   "short": "N. Africa"
   },
   {
    "id": "europe",
@@ -4009,7 +4027,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "欧洲",
+   "short": "Europe"
   },
   {
    "id": "sub-saharan-africa",
@@ -4364,7 +4384,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "非洲",
+   "short": "Africa"
   },
   {
    "id": "north-america",
@@ -4710,7 +4732,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "北美",
+   "short": "N. America"
   },
   {
    "id": "mesoamerica",
@@ -5051,7 +5075,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "中美",
+   "short": "Mesoamerica"
   },
   {
    "id": "south-america",
@@ -5403,7 +5429,9 @@
      ],
      "layers": true
     }
-   ]
+   ],
+   "short_zh": "南美",
+   "short": "S. America"
   }
  ]
 }
