@@ -1248,7 +1248,7 @@ function visibleEvents() {
 // The open event always stays visible.
 function shownEvent(ev) {
   // Each region shows its own events; the world view shows all.
-  if (state.mode !== "world" && (ev.region || "china") !== state.mode) return false;
+  if (state.mode !== "world" && (ev.region || "china") !== state.mode && !ev.also?.includes(state.mode)) return false;
   if (ev.id === state.selected) return true;
   // The country filter belongs to one period; events of other periods ignore it.
   const c = state.country;
@@ -1660,11 +1660,12 @@ async function renderStory() {
       else { map.flyTo({ center: [it.lon, it.lat], zoom: Math.max(map.getZoom(), 5), duration: 1200, essential: true }); map.once("moveend", () => showCard([it.lon, it.lat], placeCard(it))); }
     }
   };
-  const all = await loadDetails(eraFor(ev.year));
+  const home = (ev.region || "china") === "china" && state.chinaEras.find((e) => ev.year >= e.start && ev.year <= e.end);
+  const all = home ? await loadDetails(home) : {};
   if (state.selected !== ev.id || !state.reading) return;
   const d = all[ev.id];
   const body = box.querySelector(".story-body");
-  const layer = await loadLayers(eraFor(ev.year));
+  const layer = home ? await loadLayers(home) : {};
   if (state.selected !== ev.id || !state.reading) return;
   const tags = linkTags(ev, layer);
   if (!d) { body.innerHTML = tags + `<p class="muted">${t("noStory")}</p>` + links(ev, d); return; }
@@ -1727,6 +1728,8 @@ async function selectEvent(id) {
   const ev = state.events.find((e) => e.id === id);
   state.selected = id;
   state.closedArmies.delete(id);
+  // An event of another region: the timeline switches to that region's periods.
+  if (!state.tour && !ev.also?.includes(state.mode)) setMode(ev.region || "china");
   // An event outside the decades window: move the window to it.
   if (state.zoom === 2 && (ev.year < state.win[0] || ev.year > state.win[1])) {
     state.scope = null;
