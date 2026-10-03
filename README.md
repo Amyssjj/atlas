@@ -14,7 +14,8 @@ inventions and more. It works in English and Chinese.
   civilisation you are looking at: over Europe it shows Europe's periods, over India India's.
 - **China in depth.** It covers Xia to Qing, with 1,654 events, rulers, people, battles, roads, walls and 104 guided
   tours.
-- **3D terrain and satellite imagery** are bundled with the site, so it needs no API keys or tile servers.
+- **3D terrain and satellite imagery** need no API keys. Overview tiles are bundled with the site; zoom in and sharper
+  terrain (about 30 m) and 10 m imagery load on demand.
 - **An engine for your own history.** Any site can show its own periods, events, tours, map layers and plugins on the
   atlas, and embed the result.
 
@@ -96,7 +97,7 @@ Opening `index.html` straight from disk won't work, because browsers block `fetc
 
 Borders: [historical-basemaps](https://github.com/aourednik/historical-basemaps) (GPL-3.0). Terrain: Mapzen / AWS
 Terrain Tiles. Imagery: Sentinel-2 cloudless mosaic 2020, contains modified Copernicus Sentinel data processed by
-Sentinel Hub (CC BY 4.0). Rivers and lakes: Natural Earth. Map rendering: [MapLibre GL JS](https://maplibre.org).
+Sentinel Hub (CC BY 4.0), and Sentinel-2 cloudless 2016 by EOX ([s2maps.eu](https://s2maps.eu), CC BY 4.0). Rivers and lakes: Natural Earth. Map rendering: [MapLibre GL JS](https://maplibre.org).
 Events, stories, tours and Chinese translations were drafted with an AI model and have not been checked line by line
 against sources. See [docs/internals.md](docs/internals.md#data-sources-and-known-limits).
 
