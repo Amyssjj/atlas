@@ -1,0 +1,221 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Antioch",
+    "name_zh": "安提阿教会",
+    "from": 40,
+    "ref": "Acts.11.26",
+    "text": "A church here by about AD 40.",
+    "text_zh": "约公元40年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.165,
+     36.201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Salamis",
+    "name_zh": "撒拉米教会",
+    "from": 45,
+    "ref": "Acts.13.5",
+    "text": "A church here by about AD 45.",
+    "text_zh": "约公元45年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.903,
+     35.179
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Antioch in Pisidia",
+    "name_zh": "彼西底的安提阿教会",
+    "from": 46,
+    "ref": "Acts.13.14",
+    "text": "A church here by about AD 46.",
+    "text_zh": "约公元46年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     31.191,
+     38.305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Iconium",
+    "name_zh": "以哥念教会",
+    "from": 46,
+    "ref": "Acts.14.1",
+    "text": "A church here by about AD 46.",
+    "text_zh": "约公元46年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     32.49,
+     37.87
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Lystra",
+    "name_zh": "路司得教会",
+    "from": 46,
+    "ref": "Acts.14.8",
+    "text": "A church here by about AD 46.",
+    "text_zh": "约公元46年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     32.385,
+     37.602
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Derbe",
+    "name_zh": "特庇教会",
+    "from": 46,
+    "ref": "Acts.14.20",
+    "text": "A church here by about AD 46.",
+    "text_zh": "约公元46年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     33.362,
+     37.349
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Philippi",
+    "name_zh": "腓立比教会",
+    "from": 49,
+    "ref": "Acts.16.12",
+    "text": "A church here by about AD 49.",
+    "text_zh": "约公元49年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     24.29,
+     41.01
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Thessalonica",
+    "name_zh": "帖撒罗尼迦教会",
+    "from": 50,
+    "ref": "Acts.17.1",
+    "text": "A church here by about AD 50.",
+    "text_zh": "约公元50年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     22.94,
+     40.64
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Berea",
+    "name_zh": "庇哩亚教会",
+    "from": 50,
+    "ref": "Acts.17.10",
+    "text": "A church here by about AD 50.",
+    "text_zh": "约公元50年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     22.2,
+     40.52
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Corinth",
+    "name_zh": "哥林多教会",
+    "from": 51,
+    "ref": "Acts.18.1",
+    "text": "A church here by about AD 51.",
+    "text_zh": "约公元51年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     22.88,
+     37.91
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Ephesus",
+    "name_zh": "以弗所教会",
+    "from": 52,
+    "ref": "Acts.19.1",
+    "text": "A church here by about AD 52.",
+    "text_zh": "约公元52年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     27.34,
+     37.94
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Church at Rome",
+    "name_zh": "罗马教会",
+    "from": 40,
+    "ref": "Rom.1.7",
+    "text": "A church here by about AD 40.",
+    "text_zh": "约公元40年已有教会。"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48,
+     41.89
+    ]
+   }
+  }
+ ]
+}

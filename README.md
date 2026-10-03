@@ -142,6 +142,66 @@ Manifest, version 1 (`atlas: 1`; the atlas refuses other versions):
 | `range` | `{start, end}` of the pack's periods. |
 | `refs` | Optional link back to the pack's own site: events with `refs` and tour steps with `ref` get a link built from `url` with `{ref}` replaced; `label`, `label_zh` are its tooltip. The Bible pack uses it to open the verse in the reader. |
 | `attribution`, `note`, `note_zh` | Added to the map credits; `note` replaces the borders note in the ledger when the pack is shown alone. |
+| `layers` | Optional map layers the engine draws; see "Pack layers and plugins" below. |
+| `plugins` | Optional ES modules (paths relative to the manifest) that get the plugin API; see below. |
+
+### Pack layers and plugins
+
+A pack can add its own overlays to the map in two ways. Each one gets a switch in a **Pack** (专题) group of the
+layers panel, and the visitor's choices are remembered per pack (`atlas-pack-layers:<pack id>`).
+
+**Layers** are GeoJSON files listed in the manifest; no code needed:
+
+```json
+"layers": [
+  { "id": "roads", "name": "Roman roads", "name_zh": "罗马大道", "data": "layers/roads.geojson", "type": "line",
+    "color": "#7a5230", "width": 3, "dash": [3, 1.5] }
+]
+```
+
+| Key | Meaning |
+| --- | --- |
+| `id` | Lowercase letters, digits and `-`, unique in the pack. |
+| `name`, `name_zh` | The switch's label. |
+| `data` | GeoJSON path relative to the manifest. |
+| `type` | `fill`, `line` or `circle`. Left out, polygons are filled and outlined, lines stroked and points drawn as dots. |
+| `color`, `opacity`, `width`, `dash`, `radius` | Style. A feature's own `color` property wins over `color`. |
+| `on` | `false` starts the layer switched off. |
+| `years` | `[from, to)`: the whole layer shows only in these years. |
+
+Each feature may carry `from` and `to` (years, `[from, to)` like the old river courses; either may be left out) and
+is shown only in those years. A feature with `name`/`name_zh` or `text`/`text_zh` opens a card when clicked, with a
+`ref` link through the pack's `refs`.
+
+**Plugins** are ES modules for anything a static layer can't do. They load only from the same sites as packs
+(`PACK_ORIGINS`), because their code runs in the atlas page. A plugin exports a setup function that receives the
+`atlas` object:
+
+```js
+export default function setup(atlas) {
+  const trail = atlas.addLayer({ id: "trail", name: "Trail", data: { type: "FeatureCollection", features: [] }, type: "line" });
+  atlas.on("tour-step", ({ index, step, steps, path }) => { /* trail.setData(...) */ });
+}
+```
+
+| `atlas.` | |
+| --- | --- |
+| `version` | Plugin API version, `1`. |
+| `map`, `maplibregl` | The MapLibre map (loaded) and library, for anything the helpers below don't cover. |
+| `pack` | The pack's manifest. |
+| `year`, `era`, `lang`, `tour` | The current state (read-only): year, `{id, name, start, end}`, `"zh"`/`"en"`, `{id, index, steps, path}` or null. |
+| `on(name, fn)` | Events: `year` `{year, era, eraChanged}`, `tour-step` `{id, index, step, steps, path}`, `tour-end`, `event` `{id, event}` (an event opened), `lang` `{lang}`. Returns a function that removes the handler. |
+| `addLayer(def)` | A layer as in the manifest (`data` may be a GeoJSON object; `chip: false` for no switch). Returns `{on, setData(geojson), show(on), layerIds}`. |
+| `addToggle(def, fn)` | A switch with no layer of its own: `fn(on)` is called now and on every click. |
+| `setYear(y)`, `startTour(id, step)`, `openEvent(id)` | Move the atlas. |
+| `showCard(lngLat, html)` | Open a map card (the HTML is used as is). |
+| `text(en, zh)` or `text(obj, key)` | Text in the visitor's language. |
+| `url(path)`, `fetchJSON(path)` | Files next to the plugin. |
+
+A plugin that fails to load or throws is logged in the console and skipped; the atlas carries on without it.
+`examples/demo-pack/` is a small working pack with two layers (Roman roads, churches) and a journey playback plugin
+that traces each leg of Paul's journeys as the tour moves:
+`/?pack=examples/demo-pack/manifest.json&packonly=1#tour=paul-first&s=1`.
 
 ## Guided tours, old rivers and links
 
