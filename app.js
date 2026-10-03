@@ -1160,10 +1160,11 @@ function renderEventFilter() {
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   const cs = eventCountries();
-  box.innerHTML = (cs.length > 1 ? `<label class="ef-country"><span>${t("country")}</span><select id="ef-country"><option value="">${t("allCats")}</option>${cs.map((c) =>
-      `<option value="${esc(c.key)}" ${c.key === cur ? "selected" : ""}>${esc(c.name)}${zh() ? `（${c.count}）` : ` (${c.count})`}</option>`).join("")}</select></label>` : "") +
-    `<div class="ef-levels" role="group" aria-label="${t("detail")}">${t("levels").map((l, i) =>
-      `<button data-lv="${i + 1}" aria-pressed="${state.detail === i + 1}">${l}</button>`).join("")}</div>
+  // Row 1: level of detail and (in multi-state periods) the country; row 2: the categories.
+  const country = cs.length > 1 ? `<select id="ef-country" class="ef-country" aria-label="${t("country")}"><option value="">${zh() ? "全部国家" : "All countries"}</option>${cs.map((c) =>
+      `<option value="${esc(c.key)}" ${c.key === cur ? "selected" : ""}>${esc(c.name)}${zh() ? `（${c.count}）` : ` (${c.count})`}</option>`).join("")}</select>` : "";
+  box.innerHTML = `<div class="ef-top"><div class="ef-levels" role="group" aria-label="${t("detail")}">${t("levels").map((l, i) =>
+      `<button data-lv="${i + 1}" aria-pressed="${state.detail === i + 1}">${l}</button>`).join("")}</div>${country}</div>
     <div class="ef-cats"><button class="chip" data-cat="" aria-pressed="${!state.cats.length}">${t("allCats")}</button>${CATS.map((c) =>
       `<button class="chip cat-${c}" data-cat="${c}" aria-pressed="${state.cats.includes(c)}">${t("cat")[c]}</button>`).join("")}</div>`;
   box.querySelectorAll("[data-lv]").forEach((b) => b.addEventListener("click", () => setEventFilter(+b.dataset.lv, state.cats)));

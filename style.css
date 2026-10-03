@@ -690,21 +690,21 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .mk-wall { color: #5a4030; border-color: rgba(90, 64, 48, 0.5); background: rgba(239, 226, 194, 0.9); }
 
 /* Event filter: detail level and category tags */
-.ev-filter { padding: 8px 16px 8px; border-bottom: 1px solid var(--rule); display: grid; gap: 6px; }
+.ev-filter { padding: 10px 16px 12px; border-bottom: 1px solid var(--rule); display: grid; gap: 10px; }
+.ef-top { display: flex; align-items: center; gap: 10px; }
 .ev-filter[hidden] { display: none; }
 .ef-levels { display: inline-flex; justify-self: start; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
-.ef-levels button { appearance: none; border: 0; background: transparent; color: var(--muted); font: 600 12px/1 var(--font-body); padding: 5px 12px; cursor: pointer; }
+.ef-levels button { appearance: none; border: 0; background: transparent; color: var(--muted); font: 600 12.5px/1 var(--font-body); padding: 7px 14px; cursor: pointer; }
 .ef-levels button + button { border-left: 1px solid var(--rule); }
 .ef-levels button[aria-pressed="true"] { background: var(--jade); color: #fff; }
-.ef-cats { display: flex; flex-wrap: wrap; gap: 4px; }
-.ef-cats .chip { font-size: 11px; padding: 2px 8px; }
+.ef-cats { display: flex; flex-wrap: wrap; gap: 6px 6px; }
+.ef-cats .chip { font-size: 12px; padding: 4px 11px; }
 .cat-reform { background: rgba(47, 111, 176, 0.12); color: #2f6fb0; }
 .cat-rebellion { background: rgba(160, 64, 120, 0.12); color: #a04078; }
 .story-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 10px; }
 .story-tags .chip { font-size: 12px; padding: 2px 8px; }
 .story-tags .tag-city { color: var(--cinnabar); }
-.ef-country { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
-.ef-country select { flex: 1; min-width: 0; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--panel-solid); color: inherit; font: 500 13px var(--font-display); }
+.ef-country { flex: 1; min-width: 0; max-width: 220px; margin-left: auto; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--panel-solid); color: inherit; font: 500 13px var(--font-display); }
 
 @media (max-width: 720px) {
   .era-more { min-width: 56px; text-align: center; }
@@ -712,7 +712,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   .era-name { padding-right: 150px; }
   html:lang(en) .lg { padding-left: 0; }
   html:lang(en) .lg > span { position: static; width: 100%; }
-  .ev-filter { padding: 6px 12px; gap: 5px; }
+  .ev-filter { padding: 8px 12px 10px; gap: 8px; }
   .ef-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .ef-cats .chip { flex: none; }
 }
