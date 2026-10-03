@@ -1,0 +1,2741 @@
+{
+ "https://en.wikipedia.org/wiki/Tehuacán_Valley": {
+  "was": "https://en.wikipedia.org/wiki/Tehuacán_Valley",
+  "now": null,
+  "for": "中美洲最早陶器出现",
+  "disambig": false,
+  "suggest": [
+   "Tehuacán",
+   "Tehuacán Valley matorral",
+   "Tehuacán-Cuicatlán Biosphere Reserve"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shimao_(site)": {
+  "was": "https://en.wikipedia.org/wiki/Shimao_(site)",
+  "now": null,
+  "for": "石峁古城",
+  "disambig": false,
+  "suggest": [
+   "Shimao",
+   "InterContinental Shanghai Wonderland",
+   "Lost city"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Taikang_of_Xia": {
+  "was": "https://en.wikipedia.org/wiki/Taikang_of_Xia",
+  "now": null,
+  "for": "太康失国，后羿代夏",
+  "disambig": false,
+  "suggest": [
+   "Taikang",
+   "Hou Yi",
+   "Taikang County"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xi_and_He": {
+  "was": "https://en.wikipedia.org/wiki/Xi_and_He",
+  "now": null,
+  "for": "仲康日食",
+  "disambig": false,
+  "suggest": [
+   "Xi family",
+   "Xi Yuanping",
+   "He Xi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yanshi": {
+  "was": "https://en.wikipedia.org/wiki/Yanshi",
+  "now": null,
+  "for": "汤都西亳",
+  "disambig": true,
+  "suggest": [
+   "Yanshi, Luoyang",
+   "Yanshi",
+   "Luoyang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Four-goat_square_zun": {
+  "was": "https://en.wikipedia.org/wiki/Four-goat_square_zun",
+  "now": "https://en.wikipedia.org/wiki/Four-goat_Square_Zun",
+  "for": "四羊方尊",
+  "other": [
+   "Zun",
+   "Tanheli"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ji_Li": {
+  "was": "https://en.wikipedia.org/wiki/Ji_Li",
+  "now": null,
+  "for": "文丁杀季历",
+  "disambig": true,
+  "suggest": [
+   "Ji Li",
+   "Li Ji",
+   "Ji Li (ceremony)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Gija": {
+  "was": "https://en.wikipedia.org/wiki/Gija",
+  "now": null,
+  "for": "箕子东走朝鲜",
+  "disambig": true,
+  "suggest": [
+   "Gija language",
+   "Gija people",
+   "Gija Jumulu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/King_Yan_of_Xu": {
+  "was": "https://en.wikipedia.org/wiki/King_Yan_of_Xu",
+  "now": null,
+  "for": "徐偃王作乱",
+  "disambig": false,
+  "suggest": [
+   "Xu Yan (kickboxer)",
+   "Xu (state)",
+   "Zhufu Yan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Duke_Shang_of_Song": {
+  "was": "https://en.wikipedia.org/wiki/Duke_Shang_of_Song",
+  "now": null,
+  "for": "华督弑宋殇公",
+  "disambig": false,
+  "suggest": [
+   "Periodization of the Shang dynasty",
+   "Weizi of Song",
+   "Shang dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cao_Mo": {
+  "was": "https://en.wikipedia.org/wiki/Cao_Mo",
+  "now": null,
+  "for": "曹沫劫盟于柯",
+  "disambig": false,
+  "suggest": [
+   "Wuxia",
+   "Văn Cao",
+   "Qabiao language"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Hanyuan": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Hanyuan",
+  "now": null,
+  "for": "韩原之战",
+  "disambig": false,
+  "suggest": [
+   "Sweet Dew incident",
+   "Han (Warring States)",
+   "Guangxu Emperor"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Hong": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Hong",
+  "now": null,
+  "for": "泓水之战",
+  "disambig": false,
+  "suggest": [
+   "Battle of Hong Kong",
+   "Battle of Hong Kong order of battle",
+   "British Hong Kong Garrison"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Houma": {
+  "was": "https://en.wikipedia.org/wiki/Houma",
+  "now": null,
+  "for": "晋迁新田",
+  "disambig": true,
+  "suggest": [
+   "Houma",
+   "Houma, Louisiana",
+   "Houma people"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cui_Zhu": {
+  "was": "https://en.wikipedia.org/wiki/Cui_Zhu",
+  "now": null,
+  "for": "崔杼弑齐庄公",
+  "disambig": false,
+  "suggest": [
+   "Yan Ying",
+   "Zhu Wen",
+   "Duke Jing of Qi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ji_Zha": {
+  "was": "https://en.wikipedia.org/wiki/Ji_Zha",
+  "now": null,
+  "for": "季札",
+  "disambig": false,
+  "suggest": [
+   "Ne Zha 2",
+   "Faye (Taiwanese singer)",
+   "Ruanzha liji"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/King_Jing_of_Zhou": {
+  "was": "https://en.wikipedia.org/wiki/King_Jing_of_Zhou",
+  "now": null,
+  "for": "周景王铸大钱",
+  "disambig": true,
+  "suggest": [
+   "Jing of Zhou",
+   "King Jing of Zhou (Gai)",
+   "King Jing of Zhou (Gui)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Duke_Zhao_of_Lu": {
+  "was": "https://en.wikipedia.org/wiki/Duke_Zhao_of_Lu",
+  "now": null,
+  "for": "鲁昭公奔齐",
+  "disambig": false,
+  "suggest": [
+   "Duke Ding of Lu",
+   "Duke Xiang of Lu",
+   "Lu (state)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhao_Jianzi": {
+  "was": "https://en.wikipedia.org/wiki/Zhao_Jianzi",
+  "now": null,
+  "for": "晋六卿内讧",
+  "disambig": false,
+  "suggest": [
+   "Zhao Wuxu",
+   "Zhao Yang (Spring and Autumn)",
+   "Partition of Jin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Zuili": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Zuili",
+  "now": null,
+  "for": "檇李之战",
+  "disambig": false,
+  "suggest": [
+   "Goujian",
+   "Taiping Heavenly Kingdom",
+   "Alfonso Téllez de Meneses el Viejo"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Ailing": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Ailing",
+  "now": null,
+  "for": "艾陵之战",
+  "disambig": false,
+  "suggest": [
+   "Fuchai of Wu",
+   "History of canals in China",
+   "Mary L. Trump"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Nie_Zheng": {
+  "was": "https://en.wikipedia.org/wiki/Nie_Zheng",
+  "now": null,
+  "for": "聂政刺侠累",
+  "disambig": false,
+  "suggest": [
+   "Wuxia",
+   "Nie Rongzhen",
+   "Tian Qilang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Duke_Xian_of_Qin": {
+  "was": "https://en.wikipedia.org/wiki/Duke_Xian_of_Qin",
+  "now": null,
+  "for": "石门之战",
+  "disambig": true,
+  "suggest": [
+   "Duke Xian of Qin",
+   "Duke Xian of Qin (424–362 BC)",
+   "Duke Xiao of Qin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Daliang": {
+  "was": "https://en.wikipedia.org/wiki/Daliang",
+  "now": null,
+  "for": "魏迁都大梁",
+  "disambig": true,
+  "suggest": [
+   "Daliang",
+   "Li Daliang",
+   "Kaifeng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hong_Canal": {
+  "was": "https://en.wikipedia.org/wiki/Hong_Canal",
+  "now": null,
+  "for": "开凿鸿沟",
+  "disambig": false,
+  "suggest": [
+   "Canal Road, Hong Kong",
+   "Xiang Yu",
+   "Emperor Gaozu of Han"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Yi",
+  "now": null,
+  "for": "张仪诳楚",
+  "disambig": true,
+  "suggest": [
+   "Zhang Yi",
+   "Zhang Yimou",
+   "Lay Zhang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qin's_campaign_against_Ba_and_Shu": {
+  "was": "https://en.wikipedia.org/wiki/Qin's_campaign_against_Ba_and_Shu",
+  "now": null,
+  "for": "秦灭巴蜀",
+  "disambig": false,
+  "suggest": [
+   "Shu (kingdom)",
+   "Qin's wars of unification",
+   "Qin (state)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Danyang": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Danyang",
+  "now": null,
+  "for": "丹阳之战",
+  "disambig": false,
+  "suggest": [
+   "Danyang (Chu)",
+   "Battle of Red Cliffs order of battle",
+   "Mu Chong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qin_Kai": {
+  "was": "https://en.wikipedia.org/wiki/Qin_Kai",
+  "now": null,
+  "for": "秦开却东胡",
+  "disambig": true,
+  "suggest": [
+   "Qin Kai",
+   "Qin Kai (diver)",
+   "Qin Kai (general)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhuang_Qiao": {
+  "was": "https://en.wikipedia.org/wiki/Zhuang_Qiao",
+  "now": null,
+  "for": "庄蹻入滇",
+  "disambig": false,
+  "suggest": [
+   "Zhuang (surname)",
+   "Dian kingdom",
+   "Yelang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Huayang": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Huayang",
+  "now": null,
+  "for": "华阳之战",
+  "disambig": false,
+  "suggest": [
+   "Bai Qi",
+   "Battle of Yangping",
+   "Battle of Ba"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xunzi": {
+  "was": "https://en.wikipedia.org/wiki/Xunzi",
+  "now": null,
+  "for": "荀子任兰陵令",
+  "disambig": true,
+  "suggest": [
+   "Xunzi (philosopher)",
+   "Xunzi (book)",
+   "Xunzi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Pang_Nuan": {
+  "was": "https://en.wikipedia.org/wiki/Pang_Nuan",
+  "now": null,
+  "for": "五国攻秦至蕞",
+  "disambig": false,
+  "suggest": [
+   "King Daoxiang of Zhao",
+   "Kingdom 4: Return of the Great General",
+   "Kōji Kikkawa"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qin_Straight_Road": {
+  "was": "https://en.wikipedia.org/wiki/Qin_Straight_Road",
+  "now": null,
+  "for": "修直道",
+  "disambig": false,
+  "suggest": [
+   "Shang Yang",
+   "List of The Legend of Qin episodes",
+   "Kingdom 4: Return of the Great General"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Han": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Han",
+  "now": null,
+  "for": "章邯",
+  "disambig": true,
+  "suggest": [
+   "Zhang Han",
+   "Hans Zhang",
+   "Zhang Han (Qin dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Xingyang": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Xingyang",
+  "now": null,
+  "for": "荥阳之战",
+  "disambig": true,
+  "suggest": [
+   "Battle of Xingyang (190)",
+   "Battle of Xingyang",
+   "Xiang Yu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wen_Weng": {
+  "was": "https://en.wikipedia.org/wiki/Wen_Weng",
+  "now": null,
+  "for": "文翁兴学",
+  "disambig": false,
+  "suggest": [
+   "Sichuan Chengdu Shishi High School",
+   "Pinyin",
+   "Bopomofo"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jianyuan_(Han_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Jianyuan_(Han_dynasty)",
+  "now": null,
+  "for": "始建年号建元",
+  "disambig": false,
+  "suggest": [
+   "Jianyuan",
+   "Jin dynasty (266–420)",
+   "Emperor Wu of Han"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hunye": {
+  "was": "https://en.wikipedia.org/wiki/Hunye",
+  "now": null,
+  "for": "浑邪王降汉",
+  "disambig": false,
+  "suggest": [
+   "Han–Xiongnu wars",
+   "Xiutu",
+   "121 BC"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mancheng_Han_Tombs": {
+  "was": "https://en.wikipedia.org/wiki/Mancheng_Han_Tombs",
+  "now": null,
+  "for": "满城汉墓",
+  "disambig": false,
+  "suggest": [
+   "Mancheng, Baoding",
+   "Dou Wan",
+   "Baoding"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Southwestern_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Southwestern_Yi",
+  "now": null,
+  "for": "平西南夷置五郡",
+  "disambig": false,
+  "suggest": [
+   "Ailao Kingdom",
+   "Yi people",
+   "Dongyi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Taichu_Calendar": {
+  "was": "https://en.wikipedia.org/wiki/Taichu_Calendar",
+  "now": null,
+  "for": "颁行太初历",
+  "disambig": false,
+  "suggest": [
+   "Chinese calendar",
+   "Lunisolar calendar",
+   "History of calendars"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Ling": {
+  "was": "https://en.wikipedia.org/wiki/Li_Ling",
+  "now": "https://en.wikipedia.org/wiki/Li_Ling",
+  "for": "李陵降匈奴",
+  "other": [
+   "Sima Qian",
+   "Li Ling (disambiguation)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Edict_of_Luntai": {
+  "was": "https://en.wikipedia.org/wiki/Edict_of_Luntai",
+  "now": null,
+  "for": "轮台罪己诏",
+  "disambig": false,
+  "suggest": [
+   "Emperor Wu of Han",
+   "1911 Revolution",
+   "Guiyi Prefecture"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhao_Guo": {
+  "was": "https://en.wikipedia.org/wiki/Zhao_Guo",
+  "now": null,
+  "for": "赵过代田法",
+  "disambig": false,
+  "suggest": [
+   "Bao Youxiang",
+   "Guo Zongxun",
+   "Ice Creamusume"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chang_Hui": {
+  "was": "https://en.wikipedia.org/wiki/Chang_Hui",
+  "now": null,
+  "for": "五将军与乌孙击匈奴",
+  "disambig": false,
+  "suggest": [
+   "A-Mei",
+   "May Queen (TV series)",
+   "Chang Hui-chien"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zheng_Ji": {
+  "was": "https://en.wikipedia.org/wiki/Zheng_Ji",
+  "now": null,
+  "for": "郑吉破车师",
+  "disambig": true,
+  "suggest": [
+   "Zheng Ji",
+   "Zheng Ji (general)",
+   "Ji Zheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Feng_Fengshi": {
+  "was": "https://en.wikipedia.org/wiki/Feng_Fengshi",
+  "now": null,
+  "for": "冯奉世平莎车",
+  "disambig": false,
+  "suggest": [
+   "Feng Yuan",
+   "Military of the Han dynasty",
+   "Feng (mythology)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shiqu_Pavilion_discussions": {
+  "was": "https://en.wikipedia.org/wiki/Shiqu_Pavilion_discussions",
+  "now": null,
+  "for": "石渠阁会议",
+  "disambig": false,
+  "suggest": [
+   "Water Margin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xiao_Wangzhi": {
+  "was": "https://en.wikipedia.org/wiki/Xiao_Wangzhi",
+  "now": null,
+  "for": "萧望之自杀",
+  "disambig": false,
+  "suggest": [
+   "Liu Xiang (scholar)",
+   "Book of Han",
+   "Emperor Xuan of Han"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jia_Juanzhi": {
+  "was": "https://en.wikipedia.org/wiki/Jia_Juanzhi",
+  "now": null,
+  "for": "罢珠崖郡",
+  "disambig": false,
+  "suggest": [
+   "Book of Han",
+   "Lạc Việt"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Feng_(Han_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Feng_(Han_dynasty)",
+  "now": null,
+  "for": "王凤辅政",
+  "disambig": false,
+  "suggest": [
+   "Xin dynasty",
+   "Han Chinese",
+   "Wang Zhengjun"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qilüe": {
+  "was": "https://en.wikipedia.org/wiki/Qilüe",
+  "now": null,
+  "for": "刘歆《七略》",
+  "disambig": false,
+  "suggest": [
+   "Mystra (Forgotten Realms)",
+   "Yiwenzhi",
+   "Drow"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mingtang": {
+  "was": "https://en.wikipedia.org/wiki/Mingtang",
+  "now": null,
+  "for": "建明堂辟雍",
+  "disambig": false,
+  "suggest": [
+   "Wei-ming temple",
+   "U.S. Dollar Index",
+   "Huangdi Neijing"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhai_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Zhai_Yi",
+  "now": null,
+  "for": "翟义起兵",
+  "disambig": false,
+  "suggest": [
+   "ToGetHer",
+   "Cap set",
+   "Cui Jian"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Yan_(Han_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Yan_(Han_dynasty)",
+  "now": null,
+  "for": "刘縯被杀",
+  "disambig": true,
+  "suggest": [
+   "Liu Yan (Han dynasty warlord)",
+   "Liu Yan",
+   "Wei Yan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wei_Xiao": {
+  "was": "https://en.wikipedia.org/wiki/Wei_Xiao",
+  "now": null,
+  "for": "隗嚣",
+  "disambig": false,
+  "suggest": [
+   "Love O2O (film)",
+   "Duke Xiao of Qin",
+   "Team WE"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chenwei": {
+  "was": "https://en.wikipedia.org/wiki/Chenwei",
+  "now": null,
+  "for": "光武封禅、宣布图谶",
+  "disambig": false,
+  "suggest": [
+   "Zhao Chenwei",
+   "Lü Chenwei",
+   "Mongols in China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/28_generals_of_the_Yuntai": {
+  "was": "https://en.wikipedia.org/wiki/28_generals_of_the_Yuntai",
+  "now": null,
+  "for": "云台二十八将",
+  "disambig": false,
+  "suggest": [
+   "28 generals of the Cloud Terrace",
+   "Yuntai",
+   "Singing All Along"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Jing_(engineer)": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Jing_(engineer)",
+  "now": null,
+  "for": "王景治河",
+  "disambig": false,
+  "suggest": [
+   "You Are My Glory",
+   "Jing Junhong",
+   "Mrs. Lucien Wang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Geng_Gong": {
+  "was": "https://en.wikipedia.org/wiki/Geng_Gong",
+  "now": null,
+  "for": "耿恭守疏勒城",
+  "disambig": false,
+  "suggest": [
+   "Geng (surname)",
+   "Geng Yan",
+   "Happiness Is Coming"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Bohu_Tong": {
+  "was": "https://en.wikipedia.org/wiki/Bohu_Tong",
+  "now": null,
+  "for": "白虎观会议",
+  "disambig": false,
+  "suggest": [
+   "Tang Yin",
+   "Flirting Scholar",
+   "Tang Ti-sheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zuo_Xiong": {
+  "was": "https://en.wikipedia.org/wiki/Zuo_Xiong",
+  "now": null,
+  "for": "阳嘉察举新制",
+  "disambig": false,
+  "suggest": [
+   "18 Warriors of Sui-Tang Transition",
+   "Four Perils",
+   "Zuo Liangyu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Houfeng_Didong_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Houfeng_Didong_Yi",
+  "now": null,
+  "for": "地动仪测知陇西地震",
+  "disambig": false,
+  "suggest": [
+   "Seismometer",
+   "Han dynasty",
+   "History of science and technology in China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions": {
+  "was": "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions",
+  "now": "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions",
+  "for": "党锢之祸",
+  "other": [
+   "AD 166",
+   "Xun Shuang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Duan_Jiong": {
+  "was": "https://en.wikipedia.org/wiki/Duan_Jiong",
+  "now": null,
+  "for": "段颎平东羌",
+  "disambig": false,
+  "suggest": [
+   "Dong Zhuo",
+   "Qiang (historical people)",
+   "Military of the Han dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Changshe": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Changshe",
+  "now": null,
+  "for": "长社之战",
+  "disambig": false,
+  "suggest": [
+   "Wang Sizheng",
+   "Zhang Liao",
+   "Gao Cheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Lu": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Lu",
+  "now": null,
+  "for": "张鲁据汉中",
+  "disambig": true,
+  "suggest": [
+   "Zhang Lu",
+   "Zhang Lü",
+   "Zhang Lu (Han dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Yangren": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Yangren",
+  "now": null,
+  "for": "阳人之战",
+  "disambig": false,
+  "suggest": [
+   "List of fictitious stories in Romance of the Three Kingdoms",
+   "Hua Xiong",
+   "Zhu Zhi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Tao_Qian": {
+  "was": "https://en.wikipedia.org/wiki/Tao_Qian",
+  "now": null,
+  "for": "曹操征徐州",
+  "disambig": true,
+  "suggest": [
+   "Tao Qian",
+   "Tao Qian (Han dynasty)",
+   "Tao Yuanming"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Dong_Cheng": {
+  "was": "https://en.wikipedia.org/wiki/Dong_Cheng",
+  "now": null,
+  "for": "衣带诏事件",
+  "disambig": true,
+  "suggest": [
+   "Dong Cheng",
+   "Dong Cheng (Han dynasty)",
+   "S.H.E"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shi_Xie": {
+  "was": "https://en.wikipedia.org/wiki/Shi_Xie",
+  "now": "https://en.wikipedia.org/wiki/Shi_Xie",
+  "for": "吕岱平交州",
+  "other": [
+   "Shi Xie (disambiguation)",
+   "Shi Hui (Eastern Wu)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jianye": {
+  "was": "https://en.wikipedia.org/wiki/Jianye",
+  "now": null,
+  "for": "孙权迁都建业",
+  "disambig": true,
+  "suggest": [
+   "Jianye",
+   "Henan F.C.",
+   "Jianying Zha"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ma_Jun": {
+  "was": "https://en.wikipedia.org/wiki/Ma_Jun",
+  "now": null,
+  "for": "马钧",
+  "disambig": true,
+  "suggest": [
+   "Ma Jun (environmentalist)",
+   "Ma Jun",
+   "Ma Jun (mechanical engineer)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jin_Code": {
+  "was": "https://en.wikipedia.org/wiki/Jin_Code",
+  "now": null,
+  "for": "颁行《泰始律》",
+  "disambig": false,
+  "suggest": [
+   "Jin",
+   "Jin dynasty (1115–1234)",
+   "My Sibling's Romance"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Jun_(Western_Jin)": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Jun_(Western_Jin)",
+  "now": null,
+  "for": "王濬蜀中造船",
+  "disambig": false,
+  "suggest": [
+   "Wang Jun (Jin dynasty)",
+   "Conquest of Wu by Jin",
+   "Jin dynasty (266–420)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yang_Jun": {
+  "was": "https://en.wikipedia.org/wiki/Yang_Jun",
+  "now": null,
+  "for": "晋武帝崩杨骏辅政",
+  "disambig": true,
+  "suggest": [
+   "Yang Jun",
+   "Yang Jun (prince)",
+   "Yang Hyun-jun"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jiang_Tong": {
+  "was": "https://en.wikipedia.org/wiki/Jiang_Tong",
+  "now": null,
+  "for": "江统《徙戎论》",
+  "disambig": false,
+  "suggest": [
+   "Jiāng (surname 江)",
+   "Shushu/Tong",
+   "Jiang Zemin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Sima_Yu_(crown_prince)": {
+  "was": "https://en.wikipedia.org/wiki/Sima_Yu_(crown_prince)",
+  "now": null,
+  "for": "愍怀太子之废",
+  "disambig": false,
+  "suggest": [
+   "Sima Yu",
+   "Emperor Hui of Jin",
+   "Taizi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Chang": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Chang",
+  "now": null,
+  "for": "张昌起义",
+  "disambig": true,
+  "suggest": [
+   "Zhang Chang",
+   "Zhang Xueliang",
+   "Zhang (surname)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lu_Ji_(writer)": {
+  "was": "https://en.wikipedia.org/wiki/Lu_Ji_(writer)",
+  "now": null,
+  "for": "陆机兵败被杀",
+  "disambig": false,
+  "suggest": [
+   "Lu Ji (Shiheng)",
+   "Lü Ji",
+   "Lu Xun"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Dangyin": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Dangyin",
+  "now": null,
+  "for": "荡阴之战",
+  "disambig": false,
+  "suggest": [
+   "Ji Shao",
+   "Shi Chao",
+   "War of the Eight Princes"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ancient_Letters": {
+  "was": "https://en.wikipedia.org/wiki/Ancient_Letters",
+  "now": null,
+  "for": "粟特古信札",
+  "disambig": false,
+  "suggest": [
+   "Greek alphabet",
+   "Sogdian language",
+   "Latin script"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Beifu_Army": {
+  "was": "https://en.wikipedia.org/wiki/Beifu_Army",
+  "now": null,
+  "for": "谢玄组建北府兵",
+  "disambig": false,
+  "suggest": [
+   "Liu Laozhi",
+   "Battle of Fei River",
+   "Zhenjiang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Kutai_Martadipura": {
+  "was": "https://en.wikipedia.org/wiki/Kutai_Martadipura",
+  "now": null,
+  "for": "古泰王国碑铭",
+  "disambig": false,
+  "suggest": [
+   "Kutai",
+   "Sultanate of Kutai",
+   "Kutai Kartanegara Regency"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Kumārajīva": {
+  "was": "https://en.wikipedia.org/wiki/Kumārajīva",
+  "now": "https://en.wikipedia.org/wiki/Kum%C4%81raj%C4%ABva",
+  "for": "鸠摩罗什到长安",
+  "other": [
+   "East Asian Mādhyamaka",
+   "White Horse Pagoda, Dunhuang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/He_Chengtian": {
+  "was": "https://en.wikipedia.org/wiki/He_Chengtian",
+  "now": null,
+  "for": "何承天",
+  "disambig": false,
+  "suggest": [
+   "Huanglan",
+   "Milü",
+   "Equal temperament"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Gai_Wu": {
+  "was": "https://en.wikipedia.org/wiki/Gai_Wu",
+  "now": null,
+  "for": "盖吴起义",
+  "disambig": false,
+  "suggest": [
+   "Lushuihu",
+   "Jason Tomane",
+   "Scoring in Mahjong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Daisenryō_Kofun": {
+  "was": "https://en.wikipedia.org/wiki/Daisenryō_Kofun",
+  "now": null,
+  "for": "大仙陵古坟建成",
+  "disambig": false,
+  "suggest": [
+   "Mozu Kofun Group",
+   "Kofun period",
+   "History of Japan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zang_Zhi": {
+  "was": "https://en.wikipedia.org/wiki/Zang_Zhi",
+  "now": null,
+  "for": "盱眙之战",
+  "disambig": false,
+  "suggest": [
+   "Zang (surname)",
+   "The Legend of Zang Hai",
+   "Wang Zhi (empress)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Shao": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Shao",
+  "now": null,
+  "for": "刘劭弑父",
+  "disambig": true,
+  "suggest": [
+   "Liu Shaoqi",
+   "Liu Shao",
+   "Liu Shao (Liu Song)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Yixuan": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Yixuan",
+  "now": null,
+  "for": "刘义宣之乱",
+  "disambig": false,
+  "suggest": [
+   "Emperor Xiaowu of Song",
+   "Cuiyan (consort of Yixuan)",
+   "Emperor Wen of Song"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Empress_Dowager_Feng_(Northern_Wei)": {
+  "was": "https://en.wikipedia.org/wiki/Empress_Dowager_Feng_(Northern_Wei)",
+  "now": null,
+  "for": "三长制",
+  "disambig": false,
+  "suggest": [
+   "Empress Dowager Feng",
+   "Empress Dowager Hu (Northern Wei)",
+   "Northern Wei"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Yu_(Emperor_Houfei)": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Yu_(Emperor_Houfei)",
+  "now": null,
+  "for": "萧道成弑苍梧王",
+  "disambig": false,
+  "suggest": [
+   "Emperor Ming of Song",
+   "Emperor Gao of Southern Qi",
+   "Liu Song dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xiao_Ziliang": {
+  "was": "https://en.wikipedia.org/wiki/Xiao_Ziliang",
+  "now": null,
+  "for": "竟陵八友",
+  "disambig": false,
+  "suggest": [
+   "Xiao Zhaoye",
+   "Emperor Ming of Southern Qi",
+   "Xiao Zhangmao"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zu_Geng": {
+  "was": "https://en.wikipedia.org/wiki/Zu_Geng",
+  "now": null,
+  "for": "祖暅原理",
+  "disambig": true,
+  "suggest": [
+   "Zu Geng",
+   "Zu Jia",
+   "Zu Geng of Shang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yongning_Temple_(Luoyang)": {
+  "was": "https://en.wikipedia.org/wiki/Yongning_Temple_(Luoyang)",
+  "now": null,
+  "for": "永宁寺塔",
+  "disambig": false,
+  "suggest": [
+   "Yongning Pagoda",
+   "Old City of Luoyang",
+   "Luoyang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Six_Garrisons_rebellion": {
+  "was": "https://en.wikipedia.org/wiki/Six_Garrisons_rebellion",
+  "now": null,
+  "for": "六镇起义",
+  "disambig": false,
+  "suggest": [
+   "Six Garrisons",
+   "Shopify Rebellion",
+   "Bacon's Rebellion"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Hanling": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Hanling",
+  "now": null,
+  "for": "韩陵之战",
+  "disambig": false,
+  "suggest": [
+   "Erzhu Zhongyuan",
+   "Erzhu Dulü",
+   "Gao Aocao"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xie_He": {
+  "was": "https://en.wikipedia.org/wiki/Xie_He",
+  "now": null,
+  "for": "谢赫",
+  "disambig": true,
+  "suggest": [
+   "Xie He",
+   "Xie He (artist)",
+   "Six principles of Chinese painting"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Xiaoguan": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Xiaoguan",
+  "now": null,
+  "for": "小关之战",
+  "disambig": false,
+  "suggest": [
+   "Gao Aocao",
+   "Dou Tai",
+   "Battle of Shayuan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Su_Chuo": {
+  "was": "https://en.wikipedia.org/wiki/Su_Chuo",
+  "now": null,
+  "for": "苏绰",
+  "disambig": false,
+  "suggest": [
+   "Su Wei (politician)",
+   "Yuwen Tai",
+   "Book of Zhou"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Mangshan": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Mangshan",
+  "now": null,
+  "for": "邙山之战（543）",
+  "disambig": false,
+  "suggest": [
+   "Yizhang County"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Yubi": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Yubi",
+  "now": null,
+  "for": "玉璧之战",
+  "disambig": false,
+  "suggest": [
+   "Duan Shao",
+   "Hulü Jin",
+   "List of wars and battles involving China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Record_of_the_Buddhist_Monasteries_of_Luoyang": {
+  "was": "https://en.wikipedia.org/wiki/Record_of_the_Buddhist_Monasteries_of_Luoyang",
+  "now": null,
+  "for": "杨衒之著《洛阳伽蓝记》",
+  "disambig": false,
+  "suggest": [
+   "A record of Buddhist monasteries in Luoyang",
+   "Shaolin Monastery",
+   "Bodhidharma"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Western_Liang_(Southern_dynasties)": {
+  "was": "https://en.wikipedia.org/wiki/Western_Liang_(Southern_dynasties)",
+  "now": null,
+  "for": "隋废西梁",
+  "disambig": false,
+  "suggest": [
+   "Liang dynasty",
+   "Western Liang (555–587)",
+   "Six Dynasties"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Bukhara_(557)": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Bukhara_(557)",
+  "now": null,
+  "for": "突厥与萨珊灭嚈哒",
+  "disambig": false,
+  "suggest": [
+   "Military of the Sasanian Empire",
+   "Battle of Gol-Zarriun",
+   "Khwarazm"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yang_Yong": {
+  "was": "https://en.wikipedia.org/wiki/Yang_Yong",
+  "now": null,
+  "for": "废太子杨勇",
+  "disambig": true,
+  "suggest": [
+   "Yang Yong",
+   "Yang Yong-eun",
+   "Yang Yong (Sui dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chen_Leng": {
+  "was": "https://en.wikipedia.org/wiki/Chen_Leng",
+  "now": null,
+  "for": "陈稜征流求",
+  "disambig": false,
+  "suggest": [
+   "Linnaeolpium",
+   "Memory Lost",
+   "Ideoblothrus linnaei"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Siege_of_Yanmen": {
+  "was": "https://en.wikipedia.org/wiki/Siege_of_Yanmen",
+  "now": null,
+  "for": "雁门之围",
+  "disambig": false,
+  "suggest": [
+   "Göktürks",
+   "Timeline of the Sui dynasty",
+   "Princess Yicheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Reign_of_Zhenguan": {
+  "was": "https://en.wikipedia.org/wiki/Reign_of_Zhenguan",
+  "now": null,
+  "for": "贞观之治",
+  "disambig": false,
+  "suggest": [
+   "Carol of Zhenguan",
+   "Emperor Taizong of Tang",
+   "Golden ages of China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Tang_campaign_against_Tuyuhun": {
+  "was": "https://en.wikipedia.org/wiki/Tang_campaign_against_Tuyuhun",
+  "now": null,
+  "for": "李靖击吐谷浑",
+  "disambig": false,
+  "suggest": [
+   "Emperor Taizong's campaign against Tuyuhun",
+   "Tuyuhun",
+   "Li Jing (Tang dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Songzhou": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Songzhou",
+  "now": null,
+  "for": "松州之战",
+  "disambig": false,
+  "suggest": [
+   "Sino-Tibetan War (disambiguation)",
+   "Tibetan attack on Songzhou",
+   "List of wars and battles involving China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Zhen_(prince)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Zhen_(prince)",
+  "now": null,
+  "for": "越王李贞起兵",
+  "disambig": false,
+  "suggest": [
+   "Empresses in the Palace",
+   "Li Zhen (Tang dynasty)",
+   "Li Zhen"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shenlong_Coup": {
+  "was": "https://en.wikipedia.org/wiki/Shenlong_Coup",
+  "now": null,
+  "for": "神龙政变",
+  "disambig": false,
+  "suggest": [
+   "Emperor Zhongzong of Tang",
+   "Wu Zhou",
+   "Zhang Jianzhi (Tang dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mugujeonggwang_Great_Dharani_Sutra": {
+  "was": "https://en.wikipedia.org/wiki/Mugujeonggwang_Great_Dharani_Sutra",
+  "now": null,
+  "for": "无垢净光大陀罗尼经",
+  "disambig": false,
+  "suggest": [
+   "Viśuddhaprabhā Dhāraṇī",
+   "Pagoda",
+   "Seokgatap"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yan_Gaoqing": {
+  "was": "https://en.wikipedia.org/wiki/Yan_Gaoqing",
+  "now": null,
+  "for": "颜杲卿常山抗敌",
+  "disambig": false,
+  "suggest": [
+   "Yan Shigu",
+   "Yan Zhenqing",
+   "An Lushan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lu_Zhi": {
+  "was": "https://en.wikipedia.org/wiki/Lu_Zhi",
+  "now": null,
+  "for": "奉天罪己诏",
+  "disambig": true,
+  "suggest": [
+   "Empress Lü",
+   "Lu Zhi",
+   "Lu Zhi (Han dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yimouxun": {
+  "was": "https://en.wikipedia.org/wiki/Yimouxun",
+  "now": null,
+  "for": "苍山会盟",
+  "disambig": false,
+  "suggest": [
+   "Nanzhao",
+   "Battle of Shenchuan",
+   "Patronymic"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Song_of_Everlasting_Regret": {
+  "was": "https://en.wikipedia.org/wiki/Song_of_Everlasting_Regret",
+  "now": null,
+  "for": "白居易作《长恨歌》",
+  "disambig": true,
+  "suggest": [
+   "Everlasting Regret",
+   "Chang Hen Ge (poem)",
+   "Chang hen ge"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yuanhe_Junxian_Tuzhi": {
+  "was": "https://en.wikipedia.org/wiki/Yuanhe_Junxian_Tuzhi",
+  "now": null,
+  "for": "《元和郡县图志》成书",
+  "disambig": false,
+  "suggest": [
+   "Yuanhe Maps and Records of Prefectures and Counties",
+   "Guifang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Su": {
+  "was": "https://en.wikipedia.org/wiki/Li_Su",
+  "now": null,
+  "for": "李愬雪夜入蔡州",
+  "disambig": true,
+  "suggest": [
+   "Li Su",
+   "Li Su (Han dynasty)",
+   "Li Su (Tang dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Boxiang": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Boxiang",
+  "now": null,
+  "for": "柏乡之战",
+  "disambig": false,
+  "suggest": [
+   "1911 Revolution",
+   "Qiu Luan",
+   "List of lost literary works"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Illicheon": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Illicheon",
+  "now": null,
+  "for": "高丽统一后三国",
+  "disambig": false,
+  "suggest": [
+   "List of battles 301–1300",
+   "Kim Ye (aristocrat)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Huajian_Ji": {
+  "was": "https://en.wikipedia.org/wiki/Huajian_Ji",
+  "now": null,
+  "for": "赵崇祚",
+  "disambig": false,
+  "suggest": [
+   "Huajian Faction",
+   "Faazin Gei",
+   "Limpet"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Gaoping": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Gaoping",
+  "now": null,
+  "for": "高平之战",
+  "disambig": false,
+  "suggest": [
+   "Battle of Changping",
+   "Gaoping",
+   "Emperor Taizu of Song"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Pu": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Pu",
+  "now": null,
+  "for": "王朴献《平边策》",
+  "disambig": true,
+  "suggest": [
+   "Wang Pu",
+   "Dylan Wang",
+   "Wang Pu (Song dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Song–Liao_wars": {
+  "was": "https://en.wikipedia.org/wiki/Song–Liao_wars",
+  "now": null,
+  "for": "雍熙北伐·岐沟关之败",
+  "disambig": false,
+  "suggest": [
+   "Jin–Liao wars",
+   "Liao dynasty",
+   "Jin–Song wars"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Xiaobo_and_Li_Shun_rebellion": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Xiaobo_and_Li_Shun_rebellion",
+  "now": null,
+  "for": "王小波李顺起义",
+  "disambig": false,
+  "suggest": [
+   "Historical capitals of China",
+   "Wang (surname)",
+   "List of Chinese cash coins by inscription"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Travelers_Among_Mountains_and_Streams": {
+  "was": "https://en.wikipedia.org/wiki/Travelers_Among_Mountains_and_Streams",
+  "now": null,
+  "for": "范宽绘《溪山行旅图》",
+  "disambig": false,
+  "suggest": [
+   "Fan Kuan",
+   "National Palace Museum",
+   "AP Art History"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Shanzhou": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Shanzhou",
+  "now": null,
+  "for": "萧挞凛中弩身亡",
+  "disambig": false,
+  "suggest": [
+   "Battle of Lingbao",
+   "History of crossbows",
+   "Military history of the Song dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Weiyi": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Weiyi",
+  "now": null,
+  "for": "王惟一",
+  "disambig": true,
+  "suggest": [
+   "Wang Weiyi",
+   "Wang Weiyi (physician)",
+   "Wang Weiyi (biathlete)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Sanchuankou": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Sanchuankou",
+  "now": null,
+  "for": "三川口之战",
+  "disambig": false,
+  "suggest": []
+ },
+ "https://en.wikipedia.org/wiki/Wang_Shao": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Shao",
+  "now": null,
+  "for": "王韶",
+  "disambig": false,
+  "suggest": [
+   "Sam Wang (actor)",
+   "AAA (Hyukoh and Sunset Rollercoaster album)",
+   "Wang Shao-an"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cheng_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Cheng_Yi",
+  "now": null,
+  "for": "程颐",
+  "disambig": true,
+  "suggest": [
+   "Cheng Yi",
+   "Cheng Yi (actor)",
+   "Lin Cheng-yi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Hubudagang": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Hubudagang",
+  "now": null,
+  "for": "护步达冈之战",
+  "disambig": false,
+  "suggest": [
+   "Emperor Taizu of Jin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhu_Yu": {
+  "was": "https://en.wikipedia.org/wiki/Zhu_Yu",
+  "now": null,
+  "for": "指南针用于航海",
+  "disambig": true,
+  "suggest": [
+   "Zhu Yu",
+   "Zhu Yu (artist)",
+   "Zhu Yu (author)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chen_Dong": {
+  "was": "https://en.wikipedia.org/wiki/Chen_Dong",
+  "now": null,
+  "for": "陈东伏阙上书",
+  "disambig": true,
+  "suggest": [
+   "Chen Dong",
+   "Shrouding the Heavens",
+   "Chen Dong (taikonaut)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zong_Ze": {
+  "was": "https://en.wikipedia.org/wiki/Zong_Ze",
+  "now": null,
+  "for": "宗泽",
+  "disambig": false,
+  "suggest": [
+   "Emperor Gaozong of Song",
+   "Vamos a la playa (Righeira song)",
+   "Eight Thousand Li of Cloud and Moon (TV series)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qi_(Liu_Yu)": {
+  "was": "https://en.wikipedia.org/wiki/Qi_(Liu_Yu)",
+  "now": null,
+  "for": "金立伪齐刘豫",
+  "disambig": false,
+  "suggest": [
+   "Xiang Yu",
+   "Liu Song dynasty",
+   "Qi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Jun_(Song_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Jun_(Song_dynasty)",
+  "now": null,
+  "for": "富平之战",
+  "disambig": false,
+  "suggest": [
+   "Zhang Jun (Song chancellor)",
+   "Song dynasty",
+   "Zhang Jun (general)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Huizi": {
+  "was": "https://en.wikipedia.org/wiki/Huizi",
+  "now": null,
+  "for": "发行会子",
+  "disambig": true,
+  "suggest": [
+   "Huizi (currency)",
+   "Huizi",
+   "Hui Shi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Rock-hewn_Churches,_Lalibela": {
+  "was": "https://en.wikipedia.org/wiki/Rock-hewn_Churches,_Lalibela",
+  "now": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
+  "for": "拉利贝拉岩石教堂",
+  "other": [
+   "Lalibela",
+   "Church of Saint George, Lalibela"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Quan_(rebel)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Quan_(rebel)",
+  "now": null,
+  "for": "红袄军起义",
+  "disambig": false,
+  "suggest": [
+   "Li Quan",
+   "Li Quan (general)",
+   "Drunken boxing"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Meng_Gong": {
+  "was": "https://en.wikipedia.org/wiki/Meng_Gong",
+  "now": null,
+  "for": "孟珙",
+  "disambig": false,
+  "suggest": [
+   "A.V. (film)",
+   "Mencius",
+   "Siege of Diaoyucheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Sangjeong_Gogeum_Yemun": {
+  "was": "https://en.wikipedia.org/wiki/Sangjeong_Gogeum_Yemun",
+  "now": null,
+  "for": "金属活字印刷",
+  "disambig": false,
+  "suggest": [
+   "Movable type",
+   "Ch'oe Yunŭi",
+   "Goryeo"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Al_Mansurah": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Al_Mansurah",
+  "now": null,
+  "for": "曼苏拉战役",
+  "disambig": true,
+  "suggest": [
+   "Battle of Mansurah",
+   "Battle of Fariskur (1250)",
+   "Battle of Mansurah (1250)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Dali_Kingdom": {
+  "was": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Dali_Kingdom",
+  "now": null,
+  "for": "忽必烈征大理",
+  "disambig": false,
+  "suggest": [
+   "Dali Kingdom",
+   "Mongol conquest of China",
+   "Mongol conquests"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/First_Mongol_invasion_of_Đại_Việt": {
+  "was": "https://en.wikipedia.org/wiki/First_Mongol_invasion_of_Đại_Việt",
+  "now": null,
+  "for": "蒙古首征安南",
+  "disambig": false,
+  "suggest": [
+   "Đại Việt",
+   "Mongol invasions of Vietnam",
+   "Trần dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hao_Jing": {
+  "was": "https://en.wikipedia.org/wiki/Hao_Jing",
+  "now": null,
+  "for": "郝经被扣真州",
+  "disambig": false,
+  "suggest": [
+   "Jing Hao",
+   "Fu Hao",
+   "Hao (given name)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Dingjiazhou": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Dingjiazhou",
+  "now": null,
+  "for": "丁家洲之战",
+  "disambig": false,
+  "suggest": [
+   "Battle of Yamen",
+   "Battle of Xiangyang",
+   "Mongol conquest of China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Second_Mongol_invasion_of_Đại_Việt": {
+  "was": "https://en.wikipedia.org/wiki/Second_Mongol_invasion_of_Đại_Việt",
+  "now": null,
+  "for": "元第二次征安南",
+  "disambig": false,
+  "suggest": [
+   "Đại Việt",
+   "Mongol invasions of Vietnam",
+   "Outline of the Mongol Empire"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Nayan": {
+  "was": "https://en.wikipedia.org/wiki/Nayan",
+  "now": null,
+  "for": "乃颜之乱",
+  "disambig": true,
+  "suggest": [
+   "Nayan",
+   "Nayanthara",
+   "Nayan Sarika"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Sangha_(Yuan_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Sangha_(Yuan_dynasty)",
+  "now": null,
+  "for": "桑哥伏诛",
+  "disambig": false,
+  "suggest": [
+   "Kublai Khan",
+   "Goryeo under Mongol rule",
+   "Timeline of the Yuan dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Siege_of_Gaoyou": {
+  "was": "https://en.wikipedia.org/wiki/Siege_of_Gaoyou",
+  "now": null,
+  "for": "高邮之战",
+  "disambig": false,
+  "suggest": [
+   "Gaoyou",
+   "Toqto'a (Yuan dynasty)",
+   "Zhou (Zhang Shicheng)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Wenzhong": {
+  "was": "https://en.wikipedia.org/wiki/Li_Wenzhong",
+  "now": null,
+  "for": "应昌之战",
+  "disambig": false,
+  "suggest": [
+   "Li Jinglong",
+   "Princess Caoguo",
+   "Hongwu Emperor"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lan_Yu": {
+  "was": "https://en.wikipedia.org/wiki/Lan_Yu",
+  "now": null,
+  "for": "蓝玉案",
+  "disambig": true,
+  "suggest": [
+   "Lan Yu",
+   "Lan Yu (film)",
+   "Lan Yu (general)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Tally_trade": {
+  "was": "https://en.wikipedia.org/wiki/Tally_trade",
+  "now": null,
+  "for": "明日勘合贸易",
+  "disambig": false,
+  "suggest": [
+   "Japanese missions to Ming China",
+   "Tally Solutions",
+   "Japan–Ming trade-ship flag"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Siege_of_Orl%C3%A9ans": {
+  "was": "https://en.wikipedia.org/wiki/Siege_of_Orl%C3%A9ans",
+  "now": null,
+  "for": "贞德解奥尔良之围",
+  "disambig": true,
+  "suggest": [
+   "Siege of Orléans (1428–1429)",
+   "Siege of Orléans (1563)",
+   "Battle of Orléans"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Big_Rattan_Gorge": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Big_Rattan_Gorge",
+  "now": null,
+  "for": "大藤峡之战",
+  "disambig": false,
+  "suggest": [
+   "Guangxi",
+   "Bukidnon",
+   "Kerala"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cham%E2%80%93Đại_Việt_War_(1471)": {
+  "was": "https://en.wikipedia.org/wiki/Cham%E2%80%93Đại_Việt_War_(1471)",
+  "now": null,
+  "for": "黎圣宗征占城",
+  "disambig": false,
+  "suggest": [
+   "Champa–Đại Việt War (1471)",
+   "Đại Việt",
+   "Đại Việt–Lan Xang War (1479–1484)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Western_Depot": {
+  "was": "https://en.wikipedia.org/wiki/Western_Depot",
+  "now": null,
+  "for": "设立西厂",
+  "disambig": false,
+  "suggest": [
+   "Wang Zhi (eunuch)",
+   "Denver and Rio Grande Western Depot (Salt Lake City)",
+   "Eight Tigers"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ordos_campaign": {
+  "was": "https://en.wikipedia.org/wiki/Ordos_campaign",
+  "now": null,
+  "for": "宁夏之役",
+  "disambig": true,
+  "suggest": [
+   "Ordos campaign",
+   "Ordos campaign (1592)",
+   "Qin campaign against the Xiongnu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Nongzheng_Quanshu": {
+  "was": "https://en.wikipedia.org/wiki/Nongzheng_Quanshu",
+  "now": null,
+  "for": "《农政全书》刊行",
+  "disambig": false,
+  "suggest": [
+   "Jiuhuang bencao",
+   "Ming dynasty",
+   "Soybean sprout"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jiading_massacre": {
+  "was": "https://en.wikipedia.org/wiki/Jiading_massacre",
+  "now": null,
+  "for": "嘉定三屠",
+  "disambig": false,
+  "suggest": [
+   "Jiading, Shanghai",
+   "Nanjing Massacre",
+   "Yangzhou massacre"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Battle_of_Nanjing_(1659)": {
+  "was": "https://en.wikipedia.org/wiki/Battle_of_Nanjing_(1659)",
+  "now": null,
+  "for": "郑成功进攻南京",
+  "disambig": false,
+  "suggest": [
+   "Battle of Nanjing (disambiguation)",
+   "Southern Ming",
+   "List of battles by casualties"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Sangpyeong_Tongbo": {
+  "was": "https://en.wikipedia.org/wiki/Sangpyeong_Tongbo",
+  "now": null,
+  "for": "常平通宝",
+  "disambig": false,
+  "suggest": [
+   "Korean mun",
+   "Joseon Tongbo",
+   "Dangojeon"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lobzang_Danjin": {
+  "was": "https://en.wikipedia.org/wiki/Lobzang_Danjin",
+  "now": null,
+  "for": "年羹尧平青海",
+  "disambig": false,
+  "suggest": [
+   "Danjin",
+   "Qinghai Lake",
+   "Mongol invasions of Tibet"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hong_Gyeong-nae%27s_Rebellion": {
+  "was": "https://en.wikipedia.org/wiki/Hong_Gyeong-nae%27s_Rebellion",
+  "now": null,
+  "for": "洪景来起义",
+  "disambig": false,
+  "suggest": [
+   "Sinmirok",
+   "Hong Kyŏngnae",
+   "Jeonggamnok"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/French_invasion_of_Algiers_(1830)": {
+  "was": "https://en.wikipedia.org/wiki/French_invasion_of_Algiers_(1830)",
+  "now": null,
+  "for": "法国入侵阿尔及利亚",
+  "disambig": false,
+  "suggest": [
+   "Invasion of Algiers (1830)",
+   "French blockade of Algiers",
+   "Battle of Algiers"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Taiping_Northern_Expedition": {
+  "was": "https://en.wikipedia.org/wiki/Taiping_Northern_Expedition",
+  "now": null,
+  "for": "太平天国北伐",
+  "disambig": false,
+  "suggest": [
+   "Taiping Heavenly Kingdom Northern Expedition",
+   "Taiping Rebellion",
+   "Western Expedition"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xinjiang_Province": {
+  "was": "https://en.wikipedia.org/wiki/Xinjiang_Province",
+  "now": null,
+  "for": "新疆建省",
+  "disambig": true,
+  "suggest": [
+   "Xinjiang",
+   "Xinjiang Province",
+   "Xinjiang Province, Republic of China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Subao_case": {
+  "was": "https://en.wikipedia.org/wiki/Subao_case",
+  "now": null,
+  "for": "苏报案",
+  "disambig": false,
+  "suggest": [
+   "Su Bao"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Non-cooperation_movement": {
+  "was": "https://en.wikipedia.org/wiki/Non-cooperation_movement",
+  "now": null,
+  "for": "不合作运动",
+  "disambig": true,
+  "suggest": [
+   "Non-cooperation movement (1919–1922)",
+   "Non-cooperation movement (2024)",
+   "Non-cooperation movement"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Nepalese_Constituent_Assembly": {
+  "was": "https://en.wikipedia.org/wiki/Nepalese_Constituent_Assembly",
+  "now": null,
+  "for": "尼泊尔废除君主制",
+  "disambig": true,
+  "suggest": [
+   "Constituent Assembly of Nepal",
+   "1st Nepalese Constituent Assembly",
+   "2nd Nepalese Constituent Assembly"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Deng_Yu": {
+  "was": "https://en.wikipedia.org/wiki/Deng_Yu",
+  "now": null,
+  "for": "邓禹",
+  "disambig": true,
+  "suggest": [
+   "Yu Deng",
+   "Deng Yu",
+   "Deng Yu (Ming dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wu_Han": {
+  "was": "https://en.wikipedia.org/wiki/Wu_Han",
+  "now": null,
+  "for": "吴汉",
+  "disambig": true,
+  "suggest": [
+   "Wu Han",
+   "Emperor Wu of Han",
+   "Wuhan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Jing_(Han_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Jing_(Han_dynasty)",
+  "now": null,
+  "for": "王景",
+  "disambig": false,
+  "suggest": [
+   "Han Chinese",
+   "Emperor Jing of Han",
+   "Dynasties of China"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Gu": {
+  "was": "https://en.wikipedia.org/wiki/Li_Gu",
+  "now": null,
+  "for": "李固",
+  "disambig": true,
+  "suggest": [
+   "Li Gu",
+   "Gu Li",
+   "Gu (vessel)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Ying_(Han_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Ying_(Han_dynasty)",
+  "now": null,
+  "for": "李膺",
+  "disambig": false,
+  "suggest": [
+   "Han Chinese",
+   "Li Xin (Qin)",
+   "Ruzi Ying"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Guo_Tai": {
+  "was": "https://en.wikipedia.org/wiki/Guo_Tai",
+  "now": null,
+  "for": "郭泰",
+  "disambig": true,
+  "suggest": [
+   "Terry Gou",
+   "Cathay Pacific",
+   "Guotai"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/He_Xiu": {
+  "was": "https://en.wikipedia.org/wiki/He_Xiu",
+  "now": null,
+  "for": "何休",
+  "disambig": true,
+  "suggest": [
+   "He Xiu",
+   "Xiu Xiu",
+   "Xiu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Zhao": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Zhao",
+  "now": null,
+  "for": "张昭",
+  "disambig": true,
+  "suggest": [
+   "Zhang Zhao",
+   "Zhang Zhao (Eastern Wu)",
+   "Zhang Zhao (Five Dynasties)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Shuhe": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Shuhe",
+  "now": null,
+  "for": "王叔和",
+  "disambig": false,
+  "suggest": [
+   "Large language model",
+   "Language model",
+   "Zhang Zhongjing"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Xu_(Later_Jin)": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Xu_(Later_Jin)",
+  "now": null,
+  "for": "刘昫",
+  "disambig": false,
+  "suggest": [
+   "Liu Xu",
+   "Lu Xun (Jin dynasty)",
+   "Emperor Wu of Song"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Huang_Quan": {
+  "was": "https://en.wikipedia.org/wiki/Huang_Quan",
+  "now": null,
+  "for": "黄筌",
+  "disambig": true,
+  "suggest": [
+   "Huang Quan",
+   "Huang Quan (general)",
+   "Huang Quan (painter)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Fang": {
+  "was": "https://en.wikipedia.org/wiki/Li_Fang",
+  "now": null,
+  "for": "李昉",
+  "disambig": true,
+  "suggest": [
+   "Li Fang",
+   "Li Fang-Kuei",
+   "Li Fang (tennis)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lu_Ji": {
+  "was": "https://en.wikipedia.org/wiki/Lu_Ji",
+  "now": null,
+  "for": "陆机",
+  "disambig": true,
+  "suggest": [
+   "Lu Ji",
+   "Lü Ji",
+   "Lu Ji (Shiheng)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shan_Tao": {
+  "was": "https://en.wikipedia.org/wiki/Shan_Tao",
+  "now": null,
+  "for": "山涛",
+  "disambig": true,
+  "suggest": [
+   "Shan Tao",
+   "Shandao",
+   "Shan Tao (Taoist)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Rong": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Rong",
+  "now": null,
+  "for": "王戎",
+  "disambig": true,
+  "suggest": [
+   "Wang Rong",
+   "Wang Rong (Jin dynasty)",
+   "Wang Rong (warlord)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Ling": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Ling",
+  "now": null,
+  "for": "刘伶",
+  "disambig": true,
+  "suggest": [
+   "Liu Ling",
+   "Lucy Liu",
+   "Liu Xiao Ling Tong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Pan_Yue": {
+  "was": "https://en.wikipedia.org/wiki/Pan_Yue",
+  "now": null,
+  "for": "潘岳",
+  "disambig": true,
+  "suggest": [
+   "Pan Yue",
+   "Pan Yue (politician)",
+   "Pan Yue (poet)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Suo_Jing": {
+  "was": "https://en.wikipedia.org/wiki/Suo_Jing",
+  "now": null,
+  "for": "索靖",
+  "disambig": false,
+  "suggest": [
+   "Suo Chen",
+   "Tao Te Ching",
+   "Fall of Chang'an"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Fu_Jian_(337–385)": {
+  "was": "https://en.wikipedia.org/wiki/Fu_Jian_(337–385)",
+  "now": "https://en.wikipedia.org/wiki/Fu_Jian_(337%E2%80%93385)",
+  "for": "苻坚",
+  "other": [
+   "Fu Jian",
+   "Fu Jian (317–355)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Xianzhi": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Xianzhi",
+  "now": null,
+  "for": "王献之",
+  "disambig": true,
+  "suggest": [
+   "Wang Xianzhi (calligrapher)",
+   "Wang Xianzhi",
+   "Wang Xianzhi (rebel)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhu_Shixing": {
+  "was": "https://en.wikipedia.org/wiki/Zhu_Shixing",
+  "now": null,
+  "for": "朱士行",
+  "disambig": false,
+  "suggest": [
+   "Zhu Bajie",
+   "Zhu Xiping",
+   "Gaoyuzhuang Formation"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Dong_Feng": {
+  "was": "https://en.wikipedia.org/wiki/Dong_Feng",
+  "now": null,
+  "for": "董奉",
+  "disambig": true,
+  "suggest": [
+   "DF-21",
+   "Dongfeng Motor Corporation",
+   "Dongfeng (missile)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yan_Yanzhi": {
+  "was": "https://en.wikipedia.org/wiki/Yan_Yanzhi",
+  "now": null,
+  "for": "颜延之",
+  "disambig": false,
+  "suggest": [
+   "Wushu (sport)",
+   "Lü Yanzhi",
+   "Chinese martial arts"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ji_Cheng": {
+  "was": "https://en.wikipedia.org/wiki/Ji_Cheng",
+  "now": null,
+  "for": "计成",
+  "disambig": true,
+  "suggest": [
+   "Cheng Ji",
+   "Ji Cheng (Ming dynasty)",
+   "Ji Cheng (cyclist)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wu_Youke": {
+  "was": "https://en.wikipedia.org/wiki/Wu_Youke",
+  "now": null,
+  "for": "吴有性",
+  "disambig": false,
+  "suggest": [
+   "Fall of Ming",
+   "Great Plague in the late Ming dynasty",
+   "Epidemiology"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Jingyue": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Jingyue",
+  "now": null,
+  "for": "张介宾",
+  "disambig": false,
+  "suggest": [
+   "Sung Shu Chien",
+   "Time poverty",
+   "Zhang Qinglian"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wei_Liangfu": {
+  "was": "https://en.wikipedia.org/wiki/Wei_Liangfu",
+  "now": null,
+  "for": "魏良辅",
+  "disambig": false,
+  "suggest": [
+   "Kunqu",
+   "King Xuan of Chu",
+   "Soliloquy"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Shizhen": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Shizhen",
+  "now": null,
+  "for": "王世贞",
+  "disambig": true,
+  "suggest": [
+   "Wang Shizhen (Beiyang government)",
+   "Wang Shizhen",
+   "Wang Shizhen (Ming dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Yu_(writer)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Yu_(writer)",
+  "now": null,
+  "for": "李渔",
+  "disambig": false,
+  "suggest": [
+   "Li Yu (playwright)",
+   "Li Yu (Southern Tang)",
+   "Crouching Tiger, Hidden Dragon"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Yiqing": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Yiqing",
+  "now": null,
+  "for": "刘义庆",
+  "disambig": false,
+  "suggest": [
+   "You Ming Lu",
+   "A New Account of the Tales of the World",
+   "Cao Cao"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jiang_Yan": {
+  "was": "https://en.wikipedia.org/wiki/Jiang_Yan",
+  "now": null,
+  "for": "江淹",
+  "disambig": true,
+  "suggest": [
+   "Jiang Yan",
+   "Jiang Yiyan",
+   "Dujiangyan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xue_Daoheng": {
+  "was": "https://en.wikipedia.org/wiki/Xue_Daoheng",
+  "now": null,
+  "for": "薛道衡",
+  "disambig": false,
+  "suggest": [
+   "Xue",
+   "Xue Yuanchao",
+   "Xue Ji"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Han_Qinhu": {
+  "was": "https://en.wikipedia.org/wiki/Han_Qinhu",
+  "now": null,
+  "for": "韩擒虎",
+  "disambig": false,
+  "suggest": [
+   "List of death deities",
+   "List of rape victims from ancient history and mythology",
+   "Military history of the Sui dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Heruo_Bi": {
+  "was": "https://en.wikipedia.org/wiki/Heruo_Bi",
+  "now": null,
+  "for": "贺若弼",
+  "disambig": false,
+  "suggest": [
+   "Chen dynasty",
+   "Xiao Cong",
+   "Emperor Yang of Sui"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Zhuo": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Zhuo",
+  "now": null,
+  "for": "刘焯",
+  "disambig": false,
+  "suggest": [
+   "Campaign against Dong Zhuo",
+   "Dong Zhuo",
+   "Liu Bei"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Liu_Yong": {
+  "was": "https://en.wikipedia.org/wiki/Liu_Yong",
+  "now": null,
+  "for": "柳永",
+  "disambig": true,
+  "suggest": [
+   "Liu Yong",
+   "Liu Yong (painter)",
+   "Liu Yong (Song dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Qian_Yi": {
+  "was": "https://en.wikipedia.org/wiki/Qian_Yi",
+  "now": null,
+  "for": "钱乙",
+  "disambig": false,
+  "suggest": [
+   "Qian Liu",
+   "Qian Xuesen",
+   "Qian Hongzong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Jie_(author)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Jie_(author)",
+  "now": null,
+  "for": "李诫",
+  "disambig": true,
+  "suggest": [
+   "Li Jie",
+   "Chin Yang Lee",
+   "Yingzao Fashi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Tang": {
+  "was": "https://en.wikipedia.org/wiki/Li_Tang",
+  "now": null,
+  "for": "李唐",
+  "disambig": true,
+  "suggest": [
+   "Emperor Taizong of Tang",
+   "Li Tang",
+   "Emperor Gaozu of Tang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cheng_Miao": {
+  "was": "https://en.wikipedia.org/wiki/Cheng_Miao",
+  "now": null,
+  "for": "程邈",
+  "disambig": false,
+  "suggest": [
+   "Cheng Xiao",
+   "Xie Miao",
+   "Nora Miao"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chen_Ping": {
+  "was": "https://en.wikipedia.org/wiki/Chen_Ping",
+  "now": null,
+  "for": "陈平",
+  "disambig": true,
+  "suggest": [
+   "Chen Ping",
+   "Sanmao (writer)",
+   "Chen Ping (Han dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Lu_Jia": {
+  "was": "https://en.wikipedia.org/wiki/Lu_Jia",
+  "now": null,
+  "for": "陆贾",
+  "disambig": true,
+  "suggest": [
+   "Lu Jia",
+   "Jia Lu",
+   "Lü Jia (Nanyue)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hong_Sheng": {
+  "was": "https://en.wikipedia.org/wiki/Hong_Sheng",
+  "now": null,
+  "for": "洪昇",
+  "disambig": false,
+  "suggest": [
+   "Alien Huang",
+   "Alexander Fu Sheng",
+   "2019 Orchard Towers murder"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mei_Wending": {
+  "was": "https://en.wikipedia.org/wiki/Mei_Wending",
+  "now": null,
+  "for": "梅文鼎",
+  "disambig": false,
+  "suggest": [
+   "Wang Xishan",
+   "Wang Zhenyi (astronomer)",
+   "Chinese mathematics"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Xu_Shou": {
+  "was": "https://en.wikipedia.org/wiki/Xu_Shou",
+  "now": null,
+  "for": "徐寿",
+  "disambig": false,
+  "suggest": [
+   "Chen Shou",
+   "Xu Huang",
+   "Shanghai Gezhi High School"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ye_Gui": {
+  "was": "https://en.wikipedia.org/wiki/Ye_Gui",
+  "now": null,
+  "for": "叶桂",
+  "disambig": false,
+  "suggest": [
+   "List of supernatural beings in Chinese folklore",
+   "Candle in the Tomb: Mu Ye Gui Shi",
+   "Gina Jin"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Robert_Hart": {
+  "was": "https://en.wikipedia.org/wiki/Robert_Hart",
+  "now": null,
+  "for": "赫德",
+  "disambig": true,
+  "suggest": [
+   "Robert Hart",
+   "Robert Harter",
+   "Robert Hart (musician)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Bi_Gan": {
+  "was": "https://en.wikipedia.org/wiki/Bi_Gan",
+  "now": "https://en.wikipedia.org/wiki/Bi_Gan",
+  "for": "比干",
+  "other": [
+   "Bi Gan",
+   "Resurrection (2025 film)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Weizi": {
+  "was": "https://en.wikipedia.org/wiki/Weizi",
+  "now": null,
+  "for": "微子启",
+  "disambig": true,
+  "suggest": [
+   "Weizi of Song",
+   "Weizi",
+   "FAW Weizhi V2"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ma_Yuan": {
+  "was": "https://en.wikipedia.org/wiki/Ma_Yuan",
+  "now": null,
+  "for": "马远",
+  "disambig": true,
+  "suggest": [
+   "Ma Yuan",
+   "Ma Yuan (painter)",
+   "Ma Yuan (Han dynasty)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chen_Liang": {
+  "was": "https://en.wikipedia.org/wiki/Chen_Liang",
+  "now": null,
+  "for": "陈亮",
+  "disambig": true,
+  "suggest": [
+   "Chen Liang",
+   "Liang dynasty",
+   "Zhuge Liang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Shi_(philosopher)": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Shi_(philosopher)",
+  "now": null,
+  "for": "张栻",
+  "disambig": false,
+  "suggest": [
+   "List of Chinese philosophers",
+   "Qin Shi Huang",
+   "Zhang Xuecheng"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zheng_Qiao": {
+  "was": "https://en.wikipedia.org/wiki/Zheng_Qiao",
+  "now": null,
+  "for": "郑樵",
+  "disambig": false,
+  "suggest": [
+   "Tongzhi (encyclopedia)",
+   "Wenxian Tongkao",
+   "Zheng (state)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhou_Qufei": {
+  "was": "https://en.wikipedia.org/wiki/Zhou_Qufei",
+  "now": null,
+  "for": "周去非",
+  "disambig": false,
+  "suggest": [
+   "Lingwai Daida",
+   "Zhu Fan Zhi",
+   "Zhao Rukuo"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhao_Rukuo": {
+  "was": "https://en.wikipedia.org/wiki/Zhao_Rukuo",
+  "now": "https://en.wikipedia.org/wiki/Zhao_Rukuo",
+  "for": "赵汝适",
+  "other": [
+   "Zhu Fan Zhi",
+   "Melayu Kingdom"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Cao_Gui": {
+  "was": "https://en.wikipedia.org/wiki/Cao_Gui",
+  "now": null,
+  "for": "曹刿",
+  "disambig": false,
+  "suggest": [
+   "Lou Gui",
+   "Battle of Changshao",
+   "Cao Zhongda"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jian_Shu": {
+  "was": "https://en.wikipedia.org/wiki/Jian_Shu",
+  "now": null,
+  "for": "蹇叔",
+  "disambig": false,
+  "suggest": [
+   "Sun Jian",
+   "Wang Jian (Former Shu)",
+   "World Jianshu League"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhao_Dun": {
+  "was": "https://en.wikipedia.org/wiki/Zhao_Dun",
+  "now": null,
+  "for": "赵盾",
+  "disambig": true,
+  "suggest": [
+   "Zhao Dun",
+   "Emperor Guangzong of Song",
+   "Emperor Xiaozong of Song"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Dong_Hu": {
+  "was": "https://en.wikipedia.org/wiki/Dong_Hu",
+  "now": null,
+  "for": "董狐",
+  "disambig": true,
+  "suggest": [
+   "Donghu",
+   "Tung Hu Ling",
+   "Hủ tiếu"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yang_Youji": {
+  "was": "https://en.wikipedia.org/wiki/Yang_Youji",
+  "now": null,
+  "for": "养由基",
+  "disambig": false,
+  "suggest": [
+   "Sun Wukong",
+   "Simians in Chinese culture",
+   "Interconnected-arm gibbon"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shuxiang": {
+  "was": "https://en.wikipedia.org/wiki/Shuxiang",
+  "now": null,
+  "for": "叔向",
+  "disambig": false,
+  "suggest": [
+   "Lü Shuxiang",
+   "Shuxiang Temple",
+   "Bai Shuxiang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yuwen_Kai": {
+  "was": "https://en.wikipedia.org/wiki/Yuwen_Kai",
+  "now": null,
+  "for": "宇文恺",
+  "disambig": false,
+  "suggest": [
+   "Yuwen Hu",
+   "Emperor Wen of Sui",
+   "Book of Sui"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Chun_(engineer)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Chun_(engineer)",
+  "now": null,
+  "for": "李春",
+  "disambig": false,
+  "suggest": [
+   "Lee Hung-chun",
+   "Li Junyi",
+   "List of Taiwanese scientists"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhiyong": {
+  "was": "https://en.wikipedia.org/wiki/Zhiyong",
+  "now": null,
+  "for": "智永",
+  "disambig": false,
+  "suggest": [
+   "Xu Zhiyong",
+   "Shi Zhiyong",
+   "Cai Zhiyong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Mi_(Tang_dynasty)": {
+  "was": "https://en.wikipedia.org/wiki/Li_Mi_(Tang_dynasty)",
+  "now": null,
+  "for": "李泌",
+  "disambig": false,
+  "suggest": [
+   "Emperor Gaozu of Tang",
+   "Li Mi (Sui dynasty)",
+   "Emperor Taizong of Tang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Su": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Su",
+  "now": null,
+  "for": "王肃",
+  "disambig": true,
+  "suggest": [
+   "Wang Su",
+   "Wang Su (Cao Wei)",
+   "Su Shi"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Kui": {
+  "was": "https://en.wikipedia.org/wiki/Li_Kui",
+  "now": null,
+  "for": "李悝",
+  "disambig": true,
+  "suggest": [
+   "Li Kui (Water Margin)",
+   "Li Kui",
+   "Li Kui (legalist)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhang_Yi_(Warring_States)": {
+  "was": "https://en.wikipedia.org/wiki/Zhang_Yi_(Warring_States)",
+  "now": null,
+  "for": "张仪",
+  "disambig": false,
+  "suggest": [
+   "Zhang Yi (Warring States period)",
+   "Zhang Yi",
+   "Warring States period"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Li_Bing": {
+  "was": "https://en.wikipedia.org/wiki/Li_Bing",
+  "now": null,
+  "for": "李冰",
+  "disambig": true,
+  "suggest": [
+   "Li Bing",
+   "Li Bingbing",
+   "Li Bing (Qin)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Jian": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Jian",
+  "now": null,
+  "for": "王翦",
+  "disambig": true,
+  "suggest": [
+   "Wang Jian",
+   "Wang Jian (Qin)",
+   "Jian Wang (cellist)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Chen_Tang": {
+  "was": "https://en.wikipedia.org/wiki/Chen_Tang",
+  "now": null,
+  "for": "陈汤",
+  "disambig": true,
+  "suggest": [
+   "Chen Tang",
+   "Chen Tang Jie",
+   "Chen Tang (actor)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Fan_Chong": {
+  "was": "https://en.wikipedia.org/wiki/Fan_Chong",
+  "now": null,
+  "for": "樊崇",
+  "disambig": false,
+  "suggest": [
+   "Red Eyebrows",
+   "Tahith Chong",
+   "Cheech & Chong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Feizi_of_Qin": {
+  "was": "https://en.wikipedia.org/wiki/Feizi_of_Qin",
+  "now": null,
+  "for": "秦非子",
+  "disambig": false,
+  "suggest": [
+   "Feizi",
+   "Han Feizi",
+   "Qin dynasty"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhong_Shanfu": {
+  "was": "https://en.wikipedia.org/wiki/Zhong_Shanfu",
+  "now": null,
+  "for": "仲山甫",
+  "disambig": false,
+  "suggest": [
+   "King Xuan of Zhou",
+   "Fán (surname)",
+   "Xie Daoyun"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Gao_Yao": {
+  "was": "https://en.wikipedia.org/wiki/Gao_Yao",
+  "now": null,
+  "for": "皋陶",
+  "disambig": true,
+  "suggest": [
+   "Gao Yao",
+   "Gao Yao (minister)",
+   "Gao Yao (footballer)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zhu_Danxi": {
+  "was": "https://en.wikipedia.org/wiki/Zhu_Danxi",
+  "now": null,
+  "for": "朱丹溪",
+  "disambig": false,
+  "suggest": [
+   "Zhu Zhenheng",
+   "Cynomorium",
+   "Yueqing"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Wang_Shifu_(playwright)": {
+  "was": "https://en.wikipedia.org/wiki/Wang_Shifu_(playwright)",
+  "now": null,
+  "for": "王实甫",
+  "disambig": false,
+  "suggest": [
+   "Wang Shifu",
+   "Romance of the Western Chamber",
+   "Zaju"
+  ]
+ }
+}
