@@ -72,7 +72,7 @@ const UI = {
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" },
-    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -94,7 +94,7 @@ const UI = {
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" },
-    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -1292,15 +1292,17 @@ function renderPlaces() {
 
 /* ---------- ledger: event list and story view ---------- */
 
+const TABS = ["tours", "events", "rulers", "people"];
 function renderLedger() {
   if (!state.era) return;
   $("ev-filter").hidden = true;
-  for (const k of ["events", "rulers", "people"]) $("tab-" + k).setAttribute("aria-selected", String(state.tab === k));
+  for (const k of TABS) $("tab-" + k).setAttribute("aria-selected", String(state.tab === k));
   $("rulers").hidden = state.tab !== "rulers";
   $("people").hidden = state.tab !== "people";
+  $("tour-tab").hidden = state.tab !== "tours";
   if (state.tab !== "events") {
     $("story").hidden = $("ev-list").hidden = true;
-    return state.tab === "rulers" ? renderRulers() : renderPeopleTab();
+    return state.tab === "rulers" ? renderRulers() : state.tab === "people" ? renderPeopleTab() : renderToursTab();
   }
   if (state.reading && state.selected) return renderStory();
   $("story").hidden = true;
@@ -1602,23 +1604,39 @@ async function goToEra(era) {
 /* ---------- guided tours: data/tours.json, a camera path through years with narration ---------- */
 let tours = null;
 const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
-async function openTours() {
-  const list = await loadTours();
-  const box = $("tours");
-  box.hidden = false;
-  box.querySelector("h4").textContent = t("toursHead");
-  box.querySelector(".tour-list").innerHTML = list.map((tr, i) =>
-    `<button type="button" data-i="${i}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}</span><small>${esc(tx(tr, "summary"))}</small></button>`).join("") +
-    `<p class="tour-note">${t("drafted")}</p>`;
+// The 导览 tab: this period's tours first, then the rest grouped by period.
+const tourEra = (tr) => tr.era || state.eras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
+function tourItem(tr) {
+  const on = state.tour?.id === tr.id;
+  return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
 }
-function closeTours() { $("tours").hidden = true; }
+async function renderToursTab() {
+  const list = await loadTours();
+  if (state.tab !== "tours") return;
+  const box = $("tour-tab");
+  const here = list.filter((tr) => tourEra(tr) === state.era.id);
+  $("ev-count").textContent = t("tourCount")(here.length);
+  const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
+  if (box.dataset.key === key) return;
+  box.dataset.key = key;
+  let html = `<p class="rl-hint">${t("tourHint")}</p>`;
+  html += here.length ? here.map(tourItem).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
+  const other = state.eras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
+  if (other.length) {
+    const open = box.querySelector("details")?.open ? " open" : "";
+    html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
+      other.map(([e, l]) => `<h5>${esc(nameOf(e))}</h5>` + l.map(tourItem).join("")).join("") + `</details>`;
+  }
+  box.innerHTML = html + `<p class="tour-note">${t("drafted")}</p>`;
+}
 async function startTour(id, i = 0) {
   const tr = (await loadTours()).find((x) => x.id === id);
   if (!tr) return;
-  stop(); closeTours(); closeSearch();
+  stop(); closeSearch();
   state.tour = { id, tr, i: 0, auto: false };
   $("tour").hidden = false;
   $("app").classList.add("touring");
+  if (state.tab === "tours") renderToursTab();
   await tourStep(Math.max(0, Math.min(i, tr.steps.length - 1)));
 }
 async function tourStep(i) {
@@ -1687,6 +1705,7 @@ function endTour() {
   state.tour = null;
   $("tour").hidden = true;
   $("app").classList.remove("touring");
+  if (state.tab === "tours") renderToursTab();
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
   map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
   saveView();
@@ -2038,7 +2057,7 @@ function loadView() {
   if (!v || typeof v.year !== "number") return null;
   state.year = Math.max(state.range.start, Math.min(state.range.end, Math.round(v.year)));
   if ([1, 2].includes(v.zoom) && Array.isArray(v.win) && v.win[0] <= state.year && state.year <= v.win[1]) { state.zoom = v.zoom; state.win = v.win; }
-  if (["events", "rulers", "people"].includes(v.tab)) state.tab = v.tab;
+  if (TABS.includes(v.tab)) state.tab = v.tab;
   return v.cam && Array.isArray(v.cam.center) ? v.cam : null;
 }
 
@@ -2227,7 +2246,7 @@ async function init() {
     $("ledger-toggle").textContent = c ? t("show") : t("hide");
     $("ledger-toggle").setAttribute("aria-expanded", String(!c));
   };
-  for (const k of ["events", "rulers", "people"]) $("tab-" + k).addEventListener("click", () => {
+  for (const k of TABS) $("tab-" + k).addEventListener("click", () => {
     // The open story survives a look at the other tabs; the events tab clicked again goes back to the list.
     if (k === "events" && state.tab === "events") state.reading = false;
     state.tab = k;
@@ -2237,9 +2256,7 @@ async function init() {
   });
   $("search-open").addEventListener("click", openSearch);
   $("share-open").addEventListener("click", shareView);
-  $("tours-open").addEventListener("click", openTours);
-  $("tours-close").addEventListener("click", closeTours);
-  $("tours").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) loadTours().then((l) => startTour(l[+b.dataset.i].id)); });
+  $("tour-tab").addEventListener("click", (e) => { const b = e.target.closest("[data-tour]"); if (b) startTour(b.dataset.tour); });
   const tb = $("tour");
   tb.querySelector(".tour-prev").addEventListener("click", () => state.tour && tourStep(state.tour.i - 1));
   tb.querySelector(".tour-next").addEventListener("click", tourNext);

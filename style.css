@@ -608,6 +608,9 @@ html:lang(en) .mk-geo.g-river, html:lang(en) .mk-geo.g-lake { text-transform: no
 }
 .ledger-tabs .tab[aria-selected="true"] { color: inherit; border-bottom-color: var(--cinnabar); }
 .ledger-tabs .tab:first-child { padding-left: 0; }
+html[lang="en"] .ledger-tabs .tab { letter-spacing: 0.03em; padding: 2px 6px 4px; font-size: 12px; }
+html[lang="en"] .ledger-tabs .tab:first-child { padding-left: 0; }
+#ev-count { white-space: nowrap; }
 .rulers { overflow-y: auto; min-height: 0; padding: 8px 0 6px; }
 .rulers[hidden] { display: none; }
 .rl-pick { display: flex; align-items: center; gap: 8px; padding: 8px 16px 6px; margin-top: -8px; font-size: 12px; color: var(--muted); position: sticky; top: -8px; z-index: 2; background: var(--panel-solid); border-bottom: 1px solid var(--rule); }
@@ -809,22 +812,18 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .share-box[hidden] { display: none; }
 .share-box input { width: 100%; font: 11px/1.4 "IBM Plex Mono", monospace; padding: 4px 6px; border: 1px solid var(--rule); border-radius: 4px; background: #fff; color: var(--ink); }
 
-/* Guided tours: list and player */
-.tours {
-  position: absolute; z-index: 20; top: 16px; left: 50%; transform: translateX(-50%);
-  width: min(460px, calc(100% - 16px)); max-height: min(75dvh, 600px); display: flex; flex-direction: column; overflow: hidden;
-  background: var(--panel-solid);
-}
-.tours[hidden], .tour[hidden] { display: none; }
-.tours-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 10px 16px; border-bottom: 1px solid var(--rule); }
-.tours-bar h4 { margin: 0; font: 700 15px var(--font-display, serif); }
-.tour-list { overflow-y: auto; padding: 4px 0 8px; }
-.tour-list button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 10px 16px; border: 0; background: none; color: inherit; cursor: pointer; font: inherit; }
-.tour-list button:hover, .tour-list button:focus-visible { background: var(--jade-soft); }
-.tour-list b { font: 700 15px var(--font-display, serif); }
-.tour-list span { font-size: 12px; color: var(--cinnabar); }
-.tour-list small { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-.tour-note { margin: 6px 16px 0; font-size: 11px; color: var(--muted); }
+/* Guided tours: the 导览 tab and the player */
+.tour-item { display: grid; gap: 2px; width: 100%; text-align: left; padding: 10px 16px; border: 0; border-left: 3px solid transparent; background: none; color: inherit; cursor: pointer; font: inherit; }
+.tour-item:hover, .tour-item:focus-visible { background: var(--jade-soft); }
+.tour-item.on { border-left-color: var(--cinnabar); background: var(--jade-soft); }
+.tour-item b { font: 700 15px var(--font-display, serif); }
+.tour-item span { font-size: 12px; color: var(--cinnabar); }
+.tour-item small { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.tour-more { margin-top: 8px; border-top: 1px solid var(--rule); }
+.tour-more summary { cursor: pointer; padding: 10px 16px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.tour-more h5 { margin: 10px 16px 0; font: 700 12px var(--font-display, serif); color: var(--muted); letter-spacing: .05em; }
+.tour-note { margin: 10px 16px 6px; font-size: 11px; color: var(--muted); }
+.tour[hidden], .tour-tab[hidden] { display: none; }
 .tour {
   position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);
   bottom: calc(var(--rail-h, 96px) + 28px); width: min(500px, calc(100% - 32px));
@@ -845,12 +844,8 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
   .touring .ledger { display: none; }
 }
-.tours-open { display: inline-flex; align-items: center; gap: 4px; }
-.tours-open svg { width: 13px; height: 13px; }
 @media (max-width: 720px) {
-  .tours-open { width: 30px; height: 30px; padding: 0; justify-content: center; }
-  .tours-open span { display: none; }
-  .era-corner { gap: 4px; }
+    .era-corner { gap: 4px; }
 }
 /* Old Yellow River courses and shorelines */
 .mk-geo.old { pointer-events: auto; cursor: pointer; }
