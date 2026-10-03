@@ -1,0 +1,21 @@
+{
+ "atlas": 1,
+ "id": "demo",
+ "name": "Plugin demo: the early church",
+ "name_zh": "插件示例：早期教会",
+ "region": {
+  "bounds": [[10, 28], [42, 44]],
+  "view": { "center": [28, 37.5], "zoom": 5, "year": 46 }
+ },
+ "range": { "start": 31, "end": 100 },
+ "data": { "eras": "eras.json", "events": "events.json", "tours": "tours.json" },
+ "layers": [
+  { "id": "roads", "name": "Roman roads", "name_zh": "罗马大道", "data": "layers/roads.geojson", "type": "line",
+    "color": "#7a5230", "width": 3, "dash": [3, 1.5] },
+  { "id": "churches", "name": "Churches", "name_zh": "教会", "data": "layers/churches.geojson", "type": "circle",
+    "color": "#2f6f8f", "radius": 6 }
+ ],
+ "plugins": ["plugins/journey.js"],
+ "refs": { "label": "Read", "label_zh": "阅读经文", "url": "https://www.biblegateway.com/passage/?version=KJV&search={ref}" },
+ "attribution": "Demo pack: events from Theographic Bible Metadata (CC BY-SA 4.0)."
+}

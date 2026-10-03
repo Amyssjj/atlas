@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Atlas">
+  <title>Atlas</title>
+  <!-- A cinnabar seal, like the era seal in the atlas, holding a globe with terrain and a timeline. -->
+  <rect x="4" y="4" width="120" height="120" rx="22" fill="#b93a26"/>
+  <rect x="12" y="12" width="104" height="104" rx="15" fill="none" stroke="#fff6f2" stroke-width="2.5" opacity="0.55"/>
+  <defs><clipPath id="g"><circle cx="64" cy="58" r="34"/></clipPath></defs>
+  <circle cx="64" cy="58" r="34" fill="#fff6f2"/>
+  <g clip-path="url(#g)">
+    <path d="M22 80 L44 54 L54 64 L70 40 L86 60 L94 52 L108 72 L108 96 L22 96 Z" fill="#2c7a68"/>
+    <path d="M60 46 L70 40 L76 48 L71 46 L66 50 Z" fill="#fff6f2"/>
+    <g fill="none" stroke="#b93a26" stroke-width="2" opacity="0.5">
+      <ellipse cx="64" cy="58" rx="14" ry="34"/>
+      <line x1="64" y1="24" x2="64" y2="92"/>
+      <path d="M30 46 Q64 38 98 46"/>
+      <path d="M30 70 Q64 78 98 70"/>
+    </g>
+  </g>
+  <circle cx="64" cy="58" r="34" fill="none" stroke="#fff6f2" stroke-width="3"/>
+  <line x1="26" y1="104" x2="102" y2="104" stroke="#fff6f2" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#fff6f2"><circle cx="38" cy="104" r="3"/><circle cx="64" cy="104" r="5.5"/><circle cx="90" cy="104" r="3"/></g>
+</svg>
