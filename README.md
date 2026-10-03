@@ -88,3 +88,14 @@ Their rulers are listed in the next period's layer file too.
 The Sixteen Kingdoms (304–418, `data/states/sixteen-kingdoms.json`) and the early Qing rivals (Shun, Great Xi, Southern
 Ming, Lu regency, Zheng Taiwan, the Three Feudatories, 1644–1681, `data/states/early-qing.json`) are carved out of the
 Jin and 1650 Qing base maps by `tools/carve_states.py`: seed points per commandery/prefecture, owners per snapshot.
+
+## Borders that follow the land
+
+The border sources are coarse (historical-basemaps polygons of a few dozen straight segments, and Voronoi cells for
+the state maps), so on their own they cut across valleys and run beside rivers instead of along them.
+`tools/snap_terrain.py` is the last step after the border generators: it rasterises each map onto a 0.025° grid,
+keeps the inside of every polity fixed and re-splits the land within 2.5° of a border by cheapest travel cost, where
+mountain crests and big rivers are expensive to cross (`tools/terrain_grid.py` builds that cost map from the bundled
+elevation tiles and data/geo/rivers.geojson). So a border moves onto a nearby ridge or river and stays put on open
+plains. Coasts are kept as drawn. Snapped maps carry `"snapped": true`; rerun a generator to start from raw shapes.
+Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
