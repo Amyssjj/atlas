@@ -20,6 +20,11 @@ for path in sys.argv[1:]:
     batch = json.load(open(path))
     new_ids = {e.get("id") for e in batch}
     events = [e for e in events if e["id"] not in new_ids or e.get("region", "china") == "china"]
+    regs = {e.get("region") for e in batch}
+    for e in events:  # a China event a previous run of this batch folded into
+        if e.get("also") and e.get("region", "china") == "china":
+            e["also"] = [r for r in e["also"] if r not in regs]
+            if not e["also"]: del e["also"]
     for e in batch:
         why = None
         if e.get("region") not in regions or e["region"] == "china": why = f"region {e.get('region')}"
@@ -49,7 +54,7 @@ SAME = [("埃兰攻陷乌尔", "埃兰人攻陷乌尔"), ("冈比西斯二世征
         ("沙普尔一世俘虏罗马皇帝瓦勒良", "埃德萨战役（瓦勒良被俘）"), ("第一次尼西亚公会议", "尼西亚公会议"),
         ("阿拉伯人征服西班牙", "塔里克渡海征服西班牙"), ("白益王朝进入巴格达", "布韦希王朝控制巴格达"),
         ("托洛萨会战", "拉斯纳瓦斯德托洛萨战役"), ("艾因贾鲁特战役", "艾因贾鲁战役"), ("奥斯曼一世建国", "奥斯曼帝国建立"),
-        ("祖哈布条约", "席林堡条约（佐哈布条约）"), ("卡尔纳尔战役与洗劫德里", "纳迪尔沙洗劫德里")]
+        ("祖哈布条约", "席林堡条约（佐哈布条约）"), ("万历朝鲜之役", "万历朝鲜战争"), ("卡尔纳尔战役与洗劫德里", "纳迪尔沙洗劫德里")]
 same = {frozenset(x) for x in SAME}
 outlines = {r["id"]: r["polygon"] for r in json.load(open(P("data/regions.json")))["regions"]}
 def inside(e):
@@ -60,6 +65,16 @@ def inside(e):
     return c
 reg = [e for e in events if e.get("region", "china") != "china"]
 gone = set()
+# A region event that repeats one of China's (白江口之战 for Korea and Japan) folds into the China event.
+china = {}
+for e in events:
+    if e.get("region", "china") == "china": china.setdefault(e["title_zh"], []).append(e)
+for e in reg:
+    for c in china.get(e["title_zh"], []):
+        if abs(c["year"] - e["year"]) <= 5:
+            c["also"] = sorted(set(c.get("also", [])) | {e["region"]} | set(e.get("also", [])))
+            gone.add(e["id"])
+            break
 for i, a in enumerate(reg):
     for b in reg[i + 1:]:
         if a["id"] in gone or b["id"] in gone or a["region"] == b["region"] or abs(a["year"] - b["year"]) > 5: continue
