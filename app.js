@@ -1671,6 +1671,11 @@ async function tourStep(i) {
   saveView();
   if (tour.auto) map.once("moveend", () => { if (state.tour === tour && tour.auto) tour.timer = setTimeout(() => tourNext(), 3000 + tx(s, "text").length * (zh() ? 110 : 45)); });
 }
+function captionLead(text) {
+  const m = zh() ? text.match(/^([^，。：:,]{0,18}?\d+[^，。：:,]{0,8}?)[，：:,]\s*/) || text.match(/^(约?前?\d+年)()/)
+    : text.match(/^([^:.]{0,40}?\d[^:.]{0,30}?):\s*/);
+  return m ? [m[1], text.slice(m[0].length)] : [null, text];
+}
 function tourCard() {
   const tour = state.tour;
   if (!tour) return;
@@ -1678,8 +1683,10 @@ function tourCard() {
   const box = $("tour");
   box.querySelector(".tour-title").textContent = tx(tr, "title");
   box.querySelector(".tour-count").textContent = `${i + 1} / ${tr.steps.length}`;
-  box.querySelector(".tour-year").textContent = fmtYear(s.year);
-  box.querySelector(".tour-text").textContent = tx(s, "text");
+  // Captions usually open with their own date ("前685年，…", "About 139 BC: …"); show that as the red label instead of repeating it.
+  const [when, rest] = captionLead(tx(s, "text"));
+  box.querySelector(".tour-year").textContent = when || fmtYear(s.year);
+  box.querySelector(".tour-text").textContent = rest;
   box.querySelector(".tour-story").hidden = !s.event;
   box.querySelector(".tour-prev").disabled = i === 0;
   box.querySelector(".tour-next").textContent = i === tr.steps.length - 1 ? t("tourEnd") : t("tourNext");
