@@ -1,4 +1,9 @@
-<p align="center"><img src="docs/img/logo.svg" width="112" alt="Atlas logo"></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/img/logo-white.svg">
+    <img src="docs/img/logo.svg" width="112" alt="Atlas logo: a map folded in three with a mountain line across the folds">
+  </picture>
+</p>
 
 <h1 align="center">Atlas</h1>
 
