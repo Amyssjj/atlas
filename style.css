@@ -131,7 +131,7 @@ body {
 }
 .ledger-head h2 { margin: 0; font: 600 13px/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; }
 .ledger-head span { color: var(--muted); font-size: 12px; }
-.ledger-toggle { display: none; }
+.ledger-toggle { display: none; white-space: nowrap; }
 .ev-list { list-style: none; margin: 0; padding: 4px 0; overflow-y: auto; min-height: 0; }
 .ev {
   display: grid;
@@ -406,7 +406,7 @@ html:lang(zh-CN) .lg > span { letter-spacing: 0.1em; }
 .lang-switch button { appearance: none; border: 0; background: transparent; color: var(--muted); font: 600 11px/1 var(--font-body); padding: 5px 8px; cursor: pointer; }
 .lang-switch button + button { border-left: 1px solid var(--rule); }
 .lang-switch button[aria-pressed="true"] { background: var(--jade); color: #fff; }
-.era-name { padding-right: 80px; }
+.era-name { padding-right: 150px; }
 .chip.layer[aria-pressed="true"] { background: rgba(185, 58, 38, 0.1); border-color: var(--cinnabar); color: var(--cinnabar); }
 .era-ruler { grid-column: 1 / -1; margin: 6px 0 0; font: 600 13px/1.35 var(--font-display); color: var(--ink); }
 
@@ -614,7 +614,9 @@ html:lang(en) .mk-geo.g-river, html:lang(en) .mk-geo.g-lake { text-transform: no
 .ledger-tabs .tab:first-child { padding-left: 0; }
 html[lang="en"] .ledger-tabs .tab { letter-spacing: 0.03em; padding: 2px 6px 4px; font-size: 12px; }
 html[lang="en"] .ledger-tabs .tab:first-child { padding-left: 0; }
-#ev-count { white-space: nowrap; }
+#ev-count { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.ledger-tabs { flex-shrink: 0; }
+.ledger-tabs .tab { white-space: nowrap; }
 .rulers { overflow-y: auto; min-height: 0; padding: 8px 0 6px; }
 .rulers[hidden] { display: none; }
 .rl-pick { display: flex; align-items: center; gap: 8px; padding: 8px 16px 6px; margin-top: -8px; font-size: 12px; color: var(--muted); position: sticky; top: -8px; z-index: 2; background: var(--panel-solid); border-bottom: 1px solid var(--rule); }
@@ -623,7 +625,8 @@ html[lang="en"] .ledger-tabs .tab:first-child { padding-left: 0; }
   background: var(--panel-solid); color: inherit; font: 500 14px var(--font-display);
 }
 .rl-hint { margin: 6px 16px 4px; font-size: 11px; color: var(--muted); }
-.rl-empty { margin: 12px 16px; color: var(--muted); font-size: 13px; }
+.rl-empty, .ev-empty { margin: 12px 16px; color: var(--muted); font-size: 13px; }
+.ev-empty { list-style: none; line-height: 1.6; }
 .rl-list { list-style: none; margin: 0; padding: 0; }
 .rl {
   display: grid; grid-template-columns: 72px 1fr auto; gap: 1px 10px; align-items: baseline;
