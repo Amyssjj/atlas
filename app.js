@@ -1606,26 +1606,29 @@ let tours = null;
 const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
 // The 导览 tab: this period's tours first, then the rest grouped by period.
 const tourEra = (tr) => tr.era || state.eras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
-function tourItem(tr) {
+// A tour also shows under every period its years reach into, and under any listed in `also` (官渡 under 三国).
+const tourIn = (tr, era) => tourEra(tr) === era.id || (tr.also || []).includes(era.id) || (tr.start <= era.end && tr.end >= era.start);
+function tourItem(tr, era) {
   const on = state.tour?.id === tr.id;
-  return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
+  const home = era && tourEra(tr) !== era.id ? state.eras.find((e) => e.id === tourEra(tr)) : null;
+  return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}${home ? ` · ${esc(nameOf(home))}` : ""}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
 }
 async function renderToursTab() {
   const list = await loadTours();
   if (state.tab !== "tours") return;
   const box = $("tour-tab");
-  const here = list.filter((tr) => tourEra(tr) === state.era.id);
+  const here = list.filter((tr) => tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
   $("ev-count").textContent = t("tourCount")(here.length);
   const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   let html = `<p class="rl-hint">${t("tourHint")}</p>`;
-  html += here.length ? here.map(tourItem).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
+  html += here.length ? here.map((tr) => tourItem(tr, state.era)).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
   const other = state.eras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
   if (other.length) {
     const open = box.querySelector("details")?.open ? " open" : "";
     html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
-      other.map(([e, l]) => `<h5>${esc(nameOf(e))}</h5>` + l.map(tourItem).join("")).join("") + `</details>`;
+      other.map(([e, l]) => `<h5>${esc(nameOf(e))}</h5>` + l.map((tr) => tourItem(tr)).join("")).join("") + `</details>`;
   }
   box.innerHTML = html + `<p class="tour-note">${t("drafted")}</p>`;
 }
