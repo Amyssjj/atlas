@@ -60,11 +60,12 @@ const state = {
   show3d: true, showSat: true, showNeighbours: true, showPlaces: true, showGeo: true,
   geo: [],              // labels for rivers, lakes, mountains, plains, seas
   layers: {},           // era id -> promise of { rulers, armies, routes }
+  exchange: { routes: [], topics: {}, spread: [] }, // cross-civilisation routes and spreads (data/exchange.json)
   layerData: null,      // the current era's overlays once loaded
   auto: {},             // layers on only for the current story or tour step (syncAuto)
   autoOff: {}, autoCtx: "",
   autoLayers: true,
-  show: { rulers: true, armies: true, routes: true, people: true, capitals: false, faith: false, inventions: false, passes: true, roads: true, clans: true, walls: true },
+  show: { rulers: true, armies: true, routes: true, people: true, capitals: false, faith: false, inventions: false, passes: true, roads: true, clans: true, walls: true, exchange: true, spread: true },
   overlays: { population: [], faith: [], inventions: [] },
   passes: [],           // famous passes (关隘), data/passes.json
   roads: [],            // major official roads (官道), data/roads.json
@@ -93,8 +94,8 @@ const UI = {
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
-    kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" },
-    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" }, exchange: "交流", spread: "传播", spreadGroups: { faith: "宗教传播", tech: "技术传播", crop: "作物传播" }, arrived: (y) => `${y}传到`, set_out: (y) => `${y}起`, world_t: "世界", worldHead: "同一年的世界", worldHint: "点击地区，地图和时间轴切换过去；点击事件阅读详情", noWorldEv: "前后几十年没有收录的大事",
+    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -116,8 +117,8 @@ const UI = {
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
-    kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" },
-    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" }, exchange: "Exchange", spread: "Spread", spreadGroups: { faith: "Faith spreads", tech: "Technique spreads", crop: "Crop spreads" }, arrived: (y) => `arrived ${y}`, set_out: (y) => `from ${y}`, world_t: "World", worldHead: "The world this year", worldHint: "Click a region to move the map and timeline there; click an event to read it", noWorldEv: "No major events recorded within a few decades",
+    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -354,6 +355,7 @@ function buildStyle() {
       oldgeo: { type: "geojson", data: BASE + "data/geo/old-rivers.geojson" },
       borders: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       routes: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      spread: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       roads: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       clans: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       walls: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
@@ -439,6 +441,11 @@ function buildStyle() {
       { id: "route-dashed", type: "line", source: "routes", filter: ["in", ["get", "kind"], ["literal", ["campaign", "journey"]]],
         layout: { "line-join": "round" },
         paint: { "line-color": ["match", ["get", "kind"], "campaign", "#b93a26", "#2f5f8a"], "line-width": 3, "line-dasharray": [2, 1.2] } },
+      { id: "spread-line", type: "line", source: "spread", filter: ["!=", ["geometry-type"], "Point"], layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": ["get", "color"], "line-opacity": ["case", ["==", ["get", "live"], 1], 0.95, 0.4],
+                 "line-width": ["case", ["==", ["get", "live"], 1], 3, 1.6] } },
+      { id: "spread-dot", type: "circle", source: "spread", filter: ["==", ["geometry-type"], "Point"],
+        paint: { "circle-radius": 3.5, "circle-color": ["get", "color"], "circle-stroke-color": "#fff", "circle-stroke-width": 1, "circle-opacity": 0.85 } },
     ],
   };
 }
@@ -463,7 +470,7 @@ function worldSnaps(start, end) {
 function setupRegions(eras, regions, worldIndex) {
   state.worldIndex = worldIndex;
   const byId = Object.fromEntries(eras.eras.map((e) => [e.id, { ...e, region: "china", layers: true }]));
-  const period = (r, p) => byId[p.id] || { ...p, region: r.id, worldMaps: true, snapshots: worldSnaps(p.start, p.end) };
+  const period = (r, p) => byId[p.id] || { ...p, region: r.id, worldMaps: true, layers: !!p.layers, snapshots: worldSnaps(p.start, p.end) };
   state.regions = regions.map((r) => ({ ...r, eras: r.periods.map((p) => period(r, p)) }));
   state.regionById = Object.fromEntries(state.regions.map((r) => [r.id, r]));
   const china = state.regionById.china;
@@ -966,7 +973,10 @@ function renderPolityLabels(gj) {
 const eraYears = (e) => e.end - e.start + 1 - (e.start < 0 && e.end > 0 ? 1 : 0);
 function loadLayers(era) {
   if (!era.layers) return Promise.resolve({});
-  if (!state.layers[era.id]) state.layers[era.id] = loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
+  // Periods of the other world regions share one file per region (the artifact caps its file count).
+  if (!state.layers[era.id]) state.layers[era.id] = era.worldMaps
+    ? (state.layers["world-" + era.region] ||= loadJSON(`data/layers/world-${era.region}.json`).catch(() => ({}))).then((b) => b[era.id] || {})
+    : loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
   return state.layers[era.id];
 }
 
@@ -976,6 +986,8 @@ function rulerAt(name, year) {
 }
 // The name a learner knows (汉武帝, 冒顿单于), plus the personal name when the title doesn't already contain it.
 function rulerText(r) {
+  // Rulers outside China carry a rank (国王, 苏丹) instead of a title; the name leads.
+  if (r.rank || r.rank_zh) return zh() ? [r.name_zh || r.name, r.rank_zh || ""] : [r.name, r.rank || ""];
   if (zh()) return [r.title_zh || r.name_zh, r.title_zh && !r.title_zh.includes(r.name_zh) ? r.name_zh : ""];
   return [r.title || r.name, r.title && !r.title.includes(r.name) ? r.name : ""];
 }
@@ -1005,10 +1017,23 @@ function syncAuto() {
   if (ctx !== state.autoCtx) { state.autoCtx = ctx; state.autoOff = {}; }
   if (text) for (const [keys, test] of AUTO_RULES) if (test(cat, text)) for (const k of keys) if (!state.autoOff[k]) auto[k] = true;
   for (const k of Object.keys(state.show)) $("l-" + k)?.classList.toggle("auto", !state.show[k] && !!auto[k]);
+  renderAutoStrip(auto);
   const key = Object.keys(auto).sort().join();
   if (key === Object.keys(state.auto).sort().join()) return;
   state.auto = auto;
   renderOverlays();
+}
+// A strip over the map names the layers the story or tour stop switched on (dashed) and the related ones already on;
+// clicking one works like its chip in the layer panel, so the change is visible even with the panel closed.
+function renderAutoStrip(auto) {
+  const box = $("auto-strip"), keys = Object.keys(auto);
+  box.hidden = !keys.length;
+  if (!keys.length) return;
+  const label = (k) => t(k === "people" ? "people_l" : k);
+  const on = keys.filter((k) => !state.show[k]), also = keys.filter((k) => state.show[k]);
+  box.innerHTML = (on.length ? `<span>${t("autoOn")}</span>` + on.map((k) => `<button type="button" class="chip layer auto" data-k="${k}">${esc(label(k))}</button>`).join("") : "") +
+    (also.length ? `<span>${t("autoAlso")}</span>` + also.map((k) => `<button type="button" class="chip layer" aria-pressed="true" data-k="${k}">${esc(label(k))}</button>`).join("") : "");
+  box.querySelectorAll("[data-k]").forEach((b) => b.addEventListener("click", () => $("l-" + b.dataset.k).click()));
 }
 function renderOverlays() {
   scheduleDeclutter();
@@ -1097,6 +1122,7 @@ function renderPeople() {
   });
 }
 function personLife(p) {
+  if (p.died == null && p.born != null) return zh() ? `${fmtYear(p.born, p.circa)}生` : `born ${fmtYear(p.born, p.circa)}`; // living
   return p.died != null ? t("life")(p.born != null ? fmtYear(p.born, p.circa) : "?", fmtYear(p.died, p.circa)) : (zh() ? "生卒不详" : "dates unknown");
 }
 function personCard(p) {
@@ -1105,7 +1131,7 @@ function personCard(p) {
   return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
-    ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA(p.source)}</p>`;
+    ${personEventList(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
 }
 function personEventList(p) {
   const evs = personEvents(p);
@@ -1115,7 +1141,7 @@ function personEventList(p) {
   return `<p class="pc-works"><b>${t("personEvents")(evs.length)}</b></p>${eventButtons(evs, (ev) => ev === last)}`;
 }
 // Years a person's marker is on the map: their life, or the 40 years before death when the birth year is unknown.
-const personSpan = (p) => p.show ? p.show : [p.born ?? p.died - 40, p.died];
+const personSpan = (p) => p.show ? p.show : [p.born ?? p.died - 40, p.died ?? state.range.end];
 
 function renderCapitals() {
   const list = shown("capitals") ? (state.layerData?.capitals || []) : [];
@@ -1371,16 +1397,31 @@ function partialPath(path, f) {
   if (f >= 1) return path;
   const seg = [];
   let total = 0;
-  for (let i = 1; i < path.length; i++) { const d = Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]); seg.push(d); total += d; }
+  for (let i = 1; i < path.length; i++) {
+    // A dateline jump ([180, lat] to [-180, lat]) has no length.
+    const d = Math.abs(path[i][0] - path[i - 1][0]) > 180 ? 0 : Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]);
+    seg.push(d); total += d;
+  }
   let left = total * f;
   const out = [path[0]];
   for (let i = 1; i < path.length; i++) {
-    if (left >= seg[i - 1]) { out.push(path[i]); left -= seg[i - 1]; continue; }
+    if (left >= seg[i - 1] && (seg[i - 1] > 0 || left > 0)) { out.push(path[i]); left -= seg[i - 1]; continue; }
+    if (!seg[i - 1]) break;
     const k = left / seg[i - 1];
     out.push([path[i - 1][0] + (path[i][0] - path[i - 1][0]) * k, path[i - 1][1] + (path[i][1] - path[i - 1][1]) * k]);
     break;
   }
   return out;
+}
+// A line that crosses the dateline is split there ([180, lat] then [-180, lat]) so it isn't drawn across the whole map.
+function lineGeom(path) {
+  const parts = [[path[0]]];
+  for (let i = 1; i < path.length; i++) {
+    if (Math.abs(path[i][0] - path[i - 1][0]) > 180) parts.push([]);
+    parts[parts.length - 1].push(path[i]);
+  }
+  const ok = parts.filter((p) => p.length > 1);
+  return ok.length === 1 ? { type: "LineString", coordinates: ok[0] } : { type: "MultiLineString", coordinates: ok };
 }
 function bearing(a, b) {
   const rad = Math.PI / 180;
@@ -1390,14 +1431,17 @@ function bearing(a, b) {
 function renderRoutes() {
   markers.routes.forEach((m) => m.remove());
   markers.routes = [];
-  const routes = (shown("routes") && state.layerData?.routes) || [];
+  // Cross-civilisation routes (data/exchange.json) show in every region; a full route replaces the China-only one it supersedes.
+  const xr = shown("exchange") ? state.exchange.routes.filter((r) => state.year >= r.from && state.year <= r.to) : [];
+  const gone = new Set(xr.flatMap((r) => r.supersedes || []));
+  const routes = [...((shown("routes") && state.layerData?.routes) || []).filter((r) => !gone.has(r.id)), ...xr];
   const feats = [];
   for (const r of routes) {
     if (state.year < r.from || state.year > r.to || r.path.length < 2 || r.kind === "wall") continue;
     const moving = r.kind === "campaign" || r.kind === "journey";
     const f = moving && r.to > r.from ? Math.max(0.08, (state.year - r.from + 1) / (r.to - r.from + 1)) : 1;
     const path = moving ? partialPath(r.path, f) : r.path;
-    feats.push({ type: "Feature", properties: { kind: r.kind }, geometry: { type: "LineString", coordinates: path } });
+    feats.push({ type: "Feature", properties: { kind: r.kind }, geometry: lineGeom(path) });
     if (moving && path.length > 1) {
       const head = document.createElement("div");
       head.className = "mk-arrow k-" + r.kind;
@@ -1415,6 +1459,45 @@ function renderRoutes() {
       .setLngLat(mid).addTo(map));
   }
   map.getSource("routes")?.setData({ type: "FeatureCollection", features: feats });
+  renderSpread();
+}
+
+// Spread of faiths, techniques and crops: each leg grows from `start` to `year`, then stays as a faint line with a dot.
+const light = (hex) => { const n = parseInt((hex || "#888").slice(1), 16); return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255) > 170; };
+function renderSpread() {
+  const feats = [];
+  if (shown("spread")) for (const s of state.exchange.spread) {
+    // Gone from the map three centuries after it arrived, so the late centuries don't fill with old lines.
+    if (state.year < s.start || state.year > s.year + 300) continue;
+    const tp = state.exchange.topics[s.topic] || {};
+    const f = s.year > s.start ? Math.min(1, Math.max(0.08, (state.year - s.start + 1) / (s.year - s.start + 1))) : 1;
+    const growing = state.year < s.year;
+    const path = growing ? partialPath(s.path, f) : s.path;
+    feats.push({ type: "Feature", properties: { color: tp.color || "#888", live: growing ? 1 : 0 }, geometry: lineGeom(path) });
+    const end = path[path.length - 1];
+    if (!growing) feats.push({ type: "Feature", properties: { color: tp.color || "#888", live: 0 }, geometry: { type: "Point", coordinates: end } });
+    if (growing && path.length > 1) {
+      const head = document.createElement("div");
+      head.className = "mk-arrow";
+      head.style.borderBottomColor = tp.color;
+      markers.routes.push(new maplibregl.Marker({ element: head, rotation: bearing(path[path.length - 2], end), rotationAlignment: "map" }).setLngLat(end).addTo(map));
+    }
+    // Named while on the move and for a generation after it arrives.
+    if (state.year > s.year + 25) continue;
+    const label = document.createElement("div");
+    label.className = "mk-route k-spread";
+    label.style.background = tp.color;
+    if (light(tp.color)) label.style.color = "#2b2118";
+    label.innerHTML = `<b>${esc(nameOf(tp))} · ${esc(growing ? t("set_out")(fmtYear(s.start)) : t("arrived")(fmtYear(s.year)))}</b>${esc(nameOf(s))}`;
+    label.title = tx(s, "summary");
+    label.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (s.event) return openStory(s.event);
+      showCard(end, `<div class="pc-kind">${esc(nameOf(tp))} · ${fmtYear(s.start)} – ${fmtYear(s.year)}</div><h4>${esc(nameOf(s))}</h4><p>${esc(tx(s, "summary"))}</p><p class="pc-meta">${t("drafted")}</p>`);
+    });
+    markers.routes.push(new maplibregl.Marker({ element: label, anchor: "bottom", offset: [0, -8] }).setLngLat(end).addTo(map));
+  }
+  map.getSource("spread")?.setData({ type: "FeatureCollection", features: feats });
 }
 
 function focusBounds() {
@@ -1530,7 +1613,7 @@ function visibleEvents() {
 // The open event always stays visible.
 function shownEvent(ev) {
   // Each region shows its own events; the world view shows all.
-  if (state.mode !== "world" && (ev.region || state.home) !== state.mode) return false;
+  if (state.mode !== "world" && (ev.region || state.home) !== state.mode && !ev.also?.includes(state.mode)) return false;
   if (ev.id === state.selected) return true;
   // The country filter belongs to one period; events of other periods ignore it.
   const c = state.country;
@@ -1725,7 +1808,7 @@ function renderPlaces() {
 
 /* ---------- ledger: event list and story view ---------- */
 
-const TABS = ["tours", "events", "rulers", "people"];
+const TABS = ["tours", "events", "rulers", "people", "world"];
 function renderLedger() {
   if (!state.era) return;
   syncAuto();
@@ -1734,14 +1817,64 @@ function renderLedger() {
   $("rulers").hidden = state.tab !== "rulers";
   $("people").hidden = state.tab !== "people";
   $("tour-tab").hidden = state.tab !== "tours";
+  $("world").hidden = state.tab !== "world";
   if (state.tab !== "events") {
     $("story").hidden = $("ev-list").hidden = true;
-    return state.tab === "rulers" ? renderRulers() : state.tab === "people" ? renderPeopleTab() : renderToursTab();
+    return state.tab === "rulers" ? renderRulers() : state.tab === "people" ? renderPeopleTab() : state.tab === "world" ? renderWorldTab() : renderToursTab();
   }
   if (state.reading && state.selected) return renderStory();
   $("story").hidden = true;
   $("ev-list").hidden = false;
   renderList();
+}
+
+/* ---------- ledger: the same year in every region ---------- */
+
+function regionEra(r, y) { return r.eras.find((e) => y >= e.start && y <= e.end); }
+function renderWorldTab() {
+  const box = $("world"), y = state.year;
+  const key = `${y}|${state.lang}|${state.mode}`;
+  $("ev-count").textContent = fmtYear(y);
+  if (box.dataset.key === key) return;
+  box.dataset.key = key;
+  const rows = state.regions.map((r) => {
+    const era = regionEra(r, y);
+    // The biggest events within 30 years, nearest first.
+    const evs = state.events.filter((ev) => ((ev.region || "china") === r.id || ev.also?.includes(r.id)) && Math.abs(ev.year - y) <= 30)
+      .sort((a, b) => Math.abs(a.year - y) - Math.abs(b.year - y) || a.level - b.level).slice(0, 3).sort((a, b) => a.year - b.year);
+    return `<li class="wd-row${r.id === state.mode ? " here" : ""}" style="--rc:${esc(r.color || "#888")}">
+      <button type="button" class="wd-head" data-r="${esc(r.id)}"><b>${esc(nameOf(r))}</b><span>${era ? esc(nameOf(era)) : ""}</span></button>
+      <p class="wd-rulers" data-era="${era?.layers ? esc(era.id) : ""}"></p>
+      ${evs.length ? `<ul class="wd-ev">${evs.map((ev) => `<li><button type="button" data-ev="${esc(ev.id)}"><span>${fmtYear(ev.year)}</span> ${esc(zh() ? ev.title_zh || ev.title : ev.title)}</button></li>`).join("")}</ul>`
+        : `<p class="wd-none">${t("noWorldEv")}</p>`}</li>`;
+  });
+  box.innerHTML = `<p class="rl-hint">${t("worldHint")}</p><ol class="wd-list">${rows.join("")}</ol>`;
+  box.querySelectorAll(".wd-head").forEach((b) => b.addEventListener("click", () => goRegion(b.dataset.r)));
+  box.querySelectorAll("[data-ev]").forEach((b) => b.addEventListener("click", () => openStory(b.dataset.ev)));
+  // Who ruled where: the main countries with a ruler this year, filled in as each region's layer file arrives.
+  box.querySelectorAll(".wd-rulers").forEach((p, i) => {
+    const era = regionEra(state.regions[i], y);
+    if (!era?.layers) return;
+    loadLayers(era).then((L) => {
+      if (box.dataset.key !== key) return;
+      const pol = L.polities || {};
+      const names = Object.keys(L.rulers || {}).sort((a, b) => !!pol[b]?.focus - !!pol[a]?.focus);
+      const out = [];
+      for (const n of names) {
+        const r = (L.rulers[n] || []).findLast((r) => y >= r.from && y <= r.to);
+        if (r) out.push(`${esc(zh() ? pol[n]?.name_zh || n : n)}：${esc(rulerText(r)[0])}`);
+        if (out.length === 3) break;
+      }
+      p.innerHTML = out.join(" · ");
+    });
+  });
+}
+function goRegion(id) {
+  const reg = state.regionById[id];
+  if (!reg) return;
+  setMode(id);
+  if (reg.polygon?.length) map.fitBounds(polyBounds(reg.polygon), { padding: { top: 120, bottom: 140, left: 60, right: innerWidth > 720 ? 380 : 60 }, maxZoom: 5, duration: 1400 });
+  renderLedger();
 }
 
 /* ---------- ledger: rulers of one country; picking one narrows the timeline to the reign ---------- */
@@ -1819,7 +1952,7 @@ function renderPeopleTab() {
     box.innerHTML = `<div class="pp-groups">${groups.map((k) =>
         `<button class="chip" data-g="${k}" aria-pressed="${k === g}">${t("pgroups")[k]}</button>`).join("")}</div>
       <p class="rl-hint">${t("peopleHint")}</p><ol class="rl-list">${list.map((p, i) =>
-      `<li><button class="rl pp f-${esc(p.field)}" data-i="${i}"><span class="rl-years">${p.born != null ? fmtYear(p.born, p.circa) : "?"}<br>${p.died != null ? fmtYear(p.died, p.circa) : "?"}</span>
+      `<li><button class="rl pp f-${esc(p.field)}" data-i="${i}"><span class="rl-years">${p.born != null ? fmtYear(p.born, p.circa) : "?"}<br>${p.died != null ? fmtYear(p.died, p.circa) : p.born != null ? (zh() ? "今" : "now") : "?"}</span>
         <span class="rl-name">${esc(nameOf(p))}</span><span class="rl-sub">${esc(tx(p, "known_for"))}</span><span class="rl-len">${esc(t("fields")[p.field] || "")}</span></button></li>`).join("")}</ol>`;
     box.querySelectorAll(".rl").forEach((btn) => btn.addEventListener("click", () => focusPerson(box._list[+btn.dataset.i])));
     box.querySelectorAll("[data-g]").forEach((btn) => btn.addEventListener("click", () => { state.peopleGroup = btn.dataset.g; renderPeopleTab(); }));
@@ -1886,7 +2019,7 @@ function renderList() {
 }
 
 function loadDetails(era) {
-  if (!era.layers) return Promise.resolve({});
+  if (!era.layers || era.worldMaps) return Promise.resolve({});
   if (!state.details[era.id]) state.details[era.id] = loadJSON(`data/details/${era.id}.json`).catch(() => ({}));
   return state.details[era.id];
 }
@@ -1942,11 +2075,12 @@ async function renderStory() {
       else { map.flyTo({ center: [it.lon, it.lat], zoom: Math.max(map.getZoom(), 5), duration: 1200, essential: true }); map.once("moveend", () => showCard([it.lon, it.lat], placeCard(it))); }
     }
   };
-  const all = await loadDetails(eraFor(ev.year));
+  const home = (ev.region || "china") === "china" && state.chinaEras.find((e) => ev.year >= e.start && ev.year <= e.end);
+  const all = home ? await loadDetails(home) : {};
   if (state.selected !== ev.id || !state.reading) return;
   const d = all[ev.id];
   const body = box.querySelector(".story-body");
-  const layer = await loadLayers(eraFor(ev.year));
+  const layer = home ? await loadLayers(home) : {};
   if (state.selected !== ev.id || !state.reading) return;
   const tags = linkTags(ev, layer);
   if (!d) { body.innerHTML = tags + `<p class="muted">${t("noStory")}</p>` + links(ev, d); return; }
@@ -1992,7 +2126,7 @@ function wikiLink(url) {
 }
 
 function links(ev, d) {
-  const zhUrl = wikiLink(d?.source_zh), enUrl = wikiLink(ev.source);
+  const zhUrl = wikiLink(d?.source_zh || ev.source_zh), enUrl = wikiLink(ev.source);
   const main = zh() ? zhUrl || enUrl : enUrl || zhUrl;
   const r = refLink(ev.refs);
   if (r) return `<p class="story-links">` + ev.refs.map((ref) => `<a href="${esc(refLink(ref).href)}" title="${esc(r.label)}" target="_blank" rel="noopener">${esc(refLabel(ref))} ↗</a>`).join("") + `</p>`;
@@ -2011,6 +2145,8 @@ async function selectEvent(id) {
   const ev = state.events.find((e) => e.id === id);
   state.selected = id;
   state.closedArmies.delete(id);
+  // An event of another region: the timeline switches to that region's periods.
+  if (!state.tour && !ev.also?.includes(state.mode)) setMode(ev.region || "china");
   // An event outside the decades window: move the window to it.
   if (state.zoom === 2 && (ev.year < state.win[0] || ev.year > state.win[1])) {
     state.scope = null;
@@ -2064,19 +2200,26 @@ async function renderToursTab() {
   const list = await loadTours();
   if (state.tab !== "tours") return;
   const box = $("tour-tab");
-  const here = list.filter((tr) => state.era.region === tourRegion(tr) && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
+  // This region's tours for the period on screen, then its other periods, then the other regions.
+  const reg = state.mode === "world" ? null : state.era.region || state.mode;
+  const here = list.filter((tr) => reg && tourRegion(tr) === reg && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
   $("ev-count").textContent = t("tourCount")(here.length);
-  const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
+  const key = `${state.mode}|${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   let html = `<p class="rl-hint">${t("tourHint")}</p>`;
   html += here.length ? here.map((tr) => tourItem(tr, state.era)).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
-  const other = state.regions.flatMap((r) => r.eras.filter((e) => e.id !== state.era.id)
-    .map((e) => [e, list.filter((tr) => tourRegion(tr) === r.id && tourEra(tr) === e.id)])).filter(([, l]) => l.length);
-  if (other.length) {
-    const open = box.querySelector("details")?.open ? " open" : "";
-    html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
-      other.map(([e, l]) => `<h5>${esc(nameOf(e))}</h5>` + l.map((tr) => tourItem(tr)).join("")).join("") + `</details>`;
+  const group = (title, groups) => {
+    groups = groups.filter(([, l]) => l.length);
+    if (!groups.length) return "";
+    const n = groups.reduce((k, [, l]) => k + l.length, 0);
+    return `<details class="tour-more" data-g="${esc(title)}"${box.querySelector(`details[data-g="${title}"]`)?.open ? " open" : ""}><summary>${esc(title)}${zh() ? "（" : " ("}${n}${zh() ? "）" : ")"}</summary>` +
+      groups.map(([h, l]) => `<h5>${esc(h)}</h5>` + l.map((tr) => tourItem(tr)).join("")).join("") + `</details>`;
+  };
+  if (reg) html += group(t("toursOther"), regionEras(reg).filter((e) => e.id !== state.era.id).map((e) => [nameOf(e), list.filter((tr) => tourRegion(tr) === reg && tourEra(tr) === e.id)]));
+  for (const r of state.regions) if (r.id !== reg) {
+    const l = list.filter((tr) => tourRegion(tr) === r.id).sort((a, b) => a.start - b.start);
+    html += group(nameOf(r), regionEras(r.id).map((e) => [nameOf(e), l.filter((tr) => tourEra(tr) === e.id)]));
   }
   box.innerHTML = html + `<p class="tour-note">${t("drafted")}</p>`;
 }
@@ -2210,7 +2353,7 @@ function addTourLayers() {
 // Everyone and every ruler sits in the per-period layer files; they are loaded on the first search.
 let searchIndex = null;
 async function buildSearchIndex() {
-  const layers = await Promise.all(state.chinaEras.map((e) => loadLayers(e).then((L) => [e, L])));
+  const layers = await Promise.all(state.regions.flatMap((r) => r.eras).filter((e) => e.layers).map((e) => loadLayers(e).then((L) => [e, L])));
   const people = [], seen = new Set(), rulers = [];
   for (const [era, L] of layers) {
     for (const p of L.people || []) if (!seen.has(p.id)) { seen.add(p.id); people.push({ p, era }); }
@@ -2253,8 +2396,8 @@ function searchResults(q) {
         go: () => startTour(tr.id, k) });
     for (const { p, era } of searchIndex.people.filter(({ p }) => has(p.name_zh, p.name)).slice(0, 10))
       out.push({ g: "person", year: p.born ?? p.died, title: nameOf(p), sub: `${t("fields")[p.field] || ""} · ${personLife(p)}`, go: () => jumpToPerson(p, era) });
-    for (const { r, i, polity, era, pz } of searchIndex.rulers.filter(({ r }) => has(r.name_zh, r.name, r.title_zh, r.title)).slice(0, 10))
-      out.push({ g: "ruler", year: r.from, title: zh() ? `${r.title_zh || r.title} ${r.name_zh || ""}` : `${r.title || r.name}`,
+    for (const { r, i, polity, era, pz } of searchIndex.rulers.filter(({ r }) => has(r.name_zh, r.name, r.title_zh, r.title, r.rank_zh)).slice(0, 10))
+      out.push({ g: "ruler", year: r.from, title: zh() ? `${r.title_zh || r.title || r.rank_zh || ""} ${r.name_zh || ""}`.trim() : `${r.title || r.name}`,
         sub: `${zh() ? pz || polity : polity} · ${fmtYear(r.from)} – ${fmtYear(r.to)}`, go: () => jumpToRuler(polity, i, era) });
     for (const list of searchIndex.cities.filter((l) => l.some((c) => has(c.name_zh, c.name, c.modern_zh, c.modern))).slice(0, 8)) {
       const c = list.find((c) => has(c.name_zh, c.name)) || list[0];
@@ -2298,15 +2441,21 @@ async function jumpToYear(y) {
   renderLedger();
 }
 async function jumpToPerson(p, era) {
+  setMode(era.region);
   const [a, b] = personSpan(p);
   await jumpToYear(Math.max(era.start, Math.min(era.end, Math.round((a + b) / 2))));
   focusPerson(p);
 }
 async function jumpToRuler(polity, i, era) {
+  // A ruler of another region: switch the timeline there and bring the region into view.
+  const reg = state.regionById[era.region];
+  if (setMode(era.region) && reg?.polygon?.length)
+    map.fitBounds(polyBounds(reg.polygon), { padding: { top: 120, bottom: 140, left: 60, right: innerWidth > 720 ? 380 : 60 }, maxZoom: 5, duration: 1400 });
   const r = (await loadLayers(era)).rulers[polity][i];
   await jumpToYear(Math.max(era.start, Math.min(era.end, r.from)));
   state.layerData = await loadLayers(era);
   state.tab = "rulers";
+  state.rulerPolity = polity;
   scopeToRuler(polity, i);
   renderLedger();
 }
@@ -2585,13 +2734,14 @@ async function init() {
     only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
     pack && packFile("eras"), pack && packFile("events"),
   ]);
-  // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls) stay out of a pack shown alone.
+  // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls, exchange) stay out of a pack shown alone.
   if (!only) {
     state.overlays = await loadJSON("data/overlays.json").catch(() => state.overlays);
     state.passes = await loadJSON("data/passes.json").catch(() => []);
     state.roads = await loadJSON("data/roads.json").catch(() => []);
     state.clans = await loadJSON("data/clans.json").catch(() => []);
     state.walls = await loadJSON("data/walls.json").catch(() => []);
+    state.exchange = await loadJSON("data/exchange.json").catch(() => state.exchange);
   }
   state.geo = await loadJSON("data/geo/features.json").catch(() => []);
   state.oldGeo = (await loadJSON("data/geo/old-rivers.geojson").catch(() => ({ features: [] }))).features;

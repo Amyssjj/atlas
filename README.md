@@ -11,9 +11,9 @@ inventions and more. It works in English and Chinese.
 ![The atlas in 221 BCE, when Qin unifies China](docs/img/atlas.jpg)
 
 - **The whole world, 3000 BCE to 2010.** Borders come from historical-basemaps. The timeline follows the
-  civilisation you are looking at: over Europe it shows Europe's periods, over India India's.
-- **China in depth.** It covers Xia to Qing, with 1,654 events, rulers, people, battles, roads, walls and 104 guided
-  tours.
+  civilisation you are looking at: over Europe it shows Europe's periods, over India India's. About 3,500 events,
+  204 guided tours, and rulers and people for 14 regions, plus trade routes and the spread of faiths, techniques and crops.
+- **China in depth.** Xia to Qing, with battles, roads, walls, elites and long event stories.
 - **3D terrain and satellite imagery** need no API keys. Overview tiles are bundled with the site; zoom in and sharper
   terrain (about 30 m) and 10 m imagery load on demand.
 - **An engine for your own history.** Any site can show its own periods, events, tours, map layers and plugins on the

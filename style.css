@@ -111,7 +111,23 @@ body {
   cursor: pointer;
 }
 .chip[aria-pressed="true"] { background: var(--jade-soft); border-color: var(--jade); color: var(--jade); }
-.chip.auto { border-style: dashed; border-color: var(--cinnabar); color: var(--cinnabar); }
+.chip.auto { border-style: dashed; border-width: 1.5px; border-color: #c98a1b; background: #fdf1d8; color: #8a5a00; }
+.chip.auto::before { content: "⚡"; margin-right: 3px; font-size: 10px; }
+/* Auto layers: a switch of its own above the layer groups */
+.auto-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 6px 8px; margin-bottom: 2px; border-radius: 8px; background: #fdf1d8; border: 1px dashed #c98a1b; }
+.auto-row small { flex: 1 1 180px; font-size: 11px; line-height: 1.35; color: #8a5a00; }
+.switch { appearance: none; display: inline-flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; cursor: pointer; font: 600 12px/1 var(--font-body); color: #8a5a00; }
+.switch i { position: relative; width: 30px; height: 17px; border-radius: 999px; background: #c9bfae; transition: background .2s; }
+.switch i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: transform .2s; }
+.switch[aria-pressed="true"] i { background: #c98a1b; }
+.switch[aria-pressed="true"] i::after { transform: translateX(13px); }
+.switch:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; border-radius: 4px; }
+.auto-strip { position: absolute; z-index: 4; top: 16px; left: 50%; transform: translateX(-50%); max-width: min(560px, calc(100vw - 840px)); display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 6px 8px; font-size: 11px; color: var(--muted); }
+.auto-strip[hidden] { display: none; }
+.auto-strip span { margin: 0 2px 0 4px; }
+.auto-strip .chip { padding: 4px 8px; font-size: 11px; }
+@media (max-width: 1100px) { .auto-strip { top: auto; bottom: 120px; max-width: calc(100vw - 32px); } }
+@media (max-width: 720px) { .auto-strip { top: calc(96px + env(safe-area-inset-top)); bottom: auto; left: 8px; right: 8px; transform: none; max-width: none; } .era.open ~ .auto-strip { display: none; } }
 .chip:focus-visible, .ev:focus-visible, .play:focus-visible, input[type=range]:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; }
 
 /* Event ledger */
@@ -472,6 +488,23 @@ html:lang(en) .mk-polity .ruler { font-family: var(--font-body); font-weight: 60
 .mk-route.k-wall { background: #5a4636; }
 .mk-arrow { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 14px solid #2f5f8a; pointer-events: none; }
 .mk-arrow.k-campaign { border-bottom-color: #b93a26; }
+.mk-route.k-spread { max-width: 160px; font-size: 10px; }
+
+/* Same year in every region */
+.wd-list { list-style: none; margin: 0; padding: 0 0 8px; }
+.wd-row { padding: 8px 16px 8px 13px; border-left: 3px solid var(--rc); border-bottom: 1px solid var(--rule); }
+.wd-row.here { background: rgba(192,57,43,.06); }
+.wd-head { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.wd-head b { font: 600 14px/1.3 var(--font-display); }
+.wd-head span { font-size: 12px; color: var(--muted); }
+.wd-head:hover b { color: var(--cinnabar); }
+.wd-rulers { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
+.wd-rulers:empty { display: none; }
+.wd-ev { list-style: none; margin: 4px 0 0; padding: 0; }
+.wd-ev button { display: block; width: 100%; padding: 2px 0; border: 0; background: none; cursor: pointer; text-align: left; font: 12px/1.4 var(--font-body); color: inherit; }
+.wd-ev button:hover { color: var(--cinnabar); }
+.wd-ev span { display: inline-block; min-width: 58px; font: 500 11px var(--font-mono); color: var(--cinnabar); }
+.wd-none { margin: 4px 0 0; font-size: 11px; color: var(--muted); font-style: italic; }
 
 @media (max-width: 720px) {
   /* Battle cards shrink to their title until tapped. */
