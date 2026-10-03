@@ -697,6 +697,8 @@ function rulerAt(name, year) {
 }
 // The name a learner knows (汉武帝, 冒顿单于), plus the personal name when the title doesn't already contain it.
 function rulerText(r) {
+  // Rulers outside China carry a rank (国王, 苏丹) instead of a title; the name leads.
+  if (r.rank || r.rank_zh) return zh() ? [r.name_zh || r.name, r.rank_zh || ""] : [r.name, r.rank || ""];
   if (zh()) return [r.title_zh || r.name_zh, r.title_zh && !r.title_zh.includes(r.name_zh) ? r.name_zh : ""];
   return [r.title || r.name, r.title && !r.title.includes(r.name) ? r.name : ""];
 }
@@ -1963,8 +1965,8 @@ function searchResults(q) {
         go: () => startTour(tr.id, k) });
     for (const { p, era } of searchIndex.people.filter(({ p }) => has(p.name_zh, p.name)).slice(0, 10))
       out.push({ g: "person", year: p.born ?? p.died, title: nameOf(p), sub: `${t("fields")[p.field] || ""} · ${personLife(p)}`, go: () => jumpToPerson(p, era) });
-    for (const { r, i, polity, era, pz } of searchIndex.rulers.filter(({ r }) => has(r.name_zh, r.name, r.title_zh, r.title)).slice(0, 10))
-      out.push({ g: "ruler", year: r.from, title: zh() ? `${r.title_zh || r.title} ${r.name_zh || ""}` : `${r.title || r.name}`,
+    for (const { r, i, polity, era, pz } of searchIndex.rulers.filter(({ r }) => has(r.name_zh, r.name, r.title_zh, r.title, r.rank_zh)).slice(0, 10))
+      out.push({ g: "ruler", year: r.from, title: zh() ? `${r.title_zh || r.title || r.rank_zh || ""} ${r.name_zh || ""}`.trim() : `${r.title || r.name}`,
         sub: `${zh() ? pz || polity : polity} · ${fmtYear(r.from)} – ${fmtYear(r.to)}`, go: () => jumpToRuler(polity, i, era) });
     for (const list of searchIndex.cities.filter((l) => l.some((c) => has(c.name_zh, c.name, c.modern_zh, c.modern))).slice(0, 8)) {
       const c = list.find((c) => has(c.name_zh, c.name)) || list[0];
@@ -2022,6 +2024,7 @@ async function jumpToRuler(polity, i, era) {
   await jumpToYear(Math.max(era.start, Math.min(era.end, r.from)));
   state.layerData = await loadLayers(era);
   state.tab = "rulers";
+  state.rulerPolity = polity;
   scopeToRuler(polity, i);
   renderLedger();
 }

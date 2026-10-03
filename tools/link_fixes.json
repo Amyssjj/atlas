@@ -54,15 +54,6 @@
    "Luoyang"
   ]
  },
- "https://en.wikipedia.org/wiki/Four-goat_square_zun": {
-  "was": "https://en.wikipedia.org/wiki/Four-goat_square_zun",
-  "now": "https://en.wikipedia.org/wiki/Four-goat_Square_Zun",
-  "for": "四羊方尊",
-  "other": [
-   "Zun",
-   "Tanheli"
-  ]
- },
  "https://en.wikipedia.org/wiki/Ji_Li": {
   "was": "https://en.wikipedia.org/wiki/Ji_Li",
   "now": null,
@@ -80,8 +71,8 @@
   "for": "箕子东走朝鲜",
   "disambig": true,
   "suggest": [
-   "Gija language",
    "Gija people",
+   "Gija language",
    "Gija Jumulu"
   ]
  },
@@ -96,14 +87,34 @@
    "Zhufu Yan"
   ]
  },
+ "https://en.wikipedia.org/wiki/Lycurgus": {
+  "was": "https://en.wikipedia.org/wiki/Lycurgus",
+  "now": "https://en.wikipedia.org/wiki/Lycurgus",
+  "for": "来库古改革",
+  "other": [
+   "Lycurgus of Athens",
+   "Lycurgus Cup"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Arzhan": {
+  "was": "https://en.wikipedia.org/wiki/Arzhan",
+  "now": null,
+  "for": "阿尔赞王陵",
+  "disambig": true,
+  "suggest": [
+   "Arzhan",
+   "Arzhan culture",
+   "Saka"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Duke_Shang_of_Song": {
   "was": "https://en.wikipedia.org/wiki/Duke_Shang_of_Song",
   "now": null,
   "for": "华督弑宋殇公",
   "disambig": false,
   "suggest": [
-   "Periodization of the Shang dynasty",
    "Weizi of Song",
+   "Periodization of the Shang dynasty",
    "Shang dynasty"
   ]
  },
@@ -115,7 +126,7 @@
   "suggest": [
    "Wuxia",
    "Văn Cao",
-   "Qabiao language"
+   "Wang Ling (Three Kingdoms)"
   ]
  },
  "https://en.wikipedia.org/wiki/Battle_of_Hanyuan": {
@@ -138,6 +149,15 @@
    "Battle of Hong Kong",
    "Battle of Hong Kong order of battle",
    "British Hong Kong Garrison"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Draco_(legislator)": {
+  "was": "https://en.wikipedia.org/wiki/Draco_(legislator)",
+  "now": "https://en.wikipedia.org/wiki/Draco_(legislator)",
+  "for": "德拉古立法",
+  "other": [
+   "Draconian constitution",
+   "Charondas"
   ]
  },
  "https://en.wikipedia.org/wiki/Houma": {
@@ -190,8 +210,8 @@
   "for": "鲁昭公奔齐",
   "disambig": false,
   "suggest": [
-   "Duke Ding of Lu",
    "Duke Xiang of Lu",
+   "Duke Ding of Lu",
    "Lu (state)"
   ]
  },
@@ -280,7 +300,7 @@
   "suggest": [
    "Zhang Yi",
    "Zhang Yimou",
-   "Lay Zhang"
+   "Yi Zhang (biochemist)"
   ]
  },
  "https://en.wikipedia.org/wiki/Qin's_campaign_against_Ba_and_Shu": {
@@ -357,7 +377,7 @@
   "suggest": [
    "King Daoxiang of Zhao",
    "Kingdom 4: Return of the Great General",
-   "Kōji Kikkawa"
+   "Kingdom (manga)"
   ]
  },
  "https://en.wikipedia.org/wiki/Qin_Straight_Road": {
@@ -432,8 +452,8 @@
   "for": "满城汉墓",
   "disambig": false,
   "suggest": [
-   "Mancheng, Baoding",
    "Dou Wan",
+   "Mancheng, Baoding",
    "Baoding"
   ]
  },
@@ -455,17 +475,8 @@
   "disambig": false,
   "suggest": [
    "Chinese calendar",
-   "Lunisolar calendar",
-   "History of calendars"
-  ]
- },
- "https://en.wikipedia.org/wiki/Li_Ling": {
-  "was": "https://en.wikipedia.org/wiki/Li_Ling",
-  "now": "https://en.wikipedia.org/wiki/Li_Ling",
-  "for": "李陵降匈奴",
-  "other": [
-   "Sima Qian",
-   "Li Ling (disambiguation)"
+   "History of calendars",
+   "Lunisolar calendar"
   ]
  },
  "https://en.wikipedia.org/wiki/Edict_of_Luntai": {
@@ -486,8 +497,8 @@
   "disambig": false,
   "suggest": [
    "Bao Youxiang",
-   "Guo Zongxun",
-   "Ice Creamusume"
+   "Ice Creamusume",
+   "Zhao Jinmai"
   ]
  },
  "https://en.wikipedia.org/wiki/Chang_Hui": {
@@ -509,7 +520,7 @@
   "suggest": [
    "Zheng Ji",
    "Zheng Ji (general)",
-   "Ji Zheng"
+   "Zheng Keshuang"
   ]
  },
  "https://en.wikipedia.org/wiki/Feng_Fengshi": {
@@ -540,7 +551,7 @@
   "suggest": [
    "Liu Xiang (scholar)",
    "Book of Han",
-   "Emperor Xuan of Han"
+   "Marquis of Haihun"
   ]
  },
  "https://en.wikipedia.org/wiki/Jia_Juanzhi": {
@@ -549,8 +560,8 @@
   "for": "罢珠崖郡",
   "disambig": false,
   "suggest": [
-   "Book of Han",
-   "Lạc Việt"
+   "Lạc Việt",
+   "Book of Han"
   ]
  },
  "https://en.wikipedia.org/wiki/Wang_Feng_(Han_dynasty)": {
@@ -562,6 +573,15 @@
    "Xin dynasty",
    "Han Chinese",
    "Wang Zhengjun"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Onjo_of_Paekche": {
+  "was": "https://en.wikipedia.org/wiki/Onjo_of_Paekche",
+  "now": "https://en.wikipedia.org/wiki/Onjo_of_Paekche",
+  "for": "百济建国",
+  "other": [
+   "Paekche",
+   "Soseono"
   ]
  },
  "https://en.wikipedia.org/wiki/Qilüe": {
@@ -680,8 +700,8 @@
   "for": "阳嘉察举新制",
   "disambig": false,
   "suggest": [
-   "18 Warriors of Sui-Tang Transition",
    "Four Perils",
+   "18 Warriors of Sui-Tang Transition",
    "Zuo Liangyu"
   ]
  },
@@ -694,15 +714,6 @@
    "Seismometer",
    "Han dynasty",
    "History of science and technology in China"
-  ]
- },
- "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions": {
-  "was": "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions",
-  "now": "https://en.wikipedia.org/wiki/Disasters_of_the_Partisan_Prohibitions",
-  "for": "党锢之祸",
-  "other": [
-   "AD 166",
-   "Xun Shuang"
   ]
  },
  "https://en.wikipedia.org/wiki/Duan_Jiong": {
@@ -771,15 +782,6 @@
    "S.H.E"
   ]
  },
- "https://en.wikipedia.org/wiki/Shi_Xie": {
-  "was": "https://en.wikipedia.org/wiki/Shi_Xie",
-  "now": "https://en.wikipedia.org/wiki/Shi_Xie",
-  "for": "吕岱平交州",
-  "other": [
-   "Shi Xie (disambiguation)",
-   "Shi Hui (Eastern Wu)"
-  ]
- },
  "https://en.wikipedia.org/wiki/Jianye": {
   "was": "https://en.wikipedia.org/wiki/Jianye",
   "now": null,
@@ -821,7 +823,7 @@
   "suggest": [
    "Wang Jun (Jin dynasty)",
    "Conquest of Wu by Jin",
-   "Jin dynasty (266–420)"
+   "Wang Jun (Pengzu)"
   ]
  },
  "https://en.wikipedia.org/wiki/Yang_Jun": {
@@ -854,7 +856,7 @@
   "suggest": [
    "Sima Yu",
    "Emperor Hui of Jin",
-   "Taizi"
+   "War of the Eight Princes"
   ]
  },
  "https://en.wikipedia.org/wiki/Zhang_Chang": {
@@ -897,8 +899,8 @@
   "disambig": false,
   "suggest": [
    "Greek alphabet",
-   "Sogdian language",
-   "Latin script"
+   "Latin script",
+   "Sogdian language"
   ]
  },
  "https://en.wikipedia.org/wiki/Beifu_Army": {
@@ -921,15 +923,6 @@
    "Kutai",
    "Sultanate of Kutai",
    "Kutai Kartanegara Regency"
-  ]
- },
- "https://en.wikipedia.org/wiki/Kumārajīva": {
-  "was": "https://en.wikipedia.org/wiki/Kumārajīva",
-  "now": "https://en.wikipedia.org/wiki/Kum%C4%81raj%C4%ABva",
-  "for": "鸠摩罗什到长安",
-  "other": [
-   "East Asian Mādhyamaka",
-   "White Horse Pagoda, Dunhuang"
   ]
  },
  "https://en.wikipedia.org/wiki/He_Chengtian": {
@@ -973,7 +966,7 @@
   "suggest": [
    "Zang (surname)",
    "The Legend of Zang Hai",
-   "Wang Zhi (empress)"
+   "Zangfu ( Chinese medicine)"
   ]
  },
  "https://en.wikipedia.org/wiki/Liu_Shao": {
@@ -1016,8 +1009,8 @@
   "disambig": false,
   "suggest": [
    "Emperor Ming of Song",
-   "Emperor Gao of Southern Qi",
-   "Liu Song dynasty"
+   "Liu Song dynasty",
+   "Liu Yu"
   ]
  },
  "https://en.wikipedia.org/wiki/Xiao_Ziliang": {
@@ -1092,8 +1085,8 @@
   "for": "小关之战",
   "disambig": false,
   "suggest": [
-   "Gao Aocao",
    "Dou Tai",
+   "Gao Aocao",
    "Battle of Shayuan"
   ]
  },
@@ -1136,7 +1129,7 @@
   "suggest": [
    "A record of Buddhist monasteries in Luoyang",
    "Shaolin Monastery",
-   "Bodhidharma"
+   "Yang Xuanzhi"
   ]
  },
  "https://en.wikipedia.org/wiki/Western_Liang_(Southern_dynasties)": {
@@ -1179,8 +1172,8 @@
   "disambig": false,
   "suggest": [
    "Linnaeolpium",
-   "Memory Lost",
-   "Ideoblothrus linnaei"
+   "Ideoblothrus linnaei",
+   "Tan See Leng"
   ]
  },
  "https://en.wikipedia.org/wiki/Siege_of_Yanmen": {
@@ -1212,8 +1205,8 @@
   "disambig": false,
   "suggest": [
    "Emperor Taizong's campaign against Tuyuhun",
-   "Tuyuhun",
-   "Li Jing (Tang dynasty)"
+   "Li Jing (Tang dynasty)",
+   "Tuyuhun"
   ]
  },
  "https://en.wikipedia.org/wiki/Battle_of_Songzhou": {
@@ -1441,6 +1434,15 @@
   "disambig": false,
   "suggest": []
  },
+ "https://en.wikipedia.org/wiki/Tughril_I": {
+  "was": "https://en.wikipedia.org/wiki/Tughril_I",
+  "now": "https://en.wikipedia.org/wiki/Tughril_I",
+  "for": "图格里勒进入巴格达",
+  "other": [
+   "Tughril III",
+   "Tughril ibn Kilij Arslan II"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Wang_Shao": {
   "was": "https://en.wikipedia.org/wiki/Wang_Shao",
   "now": null,
@@ -1460,7 +1462,7 @@
   "suggest": [
    "Cheng Yi",
    "Cheng Yi (actor)",
-   "Lin Cheng-yi"
+   "Cheng Yi (philosopher)"
   ]
  },
  "https://en.wikipedia.org/wiki/Battle_of_Hubudagang": {
@@ -1478,8 +1480,8 @@
   "for": "指南针用于航海",
   "disambig": true,
   "suggest": [
-   "Zhu Yu",
    "Zhu Yu (artist)",
+   "Zhu Yu",
    "Zhu Yu (author)"
   ]
  },
@@ -1502,7 +1504,7 @@
   "suggest": [
    "Emperor Gaozong of Song",
    "Vamos a la playa (Righeira song)",
-   "Eight Thousand Li of Cloud and Moon (TV series)"
+   "Maastricht"
   ]
  },
  "https://en.wikipedia.org/wiki/Qi_(Liu_Yu)": {
@@ -1512,8 +1514,8 @@
   "disambig": false,
   "suggest": [
    "Xiang Yu",
-   "Liu Song dynasty",
-   "Qi"
+   "Qi",
+   "Liu Song dynasty"
   ]
  },
  "https://en.wikipedia.org/wiki/Zhang_Jun_(Song_dynasty)": {
@@ -1523,8 +1525,8 @@
   "disambig": false,
   "suggest": [
    "Zhang Jun (Song chancellor)",
-   "Song dynasty",
-   "Zhang Jun (general)"
+   "Zhang Jun (general)",
+   "Song dynasty"
   ]
  },
  "https://en.wikipedia.org/wiki/Huizi": {
@@ -1536,15 +1538,6 @@
    "Huizi (currency)",
    "Huizi",
    "Hui Shi"
-  ]
- },
- "https://en.wikipedia.org/wiki/Rock-hewn_Churches,_Lalibela": {
-  "was": "https://en.wikipedia.org/wiki/Rock-hewn_Churches,_Lalibela",
-  "now": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
-  "for": "拉利贝拉岩石教堂",
-  "other": [
-   "Lalibela",
-   "Church of Saint George, Lalibela"
   ]
  },
  "https://en.wikipedia.org/wiki/Li_Quan_(rebel)": {
@@ -1679,6 +1672,15 @@
    "Zhou (Zhang Shicheng)"
   ]
  },
+ "https://en.wikipedia.org/wiki/Mun_Ikch%C5%8Fm": {
+  "was": "https://en.wikipedia.org/wiki/Mun_Ikch%C5%8Fm",
+  "now": "https://en.wikipedia.org/wiki/Mun_Ikch%C5%8Fm",
+  "for": "文益渐引进棉花",
+  "other": [
+   "List of people with the Korean family name Moon",
+   "Gongmin of Goryeo"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Li_Wenzhong": {
   "was": "https://en.wikipedia.org/wiki/Li_Wenzhong",
   "now": null,
@@ -1731,7 +1733,7 @@
   "suggest": [
    "Guangxi",
    "Bukidnon",
-   "Kerala"
+   "2025 in India"
   ]
  },
  "https://en.wikipedia.org/wiki/Cham%E2%80%93Đại_Việt_War_(1471)": {
@@ -1754,6 +1756,24 @@
    "Wang Zhi (eunuch)",
    "Denver and Rio Grande Western Depot (Salt Lake City)",
    "Eight Tigers"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Huayna_Capac": {
+  "was": "https://en.wikipedia.org/wiki/Huayna_Capac",
+  "now": "https://en.wikipedia.org/wiki/Huayna_Capac",
+  "for": "瓦伊纳·卡帕克死于天花",
+  "other": [
+   "Manco Inca Yupanqui",
+   "History of the Incas"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Francisco_de_Toledo": {
+  "was": "https://en.wikipedia.org/wiki/Francisco_de_Toledo",
+  "now": "https://en.wikipedia.org/wiki/Francisco_de_Toledo",
+  "for": "托莱多改革",
+  "other": [
+   "Francisco de Toledo (Jesuit)",
+   "Francisco Toledo"
   ]
  },
  "https://en.wikipedia.org/wiki/Ordos_campaign": {
@@ -1822,6 +1842,17 @@
    "Mongol invasions of Tibet"
   ]
  },
+ "https://en.wikipedia.org/wiki/Abu%27l_Khair_Khan": {
+  "was": "https://en.wikipedia.org/wiki/Abu%27l_Khair_Khan",
+  "now": null,
+  "for": "小玉兹归附俄国",
+  "disambig": false,
+  "suggest": [
+   "Abul Khair Khan",
+   "Nawab Abu'l Fateh Khan",
+   "Abu'l-Khayr Khan"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Hong_Gyeong-nae%27s_Rebellion": {
   "was": "https://en.wikipedia.org/wiki/Hong_Gyeong-nae%27s_Rebellion",
   "now": null,
@@ -1844,6 +1875,15 @@
    "Battle of Algiers"
   ]
  },
+ "https://en.wikipedia.org/wiki/Kenesary_Qasymuly": {
+  "was": "https://en.wikipedia.org/wiki/Kenesary_Qasymuly",
+  "now": "https://en.wikipedia.org/wiki/Kenesary_Qasymuly",
+  "for": "克涅萨热起义",
+  "other": [
+   "Siege of Sozak",
+   "Russian conquest of Central Asia"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Taiping_Northern_Expedition": {
   "was": "https://en.wikipedia.org/wiki/Taiping_Northern_Expedition",
   "now": null,
@@ -1853,6 +1893,17 @@
    "Taiping Heavenly Kingdom Northern Expedition",
    "Taiping Rebellion",
    "Western Expedition"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Russo-Khivan_War_of_1873": {
+  "was": "https://en.wikipedia.org/wiki/Russo-Khivan_War_of_1873",
+  "now": null,
+  "for": "沙俄征服希瓦",
+  "disambig": false,
+  "suggest": [
+   "Khivan campaign of 1873",
+   "Khivan campaign of 1839–1840",
+   "Russian conquest of Central Asia"
   ]
  },
  "https://en.wikipedia.org/wiki/Xinjiang_Province": {
@@ -1886,6 +1937,24 @@
    "Non-cooperation movement"
   ]
  },
+ "https://en.wikipedia.org/wiki/Bukhara_Operation_(1920)": {
+  "was": "https://en.wikipedia.org/wiki/Bukhara_Operation_(1920)",
+  "now": "https://en.wikipedia.org/wiki/Bukhara_operation_(1920)",
+  "for": "红军攻占布哈拉",
+  "other": [
+   "Emirate of Bukhara",
+   "Bukhara slave trade"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Omar_al-Mukhtar": {
+  "was": "https://en.wikipedia.org/wiki/Omar_al-Mukhtar",
+  "now": "https://en.wikipedia.org/wiki/Omar_al-Mukhtar",
+  "for": "奥马尔·穆赫塔尔就义",
+  "other": [
+   "Omar Mukhtar Street",
+   "Omar Al-Mukhtar University"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Nepalese_Constituent_Assembly": {
   "was": "https://en.wikipedia.org/wiki/Nepalese_Constituent_Assembly",
   "now": null,
@@ -1893,8 +1962,8 @@
   "disambig": true,
   "suggest": [
    "Constituent Assembly of Nepal",
-   "1st Nepalese Constituent Assembly",
-   "2nd Nepalese Constituent Assembly"
+   "2nd Nepalese Constituent Assembly",
+   "1st Nepalese Constituent Assembly"
   ]
  },
  "https://en.wikipedia.org/wiki/Deng_Yu": {
@@ -2095,15 +2164,6 @@
    "Fall of Chang'an"
   ]
  },
- "https://en.wikipedia.org/wiki/Fu_Jian_(337–385)": {
-  "was": "https://en.wikipedia.org/wiki/Fu_Jian_(337–385)",
-  "now": "https://en.wikipedia.org/wiki/Fu_Jian_(337%E2%80%93385)",
-  "for": "苻坚",
-  "other": [
-   "Fu Jian",
-   "Fu Jian (317–355)"
-  ]
- },
  "https://en.wikipedia.org/wiki/Wang_Xianzhi": {
   "was": "https://en.wikipedia.org/wiki/Wang_Xianzhi",
   "now": null,
@@ -2177,8 +2237,8 @@
   "disambig": false,
   "suggest": [
    "Sung Shu Chien",
-   "Time poverty",
-   "Zhang Qinglian"
+   "Zhang Qinglian",
+   "Time poverty"
   ]
  },
  "https://en.wikipedia.org/wiki/Wei_Liangfu": {
@@ -2222,7 +2282,7 @@
   "suggest": [
    "You Ming Lu",
    "A New Account of the Tales of the World",
-   "Cao Cao"
+   "Yang Yiqing"
   ]
  },
  "https://en.wikipedia.org/wiki/Jiang_Yan": {
@@ -2253,8 +2313,8 @@
   "for": "韩擒虎",
   "disambig": false,
   "suggest": [
-   "List of death deities",
    "List of rape victims from ancient history and mythology",
+   "List of death deities",
    "Military history of the Sui dynasty"
   ]
  },
@@ -2265,8 +2325,8 @@
   "disambig": false,
   "suggest": [
    "Chen dynasty",
-   "Xiao Cong",
-   "Emperor Yang of Sui"
+   "Military history of the Sui dynasty",
+   "Xiao Cong"
   ]
  },
  "https://en.wikipedia.org/wiki/Liu_Zhuo": {
@@ -2277,7 +2337,7 @@
   "suggest": [
    "Campaign against Dong Zhuo",
    "Dong Zhuo",
-   "Liu Bei"
+   "Liu Bian"
   ]
  },
  "https://en.wikipedia.org/wiki/Liu_Yong": {
@@ -2298,8 +2358,8 @@
   "disambig": false,
   "suggest": [
    "Qian Liu",
-   "Qian Xuesen",
-   "Qian Hongzong"
+   "Qian Hongzong",
+   "Yi Jingqian"
   ]
  },
  "https://en.wikipedia.org/wiki/Li_Jie_(author)": {
@@ -2412,15 +2472,6 @@
    "Robert Hart (musician)"
   ]
  },
- "https://en.wikipedia.org/wiki/Bi_Gan": {
-  "was": "https://en.wikipedia.org/wiki/Bi_Gan",
-  "now": "https://en.wikipedia.org/wiki/Bi_Gan",
-  "for": "比干",
-  "other": [
-   "Bi Gan",
-   "Resurrection (2025 film)"
-  ]
- },
  "https://en.wikipedia.org/wiki/Weizi": {
   "was": "https://en.wikipedia.org/wiki/Weizi",
   "now": null,
@@ -2461,8 +2512,8 @@
   "disambig": false,
   "suggest": [
    "List of Chinese philosophers",
-   "Qin Shi Huang",
-   "Zhang Xuecheng"
+   "Zhang Xuecheng",
+   "Qin Shi Huang"
   ]
  },
  "https://en.wikipedia.org/wiki/Zheng_Qiao": {
@@ -2472,8 +2523,8 @@
   "disambig": false,
   "suggest": [
    "Tongzhi (encyclopedia)",
-   "Wenxian Tongkao",
-   "Zheng (state)"
+   "Zheng (state)",
+   "Wenxian Tongkao"
   ]
  },
  "https://en.wikipedia.org/wiki/Zhou_Qufei": {
@@ -2483,17 +2534,8 @@
   "disambig": false,
   "suggest": [
    "Lingwai Daida",
-   "Zhu Fan Zhi",
-   "Zhao Rukuo"
-  ]
- },
- "https://en.wikipedia.org/wiki/Zhao_Rukuo": {
-  "was": "https://en.wikipedia.org/wiki/Zhao_Rukuo",
-  "now": "https://en.wikipedia.org/wiki/Zhao_Rukuo",
-  "for": "赵汝适",
-  "other": [
-   "Zhu Fan Zhi",
-   "Melayu Kingdom"
+   "Zhao Rukuo",
+   "Zhu Fan Zhi"
   ]
  },
  "https://en.wikipedia.org/wiki/Cao_Gui": {
@@ -2590,8 +2632,8 @@
   "for": "智永",
   "disambig": false,
   "suggest": [
-   "Xu Zhiyong",
    "Shi Zhiyong",
+   "Xu Zhiyong",
    "Cai Zhiyong"
   ]
  },
@@ -2603,7 +2645,7 @@
   "suggest": [
    "Emperor Gaozu of Tang",
    "Li Mi (Sui dynasty)",
-   "Emperor Taizong of Tang"
+   "Li Shiji"
   ]
  },
  "https://en.wikipedia.org/wiki/Wang_Su": {
@@ -2691,7 +2733,7 @@
   "suggest": [
    "Feizi",
    "Han Feizi",
-   "Qin dynasty"
+   "Qin Shi Huang"
   ]
  },
  "https://en.wikipedia.org/wiki/Zhong_Shanfu": {
@@ -2705,6 +2747,381 @@
    "Xie Daoyun"
   ]
  },
+ "https://en.wikipedia.org/wiki/Suluk": {
+  "was": "https://en.wikipedia.org/wiki/Suluk",
+  "now": null,
+  "for": "苏禄",
+  "disambig": true,
+  "suggest": [
+   "Suluk",
+   "Suluk, Syria",
+   "Houtat Sulūk"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Masud_Beg": {
+  "was": "https://en.wikipedia.org/wiki/Masud_Beg",
+  "now": null,
+  "for": "麻速忽",
+  "disambig": false,
+  "suggest": [
+   "Orghana",
+   "Ögedei Khan",
+   "Battle of Herat (1270)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Babarahim_Mashrab": {
+  "was": "https://en.wikipedia.org/wiki/Babarahim_Mashrab",
+  "now": null,
+  "for": "麦西热甫",
+  "disambig": false,
+  "suggest": [
+   "Mashrab",
+   "Baba (name)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Bukhar_Zhyrau": {
+  "was": "https://en.wikipedia.org/wiki/Bukhar_Zhyrau",
+  "now": null,
+  "for": "布哈尔·吉劳",
+  "disambig": false,
+  "suggest": [
+   "Bukhar-Zhyrau District",
+   "Bukhar-zhirau Kalmakanov",
+   "Tasshoky (Bukhar-Zhyrau District)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Amangeldy_Imanov": {
+  "was": "https://en.wikipedia.org/wiki/Amangeldy_Imanov",
+  "now": null,
+  "for": "阿曼格尔德·伊玛诺夫",
+  "disambig": false,
+  "suggest": [
+   "Amankeldı İmanov",
+   "Amangeldy",
+   "Cinema of Kazakhstan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Abdulla_Oripov": {
+  "was": "https://en.wikipedia.org/wiki/Abdulla_Oripov",
+  "now": null,
+  "for": "阿卜杜拉·阿里波夫",
+  "disambig": true,
+  "suggest": [
+   "Abdulla Oripov",
+   "Abdulla Aripov",
+   "Abdulla Oripov (poet)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Den": {
+  "was": "https://en.wikipedia.org/wiki/Den",
+  "now": null,
+  "for": "登",
+  "disambig": true,
+  "suggest": [
+   "Den",
+   "DEN",
+   "The Den"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Weni": {
+  "was": "https://en.wikipedia.org/wiki/Weni",
+  "now": null,
+  "for": "乌尼",
+  "disambig": true,
+  "suggest": [
+   "Autobiography of Weni",
+   "Wenis",
+   "WENI"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Pope_Theophilus_of_Alexandria": {
+  "was": "https://en.wikipedia.org/wiki/Pope_Theophilus_of_Alexandria",
+  "now": null,
+  "for": "亚历山大的提阿非罗",
+  "disambig": true,
+  "suggest": [
+   "Theophilus I of Alexandria",
+   "Theophilus of Alexandria",
+   "Theophilus II (Coptic patriarch of Alexandria)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Al-Kindi_(historian)": {
+  "was": "https://en.wikipedia.org/wiki/Al-Kindi_(historian)",
+  "now": null,
+  "for": "金迪",
+  "disambig": false,
+  "suggest": [
+   "Al-Kindi",
+   "Al-Kindi (surname)",
+   "Ja'da bint al-Ash'ath"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zaynab_an-Nafzawiyya": {
+  "was": "https://en.wikipedia.org/wiki/Zaynab_an-Nafzawiyya",
+  "now": "https://en.wikipedia.org/wiki/Zaynab_an-Nafzawiyyah",
+  "for": "宰奈卜",
+  "other": []
+ },
+ "https://en.wikipedia.org/wiki/Sultan_Mohammad": {
+  "was": "https://en.wikipedia.org/wiki/Sultan_Mohammad",
+  "now": null,
+  "for": "苏丹·穆罕默德",
+  "disambig": false,
+  "suggest": [
+   "Sultan Mohammad Khan",
+   "Sultan Mohammed",
+   "Dost Mohammad Khan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Allahverdi_Khan_(Safavid_general)": {
+  "was": "https://en.wikipedia.org/wiki/Allahverdi_Khan_(Safavid_general)",
+  "now": null,
+  "for": "安拉维尔迪汗",
+  "disambig": false,
+  "suggest": [
+   "Allahverdi Khan",
+   "Allahverdi",
+   "Emamqoli Khan"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mirza_Mahdi_Khan_Astarabadi": {
+  "was": "https://en.wikipedia.org/wiki/Mirza_Mahdi_Khan_Astarabadi",
+  "now": null,
+  "for": "米尔扎·马赫迪汗",
+  "disambig": false,
+  "suggest": [
+   "Mirza Mehdi Khan Astarabadi",
+   "Ahmed Raza Khan Barelvi",
+   "Nader Shah"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Sasaki_D%C5%8Dyo": {
+  "was": "https://en.wikipedia.org/wiki/Sasaki_D%C5%8Dyo",
+  "now": null,
+  "for": "佐佐木道誉",
+  "disambig": false,
+  "suggest": [
+   "Sasaki Takauji",
+   "Kyōgoku clan",
+   "List of The Elusive Samurai characters"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Zekkai_Ch%C5%ABshin": {
+  "was": "https://en.wikipedia.org/wiki/Zekkai_Ch%C5%ABshin",
+  "now": null,
+  "for": "绝海中津",
+  "disambig": false,
+  "suggest": [
+   "List of Kekkaishi chapters",
+   "Musō Soseki",
+   "Medieval Japanese literature"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/K%C5%8Dtar%C5%8D_Honda": {
+  "was": "https://en.wikipedia.org/wiki/K%C5%8Dtar%C5%8D_Honda",
+  "now": "https://en.wikipedia.org/wiki/Kotaro_Honda",
+  "for": "本多光太郎",
+  "other": [
+   "Kotaro Honda (footballer)",
+   "Kotaro"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Kim_Saeng": {
+  "was": "https://en.wikipedia.org/wiki/Kim_Saeng",
+  "now": null,
+  "for": "金生",
+  "disambig": false,
+  "suggest": [
+   "Kim Mu-saeng",
+   "Omniscient Interfering View",
+   "Kim Saeng-min"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Baegun": {
+  "was": "https://en.wikipedia.org/wiki/Baegun",
+  "now": null,
+  "for": "白云景闲",
+  "disambig": false,
+  "suggest": [
+   "Baegun station",
+   "Jikji",
+   "Uiwang"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Pak_Ji-won": {
+  "was": "https://en.wikipedia.org/wiki/Pak_Ji-won",
+  "now": null,
+  "for": "朴趾源",
+  "disambig": true,
+  "suggest": [
+   "Park Ji-won",
+   "Ji-won",
+   "Pak Se-ri"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jang_Ji-yeon": {
+  "was": "https://en.wikipedia.org/wiki/Jang_Ji-yeon",
+  "now": null,
+  "for": "张志渊",
+  "disambig": false,
+  "suggest": [
+   "Lim Ji-yeon",
+   "Jang So-yeon",
+   "Jang Ki-yong"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yi_Jun_(independence_activist)": {
+  "was": "https://en.wikipedia.org/wiki/Yi_Jun_(independence_activist)",
+  "now": null,
+  "for": "李儁",
+  "disambig": false,
+  "suggest": [
+   "Jeonju Yi clan",
+   "Yi Kang",
+   "List of Korean independence activists"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Yi_Bong-chang": {
+  "was": "https://en.wikipedia.org/wiki/Yi_Bong-chang",
+  "now": null,
+  "for": "李奉昌",
+  "disambig": false,
+  "suggest": [
+   "Sakuradamon incident (1932)",
+   "Jeonju Yi clan",
+   "Zhang Yimou"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Siyaj_K'ahk'": {
+  "was": "https://en.wikipedia.org/wiki/Siyaj_K'ahk'",
+  "now": null,
+  "for": "西亚赫·卡克",
+  "disambig": false,
+  "suggest": [
+   "Copán",
+   "Siyaj Kʼakʼ",
+   "Maya monarchs"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Anitta": {
+  "was": "https://en.wikipedia.org/wiki/Anitta",
+  "now": null,
+  "for": "阿尼塔",
+  "disambig": true,
+  "suggest": [
+   "Anitta (singer)",
+   "Anitta",
+   "São Paulo (song)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Jarir_ibn_Atiyya": {
+  "was": "https://en.wikipedia.org/wiki/Jarir_ibn_Atiyya",
+  "now": null,
+  "for": "哲利尔",
+  "disambig": false,
+  "suggest": [
+   "Jarir ibn Atiyah",
+   "Tafsir Ibn Atiyya",
+   "Ahmad ibn Hanbal"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Fuzuli": {
+  "was": "https://en.wikipedia.org/wiki/Fuzuli",
+  "now": null,
+  "for": "富祖里",
+  "disambig": true,
+  "suggest": [
+   "Fuzuli",
+   "Fuzuli (poet)",
+   "Fuzuli (city)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mahanama_(historian)": {
+  "was": "https://en.wikipedia.org/wiki/Mahanama_(historian)",
+  "now": null,
+  "for": "摩诃那摩",
+  "disambig": false,
+  "suggest": [
+   "Recorded history",
+   "Mahāvaṃsa",
+   "Buddha Preaching his First Sermon (Sarnath)"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Rajasekhara_(Sanskrit_poet)": {
+  "was": "https://en.wikipedia.org/wiki/Rajasekhara_(Sanskrit_poet)",
+  "now": "https://en.wikipedia.org/wiki/Rajashekhara_(Sanskrit_poet)",
+  "for": "王顶",
+  "other": [
+   "Sanskrit literature",
+   "Rajasekhara"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Ph%E1%BA%A1m_Tu": {
+  "was": "https://en.wikipedia.org/wiki/Ph%E1%BA%A1m_Tu",
+  "now": null,
+  "for": "范修",
+  "disambig": false,
+  "suggest": [
+   "Phạm Nhật Vượng",
+   "The Tale of Phạm Tử Hư Visiting Heaven",
+   "Phạm Ngũ Lão Street"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Gunavarman": {
+  "was": "https://en.wikipedia.org/wiki/Gunavarman",
+  "now": null,
+  "for": "求那跋摩",
+  "disambig": false,
+  "suggest": [
+   "Vasishtha dynasty",
+   "Kulaprabhavati",
+   "King Mahanama"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Shin_Maha_Rahtathara": {
+  "was": "https://en.wikipedia.org/wiki/Shin_Maha_Rahtathara",
+  "now": null,
+  "for": "信摩诃罗塔沙拉",
+  "disambig": false,
+  "suggest": [
+   "Shin Raṭṭhasāra",
+   "1490s in poetry",
+   "1526 in literature"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Abd_al-Rahman_al-Sadi": {
+  "was": "https://en.wikipedia.org/wiki/Abd_al-Rahman_al-Sadi",
+  "now": null,
+  "for": "阿卜杜·拉赫曼·萨迪",
+  "disambig": false,
+  "suggest": [
+   "Abdul-Rahman al-Sa'di",
+   "Tarikh al-Sudan",
+   "Al-Aḥad"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Mungo_Park": {
+  "was": "https://en.wikipedia.org/wiki/Mungo_Park",
+  "now": null,
+  "for": "芒戈·帕克",
+  "disambig": true,
+  "suggest": [
+   "Mungo Park (explorer)",
+   "Mungo Park",
+   "Mungo National Park"
+  ]
+ },
+ "https://en.wikipedia.org/wiki/Hendrik_Witbooi": {
+  "was": "https://en.wikipedia.org/wiki/Hendrik_Witbooi",
+  "now": null,
+  "for": "亨德里克·维特布伊",
+  "disambig": true,
+  "suggest": [
+   "Hendrik Witbooi (Nama chief)",
+   "Hendrik Witbooi",
+   "Lucia Witbooi"
+  ]
+ },
  "https://en.wikipedia.org/wiki/Gao_Yao": {
   "was": "https://en.wikipedia.org/wiki/Gao_Yao",
   "now": null,
@@ -2713,7 +3130,7 @@
   "suggest": [
    "Gao Yao",
    "Gao Yao (minister)",
-   "Gao Yao (footballer)"
+   "Li (surname 李)"
   ]
  },
  "https://en.wikipedia.org/wiki/Zhu_Danxi": {

@@ -3788,7 +3788,8 @@
   "people": [],
   "states": [
    "Shang"
-  ]
+  ],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E7%BE%8A%E6%96%B9%E5%B0%8A"
  },
  {
   "id": "ir-marlik",
@@ -18033,7 +18034,8 @@
   ],
   "states": [
    "Xiongnu"
-  ]
+  ],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%99%B5"
  },
  {
   "id": "bai-canal",
@@ -22082,7 +22084,8 @@
   ],
   "states": [
    "Han"
-  ]
+  ],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E5%85%9A%E9%94%A2%E4%B9%8B%E7%A5%B8"
  },
  {
   "id": "daqin-envoy",
@@ -24128,7 +24131,8 @@
   "states": [
    "Shu Han",
    "Wu"
-  ]
+  ],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E5%A3%AB%E7%87%AE_(%E4%B8%89%E5%9B%BD)"
  },
  {
   "id": "chu-shi-biao",
@@ -28633,7 +28637,8 @@
   ],
   "states": [
    "Later Qin"
-  ]
+  ],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E9%B8%A0%E6%91%A9%E7%BD%97%E4%BB%80"
  },
  {
   "id": "huiyuan-lushan",
@@ -41668,7 +41673,8 @@
   "source": "https://en.wikipedia.org/wiki/Sultan_Satuq_Bughra_Khan",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E8%90%A8%E5%9B%BE%E5%85%8B%C2%B7%E5%8D%9A%E6%A0%BC%E6%8B%89%E6%B1%97"
  },
  {
   "id": "eg-ikhshidid-dynasty",
@@ -47677,7 +47683,8 @@
   "source": "https://en.wikipedia.org/wiki/Ahmad_Yasawi",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E8%89%BE%E5%93%88%E8%BF%88%E5%BE%B7%C2%B7%E4%BA%9A%E8%90%A8%E7%BB%B4"
  },
  {
   "id": "quanzhen-founded",
@@ -48366,7 +48373,8 @@
   "source": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E6%8B%89%E5%88%A9%E8%B4%9D%E6%8B%89%E5%B2%A9%E7%9F%B3%E6%95%99%E5%A0%82"
  },
  {
   "id": "zhu-xi-death",
@@ -54682,7 +54690,8 @@
   "source": "https://en.wikipedia.org/wiki/Ulugh_Beg_Madrasa",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E7%83%8F%E9%AD%AF%E4%BC%AF%E6%A0%BC%E7%B6%93%E5%AD%B8%E9%99%A2"
  },
  {
   "id": "ir-goharshad-mosque",
@@ -56585,7 +56594,8 @@
   "source": "https://en.wikipedia.org/wiki/Battle_of_Merv",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E6%A2%85%E7%88%BE%E5%A4%AB%E6%88%B0%E5%BD%B9"
  },
  {
   "id": "liu-jin-executed",
@@ -61894,7 +61904,8 @@
   "source": "https://en.wikipedia.org/wiki/Tauke_Khan",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E5%A4%B4%E5%85%8B%E6%B1%97"
  },
  {
   "id": "three-feudatories-end",
@@ -62790,7 +62801,8 @@
   "source": "https://en.wikipedia.org/wiki/Kazakh%E2%80%93Dzungar_Wars",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E5%93%88%E8%96%A9%E5%85%8B-%E6%BA%96%E5%99%B6%E7%88%BE%E6%88%B0%E7%88%AD"
  },
  {
   "id": "lobzang-danjin-revolt",
@@ -69045,10 +69057,11 @@
   "lon": 57.97,
   "summary": "Skobelev stormed the Teke Turkmen fortress of Geok Tepe with great slaughter, completing the conquest of the Turkmen.",
   "summary_zh": "斯科别列夫攻破捷金土库曼人的格奥克捷佩要塞并大肆屠杀，沙俄完成对土库曼的征服。",
-  "source": "https://en.wikipedia.org/wiki/Siege_of_Geok_Tepe",
+  "source": "https://en.wikipedia.org/wiki/Battle_of_Geok_Tepe",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E7%9B%96%E5%A5%A5%E5%85%8B%E6%B3%B0%E4%BD%A9%E6%88%98%E5%BD%B9"
  },
  {
   "id": "eg-treaty-of-bardo",
@@ -69591,10 +69604,11 @@
   "lon": 66.95,
   "summary": "The railway from the Caspian reached Samarkand, tying Central Asia to Russia and speeding the spread of cotton growing.",
   "summary_zh": "外里海铁路修到撒马尔罕，把中亚与俄国连成一体，推动了棉花种植的扩张。",
-  "source": "https://en.wikipedia.org/wiki/Trans-Caspian_Railway",
+  "source": "https://en.wikipedia.org/wiki/Trans-Caspian_railway",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%BA%9E%E9%90%B5%E8%B7%AF"
  },
  {
   "id": "jp-meiji-constitution",
@@ -71785,7 +71799,7 @@
   "lon": 77.0,
   "summary": "A decree drafting Central Asians for labour behind the front set off a revolt; its suppression drove many Kyrgyz and Kazakhs to flee to China.",
   "summary_zh": "沙俄征召中亚人到前线服劳役引发大起义，镇压造成大量死亡，许多吉尔吉斯人和哈萨克人逃往中国。",
-  "source": "https://en.wikipedia.org/wiki/Central_Asian_Revolt_of_1916",
+  "source": "https://en.wikipedia.org/wiki/Central_Asian_revolt_of_1916",
   "places": [],
   "people": [],
   "states": []
@@ -72039,7 +72053,8 @@
   "source": "https://en.wikipedia.org/wiki/Turkestan_Autonomy",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6%E8%87%AA%E6%B2%BB%E5%85%B1%E5%92%8C%E5%9B%BD"
  },
  {
   "id": "eu-1919-treaty-of-versailles",
@@ -72288,7 +72303,7 @@
   "lon": 64.42,
   "summary": "The Red Army under Frunze stormed Bukhara, the emir fled, and a Bukharan People's Soviet Republic was set up.",
   "summary_zh": "伏龙芝率红军攻占布哈拉，埃米尔出逃，建立布哈拉人民苏维埃共和国。",
-  "source": "https://en.wikipedia.org/wiki/Bukhara_Operation_(1920)",
+  "source": "https://en.wikipedia.org/wiki/Bukhara_operation_(1920)",
   "places": [],
   "people": [],
   "states": []
@@ -75128,10 +75143,11 @@
   "lon": 71.43,
   "summary": "Khrushchev sent hundreds of thousands of settlers to plough the northern Kazakh steppe for wheat.",
   "summary_zh": "赫鲁晓夫派数十万人开垦哈萨克斯坦北部草原种植小麦，改变了当地的人口和生态。",
-  "source": "https://en.wikipedia.org/wiki/Virgin_Lands_Campaign",
+  "source": "https://en.wikipedia.org/wiki/Virgin_Lands_campaign",
   "places": [],
   "people": [],
-  "states": []
+  "states": [],
+  "source_zh": "https://zh.wikipedia.org/wiki/%E8%99%95%E5%A5%B3%E5%9C%B0%E9%81%8B%E5%8B%95"
  },
  {
   "id": "na-brown-v-board",
