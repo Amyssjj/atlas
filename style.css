@@ -361,7 +361,10 @@ html:lang(en) .mk-polity.minor small { display: none; }
 }
 
 /* Phone: compact era bar (tools and layers behind a button), ledger as a bottom sheet above the timeline. */
-.era-more { display: none; }
+.era-more { display: inline-block; }
+.era-more[aria-expanded="true"] { background: var(--jade-soft); border-color: var(--jade); color: var(--jade); }
+/* Wide screens: 图层 folds the layer switches and the period notes away (and does so while comparing). */
+@media (min-width: 721px) { .era.lean .era-layers, .era.lean .era-summary, .era.lean .era-note, .era.lean .era-snap { display: none; } }
 #app { height: 100dvh; }
 @media (max-width: 720px) {
   .era {
