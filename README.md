@@ -1,4 +1,6 @@
-# Dynasty Atlas
+<p align="center"><img src="docs/img/logo.svg" width="112" alt="Atlas logo"></p>
+
+<h1 align="center">Atlas</h1>
 
 **An interactive 3D history map, from 3000 BCE to today.** Pick a year and the map shows that moment's borders,
 cities and events. Take guided tours, read the stories behind events, and switch on layers for armies, roads, faith,
@@ -97,3 +99,9 @@ Terrain Tiles. Imagery: Sentinel-2 cloudless mosaic 2020, contains modified Cope
 Sentinel Hub (CC BY 4.0). Rivers and lakes: Natural Earth. Map rendering: [MapLibre GL JS](https://maplibre.org).
 Events, stories, tours and Chinese translations were drafted with an AI model and have not been checked line by line
 against sources. See [docs/internals.md](docs/internals.md#data-sources-and-known-limits).
+
+## License
+
+The code is released under the [MIT License](LICENSE). Bundled third-party data keeps its own licence: the border
+maps derived from historical-basemaps are GPL-3.0, the satellite imagery is CC BY 4.0, and illustrations from
+Wikimedia Commons carry the licence shown under each image.
