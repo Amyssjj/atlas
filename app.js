@@ -10,7 +10,7 @@
 const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
 // Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
 // ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
-// server while developing). See README.md, "Data packs".
+// server while developing). See docs/custom-data.md.
 const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "https://daiyip.github.io"];
 const PACK_URL = new URLSearchParams(location.search).get("pack");
 // ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
@@ -510,7 +510,7 @@ function refLabel(ref) {
 /* ---------- pack layers and plugins ---------- */
 // A pack can bring its own map layers: GeoJSON the engine draws and filters by year (manifest "layers"), and code
 // (manifest "plugins": ES modules from the allowed sites) that gets the plugin API below. Each layer gets a switch in a
-// "Pack" group of the layers panel, remembered per pack. See README.md, "Pack layers and plugins".
+// "Pack" group of the layers panel, remembered per pack. See docs/plugins.md.
 const PLUGIN_API = 1;
 const hooks = {};           // event name -> handlers: year, lang, event, tour-step, tour-end
 function emit(name, detail) {

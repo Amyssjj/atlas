@@ -1,5 +1,5 @@
 // Journey playback: on tours that draw their path, each new leg is traced from the last stop to the next while the
-// camera flies, with a marker travelling along it. An example of an atlas plugin (README.md, "Pack layers and plugins").
+// camera flies, with a marker travelling along it. An example of an atlas plugin (docs/plugins.md).
 
 const DURATION = 2600; // the tour's own camera flight
 
