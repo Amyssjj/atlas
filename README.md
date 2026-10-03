@@ -102,6 +102,11 @@ Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
 
 ## Guided tours, old rivers and links
 
+- **Auto layers** (自动图层 chip, on by default): reading an event or showing a tour step switches on the layers its
+  text calls for (battles: armies and passes; 迁都: capitals; 佛/儒: faith; 造纸: inventions; canals and journeys: routes and
+  roads; frontier peoples: walls; 门阀/朋党: elites). `AUTO_RULES` in app.js; such chips get a dashed red outline and go
+  off again afterwards.
+
 - **Tours** (导览, the first tab of the side panel; lists the current period's tours, then the rest by period):
   `data/tours.json`, 104 tours, each with an `era` id (a tour also lists under every period its years reach into, and under any in `also`) and a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
   `path: true` draws the journey so far. The tour card flies the camera, moves the timeline and selects the step's event.
