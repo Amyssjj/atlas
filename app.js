@@ -21,6 +21,8 @@ const ZOOMS = ["all", "era", "decades"];
 
 const state = {
   eras: [], events: [], places: [],
+  mode: "china",        // the region whose periods the timeline shows, or "world" for plain calendar years
+  chinaEras: [], regions: [], regionById: {}, worldEras: [], worldIndex: [], raw: {},
   detail: 2, cats: [],   // event detail level shown (1 大事, 2 要事, 3 细目) and category tags (empty: all)
   range: { start: -2070, end: 1912 },
   year: -770,
@@ -66,7 +68,7 @@ const UI = {
     back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
-    zooms: ["全部", "朝代", "数十年"], country: "国家", reignLen: (n) => `${n}年`, rulerCount: (n) => `${n} 位`, noRulers: "本时期暂无君主资料", noPeople: "本时期暂无人物资料", peopleHint: "点击人物，地图飞到其居所并显示生平", pgroups: { all: "全部", mil: "军事", pol: "政治", cul: "思想文学", art: "艺术", sci: "科技" }, scopeHint: "点击君主，时间轴缩放到其在位期间", zoomIn: "放大时间轴", zoomOut: "缩小时间轴", earlier: "向前", later: "向后",
+    zooms: ["全部", "朝代", "数十年"], country: "国家", reignLen: (n) => `${n}年`, rulerCount: (n) => `${n} 位`, noRulers: "本时期暂无君主资料", worldMap: (y) => `${y}前后的世界`, worldName: "世界 · 公元纪年", noRegionEvents: "这个地区的事件还在整理中，下一步加入。现在可以看各时期的疆域。", noPeople: "本时期暂无人物资料", peopleHint: "点击人物，地图飞到其居所并显示生平", pgroups: { all: "全部", mil: "军事", pol: "政治", cul: "思想文学", art: "艺术", sci: "科技" }, scopeHint: "点击君主，时间轴缩放到其在位期间", zoomIn: "放大时间轴", zoomOut: "缩小时间轴", earlier: "向前", later: "向后",
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
@@ -88,7 +90,7 @@ const UI = {
     back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
-    zooms: ["All", "Dynasty", "Decades"], country: "Country", reignLen: (n) => `${n} yr${n > 1 ? "s" : ""}`, rulerCount: (n) => `${n} rulers`, noPeople: "No famous people listed for this period", peopleHint: "Click a person to fly to where they lived and read about them", pgroups: { all: "All", mil: "Military", pol: "Politics", cul: "Thought & letters", art: "Arts", sci: "Science" }, noRulers: "No rulers recorded for this period", scopeHint: "Pick a ruler to narrow the timeline to their reign", zoomIn: "Zoom in", zoomOut: "Zoom out", earlier: "Earlier", later: "Later",
+    zooms: ["All", "Dynasty", "Decades"], country: "Country", reignLen: (n) => `${n} yr${n > 1 ? "s" : ""}`, rulerCount: (n) => `${n} rulers`, noPeople: "No famous people listed for this period", peopleHint: "Click a person to fly to where they lived and read about them", pgroups: { all: "All", mil: "Military", pol: "Politics", cul: "Thought & letters", art: "Arts", sci: "Science" }, noRulers: "No rulers recorded for this period", worldMap: (y) => `the world around ${y}`, worldName: "World · calendar years", noRegionEvents: "Events for this region are still being written. For now you can follow its borders through the periods.", scopeHint: "Pick a ruler to narrow the timeline to their reign", zoomIn: "Zoom in", zoomOut: "Zoom out", earlier: "Earlier", later: "Later",
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
@@ -207,16 +209,15 @@ function loadPack(z, px, py, dir = "pack") {
   }
   return packs[key];
 }
+// Elevation tiles: zooms 0-3 are one archive each, 4 and up in 8x8 blocks (the world to zoom 5, East Asia to 8).
 async function demTile(z, x, y) {
-  if (z <= 6) {
-    const r = await fetch(`${BASE}tiles/terrarium/${z}/${x}/${y}.png`).catch(() => null);
-    return r?.ok ? r.arrayBuffer() : null;
-  }
-  const p = await loadPack(z, x >> 3, y >> 3);
+  const sh = z <= 3 ? 31 : 3;
+  const p = await loadPack(z, x >> sh, y >> sh);
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
   // Not bundled at this zoom: enlarge a quarter of the parent tile. Nearest-neighbour scaling keeps the
   // colour-encoded elevations intact, where smoothing would mix them into nonsense.
+  if (z === 0) return null;
   const parent = await demTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
   const bmp = await createImageBitmap(new Blob([parent], { type: "image/png" }));
@@ -226,16 +227,15 @@ async function demTile(z, x, y) {
   g.drawImage(bmp, (x & 1) * 128, (y & 1) * 128, 128, 128, 0, 0, 256, 256);
   return (await c.convertToBlob({ type: "image/png" })).arrayBuffer();
 }
-// Satellite tiles: zooms below 7 are one archive each, 7-8 in 8x8 blocks, 9 (China proper) in 16x16; past the
-// bundled zoom, a smoothly
-// enlarged quarter of the parent.
+// Satellite tiles: zooms 1-3 are one archive each, 4-8 in 8x8 blocks (the world to zoom 5, East Asia beyond),
+// 9 (China proper) in 16x16; past the bundled zoom, a smoothly enlarged quarter of the parent.
 async function satTile(z, x, y) {
-  if (z < 2) return null;
-  const sh = z >= 9 ? 4 : z >= 7 ? 3 : 31;
+  if (z < 1) return null;
+  const sh = z >= 9 ? 4 : z >= 4 ? 3 : 31;
   const p = await loadPack(z, x >> sh, y >> sh, "sat");
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
-  if (z <= 2) return null;
+  if (z <= 1) return null;
   const parent = await satTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
   const bmp = await createImageBitmap(new Blob([parent], { type: "image/jpeg" }));
@@ -289,7 +289,7 @@ function applyLook() {
 }
 
 function buildStyle() {
-  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8, bounds: [56.25, 10, 145, 55] };
+  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8 };
   return {
     version: 8,
     sources: {
@@ -392,6 +392,93 @@ function buildStyle() {
 
 let map;
 const markers = { events: new Map(), places: [], polities: [], polityEls: [], armies: [], routes: [] };
+
+/* ---------- world: regions and their periods ---------- */
+
+// The timeline follows the region that fills the view (data/regions.json); across several regions or none it
+// runs on plain calendar years. Periods outside China use the world maps (data/world/index.json).
+const WORLD_STARTS = [-3000, -2000, -1000, -500, 1, 500, 1000, 1500, 1800, 1900];
+const worldAt = (year) => { let w = null; for (const x of state.worldIndex) if (year >= x.from) w = x; return w || state.worldIndex[0]; };
+function worldSnaps(start, end) {
+  const idx = state.worldIndex, out = [];
+  idx.forEach((x, i) => {
+    const b = (idx[i + 1]?.from ?? Infinity) - 1;
+    if (b >= start && x.from <= end) out.push({ from: Math.max(x.from, start), borders: x.full, world: true });
+  });
+  return out.length ? out : [{ from: start, borders: null, world: true }];
+}
+function setupRegions(eras, regions, worldIndex) {
+  state.worldIndex = worldIndex;
+  const byId = Object.fromEntries(eras.eras.map((e) => [e.id, { ...e, region: "china", layers: true }]));
+  const period = (r, p) => byId[p.id] || { ...p, region: r.id, worldMaps: true, snapshots: worldSnaps(p.start, p.end) };
+  state.regions = regions.map((r) => ({ ...r, eras: r.periods.map((p) => period(r, p)) }));
+  state.regionById = Object.fromEntries(state.regions.map((r) => [r.id, r]));
+  const china = state.regionById.china;
+  state.chinaEras = china ? china.eras : Object.values(byId);
+  if (!china) state.regions.unshift(state.regionById.china = { id: "china", name: "China", name_zh: "中国", eras: state.chinaEras, polygon: [] });
+  state.range = regions.length ? { start: -3000, end: 2026 } : eras.range;
+  const zy = (y) => (y < 0 ? `前${-y}` : `${y}`), ey = (y) => (y < 0 ? `${-y} BC` : `AD ${y}`);
+  const span = (a, b) => [a < 0 ? `前${-a}–前${-b}年` : `${a}–${b}年`, a < 0 ? `${-a}–${-b} BC` : `AD ${a}–${b}`];
+  state.worldEras = WORLD_STARTS.map((a, i) => {
+    let b = (WORLD_STARTS[i + 1] ?? state.range.end + 1) - 1;
+    if (b === 0) b = -1;
+    const [name_zh, name] = span(a, b);
+    return { id: `world${a}`, region: "world", start: a, end: b, seal: "公元", glyph: a === 1 ? "公元" : zy(a), short: ey(a), tiny: `${zy(a).replace("前", "-")}|`,
+      name, name_zh, focus: [],
+      summary: "The view spans several civilisations (or none), so the timeline runs on calendar years. Move or zoom into one and it switches to that civilisation's periods.",
+      summary_zh: "地图上不止一个文明（或没有划定的文明区），时间轴按公元纪年；移动或放大到某个文明，时间轴就换成它的朝代与时期。",
+      snapshots: worldSnaps(a, b) };
+  });
+  state.eras = state.chinaEras;
+}
+function inPoly(x, y, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+function polyBounds(poly) {
+  const xs = poly.map((p) => p[0]), ys = poly.map((p) => p[1]);
+  return [[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]];
+}
+// Sample a grid over the open part of the map, the middle counting most; sea and unassigned land are left out.
+// A region with most of the rest wins; once chosen, a region keeps the timeline while it still holds a good share.
+function detectRegion() {
+  if (state.regions.length < 2) return "china";
+  const c = map.getCanvas(), W = c.clientWidth - (innerWidth > 720 ? 380 : 0), H = c.clientHeight;
+  const n = {};
+  let tot = 0, hit = 0;
+  for (let i = 0; i < 8; i++) for (let j = 0; j < 6; j++) {
+    const ll = map.unproject([(W * (i + 0.5)) / 8, H * (0.12 + (0.8 * (j + 0.5)) / 6)]);
+    if (!isFinite(ll.lat) || Math.abs(ll.lat) > 85) continue;
+    const w = 2 - Math.abs(i - 3.5) / 4 - Math.abs(j - 2.5) / 3;
+    tot += w;
+    const lon = ((((ll.lng + 180) % 360) + 360) % 360) - 180;
+    const r = state.regions.find((r) => r.polygon?.length > 2 && inPoly(lon, ll.lat, r.polygon));
+    if (r) { n[r.id] = (n[r.id] || 0) + w; hit += w; }
+  }
+  if (!tot) return state.mode;
+  if (hit < 0.2 * tot) return "world";
+  if (state.mode !== "world" && (n[state.mode] || 0) >= 0.35 * hit) return state.mode;
+  const [best, second] = Object.entries(n).sort((a, b) => b[1] - a[1]);
+  return best && best[1] >= 0.45 * hit && best[1] >= 1.5 * (second?.[1] || 0) ? best[0] : "world";
+}
+// Switch the timeline to a region's periods (or the calendar years), keeping the year.
+function setMode(id, quiet) {
+  if (id === state.mode || (id !== "world" && !state.regionById[id])) return false;
+  state.mode = id;
+  state.eras = id === "world" ? state.worldEras : state.regionById[id].eras;
+  state.scope = null;
+  state.country = null;
+  buildScale();
+  if (state.zoom) state.win = windowFor(state.zoom, state.year);
+  state.era = null;
+  if (!quiet) { setYear(state.year); refreshTimeline(); }
+  else setEra(eraFor(state.year), true);
+  return true;
+}
 
 /* ---------- time scale ---------- */
 
@@ -506,11 +593,11 @@ async function setYear(year, opts = {}) {
   revealYear(true);
   saveView();
   const snap = snapshotFor(era, state.year);
-  const label = tx(snap, "label");
+  const label = snap.world ? t("worldMap")(fmtYear(worldAt(state.year)?.from ?? snap.from)) : tx(snap, "label");
   $("era-snap").textContent = label ? t("map") + label : "";
   $("era-snap").hidden = !label;
   document.querySelectorAll(".band.snap").forEach((b) => b.classList.toggle("current", b.dataset.path === snap.borders && +b.dataset.from === snap.from));
-  if (snap.borders !== state.snapshot) await setSnapshot(snap.borders);
+  await setMaps(era, state.year);
   renderEventStates();
   renderPlaces();
   renderOverlays();
@@ -520,11 +607,13 @@ async function setYear(year, opts = {}) {
 function setEra(era, quiet) {
   state.era = era;
   const seal = $("era-glyph");
-  seal.textContent = era.glyph;
-  seal.classList.toggle("double", era.glyph.length > 1);
+  seal.textContent = era.seal || era.glyph;
+  seal.classList.toggle("double", (era.seal || era.glyph).length > 1);
   $("era-name").textContent = zh() ? era.name_zh : era.name;
   // Each piece wraps whole: other-language name, span of years, length.
-  $("era-zh").innerHTML = [zh() ? era.name : era.name_zh, `${fmtYear(era.start)} – ${fmtYear(era.end)}`, t("lasted")(eraYears(era))]
+  const region = state.regionById[era.region];
+  $("era-zh").innerHTML = (region ? [nameOf(region), zh() ? era.name : era.name_zh, `${fmtYear(era.start)} – ${fmtYear(era.end)}`, t("lasted")(eraYears(era))]
+    : [t("worldName"), t("lasted")(eraYears(era))])
     .map((x) => `<span>${esc(x)}</span>`).join(" · ");
   $("era-summary").textContent = tx(era, "summary");
   const note = tx(era, "note");
@@ -542,12 +631,29 @@ function setEra(era, quiet) {
   }
 }
 
-async function setSnapshot(path) {
-  state.snapshot = path;
-  const gj = state.borders[path] || (state.borders[path] = await loadBorders(path));
-  if (state.snapshot !== path) return; // a newer request won
-  map.getSource("borders")?.setData(gj);
-  renderPolityLabels(gj);
+// The borders shown: inside China's dynasties (前2070–1912) the dynasty map, with the rest of the world from the
+// world map with East Asia cut out; otherwise the whole world map. Polities named in the period's `focus` list
+// are drawn as the main states; China's own periods keep the dynasty map's focus.
+const rawBorders = (path) => state.raw[path] || (state.raw[path] = loadBorders(path));
+async function setMaps(era, year) {
+  const ce = state.chinaEras.find((e) => !e.worldMaps && year >= e.start && year <= e.end);
+  const china = ce ? snapshotFor(ce, year).borders : null;
+  const w = worldAt(year);
+  const world = w ? (china ? w.outer : w.full) : null;
+  const focus = era.focus || (state.mode === "china" ? null : []);
+  const key = [china, world, focus ? focus.join("|") : "*"].join("§");
+  if (key === state.snapshot) return;
+  state.snapshot = key;
+  if (!state.borders[key]) {
+    const [a, b] = await Promise.all([china && rawBorders(china), world && rawBorders(world).catch(() => null)]);
+    const fs = new Set(focus || []);
+    const feats = [...(a?.features || []), ...(b?.features || [])];
+    state.borders[key] = { type: "FeatureCollection",
+      features: focus ? feats.map((f) => ({ ...f, properties: { ...f.properties, focus: fs.has(f.properties.name) } })) : feats };
+  }
+  if (state.snapshot !== key) return; // a newer request won
+  map.getSource("borders")?.setData(state.borders[key]);
+  renderPolityLabels(state.borders[key]);
 }
 
 function renderPolityLabels(gj) {
@@ -577,6 +683,7 @@ function renderPolityLabels(gj) {
 // Length of a period in years; there is no year 0, so a span across it is one year shorter.
 const eraYears = (e) => e.end - e.start + 1 - (e.start < 0 && e.end > 0 ? 1 : 0);
 function loadLayers(era) {
+  if (!era.layers) return Promise.resolve({});
   if (!state.layers[era.id]) state.layers[era.id] = loadJSON(`data/layers/${era.id}.json`).catch(() => ({}));
   return state.layers[era.id];
 }
@@ -1140,6 +1247,8 @@ function visibleEvents() {
 // The detail switch (大事 / 要事 / 细目) sets the finest level shown; tags narrow to some categories.
 // The open event always stays visible.
 function shownEvent(ev) {
+  // Each region shows its own events; the world view shows all.
+  if (state.mode !== "world" && (ev.region || "china") !== state.mode) return false;
   if (ev.id === state.selected) return true;
   // The country filter belongs to one period; events of other periods ignore it.
   const c = state.country;
@@ -1473,7 +1582,7 @@ function renderList() {
   const list = $("ev-list");
   const evs = visibleEvents();
   $("ev-count").textContent = state.zoom === 2 ? t("countWin")(evs.length) : t("count")(evs.length, nameOf(state.era));
-  list.innerHTML = "";
+  list.innerHTML = evs.length || state.mode === "china" ? "" : `<li class="ev-empty">${t("noRegionEvents")}</li>`;
   for (const ev of evs) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -1495,6 +1604,7 @@ function renderList() {
 }
 
 function loadDetails(era) {
+  if (!era.layers) return Promise.resolve({});
   if (!state.details[era.id]) state.details[era.id] = loadJSON(`data/details/${era.id}.json`).catch(() => ({}));
   return state.details[era.id];
 }
@@ -1631,13 +1741,16 @@ async function selectEvent(id) {
 
 async function goToEra(era) {
   stop();
+  // A period of another region: switch the timeline to it and fly there.
+  const r = state.regionById[era.region];
+  const fly = r && setMode(r.id);
   state.selected = null;
   state.reading = false;
   state.scope = null;
   if (state.zoom) state.win = windowFor(state.zoom, era.start);
   await setYear(era.start);
   refreshTimeline();
-  const b = focusBounds();
+  const b = focusBounds() || (fly && polyBounds(r.polygon));
   if (b) {
     const cam = map.cameraForBounds(b, { padding: { top: 120, bottom: 140, left: 60, right: innerWidth > 720 ? 380 : 60 } });
     if (cam) map.flyTo({ ...cam, zoom: Math.min(cam.zoom, 5), pitch: state.show3d ? 45 : 0, bearing: -6, duration: 1600, essential: true });
@@ -1648,26 +1761,26 @@ async function goToEra(era) {
 let tours = null;
 const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
 // The 导览 tab: this period's tours first, then the rest grouped by period.
-const tourEra = (tr) => tr.era || state.eras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
+const tourEra = (tr) => tr.era || state.chinaEras.find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
 // A tour also shows under every period its years reach into, and under any listed in `also` (官渡 under 三国).
 const tourIn = (tr, era) => tourEra(tr) === era.id || (tr.also || []).includes(era.id) || (tr.start <= era.end && tr.end >= era.start);
 function tourItem(tr, era) {
   const on = state.tour?.id === tr.id;
-  const home = era && tourEra(tr) !== era.id ? state.eras.find((e) => e.id === tourEra(tr)) : null;
+  const home = era && tourEra(tr) !== era.id ? state.chinaEras.find((e) => e.id === tourEra(tr)) : null;
   return `<button type="button" class="tour-item${on ? " on" : ""}" data-tour="${tr.id}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}${home ? ` · ${esc(nameOf(home))}` : ""}</span><small>${esc(tx(tr, "summary"))}</small></button>`;
 }
 async function renderToursTab() {
   const list = await loadTours();
   if (state.tab !== "tours") return;
   const box = $("tour-tab");
-  const here = list.filter((tr) => tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
+  const here = list.filter((tr) => state.era.region === "china" && tourIn(tr, state.era)).sort((a, b) => a.start - b.start);
   $("ev-count").textContent = t("tourCount")(here.length);
   const key = `${state.era.id}|${state.lang}|${state.tour?.id || ""}`;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
   let html = `<p class="rl-hint">${t("tourHint")}</p>`;
   html += here.length ? here.map((tr) => tourItem(tr, state.era)).join("") : `<p class="rl-empty">${t("noTours")}</p>`;
-  const other = state.eras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
+  const other = state.chinaEras.filter((e) => e.id !== state.era.id).map((e) => [e, list.filter((tr) => tourEra(tr) === e.id)]).filter(([, l]) => l.length);
   if (other.length) {
     const open = box.querySelector("details")?.open ? " open" : "";
     html += `<details class="tour-more"${open}><summary>${t("toursOther")}${zh() ? "（" : " ("}${other.reduce((n, [, l]) => n + l.length, 0)}${zh() ? "）" : ")"}</summary>` +
@@ -1680,6 +1793,7 @@ async function startTour(id, i = 0) {
   if (!tr) return;
   stop(); closeSearch();
   state.tour = { id, tr, i: 0, auto: false };
+  setMode("china");
   $("tour").hidden = false;
   $("app").classList.add("touring");
   if (state.tab === "tours") renderToursTab();
@@ -1799,7 +1913,7 @@ function addTourLayers() {
 // Everyone and every ruler sits in the per-period layer files; they are loaded on the first search.
 let searchIndex = null;
 async function buildSearchIndex() {
-  const layers = await Promise.all(state.eras.map((e) => loadLayers(e).then((L) => [e, L])));
+  const layers = await Promise.all(state.chinaEras.map((e) => loadLayers(e).then((L) => [e, L])));
   const people = [], seen = new Set(), rulers = [];
   for (const [era, L] of layers) {
     for (const p of L.people || []) if (!seen.has(p.id)) { seen.add(p.id); people.push({ p, era }); }
@@ -1826,8 +1940,8 @@ function searchResults(q) {
   const out = [];
   const y = parseYear(q);
   if (y != null) out.push({ g: "time", year: y, title: fmtYear(y), sub: `${nameOf(eraFor(y))} · ${t("jumpYear")}`, go: () => jumpToYear(y) });
-  for (const e of state.eras) if (has(e.name, e.name_zh, e.glyph))
-    out.push({ g: "era", year: e.start, title: nameOf(e), sub: `${fmtYear(e.start)} – ${fmtYear(e.end)}`, go: () => goToEra(e) });
+  for (const r of state.regions) for (const e of r.eras) if (has(e.name, e.name_zh, e.glyph))
+    out.push({ g: "era", year: e.start, title: nameOf(e), sub: `${nameOf(r)} · ${fmtYear(e.start)} – ${fmtYear(e.end)}`, go: () => goToEra(e) });
   if (searchIndex) {
     // Tours named in the title first, then by summary, then by any step that mentions it (which the tour opens at).
     const tm = searchIndex.tours.map((tr) => {
@@ -2170,8 +2284,9 @@ async function init() {
   state.walls = await loadJSON("data/walls.json").catch(() => []);
   state.geo = await loadJSON("data/geo/features.json").catch(() => []);
   state.oldGeo = (await loadJSON("data/geo/old-rivers.geojson").catch(() => ({ features: [] }))).features;
-  state.eras = eras.eras;
-  state.range = eras.range;
+  const [regions, worldIndex] = await Promise.all([
+    loadJSON("data/regions.json").catch(() => ({ regions: [] })), loadJSON("data/world/index.json").catch(() => [])]);
+  setupRegions(eras, regions.regions, worldIndex);
   state.events = events.sort((a, b) => a.year - b.year || (a.level || 1) - (b.level || 1));
   state.places = places;
   buildScale();
@@ -2181,8 +2296,7 @@ async function init() {
     container: "map",
     style: buildStyle(),
     center: cam?.center || [108, 33.5], zoom: cam?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
-    maxPitch: 65, minZoom: 2.5, maxZoom: 9.5,
-    maxBounds: [[45, -5], [165, 62]],
+    maxPitch: 65, minZoom: 1.6, maxZoom: 9.5,
     attributionControl: false,
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
@@ -2205,7 +2319,7 @@ async function init() {
   map.on("mouseleave", "wall-hit", () => (map.getCanvas().style.cursor = ""));
   map.on("mouseenter", "road-hit", () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", "road-hit", () => (map.getCanvas().style.cursor = ""));
-  map.on("moveend", () => { scheduleDeclutter(); saveView(); });
+  map.on("moveend", () => { scheduleDeclutter(); saveView(); if (!state.tour && state.ready) setMode(detectRegion()); });
   map.on("zoomend", setTerrainForZoom);
   map.on("load", async () => {
     setTerrainForZoom();
@@ -2215,6 +2329,8 @@ async function init() {
     if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
     if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", "none");
     addTourLayers();
+    setMode(detectRegion(), true);
+    state.ready = true;
     await setYear(state.year);
     buildRail();
     renderLedger();

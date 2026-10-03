@@ -1,9 +1,9 @@
 """A lon/lat grid of elevation and of "natural barriers" (mountain crests and big rivers) for tools/snap_terrain.py.
 
-The elevation comes from the bundled terrarium tiles (zoom 6, about 2.4 km a pixel), resampled to STEP degrees.
+The elevation comes from the bundled elevation archives (zoom 6, about 2.4 km a pixel), resampled to STEP degrees.
 Barrier strength is 0..3: ridges score by how far they stand above the land around them, rivers by their rank in
 data/geo/rivers.geojson. The result is cached in tools/.cache/terrain.npz."""
-import json, math, os
+import io, json, math, os, struct
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy import ndimage
@@ -18,6 +18,26 @@ def lonlat_grid():
     lats = N - (np.arange(round((N - S) / STEP)) + 0.5) * STEP
     return lons, lats
 
+_packs = {}
+def pack_tile(z, x, y):
+    """One elevation tile from the bundled archives (tiles/pack/{z}-{x>>3}-{y>>3}.png, see tools/pack_tiles.py)."""
+    f = P(f"tiles/pack/{z}-{x >> 3}-{y >> 3}.png")
+    if f not in _packs:
+        _packs[f] = None
+        if os.path.exists(f):
+            b = open(f, "rb").read(); o = 8
+            while o + 8 <= len(b):
+                n = struct.unpack(">I", b[o:o + 4])[0]
+                if b[o + 4:o + 8] == b"tpAk":
+                    m = struct.unpack("<I", b[o + 8:o + 12])[0]
+                    _packs[f] = (b, json.loads(b[o + 12:o + 12 + m]), o + 12 + m)
+                    break
+                o += 12 + n
+    if not _packs[f]: return None
+    b, idx, base = _packs[f]
+    e = idx.get(f"{x}/{y}")
+    return b[base + e[0]:base + e[0] + e[1]] if e else None
+
 def elevation():
     n = 2 ** Z
     lons, lats = lonlat_grid()
@@ -28,9 +48,9 @@ def elevation():
     mos = np.zeros(((y1 - y0 + 1) * 256, (x1 - x0 + 1) * 256), np.float32)
     for tx in range(x0, x1 + 1):
         for ty in range(y0, y1 + 1):
-            f = P(f"tiles/terrarium/{Z}/{tx}/{ty}.png")
-            if not os.path.exists(f): continue
-            a = np.asarray(Image.open(f).convert("RGB"), np.float32)
+            b = pack_tile(Z, tx, ty)
+            if b is None: continue
+            a = np.asarray(Image.open(io.BytesIO(b)).convert("RGB"), np.float32)
             mos[(ty - y0) * 256:(ty - y0 + 1) * 256, (tx - x0) * 256:(tx - x0 + 1) * 256] = a[..., 0] * 256 + a[..., 1] + a[..., 2] / 256 - 32768
     yy, xx = np.meshgrid(fy - y0 * 256 - 0.5, fx - x0 * 256 - 0.5, indexing="ij")
     return ndimage.map_coordinates(mos, [yy, xx], order=1)
