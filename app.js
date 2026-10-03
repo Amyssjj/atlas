@@ -95,7 +95,7 @@ const UI = {
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" }, exchange: "交流", spread: "传播", spreadGroups: { faith: "宗教传播", tech: "技术传播", crop: "作物传播" }, arrived: (y) => `${y}传到`, set_out: (y) => `${y}起`, world_t: "世界", worldHead: "同一年的世界", goRegion: "切换地区", allWorld: "全球", worldHint: "点击地区，地图和时间轴切换过去；点击事件阅读详情", noWorldEv: "前后几十年没有收录的大事",
-    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", cmp: { open: "两地对比", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -118,7 +118,7 @@ const UI = {
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" }, exchange: "Exchange", spread: "Spread", spreadGroups: { faith: "Faith spreads", tech: "Technique spreads", crop: "Crop spreads" }, arrived: (y) => `arrived ${y}`, set_out: (y) => `from ${y}`, world_t: "World", worldHead: "The world this year", goRegion: "Go to region", allWorld: "Whole world", worldHint: "Click a region to move the map and timeline there; click an event to read it", noWorldEv: "No major events recorded within a few decades",
-    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", cmp: { open: "Compare two regions", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -129,6 +129,7 @@ const UI = {
 const t = (k) => UI[state.lang][k];
 const zh = () => state.lang === "zh";
 // Pick the field for the current language, falling back to the other one.
+const cmp = { on: false, region: null, map: null, marks: [], key: "" }; // compare view: second map and its region
 const tx = (o, k) => (zh() ? o[k + "_zh"] || o[k] : o[k] || o[k + "_zh"]) || "";
 const titleOf = (o) => (zh() ? o.title_zh || o.title : o.title);
 const nameOf = (o) => (zh() ? o.name_zh || o.name : o.name);
@@ -182,6 +183,7 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLedger();
+  updateCompare(true);
   emit("lang", { lang });
 }
 
@@ -887,6 +889,7 @@ async function setYear(year, opts = {}) {
   $("era-snap").hidden = !label;
   document.querySelectorAll(".band.snap").forEach((b) => b.classList.toggle("current", b.dataset.path === snap.borders && +b.dataset.from === snap.from));
   await setMaps(era, state.year);
+  updateCompare();
   renderEventStates();
   renderPlaces();
   renderOverlays();
@@ -926,15 +929,15 @@ function setEra(era, quiet) {
 // world map with East Asia cut out; otherwise the whole world map. Polities named in the period's `focus` list
 // are drawn as the main states; China's own periods keep the dynasty map's focus.
 const rawBorders = (path) => state.raw[path] || (state.raw[path] = loadBorders(path));
-async function setMaps(era, year) {
+function bordersKey(era, year, mode) {
   const ce = state.chinaEras.find((e) => !e.worldMaps && year >= e.start && year <= e.end);
   const china = ce ? snapshotFor(ce, year).borders : null;
   const w = worldAt(year);
   const world = w ? (china ? w.outer : w.full) : null;
-  const focus = era.focus || (state.mode === "china" ? null : []);
-  const key = [china, world, focus ? focus.join("|") : "*"].join("§");
-  if (key === state.snapshot) return;
-  state.snapshot = key;
+  const focus = era.focus || (mode === "china" ? null : []);
+  return { key: [china, world, focus ? focus.join("|") : "*"].join("§"), china, world, focus };
+}
+async function bordersFor({ key, china, world, focus }) {
   if (!state.borders[key]) {
     const [a, b] = await Promise.all([china && rawBorders(china), world && rawBorders(world).catch(() => null)]);
     const fs = new Set(focus || []);
@@ -942,6 +945,13 @@ async function setMaps(era, year) {
     state.borders[key] = { type: "FeatureCollection",
       features: focus ? feats.map((f) => ({ ...f, properties: { ...f.properties, focus: fs.has(f.properties.name) } })) : feats };
   }
+  return state.borders[key];
+}
+async function setMaps(era, year) {
+  const spec = bordersKey(era, year, state.mode), key = spec.key;
+  if (key === state.snapshot) return;
+  state.snapshot = key;
+  await bordersFor(spec);
   if (state.snapshot !== key) return; // a newer request won
   map.getSource("borders")?.setData(state.borders[key]);
   renderPolityLabels(state.borders[key]);
@@ -1920,7 +1930,9 @@ function toggleRegionPop(open) {
   const y = state.year;
   const row = (id, color, name, sub, full = name) => `<button type="button" role="menuitem" data-r="${esc(id)}" title="${esc(full)}" class="${id === state.mode ? "here" : ""}" style="--rc:${esc(color)}"><i></i><b>${esc(name)}</b><span>${esc(sub)}</span></button>`;
   pop.innerHTML = state.regions.map((r) => { const era = regionEra(r, y); return row(r.id, r.color || "#888", zh() ? r.short_zh || r.name_zh : r.short || r.name, era ? nameOf(era) : "", nameOf(r)); }).join("")
-    + row("world", "#777", t("allWorld"), fmtYear(y));
+    + row("world", "#777", t("allWorld"), fmtYear(y))
+    + `<button type="button" role="menuitem" class="rp-cmp" id="rp-cmp">⇆ ${esc(t("cmp").open)}</button>`;
+  $("rp-cmp").addEventListener("click", () => { toggleRegionPop(false); openCompare(); });
   pop.querySelectorAll("[data-r]").forEach((b) => b.addEventListener("click", () => {
     toggleRegionPop(false);
     if (b.dataset.r !== "world") return goRegion(b.dataset.r);
@@ -1928,6 +1940,146 @@ function toggleRegionPop(open) {
     map.flyTo({ center: [60, 30], zoom: innerWidth <= 720 ? 0.6 : 1.4, pitch: 0, bearing: 0, duration: 1400 });
     renderLedger();
   }));
+}
+
+/* ---------- compare: a second map of another region at the same year, side by side (top and bottom on phones) ---------- */
+
+function openCompare(id) {
+  cmp.region = state.regionById[id] || state.regionById[cmp.region?.id] ||
+    state.regionById[state.mode === "china" ? "europe" : "china"] || state.regions.find((r) => r.id !== state.mode);
+  if (!cmp.region) return;
+  cmp.on = true;
+  document.body.classList.add("comparing");
+  $("map2").hidden = $("cmp-card").hidden = false;
+  map.resize();
+  if (!cmp.map) {
+    cmp.map = new maplibregl.Map({ container: "map2", style: buildStyle(), center: [10, 45], zoom: 3, minZoom: 1.2, maxZoom: 9, attributionControl: false });
+    cmp.map.on("load", () => {
+      const sat = state.showSat;
+      cmp.map.setLayoutProperty("satellite", "visibility", sat ? "visible" : "none");
+      cmp.map.setPaintProperty("bg", "background-color", sat ? "#1d4f86" : "#9db8bf");
+      cmp.map.setPaintProperty("lakes", "fill-opacity", sat ? 0 : 0.9);
+      if (!state.showGeo) for (const l of ["rivers", "rivers-minor", "lakes"]) cmp.map.setLayoutProperty(l, "visibility", "none");
+      cmp.loaded = true;
+      updateCompare(true);
+    });
+    let t0;
+    cmp.map.on("move", () => { clearTimeout(t0); t0 = setTimeout(declutterCompare, 120); });
+    cmp.map.on("moveend", declutterCompare);
+  } else cmp.map.resize();
+  fitCompare();
+  setTimeout(() => cmp.loaded && declutterCompare(), 300);
+  updateCompare(true);
+}
+function closeCompare() {
+  cmp.on = false;
+  document.body.classList.remove("comparing");
+  $("map2").hidden = $("cmp-card").hidden = true;
+  cmp.popup?.remove();
+  map.resize();
+}
+function fitCompare() {
+  const r = cmp.region;
+  if (!cmp.map || !r?.polygon?.length) return;
+  const phone = innerWidth <= 720;
+  cmp.map.fitBounds(polyBounds(r.polygon), { padding: { top: phone ? 90 : 150, bottom: phone ? 110 : 130, left: 30, right: 30 }, maxZoom: 5, duration: 0 });
+}
+async function updateCompare(force) {
+  if (!cmp.on) return;
+  const r = cmp.region, y = state.year, era = regionEra(r, y);
+  renderCompareCard(era);
+  if (!cmp.loaded || !era) return;
+  const spec = bordersKey(era, y, r.id), key = spec.key + "|" + state.lang;
+  if (key === cmp.key && !force) return renderCompareEvents(era);
+  cmp.key = key;
+  const gj = await bordersFor(spec);
+  if (cmp.key !== key) return;
+  cmp.map.getSource("borders")?.setData(gj);
+  cmp.marks.forEach((m) => m.remove());
+  cmp.marks = [];
+  for (const f of gj.features) {
+    const p = f.properties;
+    if (!p.label || (!p.focus && (p.area < (p.name_zh ? 6 : 25) || p.nolabel))) continue;
+    const el = document.createElement("div");
+    el.className = "mk-polity" + (p.focus ? " focus" : p.name_zh ? " neighbour" : "");
+    if (zh()) el.innerHTML = p.name_zh ? esc(p.name_zh) : `<small>${esc(p.name)}</small>`;
+    else el.innerHTML = `<span>${esc(p.name)}</span>`;
+    const m = new maplibregl.Marker({ element: el }).setLngLat(p.label).addTo(cmp.map);
+    Object.assign(m, { focus: !!p.focus, area: p.area || 0, lat: p.label[1] });
+    cmp.marks.push(m);
+  }
+  renderCompareEvents(era);
+  requestAnimationFrame(() => requestAnimationFrame(declutterCompare)); // once the new labels are laid out
+}
+// Country names on the second map: main states first, then by size; small or overlapping names hide.
+function declutterCompare() {
+  const ppd = (512 * 2 ** cmp.map.getZoom()) / 360, kept = [];
+  for (const m of [...cmp.marks].sort((a, b) => b.focus - a.focus || b.area - a.area)) {
+    const el = m.getElement();
+    el.classList.remove("dc-hide");
+    const r = el.getBoundingClientRect();
+    if (!r.width) continue;
+    const onScreen = m.area * ppd * ppd * Math.cos((m.lat * Math.PI) / 180);
+    if ((!m.focus && onScreen < r.width * r.height * 2.5) || kept.some((k) => r.left < k.right + 4 && r.right > k.left - 4 && r.top < k.bottom + 2 && r.bottom > k.top - 2))
+      el.classList.add("dc-hide");
+    else kept.push(r);
+  }
+}
+// The region's events nearest the year (major ones first), as numbered dots on the second map and a list on its card.
+function compareEvents(era) {
+  const r = cmp.region, y = state.year;
+  return state.events.filter((ev) => ((ev.region || state.home) === r.id || ev.also?.includes(r.id)) && (ev.level || 1) <= 2 && Math.abs(ev.year - y) <= 40)
+    .sort((a, b) => Math.abs(a.year - y) - Math.abs(b.year - y) || a.level - b.level).slice(0, 4).sort((a, b) => a.year - b.year);
+}
+function renderCompareEvents(era) {
+  cmp.evMarks?.forEach((m) => m.remove());
+  cmp.evMarks = compareEvents(era).map((ev, i) => {
+    const el = document.createElement("button");
+    el.type = "button";
+    el.className = "cmp-dot";
+    el.textContent = i + 1;
+    el.title = evTitleText(ev);
+    el.addEventListener("click", (e) => { e.stopPropagation(); compareEventPopup(ev); });
+    return new maplibregl.Marker({ element: el }).setLngLat([ev.lon, ev.lat]).addTo(cmp.map);
+  });
+}
+const evTitleText = (ev) => zh() ? ev.title_zh || ev.title : ev.title;
+function compareEventPopup(ev) {
+  cmp.popup?.remove();
+  cmp.popup = new maplibregl.Popup({ maxWidth: "260px", offset: 12 }).setLngLat([ev.lon, ev.lat])
+    .setHTML(`<div class="pc-kind">${fmtYear(ev.year, ev.circa)} · ${esc(tx(ev, "place"))}</div><h4>${esc(evTitleText(ev))}</h4><p>${esc(tx(ev, "summary"))}</p>`)
+    .addTo(cmp.map);
+}
+function renderCompareCard(era) {
+  const box = $("cmp-card"), r = cmp.region, C = t("cmp"), y = state.year;
+  const opts = state.regions.map((x) => `<option value="${esc(x.id)}"${x === r ? " selected" : ""}>${esc(zh() ? x.short_zh || x.name_zh : x.short || x.name)}</option>`).join("");
+  const evs = era ? compareEvents(era) : [];
+  box.innerHTML = `<div class="cmp-top"><select id="cmp-pick" aria-label="${esc(C.pick)}">${opts}</select>
+      <button type="button" class="chip search-open" id="cmp-close" aria-label="${esc(C.close)}" title="${esc(C.close)}">×</button></div>
+    <div class="cmp-era"><b>${esc(era ? nameOf(era) : "")}</b><span>${fmtYear(y)}</span></div>
+    <p class="cmp-rulers" id="cmp-rulers"></p>
+    ${evs.length ? `<ol class="cmp-ev">${evs.map((ev, i) => `<li><button type="button" data-ev="${esc(ev.id)}"><i>${i + 1}</i><span>${fmtYear(ev.year, ev.circa)}</span> ${esc(evTitleText(ev))}</button></li>`).join("")}</ol>`
+      : `<p class="cmp-none">${esc(C.none)}</p>`}`;
+  $("cmp-pick").addEventListener("change", (e) => { cmp.region = state.regionById[e.target.value]; cmp.key = ""; fitCompare(); updateCompare(true); });
+  $("cmp-close").addEventListener("click", closeCompare);
+  box.querySelectorAll("[data-ev]").forEach((b) => b.addEventListener("click", () => {
+    const ev = state.events.find((x) => x.id === b.dataset.ev);
+    cmp.map?.flyTo({ center: [ev.lon, ev.lat], zoom: Math.max(cmp.map.getZoom(), 4.5), duration: 900 });
+    compareEventPopup(ev);
+  }));
+  // Who ruled there: the main countries with a ruler this year.
+  if (era?.layers) loadLayers(era).then((L) => {
+    if (cmp.region !== r || state.year !== y || !$("cmp-rulers")) return;
+    const pol = L.polities || {};
+    const names = Object.keys(L.rulers || {}).sort((a, b) => !!pol[b]?.focus - !!pol[a]?.focus);
+    const out = [];
+    for (const n of names) {
+      const x = (L.rulers[n] || []).findLast((x) => y >= x.from && y <= x.to);
+      if (x) out.push(`${esc(zh() ? pol[n]?.name_zh || n : n)}：${esc(rulerText(x)[0])}`);
+      if (out.length === 2) break;
+    }
+    $("cmp-rulers").innerHTML = out.join(" · ");
+  });
 }
 
 /* ---------- ledger: rulers of one country; picking one narrows the timeline to the reign ---------- */
