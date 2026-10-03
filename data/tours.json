@@ -3204,6 +3204,9 @@
  {
   "id": "yellow-turbans-to-warlords",
   "era": "eastern-han",
+  "also": [
+   "three-kingdoms"
+  ],
   "start": 184,
   "end": 207,
   "path": false,
@@ -3316,6 +3319,9 @@
  {
   "id": "guandu",
   "era": "eastern-han",
+  "also": [
+   "three-kingdoms"
+  ],
   "start": 196,
   "end": 204,
   "path": false,
@@ -5029,6 +5035,116 @@
     "zoom": 4.2,
     "text": "589: nearly three centuries of division since the fall of the Western Jin are over. Emperor Wen has Jiankang razed, and power is centred again on the north.",
     "text_zh": "589年，自西晋末年以来近三百年的南北分裂结束。隋文帝下令平毁建康城，政治中心重新回到关中和中原。"
+   }
+  ]
+ },
+ {
+  "id": "sui-reforms",
+  "era": "sui",
+  "start": 581,
+  "end": 618,
+  "path": false,
+  "title": "The Sui reforms",
+  "title_zh": "隋朝的改革",
+  "summary": "In under forty years the Sui rebuilt the machinery of government: three departments and six ministries, a new law code, and exams for officials.",
+  "summary_zh": "短短三十多年，隋朝重建了国家制度：三省六部、《开皇律》、州县两级和科举取士，大多被唐朝继承，影响了此后一千多年。",
+  "steps": [
+   {
+    "year": 581,
+    "at": [
+     108.93,
+     34.27
+    ],
+    "zoom": 5.0,
+    "event": "sui-founded",
+    "text": "581: Yang Jian takes the throne in Chang'an and sets up the three departments: the Secretariat drafts edicts, the Chancellery reviews them, and the Department of State Affairs carries them out through six ministries.",
+    "text_zh": "581年，隋文帝杨坚在长安即位，确立三省六部制：内史省起草诏令，门下省审核，尚书省执行，下设吏、礼、兵、度支、都官、工六部，分工制衡。"
+   },
+   {
+    "year": 581,
+    "at": [
+     108.94,
+     34.26
+    ],
+    "zoom": 6.3,
+    "event": "kaihuang-code",
+    "text": "581–583: the Kaihuang Code cuts the number of capital crimes and abolishes the cruellest punishments. The Tang code, and through it later Chinese law, was built on it.",
+    "text_zh": "581至583年，颁行《开皇律》，大幅减少死罪，废除枭首、车裂等酷刑，确立笞、杖、徒、流、死五刑。后来的《唐律》就以它为蓝本。"
+   },
+   {
+    "year": 583,
+    "at": [
+     112.0,
+     33.0
+    ],
+    "zoom": 4.3,
+    "event": "abolish-commanderies",
+    "text": "583: the empire had grown three tiers of local government with too many officials. Emperor Wen abolishes the commanderies, leaving just prefectures and counties.",
+    "text_zh": "583年，地方上州、郡、县三级层层叠叠，“民少官多”。隋文帝采纳建议，废除郡一级，改为州、县两级，裁撤了大批冗官。"
+   },
+   {
+    "year": 584,
+    "at": [
+     109.3,
+     34.4
+    ],
+    "zoom": 6.0,
+    "event": "guangtong-canal",
+    "text": "584: Yuwen Kai digs the Guangtong Canal along the Wei River from the capital to Tong Pass, so grain boats no longer fight the shallow, winding river.",
+    "text_zh": "584年，宇文恺主持开凿广通渠，从大兴城引渭水东到潼关，长三百多里，关东的粮食从此可以顺利运进京城。"
+   },
+   {
+    "year": 585,
+    "at": [
+     114.0,
+     35.5
+    ],
+    "zoom": 5.0,
+    "event": "dasuo-maoyue",
+    "text": "585: officials check every household face to face against the registers, and Gao Jiong sets fixed tax rates. Over 1.6 million people hidden from the registers are added.",
+    "text_zh": "585年，朝廷在各地“大索貌阅”，按户口簿逐人核对年龄相貌，又行高颎的“输籍法”定户等、减赋役，查出隐漏人口一百六十余万。"
+   },
+   {
+    "year": 587,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 5.6,
+    "text": "Kaihuang era (587 by one account): the old nine-rank system, which let great families fill office, is dropped, and each prefecture must send candidates to the capital every year.",
+    "text_zh": "开皇年间（一说587年），隋朝废除让门阀把持仕途的九品中正制，命各州每年向朝廷荐举人才，按科目考试录用，选官权收归中央。"
+   },
+   {
+    "year": 590,
+    "at": [
+     108.94,
+     34.27
+    ],
+    "zoom": 5.4,
+    "event": "fubing-registered",
+    "text": "590: soldiers of the militia are put on the ordinary county registers and given land like farmers, so the army becomes self-supporting and answers to the state.",
+    "text_zh": "590年，隋文帝下诏，府兵及其家属一律编入州县户籍，与百姓一样受田耕种，平时务农、战时出征，兵农合一。"
+   },
+   {
+    "year": 605,
+    "at": [
+     112.43,
+     34.6
+    ],
+    "zoom": 5.8,
+    "event": "keju",
+    "text": "605: under Emperor Yang the jinshi degree appears, examining candidates on policy essays. Anyone could now enter office by exam; the system lasted until 1905.",
+    "text_zh": "605年前后，隋炀帝设进士科，以策论考试取士。读书人可以凭考试入仕，门第不再决定一切。科举制度一直延续到1905年。"
+   },
+   {
+    "year": 618,
+    "at": [
+     108.93,
+     34.27
+    ],
+    "zoom": 4.6,
+    "text": "618: the Sui falls after only 37 years, but the Tang keeps nearly everything it built: the three departments and six ministries, the law code and the exams.",
+    "text_zh": "618年，隋朝只存在了三十七年便灭亡，但唐朝几乎全盘继承了它的三省六部、律令和科举，史称“唐承隋制”。"
    }
   ]
  },
