@@ -384,7 +384,8 @@
      "summary_zh": "朝鲜半岛最早的国家，中心在西北部和辽东一带。最后的卫满朝鲜于公元前108年被汉武帝所灭。",
      "focus": [
       "Gojoseon"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-proto-three",
@@ -402,7 +403,8 @@
       "Silla",
       "Paekche",
       "Gaya"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-three-kingdoms",
@@ -420,7 +422,8 @@
       "Paekche",
       "Silla",
       "Gaya"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-unified-silla",
@@ -438,7 +441,8 @@
       "Silia",
       "Parhae",
       "Balhae"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-later-three",
@@ -454,7 +458,8 @@
      "focus": [
       "Silla",
       "Balhae"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-goryeo",
@@ -470,7 +475,8 @@
      "focus": [
       "Korea",
       "Goryeo"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-joseon",
@@ -485,7 +491,8 @@
      "summary_zh": "李成桂建立的儒家王朝，定都汉城（今首尔）。世宗大王创制了谚文，王朝先后经受了日本和后金（清）的入侵。",
      "focus": [
       "Korea"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-korean-empire",
@@ -500,7 +507,8 @@
      "summary_zh": "朝鲜改称帝国，以表明脱离清朝独立，但1905年沦为日本的保护国。",
      "focus": [
       "Korea"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-japanese-rule",
@@ -515,7 +523,8 @@
      "summary_zh": "1910年日本吞并朝鲜，进行殖民统治，直到1945年日本战败。",
      "focus": [
       "Empire of Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "kr-divided",
@@ -531,7 +540,8 @@
      "focus": [
       "Korea, Republic of",
       "Korea, Democratic People's Republic of"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -637,7 +647,8 @@
      "summary_zh": "水稻种植和青铜器、铁器从大陆传入，出现了许多小国，其中邪马台国女王卑弥呼曾遣使曹魏。",
      "focus": [
       "Ainu"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-kofun",
@@ -652,7 +663,8 @@
      "summary_zh": "统治者葬于巨大的前方后圆坟，大和政权逐渐统一了日本大部分地区。",
      "focus": [
       "Yamato"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-asuka",
@@ -667,7 +679,8 @@
      "summary_zh": "圣德太子推广佛教，645年的大化改新开始仿照唐朝建立中央集权国家。",
      "focus": [
       "Yamato"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-nara",
@@ -683,7 +696,8 @@
      "focus": [
       "Yamato",
       "Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-heian",
@@ -699,7 +713,8 @@
      "focus": [
       "Japan",
       "Imperial Japan (Fujiwara)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-kamakura",
@@ -715,7 +730,8 @@
      "focus": [
       "Imperial Japan (Fujiwara)",
       "Shogun Japan (Kamakura)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-muromachi",
@@ -731,7 +747,8 @@
      "focus": [
       "Shogun Japan (Kamakura)",
       "Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-sengoku",
@@ -747,7 +764,8 @@
      "focus": [
       "Japan",
       "Japan (Warring States)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-azuchi-momoyama",
@@ -762,7 +780,8 @@
      "summary_zh": "织田信长和丰臣秀吉重新统一日本。丰臣秀吉在16世纪90年代两次出兵侵略朝鲜。",
      "focus": [
       "Japan (Warring States)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-edo",
@@ -778,7 +797,8 @@
      "focus": [
       "Tokugawa shogunate",
       "Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-meiji",
@@ -793,7 +813,8 @@
      "summary_zh": "明治维新建立了近代工业国家和军队。日本先后战胜清朝和俄国，并吞并朝鲜。",
      "focus": [
       "Imperial Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-taisho",
@@ -808,7 +829,8 @@
      "summary_zh": "政党政治和大众文化发展的短暂时期，日本以协约国一方参加了第一次世界大战。",
      "focus": [
       "Empire of Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-showa",
@@ -824,7 +846,8 @@
      "focus": [
       "Empire of Japan",
       "Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-heisei",
@@ -839,7 +862,8 @@
      "summary_zh": "泡沫经济破灭，经济长期低迷。2011年东北地区发生大地震和海啸。",
      "focus": [
       "Japan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "jp-reiwa",
@@ -854,7 +878,8 @@
      "summary_zh": "2019年德仁天皇即位后开始的现今年号时代。",
      "focus": [
       "Japan"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -1002,7 +1027,8 @@
       "Austronesians",
       "Mon-Khmer",
       "Malays"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-funan",
@@ -1019,7 +1045,8 @@
       "Funan",
       "Champa",
       "Dvaravati"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-srivijaya",
@@ -1038,7 +1065,8 @@
       "Champa",
       "Mataram",
       "Dvaravati"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-angkor",
@@ -1057,7 +1085,8 @@
       "Kingdom of Pagan",
       "Champa",
       "Đại Việt"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-majapahit",
@@ -1076,7 +1105,8 @@
       "Đại Việt",
       "Champa",
       "Srivijaya Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-malacca",
@@ -1095,7 +1125,8 @@
       "Đại Việt",
       "Pegu",
       "Champa"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-early-colonial",
@@ -1114,7 +1145,8 @@
       "Dutch East Indies",
       "Philippines",
       "Burmese kingdoms"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-colonial",
@@ -1133,7 +1165,8 @@
       "Rattanakosin Kingdom",
       "Malaya",
       "Philippines"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-independence",
@@ -1153,7 +1186,8 @@
       "Burma",
       "Malaysia",
       "Philippines"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sea-asean",
@@ -1173,7 +1207,8 @@
       "Philippines",
       "Malaysia",
       "Burma"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -1359,7 +1394,8 @@
      "focus": [
       "Vedic Aryans",
       "Dravidians"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-mahajanapadas",
@@ -1380,7 +1416,8 @@
       "Vatsa",
       "Kuru",
       "Gandhāra"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-maurya",
@@ -1395,7 +1432,8 @@
      "summary_zh": "旃陀罗笈多建立了第一个统一印度大部分地区的帝国。其孙阿育王皈依佛教，并大力传播佛教。",
      "focus": [
       "Mauryan Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-kushan",
@@ -1414,7 +1452,8 @@
       "Satavahanihara",
       "Kalinga",
       "Chola"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-gupta",
@@ -1430,7 +1469,8 @@
      "focus": [
       "Gupta Empire",
       "Satavahanihara"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-early-medieval",
@@ -1451,7 +1491,8 @@
       "Gurjara Pratihara",
       "Rashtrakuta state",
       "Cholas"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-chola-ghaznavid",
@@ -1470,7 +1511,8 @@
       "Palas",
       "Rajput kingdoms",
       "Ghaznavid Emirate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-delhi",
@@ -1488,7 +1530,8 @@
       "Vijayanagara",
       "Bahmani Kingdom",
       "Orissa"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-mughal",
@@ -1506,7 +1549,8 @@
       "Vijayanagara",
       "Bijapur",
       "Golkonda"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-company",
@@ -1525,7 +1569,8 @@
       "British East India Company",
       "Mysore",
       "Sikhs"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-raj",
@@ -1542,7 +1587,8 @@
       "British Raj",
       "Ceylon",
       "Nepal"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sa-independent",
@@ -1561,7 +1607,8 @@
       "Bangladesh",
       "Sri Lanka",
       "Nepal"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -1743,7 +1790,8 @@
       "Iranian pastoralists",
       "Karasuk culture",
       "Scythians"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-greco-bactria",
@@ -1760,7 +1808,8 @@
       "Bactria",
       "Scythians",
       "Yuezhi"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-kushan",
@@ -1778,7 +1827,8 @@
       "Scythians",
       "Yueban",
       "Saka Kingdom"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-hephthalites",
@@ -1795,7 +1845,8 @@
       "Yueban",
       "Kushan Principalities",
       "Ruanruan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-turks",
@@ -1812,7 +1863,8 @@
       "Western Gokturk Khaganate",
       "Göktürks",
       "Umayyad Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-samanid",
@@ -1829,7 +1881,8 @@
       "Abbasid Caliphate",
       "Samanid Empire",
       "Oghuz Turks"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-turkic-dynasties",
@@ -1848,7 +1901,8 @@
       "Khwarazmian dynasty",
       "Kimek-Kipchak khaganate",
       "Seljuk Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-mongol",
@@ -1865,7 +1919,8 @@
       "Chagatai Khanate",
       "Khanate of the Golden Horde",
       "Mongol Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-timurid",
@@ -1883,7 +1938,8 @@
       "Timurid Emirates",
       "White Horde",
       "Chagatai Khanate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-khanates",
@@ -1900,7 +1956,8 @@
       "Quazaq Khanate",
       "Khiva Khanate",
       "central Asian khanates"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-russian",
@@ -1916,7 +1973,8 @@
      "focus": [
       "Russian Empire",
       "Bokhara Khanate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-soviet",
@@ -1931,7 +1989,8 @@
      "summary_zh": "苏联划定了五个加盟共和国的边界，推行农业集体化和棉花种植，导致咸海萎缩。",
      "focus": [
       "USSR"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ca-independent",
@@ -1950,7 +2009,8 @@
       "Turkmenistan",
       "Kyrgyzstan",
       "Tajikistan"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -2102,7 +2162,8 @@
      "summary_zh": "以苏萨和安善为中心的埃兰与两河流域诸国时战时和，约公元前2004年攻陷乌尔。",
      "focus": [
       "Elam"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-middle-elam",
@@ -2118,7 +2179,8 @@
      "focus": [
       "Elam",
       "Iranian pastoralists"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-medes",
@@ -2134,7 +2196,8 @@
      "focus": [
       "Elam",
       "Iranian pastoralists"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-achaemenid",
@@ -2149,7 +2212,8 @@
      "summary_zh": "居鲁士大帝建立波斯帝国。大流士一世时疆域从埃及延伸到印度河，修建御道，设立行省。",
      "focus": [
       "Achaemenid Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-seleucid",
@@ -2165,7 +2229,8 @@
      "focus": [
       "Empire of Alexander",
       "Seleucid Kingdom"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-parthian",
@@ -2182,7 +2247,8 @@
       "Parthia",
       "Parthian Empire",
       "Suren Kingdom"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-sasanian",
@@ -2198,7 +2264,8 @@
      "focus": [
       "Persia",
       "Sasanian Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-caliphate",
@@ -2214,7 +2281,8 @@
      "focus": [
       "Umayyad Caliphate",
       "Abbasid Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-intermezzo",
@@ -2232,7 +2300,8 @@
       "Samanid Empire",
       "Buyid Emirate",
       "Ghaznavid Emirate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-seljuk",
@@ -2249,7 +2318,8 @@
       "Seljuk Empire",
       "Ghaznavid Emirate",
       "Khwarazmian dynasty"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-ilkhanate",
@@ -2265,7 +2335,8 @@
      "focus": [
       "Ilkhanate",
       "Mongol Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-timurid",
@@ -2282,7 +2353,8 @@
       "Timurid Empire",
       "Timurid Emirates",
       "Emirate of the White Sheep Turks"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-safavid",
@@ -2297,7 +2369,8 @@
      "summary_zh": "伊斯玛仪一世把什叶派定为国教。阿拔斯一世时，首都伊斯法罕成为世界名城。",
      "focus": [
       "Safavid Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-afsharid-zand",
@@ -2313,7 +2386,8 @@
      "focus": [
       "Persia",
       "Afghanistan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-qajar",
@@ -2329,7 +2403,8 @@
      "focus": [
       "Persia",
       "Afghanistan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-pahlavi",
@@ -2345,7 +2420,8 @@
      "focus": [
       "Iran",
       "Afghanistan"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ir-islamic-republic",
@@ -2361,7 +2437,8 @@
      "focus": [
       "Iran",
       "Afghanistan"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -2509,7 +2586,8 @@
       "city-states",
       "Hurrian Kingdoms",
       "Semites"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-akkad",
@@ -2525,7 +2603,8 @@
      "focus": [
       "Ur",
       "city-states"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-ur-iii",
@@ -2541,7 +2620,8 @@
      "focus": [
       "Ur",
       "city-states"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-old-babylonian",
@@ -2558,7 +2638,8 @@
       "Hittites",
       "Canaan",
       "Hurrian Kingdoms"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-hittite-kassite",
@@ -2577,7 +2658,8 @@
       "Assyria",
       "Urartu",
       "Phrygians"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-iron-age",
@@ -2596,7 +2678,8 @@
       "Phrygians",
       "Assyria",
       "Babylonia"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-neo-assyrian",
@@ -2614,7 +2697,8 @@
       "Babylonia",
       "Urartu",
       "Phrygians"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-neo-babylonian",
@@ -2629,7 +2713,8 @@
      "summary_zh": "迦勒底人与米底人联合灭亡亚述。尼布甲尼撒二世重建巴比伦城，并于公元前586年攻陷耶路撒冷。",
      "focus": [
       "Babylonia"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-achaemenid",
@@ -2645,7 +2730,8 @@
      "focus": [
       "Achaemenid Empire",
       "Saba"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-hellenistic",
@@ -2664,7 +2750,8 @@
       "Pergamon",
       "Nabatean Kingdom",
       "Saba"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-roman-parthian",
@@ -2684,7 +2771,8 @@
       "Nabatean Kingdom",
       "Armenia",
       "Himyarite Kingdom"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-byzantine-sasanian",
@@ -2703,7 +2791,8 @@
       "Sasanian Empire",
       "Himyarite Kingdom",
       "Hejaz"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-rashidun",
@@ -2720,7 +2809,8 @@
       "Sasanian Empire",
       "Eastern Roman Empire",
       "Hejaz"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-umayyad",
@@ -2736,7 +2826,8 @@
      "focus": [
       "Umayyad Caliphate",
       "Byzantine Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-abbasid",
@@ -2754,7 +2845,8 @@
       "Byzantine Empire",
       "Fatimid Caliphate",
       "Buyid Emirate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-seljuk-crusades",
@@ -2771,7 +2863,8 @@
       "Seljuk Empire",
       "Byzantine Empire",
       "Fatimid Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-mongol-mamluk",
@@ -2790,7 +2883,8 @@
       "Seljuk Caliphate",
       "Ottoman Empire",
       "Timurid Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-ottoman",
@@ -2808,7 +2902,8 @@
       "Safavid Empire",
       "Oman",
       "Yemen"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-late-ottoman",
@@ -2825,7 +2920,8 @@
       "Ottoman Empire",
       "Arabia",
       "Oman"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-mandates",
@@ -2844,7 +2940,8 @@
       "Mesopotamia (GB)",
       "Syria (France)",
       "Mandatory Palestine (GB)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "me-modern",
@@ -2864,7 +2961,8 @@
       "Saudi Arabia",
       "Israel",
       "Jordan"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -3005,7 +3103,8 @@
      "summary_zh": "上下埃及统一于最早的法老之下，以孟菲斯为都城，开始使用象形文字。",
      "focus": [
       "Egypt"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-old-kingdom",
@@ -3020,7 +3119,8 @@
      "summary_zh": "金字塔时代，胡夫等法老修建了吉萨大金字塔。",
      "focus": [
       "Egypt"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-first-intermediate",
@@ -3035,7 +3135,8 @@
      "summary_zh": "王权崩溃，各州长官割据，赫拉克利奥波利斯和底比斯两系王朝对立。",
      "focus": [
       "Egypt"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-middle-kingdom",
@@ -3051,7 +3152,8 @@
      "focus": [
       "Egypt",
       "Kerma"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-second-intermediate",
@@ -3066,7 +3168,8 @@
      "summary_zh": "来自西亚的喜克索斯人统治尼罗河三角洲，把马和战车带到埃及。",
      "focus": [
       "Egypt"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-new-kingdom",
@@ -3082,7 +3185,8 @@
      "focus": [
       "Egypt",
       "Kush"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-third-intermediate",
@@ -3098,7 +3202,8 @@
      "focus": [
       "Egypt",
       "Kush"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-late-period",
@@ -3115,7 +3220,8 @@
       "Egypt",
       "Carthaginian Empire",
       "Achaemenid Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-ptolemaic",
@@ -3134,7 +3240,8 @@
       "Carthaginian Empire",
       "Numidia",
       "Mauretania"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-roman",
@@ -3149,7 +3256,8 @@
      "summary_zh": "克娄巴特拉之后，埃及成为罗马的粮仓，整个北非沿海都归罗马统治。基督教从亚历山大城传播开来。",
      "focus": [
       "Roman Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-byzantine",
@@ -3166,7 +3274,8 @@
       "Eastern Roman Empire",
       "Western Roman Empire",
       "Vandals"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-arab",
@@ -3184,7 +3293,8 @@
       "Abbasid Caliphate",
       "Aghlabid Emirate",
       "Idrisid Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-tulunid",
@@ -3201,7 +3311,8 @@
       "Abbasid Caliphate",
       "Aghlabid Emirate",
       "Idrisid Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-fatimid",
@@ -3217,7 +3328,8 @@
      "focus": [
       "Fatimid Caliphate",
       "Almoravid dynasty"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-ayyubid",
@@ -3232,7 +3344,8 @@
      "summary_zh": "萨拉丁结束法蒂玛王朝并抗击十字军，穆瓦希德王朝统治马格里布和西班牙南部。",
      "focus": [
       "Almohad Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-mamluk",
@@ -3250,7 +3363,8 @@
       "Hafsid Caliphate",
       "Morocco",
       "Zayyanid Caliphate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-ottoman",
@@ -3270,7 +3384,8 @@
       "Algiers",
       "Tunis",
       "Tripolitania"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-muhammad-ali",
@@ -3288,7 +3403,8 @@
       "Egypt",
       "Algeria (FR)",
       "Morocco"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-british",
@@ -3307,7 +3423,8 @@
       "Libya",
       "Tunisia",
       "Morocco (France)"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eg-republic",
@@ -3326,7 +3443,8 @@
       "Algeria",
       "Tunisia",
       "Morocco"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -3527,7 +3645,8 @@
       "Urnfield cultures",
       "Illyrians",
       "Thrace"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-archaic-greece",
@@ -3545,7 +3664,8 @@
       "Etrurians",
       "La Tène culture",
       "Rome"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-classical-greece",
@@ -3563,7 +3683,8 @@
       "Rome",
       "Etrurians",
       "Carthaginian Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-hellenistic",
@@ -3582,7 +3703,8 @@
       "Macedon and Hellenic League",
       "Carthage",
       "Celts"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-roman-republic",
@@ -3598,7 +3720,8 @@
      "focus": [
       "Roman Republic",
       "Rome"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-roman-empire",
@@ -3613,7 +3736,8 @@
      "summary_zh": "屋大维建立罗马帝国，此后近两百年为“罗马和平”时期，从不列颠到叙利亚修建了道路和城市，推行罗马法。",
      "focus": [
       "Roman Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-late-roman",
@@ -3633,7 +3757,8 @@
       "Hunnic Empire",
       "Visigoths",
       "Franks"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-early-middle-ages",
@@ -3652,7 +3777,8 @@
       "Visigothic Kingdom",
       "Lombard principalities",
       "Avars"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-carolingian",
@@ -3671,7 +3797,8 @@
       "Emirate of Córdoba",
       "Kyivan Rus",
       "Bulgar Khanate"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-high-middle-ages",
@@ -3691,7 +3818,8 @@
       "Byzantine Empire",
       "Kyivan Rus",
       "Poland"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-late-middle-ages",
@@ -3711,7 +3839,8 @@
       "Poland-Lithuania",
       "Grand Duchy of Moscow",
       "Ottoman Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-renaissance",
@@ -3731,7 +3860,8 @@
       "Portugal",
       "Grand Duchy of Moscow",
       "Ottoman Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-reformation",
@@ -3751,7 +3881,8 @@
       "England and Ireland",
       "Poland-Lithuania",
       "Tsardom of Muscovy"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-absolutism",
@@ -3771,7 +3902,8 @@
       "Spain",
       "England and Ireland",
       "Tsardom of Muscovy"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-revolution",
@@ -3790,7 +3922,8 @@
       "Austrian Empire",
       "Prussia",
       "Russian Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-industrial",
@@ -3810,7 +3943,8 @@
       "Austria Hungary",
       "Italy",
       "Russian Empire"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-world-wars",
@@ -3830,7 +3964,8 @@
       "Italy",
       "USSR",
       "Poland"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-cold-war",
@@ -3850,7 +3985,8 @@
       "East Germany",
       "United Kingdom",
       "Italy"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "eu-european-union",
@@ -3870,7 +4006,8 @@
       "United Kingdom",
       "Ukraine",
       "Poland"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -4036,7 +4173,8 @@
       "Meroe",
       "West African cereal farmers",
       "Ethiopian highland farmers"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-aksum",
@@ -4055,7 +4193,8 @@
       "Empire of Ghana",
       "Makkura",
       "Alwa"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-ghana",
@@ -4075,7 +4214,8 @@
       "Islamic city-states",
       "Great Zimbabwe",
       "Takrur"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-mali",
@@ -4095,7 +4235,8 @@
       "Kanem-Bornu",
       "Benin",
       "Islamic city-states"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-songhai",
@@ -4115,7 +4256,8 @@
       "Mwenemutapa",
       "Hausa States",
       "Benin"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-slave-trade",
@@ -4135,7 +4277,8 @@
       "Lunda",
       "Luba",
       "Ethiopia"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-late-precolonial",
@@ -4155,7 +4298,8 @@
       "Ethiopia",
       "Cape Colony",
       "Sultanate of Zanzibar"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-colonial",
@@ -4175,7 +4319,8 @@
       "British East Africa",
       "Union of South Africa",
       "Abyssinia"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-independence",
@@ -4195,7 +4340,8 @@
       "Ghana",
       "Kenya",
       "South Africa"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ss-contemporary",
@@ -4215,7 +4361,8 @@
       "Kenya",
       "Zaire",
       "Tanzania, United Republic of"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -4417,7 +4564,8 @@
       "Huron",
       "Apache",
       "Navajo"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-colonial",
@@ -4436,7 +4584,8 @@
       "Massachusetts Bay",
       "British American colonies",
       "Iroquois"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-revolution",
@@ -4453,7 +4602,8 @@
       "United States of America",
       "Quebec",
       "Rupert's Land"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-early-republic",
@@ -4471,7 +4621,8 @@
       "United States",
       "Canada",
       "Rupert's Land"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-civil-war",
@@ -4487,7 +4638,8 @@
      "focus": [
       "United States of America",
       "Canada"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-gilded-age",
@@ -4504,7 +4656,8 @@
       "United States of America",
       "United States",
       "Canada"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-world-wars",
@@ -4520,7 +4673,8 @@
      "focus": [
       "United States",
       "Canada"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-cold-war",
@@ -4536,7 +4690,8 @@
      "focus": [
       "United States",
       "Canada"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "na-contemporary",
@@ -4552,7 +4707,8 @@
      "focus": [
       "United States",
       "Canada"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -4762,7 +4918,8 @@
       "Maya city-states",
       "Monte Albán",
       "Veracruz civilization"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-toltec",
@@ -4779,7 +4936,8 @@
       "Toltec Empire",
       "Maya city-states",
       "Mixtecs"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-late-postclassic",
@@ -4796,7 +4954,8 @@
       "Mixtec Empire",
       "Zapotec Empire",
       "Maya city-states"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-aztec",
@@ -4813,7 +4972,8 @@
       "Aztec Empire",
       "Mixtec Empire",
       "Maya city-states"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-new-spain",
@@ -4828,7 +4988,8 @@
      "summary_zh": "1521年科尔特斯征服阿兹特克。西班牙设新西班牙总督区统治墨西哥和中美洲，白银大量流向欧洲和中国。",
      "focus": [
       "Viceroyalty of New Spain"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-independence",
@@ -4847,7 +5008,8 @@
       "Honduras",
       "Nicaragua",
       "Costa Rica"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-revolution",
@@ -4865,7 +5027,8 @@
       "Guatemala",
       "Honduras",
       "Nicaragua"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "ma-modern",
@@ -4885,7 +5048,8 @@
       "Nicaragua",
       "Costa Rica",
       "Panama"
-     ]
+     ],
+     "layers": true
     }
    ]
   },
@@ -5118,7 +5282,8 @@
       "Tiahuanaco Empire",
       "Andean states and chiefdoms",
       "Aymara kingdoms"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-inca",
@@ -5134,7 +5299,8 @@
      "focus": [
       "Inca Empire",
       "Chimú"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-colonial",
@@ -5153,7 +5319,8 @@
       "Viceroyalty of Brazil",
       "Viceroyalty of New Granada",
       "Viceroyalty of the Río de la Plata"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-independence",
@@ -5170,7 +5337,8 @@
       "Viceroyalty of Peru",
       "Viceroyalty of Brazil",
       "Viceroyalty of New Granada"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-early-republics",
@@ -5190,7 +5358,8 @@
       "Chile",
       "Peru",
       "Colombia"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-populism",
@@ -5210,7 +5379,8 @@
       "Peru",
       "Colombia",
       "Venezuela"
-     ]
+     ],
+     "layers": true
     },
     {
      "id": "sm-democratic",
@@ -5230,7 +5400,8 @@
       "Peru",
       "Colombia",
       "Venezuela"
-     ]
+     ],
+     "layers": true
     }
    ]
   }

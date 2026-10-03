@@ -89,6 +89,7 @@ def people_of(ev):
 n = 0
 for ev in events:
     if ev.get("linked") == "hand": continue
+    if ev.get("region", "china") != "china": continue  # cities, people and maps are China's only
     if ALL or "places" not in ev: ev["places"] = city_of(ev); n += 1
     if ALL or "people" not in ev: ev["people"] = people_of(ev)
     if ALL or "states" not in ev: ev["states"] = states_of(ev)

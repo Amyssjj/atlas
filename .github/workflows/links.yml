@@ -1,0 +1,20 @@
+# Checks every English Wikipedia source link (tools/check_links.py) and puts the report on the `link-check` branch.
+# Run by hand (Actions → Links → Run workflow); tools/apply_links.py applies it.
+name: Links
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/check_links.py /tmp/out
+      - name: Commit to link-check
+        run: |
+          cd /tmp/out
+          git init -q -b link-check
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add -A && git commit -q -m "Link check from ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" link-check

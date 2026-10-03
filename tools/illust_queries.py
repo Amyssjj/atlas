@@ -8,7 +8,8 @@ def page(url):
     return (m.group(1), urllib.parse.unquote(m.group(2)).replace("_", " ")) if m else (None, None)
 out = {}
 for f in sorted(glob.glob(P("data/layers/*.json"))):
-    for p in json.load(open(f)).get("people", []):
+    L = json.load(open(f))
+    for p in [p for x in (L.values() if "/world-" in f else [L]) for p in x.get("people", [])]:
         wiki, title = page(p.get("source"))
         if title: out["p:" + p["id"]] = {"wiki": wiki, "title": title, "zh": p.get("name_zh")}
 for e in json.load(open(P("data/events.json"))):
