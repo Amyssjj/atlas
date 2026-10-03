@@ -1,4 +1,4 @@
-// Dynasty Atlas: a data-driven 3D history map.
+// Atlas: a data-driven 3D history map.
 // Everything historical lives in data/: eras.json (time ranges + border snapshots per era),
 // events.json (dated, located events), places.json (cities with the years they matter) and
 // details/<era>.json (the longer story behind each event, loaded when the era is opened) and
@@ -8,9 +8,23 @@
 // Years are integers; negative years are BCE. Text fields come in pairs: `x` (English) and `x_zh`.
 
 const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
-// Elevation tiles are bundled with the page (it may not load images from other sites): zoom 2-6 as PNG files,
+// Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
+// ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
+// server while developing). See docs/custom-data.md.
+const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "https://daiyip.github.io"];
+const PACK_URL = new URLSearchParams(location.search).get("pack");
+// ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
+const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(location.search).get("packonly"));
+// Overview elevation tiles are bundled with the page (it works offline and in sandboxed previews): zoom 2-6 as PNG files,
 // zoom 7 (whole map) and 8 (China proper) packed into archives in tiles/pack/ and served through the
 // "atlas" protocol below. Satellite imagery (Sentinel-2, 2020) is packed the same way in tiles/sat/, every zoom.
+// Past the bundled zooms, tiles come from the original sources when the page can reach them (on atlas.daiyip.com it
+// can): elevation from AWS Terrain Tiles (SRTM and others, about 30 m), imagery from EOX Sentinel-2 cloudless 2016
+// (10 m, CC BY 4.0). Offline, or with ?offline=1, the bundled tiles are enlarged instead.
+const LIVE = new URLSearchParams(location.search).get("offline") === "1" ? null : {
+  dem: "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+  sat: "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/g/{z}/{y}/{x}.jpg",
+};
 const TILE_URL = "atlas://{z}/{x}/{y}";
 const SAT_URL = "atlas://sat/{z}/{x}/{y}";
 const SLIDER_MAX = 1000;
@@ -22,6 +36,8 @@ const ZOOMS = ["all", "era", "decades"];
 const state = {
   eras: [], events: [], places: [],
   mode: "china",        // the region whose periods the timeline shows, or "world" for plain calendar years
+  home: "china",        // the region the data belongs to: "china", or the open pack's id
+  pack: null,           // the open data pack: { url, manifest, only }
   chinaEras: [], regions: [], regionById: {}, worldEras: [], worldIndex: [], raw: {},
   detail: 2, cats: [],   // event detail level shown (1 大事, 2 要事, 3 细目) and category tags (empty: all)
   range: { start: -2070, end: 1912 },
@@ -68,12 +84,13 @@ const UI = {
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
+    notePack: "疆域为近似示意，取自开源 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
     zooms: ["全部", "朝代", "数十年"], country: "国家", reignLen: (n) => `${n}年`, rulerCount: (n) => `${n} 位`, noRulers: "本时期暂无君主资料", worldMap: (y) => `${y}前后的世界`, worldName: "世界 · 公元纪年", noRegionEvents: "这个地区的事件还在整理中，下一步加入。现在可以看各时期的疆域。", noPeople: "本时期暂无人物资料", peopleHint: "点击人物，地图飞到其居所并显示生平", pgroups: { all: "全部", mil: "军事", pol: "政治", cul: "思想文学", art: "艺术", sci: "科技" }, scopeHint: "点击君主，时间轴缩放到其在位期间", zoomIn: "放大时间轴", zoomOut: "缩小时间轴", earlier: "向前", later: "向后",
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", g_map: "地图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", g_map: "地图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -86,16 +103,17 @@ const UI = {
     capital: "都城", works: "代表作", life: (a, b) => `${a} – ${b}`, inventor: "发明者", pkinds: { pass: "山隘", wall: "长城关口", gate: "关口" }, guards: "扼守", battles: "关前史事", built: (y) => `${y}建`,
   },
   en: {
-    title: "Dynasty Atlas", events: "Events", hide: "Hide", show: "Show", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape",
+    title: "Atlas", events: "Events", hide: "Hide", show: "Show", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
+    notePack: "Borders are approximate, from the open historical-basemaps dataset. Terrain, coastlines and rivers are modern.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
     zooms: ["All", "Dynasty", "Decades"], country: "Country", reignLen: (n) => `${n} yr${n > 1 ? "s" : ""}`, rulerCount: (n) => `${n} rulers`, noPeople: "No famous people listed for this period", peopleHint: "Click a person to fly to where they lived and read about them", pgroups: { all: "All", mil: "Military", pol: "Politics", cul: "Thought & letters", art: "Arts", sci: "Science" }, noRulers: "No rulers recorded for this period", worldMap: (y) => `the world around ${y}`, worldName: "World · calendar years", noRegionEvents: "Events for this region are still being written. For now you can follow its borders through the periods.", scopeHint: "Pick a ruler to narrow the timeline to their reign", zoomIn: "Zoom in", zoomOut: "Zoom out", earlier: "Earlier", later: "Later",
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", g_map: "Map", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", g_map: "Map", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -132,6 +150,8 @@ function applyLang() {
   document.documentElement.lang = zh() ? "zh-CN" : "en";
   document.title = t("title");
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  // A pack's own note replaces the China borders note.
+  if (state.pack?.only) document.querySelector('[data-i18n="note"]').textContent = tx(state.pack.manifest, "note") || t("notePack");
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   $("lang").querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
@@ -144,6 +164,7 @@ function applyLang() {
   if (typeof tourCard === "function" && state.tour) tourCard();
   $("search-open").title = $("search-open").ariaLabel = t("search");
   $("search-q").placeholder = t("searchPh");
+  renamePackChips();
 }
 
 async function setLang(lang) {
@@ -160,6 +181,7 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLedger();
+  emit("lang", { lang });
 }
 
 // A border file, or one map out of a bundle when the path ends in #<id> (tools/carve_states.py writes those).
@@ -187,6 +209,18 @@ const RELIEF = [
 ];
 
 /* ---------- bundled elevation tiles ---------- */
+
+// A tile from the live source, or null. After a run of failures (offline, blocked) the source is left alone.
+const liveFails = { dem: 0, sat: 0 };
+async function liveTile(kind, z, x, y) {
+  if (!LIVE || liveFails[kind] >= 8) return null;
+  try {
+    const r = await fetch(LIVE[kind].replace("{z}", z).replace("{x}", x).replace("{y}", y), { signal: AbortSignal.timeout(8000) });
+    if (r.ok) { liveFails[kind] = 0; return await r.arrayBuffer(); }
+    if (r.status !== 404) liveFails[kind]++;
+  } catch { liveFails[kind]++; }
+  return null;
+}
 
 const packs = {};
 function loadPack(z, px, py, dir = "pack") {
@@ -216,16 +250,33 @@ async function demTile(z, x, y) {
   const p = await loadPack(z, x >> sh, y >> sh);
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
-  // Not bundled at this zoom: enlarge a quarter of the parent tile. Nearest-neighbour scaling keeps the
-  // colour-encoded elevations intact, where smoothing would mix them into nonsense.
+  const live = z > 5 && await liveTile("dem", z, x, y);
+  if (live) return live;
+  // Not bundled at this zoom and not reachable live: enlarge a quarter of the parent tile. The heights are decoded, interpolated
+  // bilinearly and encoded again (smoothing the colours themselves would mix them into nonsense, and plain
+  // pixel doubling turns slopes into steps that the hillshade draws as stripes).
   if (z === 0) return null;
   const parent = await demTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
-  const bmp = await createImageBitmap(new Blob([parent], { type: "image/png" }));
+  const bmp = await createImageBitmap(new Blob([parent], { type: "image/png" }), { colorSpaceConversion: "none", premultiplyAlpha: "none" });
   const c = new OffscreenCanvas(256, 256);
-  const g = c.getContext("2d");
-  g.imageSmoothingEnabled = false;
-  g.drawImage(bmp, (x & 1) * 128, (y & 1) * 128, 128, 128, 0, 0, 256, 256);
+  const g = c.getContext("2d", { willReadFrequently: true });
+  g.drawImage(bmp, 0, 0);
+  const src = g.getImageData(0, 0, 256, 256).data;
+  const h = new Float32Array(256 * 256);
+  for (let i = 0; i < h.length; i++) h[i] = src[i * 4] * 256 + src[i * 4 + 1] + src[i * 4 + 2] / 256;
+  const out = g.createImageData(256, 256), d = out.data;
+  const ox = (x & 1) * 128, oy = (y & 1) * 128;
+  for (let j = 0; j < 256; j++) {
+    const sy = Math.min(255, Math.max(0, oy + (j + 0.5) / 2 - 0.5)), y0 = Math.floor(sy), y1 = Math.min(255, y0 + 1), fy = sy - y0;
+    for (let i = 0; i < 256; i++) {
+      const sx = Math.min(255, Math.max(0, ox + (i + 0.5) / 2 - 0.5)), x0 = Math.floor(sx), x1 = Math.min(255, x0 + 1), fx = sx - x0;
+      const v = (h[y0 * 256 + x0] * (1 - fx) + h[y0 * 256 + x1] * fx) * (1 - fy) + (h[y1 * 256 + x0] * (1 - fx) + h[y1 * 256 + x1] * fx) * fy;
+      const k = (j * 256 + i) * 4, r = Math.floor(v / 256), gg = Math.floor(v - r * 256);
+      d[k] = r; d[k + 1] = gg; d[k + 2] = Math.round((v - r * 256 - gg) * 256) & 255; d[k + 3] = 255;
+    }
+  }
+  g.putImageData(out, 0, 0);
   return (await c.convertToBlob({ type: "image/png" })).arrayBuffer();
 }
 // Satellite tiles: zooms 1-3 are one archive each, 4-8 in 8x8 blocks (the world to zoom 5, East Asia beyond),
@@ -236,6 +287,8 @@ async function satTile(z, x, y) {
   const p = await loadPack(z, x >> sh, y >> sh, "sat");
   const e = p?.idx[`${x}/${y}`];
   if (e) return p.buf.slice(p.base + e[0], p.base + e[0] + e[1]);
+  const live = z > 5 && await liveTile("sat", z, x, y);
+  if (live) return live;
   if (z <= 1) return null;
   const parent = await satTile(z - 1, x >> 1, y >> 1);
   if (!parent) return null;
@@ -290,13 +343,13 @@ function applyLook() {
 }
 
 function buildStyle() {
-  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8 };
+  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 10 };
   return {
     version: 8,
     sources: {
       dem, "dem-terrain": { ...dem },
-      sat: { type: "raster", tiles: [SAT_URL], tileSize: 256, maxzoom: 9,
-             attribution: "Imagery: Sentinel-2 2020, Copernicus/Sentinel Hub (CC BY 4.0)" },
+      sat: { type: "raster", tiles: [SAT_URL], tileSize: 256, maxzoom: 10,
+             attribution: "Imagery: Sentinel-2 2020, Copernicus/Sentinel Hub (CC BY 4.0); Sentinel-2 cloudless 2016 by EOX, s2maps.eu (CC BY 4.0)" },
       rivers: { type: "geojson", data: BASE + "data/geo/rivers.geojson" },
       lakes: { type: "geojson", data: BASE + "data/geo/lakes.geojson" },
       oldgeo: { type: "geojson", data: BASE + "data/geo/old-rivers.geojson" },
@@ -438,6 +491,233 @@ function setupRegions(eras, regions, worldIndex) {
   });
   state.eras = state.chinaEras;
 }
+// A pack's periods form one more region, drawn on the world maps. On its own (packonly) it is the only region;
+// otherwise it comes first, so inside its outline it wins over the atlas's regions.
+function addPack(manifest, eras, worldIndex, only) {
+  const id = manifest.id;
+  const list = eras.eras.map((e) => ({ ...e, region: id, worldMaps: true, focus: e.focus || [], snapshots: worldSnaps(e.start, e.end) }));
+  const R = manifest.region || {};
+  const [[w, so], [ea, n]] = R.bounds || [[-180, -85], [180, 85]];
+  const region = { id, name: manifest.name, name_zh: manifest.name_zh || manifest.name, color: manifest.color, eras: list,
+    polygon: R.polygon || [[w, so], [ea, so], [ea, n], [w, n]] };
+  const range = manifest.range || eras.range;
+  if (only) {
+    state.worldIndex = worldIndex;
+    state.regions = [region];
+    state.regionById = { [id]: region };
+    state.chinaEras = list;
+    state.worldEras = [];
+    state.range = range;
+    state.home = id;
+  } else {
+    state.regions.unshift(region);
+    state.regionById[id] = region;
+    state.range = { start: Math.min(state.range.start, range.start), end: Math.max(state.range.end, range.end) };
+  }
+  state.eras = list;
+  state.mode = id;
+}
+// Packs and plugins load only from this site, the sites in PACK_ORIGINS and a local server.
+const allowedOrigin = (u) => u.origin === location.origin || PACK_ORIGINS.includes(u.origin) || ["localhost", "127.0.0.1"].includes(u.hostname);
+// The manifest named by ?pack=, or null. Throws with a readable message when the pack cannot be used.
+async function openPack(url) {
+  let u;
+  try { u = new URL(url, location.href); } catch { throw new Error(`"${url}" is not a pack address.`); }
+  if (!allowedOrigin(u)) throw new Error(`Packs from ${u.origin} are not allowed.`);
+  const res = await fetch(u, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`Could not load the pack (${res.status}).`);
+  const manifest = await res.json();
+  if (manifest.atlas !== 1) throw new Error(`This pack needs a newer atlas (format ${manifest.atlas}).`);
+  for (const k of ["eras", "events"]) if (!manifest.data?.[k]) throw new Error(`The pack has no ${k}.`);
+  if (!/^[a-z0-9-]+$/.test(manifest.id || "")) throw new Error("The pack has no valid id.");
+  return { url: u.href, manifest, only: PACK_ONLY };
+}
+// A file of the open pack by its manifest key (eras, events, tours, places).
+function packFile(key) {
+  const path = state.pack.manifest.data[key];
+  if (!path) return Promise.reject(new Error(`The pack has no ${key}.`));
+  return fetch(new URL(path, state.pack.url), { cache: "no-cache" }).then((r) => {
+    if (!r.ok) throw new Error(`Could not load the pack's ${key} (${r.status})`);
+    return r.json();
+  });
+}
+// A link from an event or tour step to the pack's own page for it (the Bible pack: the verse in the reader).
+function refLink(refs) {
+  const R = state.pack?.manifest.refs;
+  const ref = Array.isArray(refs) ? refs[0] : refs;
+  if (!R?.url || !ref) return null;
+  return { href: R.url.replace("{ref}", encodeURIComponent(ref)), label: (zh() && R.label_zh) || R.label || ref, ref };
+}
+function refLabel(ref) {
+  return ref.replace(/^([1-3]?[A-Za-z]+)\.(\d+)\.(\d+)(?:-(\d+))?$/, (m, b, c, v, z) => `${b} ${c}:${v}${z ? "–" + z : ""}`);
+}
+
+/* ---------- pack layers and plugins ---------- */
+// A pack can bring its own map layers: GeoJSON the engine draws and filters by year (manifest "layers"), and code
+// (manifest "plugins": ES modules from the allowed sites) that gets the plugin API below. Each layer gets a switch in a
+// "Pack" group of the layers panel, remembered per pack. See docs/plugins.md.
+const PLUGIN_API = 1;
+const hooks = {};           // event name -> handlers: year, lang, event, tour-step, tour-end
+function emit(name, detail) {
+  for (const fn of hooks[name] || []) {
+    try { fn(detail); } catch (e) { console.error(`A plugin's "${name}" handler failed:`, e); }
+  }
+}
+const packLayers = [];      // { def, ids: MapLibre layer ids, on, chip, onToggle }
+const packLayerKey = () => `atlas-pack-layers:${state.pack?.manifest.id}`;
+// A feature counts in years [from, to), like the old river courses; either end may be left out.
+const packInYears = (y) => ["all", ["<=", ["coalesce", ["get", "from"], -1e6], y], [">", ["coalesce", ["get", "to"], 1e6], y]];
+const GEOM = { fill: ["Polygon", "MultiPolygon"], line: ["LineString", "MultiLineString", "Polygon", "MultiPolygon"], circle: ["Point", "MultiPoint"] };
+
+// One switch in the layers panel's "Pack" group (made on first use).
+function packChip(def, on, onClick) {
+  let g = $("lg-pack");
+  if (!g) {
+    g = document.createElement("div");
+    g.className = "lg";
+    g.id = "lg-pack";
+    g.innerHTML = `<span data-i18n="g_pack">${esc(t("g_pack"))}</span>`;
+    document.querySelector(".era-layers").append(g);
+  }
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip";
+  b.dataset.packLayer = def.id;
+  b.setAttribute("aria-pressed", String(on));
+  b.textContent = tx(def, "name") || def.id;
+  b.addEventListener("click", onClick);
+  g.append(b);
+  return b;
+}
+function renamePackChips() {
+  for (const L of packLayers) if (L.chip) L.chip.textContent = tx(L.def, "name") || L.def.id;
+}
+// Adds a GeoJSON layer drawn by the engine: polygons filled, lines and outlines stroked, points as dots.
+// def: { id, name, name_zh, data (URL or GeoJSON), color, opacity, width, dash, radius, on, years: [from, to] }.
+// Features may carry from/to (years), color, name/name_zh, text/text_zh and ref (a link through the pack's refs).
+function addPackLayer(def, base) {
+  if (!/^[a-z0-9-]+$/.test(def.id || "") || packLayers.some((L) => L.def.id === def.id)) throw new Error(`Layer id "${def.id}" is missing or taken.`);
+  const src = `pk-${def.id}`;
+  map.addSource(src, { type: "geojson", data: typeof def.data === "string" ? new URL(def.data, base).href : def.data || { type: "FeatureCollection", features: [] } });
+  const color = ["coalesce", ["get", "color"], def.color || "#b93a26"];
+  const paint = {
+    fill: { "fill-color": color, "fill-opacity": def.opacity ?? 0.22 },
+    line: { "line-color": color, "line-width": def.width ?? 2.5, "line-opacity": 0.9, ...(def.dash ? { "line-dasharray": def.dash } : {}) },
+    circle: { "circle-color": color, "circle-radius": def.radius ?? 5, "circle-stroke-color": "#fff8ee", "circle-stroke-width": 1.5 },
+  };
+  const before = map.getLayer("tour-path") ? "tour-path" : undefined;
+  const ids = [];
+  for (const kind of def.type ? [def.type] : ["fill", "line", "circle"]) {
+    const id = `${src}-${kind}`;
+    map.addLayer({ id, type: kind, source: src, paint: paint[kind], layout: kind === "line" ? { "line-cap": "round", "line-join": "round" } : {},
+      filter: ["in", ["geometry-type"], ["literal", GEOM[kind]]] }, before);
+    map.on("click", id, (e) => { const f = e.features[0]; if (f && (f.properties.name || f.properties.text)) showCard(e.lngLat, packFeatureCard(f.properties)); });
+    map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
+    ids.push(id);
+  }
+  return packEntry(def, ids);
+}
+// A pack layer's switch and remembered state; ids are its MapLibre layers (none for a plugin's plain toggle).
+function packEntry(def, ids) {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(packLayerKey()) || "{}"); } catch {}
+  const L = { def, ids, on: saved[def.id] ?? def.on !== false };
+  L.chip = def.chip === false ? null : packChip(def, L.on, () => setPackLayer(L, !L.on, true));
+  packLayers.push(L);
+  renderPackLayer(L);
+  return L;
+}
+function setPackLayer(L, on, remember) {
+  L.on = on;
+  L.chip?.setAttribute("aria-pressed", String(on));
+  if (remember) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(packLayerKey()) || "{}");
+      saved[L.def.id] = on;
+      localStorage.setItem(packLayerKey(), JSON.stringify(saved));
+    } catch {}
+  }
+  renderPackLayer(L);
+  L.onToggle?.(on);
+}
+function renderPackLayer(L) {
+  const y = state.year, [a, b] = L.def.years || [];
+  const vis = L.on && !(a != null && y < a) && !(b != null && y >= b) ? "visible" : "none";
+  for (const id of L.ids) {
+    if (!map.getLayer(id)) continue;
+    map.setLayoutProperty(id, "visibility", vis);
+    map.setFilter(id, ["all", ["in", ["geometry-type"], ["literal", GEOM[id.slice(id.lastIndexOf("-") + 1)]]], packInYears(y)]);
+  }
+}
+const renderPackLayers = () => packLayers.forEach(renderPackLayer);
+function packFeatureCard(p) {
+  const r = refLink(p.ref);
+  const years = p.from != null || p.to != null ? `<p class="pc-meta">${p.from != null ? fmtYear(p.from) : ""} – ${p.to != null ? fmtYear(p.to) : ""}</p>` : "";
+  return `<h4>${esc(tx(p, "name") || "")}</h4>${years}${p.text ? `<p>${esc(tx(p, "text"))}</p>` : ""}` +
+    (r ? `<p class="pc-meta"><a href="${esc(r.href)}" target="_blank" rel="noopener" title="${esc(r.label)}">${esc(refLabel(r.ref))} ↗</a></p>` : "");
+}
+
+// What a plugin gets: the map, read-only state, events, and a few ways to move the atlas and add to it.
+function pluginApi(src) {
+  const base = new URL(".", src).href;
+  return {
+    version: PLUGIN_API,
+    map,
+    maplibregl,
+    pack: state.pack.manifest,
+    get year() { return state.year; },
+    get era() { return state.era && { id: state.era.id, name: state.era.name, name_zh: state.era.name_zh, start: state.era.start, end: state.era.end }; },
+    get lang() { return state.lang; },
+    get tour() { return state.tour && { id: state.tour.id, index: state.tour.i, steps: state.tour.tr.steps, path: !!state.tour.tr.path }; },
+    // Text in the visitor's language: text(en, zh) or text(obj, "key") for obj.key / obj.key_zh.
+    text: (a, b) => (typeof a === "object" ? tx(a, b) : zh() && b ? b : a),
+    on(name, fn) { (hooks[name] ||= []).push(fn); return () => (hooks[name] = hooks[name].filter((f) => f !== fn)); },
+    setYear: (y) => setYear(y),
+    startTour: (id, step = 0) => startTour(id, step),
+    openEvent: (id) => state.events.some((e) => e.id === id) && openStory(id),
+    // Plugin code is trusted (it comes from an allowed site), so its card HTML goes in as is.
+    showCard: (lngLat, html) => showCard(lngLat, html),
+    addLayer: (def) => {
+      const L = addPackLayer(def, base);
+      return { get on() { return L.on; }, setData: (gj) => map.getSource(`pk-${def.id}`).setData(gj), show: (on = true) => setPackLayer(L, on), layerIds: L.ids };
+    },
+    // A switch in the layers panel that only reports clicks: addToggle({id, name, name_zh, on}, (on) => ...).
+    addToggle(def, fn) {
+      if (!/^[a-z0-9-]+$/.test(def.id || "") || packLayers.some((L) => L.def.id === def.id)) throw new Error(`Toggle id "${def.id}" is missing or taken.`);
+      const L = packEntry(def, []);
+      L.onToggle = fn;
+      fn(L.on);
+      return { get on() { return L.on; } };
+    },
+    url: (path) => new URL(path, base).href,
+    fetchJSON: (path) => fetch(new URL(path, base)).then((r) => { if (!r.ok) throw new Error(`${path}: ${r.status}`); return r.json(); }),
+  };
+}
+// Imports the pack's plugin modules (started early, so they load alongside the data).
+function importPlugins() {
+  return (state.pack?.manifest.plugins || []).map((p) => {
+    const u = new URL(p, state.pack.url);
+    if (!allowedOrigin(u)) return Promise.reject(new Error(`Plugins from ${u.origin} are not allowed.`));
+    return import(u.href).then((m) => ({ src: u.href, m }));
+  });
+}
+// Once the map has loaded: the manifest's layers, then each plugin's setup(atlas). A broken one is logged and skipped.
+async function startPlugins(imports) {
+  const base = state.pack.url;
+  for (const def of state.pack.manifest.layers || []) {
+    try { addPackLayer(def, base); } catch (e) { console.error(`Pack layer "${def.id}" was skipped:`, e); }
+  }
+  for (const r of await Promise.allSettled(imports)) {
+    if (r.status === "rejected") { console.error("A pack plugin did not load:", r.reason); continue; }
+    const { src, m } = r.value, setup = typeof m.default === "function" ? m.default : m.default?.setup || m.setup;
+    try {
+      if (typeof setup !== "function") throw new Error("it exports no setup function");
+      await setup(pluginApi(src));
+    } catch (e) { console.error(`The plugin ${src} failed to start:`, e); }
+  }
+}
+
 function inPoly(x, y, poly) {
   let inside = false;
   for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
@@ -453,7 +733,7 @@ function polyBounds(poly) {
 // Sample a grid over the open part of the map, the middle counting most; sea and unassigned land are left out.
 // A region with most of the rest wins; once chosen, a region keeps the timeline while it still holds a good share.
 function detectRegion() {
-  if (state.regions.length < 2) return "china";
+  if (state.regions.length < 2) return state.home;
   const c = map.getCanvas(), W = c.clientWidth - (innerWidth > 720 ? 380 : 0), H = c.clientHeight;
   const n = {};
   let tot = 0, hit = 0;
@@ -609,6 +889,8 @@ async function setYear(year, opts = {}) {
   renderPlaces();
   renderOverlays();
   renderOldGeo();
+  renderPackLayers();
+  emit("year", { year: state.year, era: era.id, eraChanged });
 }
 
 function setEra(era, quiet) {
@@ -1331,7 +1613,7 @@ function visibleEvents() {
 // The open event always stays visible.
 function shownEvent(ev) {
   // Each region shows its own events; the world view shows all.
-  if (state.mode !== "world" && (ev.region || "china") !== state.mode && !ev.also?.includes(state.mode)) return false;
+  if (state.mode !== "world" && (ev.region || state.home) !== state.mode && !ev.also?.includes(state.mode)) return false;
   if (ev.id === state.selected) return true;
   // The country filter belongs to one period; events of other periods ignore it.
   const c = state.country;
@@ -1715,7 +1997,7 @@ function renderList() {
   const list = $("ev-list");
   const evs = visibleEvents();
   $("ev-count").textContent = state.zoom === 2 ? t("countWin")(evs.length) : t("count")(evs.length, nameOf(state.era));
-  list.innerHTML = evs.length || state.mode === "china" ? "" : `<li class="ev-empty">${t("noRegionEvents")}</li>`;
+  list.innerHTML = evs.length || state.mode === state.home || state.mode === state.pack?.manifest.id ? "" : `<li class="ev-empty">${t("noRegionEvents")}</li>`;
   for (const ev of evs) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -1846,6 +2128,8 @@ function wikiLink(url) {
 function links(ev, d) {
   const zhUrl = wikiLink(d?.source_zh || ev.source_zh), enUrl = wikiLink(ev.source);
   const main = zh() ? zhUrl || enUrl : enUrl || zhUrl;
+  const r = refLink(ev.refs);
+  if (r) return `<p class="story-links">` + ev.refs.map((ref) => `<a href="${esc(refLink(ref).href)}" title="${esc(r.label)}" target="_blank" rel="noopener">${esc(refLabel(ref))} ↗</a>`).join("") + `</p>`;
   if (!main) return "";
   const other = zhUrl && enUrl ? (zh() ? enUrl : zhUrl) : null;
   return `<p class="story-links"><a href="${esc(main)}" target="_blank" rel="noopener">${t("wiki")} ↗</a>` +
@@ -1873,6 +2157,7 @@ async function selectEvent(id) {
   renderArmies();
   renderLedger();
   flyToEvent(ev);
+  emit("event", { id, event: ev });
 }
 
 async function goToEra(era) {
@@ -1895,10 +2180,14 @@ async function goToEra(era) {
 
 /* ---------- guided tours: data/tours.json, a camera path through years with narration ---------- */
 let tours = null;
-const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
-// The 导览 tab: this period's tours first, then the rest grouped by period.
-const tourRegion = (tr) => tr.region || "china";
+// The atlas's own tours and the pack's (marked with the pack's region), or the pack's alone.
+const loadTours = () => tours || (tours = Promise.all([
+  state.pack?.only ? [] : loadJSON("data/tours.json").catch(() => []),
+  state.pack?.manifest.data.tours ? packFile("tours").then((l) => l.map((tr) => ({ ...tr, region: state.pack.manifest.id }))).catch(() => []) : [],
+]).then(([a, b]) => [...a, ...b]));
+const tourRegion = (tr) => tr.region || state.home;
 const regionEras = (id) => state.regionById[id]?.eras || state.chinaEras;
+// The 导览 tab: this period's tours first, then the rest grouped by period.
 const tourEra = (tr) => tr.era || regionEras(tourRegion(tr)).find((e) => e.start <= tr.start && tr.start <= e.end)?.id;
 // A tour also shows under every period its years reach into, and under any listed in `also` (官渡 under 三国).
 const tourIn = (tr, era) => tourEra(tr) === era.id || (tr.also || []).includes(era.id) || (tr.start <= era.end && tr.end >= era.start);
@@ -1968,6 +2257,7 @@ async function tourStep(i) {
   if (state.zoom && !inWindow(s.year)) { state.scope = null; state.win = windowFor(state.zoom, s.year); refreshTimeline(); }
   map.flyTo({ center: s.at, zoom: s.zoom ?? 4.8, pitch: state.show3d ? s.pitch ?? 48 : 0, bearing: s.bearing ?? -8,
     padding: tourPadding(), duration: 2600, essential: true });
+  emit("tour-step", { id: tour.id, index: i, step: s, steps: tr.steps, path: !!tr.path });
   await setYear(s.year);
   if (state.tour === tour && tour.i === i) tourHighlight(s);
   renderArmies();
@@ -2008,6 +2298,9 @@ function tourCard() {
   box.querySelector(".tour-year").textContent = when || fmtYear(s.year);
   box.querySelector(".tour-text").textContent = rest;
   box.querySelector(".tour-story").hidden = !s.event;
+  const r = refLink(s.ref), a = box.querySelector(".tour-ref");
+  a.hidden = !r;
+  if (r) { a.href = r.href; a.title = r.label; a.textContent = `${refLabel(r.ref)} ↗`; }
   box.querySelector(".tour-prev").disabled = i === 0;
   box.querySelector(".tour-next").textContent = i === tr.steps.length - 1 ? t("tourEnd") : t("tourNext");
   box.querySelector(".tour-auto").textContent = tour.auto ? t("tourPause") : t("tourPlay");
@@ -2039,6 +2332,7 @@ function endTour() {
   if (state.tab === "tours") renderToursTab();
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
   tourHighlight(null);
+  emit("tour-end", {});
   syncAuto();
   renderArmies();
   map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
@@ -2294,7 +2588,8 @@ function buildRail() {
     tk.addEventListener("click", () => openStory(ev.id));
     ticks.appendChild(tk);
   }
-  const [a, b] = state.zoom ? state.win : [state.range.start, state.range.end];
+  // The whole rail runs from the first period to the last (a pack's periods may cover less than the atlas's range).
+  const [a, b] = state.zoom ? state.win : [state.eras[0]?.start ?? state.range.start, state.eras.at(-1)?.end ?? state.range.end];
   $("scale-start").textContent = fmtYear(a);
   $("scale-end").textContent = fmtYear(b);
   $("scale-hint").textContent = hintText();
@@ -2354,12 +2649,14 @@ function saveView() {
     const c = map.getCenter();
     const view = { year: state.year, zoom: state.zoom, win: state.win, tab: state.tab,
       cam: { center: [+c.lng.toFixed(3), +c.lat.toFixed(3)], zoom: +map.getZoom().toFixed(2), pitch: Math.round(map.getPitch()), bearing: Math.round(map.getBearing()) } };
-    try { localStorage.setItem("atlas-view", JSON.stringify(view)); } catch {}
+    try { localStorage.setItem(viewKey(), JSON.stringify(view)); } catch {}
     // The address keeps the same view, so it can be copied or bookmarked.
     try { history.replaceState(null, "", "#" + viewHash()); } catch {}
   }, 500);
 }
 
+// Each pack remembers its own view.
+const viewKey = () => (state.pack ? `atlas-view:${state.pack.manifest.id}` : "atlas-view");
 // A link to the current view: #y=year&c=lng,lat,zoom,pitch,bearing&t=tab&e=open event&l=en
 function viewHash() {
   const c = map.getCenter();
@@ -2400,7 +2697,7 @@ async function shareView() {
 }
 function loadView() {
   let v = null, tg = null;
-  try { v = JSON.parse(localStorage.getItem("atlas-view") || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
+  try { v = JSON.parse(localStorage.getItem(viewKey()) || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
   if (tg) for (const k of ["show3d", "showNeighbours", "showPlaces", "showGeo"]) if (typeof tg[k] === "boolean") state[k] = tg[k];
   // A shared link wins over the remembered view.
   const link = readHash();
@@ -2425,36 +2722,60 @@ async function init() {
   if (new URLSearchParams(location.hash.slice(1)).get("l") === "en") state.lang = "en";
   // A link pasted into the same tab only changes the hash: start again from it.
   addEventListener("hashchange", () => { if (map && location.hash.slice(1) !== viewHash()) location.reload(); });
+  if (PACK_URL) {
+    state.pack = await openPack(PACK_URL);
+    state.selected = null;
+  }
   applyLang();
-  const [eras, events, places] = await Promise.all([
-    loadJSON("data/eras.json"), loadJSON("data/events.json"), loadJSON("data/places.json"),
+  const plugins = importPlugins();
+  plugins.forEach((p) => p.catch(() => {}));  // reported once the map is up
+  const pack = state.pack?.manifest, only = state.pack?.only;
+  const [eras, events, places, packEras, packEvents] = await Promise.all([
+    only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
+    pack && packFile("eras"), pack && packFile("events"),
   ]);
-  state.overlays = await loadJSON("data/overlays.json").catch(() => state.overlays);
-  state.passes = await loadJSON("data/passes.json").catch(() => []);
-  state.roads = await loadJSON("data/roads.json").catch(() => []);
-  state.clans = await loadJSON("data/clans.json").catch(() => []);
-  state.walls = await loadJSON("data/walls.json").catch(() => []);
-  state.exchange = await loadJSON("data/exchange.json").catch(() => state.exchange);
+  // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls, exchange) stay out of a pack shown alone.
+  if (!only) {
+    state.overlays = await loadJSON("data/overlays.json").catch(() => state.overlays);
+    state.passes = await loadJSON("data/passes.json").catch(() => []);
+    state.roads = await loadJSON("data/roads.json").catch(() => []);
+    state.clans = await loadJSON("data/clans.json").catch(() => []);
+    state.walls = await loadJSON("data/walls.json").catch(() => []);
+    state.exchange = await loadJSON("data/exchange.json").catch(() => state.exchange);
+  }
   state.geo = await loadJSON("data/geo/features.json").catch(() => []);
   state.oldGeo = (await loadJSON("data/geo/old-rivers.geojson").catch(() => ({ features: [] }))).features;
   const [regions, worldIndex] = await Promise.all([
     loadJSON("data/regions.json").catch(() => ({ regions: [] })), loadJSON("data/world/index.json").catch(() => [])]);
-  setupRegions(eras, regions.regions, worldIndex);
+  if (!only) setupRegions(eras, regions.regions, worldIndex);
+  if (pack) {
+    addPack(pack, packEras, worldIndex, only);
+    for (const ev of packEvents) ev.region = pack.id;
+    events.push(...packEvents);
+    state.year = pack.region?.view?.year ?? packEras.eras[0]?.start ?? state.year;
+  }
+  if (only) {
+    // The per-period layers (rulers, armies, people...) and the atlas's overlays are not part of a pack yet.
+    for (const el of document.querySelectorAll(".era-layers .chip.layer, #tab-rulers, #tab-people")) el.hidden = true;
+    if (!places.length) $("t-places").hidden = true;
+    for (const g of document.querySelectorAll(".era-layers .lg")) g.hidden = ![...g.querySelectorAll(".chip")].some((c) => !c.hidden);
+  }
   state.events = events.sort((a, b) => a.year - b.year || (a.level || 1) - (b.level || 1));
   state.places = places;
   buildScale();
   const cam = loadView();
+  if (only && !["events", "tours"].includes(state.tab)) state.tab = "events";
 
   map = new maplibregl.Map({
     container: "map",
     style: buildStyle(),
-    center: cam?.center || [108, 33.5], zoom: cam?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
+    center: cam?.center || pack?.region?.view?.center || [108, 33.5], zoom: cam?.zoom ?? pack?.region?.view?.zoom ?? 3.7, pitch: state.show3d ? cam?.pitch ?? 52 : 0, bearing: cam?.bearing ?? -8,
     maxPitch: 65, minZoom: 1.6, maxZoom: 9.5,
     attributionControl: false,
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: "Terrain: Mapzen/AWS Terrain Tiles · Borders: historical-basemaps (GPL-3.0)" }), "bottom-left");
+    customAttribution: "Terrain: Mapzen/AWS Terrain Tiles · Borders: historical-basemaps (GPL-3.0)" + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);
@@ -2482,6 +2803,7 @@ async function init() {
     if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
     if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", "none");
     addTourLayers();
+    if (state.pack) await startPlugins(plugins);
     setMode(detectRegion(), true);
     state.ready = true;
     await setYear(state.year);

@@ -1,0 +1,299 @@
+[
+ {
+  "id": "paul-first",
+  "era": "early-church",
+  "start": 45,
+  "end": 47,
+  "path": true,
+  "title": "Paul's first journey",
+  "title_zh": "保罗第一次旅行布道",
+  "summary": "Sent out from Antioch, Paul and Barnabas sail to Cyprus and walk the roads of southern Asia Minor.",
+  "summary_zh": "保罗和巴拿巴从安提阿被差遣出去，航行到塞浦路斯，再走遍小亚细亚南部。",
+  "steps": [
+   {
+    "year": 45,
+    "at": [
+     36.165,
+     36.201
+    ],
+    "zoom": 6.4,
+    "event": "first-missionary-journey",
+    "ref": "Acts.13.1-3",
+    "text": "The church at Antioch in Syria lays hands on Barnabas and Saul and sends them out.",
+    "text_zh": "叙利亚安提阿的教会为巴拿巴和扫罗按手，差遣他们出去。"
+   },
+   {
+    "year": 45,
+    "at": [
+     33.903,
+     35.179
+    ],
+    "zoom": 6.6,
+    "ref": "Acts.13.4-5",
+    "text": "They sail from Seleucia to Salamis on Cyprus, Barnabas's home island, and preach in its synagogues.",
+    "text_zh": "他们从西流基坐船到巴拿巴的家乡塞浦路斯的撒拉米，在会堂里传道。"
+   },
+   {
+    "year": 45,
+    "at": [
+     32.574,
+     34.707
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.13.6-12",
+    "text": "At Paphos the proconsul Sergius Paulus believes. From here Saul is called Paul.",
+    "text_zh": "在帕弗，方伯士求保罗信了主。从此扫罗又名保罗。"
+   },
+   {
+    "year": 46,
+    "at": [
+     31.191,
+     38.305
+    ],
+    "zoom": 6.4,
+    "ref": "Acts.13.14-52",
+    "text": "Inland at Antioch in Pisidia, Paul's sermon in the synagogue draws the whole city, and he turns to the Gentiles.",
+    "text_zh": "到了内陆的彼西底的安提阿，保罗在会堂讲道，几乎合城的人都来听，他就转向外邦人。"
+   },
+   {
+    "year": 46,
+    "at": [
+     32.385,
+     37.602
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.14.8-20",
+    "text": "At Lystra a lame man is healed. The crowd hails them as gods, then stones Paul and leaves him for dead.",
+    "text_zh": "在路司得，一个瘸腿的人得了医治。众人先把他们当作神明，后来却用石头打保罗，以为他死了。"
+   },
+   {
+    "year": 46,
+    "at": [
+     33.362,
+     37.349
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.14.20-21",
+    "text": "At Derbe many become disciples. Paul and Barnabas turn back through the same towns to strengthen the new churches.",
+    "text_zh": "在特庇有许多人作了门徒。保罗和巴拿巴原路返回，坚固各城的教会。"
+   },
+   {
+    "year": 47,
+    "at": [
+     36.165,
+     36.201
+    ],
+    "zoom": 6.0,
+    "ref": "Acts.14.24-28",
+    "text": "They sail home from Attalia and report to Antioch how God has opened the door of faith to the Gentiles.",
+    "text_zh": "他们从亚大利坐船回到安提阿，述说神怎样为外邦人开了信道的门。"
+   }
+  ]
+ },
+ {
+  "id": "paul-second",
+  "era": "early-church",
+  "start": 47,
+  "end": 50,
+  "path": true,
+  "title": "Paul's second journey",
+  "title_zh": "保罗第二次旅行布道",
+  "summary": "Paul crosses into Europe: Philippi, Thessalonica, Athens and a year and a half in Corinth.",
+  "summary_zh": "保罗渡海进入欧洲：腓立比、帖撒罗尼迦、雅典，又在哥林多住了一年半。",
+  "steps": [
+   {
+    "year": 47,
+    "at": [
+     36.165,
+     36.201
+    ],
+    "zoom": 6.0,
+    "event": "second-missionary-journey-begins",
+    "ref": "Acts.15.36-41",
+    "text": "After parting from Barnabas, Paul sets out from Antioch with Silas through Syria and Cilicia.",
+    "text_zh": "保罗与巴拿巴分手后，带着西拉从安提阿出发，走遍叙利亚和基利家。"
+   },
+   {
+    "year": 47,
+    "at": [
+     32.385,
+     37.602
+    ],
+    "zoom": 6.4,
+    "ref": "Acts.16.1-5",
+    "text": "At Lystra young Timothy joins them.",
+    "text_zh": "在路司得，年轻的提摩太加入他们。"
+   },
+   {
+    "year": 47,
+    "at": [
+     26.158,
+     39.751
+    ],
+    "zoom": 6.4,
+    "event": "call-to-macedonia",
+    "ref": "Acts.16.8-10",
+    "text": "At Troas on the Aegean Paul sees a vision of a man of Macedonia pleading: Come over and help us.",
+    "text_zh": "在爱琴海边的特罗亚，保罗在异象中见一个马其顿人求他说：请你过来帮助我们。"
+   },
+   {
+    "year": 48,
+    "at": [
+     24.284,
+     41.013
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.16.12-40",
+    "text": "At Philippi Lydia the seller of purple is baptized; Paul and Silas are beaten and jailed, and an earthquake opens the prison.",
+    "text_zh": "在腓立比，卖紫色布的吕底亚受了洗；保罗和西拉被打下监，地大震动，监门全开。"
+   },
+   {
+    "year": 48,
+    "at": [
+     22.95,
+     40.63
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.17.1-9",
+    "text": "In Thessalonica many believe, but a riot drives Paul on to Berea, where the Jews search the scriptures daily.",
+    "text_zh": "在帖撒罗尼迦有许多人信了，但骚乱迫使保罗转往庇哩亚，那里的人天天考查圣经。"
+   },
+   {
+    "year": 49,
+    "at": [
+     23.727,
+     37.972
+    ],
+    "zoom": 7.2,
+    "ref": "Acts.17.16-34",
+    "text": "In Athens Paul speaks on the Areopagus about the altar To the Unknown God.",
+    "text_zh": "在雅典，保罗站在亚略巴古，讲论那座写着「未识之神」的坛。"
+   },
+   {
+    "year": 49,
+    "at": [
+     22.879,
+     37.906
+    ],
+    "zoom": 7.2,
+    "ref": "Acts.18.1-11",
+    "text": "In Corinth he works as a tentmaker with Aquila and Priscilla and stays a year and six months.",
+    "text_zh": "在哥林多，他与亚居拉、百基拉一同织帐棚，住了一年零六个月。"
+   },
+   {
+    "year": 50,
+    "at": [
+     27.34,
+     37.942
+    ],
+    "zoom": 6.8,
+    "ref": "Acts.18.19-21",
+    "text": "He stops briefly at Ephesus, promising to return.",
+    "text_zh": "他在以弗所短暂停留，答应还要回来。"
+   },
+   {
+    "year": 50,
+    "at": [
+     36.165,
+     36.201
+    ],
+    "zoom": 5.6,
+    "event": "return-from-second-missionary-journey",
+    "ref": "Acts.18.22",
+    "text": "He lands at Caesarea, greets the church in Jerusalem and goes down to Antioch.",
+    "text_zh": "他在该撒利亚上岸，上耶路撒冷问教会安，然后下安提阿去。"
+   }
+  ]
+ },
+ {
+  "id": "paul-rome",
+  "era": "early-church",
+  "start": 56,
+  "end": 57,
+  "path": true,
+  "title": "Paul's voyage to Rome",
+  "title_zh": "保罗往罗马",
+  "summary": "A prisoner appealing to Caesar, Paul sails west, survives a storm and shipwreck on Malta and reaches Rome.",
+  "summary_zh": "保罗作为上告该撒的囚犯坐船西行，遇风暴在米利大岛破船，终于到达罗马。",
+  "steps": [
+   {
+    "year": 56,
+    "at": [
+     34.891,
+     32.499
+    ],
+    "zoom": 6.6,
+    "event": "journey-to-rome-begins",
+    "ref": "Acts.27.1-2",
+    "text": "After two years in custody at Caesarea, Paul appeals to Caesar and is put aboard a ship under the centurion Julius.",
+    "text_zh": "保罗在该撒利亚被拘押两年后上告该撒，被交给百夫长犹流押上船。"
+   },
+   {
+    "year": 56,
+    "at": [
+     35.371,
+     33.56
+    ],
+    "zoom": 6.6,
+    "ref": "Acts.27.3",
+    "text": "At Sidon Julius lets him visit his friends.",
+    "text_zh": "在西顿，犹流准他往朋友那里去。"
+   },
+   {
+    "year": 56,
+    "at": [
+     29.985,
+     36.259
+    ],
+    "zoom": 6.2,
+    "ref": "Acts.27.5-6",
+    "text": "At Myra in Lycia they change to an Alexandrian grain ship bound for Italy.",
+    "text_zh": "在吕家的每拉，他们换上一只往意大利去的亚历山大船。"
+   },
+   {
+    "year": 56,
+    "at": [
+     24.77,
+     34.93
+    ],
+    "zoom": 6.2,
+    "ref": "Acts.27.8-12",
+    "text": "They creep along Crete to Fair Havens. Paul warns against sailing on so late in the season, but is overruled.",
+    "text_zh": "他们沿着革哩底岛艰难航行到佳澳。保罗劝他们不要在这个时节继续航行，众人却不听。"
+   },
+   {
+    "year": 57,
+    "at": [
+     14.449,
+     35.874
+    ],
+    "zoom": 6.4,
+    "ref": "Acts.27.41-28.6",
+    "text": "A fourteen-day storm wrecks the ship on Malta. All 276 aboard reach land, and Paul shakes a viper off his hand unharmed.",
+    "text_zh": "风暴吹了十四天，船在米利大搁浅破坏，船上二百七十六人都得救上岸，保罗把手上的毒蛇甩掉，并没有受伤。"
+   },
+   {
+    "year": 57,
+    "at": [
+     14.122,
+     40.828
+    ],
+    "zoom": 6.6,
+    "ref": "Acts.28.11-14",
+    "text": "After three months they sail by Syracuse and Rhegium to Puteoli on the Bay of Naples.",
+    "text_zh": "三个月后，他们经过叙拉古和利基翁，到了那不勒斯湾的部丢利。"
+   },
+   {
+    "year": 57,
+    "at": [
+     12.484,
+     41.893
+    ],
+    "zoom": 7.0,
+    "ref": "Acts.28.16-31",
+    "text": "In Rome Paul lives two years in his own rented house under guard, welcoming all who come to him.",
+    "text_zh": "保罗在罗马自己租的房子里住了足足两年，有兵看守，凡来见他的人他都接待。"
+   }
+  ]
+ }
+]

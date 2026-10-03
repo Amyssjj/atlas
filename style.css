@@ -414,6 +414,7 @@ html:lang(en) .mk-polity.minor small { display: none; }
 .era-layers { grid-column: 1 / -1; display: grid; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
 /* The row label hangs in a left gutter so wrapped chips line up under the first chip. */
 .lg { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding-left: 4.4em; }
+.lg[hidden] { display: none; }
 .lg > span { position: absolute; left: 0; top: 8px; font: 600 11px/1 var(--font-body); color: var(--muted); }
 html:lang(zh-CN) .lg { padding-left: 2.9em; }
 html:lang(zh-CN) .lg > span { letter-spacing: 0.1em; }
@@ -892,3 +893,5 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .mk-geo.old { pointer-events: auto; cursor: pointer; }
 .mk-geo.g-coast { color: #3d6f8c; font-style: italic; font-size: 11px; letter-spacing: 0.1em; }
 .mk-geo[hidden] { display: none; }
+a.chip { text-decoration: none; display: inline-flex; align-items: center; }
+a.chip[hidden] { display: none; }
