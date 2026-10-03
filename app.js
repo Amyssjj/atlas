@@ -72,7 +72,7 @@ const UI = {
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" },
-    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", lasted: (n) => `共${n}年`, close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索事件、人物、君主、城市或年份（如 755、前221）", sgroups: { time: "时间", era: "朝代", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -94,7 +94,7 @@ const UI = {
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" },
-    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", lasted: (n) => `${n} years`, close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search events, people, rulers, cities or a year (755, 221 BC)", sgroups: { time: "Year", era: "Periods", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -125,6 +125,7 @@ function applyLang() {
   document.documentElement.lang = zh() ? "zh-CN" : "en";
   document.title = t("title");
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   $("lang").querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
   $("zoom-out").setAttribute("aria-label", t("zoomOut"));
@@ -133,6 +134,7 @@ function applyLang() {
   $("slider").setAttribute("aria-label", t("year"));
   $("play").setAttribute("aria-label", state.playing ? t("pause") : t("play"));
   $("ledger-toggle").textContent = $("ledger").classList.contains("collapsed") ? t("show") : t("hide");
+  if (typeof tourCard === "function" && state.tour) tourCard();
   $("search-open").title = $("search-open").ariaLabel = t("search");
   $("search-q").placeholder = t("searchPh");
 }
@@ -268,7 +270,8 @@ function applyLook() {
   document.documentElement.classList.toggle("sat", sat);
   if (!map?.getLayer("satellite")) return;
   map.setLayoutProperty("satellite", "visibility", sat ? "visible" : "none");
-  map.setLayoutProperty("relief", "visibility", sat ? "none" : "visible");
+  // The drawn relief stays underneath, so it shows where the imagery stops (west of about 70°E).
+  map.setLayoutProperty("relief", "visibility", "visible");
   map.setPaintProperty("hillshade", "hillshade-exaggeration", sat
     ? ["interpolate", ["linear"], ["zoom"], 3, 0.3, 6, 0.55, 8, 0.8]
     : ["interpolate", ["linear"], ["zoom"], 3, 0.45, 6, 0.6, 8, 0.7]);
@@ -282,7 +285,7 @@ function applyLook() {
 }
 
 function buildStyle() {
-  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8, bounds: [60, 10, 145, 55] };
+  const dem = { type: "raster-dem", tiles: [TILE_URL], tileSize: 256, encoding: "terrarium", maxzoom: 8, bounds: [56.25, 10, 145, 55] };
   return {
     version: 8,
     sources: {
@@ -291,6 +294,7 @@ function buildStyle() {
              attribution: "Imagery: Sentinel-2 2020, Copernicus/Sentinel Hub (CC BY 4.0)" },
       rivers: { type: "geojson", data: BASE + "data/geo/rivers.geojson" },
       lakes: { type: "geojson", data: BASE + "data/geo/lakes.geojson" },
+      oldgeo: { type: "geojson", data: BASE + "data/geo/old-rivers.geojson" },
       borders: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       routes: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       roads: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
@@ -317,6 +321,13 @@ function buildStyle() {
         layout: { "line-cap": "round", "line-join": "round" },
         paint: { "line-color": "#4a82a0", "line-opacity": 0.85,
                  "line-width": ["interpolate", ["linear"], ["zoom"], 4.5, 0.5, 8, 2.2] } },
+      // Old courses of the Yellow River and old shorelines, each shown in its own years (see renderOldGeo).
+      { id: "old-coast", type: "line", source: "oldgeo", filter: ["==", ["get", "kind"], "none"],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": "#d9f1ff", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1.2, 8, 3], "line-dasharray": [1.5, 1.5], "line-opacity": 0.9 } },
+      { id: "old-river", type: "line", source: "oldgeo", filter: ["==", ["get", "kind"], "none"],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": "#4f86a3", "line-opacity": 0.95, "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1.6, 8, 5] } },
       { id: "rivers", type: "line", source: "rivers", filter: ["<=", ["get", "rank"], 5],
         layout: { "line-cap": "round", "line-join": "round" },
         paint: { "line-color": "#4f86a3", "line-opacity": 0.9,
@@ -494,6 +505,7 @@ async function setYear(year, opts = {}) {
   renderEventStates();
   renderPlaces();
   renderOverlays();
+  renderOldGeo();
 }
 
 function setEra(era, quiet) {
@@ -1176,6 +1188,34 @@ function renderEventStates() {
 }
 
 // Names of rivers, mountains, plains and seas; they don't change with the year.
+// Which Yellow River course and which old shorelines belong to the current year; the modern lower river only from 1855.
+const inYears = (y) => ["all", ["<=", ["get", "from"], y], [">", ["get", "to"], y]];
+function renderOldGeo() {
+  if (!map?.getLayer("old-river")) return;
+  const y = state.year, vis = state.showGeo ? "visible" : "none";
+  map.setFilter("old-river", ["all", ["==", ["get", "kind"], "river"], inYears(y)]);
+  map.setFilter("old-coast", ["all", ["==", ["get", "kind"], "coast"], inYears(y)]);
+  for (const id of ["old-river", "old-coast"]) map.setLayoutProperty(id, "visibility", vis);
+  const modern = ["any", ["!", ["has", "from"]], ["<=", ["get", "from"], y]];
+  map.setFilter("rivers", ["all", ["<=", ["get", "rank"], 5], modern]);
+  map.setFilter("rivers-minor", ["all", [">", ["get", "rank"], 5], modern]);
+  document.querySelectorAll(".mk-geo[data-from]").forEach((el) => (el.hidden = y < +el.dataset.from));
+  (markers.oldgeo || []).forEach((m) => m.remove());
+  markers.oldgeo = [];
+  if (!state.showGeo || !state.oldGeo) return;
+  for (const f of state.oldGeo) {
+    const p = f.properties;
+    if (y < p.from || y >= p.to) continue;
+    const el = document.createElement("div");
+    el.className = "mk-geo g-" + (p.kind === "coast" ? "coast" : "river") + " old";
+    el.textContent = nameOf(p);
+    el.title = tx(p, "note");
+    el.addEventListener("click", (e) => { e.stopPropagation(); showCard(p.label, `<h4>${esc(nameOf(p))}</h4><p class="pc-meta">${fmtYear(p.from)} – ${p.to > state.range.end ? (zh() ? "今" : "today") : fmtYear(p.to)}</p><p>${esc(tx(p, "note"))}</p><p class="pc-meta">${t("drafted")}</p>`); });
+    markers.oldgeo.push(new maplibregl.Marker({ element: el }).setLngLat(p.label).addTo(map));
+  }
+  scheduleDeclutter();
+}
+
 function renderGeo() {
   scheduleDeclutter();
   (markers.geo || []).forEach((m) => m.remove());
@@ -1188,6 +1228,7 @@ function renderGeo() {
     if (f.vertical && zh()) el.innerHTML = [...nameOf(f)].map(esc).join("<br>");
     else el.textContent = nameOf(f);
     if (f.minzoom) el.dataset.minzoom = f.minzoom;
+    if (f.from) { el.dataset.from = f.from; el.hidden = state.year < f.from; }
     markers.geo.push(new maplibregl.Marker({ element: el }).setLngLat([f.lon, f.lat]).addTo(map));
   }
 }
@@ -1558,6 +1599,108 @@ async function goToEra(era) {
   }
 }
 
+/* ---------- guided tours: data/tours.json, a camera path through years with narration ---------- */
+let tours = null;
+const loadTours = () => tours || (tours = loadJSON("data/tours.json").catch(() => []));
+async function openTours() {
+  const list = await loadTours();
+  const box = $("tours");
+  box.hidden = false;
+  box.querySelector("h4").textContent = t("toursHead");
+  box.querySelector(".tour-list").innerHTML = list.map((tr, i) =>
+    `<button type="button" data-i="${i}"><b>${esc(tx(tr, "title"))}</b><span>${fmtYear(tr.start)}–${fmtYear(tr.end)} · ${t("tourSteps")(tr.steps.length)}</span><small>${esc(tx(tr, "summary"))}</small></button>`).join("") +
+    `<p class="tour-note">${t("drafted")}</p>`;
+}
+function closeTours() { $("tours").hidden = true; }
+async function startTour(id, i = 0) {
+  const tr = (await loadTours()).find((x) => x.id === id);
+  if (!tr) return;
+  stop(); closeTours(); closeSearch();
+  state.tour = { id, tr, i: 0, auto: false };
+  $("tour").hidden = false;
+  $("app").classList.add("touring");
+  await tourStep(Math.max(0, Math.min(i, tr.steps.length - 1)));
+}
+async function tourStep(i) {
+  const tour = state.tour;
+  if (!tour) return;
+  const { tr } = tour;
+  clearTimeout(tour.timer);
+  tour.i = i;
+  const s = tr.steps[i];
+  // Draw the journey so far.
+  const src = map.getSource("tour");
+  if (src) {
+    const pts = tr.path ? tr.steps.slice(0, i + 1).map((x) => x.at) : [];
+    src.setData({ type: "FeatureCollection", features: [
+      ...(pts.length > 1 ? [{ type: "Feature", properties: { kind: "path" }, geometry: { type: "LineString", coordinates: pts } }] : []),
+      ...tr.steps.slice(0, i + 1).map((x, k) => ({ type: "Feature", properties: { kind: "stop", now: k === i ? 1 : 0, n: k + 1 }, geometry: { type: "Point", coordinates: x.at } })),
+    ] });
+  }
+  tourCard();
+  state.selected = s.event || null;
+  state.reading = false;
+  if (state.zoom && !inWindow(s.year)) { state.scope = null; state.win = windowFor(state.zoom, s.year); refreshTimeline(); }
+  map.flyTo({ center: s.at, zoom: s.zoom ?? 4.8, pitch: state.show3d ? s.pitch ?? 48 : 0, bearing: s.bearing ?? -8,
+    padding: tourPadding(), duration: 2600, essential: true });
+  await setYear(s.year);
+  renderArmies();
+  renderLedger();
+  saveView();
+  if (tour.auto) map.once("moveend", () => { if (state.tour === tour && tour.auto) tour.timer = setTimeout(() => tourNext(), 3000 + tx(s, "text").length * (zh() ? 110 : 45)); });
+}
+function tourCard() {
+  const tour = state.tour;
+  if (!tour) return;
+  const { tr, i } = tour, s = tr.steps[i];
+  const box = $("tour");
+  box.querySelector(".tour-title").textContent = tx(tr, "title");
+  box.querySelector(".tour-count").textContent = `${i + 1} / ${tr.steps.length}`;
+  box.querySelector(".tour-year").textContent = fmtYear(s.year);
+  box.querySelector(".tour-text").textContent = tx(s, "text");
+  box.querySelector(".tour-story").hidden = !s.event;
+  box.querySelector(".tour-prev").disabled = i === 0;
+  box.querySelector(".tour-next").textContent = i === tr.steps.length - 1 ? t("tourEnd") : t("tourNext");
+  box.querySelector(".tour-auto").textContent = tour.auto ? t("tourPause") : t("tourPlay");
+  box.querySelector(".tour-bar i").style.width = ((i + 1) / tr.steps.length) * 100 + "%";
+}
+// Keep the spot clear of the tour card at the bottom and the ledger on the right.
+function tourPadding() {
+  const phone = innerWidth <= 720;
+  const card = $("tour").offsetHeight || 160;
+  return phone ? { top: 60, bottom: card + 40, left: 20, right: 20 } : { top: 60, bottom: card + 60, left: Math.min(380, innerWidth * 0.26), right: Math.min(380, innerWidth * 0.26) };
+}
+function tourNext() {
+  const tour = state.tour;
+  if (!tour) return;
+  if (tour.i < tour.tr.steps.length - 1) tourStep(tour.i + 1);
+  else endTour();
+}
+function tourPause() {
+  const tour = state.tour; if (!tour) return;
+  tour.auto = false; clearTimeout(tour.timer);
+  $("tour").querySelector(".tour-auto").textContent = t("tourPlay");
+}
+function endTour() {
+  if (!state.tour) return;
+  clearTimeout(state.tour.timer);
+  state.tour = null;
+  $("tour").hidden = true;
+  $("app").classList.remove("touring");
+  map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
+  map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
+  saveView();
+}
+function addTourLayers() {
+  map.addSource("tour", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+  map.addLayer({ id: "tour-path", type: "line", source: "tour", filter: ["==", ["get", "kind"], "path"],
+    layout: { "line-cap": "round", "line-join": "round" },
+    paint: { "line-color": "#b93a26", "line-width": 3, "line-dasharray": [2, 1.5], "line-opacity": 0.9 } });
+  map.addLayer({ id: "tour-stops", type: "circle", source: "tour", filter: ["==", ["get", "kind"], "stop"],
+    paint: { "circle-radius": ["case", ["==", ["get", "now"], 1], 8, 4.5], "circle-color": ["case", ["==", ["get", "now"], 1], "#b93a26", "#fff6f2"],
+      "circle-stroke-color": "#b93a26", "circle-stroke-width": 2 } });
+}
+
 /* ---------- search: events, people, rulers, cities, periods and years ---------- */
 
 // Everyone and every ruler sits in the per-period layer files; they are loaded on the first search.
@@ -1838,12 +1981,60 @@ function saveView() {
     const view = { year: state.year, zoom: state.zoom, win: state.win, tab: state.tab,
       cam: { center: [+c.lng.toFixed(3), +c.lat.toFixed(3)], zoom: +map.getZoom().toFixed(2), pitch: Math.round(map.getPitch()), bearing: Math.round(map.getBearing()) } };
     try { localStorage.setItem("atlas-view", JSON.stringify(view)); } catch {}
+    // The address keeps the same view, so it can be copied or bookmarked.
+    try { history.replaceState(null, "", "#" + viewHash()); } catch {}
   }, 500);
+}
+
+// A link to the current view: #y=year&c=lng,lat,zoom,pitch,bearing&t=tab&e=open event&l=en
+function viewHash() {
+  const c = map.getCenter();
+  const q = new URLSearchParams();
+  q.set("y", state.year);
+  q.set("c", [c.lng.toFixed(2), c.lat.toFixed(2), map.getZoom().toFixed(1), Math.round(map.getPitch()), Math.round(map.getBearing())].join(","));
+  if (state.tab !== "events") q.set("t", state.tab);
+  if (state.reading && state.selected) q.set("e", state.selected);
+  if (state.tour) { q.set("tour", state.tour.id); q.set("s", state.tour.i + 1); }
+  if (state.lang === "en") q.set("l", "en");
+  return q.toString();
+}
+function readHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  const y = parseInt(q.get("y"), 10);
+  if (!q.has("y") || isNaN(y)) return q.get("tour") ? { tour: q.get("tour"), step: +q.get("s") || 1 } : null;
+  const v = { year: y, tab: q.get("t") || "events", sel: q.get("e"), tour: q.get("tour"), step: +q.get("s") || 1, lang: q.get("l") };
+  const c = (q.get("c") || "").split(",").map(Number);
+  if (c.length === 5 && c.every((x) => !isNaN(x))) v.cam = { center: [c[0], c[1]], zoom: c[2], pitch: c[3], bearing: c[4] };
+  return v;
+}
+async function shareView() {
+  const url = location.href.split("#")[0] + "#" + viewHash();
+  let ok = false;
+  // Phones get the system share sheet.
+  if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+    try { await navigator.share({ title: document.title, url }); return; } catch (e) { if (e.name === "AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(url); ok = true; } catch {}
+  const box = $("share-box");
+  box.hidden = false;
+  box.querySelector("span").textContent = ok ? t("linkCopied") : t("linkCopy");
+  const inp = box.querySelector("input");
+  inp.value = url;
+  if (!ok) { inp.focus(); inp.select(); }
+  clearTimeout(shareView.timer);
+  shareView.timer = setTimeout(() => (box.hidden = true), ok ? 2500 : 15000);
 }
 function loadView() {
   let v = null, tg = null;
   try { v = JSON.parse(localStorage.getItem("atlas-view") || "null"); tg = JSON.parse(localStorage.getItem("atlas-toggles") || "null"); } catch {}
   if (tg) for (const k of ["show3d", "showNeighbours", "showPlaces", "showGeo"]) if (typeof tg[k] === "boolean") state[k] = tg[k];
+  // A shared link wins over the remembered view.
+  const link = readHash();
+  if (link?.tour) state.pendingTour = [link.tour, link.step - 1];
+  if (link && typeof link.year === "number") {
+    v = { ...link, zoom: 0 };
+    if (link.sel && state.events.some((e) => e.id === link.sel)) { state.selected = link.sel; state.reading = true; state.fromLink = true; }
+  }
   if (!v || typeof v.year !== "number") return null;
   state.year = Math.max(state.range.start, Math.min(state.range.end, Math.round(v.year)));
   if ([1, 2].includes(v.zoom) && Array.isArray(v.win) && v.win[0] <= state.year && state.year <= v.win[1]) { state.zoom = v.zoom; state.win = v.win; }
@@ -1857,6 +2048,9 @@ async function init() {
   try { state.showSat = localStorage.getItem("atlas-look") !== "relief"; } catch {}
   const q = new URLSearchParams(location.search).get("lang");
   if (q === "en" || q === "zh") state.lang = q;
+  if (new URLSearchParams(location.hash.slice(1)).get("l") === "en") state.lang = "en";
+  // A link pasted into the same tab only changes the hash: start again from it.
+  addEventListener("hashchange", () => { if (map && location.hash.slice(1) !== viewHash()) location.reload(); });
   applyLang();
   const [eras, events, places] = await Promise.all([
     loadJSON("data/eras.json"), loadJSON("data/events.json"), loadJSON("data/places.json"),
@@ -1867,6 +2061,7 @@ async function init() {
   state.clans = await loadJSON("data/clans.json").catch(() => []);
   state.walls = await loadJSON("data/walls.json").catch(() => []);
   state.geo = await loadJSON("data/geo/features.json").catch(() => []);
+  state.oldGeo = (await loadJSON("data/geo/old-rivers.geojson").catch(() => ({ features: [] }))).features;
   state.eras = eras.eras;
   state.range = eras.range;
   state.events = events.sort((a, b) => a.year - b.year || (a.level || 1) - (b.level || 1));
@@ -1911,11 +2106,13 @@ async function init() {
     // Switches remembered from the last visit that the style starts with on.
     if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
     if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", "none");
+    addTourLayers();
     await setYear(state.year);
     buildRail();
     renderLedger();
+    if (state.pendingTour) startTour(...state.pendingTour);
     const ev = state.events.find((e) => e.id === state.selected);
-    if (ev) map.easeTo({ center: [ev.lon - 4, ev.lat - 3], duration: 0 });
+    if (ev && !state.fromLink) map.easeTo({ center: [ev.lon - 4, ev.lat - 3], duration: 0 });
   });
 
   // Dragging the rail (slider, era bands or ticks) shows a tag with the period and year under the finger.
@@ -2012,6 +2209,7 @@ async function init() {
   toggle("t-geo", "showGeo", () => {
     renderGeo();
     for (const id of ["rivers", "rivers-minor", "lakes"]) map.setLayoutProperty(id, "visibility", state.showGeo ? "visible" : "none");
+    renderOldGeo();
   });
   // Layer choices are remembered per browser.
   try { Object.assign(state.show, JSON.parse(localStorage.getItem("atlas-layers") || "{}")); } catch {}
@@ -2038,6 +2236,20 @@ async function init() {
     renderLedger();
   });
   $("search-open").addEventListener("click", openSearch);
+  $("share-open").addEventListener("click", shareView);
+  $("tours-open").addEventListener("click", openTours);
+  $("tours-close").addEventListener("click", closeTours);
+  $("tours").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) loadTours().then((l) => startTour(l[+b.dataset.i].id)); });
+  const tb = $("tour");
+  tb.querySelector(".tour-prev").addEventListener("click", () => state.tour && tourStep(state.tour.i - 1));
+  tb.querySelector(".tour-next").addEventListener("click", tourNext);
+  tb.querySelector(".tour-close").addEventListener("click", endTour);
+  tb.querySelector(".tour-story").addEventListener("click", () => { const s = state.tour?.tr.steps[state.tour.i]; if (s?.event) { tourPause(); openStory(s.event); } });
+  tb.querySelector(".tour-auto").addEventListener("click", () => {
+    const tour = state.tour; if (!tour) return;
+    if (tour.auto) return tourPause();
+    tour.auto = true; tourNext();
+  });
   $("search-close").addEventListener("click", closeSearch);
   $("search-q").addEventListener("input", renderSearch);
   $("search-results").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) pickSearch(+b.dataset.i); });

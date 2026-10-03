@@ -801,3 +801,58 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .illu figcaption { margin-top: 3px; font-size: 10.5px; line-height: 1.3; color: var(--muted, #888); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .illu figcaption a { color: inherit; text-decoration: none; }
 .illu figcaption a:hover { text-decoration: underline; }
+
+/* Share: link to the current view */
+.share-box { position: absolute; top: 44px; right: 12px; z-index: 6; width: min(320px, calc(100% - 24px)); padding: 8px 10px;
+  background: var(--panel-solid); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  display: grid; gap: 6px; font-size: 12px; }
+.share-box[hidden] { display: none; }
+.share-box input { width: 100%; font: 11px/1.4 "IBM Plex Mono", monospace; padding: 4px 6px; border: 1px solid var(--rule); border-radius: 4px; background: #fff; color: var(--ink); }
+
+/* Guided tours: list and player */
+.tours {
+  position: absolute; z-index: 20; top: 16px; left: 50%; transform: translateX(-50%);
+  width: min(460px, calc(100% - 16px)); max-height: min(75dvh, 600px); display: flex; flex-direction: column; overflow: hidden;
+  background: var(--panel-solid);
+}
+.tours[hidden], .tour[hidden] { display: none; }
+.tours-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 10px 16px; border-bottom: 1px solid var(--rule); }
+.tours-bar h4 { margin: 0; font: 700 15px var(--font-display, serif); }
+.tour-list { overflow-y: auto; padding: 4px 0 8px; }
+.tour-list button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 10px 16px; border: 0; background: none; color: inherit; cursor: pointer; font: inherit; }
+.tour-list button:hover, .tour-list button:focus-visible { background: var(--jade-soft); }
+.tour-list b { font: 700 15px var(--font-display, serif); }
+.tour-list span { font-size: 12px; color: var(--cinnabar); }
+.tour-list small { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.tour-note { margin: 6px 16px 0; font-size: 11px; color: var(--muted); }
+.tour {
+  position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--rail-h, 96px) + 28px); width: min(500px, calc(100% - 32px));
+  padding: 12px 16px 12px; overflow: hidden; background: var(--panel-solid);
+}
+.tour-bar { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--rule); }
+.tour-bar i { display: block; height: 100%; background: var(--cinnabar); transition: width .4s; }
+.tour-head { display: flex; align-items: center; gap: 10px; }
+.tour-title { font: 700 15px var(--font-display, serif); flex: 1; }
+.tour-count { font: 500 12px "IBM Plex Mono", monospace; color: var(--muted); }
+.tour p { margin: 6px 0 10px; font-size: 14px; line-height: 1.65; }
+.tour-year { color: var(--cinnabar); margin-right: 8px; font-weight: 700; }
+.tour-ctl { display: flex; gap: 6px; flex-wrap: wrap; }
+.tour-ctl .tour-next { margin-left: auto; background: var(--jade); color: #fff; border-color: var(--jade); }
+.tour-ctl .tour-story[hidden] { display: none; }
+@media (max-width: 720px) {
+  .tour { bottom: calc(var(--rail-h, 64px) + 12px + env(safe-area-inset-bottom)); width: calc(100% - 16px); padding: 10px 12px; }
+  .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
+  .touring .ledger { display: none; }
+}
+.tours-open { display: inline-flex; align-items: center; gap: 4px; }
+.tours-open svg { width: 13px; height: 13px; }
+@media (max-width: 720px) {
+  .tours-open { width: 30px; height: 30px; padding: 0; justify-content: center; }
+  .tours-open span { display: none; }
+  .era-corner { gap: 4px; }
+}
+/* Old Yellow River courses and shorelines */
+.mk-geo.old { pointer-events: auto; cursor: pointer; }
+.mk-geo.g-coast { color: #3d6f8c; font-style: italic; font-size: 11px; letter-spacing: 0.1em; }
+.mk-geo[hidden] { display: none; }

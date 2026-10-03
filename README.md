@@ -99,3 +99,14 @@ mountain crests and big rivers are expensive to cross (`tools/terrain_grid.py` b
 elevation tiles and data/geo/rivers.geojson). So a border moves onto a nearby ridge or river and stays put on open
 plains. Coasts are kept as drawn. Snapped maps carry `"snapped": true`; rerun a generator to start from raw shapes.
 Needs numpy, scipy, scikit-image, shapely 2.1 and numba.
+
+## Guided tours, old rivers and links
+
+- **Tours** (导览 button): `data/tours.json`, each a list of steps `{year, at: [lon, lat], zoom?, pitch?, bearing?, event?, text, text_zh}`;
+  `path: true` draws the journey so far. The tour card flies the camera, moves the timeline and selects the step's event.
+  Tours are AI-drafted and not source-checked.
+- **Old Yellow River courses and shorelines**: `data/geo/old-rivers.geojson`, lines with `kind` (river/coast) and the years
+  `[from, to)` they apply to. The modern lower Yellow River (east of 113.65°E) is a separate feature in rivers.geojson with
+  `from: 1855`, hidden before then. Courses are schematic, drawn from the usual textbook sketches.
+- **Links**: the address hash keeps the view (`#y=year&c=lng,lat,zoom,pitch,bearing&t=tab&e=event&tour=id&s=step&l=en`);
+  the link button copies it (system share sheet on phones). A link wins over the remembered view.
