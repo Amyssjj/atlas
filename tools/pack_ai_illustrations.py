@@ -15,8 +15,8 @@ SRC, BOX, MODEL = sys.argv[1], (960, 640), "GPT Image 2"
 skip = set(json.load(open(P("data/ai-illustrations-skip.json")))) if os.path.exists(P("data/ai-illustrations-skip.json")) else set()
 keys, images, files = {}, {}, set()
 os.makedirs(P("data/ai"), exist_ok=True)
-for f in sorted(x for x in os.listdir(SRC) if x.endswith(".png")):
-    eid = f[:-4]
+for f in sorted(x for x in os.listdir(SRC) if x.endswith((".png", ".webp"))):
+    eid = f.rsplit(".", 1)[0]
     if eid in skip: continue
     im = Image.open(os.path.join(SRC, f)).convert("RGB")
     im.thumbnail(BOX, Image.LANCZOS)
