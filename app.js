@@ -91,7 +91,7 @@ const UI = {
     title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "AI 插图",
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" },
-    sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", wiki: "维基百科", wikiOther: "English Wikipedia",
+    sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
     notePack: "疆域为近似示意，取自开源 Cliopatria（Seshat）与 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
@@ -116,7 +116,7 @@ const UI = {
     title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "AI pictures",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" },
-    sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", wiki: "Wikipedia", wikiOther: "中文维基百科",
+    sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
     notePack: "Borders are approximate, from the open Cliopatria (Seshat) and historical-basemaps datasets. Terrain, coastlines and rivers are modern.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
@@ -2617,10 +2617,12 @@ function renderLedger() {
   $("people").hidden = state.tab !== "people";
   $("tour-tab").hidden = state.tab !== "tours";
   if (state.tab !== "events") {
+    hideEventPic(true);
     $("story").hidden = $("ev-list").hidden = true;
     return state.tab === "rulers" ? renderRulers() : state.tab === "people" ? renderPeopleTab() : renderToursTab();
   }
   if (state.reading && state.selected) return renderStory();
+  hideEventPic(true);
   $("story").hidden = true;
   $("ev-list").hidden = false;
   renderList();
@@ -3277,7 +3279,9 @@ async function renderStory() {
     <div class="story-body"><p class="muted">${t("loading")}</p></div>`;
   box.scrollTop = 0;
   fillIllus(box);
+  showEventPic(ev.id);
   box.onclick = (e) => {
+    if (e.target.closest(".illu.ai")) showEventPic(ev.id, true);
     const go = e.target.closest("[data-go]")?.dataset.go;
     if (go === "back") { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); }
     if (go === "prev" && prev) openStory(prev.id);
@@ -3600,34 +3604,73 @@ function tourCard() {
   box.querySelector(".tour-bar i").style.width = ((i + 1) / tr.steps.length) * 100 + "%";
   placeTourPic();
 }
-// The step's AI picture floats above the tour card, as large as the free space allows: either in the column between the
-// side panels, or across the full width below them, whichever fits the bigger picture. It takes at most about half
-// the height above the card, and tourPadding() keeps the map's focus in the space left over.
+// Free screen rectangles for a floating picture, clear of the panels in `els` and above `bottom`: the column between the
+// side panels, and the full width below them. A panel wider than 60% of the screen (phone bars and sheets) only limits
+// the top or bottom.
+function freeRects(els, bottom, gap = 10, edge = 8) {
+  let top = edge, colL = edge, colR = innerWidth - edge, below = edge;
+  for (const el of els) {
+    const r = el?.getBoundingClientRect();
+    if (!r || !r.width || !r.height || getComputedStyle(el).display === "none" || r.top >= bottom) continue;
+    if (r.width > innerWidth * 0.6) {
+      if (r.top + r.height / 2 < innerHeight / 2) top = Math.max(top, r.bottom + gap); else bottom = Math.min(bottom, r.top - gap);
+    } else {
+      below = Math.max(below, r.bottom + gap);
+      if (r.left + r.width / 2 < innerWidth / 2) colL = Math.max(colL, r.right + gap); else colR = Math.min(colR, r.left - gap);
+    }
+  }
+  return [{ l: colL, r: colR, t: top, b: bottom }, { l: edge, r: innerWidth - edge, t: Math.max(top, below), b: bottom }];
+}
+// The biggest picture of the given aspect ratio that fits one of the rectangles, taking at most `share` of its height.
+function fitPic(rects, ratio, share, maxW, maxH) {
+  let best = null;
+  for (const q of rects) {
+    const w = Math.min(q.r - q.l, Math.min((q.b - q.t) * share, maxH) * ratio, maxW);
+    if (w > 0 && (!best || w > best.w)) best = { ...q, w, h: w / ratio };
+  }
+  return best;
+}
+// The step's AI picture floats above the tour card, as large as the free space allows, taking at most about half
+// the height above the card; tourPadding() keeps the map's focus in the space left over.
 function placeTourPic() {
   const box = $("tour-pic"), tour = state.tour, s = tour?.tr.steps[tour.i];
   const key = "a:" + s?.event, idx = illuSets.aiReady;
   const im = idx?.images[idx.keys[key]];
   if (EMBED || !s?.event || !state.showAI || !im) { box.hidden = true; box.innerHTML = ""; return; }
   if (box.dataset.key !== key) { box.dataset.key = key; box.innerHTML = illuSlot(key); fillIllus(box); }
-  const card = $("tour").getBoundingClientRect(), gap = 10, edge = 8, ratio = im.w / im.h;
-  let top = edge, colL = edge, colR = innerWidth - edge, below = edge;
-  for (const el of [document.querySelector(".era"), $("ledger")]) {
-    const r = el?.getBoundingClientRect();
-    if (!r || !r.width || !r.height || getComputedStyle(el).display === "none" || r.top >= card.top) continue;
-    if (r.width > innerWidth * 0.6) top = Math.max(top, r.bottom + gap); // a bar across the screen (phones)
-    else {
-      below = Math.max(below, r.bottom + gap);
-      if (r.left + r.width / 2 < innerWidth / 2) colL = Math.max(colL, r.right + gap); else colR = Math.min(colR, r.left - gap);
-    }
-  }
-  const bottom = card.top - gap;
-  const fit = (l, r, t) => { const H = Math.min((bottom - t) * 0.5, 360), w = Math.min(r - l, H * ratio, 560); return { l, r, w, h: w / ratio }; };
-  const a = fit(colL, colR, top), b = fit(edge, innerWidth - edge, Math.max(top, below));
-  const p = a.h >= b.h ? a : b;
-  if (p.h < 80) { box.hidden = true; return; }
+  const card = $("tour").getBoundingClientRect(), bottom = card.top - 10;
+  const p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], bottom), im.w / im.h, 0.5, 560, 360);
+  if (!p || p.h < 80) { box.hidden = true; return; }
   const mid = Math.min(Math.max(card.left + card.width / 2, p.l + p.w / 2), p.r - p.w / 2);
-  Object.assign(box.style, { left: mid - p.w / 2 + "px", top: bottom - p.h + "px", width: p.w + "px", height: p.h + "px" });
+  Object.assign(box.style, { left: mid - p.w / 2 + "px", top: p.b - p.h + "px", width: p.w + "px", height: p.h + "px" });
   box.hidden = false;
+}
+// An opened event's AI picture is shown large in the middle of the free map area, with a close button. Closed, it
+// stays closed for that event until the story is left; the small copy in the story opens it again.
+const eventPic = { key: null, closed: null };
+async function showEventPic(id, force) {
+  const box = $("event-pic"), key = "a:" + id;
+  if (force) eventPic.closed = null;
+  if (EMBED || !state.showAI || eventPic.closed === key) return hideEventPic();
+  const idx = await illuSet("ai"), im = idx.images[idx.keys[key]];
+  if (!im || state.selected !== id || !state.reading) return hideEventPic();
+  if (eventPic.key !== key) {
+    eventPic.key = key;
+    box.querySelector(".ep-fig").innerHTML = illuSlot(key);
+    fillIllus(box);
+  }
+  const rail = document.querySelector(".rail").getBoundingClientRect();
+  const ratio = im.w / im.h;
+  let p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], rail.top - 10, 16), ratio, 0.8, 900, 600);
+  // Too little room between the panels: cover them instead, centred over the map, until it is closed.
+  if (!p || p.w < Math.min(480, innerWidth * 0.6)) p = fitPic([{ l: 8, r: innerWidth - 8, t: 8, b: rail.top - 10 }], ratio, 0.75, 900, 600);
+  if (!p || p.h < 100) return hideEventPic();
+  Object.assign(box.style, { left: (p.l + p.r - p.w) / 2 + "px", top: (p.t + p.b - p.h) / 2 + "px", width: p.w + "px", height: p.h + "px" });
+  box.hidden = false;
+}
+function hideEventPic(forget) {
+  $("event-pic").hidden = true;
+  if (forget) { eventPic.closed = null; eventPic.key = null; $("event-pic").querySelector(".ep-fig").innerHTML = ""; }
 }
 // Keep the spot clear of the tour card at the bottom and the ledger on the right.
 function tourPadding() {
@@ -4579,7 +4622,11 @@ async function init() {
   });
   toggle("t-places", "showPlaces", renderPlaces);
   // AI-generated event pictures are loaded either way and only hidden, so switching back needs no reload.
-  const syncAI = () => { document.body.classList.toggle("no-ai", !state.showAI); if (state.tour) placeTourPic(); };
+  const syncAI = () => {
+    document.body.classList.toggle("no-ai", !state.showAI);
+    if (state.tour) placeTourPic();
+    if (state.reading && state.selected) showEventPic(state.selected); else hideEventPic();
+  };
   toggle("t-ai", "showAI", syncAI);
   syncAI();
   toggle("t-geo", "showGeo", () => {
@@ -4636,7 +4683,10 @@ async function init() {
   const readStep = () => { const s = state.tour?.tr.steps[state.tour.i]; if (s?.event) { tourPause(); $("app").classList.add("tour-reading"); openStory(s.event); } };
   tb.querySelector(".tour-story").addEventListener("click", readStep);
   $("tour-pic").addEventListener("click", () => { readStep(); placeTourPic(); });
-  addEventListener("resize", () => state.tour && placeTourPic());
+  addEventListener("resize", () => { if (state.tour) placeTourPic(); if (!$("event-pic").hidden) showEventPic(state.selected); });
+  const closeEventPic = () => { eventPic.closed = eventPic.key; hideEventPic(); };
+  $("event-pic").querySelector(".ep-close").addEventListener("click", (e) => { e.stopPropagation(); closeEventPic(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("event-pic").hidden) { e.stopImmediatePropagation(); closeEventPic(); } }, true);
   tb.querySelector(".tour-auto").addEventListener("click", () => {
     const tour = state.tour; if (!tour) return;
     if (tour.auto) return tourPause();
