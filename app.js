@@ -1777,8 +1777,10 @@ function showCard(lngLat, html) {
 /* ---------- illustrations ---------- */
 // data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
-// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + data/ai/<file>.webp (tools/pack_ai_illustrations.py),
+// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/ai/<file>.webp (tools/pack_ai_illustrations.py),
 // always captioned as AI-generated.
+// Large generated assets (the AI pictures) live in a Cloudflare R2 bucket, not in git (tools/upload_assets.py).
+const DATA_URL = "https://data.atlas.daiyip.com";
 const illuSets = {};
 const illuBuckets = {};
 const illuSet = (set) => illuSets[set] ||= loadJSON(set === "ai" ? "data/ai-illustrations.json" : "data/illustrations.json")
@@ -1794,7 +1796,7 @@ async function fillIllus(root) {
     const idx = await illuSet(set);
     const id = idx.keys[fig.dataset.illu], im = idx.images[id];
     if (!im) continue;
-    let src = im.f && `data/${set}/${im.f}`; // AI pictures are files of their own
+    let src = im.f && `${DATA_URL}/${set}/${im.f}`; // AI pictures are files of their own, served from R2
     if (!src) {
       illuBuckets[set + im.b] ||= loadJSON(`data/${set}/${im.b}.json`).catch(() => ({}));
       src = (await illuBuckets[set + im.b])[id];

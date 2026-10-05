@@ -6,3 +6,6 @@ tools/.cache/terrain.*
 tools/.cache/hb/
 tools/.cache/clio/
 tools/.cache/world_sources.json
+
+# Generated AI pictures are served from R2 (tools/upload_assets.py), not from git
+data/ai/

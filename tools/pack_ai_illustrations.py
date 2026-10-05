@@ -1,4 +1,5 @@
-"""Pack AI-generated event illustrations (made by tools/ai_illustrate.py) into data/ai/<event id>-<hash>.webp and the
+"""Pack AI-generated event illustrations (made by tools/ai_illustrate.py) into data/ai/<event id>-<hash>.webp (uploaded to
+R2 by tools/upload_assets.py, not kept in git) and the
 index data/ai-illustrations.json, read by app.js, which shows them labelled as AI-generated.
 
 Usage: python3 tools/pack_ai_illustrations.py OUT_DIR/openai

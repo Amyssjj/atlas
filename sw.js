@@ -12,7 +12,7 @@ self.addEventListener("activate", (e) => {
 });
 
 const keep = (url) => url.origin === location.origin ? /\/(tiles|vendor)\/|\/data\/(img|ai)\/|\/docs\/img\//.test(url.pathname)
-  : /fonts\.(googleapis|gstatic)\.com$|cdn\.jsdelivr\.net$/.test(url.hostname);
+  : /fonts\.(googleapis|gstatic)\.com$|cdn\.jsdelivr\.net$|^data\.atlas\.daiyip\.com$/.test(url.hostname);
 
 self.addEventListener("fetch", (e) => {
   const req = e.request;
