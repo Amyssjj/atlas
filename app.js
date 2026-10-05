@@ -1777,7 +1777,7 @@ function showCard(lngLat, html) {
 /* ---------- illustrations ---------- */
 // data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
-// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + data/ai/<bucket>.json (tools/pack_ai_illustrations.py),
+// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + data/ai/<file>.webp (tools/pack_ai_illustrations.py),
 // always captioned as AI-generated.
 const illuSets = {};
 const illuBuckets = {};
@@ -1794,8 +1794,11 @@ async function fillIllus(root) {
     const idx = await illuSet(set);
     const id = idx.keys[fig.dataset.illu], im = idx.images[id];
     if (!im) continue;
-    illuBuckets[set + im.b] ||= loadJSON(`data/${set}/${im.b}.json`).catch(() => ({}));
-    const src = (await illuBuckets[set + im.b])[id];
+    let src = im.f && `data/${set}/${im.f}`; // AI pictures are files of their own
+    if (!src) {
+      illuBuckets[set + im.b] ||= loadJSON(`data/${set}/${im.b}.json`).catch(() => ({}));
+      src = (await illuBuckets[set + im.b])[id];
+    }
     if (!src) continue;
     const credit = [im.artist, im.license].filter(Boolean).join(" · ");
     fig.classList.toggle("ai", !!im.ai);
