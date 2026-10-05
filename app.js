@@ -3632,54 +3632,90 @@ function fitPic(rects, ratio, share, maxW, maxH) {
 }
 // The step's AI picture floats above the tour card, as large as the free space allows, taking at most about half
 // the height above the card; tourPadding() keeps the map's focus in the space left over.
+// A floating picture fades out, changes (`change` swaps its content and returns where it goes, or null to stay hidden),
+// and fades back in once the new image has loaded. A newer change cancels an older one still waiting.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const placeBox = (box, at) => Object.assign(box.style, { left: at.x + "px", top: at.y + "px", width: at.w + "px", height: at.h + "px" });
+async function fadePic(box, change) {
+  const tok = (box.fadeTok = (box.fadeTok || 0) + 1);
+  if (!box.hidden) { box.classList.add("fade-out"); await sleep(300); if (box.fadeTok !== tok) return; }
+  const at = await change();
+  if (box.fadeTok !== tok) return;
+  if (!at) { box.hidden = true; box.classList.remove("fade-out"); return; }
+  box.classList.add("fade-out");
+  placeBox(box, at);
+  box.hidden = false;
+  const img = box.querySelector("img");
+  if (img && !img.complete) await Promise.race([new Promise((r) => img.addEventListener("load", r, { once: true })), sleep(1500)]);
+  if (box.fadeTok !== tok) return;
+  void box.offsetWidth; // apply the transparent start first, so removing the class transitions
+  box.classList.remove("fade-out");
+}
+// Where the step's AI picture goes above the tour card, or null when it does not fit. Worked out at once (tourPadding
+// needs it before the flight starts), while the picture itself fades in a moment later.
+function tourPicRect(im) {
+  const card = $("tour").getBoundingClientRect();
+  const p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], card.top - 10), im.w / im.h, 0.5, 560, 360);
+  if (!p || p.h < 80) return null;
+  const mid = Math.min(Math.max(card.left + card.width / 2, p.l + p.w / 2), p.r - p.w / 2);
+  return { x: mid - p.w / 2, y: p.b - p.h, w: p.w, h: p.h };
+}
 function placeTourPic() {
   const box = $("tour-pic"), tour = state.tour, s = tour?.tr.steps[tour.i];
   const key = "a:" + s?.event, idx = illuSets.aiReady;
-  const im = idx?.images[idx.keys[key]];
-  if (EMBED || !s?.event || !state.showAI || !im) { box.hidden = true; box.innerHTML = ""; return; }
-  if (box.dataset.key !== key) { box.dataset.key = key; box.innerHTML = illuSlot(key); fillIllus(box); }
-  const card = $("tour").getBoundingClientRect(), bottom = card.top - 10;
-  const p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], bottom), im.w / im.h, 0.5, 560, 360);
-  if (!p || p.h < 80) { box.hidden = true; return; }
-  const mid = Math.min(Math.max(card.left + card.width / 2, p.l + p.w / 2), p.r - p.w / 2);
-  Object.assign(box.style, { left: mid - p.w / 2 + "px", top: p.b - p.h + "px", width: p.w + "px", height: p.h + "px" });
-  box.hidden = false;
+  const im = !EMBED && s?.event && state.showAI && idx?.images[idx.keys[key]];
+  const at = im ? tourPicRect(im) : null;
+  box.rect = at;
+  if (at && box.dataset.key === key && !box.hidden) return placeBox(box, at);
+  box.dataset.key = at ? key : "";
+  fadePic(box, async () => {
+    if (!at) return null;
+    box.innerHTML = illuSlot(key);
+    await fillIllus(box);
+    return at;
+  });
 }
 // An opened event's AI picture is shown large in the middle of the free map area, with a close button. Closed, it
 // stays closed for that event until the story is left; the small copy in the story opens it again.
 const eventPic = { key: null, closed: null };
+function eventPicRect(im) {
+  const rail = document.querySelector(".rail").getBoundingClientRect();
+  const ratio = im.w / im.h;
+  let p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], rail.top - 10, 16), ratio, 0.8, 900, 600);
+  // Too little room between the panels: cover them instead, centred over the map, until it is closed.
+  if (!p || p.w < Math.min(480, innerWidth * 0.6)) p = fitPic([{ l: 8, r: innerWidth - 8, t: 8, b: rail.top - 10 }], ratio, 0.75, 900, 600);
+  return p && p.h >= 100 ? { x: (p.l + p.r - p.w) / 2, y: (p.t + p.b - p.h) / 2, w: p.w, h: p.h } : null;
+}
 async function showEventPic(id, force) {
   const box = $("event-pic"), key = "a:" + id;
   if (force) eventPic.closed = null;
   if (EMBED || !state.showAI || eventPic.closed === key) return hideEventPic();
   const idx = await illuSet("ai"), im = idx.images[idx.keys[key]];
   if (!im || state.selected !== id || !state.reading) return hideEventPic();
-  if (eventPic.key !== key) {
-    eventPic.key = key;
+  const at = eventPicRect(im);
+  if (!at) return hideEventPic();
+  if (eventPic.key === key && !box.hidden) return placeBox(box, at);
+  eventPic.key = key;
+  fadePic(box, async () => {
     box.querySelector(".ep-fig").innerHTML = illuSlot(key);
-    fillIllus(box);
-  }
-  const rail = document.querySelector(".rail").getBoundingClientRect();
-  const ratio = im.w / im.h;
-  let p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], rail.top - 10, 16), ratio, 0.8, 900, 600);
-  // Too little room between the panels: cover them instead, centred over the map, until it is closed.
-  if (!p || p.w < Math.min(480, innerWidth * 0.6)) p = fitPic([{ l: 8, r: innerWidth - 8, t: 8, b: rail.top - 10 }], ratio, 0.75, 900, 600);
-  if (!p || p.h < 100) return hideEventPic();
-  Object.assign(box.style, { left: (p.l + p.r - p.w) / 2 + "px", top: (p.t + p.b - p.h) / 2 + "px", width: p.w + "px", height: p.h + "px" });
-  box.hidden = false;
+    await fillIllus(box);
+    return at;
+  });
 }
 function hideEventPic(forget) {
-  $("event-pic").hidden = true;
-  if (forget) { eventPic.closed = null; eventPic.key = null; $("event-pic").querySelector(".ep-fig").innerHTML = ""; }
+  const box = $("event-pic");
+  if (forget) { eventPic.closed = null; eventPic.key = null; }
+  else if (box.hidden) return;
+  fadePic(box, () => null);
 }
 // Keep the spot clear of the tour card at the bottom and the ledger on the right.
 function tourPadding() {
   if (EMBED) return { top: 50, bottom: 30, left: 30, right: 30 };
   const phone = innerWidth <= 720;
   const card = $("tour").offsetHeight || 160;
-  const pic = $("tour-pic");
-  if (!pic.hidden) {
-    const b = innerHeight - pic.getBoundingClientRect().top + 30;
+  const pic = $("tour-pic").rect;
+  if (pic) {
+    const b = innerHeight - pic.y + 30;
     return phone ? { top: 60, bottom: b, left: 20, right: 20 } : { top: 60, bottom: b, left: Math.min(380, innerWidth * 0.26), right: Math.min(380, innerWidth * 0.26) };
   }
   return phone ? { top: 60, bottom: card + 40, left: 20, right: 20 } : { top: 60, bottom: card + 60, left: Math.min(380, innerWidth * 0.26), right: Math.min(380, innerWidth * 0.26) };
@@ -3700,7 +3736,7 @@ function endTour() {
   clearTimeout(state.tour.timer);
   state.tour = null;
   $("tour").hidden = true;
-  $("tour-pic").hidden = true; $("tour-pic").dataset.key = "";
+  $("tour-pic").rect = null; $("tour-pic").dataset.key = ""; fadePic($("tour-pic"), () => null);
   $("app").classList.remove("touring", "tour-reading");
   if (state.tab === "tours") renderToursTab();
   map.getSource("tour")?.setData({ type: "FeatureCollection", features: [] });
