@@ -110,7 +110,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", settings: "设置", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -135,7 +135,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", settings: "Settings", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -191,7 +191,7 @@ function applyLang() {
   setRailButton(!!state.railMin);
   setRailStyleButton();
   setMinButton($("ledger-min"), $("ledger").classList.contains("collapsed"));
-  $("lang-name").textContent = L.short;
+  if (!$("settings").hidden) renderSettings();
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
   $("zoom-out").setAttribute("aria-label", t("zoomOut"));
   $("pan-prev").setAttribute("aria-label", t("earlier"));
@@ -1072,7 +1072,7 @@ function packChip(def, on, onClick) {
     g.className = "lg";
     g.id = "lg-pack";
     g.innerHTML = `<span data-i18n="g_pack">${esc(t("g_pack"))}</span>`;
-    document.querySelector(".era-layers").insertBefore(g, $("lg-panel"));
+    document.querySelector(".era-layers").appendChild(g);
   }
   const b = document.createElement("button");
   b.type = "button";
@@ -2994,20 +2994,6 @@ function renderRegionBtn() {
   $("region-name").textContent = r ? (zh() ? r.short_zh || r.name_zh : r.short || r.name) : t("allWorld");
   $("region-btn").hidden = state.regions.length < 2;
 }
-function toggleLangPop(open) {
-  const pop = $("lang-pop"), btn = $("lang");
-  open ??= pop.hidden;
-  pop.hidden = !open;
-  btn.setAttribute("aria-expanded", open);
-  if (!open) return;
-  pop.innerHTML = LANGS.map((l) => `<button type="button" role="menuitemradio" aria-checked="${l.id === state.lang}" data-lang="${l.id}" lang="${l.html}"><b>${esc(l.name)}</b><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.2L9.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>`).join("");
-  // Placed under the button, inside the panel that holds both.
-  const r = btn.getBoundingClientRect(), o = pop.offsetParent.getBoundingClientRect();
-  pop.style.top = `${r.bottom - o.top + 6}px`;
-  pop.style.right = `${Math.max(0, o.right - r.right)}px`;
-  pop.querySelector('[aria-checked="true"]')?.focus();
-}
-
 const stripOff = () => { try { return localStorage.getItem("atlas-wstrip") === "0"; } catch { return false; } };
 function toggleRegionPop(open) {
   const pop = $("region-pop"), btn = $("region-btn");
@@ -4406,6 +4392,7 @@ function setRailSlim(on, remember) {
   if (remember) try { localStorage.setItem("atlas-rail-slim", on ? "1" : "0"); } catch {}
   hideScrubTag();
   if (state.ready) buildRail();
+  if (!$("settings").hidden) renderSettings();
 }
 function renderYearMarks() {
   const box = $("years");
@@ -4615,6 +4602,7 @@ function setNarration(on, remember = true) {
   }
   if (remember) try { localStorage.setItem("atlas-narration", on ? "1" : "0"); localStorage.setItem("atlas-voice", state.voice); } catch {}
   if (state.tour && on) narrateStep(state.tour, state.tour.i); else stopNarration();
+  if (!$("settings").hidden) renderSettings();
 }
 function setMusic(on, remember = true) {
   state.music = on;
@@ -4652,6 +4640,77 @@ function setSpeed(v, remember) {
   $("speed").textContent = speedText(state.speed);
   if (remember) try { localStorage.setItem("atlas-speed", String(state.speed)); } catch {}
   if (state.playing) { stop(); play(); }
+  if (!$("settings").hidden) renderSettings();
+}
+/* ---------- settings: one panel for how Atlas looks and behaves (the 图层 panel keeps the layers) ---------- */
+
+const seg = (items, cur) => items.map(([v, label]) => `<button type="button" data-v="${esc(v)}" aria-pressed="${String(v) === String(cur)}">${esc(label)}</button>`).join("");
+// Fills the parts that are drawn from state; the switches and chips moved here keep their own handlers.
+function renderSettings() {
+  $("st-ver").textContent = `Atlas v${APP_VERSION}`;
+  $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")]], state.railSlim ? "slim" : "full");
+  $("st-speed").innerHTML = seg(SPEEDS.map((v) => [v, speedText(v)]), state.speed);
+  $("st-narr").innerHTML = seg([["off", t("stOff")], ...Object.entries(t("voices"))], state.narration ? state.voice : "off");
+  $("st-lang").innerHTML = seg(LANGS.map((l) => [l.id, l.name]), state.lang);
+  $("st-wstrip").setAttribute("aria-pressed", String(!stripOff()));
+}
+// Beside the era panel on wide screens (over it when there is no room), a bottom sheet on phones (CSS).
+function toggleSettings(open) {
+  const box = $("settings"), btn = $("settings-open");
+  open ??= box.hidden;
+  if (open === !box.hidden) return;
+  box.hidden = !open;
+  btn.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("settings-open", open);
+  if (!open) { toggleLookPop(false); togglePanelPop(false); return; }
+  toggleRegionPop(false);
+  renderSettings();
+  renderPanelChip();
+  const r = document.querySelector(".era").getBoundingClientRect();
+  const room = innerWidth - r.right - 12 >= box.offsetWidth + 16;
+  box.style.left = `${room ? r.right + 12 : r.left}px`;
+  box.style.top = `${r.top}px`;
+  box.focus({ preventScroll: true });
+}
+function resetSettings() {
+  setPanel({ color: "auto", op: null });
+  state.flat3d = false;
+  setLook(lookOrder()[0]);
+  if (!state.show3d) $("t-3d").click();
+  if (!state.showAI) $("t-ai").click();
+  setRailSlim(false, true);
+  setSpeed(1, true);
+  setMusic(false);
+  setNarration(false);
+  try { localStorage.removeItem("atlas-wstrip"); } catch {}
+  renderWorldStrip();
+  renderSettings();
+}
+function initSettings() {
+  $("settings-open").addEventListener("click", (e) => { e.stopPropagation(); toggleSettings(); });
+  $("settings-close").addEventListener("click", () => toggleSettings(false));
+  $("st-reset").addEventListener("click", resetSettings);
+  const on = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) { fn(b.dataset.v); renderSettings(); } });
+  on("st-rail", (v) => setRailSlim(v === "slim", true));
+  on("st-speed", (v) => setSpeed(+v, true));
+  on("st-narr", (v) => { if (v === "off") return setNarration(false); state.voice = v; setNarration(true); });
+  on("st-lang", (v) => { if (v !== state.lang) setLang(v); });
+  $("st-wstrip").addEventListener("click", () => {
+    try { if (stripOff()) localStorage.removeItem("atlas-wstrip"); else localStorage.setItem("atlas-wstrip", "0"); } catch {}
+    renderWorldStrip();
+    renderSettings();
+  });
+  // A click outside closes it, except in the colour and style menus it opens.
+  document.addEventListener("click", (e) => {
+    // (A segment button pressed here is redrawn before the click reaches the document, so it is no longer in the page.)
+    if (!$("settings").hidden && e.target.isConnected && !e.target.closest("#settings, #look-pop, #panel-pop, #settings-open")) toggleSettings(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || $("settings").hidden || !$("look-pop").hidden || !$("panel-pop").hidden) return;
+    toggleSettings(false);
+    $("settings-open").focus();
+  });
+  addEventListener("resize", () => toggleSettings(false));
 }
 // Minimised panels leave the map to itself: the era panel shrinks to its seal, name and year; the side panel to its
 // tabs. The button turns into a restore button.
@@ -4695,7 +4754,7 @@ function setEraMin(on, remember) {
   state.eraMin = on;
   document.querySelector(".era").classList.toggle("min", on);
   setMinButton($("era-min"), on);
-  if (on) { toggleRegionPop(false); toggleLangPop(false); }
+  if (on) { toggleRegionPop(false); toggleSettings(false); }
   if (remember) try { localStorage.setItem("atlas-era-min", on ? "1" : "0"); } catch {}
 }
 function stop() {
@@ -5080,15 +5139,7 @@ async function init() {
   });
   document.addEventListener("click", (e) => { if (!$("ws-pop").hidden && !e.target.closest("#ws-pop")) toggleStripPop(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("ws-pop").hidden) toggleStripPop(false); });
-  $("lang").addEventListener("click", (e) => { e.stopPropagation(); toggleLangPop(); });
-  $("lang-pop").addEventListener("click", (e) => {
-    const l = e.target.closest("[data-lang]")?.dataset.lang;
-    toggleLangPop(false);
-    if (l && l !== state.lang) setLang(l);
-  });
-  document.addEventListener("click", (e) => { if (!$("lang-pop").hidden && !e.target.closest("#lang-pop")) toggleLangPop(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("lang-pop").hidden) { toggleLangPop(false); $("lang").focus(); } });
-  addEventListener("resize", () => toggleLangPop(false));
+  initSettings();
   toggle("t-3d", "show3d", () => { state.flat3d = false; set3d(state.show3d, true); });
   renderLookChips();
   renderPanelChip();
