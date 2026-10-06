@@ -4559,7 +4559,7 @@ function stopTrack({ el, gain }) {
 // the 旁白 switch is on. One audio element is reused, because iOS only lets an element that a tap has started play
 // again later. A file is used only if it was made from the step's current caption (CRC), so an edited caption falls
 // silent rather than reading old words. While a voice speaks, the background music steps back.
-const narr = { el: null, index: null, done: null };
+const narr = { el: null, index: null, done: null, unlocked: false };
 const crc32 = (str) => {
   let c, crc = -1;
   for (const b of new TextEncoder().encode(str)) { c = (crc ^ b) & 255; for (let k = 0; k < 8; k++) c = c & 1 ? (c >>> 1) ^ 0xedb88320 : c >>> 1; crc = (crc >>> 8) ^ c; }
@@ -4577,8 +4577,21 @@ async function narrateStep(tour, i) {
   narr.done = new Promise((r) => { el.onended = el.onerror = r; });
   duckMusic(true);
   narr.done.then(() => duckMusic(false));
-  el.play().catch(() => { narr.done = null; duckMusic(false); });
+  el.play().catch((err) => { console.warn("narration", err); narr.done = null; duckMusic(false); });
 }
+// Browsers only let audio start from a tap, and the clip starts after the narration list has loaded and the step has
+// begun, when that tap no longer counts. So the first tap or key press while narration is on plays a silent sound on the
+// shared element, which lets it play later without one.
+const SILENT = "data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQIAAACAgA==";
+function unlockNarration() {
+  if (!state.narration || narr.unlocked) return;
+  narr.unlocked = true;
+  const el = narr.el ||= new Audio();
+  if (el.src && !el.paused) return;
+  el.src = SILENT;
+  el.play().catch((err) => { if (err.name === "NotAllowedError") narr.unlocked = false; });
+}
+for (const ev of ["pointerdown", "keydown"]) addEventListener(ev, unlockNarration, { capture: true });
 function stopNarration() {
   if (narr.el && !narr.el.paused) narr.el.pause();
   narr.done = null;
