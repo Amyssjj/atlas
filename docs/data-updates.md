@@ -27,7 +27,7 @@ visitor offline with an older cached index still finds its files. It never touch
 builds every R2 address from `R2` (`DATA_URL + "/atlas"`), and `tools/upload_assets.py` writes under `atlas/`.
 
 Until 2026-10 Atlas's files sat at the top level (`ai/`, `music/`, `tiles/`). `tools/r2_migrate.py` copied them into
-`atlas/`; the top-level copies stay for a while for visitors with an older cached app, then are deleted by hand.
+`atlas/` and, on 2026-10-06, deleted the top-level copies (`--delete-old`).
 
 ## How names and caching work
 
