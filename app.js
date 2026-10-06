@@ -4941,7 +4941,7 @@ function toggleLayoutPop(open, anchor) {
   if (!open) return;
   state.layoutAnchor = anchor = anchor || state.layoutAnchor || $("layout-open");
   anchor.setAttribute("aria-expanded", "true");
-  pop.innerHTML = LAYOUTS.map((l) => `<button type="button" role="menuitemradio" aria-checked="${l.id === state.layout}" data-layout="${l.id}"><span><i class="lp-pic"><svg viewBox="0 0 56 40" aria-hidden="true">${l.svg}</svg></i><b>${esc(zh() ? l.name_zh : l.name)}</b></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.2L9.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>`).join("") +
+  pop.innerHTML = LAYOUTS.map((l) => `<button type="button" role="menuitemradio" aria-checked="${l.id === state.layout}" data-lay="${l.id}"><span><i class="lp-pic"><svg viewBox="0 0 56 40" aria-hidden="true">${l.svg}</svg></i><b>${esc(zh() ? l.name_zh : l.name)}</b></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.2L9.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>`).join("") +
     `<button type="button" class="lp-auto switch" aria-pressed="${state.autoLayout}"><i aria-hidden="true"></i><span>${esc(t("stAutoLayout"))}</span></button>`;
   const r = anchor.getBoundingClientRect(), h = pop.offsetHeight;
   pop.style.position = "fixed";
@@ -4992,8 +4992,8 @@ function initLayouts() {
   document.body.append(pop);
   pop.addEventListener("click", (e) => {
     e.stopPropagation();
-    const b = e.target.closest("[data-layout]");
-    if (b) { setLayout(b.dataset.layout); return toggleLayoutPop(false); }
+    const b = e.target.closest("[data-lay]");
+    if (b) { setLayout(b.dataset.lay); return toggleLayoutPop(false); }
     if (e.target.closest(".lp-auto")) { setAutoLayout(!state.autoLayout); toggleLayoutPop(true, state.layoutAnchor); }
   });
   document.addEventListener("click", (e) => { if (!pop.hidden && !e.target.closest("#layout-pop")) toggleLayoutPop(false); });
