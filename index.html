@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=180">
+<link rel="stylesheet" href="style.css?v=181">
 </head>
 <body>
 <div id="app">
@@ -44,6 +44,7 @@
     </div>
     <div class="region-pop" id="region-pop" role="menu" hidden></div>
     <div class="lang-pop look-pop" id="look-pop" role="menu" hidden></div>
+    <div class="lang-pop look-pop panel-pop" id="panel-pop" role="menu" hidden></div>
     <div class="lang-pop" id="lang-pop" role="menu" aria-label="Language / 语言" hidden></div>
     <div class="share-box" id="share-box" hidden><span></span><input type="text" readonly aria-label="Link"></div>
     <div class="era-layers" role="group" aria-labelledby="layers-label">
@@ -78,6 +79,10 @@
         <button class="chip layer" id="l-inventions" aria-pressed="false" data-i18n="inventions">Inventions</button>
         <button class="chip" id="t-ai" aria-pressed="true" data-i18n="aiPics">AI pictures</button>
         <button type="button" class="chip music-toggle" aria-pressed="false" data-i18n="music" data-i18n-title="tourMusicHint">Music</button>
+      </div>
+      <div class="lg" id="lg-panel"><span data-i18n="g_panel">Panels</span>
+        <button type="button" class="chip look" id="panel-btn" aria-haspopup="menu" aria-expanded="false"></button>
+        <label class="panel-op"><span data-i18n="panelOp">Opacity</span><input type="range" id="panel-op" min="20" max="100" step="1"><output id="panel-op-v"></output></label>
       </div>
     </div>
     <div class="pop-chart" id="pop-chart" hidden></div>
@@ -160,6 +165,6 @@
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="app.js?v=180"></script>
+<script src="app.js?v=181"></script>
 </body>
 </html>

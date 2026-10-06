@@ -112,6 +112,7 @@ logs it in the console and carries on without it.
 | `tour-end` | `{}`: the tour was closed or finished. |
 | `event` | `{id, event}`: an event was opened. |
 | `lang` | `{lang}`: the language changed. |
+| `panel` | `{color, opacity}`: the panel colour (`auto` or `#rrggbb`) or opacity (0.2–1, `null` = built-in) changed. |
 
 **Adding to the map**
 
