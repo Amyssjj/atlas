@@ -5,16 +5,44 @@ The atlas keeps two kinds of data in two places.
 | Kind | Where | Examples |
 | --- | --- | --- |
 | Hand-edited source data, small and worth reviewing as diffs | git, served by GitHub Pages with the page | `data/events.json`, `data/tours.json`, the prompts in `tools/ai_prompts.json`, and the indexes `data/ai-illustrations.json`, `data/tiles.json`, `data/illustrations.json` |
-| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, under its `atlas/` prefix (the bucket is shared with other projects), never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`), background music (`music/…m4a`) |
+| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`atlas/ai/…webp`), elevation and imagery packs (`atlas/tiles/…png`), background music (`atlas/music/…m4a`), tour narration (`atlas/narration/…`) |
 
 Keeping the binaries out of git stops the repository growing by the full size of every regenerated file (git keeps old
 versions forever) and keeps the site well under the GitHub Pages size limit. The Wikimedia thumbnails
 (`data/img/*.json`, about 13 MB) are still in git; see [internals.md](internals.md#illustrations).
 
+## Changing the shape of the data
+
+Adding events, tours or pictures doesn't change the data format. When a change would make an older page misread the
+data or a pack (a new required field, a renamed key, a new file packs rely on), raise the format: bump `FORMAT` in
+`app.js` and `"atlas"` in `data/manifest.json`, add an `UPGRADES` step if older files need converting, and add a row
+to the table in [custom-data.md](custom-data.md#versions) with the app version (`?v=`) that brings it.
+`python3 tools/validate.py` then checks `data/` against the new rules (teach it the new fields too). It runs on
+every pull request that touches `data/` (the **Validate data** workflow); see
+[Checking a pack](custom-data.md#checking-a-pack).
+
+## Layout on R2
+
+The bucket is shared by Atlas and the apps built on it (bible.daiyip.com, gallery.daiyip.com, …). Each top-level
+folder has one owner, and nothing else writes there:
+
+```
+atlas/           Atlas's own files: ai/, music/, narration/, tiles/pack/, tiles/sat/
+apps/<app-id>/   one folder per app, named after its subdomain (apps/bible/, apps/gallery/), laid out as it likes
+```
+
+Each owner keeps the index of its live files in its own repository (for Atlas, the indexes below). A cleanup job may
+only delete under one owner's folder, and only files none of that owner's indexes has named in the last 30 days, so a
+visitor offline with an older cached index still finds its files. It never touches a folder it doesn't own. `app.js`
+builds every R2 address from `R2` (`DATA_URL + "/atlas"`), and `tools/upload_assets.py` writes under `atlas/`.
+
+Until 2026-10 Atlas's files sat at the top level (`ai/`, `music/`, `tiles/`). `tools/r2_migrate.py` copied them into
+`atlas/` and, on 2026-10-06, deleted the top-level copies (`--delete-old`).
+
 ## How names and caching work
 
-Every file on R2 has a hash of its contents in its name: `ai/xuanzang-3c41a2bd.webp`,
-`tiles/sat/5-3-1-6f3274a0.png`. A file that changes gets a new name. The small index files in git say which name is
+Every file on R2 has a hash of its contents in its name: `atlas/ai/xuanzang-3c41a2bd.webp`,
+`atlas/tiles/sat/5-3-1-6f3274a0.png`. A file that changes gets a new name. The small index files in git say which name is
 current:
 
 - `data/ai-illustrations.json` maps `a:<event id>` to a picture and its file name.
@@ -40,7 +68,6 @@ export ATLAS_R2_ACCOUNT_ID=…        # 32 hex characters, the <id> in https://<
 export ATLAS_R2_ACCESS_KEY_ID=…
 export ATLAS_R2_SECRET_ACCESS_KEY=…
 export ATLAS_R2_BUCKET=…
-# optional: export ATLAS_R2_PREFIX=atlas/   (the default; where this project's files sit in the shared bucket)
 ```
 
 AI pictures also need `OPENAI_API_KEY` (and `GOOGLE_API_KEY` for the Gemini option). Downloading needs nothing,

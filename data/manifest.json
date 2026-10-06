@@ -1,0 +1,7 @@
+{
+ "atlas": 1,
+ "id": "atlas",
+ "name": "Atlas",
+ "name_zh": "Atlas",
+ "note": "The format of the atlas's own data/ files. app.js refuses (after one reload) data newer than its FORMAT. See docs/custom-data.md#versions."
+}

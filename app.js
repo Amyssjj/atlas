@@ -11,7 +11,9 @@ const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
 // Large generated assets (terrain and imagery packs, AI pictures) live in a Cloudflare R2 bucket, not in git
 // (tools/upload_assets.py). Their names carry a content hash; data/tiles.json and data/ai-illustrations.json name them.
 // For local work a mirror can stand in: localStorage["atlas-data-url"] = "http://localhost:8766".
-const DATA_URL = (() => { try { return localStorage.getItem("atlas-data-url"); } catch { return null; } })() || "https://data.atlas.daiyip.com/atlas"; // the bucket keeps each project under its own prefix
+const DATA_URL = (() => { try { return localStorage.getItem("atlas-data-url"); } catch { return null; } })() || "https://data.atlas.daiyip.com";
+// Atlas's own files on R2 sit under atlas/; plugin apps keep theirs under apps/<id>/ (docs/data-updates.md#layout-on-r2).
+const R2 = DATA_URL + "/atlas";
 const BASE_PATH = new URL(BASE).pathname;
 // Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
 // ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
@@ -97,7 +99,7 @@ const $ = (id) => document.getElementById(id);
 
 const UI = {
   zh: {
-    title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", railHide: "收起时间轴", railShow: "展开时间轴", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "插图", music: "背景音乐",
+    title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", railHide: "收起时间轴", railShow: "展开时间轴", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "插图", music: "背景音乐", slimOn: "换成精简时间轴（只显示年份）", slimOff: "换成完整时间轴（显示朝代）",
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" },
     sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
@@ -108,7 +110,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -122,7 +124,7 @@ const UI = {
     capital: "都城", works: "代表作", life: (a, b) => `${a} – ${b}`, inventor: "发明者", pkinds: { pass: "山隘", wall: "长城关口", gate: "关口" }, guards: "扼守", battles: "关前史事", built: (y) => `${y}建`,
   },
   en: {
-    title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", railHide: "Fold the timeline away", railShow: "Show the timeline", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "Pictures", music: "Music",
+    title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", railHide: "Fold the timeline away", railShow: "Show the timeline", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "Pictures", music: "Music", slimOn: "Switch to the slim timeline (years only)", slimOff: "Switch to the full timeline (with periods)",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" },
     sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
@@ -133,7 +135,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -187,6 +189,7 @@ function applyLang() {
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   setMinButton($("era-min"), !!state.eraMin);
   setRailButton(!!state.railMin);
+  setRailStyleButton();
   setMinButton($("ledger-min"), $("ledger").classList.contains("collapsed"));
   $("lang-name").textContent = L.short;
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
@@ -217,6 +220,7 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLookChips();
+  renderPanelChip();
   renderLedger();
   updateCompare(true);
   emit("lang", { lang });
@@ -264,7 +268,7 @@ const packs = {};
 // data/tiles.json maps each pack ("pack/4-0-0") to its current hashed file name on R2.
 let tileNamesJob = null;
 const tileNames = () => tileNamesJob ||= loadJSON("data/tiles.json").then((names) => {
-  pruneKept(["/tiles/", BASE_PATH + "tiles/"], Object.values(names).map((n) => "/tiles/" + n));
+  pruneKept(["/tiles/", "/atlas/tiles/", BASE_PATH + "tiles/"], Object.values(names).map((n) => "/atlas/tiles/" + n));
   return names;
 }, () => ({}));
 // The service worker keeps packs and pictures forever under their names. A file that changed has a new name, so once
@@ -284,7 +288,7 @@ function loadPack(z, px, py, dir = "pack") {
     // Each archive is wrapped in a 1x1 PNG (the host serves only standard file types); the archive itself sits in
     // a private "tpAk" chunk: a 4-byte index length, a JSON index {"x/y": [offset, length]}, then the tile PNGs.
     packs[key] = tileNames()
-      .then((names) => names[key] && fetch(`${DATA_URL}/tiles/${names[key]}`))
+      .then((names) => names[key] && fetch(`${R2}/tiles/${names[key]}`))
       .then((r) => (r?.ok ? r.arrayBuffer() : null))
       .then((png) => {
         if (!png) return null;
@@ -683,6 +687,90 @@ function toggleLookPop(open) {
   pop.querySelector('[aria-checked="true"]')?.focus();
 }
 
+// Panel colour and opacity (面板 row). "auto" keeps the built-in light/dark panel; a dark colour
+// switches the interface to dark ink. Opacity applies to the era card, ledger, timeline and tour card.
+const PANEL_COLORS = [
+  { id: "auto", name: "Default", name_zh: "默认", swatch: "linear-gradient(135deg, #f7f9f8 50%, #151a1d 50%)" },
+  { id: "#f7f9f8", name: "Light", name_zh: "浅色" },
+  { id: "#ffffff", name: "White", name_zh: "雪白" },
+  { id: "#f2e8d3", name: "Paper", name_zh: "宣纸" },
+  { id: "#dce9e2", name: "Celadon", name_zh: "青瓷" },
+  { id: "#151a1d", name: "Dark", name_zh: "深色" },
+  { id: "#000000", name: "Black", name_zh: "纯黑" },
+  { id: "#162a2b", name: "Teal ink", name_zh: "黛青" },
+  { id: "#18213a", name: "Night blue", name_zh: "夜蓝" },
+  { id: "#2e221b", name: "Umber", name_zh: "赭石" },
+];
+const hexOk = (c) => /^#[0-9a-f]{6}$/i.test(c || "") ? c.toLowerCase() : null;
+const hexRgb = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+const hexDark = (c) => { const [r, g, b] = hexRgb(c).map((v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.18; };
+function applyPanel() {
+  const root = document.documentElement, st = root.style, c = state.panelColor;
+  if (c === "auto") {
+    for (const k of ["--panel-rgb", "--panel-solid"]) st.removeProperty(k);
+    root.removeAttribute("data-theme");
+  } else {
+    st.setProperty("--panel-rgb", hexRgb(c).join(", "));
+    st.setProperty("--panel-solid", c);
+    root.dataset.theme = hexDark(c) ? "dark" : "light";
+  }
+  if (state.panelOp == null) st.removeProperty("--panel-op");
+  else st.setProperty("--panel-op", String(state.panelOp));
+  renderPanelChip();
+}
+function setPanel({ color = state.panelColor, op = state.panelOp } = {}) {
+  state.panelColor = color;
+  state.panelOp = op;
+  applyPanel();
+  try {
+    localStorage.setItem("atlas-panel-color", color);
+    if (op == null) localStorage.removeItem("atlas-panel-op"); else localStorage.setItem("atlas-panel-op", String(op));
+  } catch {}
+  emit("panel", { color, opacity: op });
+}
+const panelEntry = (c) => PANEL_COLORS.find((p) => p.id === c) || { id: c, name: "Custom", name_zh: "自定义" };
+const panelSwatch = (p) => `<i style="background:${p.swatch || p.id}"></i>`;
+function renderPanelChip() {
+  const btn = $("panel-btn");
+  if (!btn) return;
+  const p = panelEntry(state.panelColor);
+  btn.innerHTML = `${panelSwatch(p)}<b>${esc(zh() ? p.name_zh : p.name)}</b><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>`;
+  btn.title = t("g_panel");
+  // Unset opacity shows the built-in one (92% light, 90% dark).
+  const op = Math.round(100 * (state.panelOp ?? (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--panel-a")) || 0.92)));
+  $("panel-op").value = op;
+  $("panel-op-v").value = `${op}%`;
+}
+function togglePanelPop(open) {
+  const pop = $("panel-pop"), btn = $("panel-btn");
+  open ??= pop.hidden;
+  pop.hidden = !open;
+  btn.setAttribute("aria-expanded", open);
+  if (!open) return;
+  const tick = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.2L9.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  const item = (p) => `<button type="button" role="menuitemradio" aria-checked="${p.id === state.panelColor}" data-panel="${p.id}"><span>${panelSwatch(p)}<b>${esc(zh() ? p.name_zh : p.name)}</b></span>${tick}</button>`;
+  const custom = !PANEL_COLORS.some((p) => p.id === state.panelColor);
+  const cur = hexOk(state.panelColor) || "#f7f9f8";
+  pop.innerHTML = PANEL_COLORS.slice(0, 5).map(item).join("") + "<hr>" + PANEL_COLORS.slice(5).map(item).join("") + "<hr>"
+    + `<button type="button" role="menuitemradio" aria-checked="${custom}" class="panel-custom"><span>${custom ? panelSwatch({ id: cur }) : "<i></i>"}<b>${esc(t("panelCustom"))}</b></span>${tick}<input type="color" value="${cur}" aria-label="${esc(t("panelCustom"))}"></button>`;
+  if (pop.parentNode !== document.body) document.body.appendChild(pop);
+  const r = btn.getBoundingClientRect(), h = pop.offsetHeight;
+  pop.style.position = "fixed";
+  pop.style.top = `${r.bottom + 6 + h > innerHeight - 8 ? Math.max(8, r.top - 6 - h) : r.bottom + 6}px`;
+  pop.style.left = `${Math.min(r.left, innerWidth - pop.offsetWidth - 8)}px`;
+  pop.style.right = "auto";
+  pop.querySelector('[aria-checked="true"]')?.focus();
+}
+// Applied before the map loads so the panels never flash in the old colour.
+try {
+  state.panelColor = localStorage.getItem("atlas-panel-color") || "auto";
+  const op = parseFloat(localStorage.getItem("atlas-panel-op"));
+  state.panelOp = op >= 0.2 && op <= 1 ? op : null;
+} catch {}
+if (state.panelColor !== "auto" && !hexOk(state.panelColor)) state.panelColor = "auto";
+state.panelOp ??= null;
+applyPanel();
+
 function baseStyle() {
   // A pack's own base map (another planet, an invented world) replaces Earth's elevation and imagery.
   const B = state.basemap;
@@ -871,6 +959,60 @@ function addPack(manifest, eras, worldIndex, only) {
   state.eras = list;
   state.mode = id;
 }
+/* ---------- data format versions ---------- */
+// One number, the Atlas format, versions everything a pack can hold: its manifest, its data files (eras, events,
+// tours, layers) and the plugin API. A pack's manifest says `"atlas": N`, the lowest format that can read it.
+// FORMAT goes up when the atlas learns something a pack may rely on (a new field or file whose absence an older
+// atlas would get wrong); fields an older atlas can safely ignore don't need a bump. The atlas reads every format up
+// to its own: UPGRADES[n] turns format n into n + 1, so the rest of this file only ever sees the current shape.
+// A newer pack is refused, unless the atlas page is simply stale (see checkDataFormat). A layer or plugin entry may
+// carry its own `atlas` too: an optional extra that is skipped, not fatal, on an older atlas.
+// FORMAT is separate from the app version (?v=, APP_VERSION): many releases share one format. The atlas's own data/
+// declares its format in data/manifest.json. Each format and the app version that brought it: docs/custom-data.md#versions.
+const FORMAT = 1;
+const UPGRADES = {
+  // n: { manifest(m), eras(d), events(d), tours(d) }, each returning format n + 1's shape. None yet.
+};
+const formatOf = (x) => (Number.isInteger(x?.atlas) && x.atlas > 0 ? x.atlas : 1);
+// Too-new error, in the visitor's language.
+function newerFormat(n) {
+  const e = new Error(zh() ? `需要更新版本的 Atlas（数据格式 ${n}，本页支持到 ${FORMAT}）。请刷新页面。`
+    : `This needs a newer Atlas (data format ${n}; this page reads up to ${FORMAT}). Try reloading the page.`);
+  e.format = n;
+  return e;
+}
+function upgradeManifest(m) {
+  const n = formatOf(m);
+  if (n > FORMAT) throw newerFormat(n);
+  for (let v = n; v < FORMAT; v++) m = UPGRADES[v]?.manifest?.(m) ?? m;
+  return { ...m, atlas: FORMAT, format: n };
+}
+// A pack data file (key: eras, events, tours), written in the pack's own format, brought up to FORMAT.
+function upgradeFile(key, data, from) {
+  for (let v = from; v < FORMAT; v++) data = UPGRADES[v]?.[key]?.(data) ?? data;
+  return data;
+}
+// Optional manifest entries (layers, plugins) that need a newer format than this atlas are left out.
+const fitsFormat = (entry) => {
+  if (formatOf(entry) <= FORMAT) return true;
+  console.warn(`Skipped ${entry.id || entry.src || "an entry"}: it needs Atlas format ${entry.atlas}, this page reads ${FORMAT}.`);
+  return false;
+};
+// The atlas's own data/ moves with app.js, but a browser can still pair a cached old page with new data. Then the
+// page reloads once to pick up the new code; if that doesn't help, it says so.
+async function checkDataFormat() {
+  const n = formatOf(await loadJSON("data/manifest.json").catch(() => null));
+  if (n <= FORMAT) { try { sessionStorage.removeItem("atlas-format-reload"); } catch {} return; }
+  let again = false;
+  try { again = !sessionStorage.getItem("atlas-format-reload"); sessionStorage.setItem("atlas-format-reload", "1"); } catch {}
+  if (again) {
+    await navigator.serviceWorker?.getRegistration?.().then((r) => r?.update()).catch(() => {});
+    location.reload();
+    await new Promise(() => {});
+  }
+  throw newerFormat(n);
+}
+
 // Packs and plugins load only from this site, the sites in PACK_ORIGINS and a local server.
 const allowedOrigin = (u) => u.origin === location.origin || PACK_ORIGINS.includes(u.origin) || ["localhost", "127.0.0.1"].includes(u.hostname);
 // The manifest named by ?pack=, or null. Throws with a readable message when the pack cannot be used.
@@ -880,8 +1022,7 @@ async function openPack(url) {
   if (!allowedOrigin(u)) throw new Error(`Packs from ${u.origin} are not allowed.`);
   const res = await fetch(u, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Could not load the pack (${res.status}).`);
-  const manifest = await res.json();
-  if (manifest.atlas !== 1) throw new Error(`This pack needs a newer atlas (format ${manifest.atlas}).`);
+  const manifest = upgradeManifest(await res.json());
   for (const k of ["eras", "events"]) if (!manifest.data?.[k]) throw new Error(`The pack has no ${k}.`);
   if (!/^[a-z0-9-]+$/.test(manifest.id || "")) throw new Error("The pack has no valid id.");
   return { url: u.href, manifest, only: PACK_ONLY };
@@ -893,7 +1034,7 @@ function packFile(key) {
   return fetch(new URL(path, state.pack.url), { cache: "no-cache" }).then((r) => {
     if (!r.ok) throw new Error(`Could not load the pack's ${key} (${r.status})`);
     return r.json();
-  });
+  }).then((d) => upgradeFile(key, d, state.pack.manifest.format));
 }
 // A link from an event or tour step to the pack's own page for it (the Bible pack: the verse in the reader).
 function refLink(refs) {
@@ -910,7 +1051,7 @@ function refLabel(ref) {
 // A pack can bring its own map layers: GeoJSON the engine draws and filters by year (manifest "layers"), and code
 // (manifest "plugins": ES modules from the allowed sites) that gets the plugin API below. Each layer gets a switch in a
 // "Pack" group of the layers panel, remembered per pack. See docs/plugins.md.
-const PLUGIN_API = 1;
+const PLUGIN_API = FORMAT; // the plugin API is part of the Atlas format
 const hooks = {};           // event name -> handlers: year, lang, event, tour-step, tour-end
 function emit(name, detail) {
   for (const fn of hooks[name] || []) {
@@ -931,7 +1072,7 @@ function packChip(def, on, onClick) {
     g.className = "lg";
     g.id = "lg-pack";
     g.innerHTML = `<span data-i18n="g_pack">${esc(t("g_pack"))}</span>`;
-    document.querySelector(".era-layers").append(g);
+    document.querySelector(".era-layers").insertBefore(g, $("lg-panel"));
   }
   const b = document.createElement("button");
   b.type = "button";
@@ -1053,8 +1194,9 @@ function pluginApi(src) {
 }
 // Imports the pack's plugin modules (started early, so they load alongside the data).
 function importPlugins() {
-  return (state.pack?.manifest.plugins || []).map((p) => {
-    const u = new URL(p, state.pack.url);
+  // An entry is a path, or { src, atlas } for a plugin that needs a newer format than the pack itself.
+  return (state.pack?.manifest.plugins || []).map((p) => (typeof p === "string" ? { src: p } : p)).filter(fitsFormat).map(({ src }) => {
+    const u = new URL(src, state.pack.url);
     if (!allowedOrigin(u)) return Promise.reject(new Error(`Plugins from ${u.origin} are not allowed.`));
     return import(u.href).then((m) => ({ src: u.href, m }));
   });
@@ -1062,7 +1204,7 @@ function importPlugins() {
 // Once the map has loaded: the manifest's layers, then each plugin's setup(atlas). A broken one is logged and skipped.
 async function startPlugins(imports) {
   const base = state.pack.url;
-  for (const def of state.pack.manifest.layers || []) {
+  for (const def of (state.pack.manifest.layers || []).filter(fitsFormat)) {
     try { addPackLayer(def, base); } catch (e) { console.error(`Pack layer "${def.id}" was skipped:`, e); }
   }
   for (const r of await Promise.allSettled(imports)) {
@@ -1809,13 +1951,13 @@ function showCard(lngLat, html) {
 /* ---------- illustrations ---------- */
 // data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
-// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/ai/<file>.webp (tools/pack_ai_illustrations.py),
+// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/atlas/ai/<file>.webp (tools/pack_ai_illustrations.py),
 // always captioned as AI-generated.
 const illuSets = {};
 const illuBuckets = {};
 const illuSet = (set) => illuSets[set] ||= loadJSON(set === "ai" ? "data/ai-illustrations.json" : "data/illustrations.json")
   .then((idx) => {
-    if (set === "ai") pruneKept(["/ai/", BASE_PATH + "data/ai/"], Object.values(idx.images).map((im) => "/ai/" + im.f));
+    if (set === "ai") pruneKept(["/ai/", "/atlas/ai/", BASE_PATH + "data/ai/"], Object.values(idx.images).map((im) => "/atlas/ai/" + im.f));
     return idx;
   }, () => ({ keys: {}, images: {} })).then((idx) => (illuSets[set + "Ready"] = idx));
 function illuSlot(key) {
@@ -1829,7 +1971,7 @@ async function fillIllus(root) {
     const idx = await illuSet(set);
     const id = idx.keys[fig.dataset.illu], im = idx.images[id];
     if (!im) continue;
-    let src = im.f && `${DATA_URL}/${set}/${im.f}`; // AI pictures are files of their own, served from R2
+    let src = im.f && `${R2}/${set}/${im.f}`; // AI pictures are files of their own, served from R2
     if (!src) {
       illuBuckets[set + im.b] ||= loadJSON(`data/${set}/${im.b}.json`).catch(() => ({}));
       src = (await illuBuckets[set + im.b])[id];
@@ -4184,7 +4326,15 @@ function showScrubTag(p, y) {
   tag.style.left = `clamp(56px, ${x}px, calc(100% - 56px))`;
   document.querySelectorAll(".band.era-band").forEach((b) => b.classList.toggle("scrub", b.dataset.era === era.id));
 }
+// After a tap on the slim timeline the tag stays a moment, so the period it landed in is named.
+let tagTimer = 0;
+function flashScrubTag(p, y) {
+  showScrubTag(p, y);
+  clearTimeout(tagTimer);
+  tagTimer = setTimeout(hideScrubTag, 1400);
+}
 function hideScrubTag() {
+  clearTimeout(tagTimer);
   const tag = $("scrub-tag");
   if (tag) tag.hidden = true;
   document.querySelectorAll(".band.scrub").forEach((b) => b.classList.remove("scrub"));
@@ -4222,7 +4372,7 @@ function fitBandLabels() {
   }
 }
 // Phones, whole-history view: the track is wider than the screen and pages sideways, so every period gets its name.
-const pagedRail = () => state.zoom === 0 && innerWidth <= 720;
+const pagedRail = () => state.zoom === 0 && innerWidth <= 720 && !state.railSlim;
 function sizeTrack() {
   const view = $("track-view"), track = document.querySelector(".track");
   track.style.width = pagedRail() ? Math.round(view.clientWidth * 3.6) + "px" : "";
@@ -4235,9 +4385,54 @@ function revealYear(smooth) {
   if (x < view.scrollLeft + m || x > view.scrollLeft + view.clientWidth - m)
     view.scrollTo({ left: x - view.clientWidth / 2, behavior: smooth ? "smooth" : "auto" });
 }
+// Slim timeline: a thin strip of periods without names and a row of round years under the slider; the tag names the
+// period while pointing, dragging or after a tap. Years are placed coarse to fine, each kept only where it has room,
+// so the stretched short periods of the whole-history view get finer numbers than the long ones.
+const YEAR_STEPS = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+// The button on the timeline shows what it switches to: the full timeline's two rows, or the slim one's single line.
+const RAIL_FULL_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 11.5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const RAIL_SLIM_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5 11v1M8 11v1M11 11v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+function setRailStyleButton() {
+  const btn = $("rail-style"), on = !!state.railSlim;
+  btn.innerHTML = on ? RAIL_FULL_ICON : RAIL_SLIM_ICON;
+  btn.setAttribute("aria-pressed", String(on));
+  btn.title = t(on ? "slimOff" : "slimOn");
+  btn.setAttribute("aria-label", btn.title);
+}
+function setRailSlim(on, remember) {
+  state.railSlim = on;
+  document.querySelector(".rail").classList.toggle("slim", on);
+  setRailStyleButton();
+  if (remember) try { localStorage.setItem("atlas-rail-slim", on ? "1" : "0"); } catch {}
+  hideScrubTag();
+  if (state.ready) buildRail();
+}
+function renderYearMarks() {
+  const box = $("years");
+  box.innerHTML = "";
+  const w = box.clientWidth;
+  if (!state.railSlim || !w || !state.eras?.length) return;
+  const [a, b] = state.zoom ? state.win : [state.eras[0]?.start ?? state.range.start, state.eras.at(-1)?.end ?? state.range.end];
+  const placed = [], pad = innerWidth <= 720 ? 10 : 18;
+  for (const step of YEAR_STEPS) {
+    if (!state.zoom && step < 50) break;
+    for (let y = Math.ceil(a / step) * step; y <= b; y += step) {
+      if (y === 0) continue;
+      const x = (yearToPos(y) / SLIDER_MAX) * w, n = Math.abs(y);
+      const s = document.createElement("span");
+      s.innerHTML = y > 0 ? n : zh() ? "前" + n : `${n}<small>BCE</small>`;
+      s.style.left = x + "px";
+      box.appendChild(s);
+      const h = s.offsetWidth / 2;
+      // The play button's speed badge reaches over the strip's left end.
+      if (x - h < 10 || x + h > w || placed.some(([p, q]) => x + h + pad > p && x - h - pad < q)) { s.remove(); continue; }
+      placed.push([x - h, x + h]);
+    }
+  }
+}
 function buildRail() {
   sizeTrack();
-  requestAnimationFrame(() => { fitBandLabels(); revealYear(false); });
+  requestAnimationFrame(() => { fitBandLabels(); renderYearMarks(); revealYear(false); });
   const pct = (p) => (p / SLIDER_MAX) * 100;
   const bands = $("bands");
   bands.innerHTML = "";
@@ -4320,7 +4515,7 @@ function buildRail() {
 
 // Playback moves through each era (or the zoomed window) in roughly the same time.
 /* ---------- background music ---------- */
-// One quiet track per period (data/music.json names <DATA_URL>/music/<file>, made by tools/ai_music.py and
+// One quiet track per period (data/music.json names <DATA_URL>/atlas/music/<file>, made by tools/ai_music.py and
 // tools/pack_music.py). It plays during tours and timeline playback while the music switch is on, follows the period
 // on screen and crossfades when that changes. Volume goes through Web Audio, because iOS ignores an audio
 // element's volume (the R2 files send the CORS header this needs).
@@ -4343,7 +4538,7 @@ async function syncMusic() {
     const ctx = music.ctx ||= new (window.AudioContext || window.webkitAudioContext)();
     if (ctx.state === "suspended") ctx.resume();
     const el = new Audio();
-    el.crossOrigin = "anonymous"; el.loop = true; el.preload = "auto"; el.src = `${DATA_URL}/music/${f}`;
+    el.crossOrigin = "anonymous"; el.loop = true; el.preload = "auto"; el.src = `${R2}/music/${f}`;
     const gain = ctx.createGain();
     gain.gain.value = 0;
     ctx.createMediaElementSource(el).connect(gain).connect(ctx.destination);
@@ -4378,7 +4573,7 @@ async function narrateStep(tour, i) {
   const n = (await narr.index)[`${tour.id}/${i}`], f = n && n.h === crc32(s.text_zh) && n[state.voice];
   if (!f || state.tour !== tour || tour.i !== i) return;
   const el = narr.el ||= new Audio();
-  el.src = `${DATA_URL}/narration/${f}`;
+  el.src = `${R2}/narration/${f}`;
   narr.done = new Promise((r) => { el.onended = el.onerror = r; });
   duckMusic(true);
   narr.done.then(() => duckMusic(false));
@@ -4640,6 +4835,7 @@ async function init() {
   if (langOk(hl)) state.lang = hl;
   // A link pasted into the same tab only changes the hash: start again from it.
   addEventListener("hashchange", () => { if (map && location.hash.length > 1) location.reload(); });
+  const formatOk = checkDataFormat();
   if (PACK_URL) {
     state.pack = await openPack(PACK_URL);
     state.selected = null;
@@ -4659,7 +4855,7 @@ async function init() {
   const pack = state.pack?.manifest, only = state.pack?.only;
   const [eras, events, places, packEras, packEvents] = await Promise.all([
     only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
-    pack && packFile("eras"), pack && packFile("events"),
+    pack && packFile("eras"), pack && packFile("events"), formatOk,
   ]);
   // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls, exchange) stay out of a pack shown alone.
   if (!only) {
@@ -4721,7 +4917,7 @@ async function init() {
   }
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b>` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
+    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b> · data format ${FORMAT}` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);
@@ -4777,8 +4973,8 @@ async function init() {
     if (!coarse && y !== state.year) setYear(y, { fromSlider: true });
   });
   $("slider").addEventListener("change", (e) => {
-    hideScrubTag();
     const y = posToYear(+e.target.value);
+    if (state.railSlim) flashScrubTag(+e.target.value, y); else hideScrubTag();
     if (y !== state.year) setYear(y, { fromSlider: true });
   });
   const track = document.querySelector(".track"), view = $("track-view");
@@ -4812,7 +5008,11 @@ async function init() {
     cancelAnimationFrame(s.raf);
     if (!s.moved) {
       // A tap on the slider line jumps there; a tap on a band or tick keeps its own click.
-      if (!s.onButton) setYear(posToYear(posAt(e.clientX)));
+      if (!s.onButton) {
+        const p = posAt(e.clientX);
+        setYear(posToYear(p));
+        if (state.railSlim) flashScrubTag(p, posToYear(p));
+      }
       return;
     }
     hideScrubTag();
@@ -4820,6 +5020,13 @@ async function init() {
     addEventListener("click", (c) => { c.stopPropagation(); c.preventDefault(); }, { capture: true, once: true });
     setTimeout(() => setYear(s.year), 0);
   });
+  // With a mouse, the slim timeline names the period under the pointer.
+  track.addEventListener("pointermove", (e) => {
+    if (scrub || coarse || e.pointerType !== "mouse" || !state.railSlim || e.buttons) return;
+    const p = posAt(e.clientX);
+    showScrubTag(p, posToYear(p));
+  });
+  track.addEventListener("pointerleave", () => { if (!scrub && state.railSlim && !coarse) hideScrubTag(); });
   addEventListener("pointercancel", () => {
     if (scrub) cancelAnimationFrame(scrub.raf);
     scrub = null; hideScrubTag();
@@ -4871,11 +5078,33 @@ async function init() {
   addEventListener("resize", () => toggleLangPop(false));
   toggle("t-3d", "show3d", () => { state.flat3d = false; set3d(state.show3d, true); });
   renderLookChips();
+  renderPanelChip();
   $("look-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleLookPop(); });
   $("look-pop").addEventListener("click", (e) => { const b = e.target.closest("[data-look]"); toggleLookPop(false); if (b) setLook(b.dataset.look); });
   document.addEventListener("click", (e) => { if (!$("look-pop").hidden && !e.target.closest("#look-pop")) toggleLookPop(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("look-pop").hidden) { toggleLookPop(false); $("look-btn").focus(); } });
   addEventListener("resize", () => toggleLookPop(false));
+  $("panel-btn").addEventListener("click", (e) => { e.stopPropagation(); togglePanelPop(); });
+  $("panel-pop").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-panel]");
+    if (b) { togglePanelPop(false); setPanel({ color: b.dataset.panel }); }
+    else if (e.target.closest(".panel-custom") && e.target.tagName !== "INPUT") e.target.closest(".panel-custom").querySelector("input").click();
+  });
+  // The custom picker previews while dragging and is kept when it closes.
+  $("panel-pop").addEventListener("input", (e) => {
+    const c = hexOk(e.target.value);
+    if (!c) return;
+    state.panelColor = c;
+    applyPanel();
+    e.target.parentNode.querySelector("i").style.background = c;
+  });
+  $("panel-pop").addEventListener("change", (e) => { const c = hexOk(e.target.value); if (c) setPanel({ color: c }); });
+  $("panel-op").addEventListener("input", (e) => { state.panelOp = +e.target.value / 100; applyPanel(); });
+  $("panel-op").addEventListener("change", (e) => setPanel({ op: +e.target.value / 100 }));
+  $("panel-op").addEventListener("dblclick", () => setPanel({ op: null }));
+  document.addEventListener("click", (e) => { if (!$("panel-pop").hidden && !e.target.closest("#panel-pop")) togglePanelPop(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("panel-pop").hidden) { togglePanelPop(false); $("panel-btn").focus(); } });
+  addEventListener("resize", () => togglePanelPop(false));
   toggle("t-neighbours", "showNeighbours", () => {
     const v = state.showNeighbours ? "visible" : "none";
     map.setLayoutProperty("neighbour-fill", "visibility", v);
@@ -5002,6 +5231,10 @@ async function init() {
   $("era-min").addEventListener("click", (e) => { e.stopPropagation(); setEraMin(!state.eraMin, true); });
   $("rail-min").addEventListener("click", (e) => { e.stopPropagation(); setRailMin(!state.railMin, true); });
   try { if (localStorage.getItem("atlas-rail-min") === "1") setRailMin(true); } catch {}
+  $("rail-style").addEventListener("click", () => setRailSlim(!state.railSlim, true));
+  let slim = false;
+  try { slim = localStorage.getItem("atlas-rail-slim") === "1"; } catch {}
+  setRailSlim(slim);
   $("speed").addEventListener("click", (e) => { e.stopPropagation(); toggleSpeedPop(); });
   $("speed-pop").addEventListener("click", (e) => {
     const b = e.target.closest("[data-speed]");
@@ -5041,6 +5274,7 @@ async function init() {
     document.documentElement.style.setProperty("--rail-w", document.querySelector(".rail").offsetWidth + "px");
     sizeTrack();
     fitBandLabels();
+    renderYearMarks();
   }).observe(document.querySelector(".rail"));
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT") return;

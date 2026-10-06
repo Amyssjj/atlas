@@ -1,0 +1,19 @@
+# Checks the atlas's own data/ and the example packs against the data format (tools/validate.py) on every push and PR
+# that touches them.
+name: Validate data
+on:
+  push:
+    branches: [main]
+    paths: ["data/**", "examples/**", "tools/validate.py", "app.js"]
+  pull_request:
+    paths: ["data/**", "examples/**", "tools/validate.py", "app.js"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/validate.py data examples/*-pack

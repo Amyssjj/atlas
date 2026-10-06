@@ -49,7 +49,7 @@ my-pack/
 
 | Key | Meaning |
 | --- | --- |
-| `atlas` | Pack format version, `1`. The atlas refuses versions it doesn't know. |
+| `atlas` | The Atlas format the pack is written for, `1` today: the lowest format that can read it. See [Versions](#versions). |
 | `id` | Lowercase letters, digits and `-`. It is also the region id, and the key the browser remembers the view under. |
 | `name`, `name_zh` | Display name in English and Chinese. |
 | `data.eras`, `data.events` | Required. Paths relative to the manifest. |
@@ -124,6 +124,37 @@ Each step flies the camera to `at` (with optional `zoom`, `pitch` and `bearing`)
 shows `text`. `event` links the step to an event's story, and `path: true` draws the journey so far. A step's `layers`
 works like an event's: the layers Auto layers turns on at that stop (without it, the linked event's, then the rules).
 
+## Versions
+
+One number, the **Atlas format**, versions everything in a pack: the manifest, the data files (eras, events, tours,
+layers) and the [plugin API](plugins.md#the-atlas-object). The manifest's `atlas` says which format the pack is
+written for.
+
+- **Older packs keep working.** The atlas reads every format up to its own and upgrades older files as it loads them,
+  so a pack never has to change just because the atlas moved on.
+- **Newer packs are refused** with a message asking the visitor to reload: a page too old to understand the pack would
+  otherwise show it wrongly. (If the page was merely cached, the reload fixes it.)
+- **Optional extras can ask for more.** A layer or a plugin entry may carry its own `atlas`. On an older atlas it is
+  skipped and the rest of the pack still opens:
+
+  ```json
+  "plugins": ["plugins/journey.js", { "src": "plugins/narrator.js", "atlas": 2 }]
+  ```
+
+The format goes up when the atlas gains something a pack may rely on, such as a new manifest key, field or file that
+an older atlas would silently get wrong. Fields an older atlas can safely ignore don't raise it. Set `atlas` to the
+lowest format that has everything your pack uses:
+
+The format is numbered separately from the app. The app version (`?v=`, shown as "Atlas v178" in the map credits)
+goes up with every release; the format only goes up when packs need to know, so the table below is the full list of
+format changes. The credits show both, for example "Atlas v178 · data format 1".
+
+| Format | First app version | Added |
+| --- | --- | --- |
+| 1 | v178 (earlier versions read format 1 only) | Everything in these pages: manifest, `eras.json`, `events.json`, `tours.json`, layers, plugins (API 1), `basemap`. |
+
+The atlas's own data declares its format the same way, in `data/manifest.json`.
+
 ## Base map
 
 A pack shown alone (`packonly=1`) can replace Earth with its own ground. The [Mars pack](../examples/mars-pack/)
@@ -160,6 +191,41 @@ including how to make tiles from one picture, see [custom-ground.md](custom-grou
 Tile paths are relative to the manifest. The style menu offers only the pack's own styles: its imagery and its
 relief. Tiles must use XYZ numbering (row 0 at the north); if your source is TMS, flip the rows.
 
+## Checking a pack
+
+`tools/validate.py` checks a pack against the data format before you publish it. It needs only Python 3:
+
+```sh
+python3 tools/validate.py my-pack             # the pack's folder, or its manifest.json
+python3 tools/validate.py data examples/*-pack   # the atlas's own data/ and the example packs
+```
+
+```
+Atlas data format 1
+my-pack/manifest.json: 2 error(s), 1 warning(s)
+  error: events.json paul-at-athens: unknown `category` 'religion'
+  error: tours.json paul-first step 3: event 'paul-in-cyprus' does not exist
+  warning: events.json saul-is-converted: `layers` has unknown key 'army'
+```
+
+**Errors** are things the atlas would refuse or show wrongly, and the command exits 1 if there are any. **Warnings**
+are worth a look but break nothing. It checks:
+
+- **Manifest**: `atlas` is a format this atlas reads (see [Versions](#versions)), `id`, `name`, `data.eras` and
+  `data.events`, the shape of `region` and `range`, `refs.url` has `{ref}`.
+- **Periods**: unique ids, a name, `start` before `end`, and each period starting where the one before ends (the year
+  after, or the same year), inside `range`. A `glyph` of more than two characters is a warning.
+- **Events**: unique ids, a whole `year` (and `endYear` not before it), `lat`/`lon` on the globe, `level` 1–3, a known
+  `category`, a `title`. Unknown `layers` keys are a warning.
+- **Tours**: unique ids, a title, `era` is one of the periods, every step has a `year`, `at` as `[lon, lat]` and
+  `text`, and its `event` exists.
+- **Layers and plugins**: ids, `type`, `years`, a per-entry `atlas`, the GeoJSON file is a FeatureCollection whose
+  features have geometry and sensible `from`/`to`, plugin files exist.
+
+The **Validate data** workflow (`.github/workflows/validate.yml`) runs it on the atlas's own data and the example
+packs for every push and pull request that changes them. A pack in another repository can run the same command
+in its own CI against a checkout of the atlas.
+
 ## Hosting and the allowlist
 
 Pack text is put into the atlas page, so the atlas only loads packs (and plugins) from a short list of sites:
@@ -176,6 +242,7 @@ To try a pack while you write it, serve the atlas and your pack locally:
 ```sh
 python3 -m http.server 8000          # from the atlas checkout
 # open http://localhost:8000/?pack=examples/demo-pack/manifest.json&packonly=1
+python3 tools/validate.py examples/demo-pack   # and check it (see Checking a pack)
 ```
 
 ## Links into a pack
