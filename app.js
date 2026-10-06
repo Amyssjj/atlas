@@ -872,6 +872,60 @@ function addPack(manifest, eras, worldIndex, only) {
   state.eras = list;
   state.mode = id;
 }
+/* ---------- data format versions ---------- */
+// One number, the Atlas format, versions everything a pack can hold: its manifest, its data files (eras, events,
+// tours, layers) and the plugin API. A pack's manifest says `"atlas": N`, the lowest format that can read it.
+// FORMAT goes up when the atlas learns something a pack may rely on (a new field or file whose absence an older
+// atlas would get wrong); fields an older atlas can safely ignore don't need a bump. The atlas reads every format up
+// to its own: UPGRADES[n] turns format n into n + 1, so the rest of this file only ever sees the current shape.
+// A newer pack is refused, unless the atlas page is simply stale (see checkDataFormat). A layer or plugin entry may
+// carry its own `atlas` too: an optional extra that is skipped, not fatal, on an older atlas.
+// FORMAT is separate from the app version (?v=, APP_VERSION): many releases share one format. The atlas's own data/
+// declares its format in data/manifest.json. Each format and the app version that brought it: docs/custom-data.md#versions.
+const FORMAT = 1;
+const UPGRADES = {
+  // n: { manifest(m), eras(d), events(d), tours(d) }, each returning format n + 1's shape. None yet.
+};
+const formatOf = (x) => (Number.isInteger(x?.atlas) && x.atlas > 0 ? x.atlas : 1);
+// Too-new error, in the visitor's language.
+function newerFormat(n) {
+  const e = new Error(zh() ? `需要更新版本的 Atlas（数据格式 ${n}，本页支持到 ${FORMAT}）。请刷新页面。`
+    : `This needs a newer Atlas (data format ${n}; this page reads up to ${FORMAT}). Try reloading the page.`);
+  e.format = n;
+  return e;
+}
+function upgradeManifest(m) {
+  const n = formatOf(m);
+  if (n > FORMAT) throw newerFormat(n);
+  for (let v = n; v < FORMAT; v++) m = UPGRADES[v]?.manifest?.(m) ?? m;
+  return { ...m, atlas: FORMAT, format: n };
+}
+// A pack data file (key: eras, events, tours), written in the pack's own format, brought up to FORMAT.
+function upgradeFile(key, data, from) {
+  for (let v = from; v < FORMAT; v++) data = UPGRADES[v]?.[key]?.(data) ?? data;
+  return data;
+}
+// Optional manifest entries (layers, plugins) that need a newer format than this atlas are left out.
+const fitsFormat = (entry) => {
+  if (formatOf(entry) <= FORMAT) return true;
+  console.warn(`Skipped ${entry.id || entry.src || "an entry"}: it needs Atlas format ${entry.atlas}, this page reads ${FORMAT}.`);
+  return false;
+};
+// The atlas's own data/ moves with app.js, but a browser can still pair a cached old page with new data. Then the
+// page reloads once to pick up the new code; if that doesn't help, it says so.
+async function checkDataFormat() {
+  const n = formatOf(await loadJSON("data/manifest.json").catch(() => null));
+  if (n <= FORMAT) { try { sessionStorage.removeItem("atlas-format-reload"); } catch {} return; }
+  let again = false;
+  try { again = !sessionStorage.getItem("atlas-format-reload"); sessionStorage.setItem("atlas-format-reload", "1"); } catch {}
+  if (again) {
+    await navigator.serviceWorker?.getRegistration?.().then((r) => r?.update()).catch(() => {});
+    location.reload();
+    await new Promise(() => {});
+  }
+  throw newerFormat(n);
+}
+
 // Packs and plugins load only from this site, the sites in PACK_ORIGINS and a local server.
 const allowedOrigin = (u) => u.origin === location.origin || PACK_ORIGINS.includes(u.origin) || ["localhost", "127.0.0.1"].includes(u.hostname);
 // The manifest named by ?pack=, or null. Throws with a readable message when the pack cannot be used.
@@ -881,8 +935,7 @@ async function openPack(url) {
   if (!allowedOrigin(u)) throw new Error(`Packs from ${u.origin} are not allowed.`);
   const res = await fetch(u, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Could not load the pack (${res.status}).`);
-  const manifest = await res.json();
-  if (manifest.atlas !== 1) throw new Error(`This pack needs a newer atlas (format ${manifest.atlas}).`);
+  const manifest = upgradeManifest(await res.json());
   for (const k of ["eras", "events"]) if (!manifest.data?.[k]) throw new Error(`The pack has no ${k}.`);
   if (!/^[a-z0-9-]+$/.test(manifest.id || "")) throw new Error("The pack has no valid id.");
   return { url: u.href, manifest, only: PACK_ONLY };
@@ -894,7 +947,7 @@ function packFile(key) {
   return fetch(new URL(path, state.pack.url), { cache: "no-cache" }).then((r) => {
     if (!r.ok) throw new Error(`Could not load the pack's ${key} (${r.status})`);
     return r.json();
-  });
+  }).then((d) => upgradeFile(key, d, state.pack.manifest.format));
 }
 // A link from an event or tour step to the pack's own page for it (the Bible pack: the verse in the reader).
 function refLink(refs) {
@@ -911,7 +964,7 @@ function refLabel(ref) {
 // A pack can bring its own map layers: GeoJSON the engine draws and filters by year (manifest "layers"), and code
 // (manifest "plugins": ES modules from the allowed sites) that gets the plugin API below. Each layer gets a switch in a
 // "Pack" group of the layers panel, remembered per pack. See docs/plugins.md.
-const PLUGIN_API = 1;
+const PLUGIN_API = FORMAT; // the plugin API is part of the Atlas format
 const hooks = {};           // event name -> handlers: year, lang, event, tour-step, tour-end
 function emit(name, detail) {
   for (const fn of hooks[name] || []) {
@@ -1054,8 +1107,9 @@ function pluginApi(src) {
 }
 // Imports the pack's plugin modules (started early, so they load alongside the data).
 function importPlugins() {
-  return (state.pack?.manifest.plugins || []).map((p) => {
-    const u = new URL(p, state.pack.url);
+  // An entry is a path, or { src, atlas } for a plugin that needs a newer format than the pack itself.
+  return (state.pack?.manifest.plugins || []).map((p) => (typeof p === "string" ? { src: p } : p)).filter(fitsFormat).map(({ src }) => {
+    const u = new URL(src, state.pack.url);
     if (!allowedOrigin(u)) return Promise.reject(new Error(`Plugins from ${u.origin} are not allowed.`));
     return import(u.href).then((m) => ({ src: u.href, m }));
   });
@@ -1063,7 +1117,7 @@ function importPlugins() {
 // Once the map has loaded: the manifest's layers, then each plugin's setup(atlas). A broken one is logged and skipped.
 async function startPlugins(imports) {
   const base = state.pack.url;
-  for (const def of state.pack.manifest.layers || []) {
+  for (const def of (state.pack.manifest.layers || []).filter(fitsFormat)) {
     try { addPackLayer(def, base); } catch (e) { console.error(`Pack layer "${def.id}" was skipped:`, e); }
   }
   for (const r of await Promise.allSettled(imports)) {
@@ -4637,6 +4691,7 @@ async function init() {
   if (langOk(hl)) state.lang = hl;
   // A link pasted into the same tab only changes the hash: start again from it.
   addEventListener("hashchange", () => { if (map && location.hash.length > 1) location.reload(); });
+  const formatOk = checkDataFormat();
   if (PACK_URL) {
     state.pack = await openPack(PACK_URL);
     state.selected = null;
@@ -4656,7 +4711,7 @@ async function init() {
   const pack = state.pack?.manifest, only = state.pack?.only;
   const [eras, events, places, packEras, packEvents] = await Promise.all([
     only ? { eras: [] } : loadJSON("data/eras.json"), only ? [] : loadJSON("data/events.json"), only ? [] : loadJSON("data/places.json"),
-    pack && packFile("eras"), pack && packFile("events"),
+    pack && packFile("eras"), pack && packFile("events"), formatOk,
   ]);
   // The atlas's own overlays (population, faith, inventions, passes, roads, clans, walls, exchange) stay out of a pack shown alone.
   if (!only) {
@@ -4718,7 +4773,7 @@ async function init() {
   }
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b>` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
+    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b> · data format ${FORMAT}` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);

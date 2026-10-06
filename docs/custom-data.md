@@ -49,7 +49,7 @@ my-pack/
 
 | Key | Meaning |
 | --- | --- |
-| `atlas` | Pack format version, `1`. The atlas refuses versions it doesn't know. |
+| `atlas` | The Atlas format the pack is written for, `1` today: the lowest format that can read it. See [Versions](#versions). |
 | `id` | Lowercase letters, digits and `-`. It is also the region id, and the key the browser remembers the view under. |
 | `name`, `name_zh` | Display name in English and Chinese. |
 | `data.eras`, `data.events` | Required. Paths relative to the manifest. |
@@ -123,6 +123,37 @@ they need no `snapshots`.
 Each step flies the camera to `at` (with optional `zoom`, `pitch` and `bearing`), moves the timeline to `year` and
 shows `text`. `event` links the step to an event's story, and `path: true` draws the journey so far. A step's `layers`
 works like an event's: the layers Auto layers turns on at that stop (without it, the linked event's, then the rules).
+
+## Versions
+
+One number, the **Atlas format**, versions everything in a pack: the manifest, the data files (eras, events, tours,
+layers) and the [plugin API](plugins.md#the-atlas-object). The manifest's `atlas` says which format the pack is
+written for.
+
+- **Older packs keep working.** The atlas reads every format up to its own and upgrades older files as it loads them,
+  so a pack never has to change just because the atlas moved on.
+- **Newer packs are refused** with a message asking the visitor to reload: a page too old to understand the pack would
+  otherwise show it wrongly. (If the page was merely cached, the reload fixes it.)
+- **Optional extras can ask for more.** A layer or a plugin entry may carry its own `atlas`. On an older atlas it is
+  skipped and the rest of the pack still opens:
+
+  ```json
+  "plugins": ["plugins/journey.js", { "src": "plugins/narrator.js", "atlas": 2 }]
+  ```
+
+The format goes up when the atlas gains something a pack may rely on, such as a new manifest key, field or file that
+an older atlas would silently get wrong. Fields an older atlas can safely ignore don't raise it. Set `atlas` to the
+lowest format that has everything your pack uses:
+
+The format is numbered separately from the app. The app version (`?v=`, shown as "Atlas v178" in the map credits)
+goes up with every release; the format only goes up when packs need to know, so the table below is the full list of
+format changes. The credits show both, for example "Atlas v178 · data format 1".
+
+| Format | First app version | Added |
+| --- | --- | --- |
+| 1 | v178 (earlier versions read format 1 only) | Everything in these pages: manifest, `eras.json`, `events.json`, `tours.json`, layers, plugins (API 1), `basemap`. |
+
+The atlas's own data declares its format the same way, in `data/manifest.json`.
 
 ## Base map
 
