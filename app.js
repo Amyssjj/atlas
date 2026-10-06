@@ -1831,7 +1831,10 @@ async function fillIllus(root) {
     if (!src) continue;
     const credit = [im.artist, im.license].filter(Boolean).join(" · ");
     fig.classList.toggle("ai", !!im.ai);
-    fig.innerHTML = `<img src="${src}" alt="${esc(im.ai ? t("aiIllu") : im.page)}" style="aspect-ratio:${im.w}/${im.h}">` + (im.ai
+    // An AI picture is described by its event ("Battle of Sarhu – AI-generated illustration, …"), the others by their page.
+    const ev = im.ai && state.events.find((e) => e.id === fig.dataset.illu.slice(2));
+    const alt = im.ai ? (ev ? `${titleOf(ev)} – ${t("aiIllu")}` : t("aiIllu")) : im.page;
+    fig.innerHTML = `<img src="${src}" alt="${esc(alt)}" style="aspect-ratio:${im.w}/${im.h}">` + (im.ai
       ? `<figcaption>${esc(t("aiIllu"))} · ${esc(im.ai)}</figcaption>`
       : `<figcaption><a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a></figcaption>`);
     // A picture that cannot be fetched (offline, or its host unreachable) leaves no broken frame behind.
@@ -3705,8 +3708,8 @@ function placeTourPic() {
   const im = !EMBED && s?.event && state.showAI && idx?.images[idx.keys[key]];
   const at = im ? tourPicRect(im) : null;
   box.rect = at;
-  if (at && box.dataset.key === key && !box.hidden) return placeBox(box, at);
-  box.dataset.key = at ? key : "";
+  if (at && box.dataset.key === key + state.lang && !box.hidden) return placeBox(box, at);
+  box.dataset.key = at ? key + state.lang : "";
   fadePic(box, async () => {
     if (!at) return null;
     box.innerHTML = illuSlot(key);
@@ -3733,8 +3736,9 @@ async function showEventPic(id, force) {
   if (!im || state.selected !== id || !state.reading) return hideEventPic();
   const at = eventPicRect(im);
   if (!at) return hideEventPic();
-  if (eventPic.key === key && !box.hidden) return placeBox(box, at);
-  eventPic.key = key;
+  // Rebuilt when the language changes too, for the picture's description.
+  if (eventPic.key === key + state.lang && !box.hidden) return placeBox(box, at);
+  eventPic.key = key + state.lang;
   fadePic(box, async () => {
     box.querySelector(".ep-fig").innerHTML = illuSlot(key);
     await fillIllus(box);
@@ -4759,7 +4763,7 @@ async function init() {
   tb.querySelector(".tour-story").addEventListener("click", readStep);
   $("tour-pic").addEventListener("click", () => { readStep(); placeTourPic(); });
   addEventListener("resize", () => { if (state.tour) placeTourPic(); if (!$("event-pic").hidden) showEventPic(state.selected); });
-  const closeEventPic = () => { eventPic.closed = eventPic.key; hideEventPic(); };
+  const closeEventPic = () => { eventPic.closed = "a:" + state.selected; hideEventPic(); };
   $("event-pic").querySelector(".ep-close").addEventListener("click", (e) => { e.stopPropagation(); closeEventPic(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("event-pic").hidden) { e.stopImmediatePropagation(); closeEventPic(); } }, true);
   tb.querySelector(".tour-auto").addEventListener("click", () => {

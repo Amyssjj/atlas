@@ -166,6 +166,14 @@ localStorage["atlas-data-url"] = "http://localhost:8766"   // a server with ai/ 
 delete localStorage["atlas-data-url"]                      // back to R2
 ```
 
+## Checking
+
+`python3 tools/check_assets.py` asks R2 for every file the two indexes name and expects each to be there, with the
+right content type and an `Access-Control-Allow-Origin` header. It takes about a minute for 2,800 files and exits 1
+with a list of failures. The **Assets** workflow (`.github/workflows/assets.yml`) runs it on GitHub whenever
+`data/tiles.json` or `data/ai-illustrations.json` changes on `main`, every Monday (in case a Cloudflare setting
+changed), and by hand. A red run usually means an index was pushed before its upload.
+
 ## Troubleshooting
 
 - **Pictures and terrain missing on one machine only:** its DNS may still remember an old answer for
