@@ -846,7 +846,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .era-corner { grid-column: 1 / -1; order: -1; display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: -4px -4px 4px 0; }
 /* Region (and, on phones, layers) on the left; language, search, share on the right. */
 .era-corner { justify-content: flex-start; }
-.era-corner .st-open { margin-left: auto; }
+.era-corner #search-open { margin-left: auto; }
 .search-open { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; }
 .search-open svg { width: 13px; height: 13px; }
 @media (max-width: 720px) {
