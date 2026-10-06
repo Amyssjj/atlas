@@ -4807,12 +4807,14 @@ async function init() {
   // bringing the side panel back.
   const readStep = () => { const s = state.tour?.tr.steps[state.tour.i]; if (s?.event) { tourPause(); syncTourTop(); $("app").classList.add("tour-reading"); openStory(s.event); } };
   tb.querySelector(".tour-immersive").addEventListener("click", () => setImmersive(!state.immersive));
+  // The reading card's × (immersive mode only): back to the step's picture.
+  const closeTourReading = () => { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); };
+  $("read-close").addEventListener("click", closeTourReading);
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape" || !state.immersive) return;
     e.stopImmediatePropagation();
     // Esc first closes a story being read (back to the step's picture), then leaves immersive mode.
-    if ($("app").classList.contains("tour-reading")) { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); }
-    else setImmersive(false);
+    if ($("app").classList.contains("tour-reading")) closeTourReading(); else setImmersive(false);
   }, true);
   tb.querySelector(".tour-story").addEventListener("click", readStep);
   $("tour-pic").addEventListener("click", () => { readStep(); placeTourPic(); });
