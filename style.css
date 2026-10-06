@@ -1276,3 +1276,33 @@ html.embed .era-year { font-size: 15px; grid-area: 2 / 2; }
   text-shadow: 0 0 3px #f4f2ea, 0 0 3px #f4f2ea, 0 0 6px #f4f2ea; }
 .mk-event.active span { display: block; }
 .mk-event.open span { color: #8f2a1b; font-size: 13px; }
+
+/* Slim timeline (精简时间轴): one thin row with the slider and round years under it, no period strip or event
+   marks. The scrub tag names the period while pointing, dragging or just after a tap. */
+.years { display: none; }
+.rail.slim { padding: 3px 12px 2px; row-gap: 0; column-gap: 10px; }
+.rail.slim .play-box, .rail.slim .zoom { grid-row: 1; }
+.rail.slim .scale, .rail.slim .bands, .rail.slim .ticks { display: none; }
+.rail.slim .play { width: 28px; height: 28px; }
+.rail.slim .play svg { width: 11px; height: 11px; }
+.rail.slim .zbtn { width: 24px; height: 24px; font-size: 13px; }
+.rail.slim .zlevel { font-size: 11px; min-width: 40px; }
+.rail.slim input[type=range] { display: block; height: 14px; margin: 0; }
+.rail.slim .years { display: block; position: relative; height: 11px; margin-top: -1px; pointer-events: none; }
+.years span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap;
+  font: 500 9.5px/11px var(--font-data); color: var(--muted); font-variant-numeric: tabular-nums; }
+.years small { margin-left: 2px; font-size: 7.5px; letter-spacing: 0.02em; }
+@media (max-width: 720px) {
+  .rail.slim { padding: 2px 8px 2px; column-gap: 6px; }
+  .rail.slim .track { padding: 3px 0 1px; }
+  .rail.slim input[type=range] { height: 16px; margin-top: 0; }
+  .rail.slim .track-view { mask-image: none; }
+  .rail.slim .zbtn { width: 26px; height: 26px; }
+  .rail.slim .play { width: 28px; height: 28px; }
+}
+/* Too thin for the badge on the play button's corner: the speed sits beside it. */
+.rail.slim .play-box { display: flex; align-items: center; gap: 3px; margin-right: 0; }
+.rail.slim .speed, .rail.slim.min .speed { position: static; }
+.rail-style svg { width: 15px; height: 15px; }
+.zoom .rail-style { margin-left: 4px; color: var(--muted); }
+@media (max-width: 720px) { .zoom .rail-style { margin-left: 2px; } }
