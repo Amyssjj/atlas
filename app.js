@@ -528,6 +528,9 @@ function setTerrainForZoom() {
   state.terrainExag = e;
   // Calling setTerrain again would rebuild the terrain and stall tile loading; adjust the live terrain instead.
   if (map.terrain) { map.terrain.exaggeration = e; map.triggerRepaint(); }
+  // A flight that starts while the style is still being swapped (a new period's look) ends here before the style has
+  // loaded, and setTerrain would throw; try again once the map is idle.
+  else if (!map.isStyleLoaded()) { state.terrainExag = null; map.once("idle", setTerrainForZoom); return; }
   else map.setTerrain({ source: "dem-terrain", exaggeration: e });
   if (map.terrain) { shareTerrainZoom(map.terrain); keepTerrainTextures(map); }
 }
@@ -1831,6 +1834,12 @@ async function fillIllus(root) {
     fig.innerHTML = `<img src="${src}" alt="${esc(im.ai ? t("aiIllu") : im.page)}" style="aspect-ratio:${im.w}/${im.h}">` + (im.ai
       ? `<figcaption>${esc(t("aiIllu"))} · ${esc(im.ai)}</figcaption>`
       : `<figcaption><a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a></figcaption>`);
+    // A picture that cannot be fetched (offline, or its host unreachable) leaves no broken frame behind.
+    fig.querySelector("img").addEventListener("error", () => {
+      fig.hidden = true;
+      const box = fig.closest(".event-pic, .tour-pic");
+      if (box) box.hidden = true;
+    });
     fig.hidden = false;
   }
 }
@@ -3675,8 +3684,9 @@ async function fadePic(box, change) {
   placeBox(box, at);
   box.hidden = false;
   const img = box.querySelector("img");
-  if (img && !img.complete) await Promise.race([new Promise((r) => img.addEventListener("load", r, { once: true })), sleep(1500)]);
+  if (img && !img.complete) await Promise.race([new Promise((r) => { img.addEventListener("load", r, { once: true }); img.addEventListener("error", r, { once: true }); }), sleep(1500)]);
   if (box.fadeTok !== tok) return;
+  if (!img || (img.complete && !img.naturalWidth)) { box.hidden = true; box.classList.remove("fade-out"); return; } // could not be fetched
   void box.offsetWidth; // apply the transparent start first, so removing the class transitions
   box.classList.remove("fade-out");
 }
