@@ -1303,3 +1303,6 @@ html.embed .era-year { font-size: 15px; grid-area: 2 / 2; }
 /* Too thin for the badge on the play button's corner: the speed sits beside it. */
 .rail.slim .play-box { display: flex; align-items: center; gap: 3px; margin-right: 0; }
 .rail.slim .speed, .rail.slim.min .speed { position: static; }
+.rail-style svg { width: 15px; height: 15px; }
+.zoom .rail-style { margin-left: 4px; color: var(--muted); }
+@media (max-width: 720px) { .zoom .rail-style { margin-left: 2px; } }

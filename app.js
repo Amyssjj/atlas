@@ -97,7 +97,7 @@ const $ = (id) => document.getElementById(id);
 
 const UI = {
   zh: {
-    title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", railHide: "收起时间轴", railShow: "展开时间轴", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "AI 插图", music: "背景音乐", slimRail: "精简时间轴", slimRailHint: "更窄的时间轴，只显示年份；拖动、点按或指向时显示朝代",
+    title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", railHide: "收起时间轴", railShow: "展开时间轴", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "AI 插图", music: "背景音乐", slimOn: "换成精简时间轴（只显示年份）", slimOff: "换成完整时间轴（显示朝代）",
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" },
     sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
@@ -122,7 +122,7 @@ const UI = {
     capital: "都城", works: "代表作", life: (a, b) => `${a} – ${b}`, inventor: "发明者", pkinds: { pass: "山隘", wall: "长城关口", gate: "关口" }, guards: "扼守", battles: "关前史事", built: (y) => `${y}建`,
   },
   en: {
-    title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", railHide: "Fold the timeline away", railShow: "Show the timeline", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "AI pictures", music: "Music", slimRail: "Slim timeline", slimRailHint: "A thinner timeline with years only; the period shows while you point or drag",
+    title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", railHide: "Fold the timeline away", railShow: "Show the timeline", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "AI pictures", music: "Music", slimOn: "Switch to the slim timeline (years only)", slimOff: "Switch to the full timeline (with periods)",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" },
     sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
@@ -187,6 +187,7 @@ function applyLang() {
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   setMinButton($("era-min"), !!state.eraMin);
   setRailButton(!!state.railMin);
+  setRailStyleButton();
   setMinButton($("ledger-min"), $("ledger").classList.contains("collapsed"));
   $("lang-name").textContent = L.short;
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
@@ -4238,10 +4239,20 @@ function revealYear(smooth) {
 // period while pointing, dragging or after a tap. Years are placed coarse to fine, each kept only where it has room,
 // so the stretched short periods of the whole-history view get finer numbers than the long ones.
 const YEAR_STEPS = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+// The button on the timeline shows what it switches to: the full timeline's two rows, or the slim one's single line.
+const RAIL_FULL_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 11.5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const RAIL_SLIM_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5 11v1M8 11v1M11 11v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+function setRailStyleButton() {
+  const btn = $("rail-style"), on = !!state.railSlim;
+  btn.innerHTML = on ? RAIL_FULL_ICON : RAIL_SLIM_ICON;
+  btn.setAttribute("aria-pressed", String(on));
+  btn.title = t(on ? "slimOff" : "slimOn");
+  btn.setAttribute("aria-label", btn.title);
+}
 function setRailSlim(on, remember) {
   state.railSlim = on;
   document.querySelector(".rail").classList.toggle("slim", on);
-  $("t-slim").setAttribute("aria-pressed", String(on));
+  setRailStyleButton();
   if (remember) try { localStorage.setItem("atlas-rail-slim", on ? "1" : "0"); } catch {}
   hideScrubTag();
   if (state.ready) buildRail();
@@ -4991,8 +5002,10 @@ async function init() {
   $("era-min").addEventListener("click", (e) => { e.stopPropagation(); setEraMin(!state.eraMin, true); });
   $("rail-min").addEventListener("click", (e) => { e.stopPropagation(); setRailMin(!state.railMin, true); });
   try { if (localStorage.getItem("atlas-rail-min") === "1") setRailMin(true); } catch {}
-  $("t-slim").addEventListener("click", () => setRailSlim(!state.railSlim, true));
-  try { if (localStorage.getItem("atlas-rail-slim") === "1") setRailSlim(true); } catch {}
+  $("rail-style").addEventListener("click", () => setRailSlim(!state.railSlim, true));
+  let slim = false;
+  try { slim = localStorage.getItem("atlas-rail-slim") === "1"; } catch {}
+  setRailSlim(slim);
   $("speed").addEventListener("click", (e) => { e.stopPropagation(); toggleSpeedPop(); });
   $("speed-pop").addEventListener("click", (e) => {
     const b = e.target.closest("[data-speed]");
