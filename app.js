@@ -4695,12 +4695,13 @@ function buildRail() {
 // on screen and crossfades when that changes. Volume goes through Web Audio, because iOS ignores an audio
 // element's volume (the R2 files send the CORS header this needs).
 const MUSIC_VOL = 0.3, MUSIC_FADE = 1.5;
-// In a tour, a step can carry a mood (data/moods.json: {"<tour id>/<step>": sorrow|tension|battle|triumph|journey|serene},
-// AI-tagged); its track ("mood/<culture>-<mood>", the culture from the tour's region and the step's year) then plays
-// instead of the period's, and the period's comes back on steps without one.
+// In a tour, a step can carry a mood (data/moods.json: {"<tour id>/<step>": sorrow|tension|battle|triumph|journey|serene|
+// solemn}, AI-tagged); its track ("mood/<culture>-<mood>", the culture from the tour's region and the step's year: the
+// region's early instruments before 500, its later ones after, a modern ensemble from 1840) then plays instead of the
+// period's, and the period's comes back on steps without one. Consecutive steps with one mood keep the track playing.
 const music = { key: null, track: null, ctx: null, index: null, moods: null };
 const moodCulture = (region, year) => year >= 1840 ? (region === "china" ? "china-modern" : "modern")
-  : region === "china" && year < -221 ? "china-early" : region;
+  : year < 500 ? `${region}-early` : region;
 function musicWanted() {
   if (!state.music || !(state.tour || state.playing) || !state.era || state.era.region === "world") return null;
   const period = `${state.era.region}/${state.era.id}`, tour = state.tour, s = tour?.tr.steps[tour.i];

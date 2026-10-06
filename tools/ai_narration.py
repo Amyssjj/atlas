@@ -12,9 +12,11 @@ Usage: python3 tools/ai_narration.py OUT_DIR direct [tour id ...]       # parall
                                                                         # (the project's batch queue is small)
 Reads GOOGLE_API_KEY. Writes OUT_DIR/<tour>__<step>__<voice>__<hash>.wav (24 kHz mono), where <hash> is a CRC of the
 caption (not the script), so an edited caption gets new narration and the old file is left unused. Existing files are
-skipped. Batch ids are kept in OUT_DIR/batches.json."""
+skipped. Batch ids are kept in OUT_DIR/batches.json, each response's usage in OUT_DIR/usage.jsonl (tools/usage.py)."""
 import base64, json, os, sys, time, urllib.error, urllib.request, wave, zlib
 from concurrent.futures import ThreadPoolExecutor
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from usage import record
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 MODEL, VOICES = "gemini-2.5-pro-preview-tts", ["Charon", "Kore"]
 API = "https://generativelanguage.googleapis.com"
@@ -65,6 +67,8 @@ def direct(out, only):
         key, caption, v, path = job
         try:
             r = call("POST", f"/v1beta/models/{MODEL}:generateContent", request(key, caption, v))
+            u = r.get("usageMetadata") or {}
+            record(out, MODEL, os.path.basename(path), u.get("promptTokenCount", 0), u.get("candidatesTokenCount", 0))
             save(path, r["candidates"][0]["content"]["parts"][0]["inlineData"])
         except Exception as e: print("FAIL", key, v, (e.read().decode()[:200] if hasattr(e, "read") else str(e))[:200], flush=True)
     # Alongside a running batch loop: skip what is queued in a batch, and (REVERSE=1) work from the end of the list
@@ -123,6 +127,8 @@ def collect(out):
         if f:
             for line in call("GET", f"/download/v1beta/{f}:download?alt=media", raw=True).decode().splitlines():
                 x = json.loads(line)
+                u = (x.get("response") or {}).get("usageMetadata") or {}
+                if u: record(out, MODEL, x.get("key"), u.get("promptTokenCount", 0), u.get("candidatesTokenCount", 0), batch=True)
                 try: save(os.path.join(out, x["key"]), x["response"]["candidates"][0]["content"]["parts"][0]["inlineData"])
                 except Exception: print("FAIL", x.get("key"), json.dumps(x.get("error") or x.get("response"))[:200], flush=True)
         b["state"] = "collected"
