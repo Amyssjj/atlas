@@ -939,6 +939,14 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .immersive .maplibregl-ctrl-bottom-left, .immersive .maplibregl-ctrl-bottom-right { display: none !important; }
 .immersive .tour { bottom: calc(16px + env(safe-area-inset-bottom)); }
 .immersive .tour-pic { border-radius: 14px; box-shadow: 0 12px 48px rgba(0,0,0,.5); }
+/* Reading a step's story in immersive mode: the story takes the picture's place above the tour card (no tabs, no
+   big centred picture), and the tour card stays so the next step is one tap away. */
+.immersive.tour-reading .ledger { display: flex !important; position: fixed; top: calc(16px + env(safe-area-inset-top));
+  bottom: calc(var(--tour-top, 200px) + 10px); left: 50%; right: auto; transform: translateX(-50%);
+  width: min(680px, calc(100% - 32px)); height: auto; max-height: none; box-sizing: border-box; border-radius: 14px;
+  box-shadow: 0 12px 48px rgba(0,0,0,.5); }
+.immersive.tour-reading .ledger-head, .immersive.tour-reading .event-pic { display: none !important; }
+.immersive.touring.tour-reading .tour { display: block; }
 .tour-immersive[aria-pressed="true"] { background: var(--jade-soft); }
 .tour-pic { position: fixed; z-index: 4; cursor: pointer; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,.35); background: var(--panel-solid); transition: opacity .3s ease, left .4s ease, top .4s ease, width .4s ease, height .4s ease; }
 .tour-pic.fade-out { opacity: 0; }
@@ -960,6 +968,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   /* Immersive: the card sits low, lined up with the picture's 16px side margins */
   .immersive .tour { bottom: var(--bottom-gap, 8px); width: calc(100% - 32px); box-sizing: border-box; }
   .immersive .tour-ctl { gap: 4px; }
+  .immersive.tour-reading .ledger { top: var(--top-gap, 8px); width: calc(100% - 32px); }
   .immersive .tour-ctl .chip { padding-left: 8px; padding-right: 8px; }
   .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
   .touring:not(.tour-reading) .ledger { display: none; }

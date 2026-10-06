@@ -3650,6 +3650,7 @@ function tourCard() {
   box.querySelector(".tour-auto").textContent = tour.auto ? t("tourPause") : t("tourPlay");
   box.querySelector(".tour-bar i").style.width = ((i + 1) / tr.steps.length) * 100 + "%";
   placeTourPic();
+  syncTourTop();
 }
 // Free screen rectangles for a floating picture, clear of the panels in `els` and above `bottom`: the column between the
 // side panels, and the full width below them. A panel wider than 60% of the screen (phone bars and sheets) only limits
@@ -3785,6 +3786,8 @@ function tourPause() {
 }
 // 沉浸 (immersive): during a tour, every panel but the tour card folds away and the step's picture grows. The choice is
 // remembered for the next tour; reading the story or ending the tour leaves it.
+// How far the tour card's top is from the bottom of the screen: the immersive reading card ends just above it.
+const syncTourTop = () => document.documentElement.style.setProperty("--tour-top", innerHeight - $("tour").getBoundingClientRect().top + "px");
 const immersivePref = () => { try { return !EMBED && localStorage.getItem("atlas-immersive") === "1"; } catch { return false; } };
 function setImmersive(on, remember = true) {
   state.immersive = on;
@@ -3793,6 +3796,7 @@ function setImmersive(on, remember = true) {
   if (remember) try { localStorage.setItem("atlas-immersive", on ? "1" : "0"); } catch {}
   if (!state.tour) return;
   placeTourPic();
+  syncTourTop();
   map.easeTo({ padding: tourPadding(), duration: 600 }); // keep the step's spot in view in the space that is left
 }
 function endTour() {
@@ -4799,12 +4803,20 @@ async function init() {
   tb.querySelector(".tour-prev").addEventListener("click", () => state.tour && tourStep(state.tour.i - 1));
   tb.querySelector(".tour-next").addEventListener("click", tourNext);
   tb.querySelector(".tour-close").addEventListener("click", endTour);
-  const readStep = () => { const s = state.tour?.tr.steps[state.tour.i]; if (s?.event) { tourPause(); setImmersive(false, false); $("app").classList.add("tour-reading"); openStory(s.event); } };
+  // In immersive mode the story opens in the picture's place, as a reading card above the tour card, instead of
+  // bringing the side panel back.
+  const readStep = () => { const s = state.tour?.tr.steps[state.tour.i]; if (s?.event) { tourPause(); syncTourTop(); $("app").classList.add("tour-reading"); openStory(s.event); } };
   tb.querySelector(".tour-immersive").addEventListener("click", () => setImmersive(!state.immersive));
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.immersive) { e.stopImmediatePropagation(); setImmersive(false); } }, true);
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || !state.immersive) return;
+    e.stopImmediatePropagation();
+    // Esc first closes a story being read (back to the step's picture), then leaves immersive mode.
+    if ($("app").classList.contains("tour-reading")) { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); }
+    else setImmersive(false);
+  }, true);
   tb.querySelector(".tour-story").addEventListener("click", readStep);
   $("tour-pic").addEventListener("click", () => { readStep(); placeTourPic(); });
-  addEventListener("resize", () => { if (state.tour) placeTourPic(); if (!$("event-pic").hidden) showEventPic(state.selected); });
+  addEventListener("resize", () => { if (state.tour) { placeTourPic(); syncTourTop(); } if (!$("event-pic").hidden) showEventPic(state.selected); });
   const closeEventPic = () => { eventPic.closed = "a:" + state.selected; hideEventPic(); };
   $("event-pic").querySelector(".ep-close").addEventListener("click", (e) => { e.stopPropagation(); closeEventPic(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("event-pic").hidden) { e.stopImmediatePropagation(); closeEventPic(); } }, true);
