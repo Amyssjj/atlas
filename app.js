@@ -879,7 +879,8 @@ function addPack(manifest, eras, worldIndex, only) {
 // to its own: UPGRADES[n] turns format n into n + 1, so the rest of this file only ever sees the current shape.
 // A newer pack is refused, unless the atlas page is simply stale (see checkDataFormat). A layer or plugin entry may
 // carry its own `atlas` too: an optional extra that is skipped, not fatal, on an older atlas.
-// The atlas's own data/ declares its format in data/manifest.json. History of the format: docs/custom-data.md#versions.
+// FORMAT is separate from the app version (?v=, APP_VERSION): many releases share one format. The atlas's own data/
+// declares its format in data/manifest.json. Each format and the app version that brought it: docs/custom-data.md#versions.
 const FORMAT = 1;
 const UPGRADES = {
   // n: { manifest(m), eras(d), events(d), tours(d) }, each returning format n + 1's shape. None yet.
@@ -4718,7 +4719,7 @@ async function init() {
   }
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b>` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
+    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b> · data format ${FORMAT}` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);

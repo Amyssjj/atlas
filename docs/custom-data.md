@@ -145,9 +145,13 @@ The format goes up when the atlas gains something a pack may rely on, such as a 
 an older atlas would silently get wrong. Fields an older atlas can safely ignore don't raise it. Set `atlas` to the
 lowest format that has everything your pack uses:
 
-| Format | Added |
-| --- | --- |
-| 1 | Everything in these pages: manifest, `eras.json`, `events.json`, `tours.json`, layers, plugins (API 1), `basemap`. |
+The format is numbered separately from the app. The app version (`?v=`, shown as "Atlas v178" in the map credits)
+goes up with every release; the format only goes up when packs need to know, so the table below is the full list of
+format changes. The credits show both, for example "Atlas v178 · data format 1".
+
+| Format | First app version | Added |
+| --- | --- | --- |
+| 1 | v178 (earlier versions read format 1 only) | Everything in these pages: manifest, `eras.json`, `events.json`, `tours.json`, layers, plugins (API 1), `basemap`. |
 
 The atlas's own data declares its format the same way, in `data/manifest.json`.
 
