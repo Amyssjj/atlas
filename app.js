@@ -112,7 +112,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", settings: "设置", stStyle: "面板风格", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stDial: "拨盘", stDialLook: "拨盘样式", dialTap: "年 · 轻点播放", dialTapStop: "年 · 轻点暂停", dialLabel: "年份拨盘：按住转动，外圈换朝代，内圈换年份，轻点中心播放", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", settings: "设置", stStyle: "面板风格", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stLayout: "布局", stAutoLayout: "自动布局", stAutoLayoutHint: "导览时转为导览布局，读故事时转为阅读布局，播放时转为一览，之后回到所选布局", stPins: "研究布局：固定两侧面板", stPinsHint: "取消固定后，面板收成屏幕边上的标签", pin: "固定面板", unpin: "取消固定", exLayers: "图层", stFull: "完整", stSlim: "精简", stDial: "拨盘", stDialLook: "拨盘样式", dialTap: "年 · 轻点播放", dialTapStop: "年 · 轻点暂停", dialLabel: "年份拨盘：按住转动，外圈换朝代，内圈换年份，轻点中心播放", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -137,7 +137,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", settings: "Settings", stStyle: "Panel style", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stDial: "Dial", stDialLook: "Dial look", dialTap: "tap to play", dialTapStop: "tap to pause", dialLabel: "Year dial: press and turn; the outer ring changes period, the inner ring the year; tap the centre to play", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", settings: "Settings", stStyle: "Panel style", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stLayout: "Layout", stAutoLayout: "Auto layout", stAutoLayoutHint: "A tour switches to Cinema, a story to Reader, playback to Glance, then back to your layout", stPins: "Explorer: pin both side panels", stPinsHint: "Unpinned panels fold to tabs on the screen edge", pin: "Pin panel", unpin: "Unpin panel", exLayers: "Layers", stFull: "Full", stSlim: "Slim", stDial: "Dial", stDialLook: "Dial look", dialTap: "tap to play", dialTapStop: "tap to pause", dialLabel: "Year dial: press and turn; the outer ring changes period, the inner ring the year; tap the centre to play", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -2982,6 +2982,7 @@ function renderPlaces() {
 
 const TABS = ["tours", "events", "rulers", "people"];
 function renderLedger() {
+  if (state.layout) { applyLayout(); renderExNav(); }
   if (!state.era) return;
   syncAuto();
   $("ev-filter").hidden = true;
@@ -3881,6 +3882,7 @@ async function startTour(id, i = 0, auto = false) {
   stop(); closeSearch();
   await illuSet("ai");
   state.tour = { id, tr, i: 0, auto };
+  applyLayout();
   syncMusic();
   setMode(tourRegion(tr));
   $("tour").hidden = false;
@@ -4156,6 +4158,7 @@ function endTour() {
   setImmersive(false, false);
   clearTimeout(state.tour.timer);
   state.tour = null;
+  applyLayout();
   stopNarration();
   syncMusic();
   $("tour").hidden = true;
@@ -4813,6 +4816,7 @@ function play() {
   $("play").setAttribute("aria-label", t("pause"));
   const base = state.zoom === 2 ? 450 : 260, tick = Math.max(120, base / state.speed);
   setTimeout(syncMusic, 0); // once state.playing is set
+  setTimeout(() => state.layout && applyLayout(), 0);
   state.playing = setInterval(() => {
     if (state.year >= state.range.end) return stop();
     const era = state.era;
@@ -4836,6 +4840,132 @@ function setSpeed(v, remember) {
   if (state.playing) { stop(); play(); }
   if (!$("settings").hidden) renderSettings();
 }
+/* ---------- layouts: how the panels are arranged (html[data-layout], style.css) ---------- */
+
+// The chosen layout is where Atlas rests; 自动布局 changes it for a while: a story being read → 阅读, a tour → 导览,
+// playback → 一览. The preview draws the panels on a 56×40 map.
+const LAYOUTS = [
+  { id: "glance", name: "Glance", name_zh: "一览", svg: '<rect x="3" y="3" width="15" height="5" rx="1"/><rect x="38" y="3" width="15" height="5" rx="1"/><rect x="3" y="34" width="50" height="3" rx="1"/>' },
+  { id: "classic", name: "Classic", name_zh: "经典", svg: '<rect x="3" y="3" width="16" height="12" rx="1"/><rect x="38" y="3" width="15" height="24" rx="1"/><rect x="3" y="31" width="50" height="6" rx="1"/>' },
+  { id: "reader", name: "Reader", name_zh: "阅读", svg: '<rect x="3" y="3" width="12" height="7" rx="1"/><rect x="33" y="0" width="23" height="40"/><rect x="3" y="33" width="27" height="4" rx="1"/>' },
+  { id: "cinema", name: "Cinema", name_zh: "导览", svg: '<rect x="14" y="27" width="28" height="7" rx="1"/><rect x="3" y="36" width="50" height="2" rx="1"/>' },
+  { id: "explorer", name: "Explorer", name_zh: "研究", svg: '<rect x="0" y="0" width="13" height="40"/><rect x="43" y="0" width="13" height="40"/><rect x="13" y="35" width="30" height="5"/>' },
+];
+const PIN_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4l-.5 4 2.5 2.5v1.5H8.7L8 15l-.7-5.5H4V8l2.5-2.5z"/></svg>';
+const layoutOk = (id) => LAYOUTS.some((l) => l.id === id);
+function layoutNow() {
+  if (state.immersive) return state.layoutShown || state.layout;
+  if (state.autoLayout) {
+    if (state.reading) return "reader";
+    if (state.tour) return "cinema";
+    if (state.playing) return "glance";
+  }
+  return state.layout;
+}
+function applyLayout() {
+  const L = layoutNow(), root = document.documentElement;
+  if (L === state.layoutShown) return;
+  state.layoutShown = L;
+  if (L === "classic") root.removeAttribute("data-layout"); else root.dataset.layout = L;
+  root.classList.remove("l-peek", "r-peek");
+  if (!$("settings").hidden) renderSettings();
+  if (typeof sizeRailVars === "function" && state.ready) requestAnimationFrame(sizeRailVars);
+  renderEdgeTabs();
+}
+function setLayout(id, remember = true) {
+  state.layout = layoutOk(id) ? id : "classic";
+  if (remember) try { localStorage.setItem("atlas-layout", state.layout); } catch {}
+  applyLayout();
+}
+function setAutoLayout(on, remember = true) {
+  state.autoLayout = on;
+  $("st-autolayout").setAttribute("aria-pressed", String(on));
+  if (remember) try { localStorage.setItem("atlas-autolayout", on ? "1" : "0"); } catch {}
+  applyLayout();
+}
+// Explorer pins: l = era panel, r = side panel. Unpinned panels hide behind a tab on their edge.
+function setPins(pins, remember = true) {
+  state.pins = { ...state.pins, ...pins };
+  const root = document.documentElement;
+  root.classList.toggle("l-off", !state.pins.l);
+  root.classList.toggle("r-off", !state.pins.r);
+  root.classList.remove("l-peek", "r-peek");
+  for (const [k, id] of [["l", "pin-l"], ["r", "pin-r"]]) {
+    const b = $(id);
+    b.setAttribute("aria-pressed", String(state.pins[k]));
+    b.title = t(state.pins[k] ? "unpin" : "pin");
+    b.setAttribute("aria-label", b.title);
+  }
+  $("st-pins").setAttribute("aria-pressed", String(state.pins.l && state.pins.r));
+  if (remember) try { localStorage.setItem("atlas-pins", JSON.stringify(state.pins)); } catch {}
+  renderEdgeTabs();
+}
+function renderEdgeTabs() {
+  const l = $("edge-l"), r = $("edge-r");
+  if (!l || !state.era) return;
+  l.innerHTML = `<span class="sl">${esc((state.era.glyph || "").slice(0, 1))}</span>${esc(zh() ? state.era.name_zh || state.era.glyph : bandName(state.era))}<small>${esc(fmtYear(state.year))}</small>`;
+  r.innerHTML = `${esc(t(state.tab === "people" ? "people_l" : state.tab))}`;
+}
+function initLayouts() {
+  const edge = (side) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = `edge-tab ${side}`;
+    b.id = `edge-${side}`;
+    b.addEventListener("click", (e) => { e.stopPropagation(); document.documentElement.classList.add(`${side}-peek`); });
+    $("app").append(b);
+  };
+  edge("l"); edge("r");
+  const pin = (id, where, k) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "pin";
+    b.id = id;
+    b.innerHTML = PIN_ICON;
+    b.addEventListener("click", (e) => { e.stopPropagation(); setPins({ [k]: !state.pins[k] }); });
+    where.append(b);
+  };
+  pin("pin-l", document.querySelector(".era-corner"), "l");
+  pin("pin-r", document.querySelector(".ledger-head"), "r");
+  // A panel slid out from its tab folds away again when the map is touched.
+  map.on("mousedown", () => document.documentElement.classList.remove("l-peek", "r-peek"));
+  map.on("touchstart", () => document.documentElement.classList.remove("l-peek", "r-peek"));
+  // Phone 研究: a bottom bar of the side panel's tabs plus the layers.
+  const nav = document.createElement("nav");
+  nav.className = "ex-nav";
+  const ICONS = {
+    tours: '<path d="M4 18l5-12 5 8 3-4 3 8z"/>', events: '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>',
+    rulers: '<path d="M4 17l2-9 4 4 2-6 2 6 4-4 2 9z"/><path d="M4 20h16"/>', people: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/>',
+    layers: '<path d="M12 4l9 5-9 5-9-5z"/><path d="M3 14l9 5 9-5"/>',
+  };
+  nav.innerHTML = ["tours", "events", "rulers", "people", "layers"].map((k) => `<button type="button" data-k="${k}" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${esc(t(k === "people" ? "people_l" : k === "layers" ? "exLayers" : k))}</span></button>`).join("");
+  nav.addEventListener("click", (e) => {
+    const k = e.target.closest("[data-k]")?.dataset.k;
+    if (!k) return;
+    if (k === "layers") return $("era-more").click();
+    const open = state.tab === k && !$("ledger").classList.contains("collapsed");
+    if (open) return $("ledger-toggle").click();
+    $("tab-" + k).click();
+  });
+  $("app").append(nav);
+  try {
+    state.layout = localStorage.getItem("atlas-layout");
+    state.autoLayout = localStorage.getItem("atlas-autolayout") !== "0";
+    state.pins = JSON.parse(localStorage.getItem("atlas-pins") || "null");
+  } catch {}
+  if (!layoutOk(state.layout)) state.layout = "classic";
+  state.autoLayout ??= true;
+  if (!state.pins) state.pins = { l: true, r: true };
+  $("st-autolayout").addEventListener("click", () => setAutoLayout(!state.autoLayout));
+  $("st-pins").addEventListener("click", () => { const on = !(state.pins.l && state.pins.r); setPins({ l: on, r: on }); });
+  setPins(state.pins, false);
+  setAutoLayout(state.autoLayout, false);
+}
+function renderExNav() {
+  const open = !$("ledger").classList.contains("collapsed");
+  document.querySelectorAll(".ex-nav [data-k]").forEach((b) => b.setAttribute("aria-pressed", String(open && b.dataset.k === state.tab)));
+}
+
 /* ---------- time dial: the timeline as a puck in the corner that opens into two rings ---------- */
 
 // Outer ring: the periods of the timeline (one sector each, settles on a period's first year when let go). Inner ring:
@@ -5019,6 +5149,7 @@ const seg = (items, cur) => items.map(([v, label]) => `<button type="button" dat
 // Fills the parts that are drawn from state; the switches and chips moved here keep their own handlers.
 function renderSettings() {
   $("st-ver").textContent = `Atlas v${APP_VERSION}`;
+  $("st-layouts").innerHTML = LAYOUTS.map((l) => `<button type="button" data-v="${l.id}" aria-pressed="${l.id === state.layout}" class="${l.id === state.layoutShown ? "now" : ""}"><i><svg viewBox="0 0 56 40" aria-hidden="true">${l.svg}</svg></i>${esc(zh() ? l.name_zh : l.name)}</button>`).join("");
   $("st-styles").innerHTML = UI_STYLES.map((u) => `<button type="button" data-v="${u.id}" aria-pressed="${u.id === state.ui}"><i style="${u.preview}"><b></b></i>${esc(zh() ? u.name_zh : u.name)}</button>`).join("");
   $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")], ["dial", t("stDial")]], state.dial ? "dial" : state.railSlim ? "slim" : "full");
   $("st-dials").hidden = !state.dial;
@@ -5047,6 +5178,9 @@ function toggleSettings(open) {
   box.focus({ preventScroll: true });
 }
 function resetSettings() {
+  setLayout("classic");
+  setAutoLayout(true);
+  setPins({ l: true, r: true });
   setUIStyle("classic");
   setPanel({ color: "auto", op: null });
   state.flat3d = false;
@@ -5069,6 +5203,7 @@ function initSettings() {
   $("st-reset").addEventListener("click", resetSettings);
   const on = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) { fn(b.dataset.v); renderSettings(); } });
   on("st-styles", (v) => setUIStyle(v));
+  on("st-layouts", (v) => setLayout(v));
   on("st-rail", (v) => { setDial(v === "dial", true); if (v !== "dial") setRailSlim(v === "slim", true); });
   on("st-dials", (v) => { setDialSkin(v); setDialOpen(true); scheduleDialClose(); });
   on("st-speed", (v) => setSpeed(+v, true));
@@ -5145,6 +5280,7 @@ function sizeRailVars() {
 function stop() {
   clearInterval(state.playing);
   state.playing = null;
+  if (state.layout) applyLayout();
   syncMusic();
   $("play-icon").innerHTML = '<path d="M4 2l10 6-10 6z"/>';
   $("play").setAttribute("aria-label", t("play"));
@@ -5532,6 +5668,7 @@ async function init() {
   document.addEventListener("click", (e) => { if (!$("ws-pop").hidden && !e.target.closest("#ws-pop")) toggleStripPop(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("ws-pop").hidden) toggleStripPop(false); });
   initSettings();
+  initLayouts();
   toggle("t-3d", "show3d", () => { state.flat3d = false; set3d(state.show3d, true); });
   renderLookChips();
   renderPanelChip();
