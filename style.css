@@ -243,9 +243,10 @@ html:lang(zh-CN) .story-body p, html:lang(zh-CN) .story-lede { font-size: 15px; 
   border-radius: 8px 8px 0 0; background: var(--panel-solid); color: var(--muted); cursor: pointer; }
 .rail-min:hover, .rail-min:focus-visible { color: var(--ink); }
 .rail-min svg { width: 14px; height: 14px; }
-/* Folded timeline: only the play button and the button that unfolds it */
+/* Folded timeline: the play button with its speed, and the button that unfolds it */
 .rail.min { right: auto; display: flex; align-items: center; gap: 6px; padding: 8px; }
-.rail.min > :not(.play-box, .rail-min), .rail.min .speed, .rail.min .speed-pop { display: none !important; }
+.rail.min > :not(.play-box, .rail-min) { display: none !important; }
+.rail.min .play-box { margin-right: 10px; } /* room for the speed badge on the play button's corner */
 .rail.min .rail-min { position: static; transform: none; width: 28px; height: 28px; border: 1px solid var(--rule); border-radius: 50%; }
 .play {
   width: 40px; height: 40px;
