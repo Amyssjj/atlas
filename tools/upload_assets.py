@@ -1,7 +1,8 @@
 """Upload generated assets to the Cloudflare R2 bucket served at https://data.atlas.daiyip.com.
 
 Usage: python3 tools/upload_assets.py [ai] [tiles]
-Reads R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_BUCKET from the environment.
+Reads ATLAS_R2_ACCOUNT_ID, ATLAS_R2_ACCESS_KEY_ID, ATLAS_R2_SECRET_ACCESS_KEY and ATLAS_R2_BUCKET from the environment
+(prefixed, so other projects can keep their own R2 credentials beside these).
   ai:    data/ai/*.webp (made by tools/pack_ai_illustrations.py) go to ai/<file>; their names already carry a hash.
   tiles: tiles/pack/ and tiles/sat/ (made by tools/pack_tiles.py) go to tiles/<dir>/<name>-<hash>.png, and
          data/tiles.json ({"pack/4-0-0": "pack/4-0-0-<hash>.png", ...}, read by app.js) is rewritten.
@@ -13,10 +14,10 @@ import boto3
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SETS = {"ai": ("data/ai", "ai/", "image/webp")}
 
-s3 = boto3.client("s3", endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
-                  aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],
+s3 = boto3.client("s3", endpoint_url=f"https://{os.environ['ATLAS_R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
+                  aws_access_key_id=os.environ["ATLAS_R2_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["ATLAS_R2_SECRET_ACCESS_KEY"],
                   region_name="auto")
-BUCKET = os.environ["R2_BUCKET"]
+BUCKET = os.environ["ATLAS_R2_BUCKET"]
 
 def existing(prefix):
     keys = set()
