@@ -3324,7 +3324,9 @@ async function renderStory() {
   fillIllus(box);
   showEventPic(ev.id);
   box.onclick = (e) => {
-    if (e.target.closest(".illu.ai")) showEventPic(ev.id, true);
+    // Any picture in the story opens large (its credit link still goes to Commons).
+    const pic = !e.target.closest("a") && e.target.closest("figure.illu[data-illu]");
+    if (pic) pic.dataset.illu.startsWith("a:") ? showEventPic(ev.id, true) : showIlluLarge(pic.dataset.illu);
     const go = e.target.closest("[data-go]")?.dataset.go;
     if (go === "back") {
       state.reading = false; $("app").classList.remove("tour-reading"); renderLedger();
@@ -3730,11 +3732,13 @@ function placeTourPic() {
 // stays closed for that event until the story is left; the small copy in the story opens it again.
 const eventPic = { key: null, closed: null };
 function eventPicRect(im) {
-  const rail = document.querySelector(".rail").getBoundingClientRect();
+  // Above the timeline; in immersive mode (timeline hidden) above the tour card.
+  const rail = document.querySelector(".rail").getBoundingClientRect(), tour = $("tour").getBoundingClientRect();
+  const bottom = (rail.height ? rail.top : tour.height ? tour.top : innerHeight) - 10;
   const ratio = im.w / im.h;
-  let p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], rail.top - 10, 16), ratio, 0.8, 900, 600);
+  let p = fitPic(freeRects([document.querySelector(".era"), $("ledger")], bottom, 16), ratio, 0.8, 900, 600);
   // Too little room between the panels: cover them instead, centred over the map, until it is closed.
-  if (!p || p.w < Math.min(480, innerWidth * 0.6)) p = fitPic([{ l: 8, r: innerWidth - 8, t: 8, b: rail.top - 10 }], ratio, 0.75, 900, 600);
+  if (!p || p.w < Math.min(480, innerWidth * 0.6)) p = fitPic([{ l: 8, r: innerWidth - 8, t: 8, b: bottom }], ratio, 0.75, 900, 600);
   return p && p.h >= 100 ? { x: (p.l + p.r - p.w) / 2, y: (p.t + p.b - p.h) / 2, w: p.w, h: p.h } : null;
 }
 async function showEventPic(id, force) {
@@ -3745,12 +3749,33 @@ async function showEventPic(id, force) {
   if (!im || state.selected !== id || !state.reading) return hideEventPic();
   const at = eventPicRect(im);
   if (!at) return hideEventPic();
+  box.classList.toggle("manual", !!force); // opened by a click: shown even over the immersive reading card
   // Rebuilt when the language changes too, for the picture's description.
   if (eventPic.key === key + state.lang && !box.hidden) return placeBox(box, at);
   eventPic.key = key + state.lang;
   fadePic(box, async () => {
     box.querySelector(".ep-fig").innerHTML = illuSlot(key);
     await fillIllus(box);
+    return at;
+  });
+}
+// A Wikimedia picture opens in the same viewer: the packed thumbnail at once, then a sharp copy from Commons when it
+// arrives (if Commons can't be reached, the thumbnail stays).
+const commonsLarge = (url) => {
+  const m = /^https:\/\/commons\.wikimedia\.org\/wiki\/File:(.+)$/.exec(url || "");
+  return m ? `https://commons.wikimedia.org/wiki/Special:FilePath/${m[1]}?width=1280` : null;
+};
+async function showIlluLarge(key) {
+  const box = $("event-pic"), idx = await illuSet("img"), im = idx.images[idx.keys[key]];
+  const at = im && eventPicRect(im);
+  if (!at) return;
+  eventPic.key = key + state.lang;
+  box.classList.add("manual");
+  fadePic(box, async () => {
+    box.querySelector(".ep-fig").innerHTML = illuSlot(key);
+    await fillIllus(box);
+    const img = box.querySelector("img"), big = commonsLarge(im.url);
+    if (img && big) { const hi = new Image(); hi.onload = () => { if (img.isConnected) img.src = big; }; hi.src = big; }
     return at;
   });
 }

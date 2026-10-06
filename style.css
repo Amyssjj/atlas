@@ -946,7 +946,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   width: min(680px, calc(100% - 32px)); height: auto; max-height: none; box-sizing: border-box; border-radius: 14px;
   box-shadow: 0 12px 48px rgba(0,0,0,.5); }
 /* Only the story itself: no tabs, selected-country card, story navigation (the tour card moves on) or map note */
-.immersive.tour-reading .ledger-head, .immersive.tour-reading .event-pic, .immersive.tour-reading .sel-card,
+.immersive.tour-reading .ledger-head, .immersive.tour-reading .event-pic:not(.manual), .immersive.tour-reading .sel-card,
 .immersive.tour-reading .story-nav, .immersive.tour-reading .ledger .note { display: none !important; }
 .read-close { display: none; }
 .immersive.tour-reading .read-close { display: flex; align-items: center; justify-content: center; position: absolute; top: 10px; right: 10px;
@@ -972,7 +972,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .event-pic .illu figcaption { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 18px 12px 7px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
 .event-pic .ep-close { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; color: #fff; background: rgba(0,0,0,.5); border: 0; font-size: 20px; line-height: 1; cursor: pointer; }
 .event-pic .ep-close:hover { background: rgba(0,0,0,.7); }
-.story .illu.ai { cursor: zoom-in; }
+.story .illu img { cursor: zoom-in; }
 .tour-pic .illu figcaption { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 14px 10px 5px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
 @media (max-width: 720px) {
   .tour { bottom: calc(var(--rail-h, 64px) + 8px + var(--bottom-gap, 8px)); width: calc(100% - 16px); padding: 10px 12px; }
