@@ -1276,3 +1276,38 @@ html.embed .era-year { font-size: 15px; grid-area: 2 / 2; }
   text-shadow: 0 0 3px #f4f2ea, 0 0 3px #f4f2ea, 0 0 6px #f4f2ea; }
 .mk-event.active span { display: block; }
 .mk-event.open span { color: #8f2a1b; font-size: 13px; }
+
+/* Slim timeline (精简时间轴): one row, a thin strip of periods without names, round years under the slider.
+   The scrub tag names the period while pointing, dragging or just after a tap. */
+.years { display: none; }
+.rail.slim { padding: 6px 14px 4px; row-gap: 0; }
+.rail.slim .play-box, .rail.slim .zoom { grid-row: 1; }
+.rail.slim .scale { display: none; }
+.rail.slim .play { width: 32px; height: 32px; }
+.rail.slim .play svg { width: 13px; height: 13px; }
+.rail.slim .zbtn { width: 26px; height: 26px; font-size: 14px; }
+.rail.slim .bands { height: 5px; margin-top: 3px; border-radius: 3px; overflow: hidden; background: var(--rule); pointer-events: none; }
+.rail.slim .band { bottom: 0; border-left: 0; padding: 0; background: transparent; }
+.rail.slim .band:nth-of-type(even) { background: color-mix(in srgb, var(--muted) 30%, transparent); }
+.rail.slim .band.current, .rail.slim .band.scrub { background: var(--jade); }
+.rail.slim .band > * { display: none; }
+.rail.slim .band.snap.era-start { border-left: 2px solid var(--panel-solid); }
+.rail.slim .sel-span { bottom: 0; height: 2px; border-radius: 0; }
+.rail.slim .ticks { top: 0; height: 5px; }
+.rail.slim .tick { top: 0; height: 5px; width: 2px; opacity: 0.45; }
+.rail.slim .tick.l2, .rail.slim .tick.l3 { display: none; }
+.rail.slim input[type=range] { display: block; height: 18px; margin: 1px 0 0; }
+.rail.slim .years { display: block; position: relative; height: 13px; margin-top: -2px; pointer-events: none; }
+.years span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap;
+  font: 500 10px/13px var(--font-data); color: var(--muted); font-variant-numeric: tabular-nums; }
+.years span::before { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 3px; background: var(--rule); }
+@media (max-width: 720px) {
+  .rail.slim { padding: 4px 8px 3px; }
+  .rail.slim .bands { height: 5px; }
+  .rail.slim .ticks { top: 0; }
+  .rail.slim input[type=range] { height: 24px; margin-top: 0; }
+  .rail.slim .track-view { mask-image: none; }
+  .rail.slim .zbtn { width: 28px; height: 28px; }
+  .rail.slim .play { width: 32px; height: 32px; }
+}
+.years small { margin-left: 2px; font-size: 8px; letter-spacing: 0.02em; }
