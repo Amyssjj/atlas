@@ -1643,3 +1643,92 @@ html[data-ui="editorial"] .maplibregl-ctrl-group:not(:empty) { border-radius: 0;
 html[data-ui="editorial"] .maplibregl-ctrl-attrib.maplibregl-compact { backdrop-filter: none; }
 html[data-ui="lacquer"] .maplibregl-ctrl-group:not(:empty) { border-radius: 6px; border-color: rgba(216, 180, 110, 0.55); }
 html[data-ui="lacquer"] .maplibregl-ctrl-attrib.maplibregl-compact { border-color: rgba(216, 180, 110, 0.55); }
+
+/* Layouts (设置 › 布局): html[data-layout] arranges the panels for what the visitor is doing. 经典 (classic) is the
+   layout above and sets nothing. 自动布局 switches on its own: a tour → 导览, a story being read → 阅读, playback → 一览,
+   then back to the chosen layout. */
+/* 一览 Glance: the map alone; the era card shrinks to seal, name and year, the side panel to its tabs. */
+html[data-layout="glance"] .era { width: auto; max-width: calc(100% - 32px); padding: 8px 10px; gap: 0 10px; grid-template-columns: auto auto auto auto; grid-template-rows: auto; align-items: center; }
+html[data-layout="glance"] .era > * { grid-row: 1 !important; }
+html[data-layout="glance"] .era > :not(.seal, .era-name, .era-year, .era-corner, .region-pop, .look-pop, .panel-pop, .share-box) { display: none !important; }
+html[data-layout="glance"] .era > .seal { grid-area: auto; width: 38px; height: 38px; font-size: 24px; }
+html[data-layout="glance"] .era > .seal.double { font-size: 14px; }
+html[data-layout="glance"] .era > .era-name { grid-area: auto; font-size: 15px; white-space: nowrap; }
+html[data-layout="glance"] .era > .era-year { grid-area: auto; font-size: 18px; }
+html[data-layout="glance"] .era > .era-corner { grid-area: auto; order: 0; margin: 0 0 0 4px; }
+html[data-layout="glance"] .era .era-more, html[data-layout="glance"] .era .era-min { display: none; }
+html[data-layout="glance"] .ledger > :not(.ledger-head) { display: none !important; }
+html[data-layout="glance"] .ledger { width: auto; }
+html[data-layout="glance"] .world-strip, html[data-layout="glance"] .auto-strip,
+html[data-layout="glance"] .mk-army, html[data-layout="glance"] .maplibregl-marker:has(.mk-army) { display: none !important; }
+
+/* 阅读 Reader: the story gets a docked reading column with larger type; the map frames the place beside it. */
+@media (min-width: 721px) {
+  html[data-layout="reader"] .ledger { top: 0; right: 0; bottom: 0; max-height: none; height: 100%; width: min(500px, 46vw); border-radius: 0; border-width: 0 0 0 1px; box-shadow: -8px 0 30px rgba(0,0,0,.18); }
+  html[data-layout="reader"] .story { padding: 0 32px 32px; }
+  html[data-layout="reader"] .story-head h3 { font-size: 28px; }
+  html[data-layout="reader"] .rail { right: calc(min(500px, 46vw) + 16px); }
+  html[data-layout="reader"] .dial { right: calc(min(500px, 46vw) + 16px); }
+}
+html[data-layout="reader"]:lang(zh-CN) .story-body p, html[data-layout="reader"]:lang(zh-CN) .story-lede { font-size: 17px; line-height: 1.9; }
+html[data-layout="reader"] .story-body, html[data-layout="reader"] .story-lede { max-width: 34em; }
+html[data-layout="reader"] .world-strip, html[data-layout="reader"] .auto-strip { display: none !important; }
+@media (max-width: 720px) { html[data-layout="reader"] .ledger:not(.collapsed) { height: 72dvh; max-height: none; } }
+
+/* 导览 Cinema: a tour plays like a film; only the tour card and the timeline stay. */
+html[data-layout="cinema"] .era, html[data-layout="cinema"] .ledger, html[data-layout="cinema"] .world-strip,
+html[data-layout="cinema"] .auto-strip { display: none !important; }
+
+/* 研究 Explorer: a workbench on wide screens. Panels dock to the edges and the map fills the middle. Each has a pin:
+   unpinned, it folds to a tab on the screen edge, and the tab slides it over the map until the map is touched. */
+.pin, .edge-tab { display: none; }
+@media (min-width: 1000px) {
+  html[data-layout="explorer"] { --ex-l: 330px; --ex-r: 380px; }
+  html[data-layout="explorer"].l-off { --ex-l: 0px; }
+  html[data-layout="explorer"].r-off { --ex-r: 0px; }
+  html[data-layout="explorer"] .era { top: 0; left: 0; bottom: 0; width: 330px; max-width: none; border-radius: 0; overflow-y: auto; align-content: start; border-width: 0 1px 0 0; box-sizing: border-box; translate: none; }
+  html[data-layout="explorer"] .ledger { top: 0; right: 0; bottom: 0; max-height: none; width: 380px; border-radius: 0; border-width: 0 0 0 1px; }
+  html[data-layout="explorer"] .rail { left: var(--ex-l); right: var(--ex-r); bottom: 0; border-radius: 0; border-width: 1px 0 0; }
+  html[data-layout="explorer"] .rail-min { display: none; }
+  html[data-layout="explorer"] .dial { right: calc(var(--ex-r) + 16px); }
+  html[data-layout="explorer"] .world-strip { left: calc(var(--ex-l) + 16px); max-width: calc(100vw - var(--ex-l) - var(--ex-r) - 32px); }
+  html[data-layout="explorer"] .maplibregl-ctrl-bottom-left { left: var(--ex-l); }
+  html[data-layout="explorer"] .settings { left: 342px !important; }
+  html[data-layout="explorer"] .pin { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border-radius: 6px; border: 1px solid var(--rule); background: none; color: var(--cinnabar); cursor: pointer; flex: none; }
+  html[data-layout="explorer"] .pin svg { width: 14px; height: 14px; fill: currentColor; }
+  html[data-layout="explorer"] .pin[aria-pressed="false"] { color: var(--muted); }
+  html[data-layout="explorer"] .pin[aria-pressed="false"] svg { fill: none; stroke: currentColor; stroke-width: 1.5; transform: rotate(45deg); }
+  html[data-layout="explorer"].l-off:not(.l-peek) .era, html[data-layout="explorer"].r-off:not(.r-peek) .ledger { display: none !important; }
+  html[data-layout="explorer"].l-off .edge-tab.l:not([hidden]), html[data-layout="explorer"].r-off .edge-tab.r:not([hidden]) { display: grid; }
+  html[data-layout="explorer"].l-peek .era { top: 12px; left: 12px; bottom: 12px; border-radius: 12px; border-width: 1px; box-shadow: 0 16px 50px rgba(0,0,0,.4); z-index: 7; }
+  html[data-layout="explorer"].r-peek .ledger { top: 12px; right: 12px; bottom: 12px; border-radius: 12px; border-width: 1px; box-shadow: 0 16px 50px rgba(0,0,0,.4); z-index: 7; }
+  html[data-layout="explorer"].l-peek .edge-tab.l, html[data-layout="explorer"].r-peek .edge-tab.r { display: none; }
+}
+.edge-tab { position: absolute; z-index: 5; top: 50%; transform: translateY(-50%); justify-items: center; gap: 8px; padding: 12px 7px; background: var(--panel); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--rule); box-shadow: var(--shadow); color: var(--ink); font: 600 13px/1.1 var(--font-display); writing-mode: vertical-rl; letter-spacing: .15em; cursor: pointer; }
+.edge-tab.l { left: 0; border-radius: 0 10px 10px 0; border-left: 0; }
+.edge-tab.r { right: 0; border-radius: 10px 0 0 10px; border-right: 0; }
+.edge-tab .sl { writing-mode: horizontal-tb; width: 26px; height: 26px; display: grid; place-items: center; background: var(--cinnabar); color: var(--cinnabar-ink); border-radius: 4px; font: 700 15px var(--font-display); letter-spacing: 0; }
+.edge-tab small { font: 500 11px var(--font-data); letter-spacing: 0; color: var(--muted); }
+/* On a phone 研究 is an app: a bottom bar switches between tours, events, rulers, people and layers. */
+.ex-nav { display: none; }
+@media (max-width: 720px) {
+  html[data-layout="explorer"] .ex-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; grid-template-columns: repeat(5, 1fr); padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); background: var(--panel-solid); border-top: 1px solid var(--rule); }
+  .ex-nav button { appearance: none; border: 0; background: none; color: var(--muted); display: grid; justify-items: center; gap: 3px; font: 600 11px var(--font-body); padding: 4px 0; cursor: pointer; }
+  .ex-nav svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .ex-nav [aria-pressed="true"] { color: var(--cinnabar); }
+  html[data-layout="explorer"] { --bottom-gap: 64px; }
+  html[data-layout="explorer"] .rail { bottom: calc(64px + env(safe-area-inset-bottom)); left: 0; right: 0; border-radius: 0; border-width: 1px 0 0; }
+  html[data-layout="explorer"] .rail-min { display: none; }
+  html[data-layout="explorer"] .dial { bottom: calc(76px + env(safe-area-inset-bottom)); }
+  html[data-layout="explorer"] .ledger-tabs { display: none !important; }
+}
+/* Layout cards in settings: a tiny drawing of where the panels go. */
+.st-layouts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.st-layouts button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 5px 4px 6px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
+.st-layouts button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
+.st-layouts i { display: block; width: 100%; aspect-ratio: 7 / 5; border-radius: 4px; overflow: hidden; background: #6a8a76; }
+.st-layouts svg { width: 100%; height: 100%; display: block; }
+.st-layouts rect { fill: rgba(255,255,255,.92); }
+.st-layouts button.now:not([aria-pressed="true"]) { border-style: dashed; border-color: var(--cinnabar); }
+.st-switch > span { display: grid; gap: 1px; }
+.st-switch small { font: 400 11px/1.35 var(--font-body); color: var(--muted); }
