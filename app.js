@@ -3899,6 +3899,7 @@ async function tourStep(i) {
   drawTourPath(tour, i);
   tourCard();
   narrateStep(tour, i);
+  syncMusic();
   state.selected = s.event || null;
   state.reading = false;
   if (state.zoom && !inWindow(s.year)) { state.scope = null; state.win = windowFor(state.zoom, s.year); refreshTimeline(); }
@@ -4689,16 +4690,25 @@ function buildRail() {
 // on screen and crossfades when that changes. Volume goes through Web Audio, because iOS ignores an audio
 // element's volume (the R2 files send the CORS header this needs).
 const MUSIC_VOL = 0.3, MUSIC_FADE = 1.5;
-const music = { key: null, track: null, ctx: null, index: null };
-const musicWanted = () => state.music && (state.tour || state.playing) && state.era && state.era.region !== "world"
-  ? `${state.era.region}/${state.era.id}` : null;
+// In a tour, a step can carry a mood (data/moods.json: {"<tour id>/<step>": sorrow|tension|battle|triumph|journey|serene},
+// AI-tagged); its track ("mood/<culture>-<mood>", the culture from the tour's region and the step's year) then plays
+// instead of the period's, and the period's comes back on steps without one.
+const music = { key: null, track: null, ctx: null, index: null, moods: null };
+const moodCulture = (region, year) => year >= 1840 ? (region === "china" ? "china-modern" : "modern")
+  : region === "china" && year < -221 ? "china-early" : region;
+function musicWanted() {
+  if (!state.music || !(state.tour || state.playing) || !state.era || state.era.region === "world") return null;
+  const period = `${state.era.region}/${state.era.id}`, tour = state.tour, s = tour?.tr.steps[tour.i];
+  const mood = s && music.moods?.[`${tour.id}/${tour.i}`];
+  return mood ? [`mood/${moodCulture(tourRegion(tour.tr), s.year)}-${mood}`, period] : [period];
+}
 async function syncMusic() {
-  const want = musicWanted();
-  if (want === music.key) return;
-  music.key = want;
+  if (state.tour && !music.moods) music.moods = await loadJSON("data/moods.json").catch(() => ({}));
   music.index ||= loadJSON("data/music.json").catch(() => ({}));
   const idx = await music.index;
-  if (music.key !== want) return;
+  const want = musicWanted()?.find((k) => idx[k]) || null;
+  if (want === music.key) return;
+  music.key = want;
   if (music.track) stopTrack(music.track);
   music.track = null;
   const f = want && idx[want]?.f;
@@ -4714,7 +4724,7 @@ async function syncMusic() {
     music.track = { el, gain };
     await el.play();
     gain.gain.setValueAtTime(0, ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(MUSIC_VOL, ctx.currentTime + MUSIC_FADE);
+    gain.gain.linearRampToValueAtTime(narr.done ? MUSIC_VOL * 0.3 : MUSIC_VOL, ctx.currentTime + MUSIC_FADE); // under a voice already speaking, stepped back
   } catch {} // no audio (blocked autoplay, offline): the atlas goes on silently
 }
 function stopTrack({ el, gain }) {
