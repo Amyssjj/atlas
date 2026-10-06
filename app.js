@@ -110,7 +110,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", settings: "设置", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", settings: "设置", stStyle: "面板风格", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -135,7 +135,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", settings: "Settings", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", settings: "Settings", stStyle: "Panel style", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -761,6 +761,29 @@ function togglePanelPop(open) {
   pop.style.right = "auto";
   pop.querySelector('[aria-checked="true"]')?.focus();
 }
+// Panel styles (设置 › 外观): each is a block of CSS under html[data-ui="<id>"] in style.css; "classic" sets none.
+// The preview is a tiny drawing of the panels over a map: --p panel fill, --b edge, --r corner.
+const UI_STYLES = [
+  { id: "classic", name: "Classic", name_zh: "经典", preview: "--p:rgba(247,249,248,.95);--r:4px" },
+  { id: "paper", name: "Paper", name_zh: "宣纸", preview: "--p:#f5eede;--b:#8a6a46;--r:1px" },
+  { id: "glass", name: "Glass", name_zh: "毛玻璃", preview: "--p:rgba(20,24,30,.6);--b:rgba(255,255,255,.4);--r:6px" },
+  { id: "editorial", name: "Editorial", name_zh: "简报", preview: "--p:#fff;--b:#111;--r:0" },
+  { id: "lacquer", name: "Lacquer", name_zh: "漆金", preview: "--p:#1d1311;--b:#d8b46e;--r:2px" },
+];
+function setUIStyle(id, remember = true) {
+  if (!UI_STYLES.some((u) => u.id === id)) id = "classic";
+  state.ui = id;
+  if (id === "classic") document.documentElement.removeAttribute("data-ui");
+  else document.documentElement.dataset.ui = id;
+  renderPanelChip();
+  if (!remember) return;
+  try { localStorage.setItem("atlas-ui", id); } catch {}
+  emit("panelStyle", { style: id });
+}
+let savedUI = null;
+try { savedUI = localStorage.getItem("atlas-ui"); } catch {}
+setUIStyle(savedUI, false);
+
 // Applied before the map loads so the panels never flash in the old colour.
 try {
   state.panelColor = localStorage.getItem("atlas-panel-color") || "auto";
@@ -4648,6 +4671,7 @@ const seg = (items, cur) => items.map(([v, label]) => `<button type="button" dat
 // Fills the parts that are drawn from state; the switches and chips moved here keep their own handlers.
 function renderSettings() {
   $("st-ver").textContent = `Atlas v${APP_VERSION}`;
+  $("st-styles").innerHTML = UI_STYLES.map((u) => `<button type="button" data-v="${u.id}" aria-pressed="${u.id === state.ui}"><i style="${u.preview}"><b></b></i>${esc(zh() ? u.name_zh : u.name)}</button>`).join("");
   $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")]], state.railSlim ? "slim" : "full");
   $("st-speed").innerHTML = seg(SPEEDS.map((v) => [v, speedText(v)]), state.speed);
   $("st-narr").innerHTML = seg([["off", t("stOff")], ...Object.entries(t("voices"))], state.narration ? state.voice : "off");
@@ -4673,6 +4697,7 @@ function toggleSettings(open) {
   box.focus({ preventScroll: true });
 }
 function resetSettings() {
+  setUIStyle("classic");
   setPanel({ color: "auto", op: null });
   state.flat3d = false;
   setLook(lookOrder()[0]);
@@ -4691,6 +4716,7 @@ function initSettings() {
   $("settings-close").addEventListener("click", () => toggleSettings(false));
   $("st-reset").addEventListener("click", resetSettings);
   const on = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) { fn(b.dataset.v); renderSettings(); } });
+  on("st-styles", (v) => setUIStyle(v));
   on("st-rail", (v) => setRailSlim(v === "slim", true));
   on("st-speed", (v) => setSpeed(+v, true));
   on("st-narr", (v) => { if (v === "off") return setNarration(false); state.voice = v; setNarration(true); });
