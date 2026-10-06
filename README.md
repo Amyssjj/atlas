@@ -20,7 +20,7 @@ inventions and more. It works in English and Chinese.
   civilisation you are looking at: over Europe it shows Europe's periods, over India India's. About 3,500 events,
   204 guided tours, and rulers and people for 14 regions, plus trade routes and the spread of faiths, techniques and crops.
 - **China in depth.** Xia to Qing, with battles, roads, walls, elites and long event stories.
-- **3D terrain and satellite imagery** need no API keys. Overview tiles are bundled with the site; zoom in and sharper
+- **3D terrain and satellite imagery** need no API keys. Overview tiles come with the site (served from its own data host); zoom in and sharper
   terrain (about 30 m) and 10 m imagery load on demand.
 - **An engine for your own history.** Any site can show its own periods, events, tours, map layers and plugins on the
   atlas, and embed the result.
@@ -105,6 +105,7 @@ Opening `index.html` straight from disk won't work, because browsers block `fetc
 - [docs/custom-data.md](docs/custom-data.md): the data pack format, hosting and links.
 - [docs/plugins.md](docs/plugins.md): map layers and the plugin API.
 - [docs/internals.md](docs/internals.md): how the built-in data is organised and built, data sources and known limits.
+- [docs/data-updates.md](docs/data-updates.md): where pictures and map tiles live (git or R2) and how to update them.
 
 ## Credits
 
