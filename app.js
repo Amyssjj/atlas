@@ -5190,7 +5190,7 @@ async function init() {
   tb.querySelector(".tour-immersive").addEventListener("click", () => setImmersive(!state.immersive));
   // 🔊 cycles: off → male voice → female voice → off.
   for (const b of document.querySelectorAll(".narr-toggle")) b.addEventListener("click", () => {
-    if (!state.narration) { state.voice = "Charon"; setNarration(true); }
+    if (!state.narration) { state.voice = "Charon"; state.narration = true; unlockNarration(); setNarration(true); }  // this tap unlocks the player
     else if (state.voice === "Charon") { state.voice = "Kore"; setNarration(true); }
     else setNarration(false);
   });
