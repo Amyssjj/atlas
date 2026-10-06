@@ -8,7 +8,7 @@ Exits 1 and lists the failures if any. Run by .github/workflows/assets.yml."""
 import json, os, sys, time, urllib.error, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-DATA_URL, ORIGIN = "https://data.atlas.daiyip.com", "https://atlas.daiyip.com"
+DATA_URL, ORIGIN = "https://data.atlas.daiyip.com/atlas", "https://atlas.daiyip.com"  # the folder Atlas owns on R2
 
 def files():
     for f in json.load(open(os.path.join(ROOT, "data/tiles.json"))).values(): yield f"tiles/{f}", "image/png"

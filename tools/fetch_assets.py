@@ -9,7 +9,7 @@ Public URLs, so no credentials are needed. Files already present with the right 
 import json, os, sys, urllib.request, zlib
 from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-DATA_URL = "https://data.atlas.daiyip.com"
+DATA_URL = "https://data.atlas.daiyip.com/atlas"  # the folder Atlas owns on R2
 
 def jobs(name):
     if name == "tiles":
