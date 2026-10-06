@@ -5772,7 +5772,9 @@
   "summary_zh": "帝辛扩建朝歌，厚赋敛以实鹿台、钜桥，以酒为池、悬肉为林，又设炮烙之刑。",
   "source": "https://en.wikipedia.org/wiki/Di_Xin",
   "places": [],
-  "people": [],
+  "people": [
+   "di-xin"
+  ],
   "states": [
    "Shang"
   ],
@@ -5830,7 +5832,9 @@
   "summary_zh": "商朝末代君主帝辛长期征讨东方的夷人，虽然取胜，却耗尽了国力。",
   "source": "https://en.wikipedia.org/wiki/Di_Xin",
   "places": [],
-  "people": [],
+  "people": [
+   "di-xin"
+  ],
   "states": [
    "Shang"
   ],
@@ -5861,7 +5865,10 @@
   "places": [
    "baoji"
   ],
-  "people": [],
+  "people": [
+   "jiang-ziya",
+   "king-wen-of-zhou"
+  ],
   "states": [
    "Shang",
    "Zhou (vassal west)"
@@ -5893,7 +5900,10 @@
   "places": [
    "anyang"
   ],
-  "people": [],
+  "people": [
+   "di-xin",
+   "king-wen-of-zhou"
+  ],
   "states": [
    "Shang"
   ],
@@ -5924,7 +5934,9 @@
   "places": [
    "changzhi"
   ],
-  "people": [],
+  "people": [
+   "di-xin"
+  ],
   "states": [
    "Shang"
   ],
@@ -5983,7 +5995,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "di-xin",
+   "king-wen-of-zhou"
+  ],
   "states": [
    "Shang",
    "Zhou (vassal west)"
@@ -6018,7 +6033,9 @@
   "places": [
    "yanshi"
   ],
-  "people": [],
+  "people": [
+   "king-wu-of-zhou"
+  ],
   "states": [
    "Shang"
   ],
@@ -6047,7 +6064,9 @@
   "source": "https://en.wikipedia.org/wiki/Bi_Gan",
   "places": [],
   "people": [
-   "bi-gan"
+   "bi-gan",
+   "di-xin",
+   "weizi-qi"
   ],
   "states": [
    "Shang"
@@ -6073,7 +6092,11 @@
   "summary_zh": "周武王打败商朝末代君主，纣王在宫中自焚而死。周人把这次征服说成是天命的转移。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Muye",
   "places": [],
-  "people": [],
+  "people": [
+   "di-xin",
+   "jiang-ziya",
+   "king-wu-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6107,7 +6130,9 @@
   "places": [
    "zibo"
   ],
-  "people": [],
+  "people": [
+   "jiang-ziya"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6175,7 +6200,9 @@
   "places": [
    "pyongyang"
   ],
-  "people": [],
+  "people": [
+   "king-wu-of-zhou"
+  ],
   "states": [
    "Paleo-Koreans"
   ],
@@ -6206,7 +6233,8 @@
    "yongji"
   ],
   "people": [
-   "boyi"
+   "boyi",
+   "king-wu-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -6233,7 +6261,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "jiang-ziya",
+   "king-wu-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6261,7 +6292,9 @@
   "places": [
    "anyang"
   ],
-  "people": [],
+  "people": [
+   "king-wu-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6296,7 +6329,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "king-cheng-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6358,7 +6393,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "king-cheng-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6392,7 +6429,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "king-cheng-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6454,7 +6493,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "king-cheng-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6481,7 +6522,9 @@
   "places": [
    "houma"
   ],
-  "people": [],
+  "people": [
+   "king-cheng-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -6813,7 +6856,9 @@
   "summary_zh": "穆王西巡期间，徐偃王率九夷侵周，穆王回师联合楚国击败之。",
   "source": "https://en.wikipedia.org/wiki/King_Yan_of_Xu",
   "places": [],
-  "people": [],
+  "people": [
+   "king-mu-of-zhou"
+  ],
   "states": [
    "Wu"
   ],
@@ -6873,7 +6918,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "king-mu-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -7111,7 +7158,9 @@
   "summary_zh": "周孝王把一小块名叫“秦”的土地封给善于养马的非子，这就是日后统一中国的秦国的起点。",
   "source": "https://en.wikipedia.org/wiki/Feizi",
   "places": [],
-  "people": [],
+  "people": [
+   "feizi-of-qin"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -7333,7 +7382,8 @@
    "xian"
   ],
   "people": [
-   "zhong-shanfu"
+   "zhong-shanfu",
+   "king-xuan-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -7365,7 +7415,9 @@
   "summary_zh": "尹吉甫率领周军战车反击逼近都城的猃狁，把他们赶回北方。",
   "source": "https://en.wikipedia.org/wiki/Xianyun",
   "places": [],
-  "people": [],
+  "people": [
+   "king-xuan-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -7396,7 +7448,9 @@
   "places": [
    "tianshui"
   ],
-  "people": [],
+  "people": [
+   "king-xuan-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -7494,7 +7548,8 @@
   "source": "https://en.wikipedia.org/wiki/Duke_Huan_of_Zheng",
   "places": [],
   "people": [
-   "duke-huan-of-zheng"
+   "duke-huan-of-zheng",
+   "king-xuan-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -7675,7 +7730,9 @@
   "places": [
    "baoji"
   ],
-  "people": [],
+  "people": [
+   "king-xuan-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -7910,7 +7967,8 @@
   "source": "https://en.wikipedia.org/wiki/King_Xuan_of_Zhou",
   "places": [],
   "people": [
-   "zhong-shanfu"
+   "zhong-shanfu",
+   "king-xuan-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -7945,7 +8003,9 @@
   "places": [
    "guyuan"
   ],
-  "people": [],
+  "people": [
+   "king-xuan-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -8003,7 +8063,9 @@
   "places": [
    "baoji"
   ],
-  "people": [],
+  "people": [
+   "king-you-of-zhou"
+  ],
   "states": [
    "Western Zhou realm"
   ],
@@ -8037,7 +8099,8 @@
    "xian"
   ],
   "people": [
-   "bao-si"
+   "bao-si",
+   "king-you-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -8102,7 +8165,8 @@
    "xian"
   ],
   "people": [
-   "bao-si"
+   "bao-si",
+   "king-you-of-zhou"
   ],
   "states": [
    "Western Zhou realm"
@@ -8137,7 +8201,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "king-ping-of-zhou"
+  ],
   "states": [
    "Zhou royal domain"
   ],
@@ -8170,7 +8236,9 @@
   "places": [
    "lixian"
   ],
-  "people": [],
+  "people": [
+   "king-ping-of-zhou"
+  ],
   "states": [
    "Qin",
    "Zhou royal domain"
@@ -8551,7 +8619,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "king-ping-of-zhou"
+  ],
   "states": [
    "Zheng",
    "Zhou royal domain"
@@ -8930,7 +9000,9 @@
   "places": [
    "zibo"
   ],
-  "people": [],
+  "people": [
+   "duke-huan-of-qi"
+  ],
   "states": [
    "Qi"
   ],
@@ -9359,7 +9431,9 @@
   "places": [
    "houma"
   ],
-  "people": [],
+  "people": [
+   "duke-wen-of-jin"
+  ],
   "states": [
    "Jin"
   ],
@@ -11999,7 +12073,9 @@
   "places": [
    "suzhou"
   ],
-  "people": [],
+  "people": [
+   "helu-of-wu"
+  ],
   "states": [
    "Wu"
   ],
@@ -12031,7 +12107,8 @@
    "suzhou"
   ],
   "people": [
-   "wu-zixu"
+   "wu-zixu",
+   "helu-of-wu"
   ],
   "states": [
    "Wu"
@@ -12097,7 +12174,8 @@
   "source": "https://en.wikipedia.org/wiki/Hel%C3%BC_of_Wu",
   "places": [],
   "people": [
-   "wu-zixu"
+   "wu-zixu",
+   "helu-of-wu"
   ],
   "states": [
    "Chu",
@@ -12129,7 +12207,9 @@
   "places": [
    "suzhou"
   ],
-  "people": [],
+  "people": [
+   "helu-of-wu"
+  ],
   "states": [
    "Qi",
    "Wu"
@@ -12259,7 +12339,8 @@
   "places": [],
   "people": [
    "shen-baoxu",
-   "wu-zixu"
+   "wu-zixu",
+   "helu-of-wu"
   ],
   "states": [
    "Chu",
@@ -12805,7 +12886,8 @@
   "source": "https://en.wikipedia.org/wiki/Battle_of_Zuili",
   "places": [],
   "people": [
-   "goujian"
+   "goujian",
+   "helu-of-wu"
   ],
   "states": [
    "Wu",
@@ -13709,7 +13791,8 @@
   "people": [
    "li-kui",
    "wu-qi",
-   "ximen-bao"
+   "ximen-bao",
+   "marquess-wen-of-wei"
   ],
   "states": [
    "Wei"
@@ -14088,7 +14171,8 @@
   "source": "https://en.wikipedia.org/wiki/Li_Kui_(legalist)",
   "places": [],
   "people": [
-   "li-kui"
+   "li-kui",
+   "marquess-wen-of-wei"
   ],
   "states": [
    "Wei"
@@ -14120,7 +14204,9 @@
   "places": [
    "dingzhou"
   ],
-  "people": [],
+  "people": [
+   "marquess-wen-of-wei"
+  ],
   "states": [
    "Wei",
    "Yan"
@@ -14145,7 +14231,9 @@
   "places": [
    "taiyuan"
   ],
-  "people": [],
+  "people": [
+   "marquess-wen-of-wei"
+  ],
   "states": [
    "Han",
    "Jin",
@@ -14761,7 +14849,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "king-hui-of-wei"
+  ],
   "states": [
    "Qin",
    "Wei"
@@ -14789,7 +14879,8 @@
    "xian"
   ],
   "people": [
-   "shang-yang"
+   "shang-yang",
+   "duke-xiao-of-qin"
   ],
   "states": [
    "Qin"
@@ -14821,7 +14912,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "king-hui-of-wei"
+  ],
   "states": [
    "Wei"
   ],
@@ -14875,7 +14968,8 @@
   "source": "https://en.wikipedia.org/wiki/Shang_Yang",
   "places": [],
   "people": [
-   "shang-yang"
+   "shang-yang",
+   "duke-xiao-of-qin"
   ],
   "states": [
    "Qin"
@@ -15034,7 +15128,8 @@
    "xianyang"
   ],
   "people": [
-   "shang-yang"
+   "shang-yang",
+   "duke-xiao-of-qin"
   ],
   "states": [
    "Qin"
@@ -15183,7 +15278,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "king-hui-of-wei"
+  ],
   "states": [
    "Qi",
    "Qin",
@@ -15330,7 +15427,9 @@
    "xianyang"
   ],
   "people": [
-   "shang-yang"
+   "shang-yang",
+   "duke-xiao-of-qin",
+   "king-huiwen-of-qin"
   ],
   "states": [
    "Qin"
@@ -15359,7 +15458,9 @@
   "places": [
    "xianyang"
   ],
-  "people": [],
+  "people": [
+   "king-huiwen-of-qin"
+  ],
   "states": [
    "Qin"
   ],
@@ -15446,7 +15547,9 @@
   "places": [
    "xuzhou"
   ],
-  "people": [],
+  "people": [
+   "king-hui-of-wei"
+  ],
   "states": [
    "Lu",
    "Qi",
@@ -15808,7 +15911,9 @@
   "places": [
    "xianyang"
   ],
-  "people": [],
+  "people": [
+   "king-huiwen-of-qin"
+  ],
   "states": [
    "Qi",
    "Qin",
@@ -15899,7 +16004,8 @@
    "kaifeng"
   ],
   "people": [
-   "mencius"
+   "mencius",
+   "king-hui-of-wei"
   ],
   "states": [
    "Wei"
@@ -15990,7 +16096,8 @@
    "chengdu"
   ],
   "people": [
-   "zhang-yi"
+   "zhang-yi",
+   "king-huiwen-of-qin"
   ],
   "states": [
    "Qin"
@@ -16074,7 +16181,8 @@
    "jingzhou"
   ],
   "people": [
-   "zhang-yi"
+   "zhang-yi",
+   "king-huai-of-chu"
   ],
   "states": [
    "Chu",
@@ -16100,7 +16208,9 @@
   "summary_zh": "楚怀王怒而伐秦，秦大败楚军于丹阳，斩首八万，取汉中郡，楚军再败于蓝田。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Danyang",
   "places": [],
-  "people": [],
+  "people": [
+   "king-huai-of-chu"
+  ],
   "states": [
    "Chu",
    "Qin"
@@ -16706,7 +16816,10 @@
   "summary_zh": "秦昭王约楚怀王会于武关，扣留怀王要挟割地，怀王不从，三年后客死于秦。",
   "source": "https://en.wikipedia.org/wiki/King_Huai_of_Chu",
   "places": [],
-  "people": [],
+  "people": [
+   "king-huai-of-chu",
+   "king-zhaoxiang-of-qin"
+  ],
   "states": [
    "Chu",
    "Qin"
@@ -16892,7 +17005,10 @@
   "places": [
    "zibo"
   ],
-  "people": [],
+  "people": [
+   "king-min-of-qi",
+   "king-zhaoxiang-of-qin"
+  ],
   "states": [
    "Qi",
    "Qin"
@@ -16949,7 +17065,9 @@
   "places": [
    "shangqiu"
   ],
-  "people": [],
+  "people": [
+   "king-min-of-qi"
+  ],
   "states": [
    "Qi",
    "Song"
@@ -16982,7 +17100,8 @@
   ],
   "people": [
    "tian-dan",
-   "yue-yi"
+   "yue-yi",
+   "king-min-of-qi"
   ],
   "states": [
    "Qi",
@@ -17013,7 +17132,8 @@
   "source": "https://en.wikipedia.org/wiki/King_Min_of_Qi",
   "places": [],
   "people": [
-   "yue-yi"
+   "yue-yi",
+   "king-min-of-qi"
   ],
   "states": [
    "Chu",
@@ -17073,7 +17193,8 @@
    "xianyang"
   ],
   "people": [
-   "lin-xiangru"
+   "lin-xiangru",
+   "king-zhaoxiang-of-qin"
   ],
   "states": [
    "Qin",
@@ -17333,7 +17454,8 @@
   "source": "https://en.wikipedia.org/wiki/Qu_Yuan",
   "places": [],
   "people": [
-   "qu-yuan"
+   "qu-yuan",
+   "king-huai-of-chu"
   ],
   "states": [
    "Chu",
@@ -17538,7 +17660,8 @@
    "xianyang"
   ],
   "people": [
-   "fan-ju"
+   "fan-ju",
+   "king-zhaoxiang-of-qin"
   ],
   "states": [
    "Qin"
@@ -17918,7 +18041,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "king-zhaoxiang-of-qin"
+  ],
   "states": [
    "Qin",
    "Zhou royal domain"
@@ -18570,7 +18695,8 @@
    "baoji"
   ],
   "people": [
-   "lu-buwei"
+   "lu-buwei",
+   "qin-shi-huang"
   ],
   "states": [
    "Qin"
@@ -18639,7 +18765,8 @@
   ],
   "people": [
    "li-si",
-   "zheng-guo"
+   "zheng-guo",
+   "qin-shi-huang"
   ],
   "states": [
    "Qin"
@@ -18707,7 +18834,8 @@
   ],
   "people": [
    "han-fei",
-   "li-si"
+   "li-si",
+   "qin-shi-huang"
   ],
   "states": [
    "Han",
@@ -18771,7 +18899,9 @@
   "places": [
    "xinzheng"
   ],
-  "people": [],
+  "people": [
+   "qin-shi-huang"
+  ],
   "states": [
    "Han",
    "Qin"
@@ -18876,7 +19006,8 @@
   ],
   "people": [
    "gao-jianli",
-   "jing-ke"
+   "jing-ke",
+   "qin-shi-huang"
   ],
   "states": [
    "Qin",
@@ -19122,7 +19253,9 @@
   "places": [
    "xianyang"
   ],
-  "people": [],
+  "people": [
+   "qin-shi-huang"
+  ],
   "states": [
    "Qin"
   ],
@@ -19343,7 +19476,9 @@
   "summary_zh": "始皇东巡至琅琊，留三月，作琅琊台，立石刻颂秦德。",
   "source": "https://en.wikipedia.org/wiki/Qin_Shi_Huang",
   "places": [],
-  "people": [],
+  "people": [
+   "qin-shi-huang"
+  ],
   "states": [
    "Qin"
   ],
@@ -19766,7 +19901,9 @@
   "summary_zh": "东郡陨石上被刻“始皇帝死而地分”，查无主名，尽杀石旁居人，焚其石。",
   "source": "https://en.wikipedia.org/wiki/Qin_Shi_Huang",
   "places": [],
-  "people": [],
+  "people": [
+   "qin-shi-huang"
+  ],
   "states": [
    "Qin"
   ],
@@ -19798,7 +19935,8 @@
    "fusu",
    "li-si",
    "qin-shi-huang",
-   "zhao-gao"
+   "zhao-gao",
+   "hu-hai"
   ],
   "states": [
    "Qin"
@@ -20037,7 +20175,8 @@
    "xianyang"
   ],
   "people": [
-   "zhao-gao"
+   "zhao-gao",
+   "hu-hai"
   ],
   "states": [
    "Qin"
@@ -20092,7 +20231,8 @@
   ],
   "people": [
    "li-si",
-   "zhao-gao"
+   "zhao-gao",
+   "hu-hai"
   ],
   "states": [
    "Qin"
@@ -20263,7 +20403,8 @@
    "xianyang"
   ],
   "people": [
-   "zhao-gao"
+   "zhao-gao",
+   "hu-hai"
   ],
   "states": [
    "Qin"
@@ -20297,7 +20438,8 @@
    "xianyang"
   ],
   "people": [
-   "zhao-gao"
+   "zhao-gao",
+   "hu-hai"
   ],
   "states": [
    "Qin"
@@ -20836,7 +20978,8 @@
   "places": [],
   "people": [
    "chen-ping",
-   "han-xin"
+   "han-xin",
+   "liu-bang"
   ],
   "states": [
    "Han"
@@ -20871,7 +21014,8 @@
   ],
   "people": [
    "chen-ping",
-   "liu-bang"
+   "liu-bang",
+   "modu-chanyu"
   ],
   "states": [
    "Han",
@@ -20971,7 +21115,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "liu-bang"
+  ],
   "states": [
    "Han"
   ],
@@ -21032,7 +21178,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "modu-chanyu"
+  ],
   "states": [
    "Han"
   ],
@@ -21064,7 +21212,9 @@
   "summary_zh": "赵相国陈豨据代地反，自立为代王，高祖亲征，前195年陈豨被斩。",
   "source": "https://en.wikipedia.org/wiki/Chen_Xi_(rebel)",
   "places": [],
-  "people": [],
+  "people": [
+   "liu-bang"
+  ],
   "states": [
    "Han"
   ],
@@ -21130,7 +21280,8 @@
   "people": [
    "han-xin",
    "liu-bang",
-   "xiao-he"
+   "xiao-he",
+   "lu-zhi"
   ],
   "states": [
    "Han"
@@ -21162,7 +21313,10 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "liu-bang",
+   "lu-zhi"
+  ],
   "states": [
    "Han"
   ],
@@ -21193,7 +21347,8 @@
   "source": "https://en.wikipedia.org/wiki/Ying_Bu",
   "places": [],
   "people": [
-   "han-xin"
+   "han-xin",
+   "liu-bang"
   ],
   "states": [
    "Han"
@@ -21265,7 +21420,9 @@
   "people": [
    "chen-ping",
    "liu-bang",
-   "zhou-bo"
+   "zhou-bo",
+   "emperor-hui-of-han",
+   "lu-zhi"
   ],
   "states": [
    "Han"
@@ -21299,7 +21456,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-hui-of-han",
+   "liu-bang"
+  ],
   "states": [
    "Han"
   ],
@@ -21363,7 +21523,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-hui-of-han",
+   "lu-zhi"
+  ],
   "states": [
    "Han"
   ],
@@ -21430,7 +21593,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-hui-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -21518,7 +21683,9 @@
   "places": [
    "jingzhou"
   ],
-  "people": [],
+  "people": [
+   "lu-zhi"
+  ],
   "states": [
    "Han"
   ],
@@ -21583,7 +21750,8 @@
    "guangzhou"
   ],
   "people": [
-   "zhao-tuo"
+   "zhao-tuo",
+   "lu-zhi"
   ],
   "states": [
    "Han",
@@ -21612,7 +21780,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-jing-of-han",
+   "emperor-wen-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -21647,7 +21818,9 @@
   ],
   "people": [
    "chen-ping",
-   "zhou-bo"
+   "zhou-bo",
+   "emperor-wen-of-han",
+   "lu-zhi"
   ],
   "states": [
    "Han"
@@ -21681,7 +21854,9 @@
   "places": [
    "zhangye"
   ],
-  "people": [],
+  "people": [
+   "modu-chanyu"
+  ],
   "states": [
    "Xiongnu"
   ],
@@ -21751,7 +21926,8 @@
    "xian"
   ],
   "people": [
-   "chao-cuo"
+   "chao-cuo",
+   "emperor-wen-of-han"
   ],
   "states": [
    "Han",
@@ -21848,7 +22024,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wen-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -21947,7 +22125,8 @@
    "xianyang"
   ],
   "people": [
-   "zhou-yafu"
+   "zhou-yafu",
+   "emperor-wen-of-han"
   ],
   "states": [
    "Han",
@@ -21980,7 +22159,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-jing-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -22043,7 +22224,8 @@
   ],
   "people": [
    "chao-cuo",
-   "zhou-yafu"
+   "zhou-yafu",
+   "emperor-jing-of-han"
   ],
   "states": [
    "Han"
@@ -22270,7 +22452,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-jing-of-han",
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -22365,7 +22550,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -22391,7 +22578,8 @@
    "shouxian"
   ],
   "people": [
-   "liu-an"
+   "liu-an",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -22427,7 +22615,8 @@
    "xian"
   ],
   "people": [
-   "zhang-qian"
+   "zhang-qian",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han",
@@ -22460,7 +22649,9 @@
   "summary_zh": "闽越围东瓯，武帝遣严助发会稽兵浮海救之，东瓯举国内迁江淮之间。",
   "source": "https://en.wikipedia.org/wiki/Dong'ou",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Min-Yue"
   ],
@@ -22492,7 +22683,8 @@
   ],
   "people": [
    "dong-zhongshu",
-   "gongsun-hong"
+   "gongsun-hong",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -22587,7 +22779,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -22921,7 +23115,8 @@
    "xian"
   ],
   "people": [
-   "gongsun-hong"
+   "gongsun-hong",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -22982,7 +23177,8 @@
    "zhangye"
   ],
   "people": [
-   "huo-qubing"
+   "huo-qubing",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Xiongnu"
@@ -23078,7 +23274,8 @@
    "xian"
   ],
   "people": [
-   "sang-hongyang"
+   "sang-hongyang",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -23106,7 +23303,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -23204,7 +23403,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -23282,7 +23483,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -23346,7 +23549,8 @@
    "guangzhou"
   ],
   "people": [
-   "zhao-tuo"
+   "zhao-tuo",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han",
@@ -23502,7 +23706,9 @@
   "summary_zh": "武帝东巡封泰山、禅肃然，告成功于天地，太史令司马谈因未能从行抱憾而终。",
   "source": "https://en.wikipedia.org/wiki/Feng_Shan",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -23633,7 +23839,9 @@
   "summary_zh": "武帝亲临瓠子，令将军以下负薪填决口，堵塞决溢二十余年的黄河，作《瓠子歌》。",
   "source": "https://en.wikipedia.org/wiki/Yellow_River",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -23804,7 +24012,9 @@
   "summary_zh": "汉武帝派大军西行数千公里，攻打费尔干纳盆地的大宛国，夺取良马。",
   "source": "https://en.wikipedia.org/wiki/War_of_the_Heavenly_Horses",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-wu-of-han"
+  ],
   "states": [],
   "also": [
    "central-asia-steppe"
@@ -24154,7 +24364,8 @@
   ],
   "people": [
    "li-ling",
-   "sima-qian"
+   "sima-qian",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -24221,7 +24432,8 @@
    "xian"
   ],
   "people": [
-   "wei-zifu"
+   "wei-zifu",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -24285,7 +24497,8 @@
    "xian"
   ],
   "people": [
-   "sang-hongyang"
+   "sang-hongyang",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -24335,7 +24548,8 @@
   "source": "https://en.wikipedia.org/wiki/Huo_Guang",
   "places": [],
   "people": [
-   "huo-guang"
+   "huo-guang",
+   "emperor-wu-of-han"
   ],
   "states": [
    "Han"
@@ -24533,7 +24747,8 @@
    "xian"
   ],
   "people": [
-   "huo-guang"
+   "huo-guang",
+   "emperor-xuan-of-han"
   ],
   "states": [
    "Han"
@@ -24653,7 +24868,8 @@
    "xian"
   ],
   "people": [
-   "huo-guang"
+   "huo-guang",
+   "emperor-xuan-of-han"
   ],
   "states": [
    "Han"
@@ -24806,7 +25022,9 @@
   "summary_zh": "汉朝设立都护，统辖塔里木盆地的绿洲诸国。",
   "source": "https://en.wikipedia.org/wiki/Protectorate_of_the_Western_Regions",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-xuan-of-han"
+  ],
   "states": [
    "Protectorate of the Western Regions"
   ],
@@ -25032,7 +25250,9 @@
   "summary_zh": "匈奴单于亲自朝见汉朝皇帝，向汉称臣，持续百年的汉匈战争告一段落。",
   "source": "https://en.wikipedia.org/wiki/Huhanye",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-xuan-of-han"
+  ],
   "states": [
    "Han",
    "Xiongnu"
@@ -25066,7 +25286,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-xuan-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -26603,7 +26825,8 @@
   "source": "https://en.wikipedia.org/wiki/Emperor_Guangwu_of_Han",
   "places": [],
   "people": [
-   "liu-yan-bosheng"
+   "liu-yan-bosheng",
+   "emperor-guangwu-of-han"
   ],
   "states": [
    "Xin"
@@ -26637,7 +26860,8 @@
   "source": "https://en.wikipedia.org/wiki/Lulin",
   "places": [],
   "people": [
-   "liu-yan-bosheng"
+   "liu-yan-bosheng",
+   "emperor-guangwu-of-han"
   ],
   "states": [
    "Xin"
@@ -26700,7 +26924,8 @@
   "source": "https://en.wikipedia.org/wiki/Battle_of_Kunyang",
   "places": [],
   "people": [
-   "wang-mang"
+   "wang-mang",
+   "emperor-guangwu-of-han"
   ],
   "states": [
    "Xin"
@@ -26734,7 +26959,9 @@
    "nanyang"
   ],
   "people": [
-   "liu-yan-bosheng"
+   "liu-yan-bosheng",
+   "emperor-guangwu-of-han",
+   "gengshi-emperor"
   ],
   "states": [
    "Xin"
@@ -26804,7 +27031,9 @@
    "nanyang"
   ],
   "people": [
-   "liu-yan-bosheng"
+   "liu-yan-bosheng",
+   "emperor-guangwu-of-han",
+   "gengshi-emperor"
   ],
   "states": [
    "Xin"
@@ -26894,7 +27123,9 @@
   "places": [
    "handan"
   ],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Xin"
   ],
@@ -26955,7 +27186,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -26989,7 +27222,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "gengshi-emperor"
+  ],
   "states": [
    "Han"
   ],
@@ -27121,7 +27356,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -27151,7 +27388,8 @@
    "tianshui"
   ],
   "people": [
-   "wei-xiao"
+   "wei-xiao",
+   "emperor-guangwu-of-han"
   ],
   "states": [
    "Han"
@@ -27212,7 +27450,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -27565,7 +27805,9 @@
   "summary_zh": "光武帝东封泰山，同年“宣布图谶于天下”，谶纬之学成为官方学说。",
   "source": "https://en.wikipedia.org/wiki/Chenwei",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -27590,7 +27832,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-guangwu-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -28745,7 +28989,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "empress-deng-sui"
+  ],
   "states": [
    "Han"
   ],
@@ -28777,7 +29023,8 @@
    "luoyang"
   ],
   "people": [
-   "ban-zhao"
+   "ban-zhao",
+   "empress-deng-sui"
   ],
   "states": [
    "Han"
@@ -29671,7 +29918,8 @@
    "luoyang"
   ],
   "people": [
-   "chen-fan"
+   "chen-fan",
+   "emperor-ling-of-han"
   ],
   "states": [
    "Han"
@@ -29774,7 +30022,8 @@
    "luoyang"
   ],
   "people": [
-   "cai-yong"
+   "cai-yong",
+   "emperor-ling-of-han"
   ],
   "states": [
    "Han"
@@ -29845,7 +30094,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-ling-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -29873,7 +30124,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-ling-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -30084,7 +30337,8 @@
   ],
   "people": [
    "cao-cao",
-   "yuan-shao"
+   "yuan-shao",
+   "emperor-ling-of-han"
   ],
   "states": [
    "Han"
@@ -30112,7 +30366,8 @@
    "luoyang"
   ],
   "people": [
-   "dong-zhuo"
+   "dong-zhuo",
+   "emperor-xian-of-han"
   ],
   "states": [
    "Han"
@@ -30582,7 +30837,9 @@
   "summary_zh": "李傕、郭汜相攻，献帝东逃，历经曹阳之败、渡河至安邑，次年回到残破的洛阳。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Xian_of_Han",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-xian-of-han"
+  ],
   "states": [
    "Han"
   ],
@@ -30617,7 +30874,8 @@
   ],
   "people": [
    "cao-cao",
-   "xun-yu"
+   "xun-yu",
+   "emperor-xian-of-han"
   ],
   "states": [
    "Han"
@@ -30852,7 +31110,8 @@
   ],
   "people": [
    "cao-cao",
-   "liu-bei"
+   "liu-bei",
+   "emperor-xian-of-han"
   ],
   "states": [
    "Han"
@@ -31213,7 +31472,8 @@
   "people": [
    "liu-bei",
    "zhang-fei",
-   "zhao-yun"
+   "zhao-yun",
+   "liu-shan"
   ],
   "states": [
    "Han"
@@ -31751,7 +32011,8 @@
   "people": [
    "cao-pi",
    "liu-bei",
-   "sun-quan"
+   "sun-quan",
+   "emperor-xian-of-han"
   ],
   "states": [
    "Wei"
@@ -32199,7 +32460,8 @@
   ],
   "people": [
    "cao-pi",
-   "sima-yi"
+   "sima-yi",
+   "cao-rui"
   ],
   "states": [
    "Wei"
@@ -32755,7 +33017,8 @@
   ],
   "people": [
    "sun-quan",
-   "zhuge-liang"
+   "zhuge-liang",
+   "cao-rui"
   ],
   "states": [
    "Wei",
@@ -32785,7 +33048,9 @@
   "summary_zh": "退位的汉献帝刘协以山阳公身份去世，魏以天子礼葬之。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Xian_of_Han",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-xian-of-han"
+  ],
   "states": [
    "Wei"
   ],
@@ -32944,7 +33209,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "cao-rui"
+  ],
   "states": [
    "Wei"
   ],
@@ -32981,7 +33248,8 @@
    "luoyang"
   ],
   "people": [
-   "sima-yi"
+   "sima-yi",
+   "cao-rui"
   ],
   "states": [
    "Wei"
@@ -34271,7 +34539,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "sun-hao"
+  ],
   "states": [
    "Wu"
   ],
@@ -34336,7 +34606,9 @@
   "places": [
    "ezhou"
   ],
-  "people": [],
+  "people": [
+   "sun-hao"
+  ],
   "states": [
    "Wu"
   ],
@@ -34365,7 +34637,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "sima-yan"
+  ],
   "states": [
    "Jin"
   ],
@@ -34738,7 +35012,8 @@
   ],
   "people": [
    "du-yu",
-   "wang-jun"
+   "wang-jun",
+   "sun-hao"
   ],
   "states": [
    "Jin",
@@ -34803,7 +35078,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "sima-yan"
+  ],
   "states": [
    "Jin"
   ],
@@ -34947,7 +35224,10 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "jia-nanfeng",
+   "sima-yan"
+  ],
   "states": [
    "Jin"
   ],
@@ -35094,7 +35374,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "jia-nanfeng"
+  ],
   "states": [
    "Jin"
   ],
@@ -35563,7 +35845,8 @@
    "nanjing"
   ],
   "people": [
-   "wang-dao"
+   "wang-dao",
+   "sima-rui"
   ],
   "states": [
    "Jin"
@@ -35635,7 +35918,8 @@
    "luoyang"
   ],
   "people": [
-   "shi-le"
+   "shi-le",
+   "liu-yao"
   ],
   "states": [
    "Han Zhao"
@@ -35800,7 +36084,8 @@
    "zhenjiang"
   ],
   "people": [
-   "zu-ti"
+   "zu-ti",
+   "sima-rui"
   ],
   "states": [
    "Jin"
@@ -35926,7 +36211,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "liu-yao"
+  ],
   "states": [
    "Han Zhao",
    "Jin"
@@ -35967,7 +36254,8 @@
    "nanjing"
   ],
   "people": [
-   "wang-dao"
+   "wang-dao",
+   "sima-rui"
   ],
   "states": [
    "Eastern Jin"
@@ -36064,7 +36352,8 @@
   "source": "https://en.wikipedia.org/wiki/Jin_Zhun",
   "places": [],
   "people": [
-   "shi-le"
+   "shi-le",
+   "liu-yao"
   ],
   "states": [
    "Han Zhao"
@@ -36126,7 +36415,8 @@
   "source": "https://en.wikipedia.org/wiki/Later_Zhao",
   "places": [],
   "people": [
-   "shi-le"
+   "shi-le",
+   "liu-yao"
   ],
   "states": [
    "Later Zhao"
@@ -36222,7 +36512,8 @@
    "nanjing"
   ],
   "people": [
-   "wang-dao"
+   "wang-dao",
+   "sima-rui"
   ],
   "states": [
    "Eastern Jin"
@@ -36326,7 +36617,8 @@
    "luoyang"
   ],
   "people": [
-   "shi-le"
+   "shi-le",
+   "liu-yao"
   ],
   "states": [
    "Han Zhao",
@@ -36361,7 +36653,9 @@
   "places": [
    "tianshui"
   ],
-  "people": [],
+  "people": [
+   "liu-yao"
+  ],
   "states": [
    "Later Zhao"
   ],
@@ -38928,7 +39222,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "liu-yilong"
+  ],
   "states": [
    "Liu Song"
   ],
@@ -39021,7 +39317,9 @@
   "summary_zh": "魏太武帝诱夏军出城决战，大破之，攻克夏都统万城。",
   "source": "https://en.wikipedia.org/wiki/Tongwancheng",
   "places": [],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Northern Wei",
    "Xia (Helian)"
@@ -39084,7 +39382,9 @@
   "summary_zh": "魏太武帝亲率大军深入漠北，大破柔然，降附及俘获人畜以数十万计。",
   "source": "https://en.wikipedia.org/wiki/Rouran_Khaganate",
   "places": [],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Ruanruan"
   ],
@@ -39267,7 +39567,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "liu-yilong"
+  ],
   "states": [
    "Liu Song"
   ],
@@ -39330,7 +39632,9 @@
   "places": [
    "datong"
   ],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Northern Liang",
    "Northern Wei"
@@ -39399,7 +39703,8 @@
   ],
   "people": [
    "cui-hao",
-   "kou-qianzhi"
+   "kou-qianzhi",
+   "tuoba-tao"
   ],
   "states": [
    "Northern Wei"
@@ -39527,7 +39832,9 @@
   "summary_zh": "卢水胡盖吴起义，众至十余万，太武帝平乱时于长安佛寺发现兵器，引发灭佛。",
   "source": "https://en.wikipedia.org/wiki/Gai_Wu",
   "places": [],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Northern Wei"
   ],
@@ -39552,7 +39859,8 @@
   ],
   "people": [
    "cui-hao",
-   "kou-qianzhi"
+   "kou-qianzhi",
+   "tuoba-tao"
   ],
   "states": [
    "Northern Wei"
@@ -39617,7 +39925,10 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "liu-yilong",
+   "tuoba-tao"
+  ],
   "states": [
    "Liu Song",
    "Northern Wei"
@@ -39709,7 +40020,8 @@
    "datong"
   ],
   "people": [
-   "cui-hao"
+   "cui-hao",
+   "tuoba-tao"
   ],
   "states": [
    "Northern Wei"
@@ -39837,7 +40149,9 @@
   "summary_zh": "魏太武帝饮马长江于瓜步后北撤，围攻盱眙月余，臧质坚守，魏军死伤惨重。",
   "source": "https://en.wikipedia.org/wiki/Zang_Zhi",
   "places": [],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Liu Song"
   ],
@@ -39863,7 +40177,9 @@
   "places": [
    "datong"
   ],
-  "people": [],
+  "people": [
+   "tuoba-tao"
+  ],
   "states": [
    "Northern Wei"
   ],
@@ -39924,7 +40240,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "liu-yilong"
+  ],
   "states": [
    "Liu Song"
   ],
@@ -40157,7 +40475,8 @@
    "datong"
   ],
   "people": [
-   "empress-dowager-feng"
+   "empress-dowager-feng",
+   "emperor-xiaowen"
   ],
   "states": [
    "Northern Wei"
@@ -40245,7 +40564,8 @@
    "datong"
   ],
   "people": [
-   "empress-dowager-feng"
+   "empress-dowager-feng",
+   "emperor-xiaowen"
   ],
   "states": [
    "Northern Wei"
@@ -40898,7 +41218,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-xiaowen"
+  ],
   "states": [
    "Northern Wei"
   ],
@@ -40923,7 +41245,9 @@
   "places": [
    "yanshi"
   ],
-  "people": [],
+  "people": [
+   "emperor-xiaowen"
+  ],
   "states": [
    "Northern Wei"
   ],
@@ -40987,7 +41311,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "emperor-xiaowen"
+  ],
   "states": [
    "Northern Wei"
   ],
@@ -41080,7 +41406,9 @@
   "summary_zh": "孝文帝南伐齐，病逝于谷塘原军中，年三十三，宣武帝即位。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Xiaowen_of_Northern_Wei",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-xiaowen"
+  ],
   "states": [
    "Southern Qi"
   ],
@@ -41302,7 +41630,9 @@
   "places": [
    "shouxian"
   ],
-  "people": [],
+  "people": [
+   "xiao-yan"
+  ],
   "states": [
    "Liang",
    "Northern Wei"
@@ -41458,7 +41788,9 @@
   "summary_zh": "梁武帝筑浮山堰欲以淮水灌寿阳，役工二十万，堰成数月即溃，下游溺死十余万人。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Wu_of_Liang",
   "places": [],
-  "people": [],
+  "people": [
+   "xiao-yan"
+  ],
   "states": [
    "Liang"
   ],
@@ -41548,7 +41880,8 @@
    "yanshi"
   ],
   "people": [
-   "bodhidharma"
+   "bodhidharma",
+   "xiao-yan"
   ],
   "states": [
    "Liang",
@@ -41641,7 +41974,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "xiao-yan"
+  ],
   "states": [
    "Liang"
   ],
@@ -41787,7 +42122,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "xiao-yan"
+  ],
   "states": [
    "Liang"
   ],
@@ -42740,7 +43077,8 @@
    "xuzhou"
   ],
   "people": [
-   "hou-jing"
+   "hou-jing",
+   "xiao-yan"
   ],
   "states": [
    "Eastern Wei",
@@ -42770,7 +43108,8 @@
   "places": [],
   "people": [
    "gao-huan",
-   "hou-jing"
+   "hou-jing",
+   "xiao-yan"
   ],
   "states": [
    "Eastern Wei",
@@ -42805,7 +43144,8 @@
   ],
   "people": [
    "chen-baxian",
-   "hou-jing"
+   "hou-jing",
+   "xiao-yan"
   ],
   "states": [
    "Liang"
@@ -43599,7 +43939,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "gao-changgong"
+  ],
   "states": [
    "Northern Qi",
    "Northern Zhou"
@@ -43659,7 +44001,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "yuwen-yong"
+  ],
   "states": [
    "Northern Zhou",
    "Turks"
@@ -43787,7 +44131,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "yuwen-yong"
+  ],
   "states": [
    "Northern Zhou"
   ],
@@ -43846,7 +44192,10 @@
   "places": [
    "handan"
   ],
-  "people": [],
+  "people": [
+   "gao-changgong",
+   "gao-wei"
+  ],
   "states": [
    "Northern Qi"
   ],
@@ -43876,7 +44225,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "yuwen-yong"
+  ],
   "states": [
    "Northern Zhou"
   ],
@@ -43940,7 +44291,10 @@
   "summary_zh": "周武帝攻克平阳，大败北齐后主援军，进而攻取晋阳、邺城。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Wu_of_Northern_Zhou",
   "places": [],
-  "people": [],
+  "people": [
+   "gao-wei",
+   "yuwen-yong"
+  ],
   "states": [
    "Northern Qi"
   ],
@@ -43998,7 +44352,10 @@
   "places": [
    "anyang"
   ],
-  "people": [],
+  "people": [
+   "gao-wei",
+   "yuwen-yong"
+  ],
   "states": [
    "Northern Qi",
    "Northern Zhou"
@@ -44135,7 +44492,8 @@
    "xian"
   ],
   "people": [
-   "gao-jiong"
+   "gao-jiong",
+   "yang-jian"
   ],
   "states": [
    "Sui Empire"
@@ -44161,7 +44519,8 @@
    "xian"
   ],
   "people": [
-   "yuwen-kai"
+   "yuwen-kai",
+   "yang-jian"
   ],
   "states": [
    "Sui Empire"
@@ -44253,7 +44612,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "yang-jian"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -44318,7 +44679,8 @@
    "xian"
   ],
   "people": [
-   "yuwen-kai"
+   "yuwen-kai",
+   "yang-jian"
   ],
   "states": [
    "Sui Empire"
@@ -44503,7 +44865,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "yang-jian"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -44631,7 +44995,9 @@
   "summary_zh": "高句丽犯辽西，隋文帝发兵三十万征讨，遇雨涝疾疫和海上风暴，死者十之八九。",
   "source": "https://en.wikipedia.org/wiki/Goguryeo%E2%80%93Sui_War",
   "places": [],
-  "people": [],
+  "people": [
+   "yang-jian"
+  ],
   "states": [
    "Koguryo",
    "Sui Empire"
@@ -44724,7 +45090,8 @@
   ],
   "people": [
    "yang-guang",
-   "yang-su"
+   "yang-su",
+   "dugu-qieluo"
   ],
   "states": [
    "Sui Empire"
@@ -44967,7 +45334,8 @@
    "xian"
   ],
   "people": [
-   "yang-guang"
+   "yang-guang",
+   "yang-jian"
   ],
   "states": [
    "Sui Empire"
@@ -45002,7 +45370,8 @@
    "taiyuan"
   ],
   "people": [
-   "yang-su"
+   "yang-su",
+   "yang-guang"
   ],
   "states": [
    "Sui Empire"
@@ -45033,7 +45402,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45067,7 +45438,10 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "yang-guang",
+   "yang-jian"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45101,7 +45475,8 @@
   ],
   "people": [
    "yang-su",
-   "yuwen-kai"
+   "yuwen-kai",
+   "yang-guang"
   ],
   "states": [
    "Sui Empire"
@@ -45192,7 +45567,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45323,7 +45700,9 @@
   "summary_zh": "炀帝亲征吐谷浑，伏允败逃，隋于其地置西海、河源、鄯善、且末四郡。",
   "source": "https://en.wikipedia.org/wiki/Tuyuhun",
   "places": [],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45350,7 +45729,8 @@
    "zhangye"
   ],
   "people": [
-   "pei-ju"
+   "pei-ju",
+   "yang-guang"
   ],
   "states": [
    "Sui Empire"
@@ -45437,7 +45817,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45490,7 +45872,9 @@
   "summary_zh": "隋朝大军被高句丽名将乙支文德击溃。一次次失败的远征耗尽了国力，引发了最终推翻隋朝的民变。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Salsu",
   "places": [],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Koguryo",
    "Sui Empire"
@@ -45561,7 +45945,9 @@
   "places": [
    "liaoyang"
   ],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Koguryo",
    "Sui Empire"
@@ -45656,7 +46042,8 @@
   "source": "https://en.wikipedia.org/wiki/Siege_of_Yanmen",
   "places": [],
   "people": [
-   "li-shimin"
+   "li-shimin",
+   "yang-guang"
   ],
   "states": [
    "Göktürks",
@@ -45685,7 +46072,9 @@
   "places": [
    "yangzhou"
   ],
-  "people": [],
+  "people": [
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45750,7 +46139,8 @@
    "yanshi"
   ],
   "people": [
-   "li-mi-sui"
+   "li-mi-sui",
+   "yang-guang"
   ],
   "states": [
    "Sui Empire"
@@ -45782,7 +46172,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "li-yuan",
+   "yang-guang"
+  ],
   "states": [
    "Sui Empire"
   ],
@@ -45816,7 +46209,8 @@
    "taiyuan"
   ],
   "people": [
-   "li-shimin"
+   "li-shimin",
+   "li-yuan"
   ],
   "states": [
    "Sui Empire"
@@ -45878,7 +46272,9 @@
    "xian"
   ],
   "people": [
-   "li-shimin"
+   "li-shimin",
+   "li-yuan",
+   "yang-guang"
   ],
   "states": [
    "Tang Empire"
@@ -46269,7 +46665,8 @@
   ],
   "people": [
    "fang-xuanling",
-   "wei-zheng"
+   "wei-zheng",
+   "li-shimin"
   ],
   "states": [
    "Tang Empire"
@@ -46423,7 +46820,8 @@
   "places": [],
   "people": [
    "li-jing",
-   "li-shiji"
+   "li-shiji",
+   "li-shimin"
   ],
   "states": [
    "Göktürks",
@@ -46678,7 +47076,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "li-shimin"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -46862,7 +47262,9 @@
   "places": [
    "turpan"
   ],
-  "people": [],
+  "people": [
+   "li-shimin"
+  ],
   "states": [
    "Anxi and Beiting Protectorates",
    "Tang Empire"
@@ -47086,7 +47488,8 @@
    "xian"
   ],
   "people": [
-   "wei-zheng"
+   "wei-zheng",
+   "li-shimin"
   ],
   "states": [
    "Tang Empire"
@@ -47149,7 +47552,9 @@
   "summary_zh": "太宗亲征高句丽，连下辽东诸城，然久攻安市不克，天寒班师。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Ansi",
   "places": [],
-  "people": [],
+  "people": [
+   "li-shimin"
+  ],
   "states": [
    "Balhae"
   ],
@@ -47454,7 +47859,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-gaozong-of-tang"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -47486,7 +47893,8 @@
    "xian"
   ],
   "people": [
-   "wu-zetian"
+   "wu-zetian",
+   "emperor-gaozong-of-tang"
   ],
   "states": [
    "Tang Empire"
@@ -47622,7 +48030,9 @@
   "summary_zh": "武后授意许敬宗诬告长孙无忌谋反，流放黔州后被逼自缢。",
   "source": "https://en.wikipedia.org/wiki/Zhangsun_Wuji",
   "places": [],
-  "people": [],
+  "people": [
+   "wu-zetian"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -47849,7 +48259,10 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "emperor-gaozong-of-tang",
+   "wu-zetian"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -48123,7 +48536,8 @@
    "luoyang"
   ],
   "people": [
-   "wu-zetian"
+   "wu-zetian",
+   "emperor-gaozong-of-tang"
   ],
   "states": [
    "Tang Empire"
@@ -48457,7 +48871,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "wu-zetian"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -48514,7 +48930,8 @@
   ],
   "people": [
    "di-renjie",
-   "wu-zetian"
+   "wu-zetian",
+   "emperor-gaozong-of-tang"
   ],
   "states": [
    "Tang Empire"
@@ -49239,7 +49656,8 @@
   "people": [
    "du-fu",
    "li-bai",
-   "yao-chong"
+   "yao-chong",
+   "emperor-xuanzong"
   ],
   "states": [
    "Tang Empire"
@@ -49276,7 +49694,8 @@
    "xian"
   ],
   "people": [
-   "princess-taiping"
+   "princess-taiping",
+   "emperor-xuanzong"
   ],
   "states": [
    "Tang Empire"
@@ -49843,7 +50262,8 @@
    "xian"
   ],
   "people": [
-   "an-lushan"
+   "an-lushan",
+   "emperor-xuanzong"
   ],
   "states": [
    "Tang Empire"
@@ -50550,7 +50970,8 @@
    "xianyang"
   ],
   "people": [
-   "yang-guifei"
+   "yang-guifei",
+   "emperor-xuanzong"
   ],
   "states": [
    "Tang Empire"
@@ -51366,7 +51787,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "li-kuo"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -51469,7 +51892,9 @@
   "places": [
    "linqing"
   ],
-  "people": [],
+  "people": [
+   "li-kuo"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -51497,7 +51922,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "li-kuo"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -51562,7 +51989,9 @@
   "summary_zh": "陆贽为德宗起草罪己诏，赦免诸叛镇，分化瓦解叛军。",
   "source": "https://en.wikipedia.org/wiki/Lu_Zhi",
   "places": [],
-  "people": [],
+  "people": [
+   "li-kuo"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -52004,7 +52433,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "li-kuo"
+  ],
   "states": [
    "Tang Empire"
   ],
@@ -52489,7 +52920,8 @@
   "places": [],
   "people": [
    "bai-juyi",
-   "yang-guifei"
+   "yang-guifei",
+   "emperor-xuanzong"
   ],
   "states": [
    "Tang Empire"
@@ -53830,7 +54262,8 @@
   ],
   "people": [
    "huang-chao",
-   "zhu-wen"
+   "zhu-wen",
+   "li-keyong"
   ],
   "states": [
    "Tang Empire"
@@ -54071,7 +54504,8 @@
   "source": "https://en.wikipedia.org/wiki/Li_Keyong",
   "places": [],
   "people": [
-   "huang-chao"
+   "huang-chao",
+   "li-keyong"
   ],
   "states": [
    "Tang Empire"
@@ -54139,7 +54573,8 @@
    "kaifeng"
   ],
   "people": [
-   "zhu-wen"
+   "zhu-wen",
+   "li-keyong"
   ],
   "states": [
    "Tang Empire"
@@ -54712,7 +55147,8 @@
    "kaifeng"
   ],
   "people": [
-   "zhu-wen"
+   "zhu-wen",
+   "li-keyong"
   ],
   "states": [
    "Later Liang"
@@ -55476,7 +55912,8 @@
    "dingzhou"
   ],
   "people": [
-   "li-cunxu"
+   "li-cunxu",
+   "abaoji"
   ],
   "states": [
    "Khitans",
@@ -55511,7 +55948,8 @@
    "kaifeng"
   ],
   "people": [
-   "li-cunxu"
+   "li-cunxu",
+   "li-siyuan"
   ],
   "states": [
    "Jin (Shatuo Li)",
@@ -55693,7 +56131,8 @@
    "luoyang"
   ],
   "people": [
-   "li-cunxu"
+   "li-cunxu",
+   "li-siyuan"
   ],
   "states": [
    "Later Liang",
@@ -55728,7 +56167,9 @@
   "places": [
    "luoyang"
   ],
-  "people": [],
+  "people": [
+   "li-siyuan"
+  ],
   "states": [
    "Later Tang"
   ],
@@ -55759,7 +56200,9 @@
   "summary_zh": "阿保机灭渤海后卒于扶余府，述律后断腕殉葬，摄理国政。",
   "source": "https://en.wikipedia.org/wiki/Shul%C3%BC_Ping",
   "places": [],
-  "people": [],
+  "people": [
+   "abaoji"
+  ],
   "states": [
    "Balhae",
    "Khitans"
@@ -55886,7 +56329,8 @@
    "luoyang"
   ],
   "people": [
-   "feng-dao"
+   "feng-dao",
+   "li-siyuan"
   ],
   "states": [
    "Later Tang"
@@ -56122,7 +56566,8 @@
    "beijing"
   ],
   "people": [
-   "shi-jingtang"
+   "shi-jingtang",
+   "yelu-deguang"
   ],
   "states": [
    "Khitans",
@@ -56442,7 +56887,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "li-jing-southern-tang"
+  ],
   "states": [
    "Southern Tang"
   ],
@@ -56573,7 +57020,9 @@
   "summary_zh": "晋军乘大风奋击，大败契丹，耶律德光乘骆驼北逃。",
   "source": "https://en.wikipedia.org/wiki/Shi_Chonggui",
   "places": [],
-  "people": [],
+  "people": [
+   "yelu-deguang"
+  ],
   "states": [
    "Khitans",
    "Later Jin"
@@ -56674,7 +57123,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "yelu-deguang"
+  ],
   "states": [
    "Khitans",
    "Later Han",
@@ -56745,7 +57196,9 @@
   "summary_zh": "耶律德光因中原反抗北撤，病死于栾城杀胡林。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Taizong_of_Liao",
   "places": [],
-  "people": [],
+  "people": [
+   "yelu-deguang"
+  ],
   "states": [
    "Later Han"
   ],
@@ -57263,7 +57716,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "chai-rong"
+  ],
   "states": [
    "Later Zhou"
   ],
@@ -57356,7 +57811,8 @@
    "shouxian"
   ],
   "people": [
-   "chai-rong"
+   "chai-rong",
+   "li-jing-southern-tang"
   ],
   "states": [
    "Later Zhou",
@@ -57452,7 +57908,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "li-jing-southern-tang"
+  ],
   "states": [
    "Later Zhou",
    "Southern Tang"
@@ -57520,7 +57978,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "chai-rong"
+  ],
   "states": [
    "Later Zhou"
   ],
@@ -57581,7 +58041,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "chai-rong"
+  ],
   "states": [
    "Later Zhou"
   ],
@@ -57617,7 +58079,8 @@
   ],
   "people": [
    "zhao-kuangyin",
-   "zhao-pu"
+   "zhao-pu",
+   "zhao-guangyi"
   ],
   "states": [
    "Song"
@@ -57650,7 +58113,9 @@
   "summary_zh": "后周旧将李筠在泽州起兵反宋，宋太祖亲征，数月即平定。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Taizu_of_Song",
   "places": [],
-  "people": [],
+  "people": [
+   "zhao-kuangyin"
+  ],
   "states": [
    "Song"
   ],
@@ -57710,7 +58175,8 @@
    "kaifeng"
   ],
   "people": [
-   "zhao-pu"
+   "zhao-pu",
+   "zhao-kuangyin"
   ],
   "states": [
    "Song"
@@ -58070,7 +58536,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "zhao-kuangyin"
+  ],
   "states": [
    "Song",
    "Southern Tang"
@@ -58106,7 +58574,10 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "zhao-guangyi",
+   "zhao-kuangyin"
+  ],
   "states": [
    "Song"
   ],
@@ -58207,7 +58678,8 @@
    "beijing"
   ],
   "people": [
-   "yelu-xiuge"
+   "yelu-xiuge",
+   "zhao-guangyi"
   ],
   "states": [
    "Liao",
@@ -58243,7 +58715,9 @@
   "places": [
    "taiyuan"
   ],
-  "people": [],
+  "people": [
+   "zhao-guangyi"
+  ],
   "states": [
    "Liao",
    "Northern Han",
@@ -58411,7 +58885,9 @@
   "summary_zh": "宋太宗三路北伐燕云，曹彬主力在岐沟关大败，宋此后转攻为守。",
   "source": "https://en.wikipedia.org/wiki/Song–Liao_wars",
   "places": [],
-  "people": [],
+  "people": [
+   "zhao-guangyi"
+  ],
   "states": [
    "Song"
   ],
@@ -58948,7 +59424,9 @@
   "source": "https://en.wikipedia.org/wiki/Chanyuan_Treaty",
   "places": [],
   "people": [
-   "kou-zhun"
+   "kou-zhun",
+   "song-zhenzong",
+   "xiao-chuo"
   ],
   "states": [
    "Liao",
@@ -59014,7 +59492,9 @@
   "summary_zh": "澶渊之盟后真宗伪造天书，东封泰山，大兴宫观，耗费巨大。",
   "source": "https://en.wikipedia.org/wiki/Emperor_Zhenzong",
   "places": [],
-  "people": [],
+  "people": [
+   "song-zhenzong"
+  ],
   "states": [
    "Song"
   ],
@@ -59179,7 +59659,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "song-zhenzong"
+  ],
   "states": [
    "Song"
   ],
@@ -59712,7 +60194,9 @@
   "places": [
    "yanan"
   ],
-  "people": [],
+  "people": [
+   "li-yuanhao"
+  ],
   "states": [
    "Song"
   ],
@@ -59914,7 +60398,8 @@
   ],
   "people": [
    "fan-zhongyan",
-   "ouyang-xiu"
+   "ouyang-xiu",
+   "song-renzong"
   ],
   "states": [
    "Song"
@@ -59981,7 +60466,8 @@
    "kaifeng"
   ],
   "people": [
-   "zeng-gongliang"
+   "zeng-gongliang",
+   "song-renzong"
   ],
   "states": [
    "Song"
@@ -60015,7 +60501,8 @@
    "yinchuan"
   ],
   "people": [
-   "li-yuanhao"
+   "li-yuanhao",
+   "song-renzong"
   ],
   "states": [
    "Xixia"
@@ -60719,7 +61206,8 @@
   ],
   "people": [
    "sima-guang",
-   "wang-anshi"
+   "wang-anshi",
+   "song-shenzong"
   ],
   "states": [
    "Song"
@@ -61280,7 +61768,8 @@
   ],
   "people": [
    "su-shi",
-   "su-zhe"
+   "su-zhe",
+   "song-shenzong"
   ],
   "states": [
    "Song"
@@ -61377,7 +61866,9 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "song-shenzong"
+  ],
   "states": [
    "Song"
   ],
@@ -61407,7 +61898,9 @@
   "places": [
    "lingwu"
   ],
-  "people": [],
+  "people": [
+   "song-shenzong"
+  ],
   "states": [
    "Xixia"
   ],
@@ -62176,7 +62669,8 @@
   "people": [
    "cai-jing",
    "sima-guang",
-   "su-shi"
+   "su-shi",
+   "song-huizong"
   ],
   "states": [
    "Song"
@@ -62395,7 +62889,8 @@
    "acheng"
   ],
   "people": [
-   "wanyan-aguda"
+   "wanyan-aguda",
+   "emperor-tianzuo-of-liao"
   ],
   "states": [
    "Liao"
@@ -62428,7 +62923,10 @@
   "summary_zh": "阿骨打以两万之众大破辽天祚帝亲征大军，辽从此一蹶不振。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Hubudagang",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-tianzuo-of-liao",
+   "wanyan-aguda"
+  ],
   "states": [
    "Liao"
   ],
@@ -62549,7 +63047,9 @@
   "places": [
    "bairin-left"
   ],
-  "people": [],
+  "people": [
+   "wanyan-aguda"
+  ],
   "states": [
    "Liao"
   ],
@@ -62772,7 +63272,10 @@
   "places": [
    "kaifeng"
   ],
-  "people": [],
+  "people": [
+   "song-huizong",
+   "song-qinzong"
+  ],
   "states": [
    "Song"
   ],
@@ -62803,7 +63306,9 @@
   "summary_zh": "辽天祚帝流亡多年后被金兵俘获，辽朝在中国境内的统治宣告结束。",
   "source": "https://en.wikipedia.org/wiki/Liao_dynasty",
   "places": [],
-  "people": [],
+  "people": [
+   "emperor-tianzuo-of-liao"
+  ],
   "states": [
    "Liao",
    "Song"
@@ -62840,7 +63345,8 @@
   ],
   "people": [
    "li-gang",
-   "song-huizong"
+   "song-huizong",
+   "song-qinzong"
   ],
   "states": [
    "Song"
@@ -62904,7 +63410,9 @@
    "kaifeng"
   ],
   "people": [
-   "song-huizong"
+   "song-huizong",
+   "song-gaozong",
+   "song-qinzong"
   ],
   "states": [
    "Jin"
@@ -63011,7 +63519,8 @@
    "kaifeng"
   ],
   "people": [
-   "zong-ze"
+   "zong-ze",
+   "song-gaozong"
   ],
   "states": [
    "Jin"
@@ -63040,7 +63549,8 @@
    "hangzhou"
   ],
   "people": [
-   "han-shizhong"
+   "han-shizhong",
+   "song-gaozong"
   ],
   "states": [
    "Southern Song"
@@ -63074,7 +63584,10 @@
   "places": [
    "ningbo"
   ],
-  "people": [],
+  "people": [
+   "song-gaozong",
+   "wuzhu"
+  ],
   "states": [
    "Jin"
   ],
@@ -63134,7 +63647,8 @@
   ],
   "people": [
    "han-shizhong",
-   "liang-hongyu"
+   "liang-hongyu",
+   "wuzhu"
   ],
   "states": [
    "Jin",
@@ -63288,7 +63802,8 @@
    "baoji"
   ],
   "people": [
-   "wu-jie"
+   "wu-jie",
+   "wuzhu"
   ],
   "states": [
    "Jin"
@@ -63542,7 +64057,9 @@
   "summary_zh": "刘锜以少胜多，坚守顺昌，大败金兀术铁骑。",
   "source": "https://en.wikipedia.org/wiki/Liu_Qi_(Song_dynasty)",
   "places": [],
-  "people": [],
+  "people": [
+   "wuzhu"
+  ],
   "states": [
    "Jin"
   ],
@@ -63565,7 +64082,8 @@
   "source": "https://en.wikipedia.org/wiki/Yue_Fei",
   "places": [],
   "people": [
-   "yue-fei"
+   "yue-fei",
+   "wuzhu"
   ],
   "states": [
    "Jin"
@@ -64104,7 +64622,8 @@
   ],
   "people": [
    "qin-hui",
-   "yue-fei"
+   "yue-fei",
+   "song-gaozong"
   ],
   "states": [
    "Southern Song"
@@ -64292,7 +64811,8 @@
    "hangzhou"
   ],
   "people": [
-   "yue-fei"
+   "yue-fei",
+   "song-gaozong"
   ],
   "states": [
    "Southern Song"
@@ -72458,7 +72978,9 @@
   "places": [
    "nanjing"
   ],
-  "people": [],
+  "people": [
+   "zhu-yuanzhang"
+  ],
   "states": [
    "Ming"
   ],
@@ -72655,7 +73177,8 @@
    "nanjing"
   ],
   "people": [
-   "li-shanchang"
+   "li-shanchang",
+   "zhu-yuanzhang"
   ],
   "states": [
    "Ming"
@@ -73596,7 +74119,8 @@
    "nanjing"
   ],
   "people": [
-   "xie-jin"
+   "xie-jin",
+   "zhu-di"
   ],
   "states": [
    "Ming"
@@ -73749,7 +74273,8 @@
   "source": "https://en.wikipedia.org/wiki/Zheng_He",
   "places": [],
   "people": [
-   "zheng-he"
+   "zheng-he",
+   "zhu-di"
   ],
   "states": [
    "Ming"
@@ -73844,7 +74369,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "zhu-di"
+  ],
   "states": [
    "Ming"
   ],
@@ -73914,7 +74441,8 @@
    "nanjing"
   ],
   "people": [
-   "xie-jin"
+   "xie-jin",
+   "zhu-di"
   ],
   "states": [
    "Ming"
@@ -74040,7 +74568,9 @@
   "summary_zh": "永乐帝亲征漠北，于斡难河击败本雅失里，继破阿鲁台。",
   "source": "https://en.wikipedia.org/wiki/Yongle_Emperor",
   "places": [],
-  "people": [],
+  "people": [
+   "zhu-di"
+  ],
   "states": [
    "Mongols (Northern Yuan)"
   ],
@@ -74387,7 +74917,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "zhu-di"
+  ],
   "states": [
    "Ming"
   ],
@@ -74450,7 +74982,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "zhu-di"
+  ],
   "states": [
    "Ming"
   ],
@@ -74484,7 +75018,9 @@
   "places": [
    "zhenglan-banner"
   ],
-  "people": [],
+  "people": [
+   "zhu-di"
+  ],
   "states": [
    "Ming",
    "Mongols (Northern Yuan)"
@@ -75107,7 +75643,8 @@
   "source": "https://en.wikipedia.org/wiki/Tumu_Crisis",
   "places": [],
   "people": [
-   "yu-qian"
+   "yu-qian",
+   "zhu-qizhen"
   ],
   "states": [
    "Ming",
@@ -75299,7 +75836,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "zhu-qizhen"
+  ],
   "states": [
    "Ming",
    "Oirat Confederation"
@@ -75491,7 +76030,8 @@
    "beijing"
   ],
   "people": [
-   "yu-qian"
+   "yu-qian",
+   "zhu-qizhen"
   ],
   "states": [
    "Ming"
@@ -77489,7 +78029,9 @@
   "places": [
    "nanchang"
   ],
-  "people": [],
+  "people": [
+   "wang-yangming"
+  ],
   "states": [
    "Ming"
   ],
@@ -79922,7 +80464,8 @@
    "beijing"
   ],
   "people": [
-   "zhang-juzheng"
+   "zhang-juzheng",
+   "wanli-emperor"
   ],
   "states": [
    "Ming"
@@ -80206,7 +80749,8 @@
   ],
   "people": [
    "hai-rui",
-   "zhang-juzheng"
+   "zhang-juzheng",
+   "wanli-emperor"
   ],
   "states": [
    "Ming"
@@ -80395,7 +80939,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "wanli-emperor"
+  ],
   "states": [
    "Ming"
   ],
@@ -80771,7 +81317,9 @@
   "places": [
    "pyongyang"
   ],
-  "people": [],
+  "people": [
+   "wanli-emperor"
+  ],
   "states": [
    "Joseon",
    "Ming"
@@ -80840,7 +81388,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "wanli-emperor"
+  ],
   "states": [
    "Ming"
   ],
@@ -81150,7 +81700,8 @@
   ],
   "people": [
    "matteo-ricci",
-   "xu-guangqi"
+   "xu-guangqi",
+   "wanli-emperor"
   ],
   "states": [
    "Ming"
@@ -81877,7 +82428,9 @@
   "places": [
    "hetu-ala"
   ],
-  "people": [],
+  "people": [
+   "nurhaci"
+  ],
   "states": [
    "Later Jin"
   ],
@@ -81940,7 +82493,9 @@
   "summary_zh": "努尔哈赤以七大恨告天，攻陷抚顺，明金战争开始。",
   "source": "https://en.wikipedia.org/wiki/Nurhaci",
   "places": [],
-  "people": [],
+  "people": [
+   "nurhaci"
+  ],
   "states": [
    "Later Jin",
    "Ming"
@@ -82002,7 +82557,9 @@
   "summary_zh": "努尔哈赤击溃了兵力远胜于己的明军。",
   "source": "https://en.wikipedia.org/wiki/Battle_of_Sarh%C5%AB",
   "places": [],
-  "people": [],
+  "people": [
+   "nurhaci"
+  ],
   "states": [
    "Later Jin",
    "Ming"
@@ -82541,7 +83098,8 @@
   "source": "https://en.wikipedia.org/wiki/Battle_of_Ningyuan",
   "places": [],
   "people": [
-   "yuan-chonghuan"
+   "yuan-chonghuan",
+   "nurhaci"
   ],
   "states": [
    "Ming"
@@ -82607,7 +83165,8 @@
   "source": "https://en.wikipedia.org/wiki/Wei_Zhongxian",
   "places": [],
   "people": [
-   "wei-zhongxian"
+   "wei-zhongxian",
+   "chongzhen-emperor"
   ],
   "states": [
    "Ming"
@@ -82674,7 +83233,8 @@
    "jinzhou"
   ],
   "people": [
-   "yuan-chonghuan"
+   "yuan-chonghuan",
+   "hong-taiji"
   ],
   "states": [
    "Ming"
@@ -82738,7 +83298,8 @@
    "beijing"
   ],
   "people": [
-   "li-zicheng"
+   "li-zicheng",
+   "chongzhen-emperor"
   ],
   "states": [
    "Ming"
@@ -82772,7 +83333,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "hong-taiji"
+  ],
   "states": [
    "Ming"
   ],
@@ -82806,7 +83369,9 @@
    "beijing"
   ],
   "people": [
-   "yuan-chonghuan"
+   "yuan-chonghuan",
+   "chongzhen-emperor",
+   "hong-taiji"
   ],
   "states": [
    "Ming"
@@ -83067,7 +83632,9 @@
   "places": [
    "shenyang"
   ],
-  "people": [],
+  "people": [
+   "hong-taiji"
+  ],
   "states": [
    "Qing (Later Jin)"
   ],
@@ -83558,7 +84125,8 @@
   "people": [
    "dorgon",
    "li-zicheng",
-   "wu-sangui"
+   "wu-sangui",
+   "chongzhen-emperor"
   ],
   "states": [
    "Qing"
@@ -83667,7 +84235,9 @@
   "places": [
    "xiongxian"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -84265,7 +84835,8 @@
   ],
   "people": [
    "adam-schall",
-   "ferdinand-verbiest"
+   "ferdinand-verbiest",
+   "kangxi-emperor"
   ],
   "states": [
    "Qing"
@@ -84778,7 +85349,9 @@
   "places": [
    "guangzhou"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85469,7 +86042,9 @@
   "places": [
    "chengde"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85534,7 +86109,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85600,7 +86177,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85756,7 +86335,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "kangxi-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85905,7 +86486,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "yongzheng-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -85998,7 +86581,9 @@
   "places": [
    "lhasa"
   ],
-  "people": [],
+  "people": [
+   "yongzheng-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -87553,7 +88138,9 @@
   "summary_zh": "徐述夔诗集被指悖逆，剖棺戮尸，为乾隆文字狱典型。",
   "source": "https://en.wikipedia.org/wiki/Literary_inquisition",
   "places": [],
-  "people": [],
+  "people": [
+   "qianlong-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -88093,7 +88680,9 @@
   "places": [
    "beijing"
   ],
-  "people": [],
+  "people": [
+   "qianlong-emperor"
+  ],
   "states": [
    "Qing"
   ],
@@ -88615,7 +89204,8 @@
    "beijing"
   ],
   "people": [
-   "heshen"
+   "heshen",
+   "qianlong-emperor"
   ],
   "states": [
    "Qing"
@@ -96767,7 +97357,8 @@
    "beijing"
   ],
   "people": [
-   "tan-sitong"
+   "tan-sitong",
+   "empress-dowager-cixi"
   ],
   "states": [
    "Qing"
@@ -97064,7 +97655,9 @@
   "places": [
    "xian"
   ],
-  "people": [],
+  "people": [
+   "empress-dowager-cixi"
+  ],
   "states": [
    "Qing"
   ],
