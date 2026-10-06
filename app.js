@@ -4876,6 +4876,8 @@ async function init() {
     if (selNames().has(f.properties.name) && selOnMap()) selectCountry(null); else selectCountry(f.properties.name);
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.sel && e.target.tagName !== "INPUT" && !state.reading && $("search").hidden) selectCountry(null); });
+  // The tour card grows and shrinks with each step's caption; the immersive reading card ends just above it.
+  new ResizeObserver(() => { if (state.tour) syncTourTop(); }).observe($("tour"));
   new ResizeObserver(() => {
     document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
     document.documentElement.style.setProperty("--rail-w", document.querySelector(".rail").offsetWidth + "px");

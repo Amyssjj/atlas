@@ -942,7 +942,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 /* Reading a step's story in immersive mode: the story takes the picture's place above the tour card (no tabs, no
    big centred picture), and the tour card stays so the next step is one tap away. */
 .immersive.tour-reading .ledger { display: flex !important; position: fixed; top: calc(16px + env(safe-area-inset-top));
-  bottom: calc(var(--tour-top, 200px) + 10px); left: 50%; right: auto; transform: translateX(-50%);
+  bottom: calc(var(--tour-top, 200px) + 12px); left: 50%; right: auto; transform: translateX(-50%);
   width: min(680px, calc(100% - 32px)); height: auto; max-height: none; box-sizing: border-box; border-radius: 14px;
   box-shadow: 0 12px 48px rgba(0,0,0,.5); }
 /* Only the story itself: no tabs, selected-country card, story navigation (the tour card moves on) or map note */
@@ -953,7 +953,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   z-index: 2; width: 32px; height: 32px; border: 0; border-radius: 50%; color: #fff; background: rgba(0,0,0,.5); font-size: 20px;
   line-height: 1; cursor: pointer; }
 .immersive.tour-reading .read-close:hover { background: rgba(0,0,0,.7); }
-.immersive.tour-reading .story { padding-top: 14px; }
+.immersive.tour-reading .story { padding-top: 14px; padding-bottom: 28px; }
 .immersive.touring.tour-reading .tour { display: block; }
 .tour-immersive[aria-pressed="true"] { background: var(--jade-soft); }
 .tour-pic { position: fixed; z-index: 4; cursor: pointer; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,.35); background: var(--panel-solid); transition: opacity .3s ease, left .4s ease, top .4s ease, width .4s ease, height .4s ease; }
