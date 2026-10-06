@@ -5,7 +5,7 @@ The atlas keeps two kinds of data in two places.
 | Kind | Where | Examples |
 | --- | --- | --- |
 | Hand-edited source data, small and worth reviewing as diffs | git, served by GitHub Pages with the page | `data/events.json`, `data/tours.json`, the prompts in `tools/ai_prompts.json`, and the indexes `data/ai-illustrations.json`, `data/tiles.json`, `data/illustrations.json` |
-| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`), background music (`music/…m4a`) |
+| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, under its `atlas/` prefix (the bucket is shared with other projects), never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`), background music (`music/…m4a`) |
 
 Keeping the binaries out of git stops the repository growing by the full size of every regenerated file (git keeps old
 versions forever) and keeps the site well under the GitHub Pages size limit. The Wikimedia thumbnails
@@ -40,6 +40,7 @@ export ATLAS_R2_ACCOUNT_ID=…        # 32 hex characters, the <id> in https://<
 export ATLAS_R2_ACCESS_KEY_ID=…
 export ATLAS_R2_SECRET_ACCESS_KEY=…
 export ATLAS_R2_BUCKET=…
+# optional: export ATLAS_R2_PREFIX=atlas/   (the default; where this project's files sit in the shared bucket)
 ```
 
 AI pictures also need `OPENAI_API_KEY` (and `GOOGLE_API_KEY` for the Gemini option). Downloading needs nothing,
@@ -196,6 +197,6 @@ changed), and by hand. A red run usually means an index was pushed before its up
   `data.atlas.daiyip.com`. On a Mac, run `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`. Also check
   the router's DNS, or use `1.1.1.1`.
 - **A pack fails with a CORS error:** check the Transform Rule above. `curl -sD - -o /dev/null -H "Origin:
-  https://atlas.daiyip.com" https://data.atlas.daiyip.com/tiles/<file>` must show `access-control-allow-origin`,
+  https://atlas.daiyip.com" https://data.atlas.daiyip.com/atlas/tiles/<file>` must show `access-control-allow-origin`,
   including on `cf-cache-status: HIT`.
 - **The app asks for a file R2 doesn't have:** the index was pushed before the upload. Run `tools/upload_assets.py`.

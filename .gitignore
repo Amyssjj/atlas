@@ -12,3 +12,5 @@ data/ai/
 # Terrain and imagery packs are served from R2 (tools/upload_assets.py tiles), not from git
 tiles/
 data/music/
+data/narration/
+.claude/mind-transfer/

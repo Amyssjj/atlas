@@ -1,10 +1,12 @@
-"""Upload generated assets to the Cloudflare R2 bucket served at https://data.atlas.daiyip.com.
+"""Upload generated assets to the Cloudflare R2 bucket served at https://data.atlas.daiyip.com, under its atlas/ prefix
+(ATLAS_R2_PREFIX; the bucket is shared with other projects).
 
-Usage: python3 tools/upload_assets.py [ai] [music] [tiles]
+Usage: python3 tools/upload_assets.py [ai] [music] [narration] [tiles]
 Reads ATLAS_R2_ACCOUNT_ID, ATLAS_R2_ACCESS_KEY_ID, ATLAS_R2_SECRET_ACCESS_KEY and ATLAS_R2_BUCKET from the environment
 (prefixed, so other projects can keep their own R2 credentials beside these).
   ai:    data/ai/*.webp (made by tools/pack_ai_illustrations.py) go to ai/<file>; their names already carry a hash.
   music: data/music/*.m4a (made by tools/pack_music.py) go to music/<file>; hashed names too.
+  narration: data/narration/*.m4a (made by tools/pack_narration.py) go to narration/<file>; hashed names too.
   tiles: tiles/pack/ and tiles/sat/ (made by tools/pack_tiles.py) go to tiles/<dir>/<name>-<hash>.png, and
          data/tiles.json ({"pack/4-0-0": "pack/4-0-0-<hash>.png", ...}, read by app.js) is rewritten.
 Neither local folder is in git. Only files the bucket lacks are sent. Every name carries a content hash, so the files
@@ -13,17 +15,20 @@ import json, os, sys, zlib
 from concurrent.futures import ThreadPoolExecutor
 import boto3
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-SETS = {"ai": ("data/ai", "ai/", "image/webp"), "music": ("data/music", "music/", "audio/mp4")}
+SETS = {"ai": ("data/ai", "ai/", "image/webp"), "music": ("data/music", "music/", "audio/mp4"),
+        "narration": ("data/narration", "narration/", "audio/mp4")}
 
 s3 = boto3.client("s3", endpoint_url=f"https://{os.environ['ATLAS_R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
                   aws_access_key_id=os.environ["ATLAS_R2_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["ATLAS_R2_SECRET_ACCESS_KEY"],
                   region_name="auto")
 BUCKET = os.environ["ATLAS_R2_BUCKET"]
+# The bucket is shared between projects; atlas keeps its files under this prefix (https://data.atlas.daiyip.com/atlas/...).
+PREFIX = os.environ.get("ATLAS_R2_PREFIX", "atlas/")
 
 def existing(prefix):
     keys = set()
-    for page in s3.get_paginator("list_objects_v2").paginate(Bucket=BUCKET, Prefix=prefix):
-        keys.update(o["Key"] for o in page.get("Contents", []))
+    for page in s3.get_paginator("list_objects_v2").paginate(Bucket=BUCKET, Prefix=PREFIX + prefix):
+        keys.update(o["Key"][len(PREFIX):] for o in page.get("Contents", []))
     return keys
 
 def upload(files, prefix, ctype):
@@ -31,7 +36,7 @@ def upload(files, prefix, ctype):
     have = existing(prefix)
     todo = [k for k in sorted(files) if prefix + k not in have]
     def put(k):
-        s3.upload_file(files[k], BUCKET, prefix + k,
+        s3.upload_file(files[k], BUCKET, PREFIX + prefix + k,
                        ExtraArgs={"ContentType": ctype, "CacheControl": "public, max-age=31536000, immutable"})
     with ThreadPoolExecutor(16) as ex: list(ex.map(put, todo))
     return len(todo), len(have)
