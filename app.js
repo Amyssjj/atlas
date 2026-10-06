@@ -108,7 +108,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -133,7 +133,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -218,6 +218,7 @@ async function setLang(lang) {
   renderPlaces();
   renderGeo();
   renderLookChips();
+  renderPanelChip();
   renderLedger();
   updateCompare(true);
   emit("lang", { lang });
@@ -684,6 +685,90 @@ function toggleLookPop(open) {
   pop.querySelector('[aria-checked="true"]')?.focus();
 }
 
+// Panel colour and opacity (面板 row). "auto" keeps the built-in light/dark panel; a dark colour
+// switches the interface to dark ink. Opacity applies to the era card, ledger, timeline and tour card.
+const PANEL_COLORS = [
+  { id: "auto", name: "Default", name_zh: "默认", swatch: "linear-gradient(135deg, #f7f9f8 50%, #151a1d 50%)" },
+  { id: "#f7f9f8", name: "Light", name_zh: "浅色" },
+  { id: "#ffffff", name: "White", name_zh: "雪白" },
+  { id: "#f2e8d3", name: "Paper", name_zh: "宣纸" },
+  { id: "#dce9e2", name: "Celadon", name_zh: "青瓷" },
+  { id: "#151a1d", name: "Dark", name_zh: "深色" },
+  { id: "#000000", name: "Black", name_zh: "纯黑" },
+  { id: "#162a2b", name: "Teal ink", name_zh: "黛青" },
+  { id: "#18213a", name: "Night blue", name_zh: "夜蓝" },
+  { id: "#2e221b", name: "Umber", name_zh: "赭石" },
+];
+const hexOk = (c) => /^#[0-9a-f]{6}$/i.test(c || "") ? c.toLowerCase() : null;
+const hexRgb = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+const hexDark = (c) => { const [r, g, b] = hexRgb(c).map((v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.18; };
+function applyPanel() {
+  const root = document.documentElement, st = root.style, c = state.panelColor;
+  if (c === "auto") {
+    for (const k of ["--panel-rgb", "--panel-solid"]) st.removeProperty(k);
+    root.removeAttribute("data-theme");
+  } else {
+    st.setProperty("--panel-rgb", hexRgb(c).join(", "));
+    st.setProperty("--panel-solid", c);
+    root.dataset.theme = hexDark(c) ? "dark" : "light";
+  }
+  if (state.panelOp == null) st.removeProperty("--panel-op");
+  else st.setProperty("--panel-op", String(state.panelOp));
+  renderPanelChip();
+}
+function setPanel({ color = state.panelColor, op = state.panelOp } = {}) {
+  state.panelColor = color;
+  state.panelOp = op;
+  applyPanel();
+  try {
+    localStorage.setItem("atlas-panel-color", color);
+    if (op == null) localStorage.removeItem("atlas-panel-op"); else localStorage.setItem("atlas-panel-op", String(op));
+  } catch {}
+  emit("panel", { color, opacity: op });
+}
+const panelEntry = (c) => PANEL_COLORS.find((p) => p.id === c) || { id: c, name: "Custom", name_zh: "自定义" };
+const panelSwatch = (p) => `<i style="background:${p.swatch || p.id}"></i>`;
+function renderPanelChip() {
+  const btn = $("panel-btn");
+  if (!btn) return;
+  const p = panelEntry(state.panelColor);
+  btn.innerHTML = `${panelSwatch(p)}<b>${esc(zh() ? p.name_zh : p.name)}</b><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>`;
+  btn.title = t("g_panel");
+  // Unset opacity shows the built-in one (92% light, 90% dark).
+  const op = Math.round(100 * (state.panelOp ?? (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--panel-a")) || 0.92)));
+  $("panel-op").value = op;
+  $("panel-op-v").value = `${op}%`;
+}
+function togglePanelPop(open) {
+  const pop = $("panel-pop"), btn = $("panel-btn");
+  open ??= pop.hidden;
+  pop.hidden = !open;
+  btn.setAttribute("aria-expanded", open);
+  if (!open) return;
+  const tick = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.2L9.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  const item = (p) => `<button type="button" role="menuitemradio" aria-checked="${p.id === state.panelColor}" data-panel="${p.id}"><span>${panelSwatch(p)}<b>${esc(zh() ? p.name_zh : p.name)}</b></span>${tick}</button>`;
+  const custom = !PANEL_COLORS.some((p) => p.id === state.panelColor);
+  const cur = hexOk(state.panelColor) || "#f7f9f8";
+  pop.innerHTML = PANEL_COLORS.slice(0, 5).map(item).join("") + "<hr>" + PANEL_COLORS.slice(5).map(item).join("") + "<hr>"
+    + `<button type="button" role="menuitemradio" aria-checked="${custom}" class="panel-custom"><span>${custom ? panelSwatch({ id: cur }) : "<i></i>"}<b>${esc(t("panelCustom"))}</b></span>${tick}<input type="color" value="${cur}" aria-label="${esc(t("panelCustom"))}"></button>`;
+  if (pop.parentNode !== document.body) document.body.appendChild(pop);
+  const r = btn.getBoundingClientRect(), h = pop.offsetHeight;
+  pop.style.position = "fixed";
+  pop.style.top = `${r.bottom + 6 + h > innerHeight - 8 ? Math.max(8, r.top - 6 - h) : r.bottom + 6}px`;
+  pop.style.left = `${Math.min(r.left, innerWidth - pop.offsetWidth - 8)}px`;
+  pop.style.right = "auto";
+  pop.querySelector('[aria-checked="true"]')?.focus();
+}
+// Applied before the map loads so the panels never flash in the old colour.
+try {
+  state.panelColor = localStorage.getItem("atlas-panel-color") || "auto";
+  const op = parseFloat(localStorage.getItem("atlas-panel-op"));
+  state.panelOp = op >= 0.2 && op <= 1 ? op : null;
+} catch {}
+if (state.panelColor !== "auto" && !hexOk(state.panelColor)) state.panelColor = "auto";
+state.panelOp ??= null;
+applyPanel();
+
 function baseStyle() {
   // A pack's own base map (another planet, an invented world) replaces Earth's elevation and imagery.
   const B = state.basemap;
@@ -985,7 +1070,7 @@ function packChip(def, on, onClick) {
     g.className = "lg";
     g.id = "lg-pack";
     g.innerHTML = `<span data-i18n="g_pack">${esc(t("g_pack"))}</span>`;
-    document.querySelector(".era-layers").append(g);
+    document.querySelector(".era-layers").insertBefore(g, $("lg-panel"));
   }
   const b = document.createElement("button");
   b.type = "button";
@@ -4934,11 +5019,33 @@ async function init() {
   addEventListener("resize", () => toggleLangPop(false));
   toggle("t-3d", "show3d", () => { state.flat3d = false; set3d(state.show3d, true); });
   renderLookChips();
+  renderPanelChip();
   $("look-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleLookPop(); });
   $("look-pop").addEventListener("click", (e) => { const b = e.target.closest("[data-look]"); toggleLookPop(false); if (b) setLook(b.dataset.look); });
   document.addEventListener("click", (e) => { if (!$("look-pop").hidden && !e.target.closest("#look-pop")) toggleLookPop(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("look-pop").hidden) { toggleLookPop(false); $("look-btn").focus(); } });
   addEventListener("resize", () => toggleLookPop(false));
+  $("panel-btn").addEventListener("click", (e) => { e.stopPropagation(); togglePanelPop(); });
+  $("panel-pop").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-panel]");
+    if (b) { togglePanelPop(false); setPanel({ color: b.dataset.panel }); }
+    else if (e.target.closest(".panel-custom") && e.target.tagName !== "INPUT") e.target.closest(".panel-custom").querySelector("input").click();
+  });
+  // The custom picker previews while dragging and is kept when it closes.
+  $("panel-pop").addEventListener("input", (e) => {
+    const c = hexOk(e.target.value);
+    if (!c) return;
+    state.panelColor = c;
+    applyPanel();
+    e.target.parentNode.querySelector("i").style.background = c;
+  });
+  $("panel-pop").addEventListener("change", (e) => { const c = hexOk(e.target.value); if (c) setPanel({ color: c }); });
+  $("panel-op").addEventListener("input", (e) => { state.panelOp = +e.target.value / 100; applyPanel(); });
+  $("panel-op").addEventListener("change", (e) => setPanel({ op: +e.target.value / 100 }));
+  $("panel-op").addEventListener("dblclick", () => setPanel({ op: null }));
+  document.addEventListener("click", (e) => { if (!$("panel-pop").hidden && !e.target.closest("#panel-pop")) togglePanelPop(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("panel-pop").hidden) { togglePanelPop(false); $("panel-btn").focus(); } });
+  addEventListener("resize", () => togglePanelPop(false));
   toggle("t-neighbours", "showNeighbours", () => {
     const v = state.showNeighbours ? "visible" : "none";
     map.setLayoutProperty("neighbour-fill", "visibility", v);

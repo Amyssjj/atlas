@@ -1,7 +1,10 @@
 /* Layout: full-bleed terrain map; era seal card top-left, event ledger right, timeline rail along the bottom. */
 :root {
   --bg: #e9eeec;
-  --panel: rgba(247, 249, 248, 0.92);
+  /* Panel colour and opacity; the 面板 settings override --panel-rgb, --panel-solid and --panel-op on <html>. */
+  --panel-rgb: 247, 249, 248;
+  --panel-a: 0.92;
+  --panel: rgba(var(--panel-rgb), var(--panel-op, var(--panel-a)));
   --panel-solid: #f7f9f8;
   --ink: #1b2226;
   --muted: #5b6a70;
@@ -18,7 +21,8 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #101416;
-    --panel: rgba(21, 26, 29, 0.9);
+    --panel-rgb: 21, 26, 29;
+    --panel-a: 0.9;
     --panel-solid: #151a1d;
     --ink: #e5ebe9;
     --muted: #96a5aa;
@@ -33,7 +37,8 @@
 }
 :root[data-theme="dark"] {
   --bg: #101416;
-  --panel: rgba(21, 26, 29, 0.9);
+  --panel-rgb: 21, 26, 29;
+  --panel-a: 0.9;
   --panel-solid: #151a1d;
   --ink: #e5ebe9;
   --muted: #96a5aa;
@@ -446,6 +451,14 @@ html:lang(en) .mk-polity.minor small { display: none; }
 .chip.look svg { width: 10px; height: 10px; opacity: 0.7; }
 .look i, .look-pop i { width: 14px; height: 14px; border-radius: 50%; flex: none; display: inline-block; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18); }
 .look-pop button > span { display: inline-flex; align-items: center; gap: 8px; }
+/* 面板 row: panel colour menu (with a custom colour picker) and opacity slider */
+.panel-op { display: inline-flex; align-items: center; gap: 6px; font: 500 12px var(--font-body); color: var(--muted); }
+.panel-op input { width: 96px; margin: 0; accent-color: var(--jade); }
+.panel-op output { min-width: 2.6em; font: 500 11px var(--font-data); }
+.panel-pop .panel-custom { position: relative; }
+.panel-pop .panel-custom input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0; padding: 0; }
+.panel-pop .panel-custom i { background: conic-gradient(#e8664f, #e8c34f, #63c2a9, #4f8ee8, #b04fe8, #e8664f); }
+.panel-pop hr { margin: 3px 6px; border: 0; border-top: 1px solid var(--rule); }
 .lg > span { position: absolute; left: 0; top: 8px; font: 600 11px/1 var(--font-body); color: var(--muted); }
 html:lang(zh-CN) .lg { padding-left: 2.9em; }
 html:lang(zh-CN) .lg > span { letter-spacing: 0.1em; }
@@ -926,7 +939,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .tour {
   position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);
   bottom: calc(var(--rail-h, 96px) + 28px); width: min(500px, calc(100% - 32px));
-  padding: 12px 16px 12px; overflow: hidden; background: var(--panel-solid);
+  padding: 12px 16px 12px; overflow: hidden; background: rgba(var(--panel-rgb), var(--panel-op, 1));
 }
 .tour-bar { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--rule); }
 .tour-bar i { display: block; height: 100%; background: var(--cinnabar); transition: width .4s; }
