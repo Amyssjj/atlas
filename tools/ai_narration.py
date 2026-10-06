@@ -1,4 +1,4 @@
-"""Narrate every tour step's Chinese caption with Google Gemini 2.5 Pro TTS, in each of VOICES.
+"""Narrate every tour step's Chinese caption (data/tours.json and the life journeys in data/lives.json) with Google Gemini 2.5 Pro TTS, in each of VOICES.
 
 The text read is the step's speaking script from tools/narration_scripts.json ({"<tour>/<step>": {"script", "direct"}}:
 the caption with pauses and stress marked by punctuation, plus a one-line direction for that step), written from the
@@ -24,8 +24,9 @@ STYLE = ("你是历史纪录片的旁白，讲一段历史故事，要有明显�
 def text_hash(text): return format(zlib.crc32(text.encode()), "08x")
 
 def steps(only):
-    tours = json.load(open(os.path.join(ROOT, "data/tours.json")))
-    for tr in tours if isinstance(tours, list) else tours.get("tours", tours):
+    # The guided tours and the life journeys (data/lives.json), which the app lists as tours too.
+    tours = [tr for f in ("data/tours.json", "data/lives.json") for tr in json.load(open(os.path.join(ROOT, f)))]
+    for tr in tours:
         if only and tr["id"] not in only: continue
         for i, s in enumerate(tr["steps"]):
             if s.get("text_zh"): yield tr["id"], i, s["text_zh"]
