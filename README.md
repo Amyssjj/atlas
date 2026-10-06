@@ -102,7 +102,7 @@ Opening `index.html` straight from disk won't work, because browsers block `fetc
 
 ## Docs
 
-- [docs/custom-data.md](docs/custom-data.md): the data pack format, hosting and links.
+- [docs/custom-data.md](docs/custom-data.md): the data pack format, versions, checking a pack (`tools/validate.py`), hosting and links.
 - [docs/plugins.md](docs/plugins.md): map layers and the plugin API.
 - [docs/internals.md](docs/internals.md): how the built-in data is organised and built, data sources and known limits.
 - [docs/data-updates.md](docs/data-updates.md): where pictures and map tiles live (git or R2) and how to update them.

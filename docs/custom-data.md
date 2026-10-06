@@ -191,6 +191,41 @@ including how to make tiles from one picture, see [custom-ground.md](custom-grou
 Tile paths are relative to the manifest. The style menu offers only the pack's own styles: its imagery and its
 relief. Tiles must use XYZ numbering (row 0 at the north); if your source is TMS, flip the rows.
 
+## Checking a pack
+
+`tools/validate.py` checks a pack against the data format before you publish it. It needs only Python 3:
+
+```sh
+python3 tools/validate.py my-pack             # the pack's folder, or its manifest.json
+python3 tools/validate.py data examples/*-pack   # the atlas's own data/ and the example packs
+```
+
+```
+Atlas data format 1
+my-pack/manifest.json: 2 error(s), 1 warning(s)
+  error: events.json paul-at-athens: unknown `category` 'religion'
+  error: tours.json paul-first step 3: event 'paul-in-cyprus' does not exist
+  warning: events.json saul-is-converted: `layers` has unknown key 'army'
+```
+
+**Errors** are things the atlas would refuse or show wrongly, and the command exits 1 if there are any. **Warnings**
+are worth a look but break nothing. It checks:
+
+- **Manifest**: `atlas` is a format this atlas reads (see [Versions](#versions)), `id`, `name`, `data.eras` and
+  `data.events`, the shape of `region` and `range`, `refs.url` has `{ref}`.
+- **Periods**: unique ids, a name, `start` before `end`, and each period starting where the one before ends (the year
+  after, or the same year), inside `range`. A `glyph` of more than two characters is a warning.
+- **Events**: unique ids, a whole `year` (and `endYear` not before it), `lat`/`lon` on the globe, `level` 1–3, a known
+  `category`, a `title`. Unknown `layers` keys are a warning.
+- **Tours**: unique ids, a title, `era` is one of the periods, every step has a `year`, `at` as `[lon, lat]` and
+  `text`, and its `event` exists.
+- **Layers and plugins**: ids, `type`, `years`, a per-entry `atlas`, the GeoJSON file is a FeatureCollection whose
+  features have geometry and sensible `from`/`to`, plugin files exist.
+
+The **Validate data** workflow (`.github/workflows/validate.yml`) runs it on the atlas's own data and the example
+packs for every push and pull request that changes them. A pack in another repository can run the same command
+in its own CI against a checkout of the atlas.
+
 ## Hosting and the allowlist
 
 Pack text is put into the atlas page, so the atlas only loads packs (and plugins) from a short list of sites:
@@ -207,6 +242,7 @@ To try a pack while you write it, serve the atlas and your pack locally:
 ```sh
 python3 -m http.server 8000          # from the atlas checkout
 # open http://localhost:8000/?pack=examples/demo-pack/manifest.json&packonly=1
+python3 tools/validate.py examples/demo-pack   # and check it (see Checking a pack)
 ```
 
 ## Links into a pack

@@ -17,6 +17,9 @@ Adding events, tours or pictures doesn't change the data format. When a change w
 data or a pack (a new required field, a renamed key, a new file packs rely on), raise the format: bump `FORMAT` in
 `app.js` and `"atlas"` in `data/manifest.json`, add an `UPGRADES` step if older files need converting, and add a row
 to the table in [custom-data.md](custom-data.md#versions) with the app version (`?v=`) that brings it.
+`python3 tools/validate.py` then checks `data/` against the new rules (teach it the new fields too). It runs on
+every pull request that touches `data/` (the **Validate data** workflow); see
+[Checking a pack](custom-data.md#checking-a-pack).
 
 ## Layout on R2
 
