@@ -963,7 +963,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .immersive.tour-reading .story { padding-top: 14px; padding-bottom: 20px;
   -webkit-mask-image: linear-gradient(#000 calc(100% - 28px), transparent); mask-image: linear-gradient(#000 calc(100% - 28px), transparent); }
 .immersive.touring.tour-reading .tour { display: block; }
-.tour-immersive[aria-pressed="true"] { background: var(--jade-soft); }
+.tour-immersive[aria-pressed="true"], .tour-ctl .music-toggle[aria-pressed="true"] { background: var(--jade-soft); }
 .tour-pic { position: fixed; z-index: 4; cursor: pointer; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,.35); background: var(--panel-solid); transition: opacity .3s ease, left .4s ease, top .4s ease, width .4s ease, height .4s ease; }
 .tour-pic.fade-out { opacity: 0; }
 .tour-pic[hidden], .touring.tour-reading .tour-pic { display: none; }
@@ -983,9 +983,10 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
   .tour { bottom: calc(var(--rail-h, 64px) + 8px + var(--bottom-gap, 8px)); width: calc(100% - 16px); padding: 10px 12px; }
   /* Immersive: the card sits low, lined up with the picture's 16px side margins */
   .immersive .tour { bottom: var(--bottom-gap, 8px); width: calc(100% - 32px); box-sizing: border-box; }
-  .immersive .tour-ctl { gap: 4px; }
+  .tour-ctl .music-label { display: none; } /* just ♪ on phones */
+  .tour-ctl { gap: 3px; }
   .immersive.tour-reading .ledger { top: var(--top-gap, 8px); width: calc(100% - 32px); }
-  .immersive .tour-ctl .chip { padding-left: 8px; padding-right: 8px; }
+  .tour-ctl .chip { padding-left: 6px; padding-right: 6px; font-size: 12px; }
   .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
   .touring:not(.tour-reading) .ledger { display: none; }
   .touring.tour-reading .tour { display: none; }

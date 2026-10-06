@@ -1,7 +1,7 @@
 """Check that every file the indexes name is on R2 and can be read by the page.
 
 Usage: python3 tools/check_assets.py
-For each file named in data/tiles.json and data/ai-illustrations.json, asks https://data.atlas.daiyip.com for it
+For each file named in data/tiles.json, data/ai-illustrations.json and data/music.json, asks https://data.atlas.daiyip.com for it
 (HEAD, with the site's Origin) and expects 200, the right content type and Access-Control-Allow-Origin (the app
 fetch()es the packs, so a missing CORS header breaks them as surely as a missing file; see docs/data-updates.md).
 Exits 1 and lists the failures if any. Run by .github/workflows/assets.yml."""
@@ -13,6 +13,8 @@ DATA_URL, ORIGIN = "https://data.atlas.daiyip.com", "https://atlas.daiyip.com"
 def files():
     for f in json.load(open(os.path.join(ROOT, "data/tiles.json"))).values(): yield f"tiles/{f}", "image/png"
     for im in json.load(open(os.path.join(ROOT, "data/ai-illustrations.json")))["images"].values(): yield f"ai/{im['f']}", "image/webp"
+    if os.path.exists(os.path.join(ROOT, "data/music.json")):
+        for m in json.load(open(os.path.join(ROOT, "data/music.json"))).values(): yield f"music/{m['f']}", "audio/mp4"
 
 def check(item):
     path, ctype = item

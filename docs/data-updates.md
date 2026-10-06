@@ -5,7 +5,7 @@ The atlas keeps two kinds of data in two places.
 | Kind | Where | Examples |
 | --- | --- | --- |
 | Hand-edited source data, small and worth reviewing as diffs | git, served by GitHub Pages with the page | `data/events.json`, `data/tours.json`, the prompts in `tools/ai_prompts.json`, and the indexes `data/ai-illustrations.json`, `data/tiles.json`, `data/illustrations.json` |
-| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`) |
+| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`), background music (`music/…m4a`) |
 
 Keeping the binaries out of git stops the repository growing by the full size of every regenerated file (git keeps old
 versions forever) and keeps the site well under the GitHub Pages size limit. The Wikimedia thumbnails
@@ -136,6 +136,22 @@ git add data/ai-illustrations.json tools/ai_prompts.json && git commit
 
 Upload before you push the index, so it never names a file that isn't on R2 yet. Old files can stay on R2; nothing
 names them any more.
+
+## Background music
+
+One quiet instrumental track per period of every region (220), made with Google Lyria 3.5 from the prompts in
+`tools/music_prompts.json` (`"<region>/<period>": prompt`; about $0.08 a track). The app plays the track of the period on
+screen during tours and timeline playback when the music switch is on (off by default), crossfading through Web Audio.
+
+```sh
+python3 tools/ai_music.py ~/Pictures/atlas-ai/music [<region>/<period> …]   # MP3 originals; skips existing ones
+python3 tools/pack_music.py ~/Pictures/atlas-ai/music                       # 96 kbps AAC in data/music/, rewrites data/music.json
+python3 tools/upload_assets.py music
+git add data/music.json tools/music_prompts.json && git commit
+```
+
+Lyria rejects some prompts as "sensitive" (place names such as Cairo or Bukhara, words like "rival" or "rebel");
+describe instruments and mood plainly instead. Prompts must stay instrumental and avoid anachronistic instruments.
 
 ## Elevation and satellite tiles
 
