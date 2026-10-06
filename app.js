@@ -4866,12 +4866,21 @@ function layoutNow() {
 function applyLayout() {
   const L = layoutNow(), root = document.documentElement;
   if (L === state.layoutShown) return;
+  // 一览 folds the ledger to its tabs (it can still be opened); leaving it unfolds a ledger it folded.
+  if (L === "glance") { state.glanceFolded = !$("ledger").classList.contains("collapsed"); if (state.glanceFolded) foldLedger(true); }
+  else if (state.layoutShown === "glance" && state.glanceFolded) { state.glanceFolded = false; foldLedger(false); }
   state.layoutShown = L;
   if (L === "classic") root.removeAttribute("data-layout"); else root.dataset.layout = L;
   root.classList.remove("l-peek", "r-peek");
   if (!$("settings").hidden) renderSettings();
   if (typeof sizeRailVars === "function" && state.ready) requestAnimationFrame(sizeRailVars);
   renderEdgeTabs();
+}
+function foldLedger(c) {
+  $("ledger").classList.toggle("collapsed", c);
+  $("ledger-toggle").textContent = c ? t("show") : t("hide");
+  $("ledger-toggle").setAttribute("aria-expanded", String(!c));
+  setMinButton($("ledger-min"), c);
 }
 function setLayout(id, remember = true) {
   state.layout = layoutOk(id) ? id : "classic";
@@ -5275,7 +5284,7 @@ function setEraMin(on, remember) {
 // Panels below the timeline's top edge use its size; with the dial a phone keeps a strip for the puck instead.
 function sizeRailVars() {
   const rail = document.querySelector(".rail"), st = document.documentElement.style;
-  st.setProperty("--rail-h", (state.dial ? (innerWidth <= 720 ? 96 : 0) : rail.offsetHeight) + "px");
+  st.setProperty("--rail-h", (state.dial ? 0 : rail.offsetHeight) + "px");
   st.setProperty("--rail-w", (state.dial ? 0 : rail.offsetWidth) + "px");
 }
 function stop() {
@@ -5740,12 +5749,7 @@ async function init() {
       renderOverlays();
     });
   }
-  const collapseLedger = (c) => {
-    $("ledger").classList.toggle("collapsed", c);
-    $("ledger-toggle").textContent = c ? t("show") : t("hide");
-    $("ledger-toggle").setAttribute("aria-expanded", String(!c));
-    setMinButton($("ledger-min"), c);
-  };
+  const collapseLedger = foldLedger;
   for (const k of TABS) $("tab-" + k).addEventListener("click", () => {
     // The open story survives a look at the other tabs; the events tab clicked again goes back to the list.
     if (k === "events" && state.tab === "events") state.reading = false;

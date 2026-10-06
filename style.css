@@ -1542,6 +1542,14 @@ html[data-ui] .settings .st-switch { color: var(--ink); }
 /* Time dial (设置 › 时间轴 › 拨盘): replaces the timeline with a puck in the bottom-right corner; pressed, it opens into
    two rings, periods outside and years inside (one turn = 100 years); the centre plays and pauses. Looks: data-skin. */
 #app.dial-mode .rail { display: none; }
+/* On a phone the puck sits in the bottom-right corner: the folded ledger bar beside it, an open ledger under it. */
+@media (max-width: 720px) {
+  #app.dial-mode .dial { right: 8px; bottom: var(--bottom-gap); }
+  #app.dial-mode .ledger { bottom: var(--bottom-gap); }
+  #app.dial-mode .ledger.collapsed { right: 104px; bottom: calc(var(--bottom-gap) + 20px); }
+  #app.dial-mode:has(.ledger:not(.collapsed)) .dial { bottom: calc(var(--bottom-gap) + 52dvh + 8px); }
+  html[data-layout="reader"] #app.dial-mode:has(.ledger:not(.collapsed)) .dial { bottom: calc(var(--bottom-gap) + 72dvh + 8px); }
+}
 .dial { position: absolute; z-index: 6; right: 16px; bottom: 16px; width: 260px; height: 260px; transform-origin: 100% 100%;
   transform: scale(var(--s, .34)); transition: transform .2s ease; border-radius: 50%; cursor: grab; outline: none;
   touch-action: none; user-select: none; -webkit-user-select: none; filter: drop-shadow(0 6px 18px rgba(0,0,0,.4)); }
@@ -1657,7 +1665,6 @@ html[data-layout="glance"] .era > .era-name { grid-area: auto; font-size: 15px; 
 html[data-layout="glance"] .era > .era-year { grid-area: auto; font-size: 18px; }
 html[data-layout="glance"] .era > .era-corner { grid-area: auto; order: 0; margin: 0 0 0 4px; }
 html[data-layout="glance"] .era .era-more, html[data-layout="glance"] .era .era-min { display: none; }
-html[data-layout="glance"] .ledger > :not(.ledger-head) { display: none !important; }
 html[data-layout="glance"] .ledger { width: auto; }
 html[data-layout="glance"] .world-strip, html[data-layout="glance"] .auto-strip,
 html[data-layout="glance"] .mk-army, html[data-layout="glance"] .maplibregl-marker:has(.mk-army) { display: none !important; }
