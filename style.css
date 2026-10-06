@@ -129,7 +129,7 @@ body {
 .auto-strip span { margin: 0 2px 0 4px; }
 .auto-strip .chip { padding: 4px 8px; font-size: 11px; }
 @media (max-width: 1100px) { .auto-strip { top: auto; bottom: 120px; max-width: calc(100vw - 32px); } }
-@media (max-width: 720px) { .auto-strip { top: calc(96px + env(safe-area-inset-top)); bottom: auto; left: 8px; right: 8px; transform: none; max-width: none; } .era.open ~ .auto-strip { display: none; } }
+@media (max-width: 720px) { .auto-strip { top: calc(88px + var(--top-gap, 8px)); bottom: auto; left: 8px; right: 8px; transform: none; max-width: none; } .era.open ~ .auto-strip { display: none; } }
 .chip:focus-visible, .ev:focus-visible, .play:focus-visible, input[type=range]:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; }
 
 /* Event ledger */
@@ -380,8 +380,11 @@ html:lang(en) .mk-polity.minor small { display: none; }
 @media (min-width: 721px) { .era.lean .era-layers, .era.lean .era-summary, .era.lean .era-note, .era.lean .era-snap { display: none; } }
 #app { height: 100dvh; }
 @media (max-width: 720px) {
+  /* Panels hug the screen edges (into the safe areas, clear of the status bar and home indicator) to leave the
+     middle of the map free. */
+  :root { --top-gap: max(6px, calc(env(safe-area-inset-top) - 6px)); --bottom-gap: max(6px, calc(env(safe-area-inset-bottom) - 14px)); }
   .era {
-    top: calc(8px + env(safe-area-inset-top)); left: 8px; width: calc(100% - 16px);
+    top: var(--top-gap); left: 8px; width: calc(100% - 16px);
     padding: 8px 10px; gap: 0 10px; box-sizing: border-box;
   }
   .seal { width: 38px; height: 38px; font-size: 24px; grid-row: span 2; box-shadow: inset 0 0 0 2px var(--seal-bg), inset 0 0 0 3px var(--seal-ink); }
@@ -400,7 +403,7 @@ html:lang(en) .mk-polity.minor small { display: none; }
   .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { display: none; }
 
   .rail {
-    left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom));
+    left: 8px; right: 8px; bottom: var(--bottom-gap);
     padding: 6px 10px 8px; gap: 2px 8px; grid-template-columns: auto 1fr auto;
   }
   .play { width: 36px; height: 36px; }
@@ -414,9 +417,14 @@ html:lang(en) .mk-polity.minor small { display: none; }
 
   .ledger {
     top: auto; left: 8px; right: 8px; width: auto;
-    bottom: calc(var(--rail-h, 64px) + 14px + env(safe-area-inset-bottom));
-    max-height: calc(100dvh - var(--rail-h, 64px) - 110px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    bottom: calc(var(--rail-h, 64px) + 6px + var(--bottom-gap));
+    max-height: calc(100dvh - var(--rail-h, 64px) - 96px - var(--top-gap) - var(--bottom-gap));
   }
+  /* Folded timeline: its play pill and the folded ledger bar share the bottom row, the same height. */
+  .rail.min { padding: 4px 6px; min-height: 48px; box-sizing: border-box; }
+  .rail.min .speed { bottom: -2px; }
+  .rail-folded .ledger.collapsed { left: calc(8px + var(--rail-w, 92px) + 6px); bottom: var(--bottom-gap); height: var(--rail-h, 48px);
+    box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
   .ledger:not(.collapsed) { height: 52dvh; }
   .ledger-head { padding: 8px 12px 6px; align-items: center; }
   .ledger.collapsed .ledger-head { border-bottom: 0; }
@@ -847,7 +855,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 @keyframes search-out { to { opacity: 0; transform: translateY(-10px) scale(.97); } }
 .era { translate: 0 var(--search-push, 0px); transition: translate .42s cubic-bezier(.2, .9, .25, 1.06); }
 /* On a phone it opens just below the status bar and notch, where the era panel starts. */
-@media (max-width: 720px) { .search { top: calc(8px + env(safe-area-inset-top)); left: 8px; width: calc(100% - 16px); } }
+@media (max-width: 720px) { .search { top: var(--top-gap, 8px); left: 8px; width: calc(100% - 16px); } }
 @media (prefers-reduced-motion: reduce) { .search, .search.closing { animation: none; } .era { transition: none; } }
 .search-bar { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
 .search-bar svg { width: 16px; height: 16px; color: var(--muted); flex: none; }
@@ -948,7 +956,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .story .illu.ai { cursor: zoom-in; }
 .tour-pic .illu figcaption { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 14px 10px 5px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
 @media (max-width: 720px) {
-  .tour { bottom: calc(var(--rail-h, 64px) + 12px + env(safe-area-inset-bottom)); width: calc(100% - 16px); padding: 10px 12px; }
+  .tour { bottom: calc(var(--rail-h, 64px) + 8px + var(--bottom-gap, 8px)); width: calc(100% - 16px); padding: 10px 12px; }
   .tour p { font-size: 13.5px; max-height: 30dvh; overflow-y: auto; }
   .touring:not(.tour-reading) .ledger { display: none; }
   .touring.tour-reading .tour { display: none; }

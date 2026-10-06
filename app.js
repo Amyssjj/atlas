@@ -4336,6 +4336,7 @@ function setRailButton(min) {
 function setRailMin(on, remember) {
   state.railMin = on;
   document.querySelector(".rail").classList.toggle("min", on);
+  $("app").classList.toggle("rail-folded", on);
   setRailButton(on);
   if (on) toggleSpeedPop(false);
   if (remember) try { localStorage.setItem("atlas-rail-min", on ? "1" : "0"); } catch {}
@@ -4863,6 +4864,7 @@ async function init() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.sel && e.target.tagName !== "INPUT" && !state.reading && $("search").hidden) selectCountry(null); });
   new ResizeObserver(() => {
     document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
+    document.documentElement.style.setProperty("--rail-w", document.querySelector(".rail").offsetWidth + "px");
     sizeTrack();
     fitBandLabels();
   }).observe(document.querySelector(".rail"));
