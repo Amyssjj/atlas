@@ -12,6 +12,8 @@ const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
 // (tools/upload_assets.py). Their names carry a content hash; data/tiles.json and data/ai-illustrations.json name them.
 // For local work a mirror can stand in: localStorage["atlas-data-url"] = "http://localhost:8766".
 const DATA_URL = (() => { try { return localStorage.getItem("atlas-data-url"); } catch { return null; } })() || "https://data.atlas.daiyip.com";
+// Atlas's own files on R2 sit under atlas/; plugin apps keep theirs under apps/<id>/ (docs/data-updates.md#layout-on-r2).
+const R2 = DATA_URL + "/atlas";
 const BASE_PATH = new URL(BASE).pathname;
 // Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
 // ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
@@ -262,7 +264,7 @@ const packs = {};
 // data/tiles.json maps each pack ("pack/4-0-0") to its current hashed file name on R2.
 let tileNamesJob = null;
 const tileNames = () => tileNamesJob ||= loadJSON("data/tiles.json").then((names) => {
-  pruneKept(["/tiles/", BASE_PATH + "tiles/"], Object.values(names).map((n) => "/tiles/" + n));
+  pruneKept(["/tiles/", "/atlas/tiles/", BASE_PATH + "tiles/"], Object.values(names).map((n) => "/atlas/tiles/" + n));
   return names;
 }, () => ({}));
 // The service worker keeps packs and pictures forever under their names. A file that changed has a new name, so once
@@ -282,7 +284,7 @@ function loadPack(z, px, py, dir = "pack") {
     // Each archive is wrapped in a 1x1 PNG (the host serves only standard file types); the archive itself sits in
     // a private "tpAk" chunk: a 4-byte index length, a JSON index {"x/y": [offset, length]}, then the tile PNGs.
     packs[key] = tileNames()
-      .then((names) => names[key] && fetch(`${DATA_URL}/tiles/${names[key]}`))
+      .then((names) => names[key] && fetch(`${R2}/tiles/${names[key]}`))
       .then((r) => (r?.ok ? r.arrayBuffer() : null))
       .then((png) => {
         if (!png) return null;
@@ -1807,13 +1809,13 @@ function showCard(lngLat, html) {
 /* ---------- illustrations ---------- */
 // data/illustrations.json maps "p:<person id>" / "e:<event id>" to an image; the pictures themselves sit in data/img/<bucket>.json
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
-// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/ai/<file>.webp (tools/pack_ai_illustrations.py),
+// "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/atlas/ai/<file>.webp (tools/pack_ai_illustrations.py),
 // always captioned as AI-generated.
 const illuSets = {};
 const illuBuckets = {};
 const illuSet = (set) => illuSets[set] ||= loadJSON(set === "ai" ? "data/ai-illustrations.json" : "data/illustrations.json")
   .then((idx) => {
-    if (set === "ai") pruneKept(["/ai/", BASE_PATH + "data/ai/"], Object.values(idx.images).map((im) => "/ai/" + im.f));
+    if (set === "ai") pruneKept(["/ai/", "/atlas/ai/", BASE_PATH + "data/ai/"], Object.values(idx.images).map((im) => "/atlas/ai/" + im.f));
     return idx;
   }, () => ({ keys: {}, images: {} })).then((idx) => (illuSets[set + "Ready"] = idx));
 function illuSlot(key) {
@@ -1827,7 +1829,7 @@ async function fillIllus(root) {
     const idx = await illuSet(set);
     const id = idx.keys[fig.dataset.illu], im = idx.images[id];
     if (!im) continue;
-    let src = im.f && `${DATA_URL}/${set}/${im.f}`; // AI pictures are files of their own, served from R2
+    let src = im.f && `${R2}/${set}/${im.f}`; // AI pictures are files of their own, served from R2
     if (!src) {
       illuBuckets[set + im.b] ||= loadJSON(`data/${set}/${im.b}.json`).catch(() => ({}));
       src = (await illuBuckets[set + im.b])[id];
@@ -4352,7 +4354,7 @@ function buildRail() {
 
 // Playback moves through each era (or the zoomed window) in roughly the same time.
 /* ---------- background music ---------- */
-// One quiet track per period (data/music.json names <DATA_URL>/music/<file>, made by tools/ai_music.py and
+// One quiet track per period (data/music.json names <DATA_URL>/atlas/music/<file>, made by tools/ai_music.py and
 // tools/pack_music.py). It plays during tours and timeline playback while the music switch is on, follows the period
 // on screen and crossfades when that changes. Volume goes through Web Audio, because iOS ignores an audio
 // element's volume (the R2 files send the CORS header this needs).
@@ -4375,7 +4377,7 @@ async function syncMusic() {
     const ctx = music.ctx ||= new (window.AudioContext || window.webkitAudioContext)();
     if (ctx.state === "suspended") ctx.resume();
     const el = new Audio();
-    el.crossOrigin = "anonymous"; el.loop = true; el.preload = "auto"; el.src = `${DATA_URL}/music/${f}`;
+    el.crossOrigin = "anonymous"; el.loop = true; el.preload = "auto"; el.src = `${R2}/music/${f}`;
     const gain = ctx.createGain();
     gain.gain.value = 0;
     ctx.createMediaElementSource(el).connect(gain).connect(ctx.destination);
