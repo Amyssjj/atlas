@@ -4535,7 +4535,7 @@ function buildRail() {
 // element's volume (the R2 files send the CORS header this needs).
 const MUSIC_VOL = 0.3, MUSIC_FADE = 1.5;
 const music = { key: null, track: null, ctx: null, index: null };
-const musicWanted = () => state.music && (state.tour || state.playing) && state.era && state.era.region !== "world"
+const musicWanted = () => !EMBED && state.music && (state.tour || state.playing) && state.era && state.era.region !== "world"
   ? `${state.era.region}/${state.era.id}` : null;
 async function syncMusic() {
   const want = musicWanted();
@@ -4582,7 +4582,7 @@ const crc32 = (str) => {
 async function narrateStep(tour, i) {
   stopNarration();
   const s = tour.tr.steps[i];
-  if (!state.narration || !s?.text_zh) return;
+  if (EMBED || !state.narration || !s?.text_zh) return; // an app embedding the atlas plays its own sound
   narr.index ||= Promise.all([loadJSON("data/narration.json").catch(() => ({})), packMedia("narration")]).then(([a, p]) => ({ ...a, ...p }));
   const n = (await narr.index)[`${tour.id}/${i}`], f = n && n.h === crc32(s.text_zh) && n[state.voice];
   if (!f || state.tour !== tour || tour.i !== i) return;
