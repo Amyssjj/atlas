@@ -113,6 +113,7 @@ logs it in the console and carries on without it.
 | `event` | `{id, event}`: an event was opened. |
 | `lang` | `{lang}`: the language changed. |
 | `panel` | `{color, opacity}`: the panel colour (`auto` or `#rrggbb`) or opacity (0.2–1, `null` = built-in) changed. |
+| `panelStyle` | `{style}`: the panel style changed (`classic`, `paper`, `glass`, `editorial` or `lacquer`). |
 
 **Adding to the map**
 

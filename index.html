@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=186">
+<link rel="stylesheet" href="style.css?v=187">
 </head>
 <body>
 <div id="app">
@@ -83,6 +83,7 @@
     <div class="st-head"><h2 id="st-title" data-i18n="settings">Settings</h2><small id="st-ver"></small><button type="button" class="zbtn" id="settings-close" data-i18n-title="close" aria-label="Close">×</button></div>
     <div class="st-body">
       <div class="st-sec"><h3 data-i18n="stLook">Appearance</h3>
+        <div class="st-styles" id="st-styles" role="group" data-i18n-title="stStyle"></div>
         <div class="st-row"><span data-i18n="stPanel">Panel colour</span><button type="button" class="chip look" id="panel-btn" aria-haspopup="menu" aria-expanded="false"></button></div>
         <div class="st-row"><span data-i18n="panelOp">Opacity</span><label class="panel-op"><input type="range" id="panel-op" min="20" max="100" step="1" data-i18n-title="panelOp"><output id="panel-op-v"></output></label></div>
       </div>
@@ -181,6 +182,6 @@
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="app.js?v=186"></script>
+<script src="app.js?v=187"></script>
 </body>
 </html>
