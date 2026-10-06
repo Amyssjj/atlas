@@ -112,7 +112,7 @@ const UI = {
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
     detail: "详略", levels: ["大事", "要事", "细目"], allCats: "全部", cat: { war: "战争", politics: "政治", reform: "改革", rebellion: "起义", culture: "文化", economy: "经济", diplomacy: "外交", science: "科技", society: "社会" },
-    layers: "图层", settings: "设置", stStyle: "面板风格", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
+    layers: "图层", settings: "设置", stStyle: "面板风格", stLook: "外观", stPanel: "面板颜色", stMapStyle: "地图样式", stRail: "时间轴", stRailStyle: "样式", stFull: "完整", stSlim: "精简", stDial: "拨盘", stDialLook: "拨盘样式", dialTap: "年 · 轻点播放", dialTapStop: "年 · 轻点暂停", dialLabel: "年份拨盘：按住转动，外圈换朝代，内圈换年份，轻点中心播放", stContent: "内容", stAI: "AI 插图", stNarr: "导览旁白", stOff: "关", stLang: "语言", stLocal: "设置只保存在这台设备上", stReset: "恢复默认", g_ai: "AI", g_map: "地图", g_look: "底图", g_pol: "政治", g_war: "军事", g_move: "交通", g_cul: "人文", g_pack: "专题", g_panel: "面板", panelOp: "不透明度", panelCustom: "自定义…", rulers: "君主", armies: "军队", routes: "路线", forces: "参战双方", ruler: "在位：",
     reign: (a, b) => `${a}–${b}年在位`, troops: "兵力", unknown: "不详", losses: "伤亡",
     result: { won: "胜", lost: "败", draw: "平" },
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
@@ -137,7 +137,7 @@ const UI = {
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
     detail: "Detail", levels: ["Key", "Major", "All"], allCats: "All", cat: { war: "War", politics: "Politics", reform: "Reform", rebellion: "Uprising", culture: "Culture", economy: "Economy", diplomacy: "Diplomacy", science: "Science", society: "Society" },
-    layers: "Layers", settings: "Settings", stStyle: "Panel style", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
+    layers: "Layers", settings: "Settings", stStyle: "Panel style", stLook: "Appearance", stPanel: "Panel colour", stMapStyle: "Map style", stRail: "Timeline", stRailStyle: "Style", stFull: "Full", stSlim: "Slim", stDial: "Dial", stDialLook: "Dial look", dialTap: "tap to play", dialTapStop: "tap to pause", dialLabel: "Year dial: press and turn; the outer ring changes period, the inner ring the year; tap the centre to play", stContent: "Content", stAI: "AI pictures", stNarr: "Tour narration", stOff: "Off", stLang: "Language", stLocal: "Settings are kept on this device only", stReset: "Reset", g_ai: "AI", g_map: "Map", g_look: "Style", g_pol: "Power", g_war: "War", g_move: "Travel", g_cul: "Culture", g_pack: "Pack", g_panel: "Panels", panelOp: "Opacity", panelCustom: "Custom…", rulers: "Rulers", armies: "Armies", routes: "Routes", forces: "Forces", ruler: "Ruler: ",
     reign: (a, b) => `r. ${a}–${b}`, troops: "Troops", unknown: "unknown", losses: "Losses",
     result: { won: "Won", lost: "Lost", draw: "Draw" },
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
@@ -1423,6 +1423,7 @@ async function setYear(year, opts = {}) {
   $("year").textContent = num;
   $("year-suffix").textContent = suffix;
   if (!opts.fromSlider) $("slider").value = yearToPos(state.year);
+  if (state.dial && !dial.drag) drawDial();
   revealYear(true);
   saveView();
   refreshRegionPop();
@@ -4601,6 +4602,7 @@ function renderYearMarks() {
   }
 }
 function buildRail() {
+  if (state.dial) buildDial();
   sizeTrack();
   requestAnimationFrame(() => { fitBandLabels(); renderYearMarks(); revealYear(false); });
   const pct = (p) => (p / SLIDER_MAX) * 100;
@@ -4834,6 +4836,183 @@ function setSpeed(v, remember) {
   if (state.playing) { stop(); play(); }
   if (!$("settings").hidden) renderSettings();
 }
+/* ---------- time dial: the timeline as a puck in the corner that opens into two rings ---------- */
+
+// Outer ring: the periods of the timeline (one sector each, settles on a period's first year when let go). Inner ring:
+// years, one turn = 100 years, faster turns go further. The ring turns with the finger: clockwise goes forward in time.
+const DIAL_SKINS = [
+  { id: "plain", name: "Plain", name_zh: "简洁", o: "#f3f5f4", c: "#1b2226", m: "#b93a26" },
+  { id: "luopan", name: "Compass", name_zh: "罗盘", o: "#b07a2e", c: "#1a0f0b", m: "#c0281a" },
+  { id: "sundial", name: "Sundial", name_zh: "日晷", o: "#d6ddcf", c: "#4f8a6c", m: "#33493a" },
+  { id: "glass", name: "Glass", name_zh: "玻璃", o: "rgba(255,255,255,.35)", c: "rgba(10,14,18,.6)", m: "#7ff0d4" },
+  { id: "watch", name: "Watch", name_zh: "表盘", o: "#0d0f11", c: "#25292d", m: "#ff8a1f" },
+];
+const SVGNS = "http://www.w3.org/2000/svg";
+const dial = { el: null, eras: [], key: "", year: 0, open: false, closeT: 0, drag: null, sent: 0, lastIdx: -1 };
+const svgEl = (tag, attrs, parent) => { const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.append(e); return e; };
+const dialStep = () => 360 / dial.eras.length;
+const dialIdx = (y) => { for (let i = dial.eras.length - 1; i >= 0; i--) if (y >= dial.eras[i].start) return i; return 0; };
+const dialPos = (y) => { const i = dialIdx(y), e = dial.eras[i]; return i + Math.min(1, Math.max(0, (y - e.start) / (e.end - e.start + 1))); };
+const dialYearAt = (p) => { p = Math.max(0, Math.min(dial.eras.length - 1e-6, p)); const i = Math.floor(p), e = dial.eras[i]; return e.start + (p - i) * (e.end - e.start + 1); };
+const dialLabel = (e) => (zh() ? e.glyph : (e.tiny || e.short || e.name || "").split("|")[0]);
+function makeDial() {
+  const el = document.createElement("div");
+  el.className = "dial small";
+  el.id = "dial";
+  el.tabIndex = 0;
+  el.setAttribute("role", "slider");
+  el.innerHTML = `<svg viewBox="-130 -130 260 260" aria-hidden="true"><defs>
+    <radialGradient id="g-bronze" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#e2b866"/><stop offset=".55" stop-color="#b07a2e"/><stop offset="1" stop-color="#6b4317"/></radialGradient>
+    <radialGradient id="g-bronze2" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#c99a4a"/><stop offset="1" stop-color="#7a501f"/></radialGradient>
+    <radialGradient id="g-stone" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#eef2e6"/><stop offset=".7" stop-color="#c9d3c0"/><stop offset="1" stop-color="#a9b6a2"/></radialGradient>
+    <radialGradient id="g-jade" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#8fbfa6"/><stop offset="1" stop-color="#3f7a5f"/></radialGradient>
+    <linearGradient id="g-shadow" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1d2a22" stop-opacity=".05"/><stop offset="1" stop-color="#1d2a22" stop-opacity=".45"/></linearGradient>
+    <radialGradient id="g-steel" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#3a3f44"/><stop offset="1" stop-color="#0d0f11"/></radialGradient></defs>
+    <circle r="128" class="d-outer"/><circle r="95" class="d-inner"/><circle r="60" class="d-core"/><g class="deco-under"></g>
+    <g class="g-periods"></g><g class="g-ticks"></g>
+    <path d="M0 -129 L-6 -138 L6 -138 Z" class="d-notch"/><line x1="0" y1="-95" x2="0" y2="-62" class="d-hair"/><g class="deco-over"></g>
+    <text y="-18" class="c-glyph"></text><text y="14" class="c-year"></text><text y="36" class="c-sub"></text></svg>`;
+  $("app").append(el);
+  const ticks = el.querySelector(".g-ticks");
+  for (let k = 0; k < 100; k++) {
+    const a = (k * 3.6 * Math.PI) / 180, maj = k % 10 === 0, r0 = maj ? 76 : 86;
+    svgEl("line", { x1: r0 * Math.sin(a), y1: -r0 * Math.cos(a), x2: 93 * Math.sin(a), y2: -93 * Math.cos(a), class: maj ? "t-maj" : "t-min" }, ticks);
+  }
+  el.addEventListener("pointerdown", dialDown);
+  el.addEventListener("pointermove", dialMove);
+  el.addEventListener("pointerup", dialUp);
+  el.addEventListener("pointercancel", dialUp);
+  el.addEventListener("focus", () => setDialOpen(true));
+  el.addEventListener("blur", () => scheduleDialClose());
+  dial.el = el;
+  setDialSkin(state.dialSkin, false);
+}
+// The period ring is redrawn when the timeline's periods change (another region, a selected country).
+function buildDial() {
+  if (!dial.el) return;
+  const eras = state.eras.filter((e) => e.end >= e.start);
+  const key = eras.map((e) => e.id).join("|") + state.lang;
+  if (key === dial.key) return drawDial();
+  dial.key = key;
+  dial.eras = eras;
+  const g = dial.el.querySelector(".g-periods"), step = dialStep();
+  g.innerHTML = "";
+  eras.forEach((e, i) => {
+    const a = (-i * step * Math.PI) / 180, b = ((-i + 0.5) * step * Math.PI) / 180, x = 112 * Math.sin(a), y = -112 * Math.cos(a);
+    svgEl("line", { x1: 97 * Math.sin(b), y1: -97 * Math.cos(b), x2: 127 * Math.sin(b), y2: -127 * Math.cos(b), class: "p-sep" }, g);
+    svgEl("text", { x, y, class: "p-lab", transform: `rotate(${-i * step} ${x} ${y})` }, g).textContent = dialLabel(e);
+  });
+  drawDial();
+}
+function drawDial(y = state.year) {
+  if (!dial.el || !dial.eras.length) return;
+  dial.year = y;
+  const yr = Math.round(y), i = dialIdx(yr), e = dial.eras[i], step = dialStep();
+  dial.el.querySelector(".g-periods").setAttribute("transform", `rotate(${dialPos(y) * step - step / 2})`);
+  dial.el.querySelector(".g-ticks").setAttribute("transform", `rotate(${y * 3.6})`);
+  dial.el.querySelectorAll(".p-lab").forEach((t, k) => t.classList.toggle("on", k === i));
+  const [num] = fmtYearParts(yr);
+  dial.el.querySelector(".c-glyph").textContent = e.glyph;
+  dial.el.querySelector(".c-year").textContent = num;
+  dial.el.querySelector(".c-sub").textContent = t(state.playing ? "dialTapStop" : "dialTap");
+  dial.el.setAttribute("aria-label", t("dialLabel"));
+  dial.el.setAttribute("aria-valuemin", dial.eras[0].start);
+  dial.el.setAttribute("aria-valuemax", dial.eras.at(-1).end);
+  dial.el.setAttribute("aria-valuenow", yr);
+  dial.el.setAttribute("aria-valuetext", `${nameOf(e)} ${fmtYear(yr)}`);
+  if (dial.drag && dial.lastIdx !== -1 && i !== dial.lastIdx) try { navigator.vibrate?.(8); } catch {}
+  dial.lastIdx = i;
+}
+function setDialOpen(on) {
+  dial.open = on;
+  dial.el.style.setProperty("--s", on ? 1 : 0.34);
+  dial.el.classList.toggle("small", !on);
+}
+function scheduleDialClose() {
+  clearTimeout(dial.closeT);
+  if (!state.playing && !dial.drag) dial.closeT = setTimeout(() => { if (document.activeElement !== dial.el || !state.playing) setDialOpen(false); }, 2200);
+}
+// While turning, the dial shows each year at once; the map follows a few times a second (on touch screens only when
+// let go, as with the timeline's slider).
+const dialCoarse = matchMedia("(pointer: coarse)");
+function dialTo(y) {
+  const a = dial.eras[0].start, b = dial.eras.at(-1).end;
+  y = Math.max(Math.max(a, state.range.start), Math.min(Math.min(b, state.range.end), y));
+  drawDial(y);
+  const now = performance.now();
+  if (!dialCoarse.matches && now - dial.sent > 160 && Math.round(y) !== state.year) { dial.sent = now; setYear(Math.round(y)); }
+}
+function dialCentre() { const r = dial.el.getBoundingClientRect(); return { x: r.right - 130, y: r.bottom - 130 }; }
+function dialDown(ev) {
+  const wasOpen = dial.open;
+  clearTimeout(dial.closeT);
+  setDialOpen(true);
+  try { dial.el.setPointerCapture(ev.pointerId); } catch {}
+  const c = dialCentre(), d = Math.hypot(ev.clientX - c.x, ev.clientY - c.y);
+  dial.drag = { c, gear: !wasOpen ? "year" : d < 60 ? "core" : d < 95 ? "year" : "era", a: Math.atan2(ev.clientX - c.x, c.y - ev.clientY), t: performance.now(), moved: 0, pos: dialPos(state.year) };
+  if (dial.drag.gear !== "core" && state.playing) stop();
+}
+function dialMove(ev) {
+  const dr = dial.drag;
+  if (!dr) return;
+  const a = Math.atan2(ev.clientX - dr.c.x, dr.c.y - ev.clientY);
+  let da = ((a - dr.a) * 180) / Math.PI;
+  if (da > 180) da -= 360;
+  if (da < -180) da += 360;
+  // (Touch events can arrive in bursts; a floor on the gap keeps a burst from reading as a flick.)
+  const now = performance.now(), speed = (Math.abs(da) / Math.max(16, now - dr.t)) * 1000;
+  dr.a = a; dr.t = now; dr.moved += Math.abs(da);
+  if (dr.moved < 3) return;
+  if (dr.gear === "era") {
+    dr.pos = Math.max(0, Math.min(dial.eras.length - 1e-6, dr.pos + da / dialStep()));
+    dialTo(dialYearAt(dr.pos));
+  } else if (dr.gear !== "core" || dr.moved > 12) {
+    if (dr.gear === "core") { dr.gear = "year"; if (state.playing) stop(); }
+    dialTo(dial.year + (da / 3.6) * (1 + Math.max(0, speed - 250) / 120));
+  }
+}
+function dialUp() {
+  const dr = dial.drag;
+  if (!dr) return;
+  dial.drag = null;
+  if (dr.moved < 3 && dr.gear === "core") { play(); drawDial(); }
+  else if (dr.gear === "era" && dr.moved >= 3) setYear(dial.eras[Math.round(Math.min(dial.eras.length - 1, dr.pos))].start);
+  else if (dr.moved >= 3) setYear(Math.round(dial.year));
+  scheduleDialClose();
+}
+function setDialSkin(id, remember = true) {
+  if (!DIAL_SKINS.some((d) => d.id === id)) id = "luopan";
+  state.dialSkin = id;
+  if (remember) try { localStorage.setItem("atlas-dial-skin", id); } catch {}
+  if (!dial.el) return;
+  dial.el.dataset.skin = id;
+  const under = dial.el.querySelector(".deco-under"), over = dial.el.querySelector(".deco-over");
+  under.innerHTML = over.innerHTML = "";
+  if (id === "luopan") {
+    for (const r of [124, 99, 91, 66]) svgEl("circle", { r, class: "lp-ring" }, under);
+    for (let k = 0; k < 24; k++) { const a = (k * 15 * Math.PI) / 180; svgEl("circle", { cx: 63.5 * Math.sin(a), cy: -63.5 * Math.cos(a), r: 1.3, class: "lp-dot" }, under); }
+    svgEl("path", { d: "M0 -127 L6 -136 L0 -146 L-6 -136 Z", fill: "#c0281a", stroke: "#3b2508", "stroke-width": ".8" }, over);
+    svgEl("path", { d: "M0 -95 L4 -78 L0 -62 L-4 -78 Z", fill: "#c0281a" }, over);
+  } else if (id === "sundial") {
+    svgEl("path", { d: "M0 -60 L-26 -128 A128 128 0 0 1 26 -128 Z", class: "sd-shadow" }, under);
+    svgEl("path", { d: "M-3 -60 L0 -95 L3 -60 Z", class: "sd-gnomon" }, over);
+  } else if (id === "watch") {
+    for (let k = 0; k < 120; k++) { const a = (k * 3 * Math.PI) / 180; svgEl("line", { x1: 128 * Math.sin(a), y1: -128 * Math.cos(a), x2: 131 * Math.sin(a), y2: -131 * Math.cos(a), class: "wt-knurl" }, under); }
+    svgEl("circle", { cx: 0, cy: -137, r: 5, class: "wt-lume" }, over);
+  }
+}
+// The dial takes the timeline's place (its speed lives in settings); the bar comes back as it was, full or slim.
+function setDial(on, remember) {
+  state.dial = on;
+  if (on && !dial.el) makeDial();
+  $("app").classList.toggle("dial-mode", on);
+  if (dial.el) dial.el.hidden = !on;
+  if (on) { buildDial(); setDialOpen(false); }
+  if (remember) try { localStorage.setItem("atlas-dial", on ? "1" : "0"); } catch {}
+  sizeRailVars();
+}
+const dialPreview = (d) => `<svg viewBox="-20 -20 40 40" aria-hidden="true"><circle r="19" fill="${d.o}" stroke="rgba(0,0,0,.25)"/><circle r="12.5" fill="none" stroke="rgba(0,0,0,.15)"/><circle r="8" fill="${d.c}"/><path d="M0 -19 L-2.5 -23 L2.5 -23Z" fill="${d.m}"/><line y1="-12" y2="-8" stroke="${d.m}" stroke-width="1.5"/></svg>`;
+
 /* ---------- settings: one panel for how Atlas looks and behaves (the 图层 panel keeps the layers) ---------- */
 
 const seg = (items, cur) => items.map(([v, label]) => `<button type="button" data-v="${esc(v)}" aria-pressed="${String(v) === String(cur)}">${esc(label)}</button>`).join("");
@@ -4841,7 +5020,9 @@ const seg = (items, cur) => items.map(([v, label]) => `<button type="button" dat
 function renderSettings() {
   $("st-ver").textContent = `Atlas v${APP_VERSION}`;
   $("st-styles").innerHTML = UI_STYLES.map((u) => `<button type="button" data-v="${u.id}" aria-pressed="${u.id === state.ui}"><i style="${u.preview}"><b></b></i>${esc(zh() ? u.name_zh : u.name)}</button>`).join("");
-  $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")]], state.railSlim ? "slim" : "full");
+  $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")], ["dial", t("stDial")]], state.dial ? "dial" : state.railSlim ? "slim" : "full");
+  $("st-dials").hidden = !state.dial;
+  $("st-dials").innerHTML = DIAL_SKINS.map((d) => `<button type="button" data-v="${d.id}" aria-pressed="${d.id === state.dialSkin}">${dialPreview(d)}${esc(zh() ? d.name_zh : d.name)}</button>`).join("");
   $("st-speed").innerHTML = seg(SPEEDS.map((v) => [v, speedText(v)]), state.speed);
   $("st-narr").innerHTML = seg([["off", t("stOff")], ...Object.entries(t("voices"))], state.narration ? state.voice : "off");
   $("st-lang").innerHTML = seg(LANGS.map((l) => [l.id, l.name]), state.lang);
@@ -4873,6 +5054,8 @@ function resetSettings() {
   if (!state.show3d) $("t-3d").click();
   if (!state.showAI) $("t-ai").click();
   setRailSlim(false, true);
+  setDial(false, true);
+  setDialSkin("luopan");
   setSpeed(1, true);
   setMusic(false);
   setNarration(false);
@@ -4886,7 +5069,8 @@ function initSettings() {
   $("st-reset").addEventListener("click", resetSettings);
   const on = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) { fn(b.dataset.v); renderSettings(); } });
   on("st-styles", (v) => setUIStyle(v));
-  on("st-rail", (v) => setRailSlim(v === "slim", true));
+  on("st-rail", (v) => { setDial(v === "dial", true); if (v !== "dial") setRailSlim(v === "slim", true); });
+  on("st-dials", (v) => { setDialSkin(v); setDialOpen(true); scheduleDialClose(); });
   on("st-speed", (v) => setSpeed(+v, true));
   on("st-narr", (v) => { if (v === "off") return setNarration(false); state.voice = v; setNarration(true); });
   on("st-lang", (v) => { if (v !== state.lang) setLang(v); });
@@ -4952,12 +5136,19 @@ function setEraMin(on, remember) {
   if (on) { toggleRegionPop(false); toggleSettings(false); }
   if (remember) try { localStorage.setItem("atlas-era-min", on ? "1" : "0"); } catch {}
 }
+// Panels below the timeline's top edge use its size; with the dial a phone keeps a strip for the puck instead.
+function sizeRailVars() {
+  const rail = document.querySelector(".rail"), st = document.documentElement.style;
+  st.setProperty("--rail-h", (state.dial ? (innerWidth <= 720 ? 96 : 0) : rail.offsetHeight) + "px");
+  st.setProperty("--rail-w", (state.dial ? 0 : rail.offsetWidth) + "px");
+}
 function stop() {
   clearInterval(state.playing);
   state.playing = null;
   syncMusic();
   $("play-icon").innerHTML = '<path d="M4 2l10 6-10 6z"/>';
   $("play").setAttribute("aria-label", t("play"));
+  if (state.dial) { drawDial(); scheduleDialClose(); }
 }
 
 function set3d(on, already = false) {
@@ -5500,6 +5691,7 @@ async function init() {
   let slim = false;
   try { slim = localStorage.getItem("atlas-rail-slim") === "1"; } catch {}
   setRailSlim(slim);
+  try { state.dialSkin = localStorage.getItem("atlas-dial-skin") || "luopan"; if (localStorage.getItem("atlas-dial") === "1") setDial(true); } catch {}
   $("speed").addEventListener("click", (e) => { e.stopPropagation(); toggleSpeedPop(); });
   $("speed-pop").addEventListener("click", (e) => {
     const b = e.target.closest("[data-speed]");
@@ -5537,8 +5729,7 @@ async function init() {
   // The tour card grows and shrinks with each step's caption; the immersive reading card ends just above it.
   new ResizeObserver(() => { if (state.tour) syncTourTop(); }).observe($("tour"));
   new ResizeObserver(() => {
-    document.documentElement.style.setProperty("--rail-h", document.querySelector(".rail").offsetHeight + "px");
-    document.documentElement.style.setProperty("--rail-w", document.querySelector(".rail").offsetWidth + "px");
+    sizeRailVars();
     sizeTrack();
     fitBandLabels();
     renderYearMarks();

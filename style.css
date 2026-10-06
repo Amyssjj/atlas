@@ -1539,6 +1539,88 @@ html[data-ui] .settings .st-switch { color: var(--ink); }
 .st-styles i::after { top: 12%; right: 8%; width: 30%; height: 58%; }
 .st-styles i b { left: 8%; right: 8%; bottom: 8%; height: 14%; }
 
+/* Time dial (设置 › 时间轴 › 拨盘): replaces the timeline with a puck in the bottom-right corner; pressed, it opens into
+   two rings, periods outside and years inside (one turn = 100 years); the centre plays and pauses. Looks: data-skin. */
+#app.dial-mode .rail { display: none; }
+.dial { position: absolute; z-index: 6; right: 16px; bottom: 16px; width: 260px; height: 260px; transform-origin: 100% 100%;
+  transform: scale(var(--s, .34)); transition: transform .2s ease; border-radius: 50%; cursor: grab; outline: none;
+  touch-action: none; user-select: none; -webkit-user-select: none; filter: drop-shadow(0 6px 18px rgba(0,0,0,.4)); }
+.dial[hidden] { display: none; }
+.dial:focus-visible { box-shadow: 0 0 0 4px color-mix(in srgb, var(--cinnabar) 60%, transparent); }
+.dial svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.d-outer { fill: var(--panel-solid); } .d-inner { fill: color-mix(in srgb, var(--panel-solid) 92%, var(--ink)); stroke: var(--rule); } .d-core { fill: #1b2226; }
+.d-notch { fill: var(--cinnabar); } .d-hair { stroke: color-mix(in srgb, var(--cinnabar) 55%, transparent); stroke-width: 1.5; }
+.p-lab { font: 700 13px var(--font-display); fill: var(--muted); text-anchor: middle; dominant-baseline: central; }
+html[lang="en"] .p-lab { font: 600 10px var(--font-body); }
+.p-lab.on { fill: var(--cinnabar); font-size: 16px; }
+html[lang="en"] .p-lab.on { font-size: 12px; }
+.p-sep { stroke: var(--rule); stroke-width: 1; }
+.t-min { stroke: color-mix(in srgb, var(--ink) 35%, transparent); stroke-width: 1; } .t-maj { stroke: var(--ink); stroke-width: 2; }
+.c-glyph { font: 700 22px var(--font-display); fill: #ff9a83; text-anchor: middle; }
+.c-year { font: 600 34px var(--font-data); fill: #fff; text-anchor: middle; font-variant-numeric: tabular-nums; }
+.c-sub { font: 500 11px var(--font-body); fill: #aab7bb; text-anchor: middle; }
+.dial.small .c-glyph { font-size: 40px; transform: translateY(-14px); } .dial.small .c-year { font-size: 52px; transform: translateY(22px); }
+.dial.small .c-sub, .dial.small .g-ticks, .dial.small .g-periods, .dial.small .deco-under, .dial.small .deco-over { opacity: 0; }
+.dial .g-ticks, .dial .g-periods, .dial .deco-under, .dial .deco-over, .c-sub { transition: opacity .15s; }
+html.embed .dial, .comparing .dial, .touring .dial, .immersive .dial { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .dial { transition: none; } }
+/* 罗盘 Luopan: a bronze geomancer's compass */
+.dial[data-skin="luopan"] .d-outer { fill: url(#g-bronze); stroke: #3b2508; stroke-width: 1.5; }
+.dial[data-skin="luopan"] .d-inner { fill: url(#g-bronze2); stroke: #3b2508; }
+.dial[data-skin="luopan"] .d-core { fill: #1a0f0b; stroke: #d9b36a; stroke-width: 2; }
+.dial[data-skin="luopan"] .p-lab { fill: #2b1605; font-size: 14px; }
+.dial[data-skin="luopan"] .p-lab.on { fill: #8e1b0e; font-size: 17px; }
+.dial[data-skin="luopan"] .p-sep { stroke: rgba(43,22,5,.55); }
+.dial[data-skin="luopan"] .t-min { stroke: rgba(43,22,5,.6); } .dial[data-skin="luopan"] .t-maj { stroke: #2b1605; stroke-width: 2.5; }
+.dial[data-skin="luopan"] .c-glyph { fill: #e2b866; } .dial[data-skin="luopan"] .c-year { fill: #f5e2b8; font-family: var(--font-display); }
+.dial[data-skin="luopan"] .c-sub { fill: #b9955a; }
+.dial[data-skin="luopan"] .d-notch { fill: #c0281a; } .dial[data-skin="luopan"] .d-hair { stroke: #c0281a; stroke-width: 2; }
+.dial .lp-ring { fill: none; stroke: rgba(43,22,5,.5); stroke-width: .8; }
+.dial .lp-dot { fill: #2b1605; }
+/* 日晷 Sundial: a pale stone disc, engraved, with a gnomon's shadow pointing at now */
+.dial[data-skin="sundial"] .d-outer { fill: url(#g-stone); stroke: #8c9b86; stroke-width: 1.5; }
+.dial[data-skin="sundial"] .d-inner { fill: #dfe6d7; stroke: #9aa894; }
+.dial[data-skin="sundial"] .d-core { fill: url(#g-jade); stroke: #2f5c47; stroke-width: 1.5; }
+.dial[data-skin="sundial"] .p-lab { fill: #4f5e4a; paint-order: stroke; stroke: rgba(255,255,255,.7); stroke-width: 1.2px; }
+.dial[data-skin="sundial"] .p-lab.on { fill: #1f3d2f; }
+.dial[data-skin="sundial"] .p-sep { stroke: rgba(60,80,55,.35); }
+.dial[data-skin="sundial"] .t-min { stroke: rgba(60,80,55,.5); } .dial[data-skin="sundial"] .t-maj { stroke: #33493a; }
+.dial[data-skin="sundial"] .c-glyph { fill: #f3f7ee; } .dial[data-skin="sundial"] .c-year { fill: #fff; font-family: var(--font-display); }
+.dial[data-skin="sundial"] .c-sub { fill: #d6e8dc; }
+.dial[data-skin="sundial"] .d-notch { fill: #33493a; } .dial[data-skin="sundial"] .d-hair { stroke: none; }
+.dial .sd-shadow { fill: url(#g-shadow); }
+.dial .sd-gnomon { fill: #5d6b57; }
+/* 玻璃 Glass: frosted rings that let the map through */
+.dial[data-skin="glass"] { filter: none; backdrop-filter: blur(10px) saturate(150%); -webkit-backdrop-filter: blur(10px) saturate(150%); box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.35); }
+.dial[data-skin="glass"] .d-outer { fill: rgba(255,255,255,.16); stroke: rgba(255,255,255,.45); }
+.dial[data-skin="glass"] .d-inner { fill: rgba(255,255,255,.1); stroke: rgba(255,255,255,.35); }
+.dial[data-skin="glass"] .d-core { fill: rgba(10,14,18,.55); stroke: rgba(255,255,255,.4); }
+.dial[data-skin="glass"] .p-lab { fill: rgba(255,255,255,.85); paint-order: stroke; stroke: rgba(0,0,0,.35); stroke-width: 2px; }
+.dial[data-skin="glass"] .p-lab.on { fill: #7ff0d4; }
+.dial[data-skin="glass"] .p-sep { stroke: rgba(255,255,255,.3); }
+.dial[data-skin="glass"] .t-min { stroke: rgba(255,255,255,.55); } .dial[data-skin="glass"] .t-maj { stroke: #fff; }
+.dial[data-skin="glass"] .c-glyph { fill: #7ff0d4; }
+.dial[data-skin="glass"] .d-notch { fill: #7ff0d4; } .dial[data-skin="glass"] .d-hair { stroke: rgba(127,240,212,.8); }
+/* 表盘 Watch: a dive-watch bezel, black and white with one orange marker */
+.dial[data-skin="watch"] .d-outer { fill: #0d0f11; stroke: #6d737a; stroke-width: 3; }
+.dial[data-skin="watch"] .d-inner { fill: url(#g-steel); stroke: #2b2f33; }
+.dial[data-skin="watch"] .d-core { fill: #121417; stroke: #3a3f44; stroke-width: 1.5; }
+.dial[data-skin="watch"] .p-lab { fill: #e9ecef; font: 600 12px var(--font-body); letter-spacing: .02em; }
+.dial[data-skin="watch"] .p-lab.on { fill: #ff8a1f; font-size: 14px; }
+.dial[data-skin="watch"] .p-sep { stroke: rgba(255,255,255,.25); }
+.dial[data-skin="watch"] .t-min { stroke: rgba(255,255,255,.45); } .dial[data-skin="watch"] .t-maj { stroke: #fff; stroke-width: 2.5; }
+.dial[data-skin="watch"] .c-glyph { fill: #ff8a1f; font-family: var(--font-body); }
+.dial[data-skin="watch"] .c-sub { fill: #8b939a; }
+.dial[data-skin="watch"] .d-notch { fill: #ff8a1f; } .dial[data-skin="watch"] .d-hair { stroke: #ff8a1f; stroke-width: 2; }
+.dial .wt-knurl { stroke: #2b2f33; stroke-width: 2; }
+.dial .wt-lume { fill: #ff8a1f; }
+
+/* The dial looks in settings: a small dial each. */
+.st-dials { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.st-dials[hidden] { display: none; }
+.st-dials button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 6px 4px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
+.st-dials button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
+.st-dials svg { width: 78%; aspect-ratio: 1; display: block; }
 /* Map controls (zoom, compass, fullscreen, ⓘ) wear the panel colour, opacity and style; icons are masks in --ink. */
 .maplibregl-ctrl-group:not(:empty), .maplibregl-ctrl-attrib.maplibregl-compact { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; box-shadow: var(--shadow);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--ink); overflow: hidden; }
