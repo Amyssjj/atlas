@@ -237,6 +237,13 @@ html:lang(zh-CN) .story-body p, html:lang(zh-CN) .story-lede { font-size: 15px; 
   z-index: 3;
 }
 .play-box { grid-row: span 2; position: relative; }
+.rail-min { position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; padding: 3px; opacity: .7; }
+.rail-min:hover, .rail-min:focus-visible { opacity: 1; }
+.rail-min svg { width: 14px; height: 14px; }
+/* Folded timeline: only the play button and the button that unfolds it */
+.rail.min { right: auto; display: flex; align-items: center; gap: 6px; padding: 8px; }
+.rail.min > :not(.play-box, .rail-min), .rail.min .speed, .rail.min .speed-pop { display: none !important; }
+.rail.min .rail-min { position: static; opacity: 1; }
 .play {
   width: 40px; height: 40px;
   border-radius: 50%;

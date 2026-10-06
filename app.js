@@ -58,6 +58,7 @@ const state = {
   tab: "events",        // ledger tab: "events" or "rulers"
   speed: 1,             // playback speed (SPEEDS)
   eraMin: false,        // era panel minimised
+  railMin: false,       // timeline folded down to its play button
   rulerPolity: null,    // country shown in the ruler list
   countries: null,      // data/countries.json: when each polity is on the map, and lineages joining renamed ones
   sel: null,            // the selected country: { id, names: Set, name, name_zh, spans, from, to } (selectCountry)
@@ -182,6 +183,7 @@ function applyLang() {
   if (state.pack?.only) document.querySelector('[data-i18n="note"]').textContent = tx(state.pack.manifest, "note") || t("notePack");
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
   setMinButton($("era-min"), !!state.eraMin);
+  setMinButton($("rail-min"), !!state.railMin);
   setMinButton($("ledger-min"), $("ledger").classList.contains("collapsed"));
   $("lang-name").textContent = L.short;
   $("zoom-in").setAttribute("aria-label", t("zoomIn"));
@@ -4321,6 +4323,14 @@ function toggleSpeedPop(open) {
     `<button type="button" role="menuitemradio" data-speed="${v}" aria-checked="${v === state.speed}">${speedText(v)}</button>`).join("");
   pop.querySelector('[aria-checked="true"]')?.focus();
 }
+// The timeline folds down to its play button (and the button that brings it back).
+function setRailMin(on, remember) {
+  state.railMin = on;
+  document.querySelector(".rail").classList.toggle("min", on);
+  setMinButton($("rail-min"), on);
+  if (on) toggleSpeedPop(false);
+  if (remember) try { localStorage.setItem("atlas-rail-min", on ? "1" : "0"); } catch {}
+}
 function setEraMin(on, remember) {
   state.eraMin = on;
   document.querySelector(".era").classList.toggle("min", on);
@@ -4808,6 +4818,8 @@ async function init() {
   });
   $("ledger-min").addEventListener("click", () => collapseLedger(!$("ledger").classList.contains("collapsed")));
   $("era-min").addEventListener("click", (e) => { e.stopPropagation(); setEraMin(!state.eraMin, true); });
+  $("rail-min").addEventListener("click", (e) => { e.stopPropagation(); setRailMin(!state.railMin, true); });
+  try { if (localStorage.getItem("atlas-rail-min") === "1") setRailMin(true); } catch {}
   $("speed").addEventListener("click", (e) => { e.stopPropagation(); toggleSpeedPop(); });
   $("speed-pop").addEventListener("click", (e) => {
     const b = e.target.closest("[data-speed]");
