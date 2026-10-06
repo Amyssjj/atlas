@@ -8,6 +8,11 @@
 // Years are integers; negative years are BCE. Text fields come in pairs: `x` (English) and `x_zh`.
 
 const BASE = document.baseURI.replace(/[^/]*([?#].*)?$/, "");
+// Large generated assets (terrain and imagery packs, AI pictures) live in a Cloudflare R2 bucket, not in git
+// (tools/upload_assets.py). Their names carry a content hash; data/tiles.json and data/ai-illustrations.json name them.
+// For local work a mirror can stand in: localStorage["atlas-data-url"] = "http://localhost:8766".
+const DATA_URL = (() => { try { return localStorage.getItem("atlas-data-url"); } catch { return null; } })() || "https://data.atlas.daiyip.com";
+const BASE_PATH = new URL(BASE).pathname;
 // Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
 // ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
 // server while developing). See docs/custom-data.md.
@@ -251,13 +256,31 @@ async function liveTile(kind, z, x, y) {
 }
 
 const packs = {};
+// data/tiles.json maps each pack ("pack/4-0-0") to its current hashed file name on R2.
+let tileNamesJob = null;
+const tileNames = () => tileNamesJob ||= loadJSON("data/tiles.json").then((names) => {
+  pruneKept(["/tiles/", BASE_PATH + "tiles/"], Object.values(names).map((n) => "/tiles/" + n));
+  return names;
+}, () => ({}));
+// The service worker keeps packs and pictures forever under their names. A file that changed has a new name, so once
+// the current list is known, kept copies it no longer names (and copies from before R2) are dropped.
+async function pruneKept(prefixes, keepPaths) {
+  try {
+    const keep = new Set(keepPaths), c = await caches.open("atlas-keep-v1");
+    for (const req of await c.keys()) {
+      const p = new URL(req.url).pathname;
+      if (prefixes.some((x) => p.startsWith(x)) && !keep.has(p)) c.delete(req);
+    }
+  } catch {}
+}
 function loadPack(z, px, py, dir = "pack") {
   const key = `${dir}/${z}-${px}-${py}`;
   if (!(key in packs)) {
     // Each archive is wrapped in a 1x1 PNG (the host serves only standard file types); the archive itself sits in
     // a private "tpAk" chunk: a 4-byte index length, a JSON index {"x/y": [offset, length]}, then the tile PNGs.
-    packs[key] = fetch(`${BASE}tiles/${key}.png`)
-      .then((r) => (r.ok ? r.arrayBuffer() : null))
+    packs[key] = tileNames()
+      .then((names) => names[key] && fetch(`${DATA_URL}/tiles/${names[key]}`))
+      .then((r) => (r?.ok ? r.arrayBuffer() : null))
       .then((png) => {
         if (!png) return null;
         const v = new DataView(png);
@@ -1779,12 +1802,13 @@ function showCard(lngLat, html) {
 // as data URLs (the hosted page cannot load images from other sites). Built by tools/pack_illustrations.py.
 // "a:<event id>" keys are AI-generated scenes from data/ai-illustrations.json + <DATA_URL>/ai/<file>.webp (tools/pack_ai_illustrations.py),
 // always captioned as AI-generated.
-// Large generated assets (the AI pictures) live in a Cloudflare R2 bucket, not in git (tools/upload_assets.py).
-const DATA_URL = "https://data.atlas.daiyip.com";
 const illuSets = {};
 const illuBuckets = {};
 const illuSet = (set) => illuSets[set] ||= loadJSON(set === "ai" ? "data/ai-illustrations.json" : "data/illustrations.json")
-  .catch(() => ({ keys: {}, images: {} })).then((idx) => (illuSets[set + "Ready"] = idx));
+  .then((idx) => {
+    if (set === "ai") pruneKept(["/ai/", BASE_PATH + "data/ai/"], Object.values(idx.images).map((im) => "/ai/" + im.f));
+    return idx;
+  }, () => ({ keys: {}, images: {} })).then((idx) => (illuSets[set + "Ready"] = idx));
 function illuSlot(key) {
   return `<figure class="illu" data-illu="${esc(key)}" hidden></figure>`;
 }

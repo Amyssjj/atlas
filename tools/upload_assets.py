@@ -1,10 +1,13 @@
 """Upload generated assets to the Cloudflare R2 bucket served at https://data.atlas.daiyip.com.
 
-Usage: python3 tools/upload_assets.py [ai]
+Usage: python3 tools/upload_assets.py [ai] [tiles]
 Reads R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_BUCKET from the environment.
-  ai: data/ai/*.webp (made by tools/pack_ai_illustrations.py) go to ai/<file>. The local folder is not in git.
-Only files the bucket lacks are sent. Names carry a content hash, so they are cached as immutable."""
-import os, sys
+  ai:    data/ai/*.webp (made by tools/pack_ai_illustrations.py) go to ai/<file>; their names already carry a hash.
+  tiles: tiles/pack/ and tiles/sat/ (made by tools/pack_tiles.py) go to tiles/<dir>/<name>-<hash>.png, and
+         data/tiles.json ({"pack/4-0-0": "pack/4-0-0-<hash>.png", ...}, read by app.js) is rewritten.
+Neither local folder is in git. Only files the bucket lacks are sent. Every name carries a content hash, so the files
+are cached as immutable: a changed file gets a new name, and the manifests point to it."""
+import json, os, sys, zlib
 from concurrent.futures import ThreadPoolExecutor
 import boto3
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -21,12 +24,33 @@ def existing(prefix):
         keys.update(o["Key"] for o in page.get("Contents", []))
     return keys
 
-for name in sys.argv[1:] or list(SETS):
-    folder, prefix, ctype = SETS[name]
+def upload(files, prefix, ctype):
+    """files: {key under prefix: local path}. Sends those the bucket lacks."""
     have = existing(prefix)
-    todo = [f for f in sorted(os.listdir(os.path.join(ROOT, folder))) if prefix + f not in have]
-    def put(f):
-        s3.upload_file(os.path.join(ROOT, folder, f), BUCKET, prefix + f,
+    todo = [k for k in sorted(files) if prefix + k not in have]
+    def put(k):
+        s3.upload_file(files[k], BUCKET, prefix + k,
                        ExtraArgs={"ContentType": ctype, "CacheControl": "public, max-age=31536000, immutable"})
     with ThreadPoolExecutor(16) as ex: list(ex.map(put, todo))
-    print(name, ":", len(todo), "uploaded,", len(have), "already there")
+    return len(todo), len(have)
+
+def hashed_tiles():
+    files, manifest = {}, {}
+    for d in ("pack", "sat"):
+        for f in sorted(os.listdir(os.path.join(ROOT, "tiles", d))):
+            if not f.endswith(".png"): continue
+            path = os.path.join(ROOT, "tiles", d, f)
+            h = format(zlib.crc32(open(path, "rb").read()), "08x")
+            name = f"{d}/{f[:-4]}-{h}.png"
+            files[name], manifest[f"{d}/{f[:-4]}"] = path, name
+    return files, manifest
+
+for name in sys.argv[1:] or list(SETS) + ["tiles"]:
+    if name == "tiles":
+        files, manifest = hashed_tiles()
+        sent, had = upload(files, "tiles/", "image/png")
+        json.dump(manifest, open(os.path.join(ROOT, "data/tiles.json"), "w"), separators=(",", ":"), sort_keys=True)
+    else:
+        folder, prefix, ctype = SETS[name]
+        sent, had = upload({f: os.path.join(ROOT, folder, f) for f in os.listdir(os.path.join(ROOT, folder))}, prefix, ctype)
+    print(name, ":", sent, "uploaded,", had, "already there")
