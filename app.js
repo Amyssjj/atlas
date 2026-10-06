@@ -1836,8 +1836,10 @@ async function fillIllus(root) {
     // An AI picture is described by its event ("Battle of Sarhu – AI-generated illustration, …"), the others by their page.
     const ev = im.ai && state.events.find((e) => e.id === fig.dataset.illu.slice(2));
     const alt = im.ai ? (ev ? `${titleOf(ev)} – ${t("aiIllu")}` : t("aiIllu")) : im.page;
+    // An AI picture carries its note in the AI badge (tap or hover), not in a caption line.
+    const note = im.ai && `${t("aiIllu")} · ${im.ai}`;
     fig.innerHTML = `<img src="${src}" alt="${esc(alt)}" style="aspect-ratio:${im.w}/${im.h}">` + (im.ai
-      ? `<figcaption>${esc(t("aiIllu"))} · ${esc(im.ai)}</figcaption>`
+      ? `<button type="button" class="ai-badge" aria-label="${esc(note)}" aria-expanded="false">AI<span class="ai-tip" role="tooltip">${esc(note)}</span></button>`
       : `<figcaption><a href="${esc(im.url)}" target="_blank" rel="noopener">${esc(credit || "Wikimedia Commons")} ↗</a></figcaption>`);
     // A picture that cannot be fetched (offline, or its host unreachable) leaves no broken frame behind.
     fig.querySelector("img").addEventListener("error", () => {
@@ -4835,6 +4837,14 @@ async function init() {
   // The reading card's × (immersive mode only): back to the step's picture.
   const closeTourReading = () => { state.reading = false; $("app").classList.remove("tour-reading"); renderLedger(); };
   $("read-close").addEventListener("click", closeTourReading);
+  // AI badges: a tap shows the note (and doesn't open the picture or the story); a tap anywhere else hides it.
+  document.addEventListener("click", (e) => {
+    const badge = e.target.closest(".ai-badge");
+    for (const b of document.querySelectorAll('.ai-badge[aria-expanded="true"]')) if (b !== badge) b.setAttribute("aria-expanded", "false");
+    if (!badge) return;
+    e.stopPropagation(); e.preventDefault();
+    badge.setAttribute("aria-expanded", String(badge.getAttribute("aria-expanded") !== "true"));
+  }, true);
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape" || !state.immersive) return;
     e.stopImmediatePropagation();
