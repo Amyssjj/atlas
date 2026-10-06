@@ -5,16 +5,34 @@ The atlas keeps two kinds of data in two places.
 | Kind | Where | Examples |
 | --- | --- | --- |
 | Hand-edited source data, small and worth reviewing as diffs | git, served by GitHub Pages with the page | `data/events.json`, `data/tours.json`, the prompts in `tools/ai_prompts.json`, and the indexes `data/ai-illustrations.json`, `data/tiles.json`, `data/illustrations.json` |
-| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`ai/…webp`), elevation and imagery packs (`tiles/…png`), background music (`music/…m4a`) |
+| Large generated binaries that can be rebuilt | the Cloudflare R2 bucket served at `https://data.atlas.daiyip.com`, never git | AI pictures (`atlas/ai/…webp`), elevation and imagery packs (`atlas/tiles/…png`), background music (`atlas/music/…m4a`), tour narration (`atlas/narration/…`) |
 
 Keeping the binaries out of git stops the repository growing by the full size of every regenerated file (git keeps old
 versions forever) and keeps the site well under the GitHub Pages size limit. The Wikimedia thumbnails
 (`data/img/*.json`, about 13 MB) are still in git; see [internals.md](internals.md#illustrations).
 
+## Layout on R2
+
+The bucket is shared by Atlas and the apps built on it (bible.daiyip.com, gallery.daiyip.com, …). Each top-level
+folder has one owner, and nothing else writes there:
+
+```
+atlas/           Atlas's own files: ai/, music/, narration/, tiles/pack/, tiles/sat/
+apps/<app-id>/   one folder per app, named after its subdomain (apps/bible/, apps/gallery/), laid out as it likes
+```
+
+Each owner keeps the index of its live files in its own repository (for Atlas, the indexes below). A cleanup job may
+only delete under one owner's folder, and only files none of that owner's indexes has named in the last 30 days, so a
+visitor offline with an older cached index still finds its files. It never touches a folder it doesn't own. `app.js`
+builds every R2 address from `R2` (`DATA_URL + "/atlas"`), and `tools/upload_assets.py` writes under `atlas/`.
+
+Until 2026-10 Atlas's files sat at the top level (`ai/`, `music/`, `tiles/`). `tools/r2_migrate.py` copied them into
+`atlas/`; the top-level copies stay for a while for visitors with an older cached app, then are deleted by hand.
+
 ## How names and caching work
 
-Every file on R2 has a hash of its contents in its name: `ai/xuanzang-3c41a2bd.webp`,
-`tiles/sat/5-3-1-6f3274a0.png`. A file that changes gets a new name. The small index files in git say which name is
+Every file on R2 has a hash of its contents in its name: `atlas/ai/xuanzang-3c41a2bd.webp`,
+`atlas/tiles/sat/5-3-1-6f3274a0.png`. A file that changes gets a new name. The small index files in git say which name is
 current:
 
 - `data/ai-illustrations.json` maps `a:<event id>` to a picture and its file name.
@@ -196,6 +214,6 @@ changed), and by hand. A red run usually means an index was pushed before its up
   `data.atlas.daiyip.com`. On a Mac, run `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`. Also check
   the router's DNS, or use `1.1.1.1`.
 - **A pack fails with a CORS error:** check the Transform Rule above. `curl -sD - -o /dev/null -H "Origin:
-  https://atlas.daiyip.com" https://data.atlas.daiyip.com/tiles/<file>` must show `access-control-allow-origin`,
+  https://atlas.daiyip.com" https://data.atlas.daiyip.com/atlas/tiles/<file>` must show `access-control-allow-origin`,
   including on `cf-cache-status: HIT`.
 - **The app asks for a file R2 doesn't have:** the index was pushed before the upload. Run `tools/upload_assets.py`.
