@@ -164,7 +164,7 @@ relief. Tiles must use XYZ numbering (row 0 at the north); if your source is TMS
 
 Pack text is put into the atlas page, so the atlas only loads packs (and plugins) from a short list of sites:
 `PACK_ORIGINS` at the top of `app.js`, plus the atlas's own site and `localhost` for development. Today the list is
-`atlas.daiyip.com`, `bible.daiyip.com` and `daiyip.github.io`. You have two ways to use your own pack:
+`atlas.daiyip.com`, `bible.daiyip.com`, `gallery.daiyip.com` and `daiyip.github.io`. You have two ways to use your own pack:
 
 1. **Self-host the atlas.** It is a static site with no build step. Fork the repo, put your pack in a folder next to
    it (for example `packs/rome/`) and open `/?pack=packs/rome/manifest.json`. A pack on the same site always loads.

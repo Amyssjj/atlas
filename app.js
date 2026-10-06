@@ -16,7 +16,7 @@ const BASE_PATH = new URL(BASE).pathname;
 // Data packs: another site's history (eras, events, tours) shown on this engine's world map, opened with
 // ?pack=<manifest URL>. Pack text ends up in the page, so packs load only from these sites (and a local
 // server while developing). See docs/custom-data.md.
-const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "https://daiyip.github.io"];
+const PACK_ORIGINS = ["https://atlas.daiyip.com", "https://bible.daiyip.com", "https://gallery.daiyip.com", "https://daiyip.github.io"];
 const PACK_URL = new URLSearchParams(location.search).get("pack");
 // ?packonly=1 shows the pack alone; by default it is added to the atlas's own data.
 const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(location.search).get("packonly"));
