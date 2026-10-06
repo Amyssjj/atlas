@@ -40,6 +40,7 @@ List them in the manifest:
 | `radius` | Dot radius in pixels. |
 | `on` | `false` starts the layer switched off. |
 | `years` | `[from, to)`: the whole layer only shows in these years. |
+| `atlas` | Optional. The [Atlas format](custom-data.md#versions) this layer needs; an older atlas skips it. |
 
 ### Features
 
@@ -67,6 +68,9 @@ A plugin is an ES module listed in the manifest. Paths are relative to the manif
 "plugins": ["plugins/journey.js"]
 ```
 
+An entry can also be `{ "src": "plugins/journey.js", "atlas": 2 }`: a plugin that needs a newer
+[Atlas format](custom-data.md#versions) than the rest of the pack. An older atlas skips it.
+
 It exports a setup function. The atlas calls it once, after the map has loaded:
 
 ```js
@@ -84,13 +88,13 @@ Plugins run inside the atlas page, so they load only from the sites a pack may c
 [Hosting and the allowlist](custom-data.md#hosting-and-the-allowlist). If a plugin fails to load or throws, the atlas
 logs it in the console and carries on without it.
 
-### The `atlas` object (API version 1)
+### The `atlas` object
 
 **State** (read-only)
 
 | | |
 | --- | --- |
-| `atlas.version` | Plugin API version, `1`. |
+| `atlas.version` | The [Atlas format](custom-data.md#versions) this page reads, `1`. The plugin API is part of it. |
 | `atlas.map` | The [MapLibre GL](https://maplibre.org/maplibre-gl-js/docs/API/) map, already loaded. |
 | `atlas.maplibregl` | The MapLibre library, for markers and popups. |
 | `atlas.pack` | The pack's manifest. |
