@@ -42,10 +42,11 @@ def in_poly(x, y, poly):
     return inside
 
 
-def main():
+def combined_maps():
+    """The map the app shows at each year, as [[from, to, key]] runs, and features(key) -> (props+shapes, STRtree):
+    China's dynasty map with the world map around it inside 前2070–1912, the whole world map elsewhere."""
     eras = json.load(open(P("data/eras.json")))["eras"]
     world = json.load(open(P("data/world/index.json")))
-    regions = json.load(open(P("data/regions.json")))["regions"]
     china = [e for e in eras if not e.get("worldMaps")]
     cstart, cend = min(e["start"] for e in china), max(e["end"] for e in china)
 
@@ -85,6 +86,13 @@ def main():
                     if f.get("geometry"): fs.append((f["properties"], shape(f["geometry"]).buffer(0)))
             cache[key] = (fs, STRtree([g for _, g in fs]))
         return cache[key]
+
+    return maps, features
+
+
+def main():
+    regions = json.load(open(P("data/regions.json")))["regions"]
+    maps, features = combined_maps()
 
     def region_of(pt):
         if not pt: return ""
