@@ -18,6 +18,7 @@ from build_countries import combined_maps, in_poly, P
 
 MIN_SHARE = 10   # percent
 GRID = 140       # about this many sample points per area
+TODAY = 2026
 
 
 def samples(poly):
@@ -45,6 +46,8 @@ def main():
         A["region"] = next((r["id"] for r in regions if len(r.get("polygon") or []) > 2 and in_poly(c.x, c.y, r["polygon"])), "china")
         runs = []
         for a, b, key in maps:
+            if a > TODAY: break
+            b = min(b, TODAY)   # the last world map may be dated after today
             fs, tree = features(key)
             count = {}
             for pt in pts:
