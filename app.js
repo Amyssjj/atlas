@@ -4968,7 +4968,7 @@ function initLayouts() {
     b.addEventListener("click", (e) => { e.stopPropagation(); setPins({ [k]: !state.pins[k] }); });
     where.append(b);
   };
-  // Quick layout switch: a chip after the gear showing the current layout, and in 导览 (no panels) two small icons
+  // Quick layout switch: a chip before the gear showing the current layout, and in 导览 (no panels) two small icons
   // in the map's top-left corner for the layout menu and settings.
   const lb = document.createElement("button");
   lb.type = "button";
@@ -4977,7 +4977,7 @@ function initLayouts() {
   lb.setAttribute("aria-haspopup", "true");
   lb.setAttribute("aria-expanded", "false");
   lb.addEventListener("click", (e) => { e.stopPropagation(); toggleLayoutPop(undefined, lb); });
-  $("settings-open").after(lb);
+  $("settings-open").before(lb);
   const cine = document.createElement("div");
   cine.className = "cine-tools";
   cine.innerHTML = `<button type="button" id="cine-layout" aria-haspopup="true"></button><button type="button" id="cine-settings" aria-haspopup="dialog">${$("settings-open").innerHTML}</button>`;
