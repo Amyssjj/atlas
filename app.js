@@ -26,6 +26,14 @@ const PACK_ONLY = PACK_URL && ["1", "true"].includes(new URLSearchParams(locatio
 // shows the story and drives the atlas through a pack plugin (docs/plugins.md, "Embedding").
 const EMBED = new URLSearchParams(location.search).get("embed") === "1";
 if (EMBED) document.documentElement.classList.add("embed");
+// &mini=1 (with embed): a small inset map, such as beside a tour card. A tour step frames the leg from the last stop
+// to this one instead of flying in to the stop, and the era label, map buttons and route time go (as hide= below).
+const MINI = EMBED && new URLSearchParams(location.search).get("mini") === "1";
+// &hide=era,controls,credits,span (with embed): parts of the page the embedding site doesn't want. era: the period
+// label; controls: the zoom, compass and full-screen buttons; credits: the data credits button; span: a tour leg's time.
+const HIDE = new Set([...(MINI ? ["era", "controls", "span"] : []),
+  ...(EMBED ? (new URLSearchParams(location.search).get("hide") || "").split(",").map((x) => x.trim()) : [])]);
+for (const h of ["era", "controls", "credits", "span"]) if (HIDE.has(h)) document.documentElement.classList.add("hide-" + h);
 // Overview elevation tiles are bundled with the page (it works offline and in sandboxed previews): zoom 2-6 as PNG files,
 // zoom 7 (whole map) and 8 (China proper) packed into archives in tiles/pack/ and served through the
 // "atlas" protocol below. Satellite imagery (Sentinel-2, 2020) is packed the same way in tiles/sat/, every zoom.
@@ -612,7 +620,9 @@ function applyLook(m = map) {
   m.setLayoutProperty("satellite", "visibility", L.sat ? "visible" : "none");
   // Earth's imagery covers the whole world, so under it the relief would only cost drawing time (a third of each
   // frame in 3D); a pack's own imagery may stop short, so the relief stays under that.
-  m.setLayoutProperty("relief", "visibility", L.sat && !state.basemap ? "none" : "visible");
+  // The flat styles draw Earth's land as a shape over the background, so they need no relief either, and with neither
+  // drawn no elevation tiles load at all (unless 3D is turned on).
+  m.setLayoutProperty("relief", "visibility", (L.sat || L.land) && !state.basemap ? "none" : "visible");
   m.setPaintProperty("relief", "color-relief-color", L.relief);
   m.setLayoutProperty("hillshade", "visibility", L.noShade ? "none" : "visible");
   if (!L.noShade) {
@@ -4780,8 +4790,12 @@ async function tourStep(i) {
     const padding = tourPadding();
     await Promise.race([year, new Promise((r) => setTimeout(r, 400))]);
     if (state.tour !== tour || tour.i !== i) return;
-    map.flyTo({ center: s.at, zoom: s.zoom ?? 4.8, pitch: state.show3d ? s.pitch ?? 48 : 0, bearing: s.bearing ?? -8,
-      padding, duration: 2600, essential: true });
+    const from = MINI && i > 0 && tr.steps[i - 1].at;
+    if (from && (from[0] !== s.at[0] || from[1] !== s.at[1])) {
+      map.fitBounds([[Math.min(from[0], s.at[0]), Math.min(from[1], s.at[1])], [Math.max(from[0], s.at[0]), Math.max(from[1], s.at[1])]],
+        { padding, maxZoom: s.zoom ?? 4.8, pitch: 0, bearing: 0, duration: 2600, essential: true });
+    } else map.flyTo({ center: s.at, zoom: MINI ? (s.zoom ?? 4.8) - 1 : s.zoom ?? 4.8, pitch: MINI ? 0 : state.show3d ? s.pitch ?? 48 : 0,
+      bearing: MINI ? 0 : s.bearing ?? -8, padding, duration: 2600, essential: true });
   }
   await year;
   // A step with `fit` frames the selected country as the map draws it that year (a country's story opens and closes so).
@@ -4975,6 +4989,7 @@ function hideEventPic(forget) {
 }
 // Keep the spot clear of the tour card at the bottom and the ledger on the right.
 function tourPadding() {
+  if (MINI) return { top: 28, bottom: 28, left: 28, right: 28 };
   if (EMBED) return { top: 50, bottom: 30, left: 30, right: 30 };
   const phone = innerWidth <= 720;
   const card = $("tour").offsetHeight || 160;

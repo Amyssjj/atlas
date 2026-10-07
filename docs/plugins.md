@@ -172,6 +172,16 @@ With `?embed=1` the atlas shows only the map and a small period label. The panel
 hidden, and tours frame their stops for the whole map. Use it when the host page shows the story itself, beside the
 map.
 
+Add `&mini=1` for a small inset map (beside a tour card, say): a tour step frames the leg from the last stop to
+this one rather than flying in to the stop, and the period label, map buttons and a leg's time go too.
+
+`&hide=` hides parts of an embedded atlas, as a comma-separated list: `era` (the period label), `controls` (zoom,
+compass and full screen), `credits` (the data credits button; show your sources elsewhere if you hide it) and `span`
+(the time beside a tour leg). For example `?embed=1&hide=era,controls`.
+
+The Simple styles (`style=plain`, `style=night`) draw land as a shape and load no elevation tiles, so they are the
+lightest choice for an embedded map.
+
 To move an embedded atlas without reloading it, let your pack's plugin listen to the host page with `postMessage`,
 and report back what the visitor does on the map:
 
