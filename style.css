@@ -1774,3 +1774,32 @@ html[data-layout="cinema"] .cine-tools:hover, html[data-layout="cinema"] .cine-t
 .cine-tools #cine-layout svg { width: 16px; height: 12px; }
 html.embed .cine-tools, .comparing .cine-tools { display: none !important; }
 .layout-pop button > span { display: inline-flex; align-items: center; gap: 10px; }
+
+/* 设置 → 图层按钮 (html[data-laylook]); the default is icons with tips. */
+.chip.ico small, .lay-all { display: none; }
+/* Icons with their names under them; no tips needed. */
+html[data-laylook="labels"] .chip.ico { width: 48px; height: auto; padding: 5px 0 4px; display: inline-flex; flex-direction: column; gap: 3px; border-radius: 10px; }
+html[data-laylook="labels"] .chip.ico small { display: block; font: 500 10px/1.1 var(--font-body); white-space: nowrap; letter-spacing: -0.02em; }
+html[data-laylook="labels"] .lg > span { top: 16px; }
+/* Every layer in one scrolling row of round icons; a dot marks each group. */
+html[data-laylook="strip"] .era-layers { display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 4px; align-items: center; padding-bottom: 2px; }
+html[data-laylook="strip"] .era-layers .auto-row { flex: none; margin: 0 2px 0 0; padding: 0; border: 0; background: none; }
+html[data-laylook="strip"] .era-layers .auto-row .switch span { display: none; }
+html[data-laylook="strip"] .era-layers .lg { display: contents; }
+html[data-laylook="strip"] .era-layers .lg > span { display: block; position: static; flex: none; width: 4px; height: 4px; padding: 0; border-radius: 50%; background: var(--muted); opacity: 0.5; margin: 0 3px; font-size: 0; overflow: hidden; }
+html[data-laylook="strip"] .era-layers .chip { flex: none; }
+html[data-laylook="strip"] .era-layers .chip.ico, html[data-laylook="strip"] .era-layers .chip.look { border-radius: 50%; width: 32px; height: 32px; padding: 0; justify-content: center; }
+html[data-laylook="strip"] .era-layers .chip.look b, html[data-laylook="strip"] .era-layers .chip.look svg { display: none; }
+/* Only the layers that are on (and auto ones); 全部 opens the rest. */
+html[data-laylook="on"] .era-layers:not(.lay-open) { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+html[data-laylook="on"] .era-layers:not(.lay-open) .auto-row { flex: 1 0 100%; box-sizing: border-box; }
+html[data-laylook="on"] .era-layers:not(.lay-open) .lg { display: contents; }
+html[data-laylook="on"] .era-layers:not(.lay-open) .lg > span { display: none; }
+html[data-laylook="on"] .era-layers:not(.lay-open) .chip.ico[aria-pressed="false"]:not(.auto) { display: none; }
+html[data-laylook="on"] .lay-all { display: inline-flex; align-items: center; justify-self: start; height: 30px; padding: 0 10px; }
+@media (max-width: 720px) {
+  html[data-laylook="labels"] .era-layers .chip.ico { width: 44px; height: auto; padding: 6px 0 5px; }
+  html[data-laylook="labels"] .era-layers .chip.ico small { font-size: 9.5px; letter-spacing: -0.04em; }
+  html[data-laylook="strip"] .era-layers .chip.ico, html[data-laylook="strip"] .era-layers .chip.look { width: 38px; height: 38px; }
+  html[data-laylook="on"] .lay-all { height: 36px; }
+}
