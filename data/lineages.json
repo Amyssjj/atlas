@@ -83,7 +83,7 @@
 {"id": "liao", "name": "Khitan / Liao", "name_zh": "契丹／辽", "region": "china", "names": ["Khitans", "Liao"], "start": 907, "end": 1125},
 {"id": "western-xia", "name": "Tangut / Western Xia", "name_zh": "党项／西夏", "region": "china", "names": ["Dingnan Circuit (Tangut)", "Xixia"], "start": 881, "end": 1227},
 {"id": "song", "name": "Song dynasty", "name_zh": "宋", "region": "china", "names": ["Song", "Southern Song"], "from": 960, "to": 1279, "start": 960, "end": 1279},
-{"id": "roc", "name": "Republic of China", "name_zh": "中华民国", "region": "china", "names": ["Republic of China", ["Manchu Empire", 1913, 1923], ["Chinese Warlords", 1924, 1944], ["China", 1945, 1948], ["Taiwan", 1949, 2026]], "from": 1912, "start": 1912, "end": null},
+{"id": "roc", "name": "Republic of China", "name_zh": "中华民国", "region": "china", "names": ["Republic of China", ["Chinese Warlords", 1924, 1944], ["China", 1945, 1948], ["Taiwan", 1949, 2026]], "from": 1912, "start": 1912, "end": null},
 {"id": "prc", "name": "People's Republic of China", "name_zh": "中华人民共和国", "region": "china", "names": ["Communist Party of China", "China"], "from": 1949, "start": 1949, "end": null},
 {"id": "japan", "name": "Japan", "name_zh": "日本", "region": "japan", "names": ["Yamato", "Japan", "Imperial Japan (Fujiwara)", "Shogun Japan (Kamakura)", "Tokugawa shogunate", "Imperial Japan", "Empire of Japan", "Japan (USA)"], "start": 250, "end": null},
 {"id": "joseon", "name": "Joseon / Korea", "name_zh": "朝鲜", "region": "korea", "names": ["Joseon", "Korea"], "start": 1392, "end": 1910},

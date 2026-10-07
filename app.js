@@ -115,8 +115,8 @@ const UI = {
     fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" },
     sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
-    notePack: "疆域为近似示意，取自开源 Cliopatria（Seshat）与 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
-    note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
+    notePack: "疆域为近似示意，取自开源 Cliopatria（Seshat）与 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。按当时实际控制绘制，斜线为争议地区，不代表对主权的立场。",
+    note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。按当时实际控制绘制，斜线为争议地区，不代表对主权的立场。",
     zooms: ["全部", "朝代", "数十年"], country: "国家", reignLen: (n) => `${n}年`, rulerCount: (n) => `${n} 位`, noRulers: "本时期暂无君主资料", worldMap: (y) => `${y}前后的世界`, worldName: "世界 · 公元纪年", noRegionEvents: "这个地区的事件还在整理中，下一步加入。现在可以看各时期的疆域。", noPeople: "本时期暂无人物资料", peopleHint: "点击人物，地图飞到其居所并显示生平", pgroups: { all: "全部", mil: "军事", pol: "政治", cul: "思想文学", art: "艺术", sci: "科技" }, scopeHint: "点击君主，时间轴缩放到其在位期间", zoomIn: "放大时间轴", zoomOut: "缩小时间轴", earlier: "向前", later: "向后",
     hint: ["点击朝代跳转 · 按 + 放大时间轴", (era) => `${era} · 每一段是一幅地图`, (era) => `${era} · 数十年视图`],
     play: "播放", pause: "暂停", year: "年份", loadError: "地图数据无法载入。",
@@ -127,6 +127,7 @@ const UI = {
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" }, exchange: "交流", spread: "传播", spreadGroups: { faith: "宗教传播", tech: "技术传播", crop: "作物传播" }, arrived: (y) => `${y}传到`, set_out: (y) => `${y}起`, world_t: "世界", worldHead: "同一年的世界", goRegion: "切换地区", allWorld: "全球", worldHint: "点击地区，地图和时间轴切换过去；点击事件阅读详情", noWorldEv: "前后几十年没有收录的大事", elsewhere: "同时期的世界", wsHead: (x) => `同时期的${x}`, wsNearShort: "邻国", wsWorld: "世界", wsNear: (n) => `${n}的邻国`, wsNone: "前后几年没有收录的大事", hideStrip: "隐藏", showStrip: "在时间轴上方显示同时期的世界",
     sel: { hint: "点击地图上的国家即可选中，地图和各栏只显示与它相关的内容；再点一次取消", off: "这一年不在地图上", offMap: "这一年的地图没有单独画出它", before: "这一年尚未建立", after: "这一年已不存在", jump: (y) => `跳到${y}`, events: (n) => `事件 ${n}`, people: (n) => `本时期人物 ${n}`, cities: "城市", clear: "取消选中", circa: "约", away: "已移出视野，时间轴仍跟随它", back: (n) => `回到${n}`, story: "播放它的故事", now: "今", more: (n) => `另 ${n} 国`, less: "收起" },
+    disp: "争议地区", dispYears: (a, b) => b ? `${a}–${b}` : `${a}至今`, dispCtl: "实际控制", dispClaim: "主张方", dispFoot: "地图按当时的实际控制绘制，斜线表示主权有争议，不代表本图对任何领土主权的立场。说明为 AI 整理，未经核对。", borderNote: "边界为示意，按当时实际控制绘制，斜线为争议地区，不代表对主权的立场",
     people_l: "人物", climate: "气候灾害", climHead: "气候 · 华东气温", climNow: (a, p) => `较 1961–90 ${a >= 0 ? "暖" : "冷"} ${Math.abs(a).toFixed(1)}°C${p ? " · " + p : ""}`, climKinds: { drought: "旱灾", flood: "水灾", locust: "蝗灾", famine: "饥荒", quake: "地震", plague: "疫病", cold: "寒冬", river: "黄河决徙" }, climKey: { reb: "起义", cap: "迁都", dis: "灾害" }, climToll: "伤亡", climArea: "范围", climLinked: "相关事件 · 点击跳转", climAfter: "前后的起义与迁都", climPhase: "当时气候", climNote: "灾害与冷暖期为 AI 整理，未经核对；气温曲线为示意", climCurve: "气温曲线依竺可桢（1972）与葛全胜等（2013）的冷暖分期手绘示意，不是原始数据", climElse: "气候曲线只画中国东部", cmp: { one: "对比", open: "两地对比", sync: "同步视角", openTime: "两时对比", place: "两地", time: "两时", period: "时期", year: "年份", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, packs: "专题", rpMore: "这一年的君主、大事与国家", asState: "作为国家：", close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourMusic: " 音乐", tourNarr: " 旁白", tourNarrHint: "朗读每一站的解说（AI 语音，中文）", voices: { Charon: "男声", Kore: "女声" }, tourMusicHint: "导览和时间轴播放时的背景音乐（AI 生成）", tourImmersive: "沉浸", tourImmersiveHint: "放大图片，收起其它面板（Esc 退出）", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, followLife: "跟随一生", trail: "足迹", trailShow: "足迹", trailHint: "在地图上画出一生足迹，随时间轴移动", trailPrev: "上一站", trailNext: "下一站", trailBefore: (y) => `还没有出生。足迹从${y}开始，点“下一站”或拖动时间轴。`, trailAfter: "一生行迹到此为止。", livesHere: "本时期人物的一生", livesAll: "人物一生", ties: "关系网", tieKinds: { teach: "师承", serve: "君臣·幕僚", kin: "亲属", friend: "交游", rival: "政敌·论敌", war: "交战", verse: "诗文往来" }, tieHead: (n) => `人物关系（${n}）· 点击看对方`, tieKind: "人物关系", tieThen: "此时的交往", tieLater: "以后", tieAway: "不在本时期地图上", tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", tipOn: "已打开", stLayBtn: "图层按钮", stLayPos: "图层排列", layBtns: { text: "文字", icon: "图标", both: "图标+文字" }, layPos: { group: "分组", nowrap: "一行·滑动", wrap: "一行·换行" }, tipOff: "已关闭", tipAuto: "自动显示", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市", place: "地名" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", admin: "政区", adminSeat: "治所", adminWas: "汉时旧名", adminSite: "此地历代 · 点击跳转", adminNow: "今", adminSnap: (y) => `以${y}为准 · AI 整理，已与 CHGIS 抽查比对`, adminUnsure: "位置待核", adminChgis: "查 CHGIS 记录", adminChgisWait: "正在查询 CHGIS…", adminChgisDown: "暂时连不上 CHGIS，稍后再试", adminChgisNone: "CHGIS 在这一年没有同名记录", adminChgisSrc: "来自 CHGIS 时空地名库（哈佛、复旦），实时查询", adminChgisMoved: "治所位置与本图略有不同", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`, cityHere: (n, m) => n === m ? `城中大事 ${n} 件` : `这一段大事 ${n} 件 · 全城 ${m} 件`, cityNone: (m) => `这一段没有收录大事 · 点上方色条看其他时期（共 ${m} 件）`, cityTop: "要事", cityAll: "全部", gazHead: "地名古今 · 点击跳转", cityTabEv: (n) => n ? `城中大事 ${n}` : "城中大事", cityNoEv: "这一段没有收录大事", gazHeld: "属", gazIn: "约在", gazKind: "地名古今", gazNote: "由本图的城市、政区和疆域推算 · AI 整理，未经核对",  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
@@ -141,8 +142,8 @@ const UI = {
     fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" },
     sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
-    notePack: "Borders are approximate, from the open Cliopatria (Seshat) and historical-basemaps datasets. Terrain, coastlines and rivers are modern.",
-    note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
+    notePack: "Borders are approximate, from the open Cliopatria (Seshat) and historical-basemaps datasets. Terrain, coastlines and rivers are modern. They follow actual control at the time; hatched areas are disputed; no position on sovereignty is taken.",
+    note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern. They follow actual control at the time; hatched areas are disputed; no position on sovereignty is taken.",
     zooms: ["All", "Dynasty", "Decades"], country: "Country", reignLen: (n) => `${n} yr${n > 1 ? "s" : ""}`, rulerCount: (n) => `${n} rulers`, noPeople: "No famous people listed for this period", peopleHint: "Click a person to fly to where they lived and read about them", pgroups: { all: "All", mil: "Military", pol: "Politics", cul: "Thought & letters", art: "Arts", sci: "Science" }, noRulers: "No rulers recorded for this period", worldMap: (y) => `the world around ${y}`, worldName: "World · calendar years", noRegionEvents: "Events for this region are still being written. For now you can follow its borders through the periods.", scopeHint: "Pick a ruler to narrow the timeline to their reign", zoomIn: "Zoom in", zoomOut: "Zoom out", earlier: "Earlier", later: "Later",
     hint: ["Click a dynasty to jump · + to zoom in", (era) => `${era} · each segment is one map`, (era) => `${era} · decades view`],
     play: "Play timeline", pause: "Pause timeline", year: "Year", loadError: "The map data could not be loaded. ",
@@ -153,6 +154,7 @@ const UI = {
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" }, exchange: "Exchange", spread: "Spread", spreadGroups: { faith: "Faith spreads", tech: "Technique spreads", crop: "Crop spreads" }, arrived: (y) => `arrived ${y}`, set_out: (y) => `from ${y}`, world_t: "World", worldHead: "The world this year", goRegion: "Go to region", allWorld: "Whole world", worldHint: "Click a region to move the map and timeline there; click an event to read it", noWorldEv: "No major events recorded within a few decades", elsewhere: "Elsewhere", wsHead: (x) => `Meanwhile · ${x}`, wsNearShort: "Neighbours", wsWorld: "World", wsNear: (n) => `Around ${n}`, wsNone: "No recorded events in these years", hideStrip: "Hide", showStrip: "Show other regions above the timeline",
     sel: { hint: "Click a country on the map to select it: the map and panels then show only what concerns it. Click it again to clear", off: "Not on the map in this year", offMap: "The map for this year doesn't draw it separately", before: "Not yet founded in this year", after: "No longer exists in this year", jump: (y) => `Go to ${y}`, events: (n) => `${n} events`, people: (n) => `${n} people this period`, cities: "Cities", clear: "Clear selection", circa: "c. ", away: "Out of view; the timeline still follows it", back: (n) => `Back to ${n}`, story: "Play its story", now: "today", more: (n) => `${n} more`, less: "Fewer" },
+    disp: "Disputed", dispYears: (a, b) => b ? `${a}–${b}` : `${a}–today`, dispCtl: "Controlled by", dispClaim: "Claimed by", dispFoot: "The map follows who actually controlled a place at the time; hatching marks disputed sovereignty and takes no side. Notes AI-drafted, not source-checked.", borderNote: "Borders are approximate and follow actual control at the time; hatched areas are disputed; no position on sovereignty is taken",
     people_l: "People", climate: "Climate & disasters", climHead: "Climate · E. China", climNow: (a, p) => `${Math.abs(a).toFixed(1)}°C ${a >= 0 ? "warmer" : "colder"} than 1961–90${p ? " · " + p : ""}`, climKinds: { drought: "Drought", flood: "Flood", locust: "Locusts", famine: "Famine", quake: "Earthquake", plague: "Epidemic", cold: "Severe cold", river: "Yellow River breach" }, climKey: { reb: "revolts", cap: "capital moves", dis: "disasters" }, climToll: "Toll", climArea: "Area", climLinked: "Related events · click to jump", climAfter: "Revolts and capital moves around it", climPhase: "Climate then", climNote: "Disasters and warm/cold phases AI-drafted, not source-checked; the temperature line is a sketch", climCurve: "The temperature line is hand-drawn after the warm and cold phases of Zhu Kezhen (1972) and Ge et al. (2013); not the published data", climElse: "The climate line covers eastern China only", cmp: { one: "Compare", open: "Compare regions", sync: "Sync view", openTime: "Compare times", place: "Two places", time: "Two times", period: "Period", year: "Year", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, packs: "Packs", rpMore: "Rulers, events and countries this year", asState: "As a state: ", close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourMusic: " Music", tourNarr: " Narration", tourNarrHint: "Read each stop aloud (AI voice, in Chinese)", voices: { Charon: "Male", Kore: "Female" }, tourMusicHint: "Background music during tours and timeline playback (AI-generated)", tourImmersive: "Immersive", tourImmersiveHint: "Enlarge the picture and fold the other panels away (Esc to leave)", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, followLife: "Follow their life", trail: "Footsteps", trailShow: "Footsteps", trailHint: "Draw their whole life journey on the map; it moves with the timeline", trailPrev: "Previous", trailNext: "Next stop", trailBefore: (y) => `Not born yet. The journey starts in ${y}; press Next stop or drag the timeline.`, trailAfter: "The journey ends here.", livesHere: "Lives in this period", livesAll: "Lives", ties: "Ties", tieKinds: { teach: "Teacher & student", serve: "Served", kin: "Family", friend: "Friends", rival: "Rivals", war: "Fought", verse: "Poems & letters" }, tieHead: (n) => `Ties (${n}) · click to see them`, tieKind: "Tie", tieThen: "Around now", tieLater: "later", tieAway: "not on this period's map", tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", tipOn: "On", stLayBtn: "Layer buttons", stLayPos: "Layer layout", layBtns: { text: "Text", icon: "Icon", both: "Icon + text" }, layPos: { group: "Groups", nowrap: "One row, scroll", wrap: "One row, wrap" }, tipOff: "Off", tipAuto: "On for this story", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities", place: "Place names" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", admin: "Prefectures", adminSeat: "Seat", adminWas: "Han name", adminSite: "This seat by dynasty · click to jump", adminNow: "Today", adminSnap: (y) => `As in ${y} · AI-drafted, spot-checked against CHGIS`, adminUnsure: "position uncertain", adminChgis: "Look up in CHGIS", adminChgisWait: "Asking CHGIS…", adminChgisDown: "CHGIS can't be reached right now; try again later", adminChgisNone: "No record of this name in CHGIS for this year", adminChgisSrc: "From the CHGIS Temporal Gazetteer (Harvard, Fudan), looked up live", adminChgisMoved: "its seat differs a little from this map", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, cityHere: (n, m) => n === m ? `${n} events here` : `${n} events in this phase · ${m} in all`, cityNone: (m) => `No events recorded in this phase · tap the bar for other periods (${m} in all)`, cityTop: "Major", cityAll: "All", gazHead: "Names through time · click to jump", cityTabEv: (n) => n ? `Events ${n}` : "Events", cityNoEv: "No events recorded in this phase", gazHeld: "held by", gazIn: "roughly in", gazKind: "Place through time", gazNote: "Worked out from this atlas's cities, prefectures and borders · AI-drafted, approximate", personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
@@ -838,6 +840,7 @@ function baseStyle() {
       ties: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       roads: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       clans: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      disputes: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       disasters: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       walls: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       admin: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
@@ -902,6 +905,10 @@ function baseStyle() {
         paint: { "fill-color": "#f2c14e", "fill-opacity": 0.42 } },
       { id: "hl-line", type: "line", source: "borders", filter: ["==", ["get", "name_zh"], "\u0000"], layout: { "line-join": "round" },
         paint: { "line-color": "#f2c14e", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 3, 8, 6], "line-blur": 0.5 } },
+      // Disputed areas (data/disputes.json): hatched in the years of the dispute; the borders below follow actual control.
+      { id: "dispute-fill", type: "fill", source: "disputes", filter: ["==", ["get", "id"], "\u0000"], paint: { "fill-pattern": "hatch", "fill-opacity": 0.9 } },
+      { id: "dispute-line", type: "line", source: "disputes", filter: ["==", ["get", "id"], "\u0000"], layout: { "line-join": "round" },
+        paint: { "line-color": "#8c2f1f", "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 1.8], "line-opacity": 0.8, "line-dasharray": [2, 1.5] } },
       // Elite groups (豪族/士人集团): a soft tint over their home region with a dashed edge, coloured by kind.
       { id: "clan-fill", type: "fill", source: "clans", paint: { "fill-color": ["get", "color"], "fill-opacity": 0.3 } },
       { id: "clan-line", type: "line", source: "clans", layout: { "line-join": "round" },
@@ -1511,6 +1518,7 @@ async function setYear(year, opts = {}) {
   renderOverlays();
   if (trail.life) updateTrail();
   renderOldGeo();
+  renderDisputes();
   renderPackLayers();
   emit("year", { year: state.year, era: era.id, eraChanged });
   renderWorldStrip();
@@ -3561,6 +3569,33 @@ function renderEventStates() {
 // Names of rivers, mountains, plains and seas; they don't change with the year.
 // Which Yellow River course and which old shorelines belong to the current year; the modern lower river only from 1855.
 const inYears = (y) => ["all", ["<=", ["get", "from"], y], [">", ["get", "to"], y]];
+// Disputed areas: diagonal stripes drawn on a small canvas (re-added if a style change drops the image).
+function hatchImage() {
+  const n = 12, c = document.createElement("canvas");
+  c.width = c.height = n;
+  const g = c.getContext("2d");
+  g.strokeStyle = "rgba(140, 47, 31, 0.75)";
+  g.lineWidth = 1.6;
+  g.beginPath();
+  for (const o of [-n, 0, n]) { g.moveTo(o, n); g.lineTo(o + n, 0); }
+  g.stroke();
+  return g.getImageData(0, 0, n, n);
+}
+function addHatch(m) {
+  if (!m.hasImage("hatch")) m.addImage("hatch", hatchImage(), { pixelRatio: 2 });
+}
+function renderDisputes() {
+  if (!map?.getLayer("dispute-fill")) return;
+  const y = state.year, f = ["all", ["<=", ["get", "from"], y], [">=", ["get", "to"], y]];
+  for (const id of ["dispute-fill", "dispute-line"]) map.setFilter(id, f);
+}
+function disputeCard(p) {
+  const L = (k) => esc(zh() ? p[k + "_zh"] || p[k] : p[k]);
+  const yrs = t("dispYears")(fmtYear(p.from), p.to < 9999 ? fmtYear(p.to) : null);
+  return `<div class="pc-dispute"><h4>${L("name")} <span class="pc-badge">${esc(t("disp"))}</span></h4><p class="pc-meta">${esc(yrs)}</p>
+    <dl><dt>${esc(t("dispCtl"))}</dt><dd>${L("control")}</dd><dt>${esc(t("dispClaim"))}</dt><dd>${L("claim")}</dd></dl>
+    <p>${L("note")}</p><p class="pc-foot">${esc(t("dispFoot"))}</p></div>`;
+}
 function renderOldGeo() {
   if (!map?.getLayer("old-river")) return;
   const y = state.year, vis = state.showGeo ? "visible" : "none";
@@ -4006,6 +4041,7 @@ function openCompare(id, kind = cmp.kind || "region") {
   map.resize();
   if (!cmp.map) {
     cmp.map = new maplibregl.Map({ container: "map2", style: buildStyle(), center: [10, 45], zoom: 3, minZoom: 1.2, maxZoom: 9, attributionControl: false });
+    cmp.map.on("styleimagemissing", (e) => { if (e.id === "hatch") addHatch(cmp.map); });
     cmp.map.on("load", () => {
       applyLook(cmp.map);
       if (!state.showGeo) for (const l of ["rivers", "rivers-minor", "lakes", "lakes-line"]) cmp.map.setLayoutProperty(l, "visibility", "none");
@@ -6510,7 +6546,7 @@ async function init() {
   }
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
   map.addControl(new maplibregl.AttributionControl({ compact: true,
-    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b> · data format ${FORMAT}` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : "Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0)") + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
+    customAttribution: `<b>Atlas v${esc(APP_VERSION)}</b> · data format ${FORMAT}` + (CAN_INSTALL && IOS ? ` · <a href="#" id="attr-install">${esc(t("install").title)}</a>` : "") + " · " + (offEarth ? "" : `${esc(t("borderNote"))} · Terrain: Mapzen/AWS Terrain Tiles · Borders: Cliopatria/Seshat (CC BY 4.0), historical-basemaps (GPL-3.0), disputed areas: Natural Earth`) + (state.basemap?.attribution ? ` · ${esc(state.basemap.attribution)}` : "") + (pack?.attribution ? ` · ${esc(pack.attribution)}` : "") }), "bottom-left");
   // MapLibre opens the compact attribution on wide screens; start it folded to the "i" button.
   const foldAttribution = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
   map.once("load", foldAttribution);
@@ -6547,10 +6583,13 @@ async function init() {
   // region (its periods and events) until the selection is cleared, and the card offers the way back to it.
   map.on("moveend", () => { if (state.adminShown?.length) renderAdminLabels(); scheduleDeclutter(); saveView(); if (!state.tour && state.ready) setMode(state.sel ? selRegion() : detectRegion()); renderSelCard(); });
   map.on("zoomend", setTerrainForZoom);
+  map.on("styleimagemissing", (e) => { if (e.id === "hatch") addHatch(map); });
   map.on("load", async () => {
     setTerrainForZoom();
     applyLook();
     renderGeo();
+    addHatch(map);
+    if (!offEarth) loadJSON("data/disputes.json").then((d) => { map.getSource("disputes")?.setData(d); renderDisputes(); }).catch(() => {});
     // Switches remembered from the last visit that the style starts with on.
     if (!state.showNeighbours) for (const id of ["neighbour-fill", "neighbour-line"]) map.setLayoutProperty(id, "visibility", "none");
     if (!state.showGeo) for (const id of ["rivers", "rivers-minor", "lakes", "lakes-line"]) map.setLayoutProperty(id, "visibility", "none");
@@ -6880,8 +6919,10 @@ async function init() {
     // A click on a seat ring opens its card instead.
     if (map.getLayer("admin-dot") && map.queryRenderedFeatures(e.point, { layers: ["admin-dot"] }).length) return;
     const f = map.queryRenderedFeatures(e.point, { layers: ["focus-fill", "neighbour-fill"] }).find((f) => f.properties.name);
-    if (!f) return;
-    if (selNames().has(f.properties.name) && selOnMap()) selectCountry(null); else selectCountry(f.properties.name);
+    const d = map.getLayer("dispute-fill") && map.queryRenderedFeatures(e.point, { layers: ["dispute-fill"] })[0];
+    if (f) { if (selNames().has(f.properties.name) && selOnMap()) selectCountry(null); else selectCountry(f.properties.name); }
+    // A disputed area also opens its card: who holds it, who claims it.
+    if (d) showCard(e.lngLat, disputeCard(d.properties));
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && state.sel && e.target.tagName !== "INPUT" && !state.reading && $("search").hidden) selectCountry(null); });
   // The tour card grows and shrinks with each step's caption; the immersive reading card ends just above it.
