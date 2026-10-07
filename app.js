@@ -5001,6 +5001,12 @@ function applyLayout() {
   // 一览 folds the ledger to its tabs (it can still be opened); leaving it unfolds a ledger it folded.
   if (L === "glance") { state.glanceFolded = !$("ledger").classList.contains("collapsed"); if (state.glanceFolded) foldLedger(true); }
   else if (state.layoutShown === "glance" && state.glanceFolded) { state.glanceFolded = false; foldLedger(false); }
+  // Docked panels (阅读's side panel; both 研究 panels) fold with their pins, not by minimising; one that was
+  // minimised before opens again so the dock is never an empty column.
+  if (L === "reader" || L === "explorer") {
+    if ($("ledger").classList.contains("collapsed")) foldLedger(false);
+    if (L === "explorer" && state.eraMin) setEraMin(false, true);
+  }
   state.layoutShown = L;
   if (L === "classic") root.removeAttribute("data-layout"); else root.dataset.layout = L;
   root.classList.remove("l-peek", "r-peek");
@@ -5025,7 +5031,7 @@ function setAutoLayout(on, remember = true) {
   if (remember) try { localStorage.setItem("atlas-autolayout", on ? "1" : "0"); } catch {}
   applyLayout();
 }
-// Explorer pins: l = era panel, r = side panel. Unpinned panels hide behind a tab on their edge.
+// Pins (研究 both panels, 阅读 the side panel): l = era panel, r = side panel. Unpinned panels hide behind a tab on their edge.
 function setPins(pins, remember = true) {
   state.pins = { ...state.pins, ...pins };
   const root = document.documentElement;
@@ -5043,9 +5049,9 @@ function setPins(pins, remember = true) {
 }
 function renderEdgeTabs() {
   const l = $("edge-l"), r = $("edge-r");
+  if (r) r.innerHTML = esc(t(state.tab === "people" ? "people_l" : state.tab));
   if (!l || !state.era) return;
   l.innerHTML = `<span class="sl">${esc((state.era.glyph || "").slice(0, 1))}</span>${esc(zh() ? state.era.name_zh || state.era.glyph : bandName(state.era))}<small>${esc(fmtYear(state.year))}</small>`;
-  r.innerHTML = `${esc(t(state.tab === "people" ? "people_l" : state.tab))}`;
 }
 const layoutIcon = (id) => `<svg viewBox="-2 -2 60 44" aria-hidden="true"><rect x="-1" y="-1" width="58" height="42" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor">${LAYOUTS.find((l) => l.id === id).svg}</g></svg>`;
 function renderLayoutChips() {
