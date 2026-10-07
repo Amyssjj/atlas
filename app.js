@@ -5243,7 +5243,10 @@ function drawDial(y = state.year, give = 0) {
   if (!dial.el || !dial.eras.length) return;
   dial.year = y;
   const yr = Math.round(y), i = dialIdx(yr), e = dial.eras[i], step = dialStep();
-  dial.el.querySelector(".g-periods").setAttribute("transform", `rotate(${dialPos(y) * step - step / 2 + give / 3})`);
+  // The current period's name sits centred under the pointer; only while the period ring itself is turned does it
+  // slide continuously (a period is centred halfway through, so letting go at its start keeps it centred).
+  dial.rot = dial.drag?.gear === "era" && dial.drag.moved >= 3 ? (dialPos(y) - 0.5) * step : i * step;
+  dial.el.querySelector(".g-periods").setAttribute("transform", `rotate(${dial.rot + give / 3})`);
   dial.el.querySelector(".g-ticks").setAttribute("transform", `rotate(${y * 3.6 + give / 3})`);
   dial.el.querySelectorAll(".p-lab").forEach((t, k) => t.classList.toggle("on", k === i));
   const [num] = fmtYearParts(yr);
@@ -5285,7 +5288,7 @@ function dialDown(ev) {
   try { dial.el.setPointerCapture(ev.pointerId); } catch {}
   const c = dialCentre(), d = Math.hypot(ev.clientX - c.x, ev.clientY - c.y);
   const a = Math.atan2(ev.clientX - c.x, c.y - ev.clientY);
-  dial.drag = { c, gear: !wasOpen ? "year" : d < 60 ? "core" : d < 95 ? "year" : "era", a, a0: a, t: performance.now(), moved: 0, over: 0, pos: dialPos(state.year) };
+  dial.drag = { c, gear: !wasOpen ? "year" : d < 60 ? "core" : d < 95 ? "year" : "era", a, a0: a, t: performance.now(), moved: 0, over: 0, pos: dialIdx(state.year) + 0.5 };
   if (dial.drag.gear !== "core" && state.playing) stop();
 }
 function dialMove(ev) {
@@ -5332,11 +5335,11 @@ function dialUp() {
   if (dr.moved < 3 && dr.gear === "core") { play(); drawDial(); }
   // A click (or tap) on a period in the outer ring goes to its start.
   else if (dr.moved < 3 && dr.gear === "era") {
-    const n = dial.eras.length, step = dialStep(), turn = dialPos(dial.year) * step - step / 2;
-    const i = ((Math.round((turn - (dr.a0 * 180) / Math.PI) / step) % n) + n) % n;
+    const n = dial.eras.length, step = dialStep();
+    const i = ((Math.round((dial.rot - (dr.a0 * 180) / Math.PI) / step) % n) + n) % n;
     setYear(Math.max(state.range.start, Math.min(state.range.end, dial.eras[i].start)));
   }
-  else if (dr.gear === "era" && dr.moved >= 3) setYear(dial.eras[Math.round(Math.min(dial.eras.length - 1, dr.pos))].start);
+  else if (dr.gear === "era" && dr.moved >= 3) setYear(dial.eras[Math.min(dial.eras.length - 1, Math.floor(dr.pos))].start);
   else if (dr.moved >= 3) setYear(Math.round(dial.year));
   if (dr.over) drawDial();
   scheduleDialClose();
