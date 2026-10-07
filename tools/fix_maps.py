@@ -44,7 +44,7 @@ FIXES = [
     {"years": [1924, 1931], "do": "zh", "name": "Manchuria", "zh": "东北（奉系）"},
     {"years": [1921, 1944], "do": "assign", "area": {"ne": "ne_10m_admin_1_states_provinces:name=Tuva"},
      "owner": "Tuvan People's Republic", "zh": "唐努图瓦"},
-    {"years": [1936, 1944], "do": "rename", "name": "White Russia", "to": "Tuvan People's Republic", "zh": "唐努图瓦"},
+    {"years": [1936, 1944], "do": "rename", "name": "White Russia", "to": "USSR", "zh": "苏联"},   # the whole Soviet Union, misnamed
     {"years": [1951, 1959], "do": "rename", "name": "Tibet", "to": "China", "zh": "中国",
      "label": "1951: the Seventeen Point Agreement; the PLA enters Lhasa", "label_zh": "1951年：签订十七条协议，解放军进入拉萨"},
     # --- Japan, Korea, Ryukyu, Sakhalin, Kurils ---
