@@ -957,9 +957,15 @@
     },
     {
      "from": 1860,
-     "borders": "data/borders/qing-1900.geojson",
+     "borders": "data/borders/qing-1860.geojson",
      "label": "1860 onward: territory lost to Russia",
      "label_zh": "1860年以后：领土被沙俄割占"
+    },
+    {
+     "from": 1895,
+     "borders": "data/borders/qing-1900.geojson",
+     "label": "1895: Taiwan ceded to Japan by the Treaty of Shimonoseki",
+     "label_zh": "1895年：《马关条约》割让台湾予日本"
     }
    ],
    "summary": "The Manchu Qing built the largest Chinese empire, then faced rebellion and Western and Japanese imperialism. It ended with the abdication of the last emperor in 1912.",
