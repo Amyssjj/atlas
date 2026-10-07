@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ID = re.compile(r"^[a-z0-9-]+$")
 CATS = {"war", "politics", "reform", "rebellion", "diplomacy", "economy", "culture", "science", "society"}
-AUTO_LAYERS = {"rulers", "people", "armies", "routes", "exchange", "spread", "passes", "roads", "walls", "clans",
+AUTO_LAYERS = {"rulers", "people", "armies", "routes", "exchange", "spread", "passes", "roads", "walls", "clans", "admin",
                "capitals", "faith", "inventions"}
 LAYER_TYPES = {"fill", "line", "circle"}
 
@@ -211,6 +211,9 @@ def check_tours(rep, where, tours, era_ids, event_ids):
             check_layer_keys(rep, sw, s)
 
 
+MOODS = ("sorrow", "tension", "battle", "triumph", "journey", "serene", "solemn")
+
+
 def check_geojson(rep, where, d):
     if not (isinstance(d, dict) and d.get("type") == "FeatureCollection" and isinstance(d.get("features"), list)):
         rep.err(where, "should be a GeoJSON FeatureCollection")
@@ -357,6 +360,16 @@ def check_builtin():
     tours = load(ROOT / "data/tours.json", rep, "data/tours.json")
     if tours is not None:
         check_tours(rep, "data/tours.json", tours, era_ids, event_ids)
+    # data/moods.json: {"<tour id>/<step>": mood}, the mood track under that step (app.js musicWanted).
+    moods = load(ROOT / "data/moods.json", rep, "data/moods.json")
+    lives = load(ROOT / "data/lives.json", rep, "data/lives.json")
+    if isinstance(moods, dict) and isinstance(tours, list):
+        steps = {f"{tr.get('id')}/{i}" for tr in tours + (lives if isinstance(lives, list) else []) for i in range(len(tr.get("steps") or []))}
+        for k, v in moods.items():
+            if k not in steps:
+                rep.err("data/moods.json", f"{k!r} is not a tour step")
+            if v not in MOODS:
+                rep.err("data/moods.json", f"{k}: mood {v!r} is not one of {', '.join(MOODS)}")
     return rep
 
 

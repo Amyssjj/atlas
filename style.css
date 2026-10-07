@@ -679,6 +679,22 @@ html:lang(en) .mk-geo.g-river, html:lang(en) .mk-geo.g-lake { text-transform: no
   font: 700 11px/1.15 var(--font-display); color: #2b2018; white-space: nowrap;
   text-shadow: 0 0 3px #f4f2ea, 0 0 3px #f4f2ea, 0 0 6px #f4f2ea;
 }
+/* Administrative seats (郡县 治所): names only; the rings are drawn by the map (admin-dot) */
+.mk-admin {
+  font: 600 10.5px/1.1 var(--font-display); color: #4a3424; white-space: nowrap; cursor: pointer;
+  text-shadow: 0 0 3px #f4f2ea, 0 0 3px #f4f2ea, 0 0 5px #f4f2ea;
+}
+.mk-admin.lv-3 { color: #2f4f6e; }
+.mk-admin.unsure { font-style: italic; opacity: .8; }
+.mk-admin.dc-nolabel { visibility: hidden; }
+.sat .mk-admin { color: #fbf3e2; text-shadow: 0 0 3px rgba(10, 20, 15, .95), 0 0 6px rgba(10, 20, 15, .6); }
+.sat .mk-admin.lv-3 { color: #d7e8f7; }
+.atlas-pop .pc-admin { max-height: 168px; overflow-y: auto; }
+.atlas-pop .pc-admin li { cursor: pointer; }
+.atlas-pop .pc-admin li.on { font-weight: 700; }
+.atlas-pop .pc-admin small, .atlas-pop .pc-chgis-list small { color: var(--muted); font-size: 11px; }
+.atlas-pop .pc-chgis { margin: 6px 0 2px; }
+.atlas-pop .pc-chgis-list a { text-decoration: none; }
 .atlas-pop .pc-battles { margin: 2px 0 0; padding: 0; list-style: none; font-size: 13px; }
 .atlas-pop .pc-battles span { font: 500 11px var(--font-mono, monospace); color: var(--cinnabar); margin-right: 4px; }
 
@@ -1339,13 +1355,14 @@ html:lang(zh-CN) .st-sec h3 { letter-spacing: 0.2em; }
 .st-switch i::after { top: 3px; left: 3px; width: 14px; height: 14px; }
 .st-switch[aria-pressed="true"] i { background: var(--jade); }
 .st-switch[aria-pressed="true"] i::after { transform: translateX(14px); }
-.st-seg { display: inline-flex; flex-wrap: wrap; justify-content: flex-end; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.st-seg { display: inline-flex; flex-wrap: nowrap; justify-content: flex-end; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
 .st-row > .st-seg:only-child { justify-content: flex-start; }
 .st-seg button { appearance: none; border: 0; background: none; padding: 6px 10px; font: 600 12px/1 var(--font-body); color: var(--muted); cursor: pointer; }
 .st-seg button + button { border-left: 1px solid var(--rule); }
 .st-seg button:hover { color: var(--ink); }
-.st-seg button[aria-pressed="true"] { background: var(--jade); color: #fff; }
-#st-speed button { padding-inline: 7px; }
+.st-seg button[aria-pressed="true"] { background: var(--jade); color: var(--panel-solid); }
+#st-speed button { padding-inline: 6px; font-family: var(--font-data); font-size: 11px; }
+.st-seg button { white-space: nowrap; }
 .settings:focus { outline: none; }
 .settings .panel-op input { width: 130px; }
 .st-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--muted); }
@@ -1357,3 +1374,385 @@ html:lang(zh-CN) .st-sec h3 { letter-spacing: 0.2em; }
   .st-row, .st-switch { min-height: 36px; font-size: 14px; }
   .st-seg button { padding: 8px 11px; font-size: 13px; }
 }
+
+/* Panel styles (设置 › 外观 › 面板风格): html[data-ui] picks one; none is the classic look above. Each style sets its own
+   colours, which give way when the panel colour setting picks the opposite light/dark (data-theme), and its own shapes. */
+/* 宣纸 Paper */
+:root[data-ui="paper"]:not([data-theme="dark"]):not(#_) { --panel-rgb: 245, 238, 222; --panel-a: 0.94; --panel-solid: #f5eede; --ink: #2b2118; --muted: #7b6a54; --rule: rgba(94, 64, 34, 0.2); --jade: #3f6d58; --jade-soft: rgba(63, 109, 88, 0.12); --cinnabar: #a8321e; --cinnabar-ink: #fbf3e6; --shadow: 0 1px 2px rgba(60, 40, 20, 0.18), 0 10px 26px rgba(60, 40, 20, 0.22); --font-body: "Noto Serif SC", "Songti SC", Georgia, serif; color-scheme: light; }
+html[data-ui="paper"] .panel { border-radius: 3px; border: 1px solid rgba(94, 64, 34, 0.42); outline: 1px solid rgba(94, 64, 34, 0.16); outline-offset: -5px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); backdrop-filter: blur(3px); }
+html[data-ui="paper"] .chip { border-radius: 2px; font-family: var(--font-body); border-color: rgba(94, 64, 34, 0.3); }
+html[data-ui="paper"] .chip[aria-pressed="true"] { background: rgba(63, 109, 88, 0.1); border-color: var(--jade); }
+html[data-ui="paper"] .chip.layer[aria-pressed="true"] { background: rgba(168, 50, 30, 0.08); }
+html[data-ui="paper"] .seal { border-radius: 2px; box-shadow: inset 0 0 0 3px var(--seal-bg), inset 0 0 0 4.5px var(--seal-ink), 1px 1px 0 rgba(0,0,0,.15); }
+html[data-ui="paper"] .era-name { font: 700 20px/1.2 var(--font-display); letter-spacing: 0.04em; }
+html[data-ui="paper"] .era-year { font: 500 28px/1.1 var(--font-display); }
+html[data-ui="paper"] .ledger-tabs .tab { font: 700 15px/1 var(--font-display); letter-spacing: 0.12em; padding: 4px 9px 7px; }
+html[data-ui="paper"] .ledger-tabs .tab[aria-selected="true"] { color: var(--cinnabar); border-bottom: 2px solid var(--cinnabar); }
+html[data-ui="paper"] .ledger-head { border-bottom: 1px solid rgba(94, 64, 34, 0.32); box-shadow: 0 3px 0 -2px rgba(94, 64, 34, 0.18); }
+html[data-ui="paper"] .ev { border-bottom: 1px dashed rgba(94, 64, 34, 0.16); }
+html[data-ui="paper"] .ev-year, html[data-ui="paper"] .rl-years, html[data-ui="paper"] .story-meta .when { font-family: var(--font-display); font-weight: 700; }
+html[data-ui="paper"] .ev-title { font: 700 15px/1.35 var(--font-display); }
+html[data-ui="paper"] .ev.selected { background: rgba(168, 50, 30, 0.07); box-shadow: inset 3px 0 0 var(--cinnabar); }
+html[data-ui="paper"] .ev:hover, html[data-ui="paper"] .rl:hover { background: rgba(94, 64, 34, 0.07); }
+html[data-ui="paper"] .ef-levels { border-radius: 2px; border-color: rgba(94, 64, 34, 0.35); }
+html[data-ui="paper"] .ef-levels button[aria-pressed="true"] { background: var(--ink); color: #f5eede; }
+html[data-ui="paper"] .story-nav, html[data-ui="paper"] .rl-pick { background: #f2eadb; }
+html[data-ui="paper"] .story-head h3 { font-size: 24px; letter-spacing: 0.04em; }
+html[data-ui="paper"] .story blockquote { background: rgba(168, 50, 30, 0.05); border-radius: 0; }
+html[data-ui="paper"] .why { border-radius: 0; background: transparent; border: 1px solid rgba(63, 109, 88, 0.35); }
+html[data-ui="paper"] .zbtn, html[data-ui="paper"] .play { background: #f8f2e6; border-color: rgba(94, 64, 34, 0.32); }
+html[data-ui="paper"] .rail .band b { font-weight: 700; }
+html[data-ui="paper"] .band.current { background: rgba(168, 50, 30, 0.1); }
+html[data-ui="paper"] .band.current b { color: var(--cinnabar); }
+html[data-ui="paper"] .atlas-pop .maplibregl-popup-content, html[data-ui="paper"] .mk-army { border-radius: 3px; border: 1px solid rgba(94, 64, 34, 0.42); }
+html[data-ui="paper"] .mk-army { border-top: 3px double var(--cinnabar); }
+html[data-ui="paper"] .lang-pop, html[data-ui="paper"] .region-pop { border-radius: 3px !important; }
+html[data-ui="paper"] .world-strip .ws-head { background: rgba(43, 33, 24, 0.82); border-radius: 2px; }
+html[data-ui="paper"] .world-strip button { border-radius: 2px !important; background: rgba(245, 238, 222, 0.94) !important; font-family: var(--font-display); }
+html[data-ui="paper"] .auto-row { border-radius: 2px; background: rgba(201, 138, 27, 0.1); }
+html[data-ui="paper"] .world-strip .ws-head { color: #f5eede; }
+html[data-ui="paper"] .world-strip .ws-head { background: rgba(43,33,24,.85) !important; color: #f5eede !important; }
+/* 毛玻璃 Glass */
+:root[data-ui="glass"]:not([data-theme="light"]):not(#_) { --panel-rgb: 16, 20, 26; --panel-a: 0.56; --panel-solid: #1b2028; --ink: #f2f5f7; --muted: rgba(232, 238, 244, 0.62); --rule: rgba(255, 255, 255, 0.12); --jade: #78dcc0; --jade-soft: rgba(120, 220, 192, 0.16); --cinnabar: #ff8566; --cinnabar-ink: #2a0f08; --shadow: 0 12px 40px rgba(0, 0, 0, 0.38); color-scheme: dark; }
+html[data-ui="glass"] .panel { border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.14); }
+html[data-ui="glass"] .chip { background: rgba(255, 255, 255, 0.07); border-color: transparent; color: var(--ink); }
+html[data-ui="glass"] .chip[aria-pressed="true"] { background: rgba(120, 220, 192, 0.2); border-color: transparent; color: #c6f6e8; }
+html[data-ui="glass"] .chip.layer[aria-pressed="true"] { background: rgba(255, 133, 102, 0.2); border-color: transparent; color: #ffcdbf; }
+html[data-ui="glass"] .seal { border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.25); }
+html[data-ui="glass"] .era-name { font-weight: 600; font-size: 19px; }
+html[data-ui="glass"] .era-year { font-weight: 500; }
+html[data-ui="glass"] .ledger-head { border-bottom-color: transparent; padding-top: 10px; }
+html[data-ui="glass"] .ledger-tabs { background: rgba(255, 255, 255, 0.07); border-radius: 999px; padding: 3px; gap: 0; }
+html[data-ui="glass"] .ledger-tabs .tab, html[data-ui="glass"][lang] .ledger-tabs .tab:first-child { padding: 6px 11px; margin: 0; border-radius: 999px; border: 0; letter-spacing: 0.04em; }
+html[data-ui="glass"] .ledger-tabs .tab[aria-selected="true"] { background: rgba(255, 255, 255, 0.16); color: #fff; border: 0; }
+html[data-ui="glass"] .ev { border-radius: 12px; margin: 0 6px; width: calc(100% - 12px); }
+html[data-ui="glass"] .ev.selected { background: rgba(255, 255, 255, 0.1); box-shadow: inset 3px 0 0 var(--cinnabar); }
+html[data-ui="glass"] .ev:hover, html[data-ui="glass"] .rl:hover { background: rgba(255, 255, 255, 0.07); }
+html[data-ui="glass"] .ef-levels { border-radius: 999px; border-color: transparent; background: rgba(255,255,255,.07); }
+html[data-ui="glass"] .ef-levels button[aria-pressed="true"] { background: rgba(255, 255, 255, 0.18); color: #fff; border-radius: 999px; }
+html[data-ui="glass"] .ef-levels button + button { border-left: 0; }
+html[data-ui="glass"] .ef-country, html[data-ui="glass"] .rl-pick select { background: rgba(255,255,255,.07); border-color: transparent; border-radius: 999px; }
+html[data-ui="glass"] .story-nav, html[data-ui="glass"] .rl-pick { background: rgba(22, 26, 33, 0.82); backdrop-filter: blur(12px); }
+html[data-ui="glass"] .zbtn, html[data-ui="glass"] .play { background: rgba(255, 255, 255, 0.1); border-color: transparent; color: var(--ink); }
+html[data-ui="glass"] .rail { border-radius: 22px; }
+html[data-ui="glass"] .band.current { background: rgba(255, 255, 255, 0.12); }
+html[data-ui="glass"] .band.current b { color: #fff; }
+html[data-ui="glass"] .atlas-pop .maplibregl-popup-content, html[data-ui="glass"] .mk-army { background: rgba(22, 26, 33, 0.78); backdrop-filter: blur(18px) saturate(160%); border-radius: 14px; border: 1px solid rgba(255,255,255,.14); }
+html[data-ui="glass"] .atlas-pop .maplibregl-popup-tip { border-top-color: rgba(22, 26, 33, 0.78); border-bottom-color: rgba(22, 26, 33, 0.78); }
+html[data-ui="glass"] .mk-army { border-top: 1px solid rgba(255,255,255,.14); box-shadow: var(--shadow), inset 0 3px 0 var(--cinnabar); }
+html[data-ui="glass"] .mk-army::after { background: rgba(22, 26, 33, 0.9); }
+html[data-ui="glass"] .lang-pop, html[data-ui="glass"] .region-pop { border-radius: 16px !important; background: rgba(22, 26, 33, 0.82) !important; backdrop-filter: blur(22px) saturate(160%); }
+html[data-ui="glass"] .lang-pop button:hover { background: rgba(255,255,255,.08); }
+html[data-ui="glass"] .world-strip .ws-head { background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(14px); }
+html[data-ui="glass"] .world-strip button { background: rgba(22, 26, 33, 0.7) !important; backdrop-filter: blur(14px); color: var(--ink) !important; }
+html[data-ui="glass"] .auto-row { background: rgba(255, 196, 92, 0.1); border-color: rgba(255, 196, 92, 0.45); border-radius: 14px; }
+html[data-ui="glass"] .auto-row small, html[data-ui="glass"] .switch { color: #ffd48a; }
+html[data-ui="glass"] .chip.auto { background: rgba(255, 196, 92, 0.14); color: #ffd48a; }
+html[data-ui="glass"] .rail-min { background: rgba(22, 26, 33, 0.82); }
+html[data-ui="glass"] .world-strip .ws-head { background: rgba(255,255,255,.18) !important; color: #fff !important; }
+/* 简报 Editorial */
+:root[data-ui="editorial"]:not([data-theme="dark"]):not(#_) { --panel-rgb: 255, 255, 255; --panel-a: 0.98; --panel-solid: #ffffff; --ink: #111111; --muted: #5f5f5f; --rule: rgba(0, 0, 0, 0.13); --jade: #111111; --jade-soft: rgba(0, 0, 0, 0.06); --cinnabar: #c8102e; --cinnabar-ink: #ffffff; --shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.18); color-scheme: light; }
+html[data-ui="editorial"] .panel { border-radius: 0; border: 0; border-top: 4px solid #111; backdrop-filter: none; }
+html[data-ui="editorial"] .chip { border-radius: 0; border-color: rgba(0, 0, 0, 0.25); font-weight: 600; }
+html[data-ui="editorial"] .chip[aria-pressed="true"] { background: #111; border-color: #111; color: #fff; }
+html[data-ui="editorial"] .chip.layer[aria-pressed="true"] { background: var(--cinnabar); border-color: var(--cinnabar); color: #fff; }
+html[data-ui="editorial"] .seal { border-radius: 0; box-shadow: none; }
+html[data-ui="editorial"] .era-name { font: 600 21px/1.15 var(--font-body); letter-spacing: -0.01em; }
+html[data-ui="editorial"] .era-year { font: 500 32px/1.05 var(--font-data); letter-spacing: -0.03em; }
+html[data-ui="editorial"] .ledger-head { border-bottom: 2px solid #111; }
+html[data-ui="editorial"] .ledger-tabs .tab { font: 600 13px/1 var(--font-body); letter-spacing: 0.06em; color: #8a8a8a; border-bottom-width: 3px; }
+html[data-ui="editorial"] .ledger-tabs .tab[aria-selected="true"] { color: #111; border-bottom-color: #111; }
+html[data-ui="editorial"] .ev { border-bottom: 1px solid var(--rule); padding: 10px 16px; }
+html[data-ui="editorial"] .ev-year { font-weight: 600; }
+html[data-ui="editorial"] .ev-title { font-weight: 600; }
+html[data-ui="editorial"] .ev.selected { background: #f4f4f4; box-shadow: inset 4px 0 0 var(--cinnabar); }
+html[data-ui="editorial"] .ev:hover, html[data-ui="editorial"] .rl:hover { background: #f4f4f4; }
+html[data-ui="editorial"] .ef-levels { border-radius: 0; border-color: #111; }
+html[data-ui="editorial"] .ef-levels button[aria-pressed="true"] { background: #111; }
+html[data-ui="editorial"] .ef-levels button + button { border-left-color: #111; }
+html[data-ui="editorial"] .ef-country, html[data-ui="editorial"] .rl-pick select { border-radius: 0; border-color: rgba(0,0,0,.3); }
+html[data-ui="editorial"] .story-head h3 { font: 600 24px/1.2 var(--font-body); }
+html[data-ui="editorial"] .story blockquote { border-radius: 0; background: #f6f6f6; }
+html[data-ui="editorial"] .why { border-radius: 0; background: #f4f4f4; border-left: 4px solid #111; }
+html[data-ui="editorial"] .cat { border-radius: 0; }
+html[data-ui="editorial"] .zbtn, html[data-ui="editorial"] .play { border-radius: 0; border-color: #111; }
+html[data-ui="editorial"] .band.current { background: #111; }
+html[data-ui="editorial"] .band.current b { color: #fff; }
+html[data-ui="editorial"] .atlas-pop .maplibregl-popup-content, html[data-ui="editorial"] .mk-army { border-radius: 0; border: 0; border-top: 4px solid #111; }
+html[data-ui="editorial"] .mk-army { border-top-color: var(--cinnabar); }
+html[data-ui="editorial"] .lang-pop, html[data-ui="editorial"] .region-pop { border-radius: 0 !important; border-top: 4px solid #111 !important; }
+html[data-ui="editorial"] .region-pop .rp-pill { border-radius: 0; }
+html[data-ui="editorial"] .region-pop [data-r] { border-radius: 0 !important; }
+html[data-ui="editorial"] .world-strip .ws-head { border-radius: 0; background: #111; }
+html[data-ui="editorial"] .world-strip button { border-radius: 0 !important; background: #fff !important; font-weight: 600; }
+html[data-ui="editorial"] .auto-row { border-radius: 0; }
+html[data-ui="editorial"] .switch[aria-pressed="true"] i { background: #111; }
+html[data-ui="editorial"] .rail-min { border-radius: 0; }
+html[data-ui="editorial"] .rail input[type=range], html[data-ui="editorial"] .panel-op input { accent-color: #111; }
+html[data-ui="editorial"] .world-strip .ws-head { background: #111 !important; color: #fff !important; }
+/* 漆金 Lacquer */
+:root[data-ui="lacquer"]:not([data-theme="light"]):not(#_) { --panel-rgb: 26, 17, 15; --panel-a: 0.93; --panel-solid: #1d1311; --ink: #f2e5cc; --muted: #b6a283; --rule: rgba(212, 175, 106, 0.22); --jade: #d8b46e; --jade-soft: rgba(216, 180, 110, 0.14); --cinnabar: #e25a3c; --cinnabar-ink: #1a0d0a; --shadow: 0 14px 36px rgba(0, 0, 0, 0.55); --font-body: "Noto Serif SC", "Songti SC", Georgia, serif; color-scheme: dark; }
+html[data-ui="lacquer"] .panel { border-radius: 6px; border: 1px solid rgba(216, 180, 110, 0.55); outline: 1px solid rgba(216, 180, 110, 0.2); outline-offset: -6px; background-image: linear-gradient(180deg, rgba(255, 220, 160, 0.05), rgba(0, 0, 0, 0) 40%); }
+html[data-ui="lacquer"] .chip { border-color: rgba(216, 180, 110, 0.32); border-radius: 4px; font-family: var(--font-body); }
+html[data-ui="lacquer"] .chip[aria-pressed="true"] { background: rgba(216, 180, 110, 0.16); border-color: #d8b46e; color: #f3d79b; }
+html[data-ui="lacquer"] .chip.layer[aria-pressed="true"] { background: rgba(226, 90, 60, 0.16); border-color: #e25a3c; color: #ffb8a6; }
+html[data-ui="lacquer"] .seal { border-radius: 4px; --seal-bg: #b8321c; --seal-ink: #f3d79b; box-shadow: inset 0 0 0 3px var(--seal-bg), inset 0 0 0 4px #f3d79b, 0 0 0 1px rgba(216,180,110,.6); }
+html[data-ui="lacquer"] .era-name { font: 700 20px/1.2 var(--font-display); color: #f3d79b; letter-spacing: 0.06em; }
+html[data-ui="lacquer"] .era-year { font: 500 28px/1.1 var(--font-display); }
+html[data-ui="lacquer"] .ledger-head { border-bottom-color: rgba(216, 180, 110, 0.4); }
+html[data-ui="lacquer"] .ledger-tabs .tab { font: 700 15px/1 var(--font-display); letter-spacing: 0.14em; color: var(--muted); }
+html[data-ui="lacquer"] .ledger-tabs .tab[aria-selected="true"] { color: #f3d79b; border-bottom-color: #d8b46e; }
+html[data-ui="lacquer"] .ev-title, html[data-ui="lacquer"] .rl-name { font: 700 15px/1.35 var(--font-display); }
+html[data-ui="lacquer"] .ev-year { color: #e7835f; font-family: var(--font-display); font-weight: 700; }
+html[data-ui="lacquer"] .ev.selected { background: rgba(216, 180, 110, 0.1); box-shadow: inset 3px 0 0 #d8b46e; }
+html[data-ui="lacquer"] .ev:hover, html[data-ui="lacquer"] .rl:hover { background: rgba(216, 180, 110, 0.07); }
+html[data-ui="lacquer"] .ef-levels { border-color: rgba(216, 180, 110, 0.4); border-radius: 4px; }
+html[data-ui="lacquer"] .ef-levels button[aria-pressed="true"] { background: #d8b46e; color: #1d1311; }
+html[data-ui="lacquer"] .ef-levels button + button { border-left-color: rgba(216, 180, 110, 0.4); }
+html[data-ui="lacquer"] .ef-country, html[data-ui="lacquer"] .rl-pick select { border-color: rgba(216, 180, 110, 0.4); }
+html[data-ui="lacquer"] .story-nav, html[data-ui="lacquer"] .rl-pick { background: #1d1311; }
+html[data-ui="lacquer"] .story-head h3 { color: #f3d79b; font-size: 24px; letter-spacing: 0.05em; }
+html[data-ui="lacquer"] .story blockquote { background: rgba(226, 90, 60, 0.08); }
+html[data-ui="lacquer"] .why { background: rgba(216, 180, 110, 0.08); border: 1px solid rgba(216, 180, 110, 0.3); }
+html[data-ui="lacquer"] .zbtn, html[data-ui="lacquer"] .play { background: #24181500; border-color: rgba(216, 180, 110, 0.45); color: #f3d79b; }
+html[data-ui="lacquer"] .band.current { background: rgba(216, 180, 110, 0.16); }
+html[data-ui="lacquer"] .band.current b { color: #f3d79b; }
+html[data-ui="lacquer"] .atlas-pop .maplibregl-popup-content, html[data-ui="lacquer"] .mk-army { border: 1px solid rgba(216, 180, 110, 0.55); }
+html[data-ui="lacquer"] .mk-army { border-top: 3px solid #e25a3c; }
+html[data-ui="lacquer"] .mk-army::after { border-color: rgba(216, 180, 110, 0.55); }
+html[data-ui="lacquer"] .lang-pop, html[data-ui="lacquer"] .region-pop { border: 1px solid rgba(216, 180, 110, 0.55) !important; }
+html[data-ui="lacquer"] .lang-pop button:hover { background: rgba(216,180,110,.1); }
+html[data-ui="lacquer"] .world-strip .ws-head { background: #1d1311; color: #f3d79b; border: 1px solid rgba(216,180,110,.55); }
+html[data-ui="lacquer"] .world-strip button { background: rgba(29, 19, 17, 0.92) !important; color: var(--ink) !important; border: 1px solid rgba(216,180,110,.4) !important; font-family: var(--font-display); }
+html[data-ui="lacquer"] .auto-row { background: rgba(216, 180, 110, 0.08); border-color: rgba(216, 180, 110, 0.5); }
+html[data-ui="lacquer"] .auto-row small, html[data-ui="lacquer"] .switch { color: #f3d79b; }
+html[data-ui="lacquer"] .chip.auto { background: rgba(216, 180, 110, 0.12); color: #f3d79b; }
+html[data-ui="lacquer"] .rail-min { background: #1d1311; border-color: rgba(216,180,110,.55); }
+html[data-ui="lacquer"] .world-strip .ws-head { color: #f3d79b !important; }
+html[data-ui] .settings .st-switch { color: var(--ink); }
+.st-styles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.st-styles button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 5px 4px 6px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
+.st-styles button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
+.st-styles i { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; background: #5a7a66; }
+.st-styles i::before, .st-styles i::after, .st-styles i b { content: ""; position: absolute; background: var(--p); border: 1px solid var(--b, transparent); border-radius: var(--r, 3px); }
+.st-styles i::before { top: 12%; left: 8%; width: 36%; height: 58%; }
+.st-styles i::after { top: 12%; right: 8%; width: 30%; height: 58%; }
+.st-styles i b { left: 8%; right: 8%; bottom: 8%; height: 14%; }
+
+/* Time dial (设置 › 时间轴 › 拨盘): replaces the timeline with a puck in the bottom-right corner; pressed, it opens into
+   two rings, periods outside and years inside (one turn = 100 years); the centre plays and pauses. Looks: data-skin. */
+#app.dial-mode .rail { display: none; }
+/* On a phone the puck sits in the bottom-right corner: the folded ledger bar beside it, an open ledger under it. */
+@media (max-width: 720px) {
+  #app.dial-mode .dial { right: 8px; bottom: var(--bottom-gap); }
+  #app.dial-mode .ledger { bottom: var(--bottom-gap); }
+  #app.dial-mode .ledger.collapsed { right: 104px; bottom: calc(var(--bottom-gap) + 20px); }
+  #app.dial-mode:has(.ledger:not(.collapsed)) .dial { bottom: calc(var(--bottom-gap) + 52dvh + 8px); }
+  html[data-layout="reader"] #app.dial-mode:has(.ledger:not(.collapsed)) .dial { bottom: calc(var(--bottom-gap) + 72dvh + 8px); }
+}
+.dial { position: absolute; z-index: 6; right: 16px; bottom: 16px; width: 260px; height: 260px; transform-origin: 100% 100%;
+  transform: scale(var(--s, .34)); transition: transform .2s ease; border-radius: 50%; cursor: grab; outline: none;
+  touch-action: none; user-select: none; -webkit-user-select: none; filter: drop-shadow(0 6px 18px rgba(0,0,0,.4)); }
+.dial[hidden] { display: none; }
+.dial:focus-visible { box-shadow: 0 0 0 4px color-mix(in srgb, var(--cinnabar) 60%, transparent); }
+.dial svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.d-outer { fill: var(--panel-solid); } .d-inner { fill: color-mix(in srgb, var(--panel-solid) 92%, var(--ink)); stroke: var(--rule); } .d-core { fill: #1b2226; }
+.d-notch { fill: var(--cinnabar); } .d-hair { stroke: color-mix(in srgb, var(--cinnabar) 55%, transparent); stroke-width: 1.5; }
+.p-lab { font: 700 13px var(--font-display); fill: var(--muted); text-anchor: middle; dominant-baseline: central; }
+html[lang="en"] .p-lab { font: 600 10px var(--font-body); }
+.p-lab.on { fill: var(--cinnabar); font-size: 16px; }
+html[lang="en"] .p-lab.on { font-size: 12px; }
+.p-sep { stroke: var(--rule); stroke-width: 1; }
+.t-min { stroke: color-mix(in srgb, var(--ink) 35%, transparent); stroke-width: 1; } .t-maj { stroke: var(--ink); stroke-width: 2; }
+.c-glyph { font: 700 22px var(--font-display); fill: #ff9a83; text-anchor: middle; }
+.c-year { font: 600 34px var(--font-data); fill: #fff; text-anchor: middle; font-variant-numeric: tabular-nums; }
+.c-sub { font: 500 11px var(--font-body); fill: #aab7bb; text-anchor: middle; }
+.dial.small .c-glyph { font-size: 40px; transform: translateY(-14px); } .dial.small .c-year { font-size: 52px; transform: translateY(22px); }
+.dial.small .c-sub, .dial.small .g-ticks, .dial.small .g-periods, .dial.small .deco-under, .dial.small .deco-over { opacity: 0; }
+.dial .g-ticks, .dial .g-periods, .dial .deco-under, .dial .deco-over, .c-sub { transition: opacity .15s; }
+html.embed .dial, .comparing .dial, .touring .dial, .immersive .dial { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .dial { transition: none; } }
+/* 罗盘 Luopan: a bronze geomancer's compass */
+.dial[data-skin="luopan"] .d-outer { fill: url(#g-bronze); stroke: #3b2508; stroke-width: 1.5; }
+.dial[data-skin="luopan"] .d-inner { fill: url(#g-bronze2); stroke: #3b2508; }
+.dial[data-skin="luopan"] .d-core { fill: #1a0f0b; stroke: #d9b36a; stroke-width: 2; }
+.dial[data-skin="luopan"] .p-lab { fill: #2b1605; font-size: 14px; }
+.dial[data-skin="luopan"] .p-lab.on { fill: #8e1b0e; font-size: 17px; }
+.dial[data-skin="luopan"] .p-sep { stroke: rgba(43,22,5,.55); }
+.dial[data-skin="luopan"] .t-min { stroke: rgba(43,22,5,.6); } .dial[data-skin="luopan"] .t-maj { stroke: #2b1605; stroke-width: 2.5; }
+.dial[data-skin="luopan"] .c-glyph { fill: #e2b866; } .dial[data-skin="luopan"] .c-year { fill: #f5e2b8; font-family: var(--font-display); }
+.dial[data-skin="luopan"] .c-sub { fill: #b9955a; }
+.dial[data-skin="luopan"] .d-notch { fill: #c0281a; } .dial[data-skin="luopan"] .d-hair { stroke: #c0281a; stroke-width: 2; }
+.dial .lp-ring { fill: none; stroke: rgba(43,22,5,.5); stroke-width: .8; }
+.dial .lp-dot { fill: #2b1605; }
+/* 日晷 Sundial: a pale stone disc, engraved, with a gnomon's shadow pointing at now */
+.dial[data-skin="sundial"] .d-outer { fill: url(#g-stone); stroke: #8c9b86; stroke-width: 1.5; }
+.dial[data-skin="sundial"] .d-inner { fill: #dfe6d7; stroke: #9aa894; }
+.dial[data-skin="sundial"] .d-core { fill: url(#g-jade); stroke: #2f5c47; stroke-width: 1.5; }
+.dial[data-skin="sundial"] .p-lab { fill: #4f5e4a; paint-order: stroke; stroke: rgba(255,255,255,.7); stroke-width: 1.2px; }
+.dial[data-skin="sundial"] .p-lab.on { fill: #1f3d2f; }
+.dial[data-skin="sundial"] .p-sep { stroke: rgba(60,80,55,.35); }
+.dial[data-skin="sundial"] .t-min { stroke: rgba(60,80,55,.5); } .dial[data-skin="sundial"] .t-maj { stroke: #33493a; }
+.dial[data-skin="sundial"] .c-glyph { fill: #f3f7ee; } .dial[data-skin="sundial"] .c-year { fill: #fff; font-family: var(--font-display); }
+.dial[data-skin="sundial"] .c-sub { fill: #d6e8dc; }
+.dial[data-skin="sundial"] .d-notch { fill: #33493a; } .dial[data-skin="sundial"] .d-hair { stroke: none; }
+.dial .sd-shadow { fill: url(#g-shadow); }
+.dial .sd-gnomon { fill: #5d6b57; }
+/* 玻璃 Glass: frosted rings that let the map through */
+.dial[data-skin="glass"] { filter: none; backdrop-filter: blur(10px) saturate(150%); -webkit-backdrop-filter: blur(10px) saturate(150%); box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.35); }
+.dial[data-skin="glass"] .d-outer { fill: rgba(255,255,255,.16); stroke: rgba(255,255,255,.45); }
+.dial[data-skin="glass"] .d-inner { fill: rgba(255,255,255,.1); stroke: rgba(255,255,255,.35); }
+.dial[data-skin="glass"] .d-core { fill: rgba(10,14,18,.55); stroke: rgba(255,255,255,.4); }
+.dial[data-skin="glass"] .p-lab { fill: rgba(255,255,255,.85); paint-order: stroke; stroke: rgba(0,0,0,.35); stroke-width: 2px; }
+.dial[data-skin="glass"] .p-lab.on { fill: #7ff0d4; }
+.dial[data-skin="glass"] .p-sep { stroke: rgba(255,255,255,.3); }
+.dial[data-skin="glass"] .t-min { stroke: rgba(255,255,255,.55); } .dial[data-skin="glass"] .t-maj { stroke: #fff; }
+.dial[data-skin="glass"] .c-glyph { fill: #7ff0d4; }
+.dial[data-skin="glass"] .d-notch { fill: #7ff0d4; } .dial[data-skin="glass"] .d-hair { stroke: rgba(127,240,212,.8); }
+/* 表盘 Watch: a dive-watch bezel, black and white with one orange marker */
+.dial[data-skin="watch"] .d-outer { fill: #0d0f11; stroke: #6d737a; stroke-width: 3; }
+.dial[data-skin="watch"] .d-inner { fill: url(#g-steel); stroke: #2b2f33; }
+.dial[data-skin="watch"] .d-core { fill: #121417; stroke: #3a3f44; stroke-width: 1.5; }
+.dial[data-skin="watch"] .p-lab { fill: #e9ecef; font: 600 12px var(--font-body); letter-spacing: .02em; }
+.dial[data-skin="watch"] .p-lab.on { fill: #ff8a1f; font-size: 14px; }
+.dial[data-skin="watch"] .p-sep { stroke: rgba(255,255,255,.25); }
+.dial[data-skin="watch"] .t-min { stroke: rgba(255,255,255,.45); } .dial[data-skin="watch"] .t-maj { stroke: #fff; stroke-width: 2.5; }
+.dial[data-skin="watch"] .c-glyph { fill: #ff8a1f; font-family: var(--font-body); }
+.dial[data-skin="watch"] .c-sub { fill: #8b939a; }
+.dial[data-skin="watch"] .d-notch { fill: #ff8a1f; } .dial[data-skin="watch"] .d-hair { stroke: #ff8a1f; stroke-width: 2; }
+.dial .wt-knurl { stroke: #2b2f33; stroke-width: 2; }
+.dial .wt-lume { fill: #ff8a1f; }
+
+/* The dial looks in settings: a small dial each. */
+.st-dials { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.st-dials[hidden] { display: none; }
+.st-dials button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 6px 4px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
+.st-dials button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
+.st-dials svg { width: 78%; aspect-ratio: 1; display: block; }
+/* Map controls (zoom, compass, fullscreen, ⓘ) wear the panel colour, opacity and style; icons are masks in --ink. */
+.maplibregl-ctrl-group:not(:empty), .maplibregl-ctrl-attrib.maplibregl-compact { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; box-shadow: var(--shadow);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--ink); overflow: hidden; }
+.maplibregl-ctrl-attrib.maplibregl-compact { overflow: visible; border-radius: 13px; }
+.maplibregl-ctrl-group button + button { border-top: 1px solid var(--rule); }
+.maplibregl-ctrl-group button:not(:disabled):hover { background-color: var(--jade-soft); }
+.maplibregl-ctrl button .maplibregl-ctrl-icon { background: var(--ink) !important; -webkit-mask: var(--ctrl-icon) 50% / contain no-repeat; mask: var(--ctrl-icon) 50% / contain no-repeat; }
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon { --ctrl-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23333' viewBox='0 0 29 29'%3E%3Cpath d='M14.5 8.5c-.75 0-1.5.75-1.5 1.5v3h-3c-.75 0-1.5.75-1.5 1.5S9.25 16 10 16h3v3c0 .75.75 1.5 1.5 1.5S16 19.75 16 19v-3h3c.75 0 1.5-.75 1.5-1.5S19.75 13 19 13h-3v-3c0-.75-.75-1.5-1.5-1.5'/%3E%3C/svg%3E"); }
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon { --ctrl-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23333' viewBox='0 0 29 29'%3E%3Cpath d='M10 13c-.75 0-1.5.75-1.5 1.5S9.25 16 10 16h9c.75 0 1.5-.75 1.5-1.5S19.75 13 19 13z'/%3E%3C/svg%3E"); }
+.maplibregl-ctrl button.maplibregl-ctrl-fullscreen .maplibregl-ctrl-icon { --ctrl-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23333' viewBox='0 0 29 29'%3E%3Cpath d='M24 16v5.5c0 1.75-.75 2.5-2.5 2.5H16v-1l3-1.5-4-5.5 1-1 5.5 4 1.5-3zM6 16l1.5 3 5.5-4 1 1-4 5.5 3 1.5v1H7.5C5.75 24 5 23.25 5 21.5V16zm7-11v1l-3 1.5 4 5.5-1 1-5.5-4L6 13H5V7.5C5 5.75 5.75 5 7.5 5zm11 2.5c0-1.75-.75-2.5-2.5-2.5H16v1l3 1.5-4 5.5 1 1 5.5-4 1.5 3h1z'/%3E%3C/svg%3E"); }
+.maplibregl-ctrl button.maplibregl-ctrl-shrink .maplibregl-ctrl-icon { --ctrl-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 29 29'%3E%3Cpath d='M18.5 16c-1.75 0-2.5.75-2.5 2.5V24h1l1.5-3 5.5 4 1-1-4-5.5 3-1.5v-1zM13 18.5c0-1.75-.75-2.5-2.5-2.5H5v1l3 1.5L4 24l1 1 5.5-4 1.5 3h1zm3-8c0 1.75.75 2.5 2.5 2.5H24v-1l-3-1.5L25 5l-1-1-5.5 4L17 5h-1zM10.5 13c1.75 0 2.5-.75 2.5-2.5V5h-1l-1.5 3L5 4 4 5l4 5.5L5 12v1z'/%3E%3C/svg%3E"); }
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon { --ctrl-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='%23333' viewBox='0 0 29 29'%3E%3Cpath d='m10.5 14 4-8 4 8z'/%3E%3Cpath fill='%23ccc' d='m10.5 16 4 8 4-8z'/%3E%3C/svg%3E"); }
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon { background: linear-gradient(var(--cinnabar) 50%, var(--muted) 50%) !important; }
+.maplibregl-ctrl-attrib-button { background: var(--ink) !important; -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill-rule='evenodd' viewBox='0 0 20 20'%3E%3Cpath d='M4 10a6 6 0 1 0 12 0 6 6 0 1 0-12 0m5-3a1 1 0 1 0 2 0 1 1 0 1 0-2 0m0 3a1 1 0 1 1 2 0v3a1 1 0 1 1-2 0'/%3E%3C/svg%3E") 50% / 24px no-repeat; mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill-rule='evenodd' viewBox='0 0 20 20'%3E%3Cpath d='M4 10a6 6 0 1 0 12 0 6 6 0 1 0-12 0m5-3a1 1 0 1 0 2 0 1 1 0 1 0-2 0m0 3a1 1 0 1 1 2 0v3a1 1 0 1 1-2 0'/%3E%3C/svg%3E") 50% / 24px no-repeat; }
+.maplibregl-ctrl-attrib a { color: inherit; }
+html[data-ui="paper"] .maplibregl-ctrl-group:not(:empty) { border-radius: 3px; border-color: rgba(94, 64, 34, 0.42); }
+html[data-ui="paper"] .maplibregl-ctrl-attrib.maplibregl-compact { border-color: rgba(94, 64, 34, 0.42); }
+html[data-ui="glass"] .maplibregl-ctrl-group:not(:empty), html[data-ui="glass"] .maplibregl-ctrl-attrib.maplibregl-compact { border-radius: 14px; border-color: rgba(255, 255, 255, 0.14); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); }
+html[data-ui="editorial"] .maplibregl-ctrl-group:not(:empty) { border-radius: 0; border: 0; border-top: 3px solid #111; backdrop-filter: none; }
+html[data-ui="editorial"] .maplibregl-ctrl-attrib.maplibregl-compact { backdrop-filter: none; }
+html[data-ui="lacquer"] .maplibregl-ctrl-group:not(:empty) { border-radius: 6px; border-color: rgba(216, 180, 110, 0.55); }
+html[data-ui="lacquer"] .maplibregl-ctrl-attrib.maplibregl-compact { border-color: rgba(216, 180, 110, 0.55); }
+
+/* Layouts (设置 › 布局): html[data-layout] arranges the panels for what the visitor is doing. 经典 (classic) is the
+   layout above and sets nothing. 自动布局 switches on its own: a tour → 导览, a story being read → 阅读, playback → 一览,
+   then back to the chosen layout. */
+/* 一览 Glance: the map alone; the era card shrinks to seal, name and year, the side panel to its tabs. */
+html[data-layout="glance"] .era { width: auto; max-width: calc(100% - 32px); padding: 8px 10px; gap: 0 10px; grid-template-columns: auto auto auto auto; grid-template-rows: auto; align-items: center; }
+html[data-layout="glance"] .era > * { grid-row: 1 !important; }
+html[data-layout="glance"] .era > :not(.seal, .era-name, .era-year, .era-corner, .region-pop, .look-pop, .panel-pop, .share-box) { display: none !important; }
+html[data-layout="glance"] .era > .seal { grid-area: auto; width: 38px; height: 38px; font-size: 24px; }
+html[data-layout="glance"] .era > .seal.double { font-size: 14px; }
+html[data-layout="glance"] .era > .era-name { grid-area: auto; font-size: 15px; white-space: nowrap; }
+html[data-layout="glance"] .era > .era-year { grid-area: auto; font-size: 18px; }
+html[data-layout="glance"] .era > .era-corner { grid-area: auto; order: 0; margin: 0 0 0 4px; }
+html[data-layout="glance"] .era .era-more, html[data-layout="glance"] .era .era-min { display: none; }
+html[data-layout="glance"] .ledger { width: auto; }
+html[data-layout="glance"] .world-strip, html[data-layout="glance"] .auto-strip,
+html[data-layout="glance"] .mk-army, html[data-layout="glance"] .maplibregl-marker:has(.mk-army) { display: none !important; }
+
+/* 阅读 Reader: the story gets a docked reading column with larger type; the map frames the place beside it. */
+@media (min-width: 721px) {
+  html[data-layout="reader"] .ledger { top: 0; right: 0; bottom: 0; max-height: none; height: 100%; width: min(500px, 46vw); border-radius: 0; border-width: 0 0 0 1px; box-shadow: -8px 0 30px rgba(0,0,0,.18); }
+  html[data-layout="reader"] .story { padding: 0 32px 32px; }
+  html[data-layout="reader"] .story-head h3 { font-size: 28px; }
+  html[data-layout="reader"] .rail { right: calc(min(500px, 46vw) + 16px); }
+  html[data-layout="reader"] .dial { right: calc(min(500px, 46vw) + 16px); }
+}
+html[data-layout="reader"]:lang(zh-CN) .story-body p, html[data-layout="reader"]:lang(zh-CN) .story-lede { font-size: 17px; line-height: 1.9; }
+html[data-layout="reader"] .story-body, html[data-layout="reader"] .story-lede { max-width: 34em; }
+html[data-layout="reader"] .world-strip, html[data-layout="reader"] .auto-strip { display: none !important; }
+@media (max-width: 720px) { html[data-layout="reader"] .ledger:not(.collapsed) { height: 72dvh; max-height: none; } }
+
+/* 导览 Cinema: a tour plays like a film; only the tour card and the timeline stay. */
+html[data-layout="cinema"] .era, html[data-layout="cinema"] .ledger, html[data-layout="cinema"] .world-strip,
+html[data-layout="cinema"] .auto-strip { display: none !important; }
+
+/* 研究 Explorer: a workbench on wide screens. Panels dock to the edges and the map fills the middle. Each has a pin:
+   unpinned, it folds to a tab on the screen edge, and the tab slides it over the map until the map is touched. */
+.pin, .edge-tab { display: none; }
+@media (min-width: 1000px) {
+  html[data-layout="explorer"] { --ex-l: 330px; --ex-r: 380px; }
+  html[data-layout="explorer"].l-off { --ex-l: 0px; }
+  html[data-layout="explorer"].r-off { --ex-r: 0px; }
+  html[data-layout="explorer"] .era { top: 0; left: 0; bottom: 0; width: 330px; max-width: none; border-radius: 0; overflow-y: auto; align-content: start; border-width: 0 1px 0 0; box-sizing: border-box; translate: none; }
+  html[data-layout="explorer"] .ledger { top: 0; right: 0; bottom: 0; max-height: none; width: 380px; border-radius: 0; border-width: 0 0 0 1px; }
+  html[data-layout="explorer"] .rail { left: var(--ex-l); right: var(--ex-r); bottom: 0; border-radius: 0; border-width: 1px 0 0; }
+  html[data-layout="explorer"] .rail-min { display: none; }
+  html[data-layout="explorer"] .dial { right: calc(var(--ex-r) + 16px); }
+  html[data-layout="explorer"] .world-strip { left: calc(var(--ex-l) + 16px); max-width: calc(100vw - var(--ex-l) - var(--ex-r) - 32px); }
+  html[data-layout="explorer"] .maplibregl-ctrl-bottom-left { left: var(--ex-l); }
+  html[data-layout="explorer"] .settings { left: 342px !important; }
+  html[data-layout="explorer"] .pin { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border-radius: 6px; border: 1px solid var(--rule); background: none; color: var(--cinnabar); cursor: pointer; flex: none; }
+  html[data-layout="explorer"] .pin svg { width: 14px; height: 14px; fill: currentColor; }
+  html[data-layout="explorer"] .pin[aria-pressed="false"] { color: var(--muted); }
+  html[data-layout="explorer"] .pin[aria-pressed="false"] svg { fill: none; stroke: currentColor; stroke-width: 1.5; transform: rotate(45deg); }
+  html[data-layout="explorer"].l-off:not(.l-peek) .era, html[data-layout="explorer"].r-off:not(.r-peek) .ledger { display: none !important; }
+  html[data-layout="explorer"].l-off .edge-tab.l:not([hidden]), html[data-layout="explorer"].r-off .edge-tab.r:not([hidden]) { display: grid; }
+  html[data-layout="explorer"].l-peek .era { top: 12px; left: 12px; bottom: 12px; border-radius: 12px; border-width: 1px; box-shadow: 0 16px 50px rgba(0,0,0,.4); z-index: 7; }
+  html[data-layout="explorer"].r-peek .ledger { top: 12px; right: 12px; bottom: 12px; border-radius: 12px; border-width: 1px; box-shadow: 0 16px 50px rgba(0,0,0,.4); z-index: 7; }
+  html[data-layout="explorer"].l-peek .edge-tab.l, html[data-layout="explorer"].r-peek .edge-tab.r { display: none; }
+}
+.edge-tab { position: absolute; z-index: 5; top: 50%; transform: translateY(-50%); justify-items: center; gap: 8px; padding: 12px 7px; background: var(--panel); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--rule); box-shadow: var(--shadow); color: var(--ink); font: 600 13px/1.1 var(--font-display); writing-mode: vertical-rl; letter-spacing: .15em; cursor: pointer; }
+.edge-tab.l { left: 0; border-radius: 0 10px 10px 0; border-left: 0; }
+.edge-tab.r { right: 0; border-radius: 10px 0 0 10px; border-right: 0; }
+.edge-tab .sl { writing-mode: horizontal-tb; width: 26px; height: 26px; display: grid; place-items: center; background: var(--cinnabar); color: var(--cinnabar-ink); border-radius: 4px; font: 700 15px var(--font-display); letter-spacing: 0; }
+.edge-tab small { font: 500 11px var(--font-data); letter-spacing: 0; color: var(--muted); }
+/* On a phone 研究 is an app: a bottom bar switches between tours, events, rulers, people and layers. */
+.ex-nav { display: none; }
+@media (max-width: 720px) {
+  html[data-layout="explorer"] .ex-nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; grid-template-columns: repeat(5, 1fr); padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); background: var(--panel-solid); border-top: 1px solid var(--rule); }
+  .ex-nav button { appearance: none; border: 0; background: none; color: var(--muted); display: grid; justify-items: center; gap: 3px; font: 600 11px var(--font-body); padding: 4px 0; cursor: pointer; }
+  .ex-nav svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .ex-nav [aria-pressed="true"] { color: var(--cinnabar); }
+  html[data-layout="explorer"] { --bottom-gap: 64px; }
+  html[data-layout="explorer"] .rail { bottom: calc(64px + env(safe-area-inset-bottom)); left: 0; right: 0; border-radius: 0; border-width: 1px 0 0; }
+  html[data-layout="explorer"] .rail-min { display: none; }
+  html[data-layout="explorer"] .dial { bottom: calc(76px + env(safe-area-inset-bottom)); }
+  html[data-layout="explorer"] .ledger-tabs { display: none !important; }
+}
+/* Layout cards in settings: a tiny drawing of where the panels go. */
+.st-layouts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.st-layouts button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 5px 4px 6px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
+.st-layouts button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
+.st-layouts i { display: block; width: 100%; aspect-ratio: 7 / 5; border-radius: 4px; overflow: hidden; background: #6a8a76; }
+.st-layouts svg { width: 100%; height: 100%; display: block; }
+.st-layouts rect { fill: rgba(255,255,255,.92); }
+.st-layouts button.now:not([aria-pressed="true"]) { border-style: dashed; border-color: var(--cinnabar); }
+.st-switch > span { display: grid; gap: 1px; }
+.st-switch small { font: 400 11px/1.35 var(--font-body); color: var(--muted); }
+/* Quick layout switch: the chip after the gear (drawn as the current layout) and its menu. */
+.layout-open svg { width: 17px; height: 13px; display: block; }
+.layout-pop { min-width: 168px; }
+.layout-pop .lp-pic { display: block; width: 30px; height: 21px; border-radius: 3px; overflow: hidden; background: #6a8a76; flex: none; }
+.layout-pop .lp-pic svg { width: 100%; height: 100%; visibility: visible; display: block; }
+.layout-pop .lp-pic rect { fill: rgba(255,255,255,.92); }
+.layout-pop .lp-auto { display: flex; justify-content: flex-start; gap: 8px; margin-top: 3px; padding: 9px 10px 6px; border-top: 1px solid var(--rule); border-radius: 0; color: var(--ink); }
+.layout-pop .lp-auto i { flex: none; }
+/* 导览 hides the panels; two quiet icons in the map's top-left corner keep the layout menu and settings in reach. */
+.cine-tools { display: none; }
+html[data-layout="cinema"] .cine-tools { position: absolute; z-index: 5; top: calc(12px + var(--top-gap, 0px)); left: 12px; display: flex; gap: 6px; opacity: .6; transition: opacity .2s; }
+html[data-layout="cinema"] .cine-tools:hover, html[data-layout="cinema"] .cine-tools:focus-within { opacity: 1; }
+.cine-tools button { appearance: none; width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: 1px solid var(--rule); border-radius: 50%; background: var(--panel); color: var(--ink); cursor: pointer; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.cine-tools svg { width: 15px; height: 15px; display: block; }
+.cine-tools #cine-layout svg { width: 16px; height: 12px; }
+html.embed .cine-tools, .comparing .cine-tools { display: none !important; }
+.layout-pop button > span { display: inline-flex; align-items: center; gap: 10px; }

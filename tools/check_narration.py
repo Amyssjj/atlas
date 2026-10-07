@@ -9,6 +9,7 @@ import difflib, json, os, re, sys, time, uuid, urllib.request, wave
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ai_narration import steps, text_hash
+from usage import record
 MIN_MATCH, SEC_PER_CHAR = 0.88, (0.12, 0.50)
 try:
     import opencc; T2S = opencc.OpenCC("t2s").convert  # the transcriber sometimes answers in traditional characters
@@ -37,7 +38,11 @@ def transcribe(path):
     req = urllib.request.Request("https://api.openai.com/v1/audio/transcriptions", body,
                                  {"Content-Type": f"multipart/form-data; boundary={boundary}", "Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]})
     for k in range(5):
-        try: return json.load(urllib.request.urlopen(req, timeout=120))["text"]
+        try:
+            r = json.load(urllib.request.urlopen(req, timeout=120))
+            u = r.get("usage") or {}
+            record(os.path.dirname(path), "gpt-4o-transcribe", os.path.basename(path), u.get("input_tokens", 0), u.get("output_tokens", 0))
+            return r["text"]
         except urllib.error.HTTPError as e:
             if e.code not in (429, 500, 503) or k == 4: raise
             time.sleep(10 * (k + 1))

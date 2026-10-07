@@ -178,6 +178,16 @@ python3 tools/upload_assets.py music
 git add data/music.json tools/music_prompts.json && git commit
 ```
 
+Tours also have mood tracks, `mood/<culture>-<mood>` (210): seven moods (sorrow, tension, battle, triumph, journey,
+serene, solemn) for each region's early instruments (`<region>-early`, steps before 500), its later ones (`<region>`)
+and a modern ensemble from 1840 (`china-modern`, `modern`). `data/moods.json` (`{"<tour id>/<step>": mood}`, AI-tagged,
+checked by `tools/validate.py`) gives a step its mood; steps without one play the period's track, and consecutive steps
+with the same mood keep the track playing.
+
+Every generation tool logs each call's usage (the token counts in the provider's response, and their cost at list
+price) to `<OUT_DIR>/usage.jsonl`. `python3 tools/usage.py ~/Pictures/atlas-ai/music ~/Pictures/atlas-ai/narration`
+prints the totals; the provider's billing page is the final word.
+
 Lyria rejects some prompts as "sensitive" (place names such as Cairo or Bukhara, words like "rival" or "rebel");
 describe instruments and mood plainly instead. Prompts must stay instrumental and avoid anachronistic instruments.
 
