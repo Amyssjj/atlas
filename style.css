@@ -852,6 +852,11 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .atlas-pop .pc-legend { display: flex; flex-wrap: wrap; gap: 2px 10px; font-size: 11px; color: var(--muted); margin-top: 2px; }
 .atlas-pop .pc-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 3px; vertical-align: -.5px; background: var(--rc); }
 .atlas-pop .pc-works { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 8px; }
+/* City card tabs: 城中大事 | 地名古今 */
+.atlas-pop .pc-tabs { display: flex; gap: 14px; margin: 10px 0 4px; border-bottom: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); }
+.atlas-pop .pc-tabs button { all: unset; cursor: pointer; padding: 3px 0 5px; margin-bottom: -1px; font-size: 12.5px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+.atlas-pop .pc-tabs button[aria-selected="true"] { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+.atlas-pop [data-pane="gaz"] .pc-gaz > .pc-works { display: none; }
 .atlas-pop .pc-cf { display: inline-flex; gap: 2px; }
 .atlas-pop .pc-cf button { all: unset; cursor: pointer; font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--muted) 40%, transparent); color: var(--muted); }
 .atlas-pop .pc-cf button[aria-pressed="true"] { background: var(--cinnabar); border-color: var(--cinnabar); color: var(--cinnabar-ink); }
@@ -958,7 +963,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 .search {
   position: absolute; z-index: 20; top: calc(16px + env(safe-area-inset-top)); left: 16px;
   width: min(400px, calc(100% - 32px)); max-height: min(calc(60dvh - env(safe-area-inset-top)), 520px); display: flex; flex-direction: column; overflow: hidden;
-  background: var(--panel-solid); transform-origin: top left;
+  transform-origin: top left;
   animation: search-in .32s cubic-bezier(.2, .9, .25, 1.1) both;
 }
 .search[hidden] { display: none; }
@@ -1916,6 +1921,17 @@ html[data-layout="explorer"] .era-corner { gap: 4px; }
 .atlas-pop .pc-trail { border-color: #b8892b; color: #8a5a12; }
 .atlas-pop .pc-trail:hover { background: #c8922a; border-color: #c8922a; color: #fff; }
 .mk-person.moves small { white-space: nowrap; }
+
+/* Search follows the panel style like the era panel and ledger (its .panel class gives colour, blur and frame);
+   these match each style's headings and the highlighted result. */
+html[data-ui="paper"] .search-results h5, html[data-ui="lacquer"] .search-results h5 { font: 700 12px/1 var(--font-display); letter-spacing: 0.14em; }
+html[data-ui="lacquer"] .search-results h5 { color: #d8b46e; }
+html[data-ui="paper"] .search-bar, html[data-ui="lacquer"] .search-bar { box-shadow: 0 3px 0 -2px var(--rule); }
+html[data-ui="glass"] .search-bar { border-bottom-color: transparent; padding: 12px 14px; }
+html[data-ui="glass"] .search-results button { border-radius: 10px; width: calc(100% - 12px); margin: 0 6px; }
+html[data-ui="editorial"] .search-bar { border-bottom: 2px solid var(--ink); }
+html[data-ui="editorial"] .search-results h5 { color: var(--ink); }
+html[data-ui="editorial"] .search-results button.on, html[data-ui="editorial"] .search-results button:hover { box-shadow: inset 3px 0 var(--cinnabar); }
 
 /* Climate and disasters (气候与灾害) */
 .mk-dis { display: flex; align-items: center; gap: 4px; cursor: pointer; }
