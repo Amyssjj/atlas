@@ -4,13 +4,16 @@ are skipped, so it can run while batches are still arriving.
 
 Usage: python3 tools/check_narration.py OUT_DIR [--loop]      # --loop: keep checking new files every 3 minutes
 Reads OPENAI_API_KEY. A clip is flagged when the transcript matches the caption below MIN_MATCH (extra words such as
-read-out directions, missing or misread phrases) or when it runs far longer or shorter than usual per character."""
+read-out directions, missing or misread phrases) or when it runs far longer or shorter than usual per character. A slow clip (over SLOW seconds a character) is also
+transcribed in WINDOW-second pieces: a clip that reads its text twice, which the whole-clip transcript hides, is flagged
+as a repeat."""
 import difflib, json, os, re, sys, time, uuid, urllib.request, wave
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ai_narration import steps, text_hash
 from usage import record
 MIN_MATCH, SEC_PER_CHAR = 0.88, (0.12, 0.50)
+SLOW, WINDOW = 0.40, 6  # seconds a character above which a clip is heard again in WINDOW-second pieces
 try:
     import opencc; T2S = opencc.OpenCC("t2s").convert  # the transcriber sometimes answers in traditional characters
 except ImportError:
@@ -19,6 +22,16 @@ CJK = r"[\u4e00-\u9fff0-9]"
 # Numbers are compared apart: a caption's 前200年 is heard as 前两百年.
 NUMERAL = re.compile(r"[0-9零〇一二两三四五六七八九十百千万亿]")
 HAN = lambda s: NUMERAL.sub("", "".join(re.findall(CJK, T2S(s))))
+
+def windows(path):
+    """Cut a clip into WINDOW-second WAV files (temporary, removed as they are read)."""
+    with wave.open(path) as w: p, x = w.getparams(), w.readframes(w.getnframes())
+    step = WINDOW * p.framerate * p.sampwidth * p.nchannels
+    for n in range(0, len(x), step):
+        tmp = f"{path}.w{n // step}.tmp"
+        with wave.open(tmp, "wb") as w: w.setparams(p); w.writeframes(x[n:n + step])
+        try: yield tmp
+        finally: os.remove(tmp)
 
 def score(cap, heard):
     """match: similarity of the words; repeat: heard much longer than the caption; cut: the caption's ending is missing."""
@@ -73,9 +86,17 @@ def check_all(out):
         cap = captions.get(f"{t}__{i}")
         if not cap or text_hash(cap) != h: return f, {"stale": True}
         with wave.open(os.path.join(out, f)) as w: dur = w.getnframes() / w.getframerate()
-        try: heard = transcribe(os.path.join(out, f))
+        try:
+            heard = transcribe(os.path.join(out, f))
+            r = judge(cap, heard, dur)
+            # The transcriber merges a clip that reads its text twice into one reading, so a slow clip is heard
+            # again in WINDOW-second pieces, which it cannot merge: the pieces together then hold the text twice.
+            if r["per_char"] > SLOW:
+                pieces = "".join(transcribe(p) for p in windows(os.path.join(out, f)))
+                r["windowed"] = round(len(HAN(pieces)) / max(1, len(HAN(cap))), 2)
+                if r["windowed"] > 1.2: r.update(repeat=True, flag=True)
         except Exception as e: return f, {"error": str(e)[:200]}
-        return f, judge(cap, heard, dur)
+        return f, r
     with ThreadPoolExecutor(8) as ex:
         for n, (f, r) in enumerate(ex.map(one, todo)):
             done[f] = r
