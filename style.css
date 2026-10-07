@@ -1729,6 +1729,20 @@ html[data-layout="glance"] .mk-army, html[data-layout="glance"] .maplibregl-mark
 html[data-layout="reader"]:lang(zh-CN) .story-body p, html[data-layout="reader"]:lang(zh-CN) .story-lede { font-size: 17px; line-height: 1.9; }
 html[data-layout="reader"] .story-body, html[data-layout="reader"] .story-lede { max-width: 34em; }
 html[data-layout="reader"] .world-strip, html[data-layout="reader"] .auto-strip { display: none !important; }
+/* 阅读's docked side panel has a pin instead of a minimise button: unpinned, it folds to a tab on the right edge,
+   the tab slides it back over the map, and the timeline takes the full width. */
+@media (min-width: 721px) {
+  html[data-layout="reader"] #ledger-min { display: none; }
+  html[data-layout="reader"] #pin-r { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border-radius: 6px; border: 1px solid var(--rule); background: none; color: var(--cinnabar); cursor: pointer; flex: none; }
+  html[data-layout="reader"] #pin-r svg { width: 14px; height: 14px; fill: currentColor; }
+  html[data-layout="reader"] #pin-r[aria-pressed="false"] { color: var(--muted); }
+  html[data-layout="reader"] #pin-r[aria-pressed="false"] svg { fill: none; stroke: currentColor; stroke-width: 1.5; transform: rotate(45deg); }
+  html[data-layout="reader"].r-off:not(.r-peek) .ledger { display: none !important; }
+  html[data-layout="reader"].r-off .edge-tab.r:not([hidden]) { display: grid; }
+  html[data-layout="reader"].r-off .rail, html[data-layout="reader"].r-off .dial { right: 16px; }
+  html[data-layout="reader"].r-peek .ledger { z-index: 7; }
+  html[data-layout="reader"].r-peek .edge-tab.r { display: none; }
+}
 @media (max-width: 720px) { html[data-layout="reader"] .ledger:not(.collapsed) { height: 72dvh; max-height: none; } }
 
 /* 导览 Cinema: a tour plays like a film; only the tour card and the timeline stay. */
@@ -1754,6 +1768,7 @@ html[data-layout="cinema"] .auto-strip { display: none !important; }
   html[data-layout="explorer"] .pin svg { width: 14px; height: 14px; fill: currentColor; }
   html[data-layout="explorer"] .pin[aria-pressed="false"] { color: var(--muted); }
   html[data-layout="explorer"] .pin[aria-pressed="false"] svg { fill: none; stroke: currentColor; stroke-width: 1.5; transform: rotate(45deg); }
+  html[data-layout="explorer"] #ledger-min, html[data-layout="explorer"] #era-min { display: none; }
   html[data-layout="explorer"].l-off:not(.l-peek) .era, html[data-layout="explorer"].r-off:not(.r-peek) .ledger { display: none !important; }
   html[data-layout="explorer"].l-off .edge-tab.l:not([hidden]), html[data-layout="explorer"].r-off .edge-tab.r:not([hidden]) { display: grid; }
   html[data-layout="explorer"].l-peek .era { top: 12px; left: 12px; bottom: 12px; border-radius: 12px; border-width: 1px; box-shadow: 0 16px 50px rgba(0,0,0,.4); z-index: 7; }
