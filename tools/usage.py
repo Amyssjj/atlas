@@ -11,6 +11,7 @@ import collections, json, os, sys, threading, time
 
 PRICES = {  # per million tokens ("in", "out") or per call ("call")
     "gemini-2.5-pro-preview-tts": {"in": 1.00, "out": 20.00},  # audio out is 25 tokens a second
+    "gemini-2.5-pro-tts": {"in": 1.00, "out": 20.00},          # Cloud Text-to-Speech; out estimated from the audio length
     "gpt-4o-transcribe": {"in": 6.00, "out": 10.00},           # audio in, text out
     "lyria-3.5": {"call": 0.08},                               # priced per track; its token counts are logged too
 }

@@ -5,20 +5,23 @@ the caption with pauses and stress marked by punctuation, plus a one-line direct
 caption; a step without a script reads its caption as is.
 
 Usage: python3 tools/ai_narration.py OUT_DIR direct [tour id ...]       # parallel requests (THREADS, default 8)
+       python3 tools/ai_narration.py OUT_DIR cloud [tour id ...]        # Cloud Text-to-Speech with ADC (no daily cap)
        python3 tools/ai_narration.py OUT_DIR submit [tour id ...]       # Gemini Batch Mode, half price
        python3 tools/ai_narration.py OUT_DIR collect                    # save finished batches
        python3 tools/ai_narration.py OUT_DIR run [tour id ...]          # submit and collect in a loop until done
        python3 tools/ai_narration.py OUT_DIR status                     # progress: done / left / queued / flagged
                                                                         # (the project's batch queue is small)
-Reads GOOGLE_API_KEY. Writes OUT_DIR/<tour>__<step>__<voice>__<hash>.wav (24 kHz mono), where <hash> is a CRC of the
+Reads GOOGLE_API_KEY; `cloud` uses Application Default Credentials (gcloud auth application-default login) and the
+Google Cloud project CLOUD_PROJECT (default freesolo-dev), which needs the Cloud Text-to-Speech API enabled. Writes OUT_DIR/<tour>__<step>__<voice>__<hash>.wav (24 kHz mono), where <hash> is a CRC of the
 caption (not the script), so an edited caption gets new narration and the old file is left unused. Existing files are
 skipped. Batch ids are kept in OUT_DIR/batches.json, each response's usage in OUT_DIR/usage.jsonl (tools/usage.py)."""
-import base64, json, os, sys, time, urllib.error, urllib.request, wave, zlib
+import base64, json, os, subprocess, sys, time, urllib.error, urllib.request, wave, zlib
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from usage import record
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 MODEL, VOICES = "gemini-2.5-pro-preview-tts", ["Charon", "Kore"]
+CLOUD_MODEL, CLOUD_PROJECT = "gemini-2.5-pro-tts", os.environ.get("CLOUD_PROJECT", "freesolo-dev")
 API = "https://generativelanguage.googleapis.com"
 STYLE = ("你是历史纪录片的旁白，讲一段历史故事，要有明显的重音和起伏，像在讲给听众听，而不是念稿。"
          "整体语速比平常稍快、流畅紧凑，停顿短而干脆。用标准普通话。")
@@ -62,10 +65,42 @@ def jobs(out, only):
             path = os.path.join(out, f"{t}__{i}__{v}__{text_hash(caption)}.wav")
             if not os.path.exists(path): yield f"{t}/{i}", caption, v, path
 
-def direct(out, only):
+_token = [None, 0]
+def adc_token():
+    """An access token from Application Default Credentials (gcloud auth application-default login), renewed hourly."""
+    if time.time() - _token[1] > 2700:
+        _token[0] = subprocess.run(["gcloud", "auth", "application-default", "print-access-token"], capture_output=True,
+                                   text=True, check=True).stdout.strip()
+        _token[1] = time.time()
+    return _token[0]
+
+def cloud_tts(key, caption, voice, tries=6):
+    """The same voice through Google Cloud Text-to-Speech (model gemini-2.5-pro-tts) with ADC, billed to CLOUD_PROJECT:
+    its own quota, so no daily cap on direct requests. Returns a 24 kHz WAV."""
+    sc = SCRIPTS.get(key) or {}
+    body = {"input": {"prompt": STYLE + (sc.get("direct") or ""), "text": sc.get("script") or caption},
+            "voice": {"languageCode": "cmn-CN", "name": voice, "modelName": CLOUD_MODEL},
+            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 24000}}
+    for k in range(tries):
+        try:
+            req = urllib.request.Request("https://texttospeech.googleapis.com/v1/text:synthesize", json.dumps(body).encode(),
+                                         {"Content-Type": "application/json", "Authorization": "Bearer " + adc_token(),
+                                          "x-goog-user-project": CLOUD_PROJECT})
+            return base64.b64decode(json.load(urllib.request.urlopen(req, timeout=300))["audioContent"])
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 502, 503) or k == tries - 1: raise
+            time.sleep(15 * (k + 1))
+
+def direct(out, only, cloud=False):
     def one(job):
         key, caption, v, path = job
         try:
+            if cloud:
+                data = cloud_tts(key, caption, v)
+                # Cloud TTS reports no usage: count the audio at 25 tokens a second (the text in is a few hundred tokens).
+                record(out, CLOUD_MODEL, os.path.basename(path), 0, round((len(data) - 44) / 48000 * 25))
+                open(path, "wb").write(data)
+                return
             r = call("POST", f"/v1beta/models/{MODEL}:generateContent", request(key, caption, v))
             u = r.get("usageMetadata") or {}
             record(out, MODEL, os.path.basename(path), u.get("promptTokenCount", 0), u.get("candidatesTokenCount", 0))
@@ -171,5 +206,5 @@ if __name__ == "__main__":
     sp = os.path.join(ROOT, "tools/narration_scripts.json")
     SCRIPTS = json.load(open(sp)) if os.path.exists(sp) else {}
     os.makedirs(out, exist_ok=True)
-    {"direct": lambda: direct(out, only), "submit": lambda: submit(out, only), "collect": lambda: collect(out),
+    {"direct": lambda: direct(out, only), "cloud": lambda: direct(out, only, cloud=True), "submit": lambda: submit(out, only), "collect": lambda: collect(out),
      "run": lambda: run(out, only), "status": lambda: status(out, only)}[cmd]()
