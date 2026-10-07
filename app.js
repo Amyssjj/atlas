@@ -105,7 +105,8 @@ const UI = {
     title: "Atlas · 地图上的故事", events: "事件", hide: "收起", show: "展开", install: { title: "安装到主屏幕", why: "像 App 一样全屏打开，看过的地图离线也能用。", step1: (ipad, icon, other) => other ? `点地址栏里的分享按钮 ${icon}` : `点 Safari ${ipad ? "地址栏右侧" : "底部"}的分享按钮 ${icon}`, step2: "在菜单里选「添加到主屏幕」", go: "安装", ok: "知道了", never: "不再显示" }, minimise: "收起面板", restore: "展开面板", railHide: "收起时间轴", railShow: "展开时间轴", speed: "播放速度", fullscreen: "全屏", t3d: "3D 地形", sat: "卫星影像", neighbours: "周边政权", cities: "城市", geo: "山川", aiPics: "插图", music: "背景音乐", slimOn: "换成精简时间轴（只显示年份）", slimOff: "换成完整时间轴（显示朝代）",
     other: "English", map: "地图：", count: (n, era) => `${era} · ${n} 件`, countWin: (n) => `本时段 · ${n} 件`,
     fc: { ok: "已与维基百科/维基数据核对年份", fixed: "已更正", doubt: "存疑", none: "AI 撰写，尚未核对" },
-    sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
+    sm: { ok: "简介已与维基百科对照（AI 审读）", fixed: "简介已更正", doubt: "简介存疑" },
+    vc: { ok: "已与维基百科对照（AI 审读）", fixed: "已按维基百科更正", doubt: "存疑" }, back: "返回列表", prev: "上一件", next: "下一件", why: "历史意义", people: "相关人物", aiIllu: "AI 生成的示意图，非史料", closePic: "关闭图片", wiki: "维基百科", wikiOther: "English Wikipedia",
     more: "阅读详情 →", loading: "正在载入…", noStory: "这件事的详细介绍还在编写中。",
     notePack: "疆域为近似示意，取自开源 Cliopatria（Seshat）与 historical-basemaps 数据集。地形、海岸线和河流均为现代地理。",
     note: "疆域为近似示意：取自开源 historical-basemaps 数据集，并参照谭其骧《中国历史地图集》人工修订。地形、海岸线和河流均为现代地理。",
@@ -131,7 +132,8 @@ const UI = {
     title: "Atlas: Map with Stories", events: "Events", hide: "Hide", show: "Show", install: { title: "Add to Home Screen", why: "Opens full screen like an app, and maps you have seen work offline.", step1: (ipad, icon, other) => other ? `Tap the Share button ${icon} in the address bar` : `Tap Safari's Share button ${icon} ${ipad ? "next to the address bar" : "at the bottom"}`, step2: "Choose “Add to Home Screen”", go: "Install", ok: "Got it", never: "Don't show again" }, minimise: "Minimise panel", restore: "Restore panel", railHide: "Fold the timeline away", railShow: "Show the timeline", speed: "Playback speed", fullscreen: "Full screen", t3d: "3D terrain", sat: "Satellite", neighbours: "Neighbours", cities: "Cities", geo: "Landscape", aiPics: "Pictures", music: "Music", slimOn: "Switch to the slim timeline (years only)", slimOff: "Switch to the full timeline (with periods)",
     other: "中文", map: "Map: ", count: (n, era) => `${n} in ${era}`, countWin: (n) => `${n} in view`,
     fc: { ok: "Years checked against Wikipedia/Wikidata", fixed: "Corrected", doubt: "Doubtful", none: "AI-drafted, not yet checked" },
-    sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
+    sm: { ok: "Summary compared with Wikipedia (AI review)", fixed: "Summary corrected", doubt: "Summary doubtful" },
+    vc: { ok: "Compared with Wikipedia (AI review)", fixed: "Corrected after Wikipedia", doubt: "Doubtful" }, back: "All events", prev: "Previous", next: "Next", why: "Why it matters", people: "People", aiIllu: "AI-generated illustration, not a historical source", closePic: "Close picture", wiki: "Wikipedia", wikiOther: "中文维基百科",
     more: "Read the story →", loading: "Loading…", noStory: "The full story for this event is still being written.",
     notePack: "Borders are approximate, from the open Cliopatria (Seshat) and historical-basemaps datasets. Terrain, coastlines and rivers are modern.",
     note: "Borders are approximate: from the open historical-basemaps dataset, revised by hand after Tan Qixiang's Historical Atlas of China. Terrain, coastlines and rivers are modern.",
@@ -2375,7 +2377,7 @@ function tieCard(l) {
   const who = (id) => `<button type="button" class="tie-p" data-tp="${esc(id)}">${esc(tieName(id))}</button>`;
   return `<div class="pc-kind"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i>${esc(t("tieKinds")[l.kind])} · ${fmtYear(l.year)}${l.to ? ` – ${fmtYear(l.to)}` : ""}</div>
     <h4 class="tie-h">${who(l.a)} <span>${esc(tieLabel(l))}</span> ${who(l.b)}</h4>
-    <p>${esc(tx(l, "text"))}</p>${ev ? eventButtons([ev], () => true) : ""}<p class="pc-meta">${esc(t("drafted"))}</p>`;
+    <p>${esc(tx(l, "text"))}</p>${ev ? eventButtons([ev], () => true) : ""}${l.check ? vcNote(l) : `<p class="pc-meta">${esc(t("drafted"))}</p>`}`;
 }
 // A person's ties for their card: those begun by now first, the rest marked "later"; each opens the other person.
 function personTies(p) {
@@ -2383,7 +2385,7 @@ function personTies(p) {
   if (!list?.length) return "";
   const rows = [...list].sort((a, b) => a.year - b.year).map((l) => {
     const other = l.a === p.id ? l.b : l.a, later = l.year > state.year;
-    return `<li><button type="button" class="tie-row${later ? " later" : ""}" data-tp="${esc(other)}" title="${esc(tx(l, "text"))}"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i><b>${esc(tieLabel(l))}</b>${esc(tieName(other))}<small>${fmtYear(l.year)}${later ? ` · ${esc(t("tieLater"))}` : ""}</small></button>${l.event ? `<button type="button" class="tie-ev" data-ev="${esc(l.event)}" aria-label="${esc(t("tourStory"))}">↗</button>` : ""}</li>`;
+    return `<li><button type="button" class="tie-row${later ? " later" : ""}" data-tp="${esc(other)}" title="${esc(tx(l, "text"))}"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i><b>${esc(tieLabel(l))}</b>${esc(tieName(other))}${vcMark(l)}<small>${fmtYear(l.year)}${later ? ` · ${esc(t("tieLater"))}` : ""}</small></button>${l.event ? `<button type="button" class="tie-ev" data-ev="${esc(l.event)}" aria-label="${esc(t("tourStory"))}">↗</button>` : ""}</li>`;
   }).join("");
   return `<div class="pc-ties" data-pid="${esc(p.id)}"><p class="pc-works"><b>${t("tieHead")(list.length)}</b></p><ul>${rows}</ul></div>`;
 }
@@ -2930,7 +2932,7 @@ function renderEconomy() {
       ${fr.list.map((s) => `<circle class="econ-pt${s === src ? " on" : ""}" cx="${sx(s.year).toFixed(1)}" cy="${sy(s.south).toFixed(1)}" r="${s === src ? 3.2 : 2}"><title>${esc(fmtYear(s.year))} · ${t("econSouth")} ${Math.round(s.south * 100)}% · ${esc(tx(s, "src"))}</title></circle>`).join("")}
       ${inSpan ? `<line class="pop-now" x1="${cx}" x2="${cx}" y1="0" y2="${H}"/>` : ""}
     </svg>
-    <p class="econ-src">${t("econFrom")}: ${esc(fmtYear(src.year))} ${esc(tx(src, "src"))} <i>${esc(t("econKind")[src.kind] || "")}</i></p>
+    <p class="econ-src">${t("econFrom")}: ${esc(fmtYear(src.year))} ${esc(tx(src, "src"))} <i>${esc(t("econKind")[src.kind] || "")}</i>${vcMark(src, true)}</p>
     <p class="econ-src">${t("econNote")}</p>`;
   box.querySelectorAll("[data-m]").forEach((b) => b.addEventListener("click", () => {
     state.econMetric = b.dataset.m;
@@ -2986,10 +2988,10 @@ function disasterCard(d) {
     <p class="pc-works"><b>${t("climArea")}</b> ${esc(tx(d, "area"))}</p>
     ${tx(d, "toll") ? `<p class="pc-works"><b>${t("climToll")}</b> ${esc(tx(d, "toll"))}</p>` : ""}
     <p>${esc(tx(d, "summary"))}</p>
-    ${a != null ? `<p class="pc-works"><b>${t("climPhase")}</b> ${esc(t("climNow")(a, ph ? nameOf(ph) : ""))}</p>` : ""}
+    ${a != null ? `<p class="pc-works"><b>${t("climPhase")}</b> ${esc(t("climNow")(a, ph ? nameOf(ph) : ""))}${vcMark(ph)}</p>` : ""}
     ${linked.length ? `<p class="pc-works"><b>${t("climLinked")}</b></p>${eventButtons(linked, now)}` : ""}
     ${around.length ? `<p class="pc-works"><b>${t("climAfter")}</b></p>${eventButtons(around, now)}` : ""}
-    <p class="pc-meta">${t("drafted")} ${wikiA(d.source)}</p>`;
+    ${d.check ? vcNote(d) : ""}<p class="pc-meta">${d.check ? "" : t("drafted")} ${wikiA(d.source)}</p>`;
 }
 function renderDisasters() {
   const list = shown("climate") && state.climate ? state.climate.disasters.filter((d) => disNow(d) && selKeep([[d.lon, d.lat]])) : [];
@@ -4432,6 +4434,20 @@ function checkNote(x) {
   const m = x?.sum;
   return line(s, icon, L[s], note) + (m ? line(m.s, { ok: "✓", fixed: "✎", doubt: "?" }[m.s], t("sm")[m.s], tx(m, "n")) : "");
 }
+// The source check of the later layers (life journeys, ties, disasters, climate phases, economy snapshots; tools/apply_more.py):
+// a full line for cards, a small mark for tight spots. Items without a `check` keep their "AI-drafted" note.
+function vcNote(x) {
+  const c = x?.check;
+  if (!c) return "";
+  const n = tx(c, "n");
+  return `<p class="fc fc-${c.s}"><b>${{ ok: "✓", fixed: "✎", doubt: "?" }[c.s]}</b> ${esc(t("vc")[c.s])}${n ? `${zh() ? "：" : ": "}${esc(n)}` : ""}</p>`;
+}
+function vcMark(x, full) {
+  const c = x?.check;
+  if (!c) return "";
+  const n = tx(c, "n"), label = t("vc")[c.s] + (n ? (zh() ? "：" : ": ") + n : "");
+  return `<span class="fc-mk fc-${c.s}" title="${esc(label)}">${{ ok: "✓", fixed: "✎", doubt: "?" }[c.s]}${full && c.s !== "ok" ? ` <small>${esc(label)}</small>` : ""}</span>`;
+}
 function checkMark(x) {
   const s = x?.check?.s;
   if (!s || s === "ok") return s ? `<span class="fc-mk fc-ok" title="${esc(t("fc").ok)}">✓</span>` : "";
@@ -4834,6 +4850,7 @@ function tourCard() {
   const [when, rest] = captionLead(tx(s, "text"));
   box.querySelector(".tour-year").textContent = when || fmtYear(s.year);
   box.querySelector(".tour-text").textContent = rest;
+  box.querySelector(".tour-fc").innerHTML = vcMark(s, true);
   box.querySelector(".tour-story").hidden = !s.event;
   const r = refLink(s.ref), a = box.querySelector(".tour-ref");
   a.hidden = !r;

@@ -81,3 +81,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Put the source-check marks (and their fixes) back on.
+    import subprocess
+    subprocess.run([sys.executable, os.path.join(ROOT, "tools", "apply_more.py")], check=True)

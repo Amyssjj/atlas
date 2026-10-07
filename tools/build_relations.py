@@ -78,3 +78,6 @@ with open(OUT, "w") as f:
 from collections import Counter
 print(f"{len(links)} links, {len(used)} of {len(people)} people linked; dropped {dropped}, years moved {moved}")
 print(dict(Counter(l["kind"] for l in links)), sum(1 for l in links if "event" in l), "with events")
+# Put the source-check marks (and their fixes) back on.
+import subprocess
+subprocess.run([sys.executable, str(ROOT / "tools/apply_more.py")], check=True)
