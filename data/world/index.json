@@ -332,6 +332,12 @@
   "outer": "data/world/698-outer.json"
  },
  {
+  "from": 701,
+  "full": "data/world/701.json",
+  "fix": true,
+  "outer": "data/world/701-outer.json"
+ },
+ {
   "from": 718,
   "full": "data/world/718.json",
   "outer": "data/world/718-outer.json"
@@ -386,6 +392,12 @@
   "from": 960,
   "full": "data/world/960.json",
   "outer": "data/world/960-outer.json"
+ },
+ {
+  "from": 979,
+  "full": "data/world/979.json",
+  "fix": true,
+  "outer": "data/world/979-outer.json"
  },
  {
   "from": 990,

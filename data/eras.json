@@ -613,6 +613,11 @@
      "fix": true
     },
     {
+     "from": 701,
+     "borders": "data/borders/fix/tang-701.geojson",
+     "fix": true
+    },
+    {
      "from": 756,
      "borders": "data/borders/tang-756.geojson",
      "label": "After 755: the protectorates hold out, cut off by Tibet",

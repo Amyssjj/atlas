@@ -48,6 +48,7 @@ FIXES = [
     {"years": [1951, 1959], "do": "rename", "name": "Tibet", "to": "China", "zh": "中国",
      "label": "1951: the Seventeen Point Agreement; the PLA enters Lhasa", "label_zh": "1951年：签订十七条协议，解放军进入拉萨"},
     # --- Japan, Korea, Ryukyu, Sakhalin, Kurils ---
+    {"years": [701, 978], "do": "zh", "name": "Yamato", "zh": "日本"},   # the Taihō Code (701) and envoys from then on use 日本
     {"years": [1905, 1944], "do": "assign", "area": {"ne": "ne_10m_admin_1_states_provinces:name=Sakhalin", "clip": [140, 45.5, 146, 50.0]},
      "owner": {"at": JAPAN},
      "label": "1905: the Treaty of Portsmouth gives southern Sakhalin to Japan", "label_zh": "1905年：《朴次茅斯和约》将库页岛南部割予日本"},
@@ -101,9 +102,15 @@ FIXES = [
     # --- South Asia ---
     {"years": [1946, 1959], "do": "assign", "area": {"ne": "ne_10m_admin_0_disputed_areas:BRK_NAME=Arunachal Pradesh"}, "take": ["Bhutan"],
      "owner": {"at": [77.2, 28.6]}},
-    # --- one owner per place on the post-war world maps ---
-    {"years": [1945, 2030], "do": "overlap"},
+    # --- one owner per place on the world maps (1492 is left alone: its indigenous peoples share ranges) ---
+    {"years": [-3000, 2030], "do": "overlap", "skip": [1492]},
 ]
+
+# The world-map review of 2026-10-07 (docs/data-checks.md): anachronisms, names and labels on the world maps, one op
+# per line in tools/world_fixes.json. These never split a map: an op applies to a snapshot when at least half of the
+# snapshot's years fall inside its span. An op without "years" is a Chinese label for every year, also written to
+# data/world/names_zh.json so build_world.py keeps it.
+WORLD_FIXES = P("tools/world_fixes.json")
 
 
 def ne(spec):
@@ -187,7 +194,7 @@ def apply(fc, fx, outer, world):
             if "focus" in fx: f["properties"]["focus"] = fx["focus"]
         return True
     if do == "overlap":
-        if not world: return False
+        if not world or fx.get("at") in fx.get("skip", []): return False
         changed = False
         geo = {id(f): shape(f["geometry"]).buffer(0) for f in feats}
         order = sorted(feats, key=lambda f: geo[id(f)].area)
@@ -343,18 +350,39 @@ def main():
                 break
     open(ERAS_TXT, "w").write(txt)
 
-    # 2. Apply every fix to every map whose years fall inside it.
+    # 2. Apply every fix to every map whose years fall inside it; the world review's ops, then the overlap rule, last.
     eras = json.loads(txt)
     _, wm = world_maps()
     n = 0
-    for fx in FIXES:
+    wf = json.load(open(WORLD_FIXES))["ops"] if os.path.exists(WORLD_FIXES) else []
+    zh = {fx["name"]: fx["zh"] for fx in wf if fx["do"] == "zh" and "years" not in fx}
+    if zh:
+        path = P("data/world/names_zh.json")
+        d = json.load(open(path))
+        d.update(zh)
+        json.dump(dict(sorted(d.items())), open(path, "w"), ensure_ascii=False, indent=0)
+    for lo, hi, e in wm:
+        hi = min(hi, 2030)
+        ops = [fx for fx in wf if "years" not in fx or 2 * (min(hi, fx["years"][1]) - max(lo, fx["years"][0]) + 1) >= hi - lo + 1]
+        for key in ("full", "outer"):
+            if key not in e or not ops: continue
+            fc = json.load(open(P(e[key])))
+            ch = False
+            for fx in ops:
+                if "years" not in fx:
+                    f = next((f for f in fc["features"] if f["properties"]["name"] == fx["name"]), None)
+                    if f and f["properties"].get("name_zh") != fx["zh"]: f["properties"]["name_zh"] = fx["zh"]; ch = True
+                else:
+                    ch = apply(fc, fx, key == "outer", True) or ch
+            if ch: open(P(e[key]), "w").write(dump_world(fc)); n += 1
+    for fx in [f for f in FIXES if f["do"] != "overlap"] + [f for f in FIXES if f["do"] == "overlap"]:
         a, b = fx["years"]
         for lo, hi, e in wm:
             if not (a <= lo and hi <= b): continue
             for key in ("full", "outer"):
                 if key not in e: continue
                 fc = json.load(open(P(e[key])))
-                if apply(fc, fx, key == "outer", True):
+                if apply(fc, {**fx, "at": e["from"]}, key == "outer", True):
                     open(P(e[key]), "w").write(dump_world(fc)); n += 1
         if fx["do"] == "overlap": continue
         spans = china_maps(eras)
