@@ -144,6 +144,12 @@
   "outer": "data/world/-222-outer.json"
  },
  {
+  "from": -206,
+  "full": "data/world/-206.json",
+  "fix": true,
+  "outer": "data/world/-206-outer.json"
+ },
+ {
   "from": -170,
   "full": "data/world/-170.json",
   "outer": "data/world/-170-outer.json"
@@ -154,9 +160,21 @@
   "outer": "data/world/-110-outer.json"
  },
  {
+  "from": -108,
+  "full": "data/world/-108.json",
+  "fix": true,
+  "outer": "data/world/-108-outer.json"
+ },
+ {
   "from": -50,
   "full": "data/world/-50.json",
   "outer": "data/world/-50-outer.json"
+ },
+ {
+  "from": -37,
+  "full": "data/world/-37.json",
+  "fix": true,
+  "outer": "data/world/-37-outer.json"
  },
  {
   "from": 1,
@@ -214,6 +232,12 @@
   "outer": "data/world/308-outer.json"
  },
  {
+  "from": 313,
+  "full": "data/world/313.json",
+  "fix": true,
+  "outer": "data/world/313-outer.json"
+ },
+ {
   "from": 337,
   "full": "data/world/337.json",
   "outer": "data/world/337-outer.json"
@@ -232,6 +256,12 @@
   "from": 417,
   "full": "data/world/417.json",
   "outer": "data/world/417-outer.json"
+ },
+ {
+  "from": 420,
+  "full": "data/world/420.json",
+  "fix": true,
+  "outer": "data/world/420-outer.json"
  },
  {
   "from": 443,
@@ -269,6 +299,12 @@
   "outer": "data/world/612-outer.json"
  },
  {
+  "from": 618,
+  "full": "data/world/618.json",
+  "fix": true,
+  "outer": "data/world/618-outer.json"
+ },
+ {
   "from": 638,
   "full": "data/world/638.json",
   "outer": "data/world/638-outer.json"
@@ -279,9 +315,27 @@
   "outer": "data/world/666-outer.json"
  },
  {
+  "from": 668,
+  "full": "data/world/668.json",
+  "fix": true,
+  "outer": "data/world/668-outer.json"
+ },
+ {
   "from": 692,
   "full": "data/world/692.json",
   "outer": "data/world/692-outer.json"
+ },
+ {
+  "from": 698,
+  "full": "data/world/698.json",
+  "fix": true,
+  "outer": "data/world/698-outer.json"
+ },
+ {
+  "from": 701,
+  "full": "data/world/701.json",
+  "fix": true,
+  "outer": "data/world/701-outer.json"
  },
  {
   "from": 718,
@@ -324,6 +378,12 @@
   "outer": "data/world/900-outer.json"
  },
  {
+  "from": 907,
+  "full": "data/world/907.json",
+  "fix": true,
+  "outer": "data/world/907-outer.json"
+ },
+ {
   "from": 926,
   "full": "data/world/926.json",
   "outer": "data/world/926-outer.json"
@@ -332,6 +392,12 @@
   "from": 960,
   "full": "data/world/960.json",
   "outer": "data/world/960-outer.json"
+ },
+ {
+  "from": 979,
+  "full": "data/world/979.json",
+  "fix": true,
+  "outer": "data/world/979-outer.json"
  },
  {
   "from": 990,
@@ -544,6 +610,12 @@
   "outer": "data/world/1877-outer.json"
  },
  {
+  "from": 1879,
+  "full": "data/world/1879.json",
+  "fix": true,
+  "outer": "data/world/1879-outer.json"
+ },
+ {
   "from": 1890,
   "full": "data/world/1890.json",
   "outer": "data/world/1890-outer.json"
@@ -554,17 +626,44 @@
   "outer": "data/world/1900-outer.json"
  },
  {
+  "from": 1905,
+  "full": "data/world/1905.json",
+  "fix": true,
+  "outer": "data/world/1905-outer.json"
+ },
+ {
   "from": 1911,
   "full": "data/world/1911.json",
   "outer": "data/world/1911-outer.json"
+ },
+ {
+  "from": 1913,
+  "full": "data/world/1913.json",
+  "fix": true,
+  "outer": "data/world/1913-outer.json"
  },
  {
   "from": 1914,
   "full": "data/world/1914.json"
  },
  {
+  "from": 1921,
+  "full": "data/world/1921.json",
+  "fix": true
+ },
+ {
   "from": 1924,
   "full": "data/world/1924.json"
+ },
+ {
+  "from": 1928,
+  "full": "data/world/1928.json",
+  "fix": true
+ },
+ {
+  "from": 1932,
+  "full": "data/world/1932.json",
+  "fix": true
  },
  {
   "from": 1936,
@@ -579,20 +678,70 @@
   "full": "data/world/1946.json"
  },
  {
+  "from": 1948,
+  "full": "data/world/1948.json",
+  "fix": true
+ },
+ {
+  "from": 1949,
+  "full": "data/world/1949.json",
+  "fix": true
+ },
+ {
   "from": 1950,
   "full": "data/world/1950.json"
+ },
+ {
+  "from": 1951,
+  "full": "data/world/1951.json",
+  "fix": true
+ },
+ {
+  "from": 1952,
+  "full": "data/world/1952.json",
+  "fix": true
  },
  {
   "from": 1960,
   "full": "data/world/1960.json"
  },
  {
+  "from": 1962,
+  "full": "data/world/1962.json",
+  "fix": true
+ },
+ {
+  "from": 1967,
+  "full": "data/world/1967.json",
+  "fix": true
+ },
+ {
+  "from": 1972,
+  "full": "data/world/1972.json",
+  "fix": true
+ },
+ {
   "from": 1973,
   "full": "data/world/1973.json"
  },
  {
+  "from": 1982,
+  "full": "data/world/1982.json",
+  "fix": true
+ },
+ {
   "from": 1983,
   "full": "data/world/1983.json"
+ },
+ {
+  "from": 1992,
+  "full": "data/world/1992.json",
+  "fix": true
+ },
+ {
+  "from": 1994,
+  "full": "data/world/1994.json",
+  "fix": true
  },
  {
   "from": 1996,
@@ -603,7 +752,17 @@
   "full": "data/world/2006.json"
  },
  {
+  "from": 2023,
+  "full": "data/world/2023.json",
+  "fix": true
+ },
+ {
   "from": 2024,
   "full": "data/world/2024.json"
+ },
+ {
+  "from": 2031,
+  "full": "data/world/2031.json",
+  "fix": true
  }
 ]

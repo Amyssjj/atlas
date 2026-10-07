@@ -228,10 +228,20 @@
      "borders": "data/borders/western-han.geojson"
     },
     {
+     "from": -108,
+     "borders": "data/borders/fix/western-han--108.geojson",
+     "fix": true
+    },
+    {
      "from": -60,
      "borders": "data/borders/western-han-wr.geojson",
      "label": "60 BCE: Protectorate of the Western Regions",
      "label_zh": "前60年：设立西域都护府"
+    },
+    {
+     "from": -37,
+     "borders": "data/borders/fix/western-han--37.geojson",
+     "fix": true
     }
    ],
    "summary": "Liu Bang founded a dynasty that set the pattern for imperial China. Emperor Wu pushed into Central Asia and the Silk Road opened.",
@@ -340,6 +350,11 @@
      "borders": "data/borders/sixteen-kingdoms.json#sk-311",
      "label": "311: Yongjia catastrophe: Han Zhao sacks Luoyang; Cheng holds most of Shu",
      "label_zh": "311年：永嘉之乱，汉赵攻陷洛阳；成汉据有蜀地"
+    },
+    {
+     "from": 313,
+     "borders": "data/borders/fix/jin-313.geojson",
+     "fix": true
     },
     {
      "from": 316,
@@ -588,6 +603,21 @@
      "label_zh": "640年起：设立安西、北庭都护府"
     },
     {
+     "from": 668,
+     "borders": "data/borders/fix/tang-668.geojson",
+     "fix": true
+    },
+    {
+     "from": 698,
+     "borders": "data/borders/fix/tang-698.geojson",
+     "fix": true
+    },
+    {
+     "from": 701,
+     "borders": "data/borders/fix/tang-701.geojson",
+     "fix": true
+    },
+    {
      "from": 756,
      "borders": "data/borders/tang-756.geojson",
      "label": "After 755: the protectorates hold out, cut off by Tibet",
@@ -810,6 +840,11 @@
      "borders": "data/borders/ming.geojson"
     },
     {
+     "from": 1429,
+     "borders": "data/borders/fix/ming-1429.geojson",
+     "fix": true
+    },
+    {
      "from": 1616,
      "borders": "data/borders/ming-1616.geojson",
      "label": "1616: Nurhaci founds the Later Jin",
@@ -962,10 +997,22 @@
      "label_zh": "1860年以后：领土被沙俄割占"
     },
     {
+     "from": 1879,
+     "borders": "data/borders/fix/qing-1879.geojson",
+     "fix": true
+    },
+    {
      "from": 1895,
      "borders": "data/borders/qing-1900.geojson",
      "label": "1895: Taiwan ceded to Japan by the Treaty of Shimonoseki",
      "label_zh": "1895年：《马关条约》割让台湾予日本"
+    },
+    {
+     "from": 1905,
+     "borders": "data/borders/fix/qing-1905.geojson",
+     "fix": true,
+     "label": "1905: the Treaty of Portsmouth gives southern Sakhalin to Japan",
+     "label_zh": "1905年：《朴次茅斯和约》将库页岛南部割予日本"
     }
    ],
    "summary": "The Manchu Qing built the largest Chinese empire, then faced rebellion and Western and Japanese imperialism. It ended with the abdication of the last emperor in 1912.",

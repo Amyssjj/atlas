@@ -1997,6 +1997,17 @@ html[data-ui="editorial"] .search-results button.on, html[data-ui="editorial"] .
 .tr-ties .tie-chip small { margin-left: 4px; color: var(--muted); font-size: 10.5px; }
 .tr-ties .tie-chip:hover { border-color: currentColor; }
 
+/* Disputed area card (disputeCard in app.js) */
+.pc-dispute h4 { margin: 0 0 2px; }
+.pc-dispute .pc-badge { display: inline-block; margin-left: 4px; padding: 0 6px; border-radius: 8px; font-size: 11px; font-weight: 600; vertical-align: 2px;
+  color: #8c2f1f; border: 1px solid currentColor; background: repeating-linear-gradient(135deg, rgba(140,47,31,.12) 0 3px, transparent 3px 6px); }
+.pc-dispute .pc-meta { margin: 0 0 6px; opacity: .7; font-size: 12px; }
+.pc-dispute dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; margin: 0 0 6px; font-size: 12.5px; }
+.pc-dispute dt { opacity: .65; white-space: nowrap; }
+.pc-dispute dd { margin: 0; }
+.pc-dispute p { margin: 0 0 6px; font-size: 12.5px; line-height: 1.5; }
+.pc-dispute .pc-foot { font-size: 11px; opacity: .6; margin: 0; }
+html.sat .pc-dispute .pc-badge { color: #e58a74; }
 /* 地区史: an area's own history, a card over the ledger like the selected country's. */
 .area-card { flex: none; background: rgba(217, 151, 26, 0.08); box-shadow: inset 3px 0 0 #d9971a; max-height: 58vh; overflow-y: auto; }
 .ar-dot { background: transparent; border: 2px dashed #d9971a; border-radius: 3px; }
