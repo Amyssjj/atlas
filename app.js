@@ -5123,6 +5123,9 @@ function makeDial() {
   el.addEventListener("pointerup", dialUp);
   el.addEventListener("pointercancel", dialUp);
   el.addEventListener("focus", () => setDialOpen(true));
+  // With a mouse the open dial stays open while the pointer is over it, so periods can be clicked one after another.
+  el.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { dial.hover = true; clearTimeout(dial.closeT); } });
+  el.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") { dial.hover = false; scheduleDialClose(); } });
   el.addEventListener("blur", () => scheduleDialClose());
   dial.el = el;
   setDialSkin(state.dialSkin, false);
@@ -5171,7 +5174,7 @@ function setDialOpen(on) {
 }
 function scheduleDialClose() {
   clearTimeout(dial.closeT);
-  if (!state.playing && !dial.drag) dial.closeT = setTimeout(() => { if (document.activeElement !== dial.el || !state.playing) setDialOpen(false); }, 2200);
+  if (!state.playing && !dial.drag && !dial.hover) dial.closeT = setTimeout(() => { if (document.activeElement !== dial.el || !state.playing) setDialOpen(false); }, 2200);
 }
 // While turning, the dial shows each year at once; the map follows a few times a second (on touch screens only when
 // let go, as with the timeline's slider).
