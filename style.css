@@ -122,7 +122,23 @@ body {
 .chip.auto::before { content: "⚡"; margin-right: 3px; font-size: 10px; }
 /* Auto layers: a switch of its own above the layer groups */
 .auto-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 6px 8px; margin-bottom: 2px; border-radius: 8px; background: #fdf1d8; border: 1px dashed #c98a1b; }
-.auto-row small { flex: 1 1 180px; font-size: 11px; line-height: 1.35; color: #8a5a00; }
+.auto-row { padding: 3px 8px; }
+/* Layer switches as icons; the name is in a tip (.layer-tip) on hover, focus, tap or a held finger. */
+.chip.ico { position: relative; display: inline-grid; place-items: center; width: 32px; height: 30px; padding: 0; border-radius: 9px;
+  -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+.chip.ico svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.chip.ico[aria-pressed="false"]:not(.auto) { color: var(--muted); }
+.chip.ico.auto::before { position: absolute; top: -6px; right: -6px; margin: 0; width: 14px; height: 14px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 9px; line-height: 1; background: #c98a1b; color: #fff; }
+.lg .chip.look { height: 30px; }
+.layer-tip { position: fixed; z-index: 1000; max-width: 240px; padding: 6px 9px; border-radius: 7px; pointer-events: none;
+  background: #1f2326; color: #f4efe6; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28); font: 500 12px/1.35 var(--font-body); }
+.layer-tip[hidden] { display: none; }
+.layer-tip b { font-weight: 600; }
+.layer-tip i { font-style: normal; margin-left: 6px; opacity: 0.7; }
+.layer-tip span { display: block; margin-top: 2px; opacity: 0.8; font-size: 11px; }
+.layer-tip::after { content: ""; position: absolute; left: calc(var(--arrow, 50%) - 5px); top: 100%; border: 5px solid transparent; border-top-color: #1f2326; }
+.layer-tip.below::after { top: auto; bottom: 100%; border-top-color: transparent; border-bottom-color: #1f2326; }
 .switch { appearance: none; display: inline-flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; cursor: pointer; font: 600 12px/1 var(--font-body); color: #8a5a00; }
 .switch i { position: relative; width: 30px; height: 17px; border-radius: 999px; background: #c9bfae; transition: background .2s; }
 .switch i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: transform .2s; }
@@ -405,6 +421,9 @@ html:lang(en) .mk-polity.minor small { display: none; }
   .era.open { max-height: calc(100dvh - var(--rail-h, 120px) - 40px); overflow-y: auto; }
   .era.open .era-summary, .era.open .era-snap { display: block; }
   .era-layers .chip { padding: 7px 10px; font-size: 13px; }
+  .era-layers .chip.ico { width: 40px; height: 36px; padding: 0; }
+  .era-layers .chip.ico svg { width: 20px; height: 20px; }
+  .lg .chip.look { height: 36px; }
   .maplibregl-ctrl-bottom-left, .maplibregl-ctrl-bottom-right { display: none; }
 
   .rail {
@@ -809,8 +828,7 @@ html:lang(en) .mk-clan span { font-family: var(--font-body); }
 
 @media (max-width: 720px) {
   .era-more { min-width: 56px; text-align: center; }
-  html:lang(en) .lg { padding-left: 0; }
-  html:lang(en) .lg > span { position: static; width: 100%; }
+  .lg > span { top: 12px; }
   .ev-filter { padding: 8px 12px 10px; gap: 8px; }
   .ef-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .ef-cats .chip { flex: none; }
@@ -1446,7 +1464,7 @@ html[data-ui="glass"] .lang-pop button:hover { background: rgba(255,255,255,.08)
 html[data-ui="glass"] .world-strip .ws-head { background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(14px); }
 html[data-ui="glass"] .world-strip button { background: rgba(22, 26, 33, 0.7) !important; backdrop-filter: blur(14px); color: var(--ink) !important; }
 html[data-ui="glass"] .auto-row { background: rgba(255, 196, 92, 0.1); border-color: rgba(255, 196, 92, 0.45); border-radius: 14px; }
-html[data-ui="glass"] .auto-row small, html[data-ui="glass"] .switch { color: #ffd48a; }
+html[data-ui="glass"] .switch { color: #ffd48a; }
 html[data-ui="glass"] .chip.auto { background: rgba(255, 196, 92, 0.14); color: #ffd48a; }
 html[data-ui="glass"] .rail-min { background: rgba(22, 26, 33, 0.82); }
 html[data-ui="glass"] .world-strip .ws-head { background: rgba(255,255,255,.18) !important; color: #fff !important; }
@@ -1525,7 +1543,7 @@ html[data-ui="lacquer"] .lang-pop button:hover { background: rgba(216,180,110,.1
 html[data-ui="lacquer"] .world-strip .ws-head { background: #1d1311; color: #f3d79b; border: 1px solid rgba(216,180,110,.55); }
 html[data-ui="lacquer"] .world-strip button { background: rgba(29, 19, 17, 0.92) !important; color: var(--ink) !important; border: 1px solid rgba(216,180,110,.4) !important; font-family: var(--font-display); }
 html[data-ui="lacquer"] .auto-row { background: rgba(216, 180, 110, 0.08); border-color: rgba(216, 180, 110, 0.5); }
-html[data-ui="lacquer"] .auto-row small, html[data-ui="lacquer"] .switch { color: #f3d79b; }
+html[data-ui="lacquer"] .switch { color: #f3d79b; }
 html[data-ui="lacquer"] .chip.auto { background: rgba(216, 180, 110, 0.12); color: #f3d79b; }
 html[data-ui="lacquer"] .rail-min { background: #1d1311; border-color: rgba(216,180,110,.55); }
 html[data-ui="lacquer"] .world-strip .ws-head { color: #f3d79b !important; }
