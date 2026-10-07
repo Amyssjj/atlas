@@ -1961,3 +1961,27 @@ html[data-ui="editorial"] .search-results button.on, html[data-ui="editorial"] .
 .clim-chart .pop-head b { white-space: nowrap; }
 .clim-chart .pop-head span { text-align: right; }
 @media (max-width: 720px) { .era:not(.open) .clim-chart { display: none; } }
+
+/* 人物关系网: ties between people (renderTies in app.js); colours per kind come in as --tie */
+.tie-sw { display: inline-block; width: 9px; height: 9px; margin-right: 5px; border-radius: 50%; background: var(--tie, #888); vertical-align: 0; flex: none; }
+.tie-lab { padding: 0 5px; border: 1.5px solid var(--tie); border-radius: 9px; background: rgba(255, 255, 255, .92); color: var(--tie); font: 600 10.5px/1.5 var(--font-body); white-space: nowrap; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+.tie-lab:hover { background: var(--tie); color: #fff; }
+.tie-who { display: flex; align-items: center; gap: 4px; padding: 0; border: 0; background: none; cursor: pointer; font: 600 11px/1.3 var(--font-body); color: #24313a; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 2px #fff; white-space: nowrap; }
+.tie-who i { width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid #5b6b73; box-sizing: border-box; }
+.atlas-pop .tie-h { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.atlas-pop .tie-h span { font: 500 11px var(--font-body); color: var(--muted); }
+.atlas-pop .tie-p { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.atlas-pop .tie-p:hover { text-decoration-color: currentColor; }
+.atlas-pop .pc-ties ul { list-style: none; margin: 0 0 6px; padding: 0; max-height: 150px; overflow-y: auto; }
+.atlas-pop .pc-ties li { display: flex; align-items: center; }
+.atlas-pop .tie-row { flex: 1; display: flex; align-items: baseline; gap: 4px; min-width: 0; padding: 3px 4px; border: 0; border-radius: 4px; background: none; color: var(--ink); font: 12px/1.35 var(--font-body); text-align: left; cursor: pointer; }
+.atlas-pop .tie-row:hover { background: rgba(127, 127, 127, .14); }
+.atlas-pop .tie-row b { font-weight: 600; color: var(--muted); min-width: 2.6em; }
+.atlas-pop .tie-row small { margin-left: auto; padding-left: 6px; color: var(--muted); font-size: 10.5px; white-space: nowrap; }
+.atlas-pop .tie-row.later { opacity: .55; }
+.atlas-pop .tie-ev { padding: 2px 5px; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 12px; }
+.atlas-pop .tie-ev:hover { color: var(--ink); }
+.tr-ties { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 0 0 8px; font-size: 11px; color: var(--muted); }
+.tr-ties .tie-chip { display: inline-flex; align-items: center; padding: 2px 8px; border: 1px solid var(--rule); border-radius: 12px; background: none; color: var(--ink); font: 12px/1.3 var(--font-body); cursor: pointer; }
+.tr-ties .tie-chip small { margin-left: 4px; color: var(--muted); font-size: 10.5px; }
+.tr-ties .tie-chip:hover { border-color: currentColor; }

@@ -84,7 +84,7 @@ const state = {
   auto: {},             // layers on only for the current story or tour step (syncAuto)
   autoOff: {}, autoCtx: "",
   autoLayers: true,
-  show: { rulers: true, armies: true, routes: true, people: true, capitals: false, faith: false, inventions: false, passes: true, roads: true, clans: true, walls: true, exchange: true, spread: true, admin: false, economy: false, climate: false },
+  show: { rulers: true, armies: true, routes: true, people: true, capitals: false, faith: false, inventions: false, passes: true, roads: true, clans: true, walls: true, exchange: true, spread: true, admin: false, economy: false, climate: false, ties: true },
   overlays: { population: [], faith: [], inventions: [] },
   passes: [],           // famous passes (关隘), data/passes.json
   roads: [],            // major official roads (官道), data/roads.json
@@ -119,7 +119,7 @@ const UI = {
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" }, exchange: "交流", spread: "传播", spreadGroups: { faith: "宗教传播", tech: "技术传播", crop: "作物传播" }, arrived: (y) => `${y}传到`, set_out: (y) => `${y}起`, world_t: "世界", worldHead: "同一年的世界", goRegion: "切换地区", allWorld: "全球", worldHint: "点击地区，地图和时间轴切换过去；点击事件阅读详情", noWorldEv: "前后几十年没有收录的大事", elsewhere: "同时期的世界", wsHead: (x) => `同时期的${x}`, wsNearShort: "邻国", wsWorld: "世界", wsNear: (n) => `${n}的邻国`, wsNone: "前后几年没有收录的大事", hideStrip: "隐藏", showStrip: "在时间轴上方显示同时期的世界",
     sel: { hint: "点击地图上的国家即可选中，地图和各栏只显示与它相关的内容；再点一次取消", off: "这一年不在地图上", offMap: "这一年的地图没有单独画出它", before: "这一年尚未建立", after: "这一年已不存在", jump: (y) => `跳到${y}`, events: (n) => `事件 ${n}`, people: (n) => `本时期人物 ${n}`, cities: "城市", clear: "取消选中", circa: "约", away: "已移出视野，时间轴仍跟随它", back: (n) => `回到${n}`, story: "播放它的故事", now: "今", more: (n) => `另 ${n} 国`, less: "收起" },
-    people_l: "人物", climate: "气候灾害", climHead: "气候 · 华东气温", climNow: (a, p) => `较 1961–90 ${a >= 0 ? "暖" : "冷"} ${Math.abs(a).toFixed(1)}°C${p ? " · " + p : ""}`, climKinds: { drought: "旱灾", flood: "水灾", locust: "蝗灾", famine: "饥荒", quake: "地震", plague: "疫病", cold: "寒冬", river: "黄河决徙" }, climKey: { reb: "起义", cap: "迁都", dis: "灾害" }, climToll: "伤亡", climArea: "范围", climLinked: "相关事件 · 点击跳转", climAfter: "前后的起义与迁都", climPhase: "当时气候", climNote: "灾害与冷暖期为 AI 整理，未经核对；气温曲线为示意", climCurve: "气温曲线依竺可桢（1972）与葛全胜等（2013）的冷暖分期手绘示意，不是原始数据", climElse: "气候曲线只画中国东部", cmp: { one: "对比", open: "两地对比", sync: "同步视角", openTime: "两时对比", place: "两地", time: "两时", period: "时期", year: "年份", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, packs: "专题", rpMore: "这一年的君主、大事与国家", asState: "作为国家：", close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourMusic: " 音乐", tourNarr: " 旁白", tourNarrHint: "朗读每一站的解说（AI 语音，中文）", voices: { Charon: "男声", Kore: "女声" }, tourMusicHint: "导览和时间轴播放时的背景音乐（AI 生成）", tourImmersive: "沉浸", tourImmersiveHint: "放大图片，收起其它面板（Esc 退出）", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, followLife: "跟随一生", trail: "足迹", trailShow: "足迹", trailHint: "在地图上画出一生足迹，随时间轴移动", trailPrev: "上一站", trailNext: "下一站", trailBefore: (y) => `还没有出生。足迹从${y}开始，点“下一站”或拖动时间轴。`, trailAfter: "一生行迹到此为止。", livesHere: "本时期人物的一生", livesAll: "人物一生", tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", tipOn: "已打开", stLayBtn: "图层按钮", stLayPos: "图层排列", layBtns: { text: "文字", icon: "图标", both: "图标+文字" }, layPos: { group: "分组", nowrap: "一行·滑动", wrap: "一行·换行" }, tipOff: "已关闭", tipAuto: "自动显示", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市", place: "地名" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", admin: "政区", adminSeat: "治所", adminWas: "汉时旧名", adminSite: "此地历代 · 点击跳转", adminNow: "今", adminSnap: (y) => `以${y}为准 · AI 整理，已与 CHGIS 抽查比对`, adminUnsure: "位置待核", adminChgis: "查 CHGIS 记录", adminChgisWait: "正在查询 CHGIS…", adminChgisDown: "暂时连不上 CHGIS，稍后再试", adminChgisNone: "CHGIS 在这一年没有同名记录", adminChgisSrc: "来自 CHGIS 时空地名库（哈佛、复旦），实时查询", adminChgisMoved: "治所位置与本图略有不同", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`, cityHere: (n, m) => n === m ? `城中大事 ${n} 件` : `这一段大事 ${n} 件 · 全城 ${m} 件`, cityNone: (m) => `这一段没有收录大事 · 点上方色条看其他时期（共 ${m} 件）`, cityTop: "要事", cityAll: "全部", gazHead: "地名古今 · 点击跳转", cityTabEv: (n) => n ? `城中大事 ${n}` : "城中大事", cityNoEv: "这一段没有收录大事", gazHeld: "属", gazIn: "约在", gazKind: "地名古今", gazNote: "由本图的城市、政区和疆域推算 · AI 整理，未经核对",  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", climate: "气候灾害", climHead: "气候 · 华东气温", climNow: (a, p) => `较 1961–90 ${a >= 0 ? "暖" : "冷"} ${Math.abs(a).toFixed(1)}°C${p ? " · " + p : ""}`, climKinds: { drought: "旱灾", flood: "水灾", locust: "蝗灾", famine: "饥荒", quake: "地震", plague: "疫病", cold: "寒冬", river: "黄河决徙" }, climKey: { reb: "起义", cap: "迁都", dis: "灾害" }, climToll: "伤亡", climArea: "范围", climLinked: "相关事件 · 点击跳转", climAfter: "前后的起义与迁都", climPhase: "当时气候", climNote: "灾害与冷暖期为 AI 整理，未经核对；气温曲线为示意", climCurve: "气温曲线依竺可桢（1972）与葛全胜等（2013）的冷暖分期手绘示意，不是原始数据", climElse: "气候曲线只画中国东部", cmp: { one: "对比", open: "两地对比", sync: "同步视角", openTime: "两时对比", place: "两地", time: "两时", period: "时期", year: "年份", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, packs: "专题", rpMore: "这一年的君主、大事与国家", asState: "作为国家：", close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourMusic: " 音乐", tourNarr: " 旁白", tourNarrHint: "朗读每一站的解说（AI 语音，中文）", voices: { Charon: "男声", Kore: "女声" }, tourMusicHint: "导览和时间轴播放时的背景音乐（AI 生成）", tourImmersive: "沉浸", tourImmersiveHint: "放大图片，收起其它面板（Esc 退出）", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, followLife: "跟随一生", trail: "足迹", trailShow: "足迹", trailHint: "在地图上画出一生足迹，随时间轴移动", trailPrev: "上一站", trailNext: "下一站", trailBefore: (y) => `还没有出生。足迹从${y}开始，点“下一站”或拖动时间轴。`, trailAfter: "一生行迹到此为止。", livesHere: "本时期人物的一生", livesAll: "人物一生", ties: "关系网", tieKinds: { teach: "师承", serve: "君臣·幕僚", kin: "亲属", friend: "交游", rival: "政敌·论敌", war: "交战", verse: "诗文往来" }, tieHead: (n) => `人物关系（${n}）· 点击看对方`, tieKind: "人物关系", tieThen: "此时的交往", tieLater: "以后", tieAway: "不在本时期地图上", tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", tipOn: "已打开", stLayBtn: "图层按钮", stLayPos: "图层排列", layBtns: { text: "文字", icon: "图标", both: "图标+文字" }, layPos: { group: "分组", nowrap: "一行·滑动", wrap: "一行·换行" }, tipOff: "已关闭", tipAuto: "自动显示", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市", place: "地名" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", admin: "政区", adminSeat: "治所", adminWas: "汉时旧名", adminSite: "此地历代 · 点击跳转", adminNow: "今", adminSnap: (y) => `以${y}为准 · AI 整理，已与 CHGIS 抽查比对`, adminUnsure: "位置待核", adminChgis: "查 CHGIS 记录", adminChgisWait: "正在查询 CHGIS…", adminChgisDown: "暂时连不上 CHGIS，稍后再试", adminChgisNone: "CHGIS 在这一年没有同名记录", adminChgisSrc: "来自 CHGIS 时空地名库（哈佛、复旦），实时查询", adminChgisMoved: "治所位置与本图略有不同", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`, cityHere: (n, m) => n === m ? `城中大事 ${n} 件` : `这一段大事 ${n} 件 · 全城 ${m} 件`, cityNone: (m) => `这一段没有收录大事 · 点上方色条看其他时期（共 ${m} 件）`, cityTop: "要事", cityAll: "全部", gazHead: "地名古今 · 点击跳转", cityTabEv: (n) => n ? `城中大事 ${n}` : "城中大事", cityNoEv: "这一段没有收录大事", gazHeld: "属", gazIn: "约在", gazKind: "地名古今", gazNote: "由本图的城市、政区和疆域推算 · AI 整理，未经核对",  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -145,7 +145,7 @@ const UI = {
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" }, exchange: "Exchange", spread: "Spread", spreadGroups: { faith: "Faith spreads", tech: "Technique spreads", crop: "Crop spreads" }, arrived: (y) => `arrived ${y}`, set_out: (y) => `from ${y}`, world_t: "World", worldHead: "The world this year", goRegion: "Go to region", allWorld: "Whole world", worldHint: "Click a region to move the map and timeline there; click an event to read it", noWorldEv: "No major events recorded within a few decades", elsewhere: "Elsewhere", wsHead: (x) => `Meanwhile · ${x}`, wsNearShort: "Neighbours", wsWorld: "World", wsNear: (n) => `Around ${n}`, wsNone: "No recorded events in these years", hideStrip: "Hide", showStrip: "Show other regions above the timeline",
     sel: { hint: "Click a country on the map to select it: the map and panels then show only what concerns it. Click it again to clear", off: "Not on the map in this year", offMap: "The map for this year doesn't draw it separately", before: "Not yet founded in this year", after: "No longer exists in this year", jump: (y) => `Go to ${y}`, events: (n) => `${n} events`, people: (n) => `${n} people this period`, cities: "Cities", clear: "Clear selection", circa: "c. ", away: "Out of view; the timeline still follows it", back: (n) => `Back to ${n}`, story: "Play its story", now: "today", more: (n) => `${n} more`, less: "Fewer" },
-    people_l: "People", climate: "Climate & disasters", climHead: "Climate · E. China", climNow: (a, p) => `${Math.abs(a).toFixed(1)}°C ${a >= 0 ? "warmer" : "colder"} than 1961–90${p ? " · " + p : ""}`, climKinds: { drought: "Drought", flood: "Flood", locust: "Locusts", famine: "Famine", quake: "Earthquake", plague: "Epidemic", cold: "Severe cold", river: "Yellow River breach" }, climKey: { reb: "revolts", cap: "capital moves", dis: "disasters" }, climToll: "Toll", climArea: "Area", climLinked: "Related events · click to jump", climAfter: "Revolts and capital moves around it", climPhase: "Climate then", climNote: "Disasters and warm/cold phases AI-drafted, not source-checked; the temperature line is a sketch", climCurve: "The temperature line is hand-drawn after the warm and cold phases of Zhu Kezhen (1972) and Ge et al. (2013); not the published data", climElse: "The climate line covers eastern China only", cmp: { one: "Compare", open: "Compare regions", sync: "Sync view", openTime: "Compare times", place: "Two places", time: "Two times", period: "Period", year: "Year", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, packs: "Packs", rpMore: "Rulers, events and countries this year", asState: "As a state: ", close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourMusic: " Music", tourNarr: " Narration", tourNarrHint: "Read each stop aloud (AI voice, in Chinese)", voices: { Charon: "Male", Kore: "Female" }, tourMusicHint: "Background music during tours and timeline playback (AI-generated)", tourImmersive: "Immersive", tourImmersiveHint: "Enlarge the picture and fold the other panels away (Esc to leave)", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, followLife: "Follow their life", trail: "Footsteps", trailShow: "Footsteps", trailHint: "Draw their whole life journey on the map; it moves with the timeline", trailPrev: "Previous", trailNext: "Next stop", trailBefore: (y) => `Not born yet. The journey starts in ${y}; press Next stop or drag the timeline.`, trailAfter: "The journey ends here.", livesHere: "Lives in this period", livesAll: "Lives", tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", tipOn: "On", stLayBtn: "Layer buttons", stLayPos: "Layer layout", layBtns: { text: "Text", icon: "Icon", both: "Icon + text" }, layPos: { group: "Groups", nowrap: "One row, scroll", wrap: "One row, wrap" }, tipOff: "Off", tipAuto: "On for this story", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities", place: "Place names" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", admin: "Prefectures", adminSeat: "Seat", adminWas: "Han name", adminSite: "This seat by dynasty · click to jump", adminNow: "Today", adminSnap: (y) => `As in ${y} · AI-drafted, spot-checked against CHGIS`, adminUnsure: "position uncertain", adminChgis: "Look up in CHGIS", adminChgisWait: "Asking CHGIS…", adminChgisDown: "CHGIS can't be reached right now; try again later", adminChgisNone: "No record of this name in CHGIS for this year", adminChgisSrc: "From the CHGIS Temporal Gazetteer (Harvard, Fudan), looked up live", adminChgisMoved: "its seat differs a little from this map", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, cityHere: (n, m) => n === m ? `${n} events here` : `${n} events in this phase · ${m} in all`, cityNone: (m) => `No events recorded in this phase · tap the bar for other periods (${m} in all)`, cityTop: "Major", cityAll: "All", gazHead: "Names through time · click to jump", cityTabEv: (n) => n ? `Events ${n}` : "Events", cityNoEv: "No events recorded in this phase", gazHeld: "held by", gazIn: "roughly in", gazKind: "Place through time", gazNote: "Worked out from this atlas's cities, prefectures and borders · AI-drafted, approximate", personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", climate: "Climate & disasters", climHead: "Climate · E. China", climNow: (a, p) => `${Math.abs(a).toFixed(1)}°C ${a >= 0 ? "warmer" : "colder"} than 1961–90${p ? " · " + p : ""}`, climKinds: { drought: "Drought", flood: "Flood", locust: "Locusts", famine: "Famine", quake: "Earthquake", plague: "Epidemic", cold: "Severe cold", river: "Yellow River breach" }, climKey: { reb: "revolts", cap: "capital moves", dis: "disasters" }, climToll: "Toll", climArea: "Area", climLinked: "Related events · click to jump", climAfter: "Revolts and capital moves around it", climPhase: "Climate then", climNote: "Disasters and warm/cold phases AI-drafted, not source-checked; the temperature line is a sketch", climCurve: "The temperature line is hand-drawn after the warm and cold phases of Zhu Kezhen (1972) and Ge et al. (2013); not the published data", climElse: "The climate line covers eastern China only", cmp: { one: "Compare", open: "Compare regions", sync: "Sync view", openTime: "Compare times", place: "Two places", time: "Two times", period: "Period", year: "Year", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, packs: "Packs", rpMore: "Rulers, events and countries this year", asState: "As a state: ", close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourMusic: " Music", tourNarr: " Narration", tourNarrHint: "Read each stop aloud (AI voice, in Chinese)", voices: { Charon: "Male", Kore: "Female" }, tourMusicHint: "Background music during tours and timeline playback (AI-generated)", tourImmersive: "Immersive", tourImmersiveHint: "Enlarge the picture and fold the other panels away (Esc to leave)", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, followLife: "Follow their life", trail: "Footsteps", trailShow: "Footsteps", trailHint: "Draw their whole life journey on the map; it moves with the timeline", trailPrev: "Previous", trailNext: "Next stop", trailBefore: (y) => `Not born yet. The journey starts in ${y}; press Next stop or drag the timeline.`, trailAfter: "The journey ends here.", livesHere: "Lives in this period", livesAll: "Lives", ties: "Ties", tieKinds: { teach: "Teacher & student", serve: "Served", kin: "Family", friend: "Friends", rival: "Rivals", war: "Fought", verse: "Poems & letters" }, tieHead: (n) => `Ties (${n}) · click to see them`, tieKind: "Tie", tieThen: "Around now", tieLater: "later", tieAway: "not on this period's map", tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", tipOn: "On", stLayBtn: "Layer buttons", stLayPos: "Layer layout", layBtns: { text: "Text", icon: "Icon", both: "Icon + text" }, layPos: { group: "Groups", nowrap: "One row, scroll", wrap: "One row, wrap" }, tipOff: "Off", tipAuto: "On for this story", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities", place: "Place names" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", admin: "Prefectures", adminSeat: "Seat", adminWas: "Han name", adminSite: "This seat by dynasty · click to jump", adminNow: "Today", adminSnap: (y) => `As in ${y} · AI-drafted, spot-checked against CHGIS`, adminUnsure: "position uncertain", adminChgis: "Look up in CHGIS", adminChgisWait: "Asking CHGIS…", adminChgisDown: "CHGIS can't be reached right now; try again later", adminChgisNone: "No record of this name in CHGIS for this year", adminChgisSrc: "From the CHGIS Temporal Gazetteer (Harvard, Fudan), looked up live", adminChgisMoved: "its seat differs a little from this map", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, cityHere: (n, m) => n === m ? `${n} events here` : `${n} events in this phase · ${m} in all`, cityNone: (m) => `No events recorded in this phase · tap the bar for other periods (${m} in all)`, cityTop: "Major", cityAll: "All", gazHead: "Names through time · click to jump", cityTabEv: (n) => n ? `Events ${n}` : "Events", cityNoEv: "No events recorded in this phase", gazHeld: "held by", gazIn: "roughly in", gazKind: "Place through time", gazNote: "Worked out from this atlas's cities, prefectures and borders · AI-drafted, approximate", personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -823,6 +823,7 @@ function baseStyle() {
       borders: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       routes: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       spread: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      ties: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       roads: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       clans: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       disasters: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
@@ -958,6 +959,16 @@ function baseStyle() {
                  "line-width": ["case", ["==", ["get", "live"], 1], 3, 1.6] } },
       { id: "spread-dot", type: "circle", source: "spread", filter: ["==", ["geometry-type"], "Point"],
         paint: { "circle-radius": 3.5, "circle-color": ["get", "color"], "circle-stroke-color": "#fff", "circle-stroke-width": 1, "circle-opacity": 0.85 } },
+      // 人物关系网 (renderTies): a bow between two people, coloured by kind; the person in focus's ties bright, the rest faint.
+      { id: "tie-casing", type: "line", source: "ties", filter: ["==", ["get", "hot"], 1], layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": "#fff", "line-width": 5.5, "line-opacity": 0.7 } },
+      { id: "tie-line", type: "line", source: "ties", filter: ["!=", ["get", "kind"], "war"], layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": ["get", "color"], "line-width": ["case", ["==", ["get", "hot"], 1], 3, 2],
+                 "line-opacity": ["case", ["==", ["get", "hot"], 1], 0.95, ["==", ["get", "dim"], 1], 0.2, 0.75] } },
+      { id: "tie-war", type: "line", source: "ties", filter: ["==", ["get", "kind"], "war"], layout: { "line-join": "round" },
+        paint: { "line-color": ["get", "color"], "line-width": ["case", ["==", ["get", "hot"], 1], 3, 2], "line-dasharray": [2, 1.4],
+                 "line-opacity": ["case", ["==", ["get", "hot"], 1], 0.95, ["==", ["get", "dim"], 1], 0.2, 0.75] } },
+      { id: "tie-hit", type: "line", source: "ties", paint: { "line-color": "#000", "line-opacity": 0, "line-width": 12 } },
     ],
   };
 }
@@ -2028,6 +2039,7 @@ const LAYER_ICONS = {
   "l-routes": '<circle cx="5" cy="18" r="2"/><path d="M7 17c4-2 2-8 7-9 3-.6 4-1.5 5-3" stroke-dasharray="2.6 2.4"/><path d="M16 4.5l3.2.3.3 3.2"/>',
   "l-climate": '<path d="M9 14.5V5a2.5 2.5 0 015 0v9.5a4 4 0 11-5 0z"/><path d="M11.5 9v8"/><path d="M17.5 4.5c1.6 1.4 2.5 3 2.5 4.5a2.5 2.5 0 01-5 0c0-1.5.9-3.1 2.5-4.5z"/>',
   "l-people": '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+  "l-ties": '<circle cx="5.5" cy="6.5" r="2.5"/><circle cx="18.5" cy="6.5" r="2.5"/><circle cx="12" cy="18.5" r="2.5"/><path d="M8 6.5h8M7 8.7l3.6 7.6M17 8.7l-3.6 7.6"/>',
   "l-faith": '<path d="M12 20c-4 0-8-3-9-7 3 0 6 1 9 4 3-3 6-4 9-4-1 4-5 7-9 7z"/><path d="M12 17c-2-2-3-5-3-8 1.5 1 2.5 2 3 3 .5-1 1.5-2 3-3 0 3-1 6-3 8z"/>',
   "l-inventions": '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/>',
   "l-exchange": '<path d="M4 8h15l-3-3M20 16H5l3 3"/>',
@@ -2130,9 +2142,15 @@ function renderOverlays() {
 
 let popup, cardPerson = null;
 function showCard(lngLat, html) {
+  const wasFocus = tieState.focus;
   popup?.remove();
   popup = new maplibregl.Popup({ className: "atlas-pop", maxWidth: "300px", offset: 14, focusAfterOpen: false })
     .setLngLat(lngLat).setHTML(html).addTo(map);
+  // A person's card puts their ties in focus until it closes; a tie's own card keeps the focus it was opened from.
+  const pid = popup.getElement().querySelector(".pc-ties")?.dataset.pid || (popup.getElement().querySelector(".tie-h") ? wasFocus : null) || null;
+  if (pid !== tieState.focus || pid !== wasFocus) { tieState.focus = pid; renderTies(); }
+  if (pid) popup.on("close", () => { if (tieState.focus === pid) { tieState.focus = null; renderTies(); } });
+  popup.getElement().querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => openTiePerson(b.dataset.tp)));
   fillIllus(popup.getElement());
   popup.getElement().querySelectorAll(".pc-gaz[data-gaz]").forEach(fillGaz);
   // Event lists open at the city's current period and jump to that moment when clicked.
@@ -2246,6 +2264,7 @@ function renderPeople() {
     const s = life.steps[lifeIdx(life, state.year)];
     return { ...p, lon: s.at[0], lat: s.at[1], here: stopPlace(s) };
   });
+  state.peopleOnMap = new Set(alive.map((p) => p.id));
   pointMarkers("people", placed, (p) => {
     const el = document.createElement("div");
     el.className = "mk-person f-" + p.field + (p.here ? " moves" : "");
@@ -2253,6 +2272,7 @@ function renderPeople() {
     el.innerHTML = `<i>${esc((p.name_zh || p.name).slice(0, 1))}</i><span>${esc(nm)}<small>${esc(t("fields")[p.field] || "")}${p.here ? ` · ${esc(p.here)}` : ""}</small></span>`;
     return { el, anchor: "left", card: () => personCard(p) };
   });
+  renderTies();
 }
 function personLife(p) {
   if (p.died == null && p.born != null) return zh() ? `${fmtYear(p.born, p.circa)}生` : `born ${fmtYear(p.born, p.circa)}`; // living
@@ -2265,7 +2285,7 @@ function personCard(p) {
   return `${illuSlot("p:" + p.id)}<div class="pc-kind">${esc(t("fields")[p.field] || p.field)} · ${personLife(p)}</div>
     <h4>${esc(nameOf(p))} <span lang="${zh() ? "en" : "zh-CN"}">${esc(zh() ? p.name : p.name_zh)}</span></h4>
     <p>${esc(tx(p, "known_for"))}</p>${works ? `<p class="pc-works"><b>${t("works")}</b> ${works}</p>` : ""}${line}
-    ${state.lifeOf?.has(p.id) ? `<span class="pc-lives">${trail.life?.person === p.id ? "" : `<button type="button" class="pc-life pc-trail" data-trail="${esc(p.id)}" title="${esc(t("trailHint"))}">◉ ${esc(t("trailShow"))}</button>`}<button type="button" class="pc-life" data-life="${esc(state.lifeOf.get(p.id))}">▶ ${esc(t("followLife"))}</button></span>` : ""}${personEventList(p)}${checkNote(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
+    ${state.lifeOf?.has(p.id) ? `<span class="pc-lives">${trail.life?.person === p.id ? "" : `<button type="button" class="pc-life pc-trail" data-trail="${esc(p.id)}" title="${esc(t("trailHint"))}">◉ ${esc(t("trailShow"))}</button>`}<button type="button" class="pc-life" data-life="${esc(state.lifeOf.get(p.id))}">▶ ${esc(t("followLife"))}</button></span>` : ""}${personTies(p)}${personEventList(p)}${checkNote(p)}<p class="pc-meta">${esc(tx(p, "place"))} ${wikiA((zh() && p.source_zh) || p.source)}</p>`;
 }
 function personEventList(p) {
   const evs = personEvents(p);
@@ -2281,6 +2301,116 @@ function personAt(p) {
 }
 // Years a person's marker is on the map: their life, or the 40 years before death when the birth year is unknown.
 const personSpan = (p) => p.show ? p.show : [p.born ?? p.died - 40, p.died ?? state.range.end];
+
+/* ---------- 人物关系网: who taught, served, fought or wrote to whom (data/relations.json, AI-drafted) ----------
+   A tie is a bow between the two people where they were that year (their 足迹 stop, else home), coloured by kind.
+   Ties between people on the map show faintly once they have begun; the person whose card is open, or whose 足迹
+   is drawn, has theirs bright and labelled, reaching people off this period's map too. Built by tools/build_relations.py. */
+const TIE_COLORS = { teach: "#2e8b57", serve: "#2f6fb5", kin: "#8e44ad", friend: "#0f9b8e", rival: "#d9741a", war: "#c0392b", verse: "#c2417a" };
+const tieState = { focus: null, labels: [] };
+let ties = null;
+const loadTies = () => ties || (ties = (state.pack?.only ? Promise.resolve({ people: {}, links: [] }) : loadJSON("data/relations.json").catch(() => ({ people: {}, links: [] })))
+  .then((d) => {
+    state.ties = d;
+    state.tiesOf = new Map();
+    d.links.forEach((l, i) => { l.i = i; for (const id of [l.a, l.b]) { if (!state.tiesOf.has(id)) state.tiesOf.set(id, []); state.tiesOf.get(id).push(l); } });
+    renderTies();
+    return d;
+  }));
+const tieName = (id) => { const q = state.ties?.people[id]; return q ? nameOf(q) : id; };
+const tieAlive = (id, y) => { const q = state.ties?.people[id]; return !!q && y >= personSpan(q)[0] && y <= personSpan(q)[1]; };
+// Where someone was in the year on the timeline: the 足迹 dot for the person followed, their journey's stop, else home.
+function tiePos(id) {
+  if (trail.life?.person === id) return trail.life.steps[Math.max(0, trail.k)].at;
+  const life = state.lifeBy?.get(id), q = state.ties?.people[id];
+  return life ? life.steps[lifeIdx(life, state.year)].at : q && [q.lon, q.lat];
+}
+const tieLabel = (l) => (zh() ? l.rel_zh || l.rel : l.rel || l.rel_zh) || t("tieKinds")[l.kind];
+function renderTies() {
+  const src = map?.getSource("ties");
+  tieState.labels.forEach((m) => m.remove());
+  tieState.labels = [];
+  if (!src) return;
+  const R = state.ties, y = state.year, feats = [];
+  const focus = trail.life?.person || tieState.focus;
+  if (R && shown("ties")) {
+    const onMap = state.peopleOnMap || new Set();
+    const hot = (l) => focus && (l.a === focus || l.b === focus);
+    const list = R.links.filter((l) => y >= l.year && (hot(l) ? tieAlive(l.a, y) && tieAlive(l.b, y) : onMap.has(l.a) && onMap.has(l.b)));
+    for (const l of list) {
+      const a = tiePos(l.a), b = tiePos(l.b);
+      if (!a || !b || (Math.abs(a[0] - b[0]) < 0.01 && Math.abs(a[1] - b[1]) < 0.01)) continue;
+      const pts = arcLeg(a, b, 24), h = hot(l) ? 1 : 0;
+      feats.push({ type: "Feature", properties: { i: l.i, kind: l.kind, color: TIE_COLORS[l.kind] || "#888", hot: h, dim: focus && !h ? 1 : 0 }, geometry: lineGeom(pts) });
+      if (!h) continue;
+      // The focus person's ties carry their label at the middle of the bow, and name whoever has no marker of their own.
+      const lab = document.createElement("button");
+      lab.type = "button";
+      lab.className = "tie-lab";
+      lab.style.setProperty("--tie", TIE_COLORS[l.kind]);
+      lab.textContent = tieLabel(l);
+      lab.addEventListener("click", (e) => { e.stopPropagation(); showCard(pts[pts.length >> 1], tieCard(l)); });
+      tieState.labels.push(new maplibregl.Marker({ element: lab }).setLngLat(pts[pts.length >> 1]).addTo(map));
+      const other = l.a === focus ? l.b : l.a;
+      if (!onMap.has(other)) {
+        const el = document.createElement("button");
+        el.type = "button";
+        el.className = "tie-who";
+        el.innerHTML = `<i></i>${esc(tieName(other))}`;
+        el.addEventListener("click", (e) => { e.stopPropagation(); openTiePerson(other); });
+        tieState.labels.push(new maplibregl.Marker({ element: el, anchor: "left", offset: [-5, 0] }).setLngLat(other === l.a ? a : b).addTo(map));
+      }
+    }
+  }
+  src.setData({ type: "FeatureCollection", features: feats });
+}
+function tieCard(l) {
+  const ev = l.event && state.events.find((e) => e.id === l.event);
+  const who = (id) => `<button type="button" class="tie-p" data-tp="${esc(id)}">${esc(tieName(id))}</button>`;
+  return `<div class="pc-kind"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i>${esc(t("tieKinds")[l.kind])} · ${fmtYear(l.year)}${l.to ? ` – ${fmtYear(l.to)}` : ""}</div>
+    <h4 class="tie-h">${who(l.a)} <span>${esc(tieLabel(l))}</span> ${who(l.b)}</h4>
+    <p>${esc(tx(l, "text"))}</p>${ev ? eventButtons([ev], () => true) : ""}<p class="pc-meta">${esc(t("drafted"))}</p>`;
+}
+// A person's ties for their card: those begun by now first, the rest marked "later"; each opens the other person.
+function personTies(p) {
+  const list = state.tiesOf?.get(p.id);
+  if (!list?.length) return "";
+  const rows = [...list].sort((a, b) => a.year - b.year).map((l) => {
+    const other = l.a === p.id ? l.b : l.a, later = l.year > state.year;
+    return `<li><button type="button" class="tie-row${later ? " later" : ""}" data-tp="${esc(other)}" title="${esc(tx(l, "text"))}"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i><b>${esc(tieLabel(l))}</b>${esc(tieName(other))}<small>${fmtYear(l.year)}${later ? ` · ${esc(t("tieLater"))}` : ""}</small></button>${l.event ? `<button type="button" class="tie-ev" data-ev="${esc(l.event)}" aria-label="${esc(t("tourStory"))}">↗</button>` : ""}</li>`;
+  }).join("");
+  return `<div class="pc-ties" data-pid="${esc(p.id)}"><p class="pc-works"><b>${t("tieHead")(list.length)}</b></p><ul>${rows}</ul></div>`;
+}
+// Open someone a tie names: on this map if they are alive in it, else in their own period.
+async function openTiePerson(id) {
+  const q = state.ties?.people[id];
+  if (!q) return;
+  popup?.remove();
+  const era = state.chinaEras.find((e) => e.id === q.era);
+  const here = (state.layerData?.people || []).find((p) => p.id === id);
+  if (here && tieAlive(id, state.year)) return focusPerson(here);
+  if (!era) return;
+  const p = (await loadLayers(era)).people?.find((x) => x.id === id);
+  if (!p) return;
+  if (tieAlive(id, state.year) && state.mode === era.region) {
+    await jumpToYear(state.year);
+    state.layerData = await loadLayers(eraFor(state.year));
+    return focusPerson((state.layerData.people || []).find((x) => x.id === id) || p);
+  }
+  jumpToPerson(p, era);
+}
+// Ties of the person followed that fall in the stretch of life at the current stop (up to the next stop).
+function trailTies(life, k) {
+  const list = state.tiesOf?.get(life.person);
+  if (!list) return "";
+  const a = life.steps[k].year, b = life.steps[k + 1]?.year ?? Infinity;
+  const now = list.filter((l) => l.year >= a && l.year < b || (k === 0 && l.year < a)).slice(0, 5);
+  if (!now.length) return "";
+  return `<div class="tr-ties"><span>${esc(t("tieThen"))}</span>${now.map((l) => {
+    const other = l.a === life.person ? l.b : l.a;
+    return `<button type="button" class="tie-chip" data-ti="${l.i}" title="${esc(tx(l, "text"))}"><i class="tie-sw" style="--tie:${TIE_COLORS[l.kind]}"></i>${esc(tieName(other))}<small>${esc(tieLabel(l))}</small></button>`;
+  }).join("")}</div>`;
+}
 
 function renderCapitals() {
   const list = shown("capitals") ? (state.layerData?.capitals || []) : [];
@@ -4467,6 +4597,7 @@ function updateTrail(first) {
     };
     trail.anim = requestAnimationFrame(tick);
   }
+  renderTies();
   trailCard();
 }
 function trailCard() {
@@ -4475,7 +4606,7 @@ function trailCard() {
   const k = trail.k, s = life.steps[k], n = life.steps.length;
   const before = state.year < life.start, after = state.year > life.end && state.year > (trail.p?.died ?? life.end);
   const name = trail.p ? nameOf(trail.p) : tx(life, "title");
-  const key = `${life.id}|${k}|${before}|${after}|${state.lang}`;
+  const key = `${life.id}|${k}|${before}|${after}|${state.lang}|${!!state.ties}`;
   box.hidden = false;
   if (box.dataset.key === key) return;
   box.dataset.key = key;
@@ -4483,7 +4614,7 @@ function trailCard() {
   const text = before ? t("trailBefore")(fmtYear(life.start)) : after ? t("trailAfter") : tx(s, "text").replace(/^[^:：，,]{1,14}?(年，|: )/, "");
   box.innerHTML = `<div class="tour-head"><span class="tour-title">◉ ${esc(name)} · ${esc(t("trail"))}</span><span class="tour-count">${before ? "" : `${k + 1}/${n}`}</span><button type="button" class="zbtn tour-close" data-tr="x" aria-label="${esc(t("close"))}">×</button></div>
     <div class="tr-dots">${dots}</div>
-    <p>${before ? "" : `<b class="tour-year">${esc(fmtYear(s.year))} · ${esc(stopPlace(s) || "")}</b>`}<span>${esc(text)}</span></p>
+    <p>${before ? "" : `<b class="tour-year">${esc(fmtYear(s.year))} · ${esc(stopPlace(s) || "")}</b>`}<span>${esc(text)}</span></p>${before || after ? "" : trailTies(life, k)}
     <div class="tour-ctl"><button type="button" class="chip" data-tr="prev"${k <= 0 && !after ? " disabled" : ""}>‹ ${esc(t("trailPrev"))}</button>
       ${s.event && !before ? `<button type="button" class="chip" data-tr="story">${esc(t("tourStory"))}</button>` : ""}
       <button type="button" class="chip" data-tr="tour">▶ ${esc(t("followLife"))}</button>
@@ -6280,6 +6411,7 @@ async function init() {
   }
   applyLang();
   loadLives().then(() => { if (state.tab === "people") renderPeopleTab(); });
+  loadTies();
   const plugins = importPlugins();
   plugins.forEach((p) => p.catch(() => {}));  // reported once the map is up
   const pack = state.pack?.manifest, only = state.pack?.only;
@@ -6373,6 +6505,12 @@ async function init() {
   });
   map.on("mouseenter", "admin-dot", () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", "admin-dot", () => (map.getCanvas().style.cursor = ""));
+  map.on("click", "tie-hit", (e) => {
+    const l = state.ties?.links[e.features[0]?.properties.i];
+    if (l) showCard(e.lngLat, tieCard(l));
+  });
+  map.on("mouseenter", "tie-hit", () => (map.getCanvas().style.cursor = "pointer"));
+  map.on("mouseleave", "tie-hit", () => (map.getCanvas().style.cursor = ""));
   map.on("mouseenter", "road-hit", () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", "road-hit", () => (map.getCanvas().style.cursor = ""));
   // The timeline follows the region in view, except while a country is selected: then it stays on that country's
@@ -6598,9 +6736,13 @@ async function init() {
   $("share-open").addEventListener("click", shareView);
   $("tour-tab").addEventListener("click", (e) => { const b = e.target.closest("[data-tour]"); if (b) startTour(b.dataset.tour); });
   $("trail").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-tr], [data-j]"), life = trail.life;
+    const b = e.target.closest("[data-tr], [data-j], [data-ti]"), life = trail.life;
     if (!b || !life) return;
     if (b.dataset.j) return trailGo(+b.dataset.j);
+    if (b.dataset.ti) {
+      const l = state.ties.links[+b.dataset.ti], a = tiePos(l.a), c = tiePos(l.b);
+      return showCard(tieAlive(l.a, state.year) && tieAlive(l.b, state.year) ? arcLeg(a, c, 24)[12] : a, tieCard(l));
+    }
     const n = life.steps.length, before = state.year < life.start, after = state.year > life.end;
     const go = { x: () => showTrail(null), prev: () => trailGo(after ? n - 1 : trail.k - 1), next: () => trailGo(before ? 0 : trail.k + 1),
       story: () => { const s = life.steps[trail.k]; if (s?.event) { state.reading = false; selectEvent(s.event); } },

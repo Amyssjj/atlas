@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ID = re.compile(r"^[a-z0-9-]+$")
 CATS = {"war", "politics", "reform", "rebellion", "diplomacy", "economy", "culture", "science", "society"}
 AUTO_LAYERS = {"rulers", "people", "armies", "routes", "exchange", "spread", "passes", "roads", "walls", "clans", "admin",
-               "capitals", "faith", "inventions", "climate"}
+               "capitals", "faith", "inventions", "climate", "ties"}
 LAYER_TYPES = {"fill", "line", "circle"}
 
 
@@ -370,6 +370,21 @@ def check_builtin():
                 rep.err("data/moods.json", f"{k!r} is not a tour step")
             if v not in MOODS:
                 rep.err("data/moods.json", f"{k}: mood {v!r} is not one of {', '.join(MOODS)}")
+    # data/relations.json: 人物关系网 links between people of its own index (tools/build_relations.py).
+    rel = load(ROOT / "data/relations.json", rep, "data/relations.json")
+    if isinstance(rel, dict):
+        ppl = rel.get("people") or {}
+        for i, l in enumerate(rel.get("links") or []):
+            where = f"data/relations.json link {i}"
+            for k in ("a", "b"):
+                if l.get(k) not in ppl:
+                    rep.err(where, f"{k} {l.get(k)!r} is not in the people index")
+            if l.get("kind") not in {"teach", "serve", "kin", "friend", "rival", "war", "verse"}:
+                rep.err(where, f"unknown kind {l.get('kind')!r}")
+            if not isinstance(l.get("year"), int):
+                rep.err(where, "`year` should be a whole number")
+            if l.get("event") and isinstance(events, list) and l["event"] not in event_ids:
+                rep.err(where, f"unknown event {l['event']!r}")
     return rep
 
 
