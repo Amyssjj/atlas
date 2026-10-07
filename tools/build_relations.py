@@ -28,6 +28,7 @@ events = {x["id"] for x in json.load(open(ROOT / "data/events.json"))}
 old = json.load(open(OUT))["links"] if OUT.exists() else []
 links, seen, dropped, moved = [], set(), 0, 0
 for l in old + [l for f in sys.argv[1:] for l in json.load(open(f))]:
+    l = {**l, **((l.get("check") or {}).get("was") or {})}  # rebuild from the drafted values; apply_more.py re-applies fixes
     a, b, k = l.get("a"), l.get("b"), l.get("kind")
     if a not in people or b not in people or a == b or k not in KINDS:
         dropped += 1
@@ -70,7 +71,7 @@ for i in used:
     index[i] = {"name": p["name"], "name_zh": p.get("name_zh"), "born": p.get("born"), "died": p.get("died"), **({"show": p["show"]} if p.get("show") else {}),
                 "lon": p["lon"], "lat": p["lat"], "field": p.get("field"), "era": era_of[i]}
 with open(OUT, "w") as f:
-    f.write('{"note": "AI-drafted, not source-checked. Built by tools/build_relations.py.",\n "people": ')
+    f.write('{"note": "AI-drafted; links with a `check` were compared with Wikipedia (tools/apply_more.py). Built by tools/build_relations.py.",\n "people": ')
     json.dump(index, f, ensure_ascii=False, separators=(",", ":"))
     f.write(',\n "links": [\n')
     f.write(",\n".join(json.dumps(l, ensure_ascii=False, separators=(",", ":")) for l in links))

@@ -2,7 +2,7 @@
 
 Verdicts ({"set": lives|ties|disasters|periods|economy, "key", "s": ok|fixed|doubt, "n", "n_zh", "fix": {field: value}})
 come from comparing each item with Wikipedia passages gathered by tools/fact_more.py (reviewed by AI against that text
-only). Keys: "<life id>#<step index>" for life stops, "<a>|<b>|<year>|<kind>" for ties, the id for disasters and climate phases,
+only). Keys: "<life id>#<step index>" for life stops, "<a>|<b>|<kind>" for ties (one link per kind), the id for disasters and climate phases,
 "<metric>|<year>" for economy snapshots. Each becomes the item's `check` mark ({s, n, n_zh, was}); a fix replaces the
 fields and keeps the old values in check.was. Re-running restores the originals first, so it can be applied again."""
 import json, os, re, sys
@@ -48,7 +48,7 @@ for life in lives:
 open(os.path.join(ROOT, "data/lives.json"), "w").write(compact(lives))
 
 R = load("data/relations.json")
-for l in R["links"]: mark("ties", lambda l: f"{l['a']}|{l['b']}|{l['year']}|{l['kind']}", l)
+for l in R["links"]: mark("ties", f"{l['a']}|{l['b']}|{l['kind']}", l)
 with open(os.path.join(ROOT, "data/relations.json"), "w") as f:  # as tools/build_relations.py writes it
     f.write('{"note": ' + json.dumps(R["note"], ensure_ascii=False) + ',\n "people": ' + compact(R["people"]) + ',\n "links": [\n')
     f.write(",\n".join(compact(l) for l in R["links"]) + "\n]}\n")
