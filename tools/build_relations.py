@@ -39,7 +39,13 @@ for l in old + [l for f in sys.argv[1:] for l in json.load(open(f))]:
     if l.get("event") and l["event"] not in events:
         l.pop("event")
     # Both alive at `year`: inside the overlap of the two lives (a life with no birth year spans its last 40 years).
-    span = lambda p: (p.get("born") if p.get("born") is not None else p["died"] - 40, p.get("died") if p.get("died") is not None else 2026)
+    def span(p):
+        if p.get("show"):
+            return tuple(p["show"])
+        b, d = p.get("born"), p.get("died")
+        if b is None and d is None:
+            return (-3000, 2026)
+        return (b if b is not None else d - 40, d if d is not None else 2026)
     (a0, a1), (b0, b1) = span(people[a]), span(people[b])
     lo, hi = max(a0, b0), min(a1, b1)
     if lo > hi:
@@ -61,7 +67,7 @@ used = sorted({x for l in links for x in (l["a"], l["b"])})
 index = {}
 for i in used:
     p = people[i]
-    index[i] = {"name": p["name"], "name_zh": p.get("name_zh"), "born": p.get("born"), "died": p.get("died"),
+    index[i] = {"name": p["name"], "name_zh": p.get("name_zh"), "born": p.get("born"), "died": p.get("died"), **({"show": p["show"]} if p.get("show") else {}),
                 "lon": p["lon"], "lat": p["lat"], "field": p.get("field"), "era": era_of[i]}
 with open(OUT, "w") as f:
     f.write('{"note": "AI-drafted, not source-checked. Built by tools/build_relations.py.",\n "people": ')
