@@ -5123,6 +5123,9 @@ function makeDial() {
   el.addEventListener("pointerup", dialUp);
   el.addEventListener("pointercancel", dialUp);
   el.addEventListener("focus", () => setDialOpen(true));
+  // With a mouse the open dial stays open while the pointer is over it, so periods can be clicked one after another.
+  el.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { dial.hover = true; clearTimeout(dial.closeT); } });
+  el.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") { dial.hover = false; scheduleDialClose(); } });
   el.addEventListener("blur", () => scheduleDialClose());
   dial.el = el;
   setDialSkin(state.dialSkin, false);
@@ -5144,12 +5147,13 @@ function buildDial() {
   });
   drawDial();
 }
-function drawDial(y = state.year) {
+// give: degrees the ring is pushed past either end (it moves a third as far, like a rubber band).
+function drawDial(y = state.year, give = 0) {
   if (!dial.el || !dial.eras.length) return;
   dial.year = y;
   const yr = Math.round(y), i = dialIdx(yr), e = dial.eras[i], step = dialStep();
-  dial.el.querySelector(".g-periods").setAttribute("transform", `rotate(${dialPos(y) * step - step / 2})`);
-  dial.el.querySelector(".g-ticks").setAttribute("transform", `rotate(${y * 3.6})`);
+  dial.el.querySelector(".g-periods").setAttribute("transform", `rotate(${dialPos(y) * step - step / 2 + give / 3})`);
+  dial.el.querySelector(".g-ticks").setAttribute("transform", `rotate(${y * 3.6 + give / 3})`);
   dial.el.querySelectorAll(".p-lab").forEach((t, k) => t.classList.toggle("on", k === i));
   const [num] = fmtYearParts(yr);
   dial.el.querySelector(".c-glyph").textContent = e.glyph;
@@ -5170,7 +5174,7 @@ function setDialOpen(on) {
 }
 function scheduleDialClose() {
   clearTimeout(dial.closeT);
-  if (!state.playing && !dial.drag) dial.closeT = setTimeout(() => { if (document.activeElement !== dial.el || !state.playing) setDialOpen(false); }, 2200);
+  if (!state.playing && !dial.drag && !dial.hover) dial.closeT = setTimeout(() => { if (document.activeElement !== dial.el || !state.playing) setDialOpen(false); }, 2200);
 }
 // While turning, the dial shows each year at once; the map follows a few times a second (on touch screens only when
 // let go, as with the timeline's slider).
@@ -5189,7 +5193,8 @@ function dialDown(ev) {
   setDialOpen(true);
   try { dial.el.setPointerCapture(ev.pointerId); } catch {}
   const c = dialCentre(), d = Math.hypot(ev.clientX - c.x, ev.clientY - c.y);
-  dial.drag = { c, gear: !wasOpen ? "year" : d < 60 ? "core" : d < 95 ? "year" : "era", a: Math.atan2(ev.clientX - c.x, c.y - ev.clientY), t: performance.now(), moved: 0, pos: dialPos(state.year) };
+  const a = Math.atan2(ev.clientX - c.x, c.y - ev.clientY);
+  dial.drag = { c, gear: !wasOpen ? "year" : d < 60 ? "core" : d < 95 ? "year" : "era", a, a0: a, t: performance.now(), moved: 0, over: 0, pos: dialPos(state.year) };
   if (dial.drag.gear !== "core" && state.playing) stop();
 }
 function dialMove(ev) {
@@ -5204,20 +5209,45 @@ function dialMove(ev) {
   dr.a = a; dr.t = now; dr.moved += Math.abs(da);
   if (dr.moved < 3) return;
   if (dr.gear === "era") {
-    dr.pos = Math.max(0, Math.min(dial.eras.length - 1e-6, dr.pos + da / dialStep()));
+    const end = dial.eras.length - 1e-6, w = dialEdge(dr, da, dr.pos <= 0, dr.pos >= end);
+    if (w === "held") return;
+    dr.pos = w > 0 ? 0 : w < 0 ? end : Math.max(0, Math.min(end, dr.pos + da / dialStep()));
     dialTo(dialYearAt(dr.pos));
   } else if (dr.gear !== "core" || dr.moved > 12) {
     if (dr.gear === "core") { dr.gear = "year"; if (state.playing) stop(); }
-    dialTo(dial.year + (da / 3.6) * (1 + Math.max(0, speed - 250) / 120));
+    const [lo, hi] = dialEnds(), w = dialEdge(dr, da, dial.year <= lo + 0.01, dial.year >= hi - 0.01);
+    if (w === "held") return;
+    dialTo(w > 0 ? lo : w < 0 ? hi : dial.year + (da / 3.6) * (1 + Math.max(0, speed - 250) / 120));
   }
+}
+const dialEnds = () => [Math.max(dial.eras[0].start, state.range.start), Math.min(dial.eras.at(-1).end, state.range.end)];
+// Past either end the dial resists: the ring only gives a little, and turned on through 45° it wraps round to
+// the other end. Returns "held" while resisting, 1 to wrap from the end to the start, -1 the other way, else 0.
+const DIAL_WRAP = 45;
+function dialEdge(dr, da, atStart, atEnd) {
+  if (dr.over > 0 || (atEnd && da > 0)) dr.over = Math.max(0, dr.over + da);
+  else if (dr.over < 0 || (atStart && da < 0)) dr.over = Math.min(0, dr.over + da);
+  else return 0;
+  if (Math.abs(dr.over) < DIAL_WRAP) { drawDial(dial.year, dr.over); return "held"; }
+  const w = Math.sign(dr.over);
+  dr.over = 0;
+  try { navigator.vibrate?.(15); } catch {}
+  return w;
 }
 function dialUp() {
   const dr = dial.drag;
   if (!dr) return;
   dial.drag = null;
   if (dr.moved < 3 && dr.gear === "core") { play(); drawDial(); }
+  // A click (or tap) on a period in the outer ring goes to its start.
+  else if (dr.moved < 3 && dr.gear === "era") {
+    const n = dial.eras.length, step = dialStep(), turn = dialPos(dial.year) * step - step / 2;
+    const i = ((Math.round((turn - (dr.a0 * 180) / Math.PI) / step) % n) + n) % n;
+    setYear(Math.max(state.range.start, Math.min(state.range.end, dial.eras[i].start)));
+  }
   else if (dr.gear === "era" && dr.moved >= 3) setYear(dial.eras[Math.round(Math.min(dial.eras.length - 1, dr.pos))].start);
   else if (dr.moved >= 3) setYear(Math.round(dial.year));
+  if (dr.over) drawDial();
   scheduleDialClose();
 }
 function setDialSkin(id, remember = true) {
