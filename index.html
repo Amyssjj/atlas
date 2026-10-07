@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;700&display=swap">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=197">
+<link rel="stylesheet" href="style.css?v=198">
 </head>
 <body>
 <div id="app">
@@ -87,12 +87,8 @@
         <div class="st-styles" id="st-styles" role="group" data-i18n-title="stStyle"></div>
         <div class="st-row"><span data-i18n="stPanel">Panel colour</span><button type="button" class="chip look" id="panel-btn" aria-haspopup="menu" aria-expanded="false"></button></div>
         <div class="st-row"><span data-i18n="panelOp">Opacity</span><label class="panel-op"><input type="range" id="panel-op" min="20" max="100" step="1" data-i18n-title="panelOp"><output id="panel-op-v"></output></label></div>
-        <div class="st-row"><span data-i18n="stLayerLook">Layer buttons</span><span class="st-seg" id="st-laylook" role="group"></span></div>
-      </div>
-      <div class="st-sec"><h3 data-i18n="stLayout">Layout</h3>
-        <button type="button" class="switch st-switch" id="st-autolayout" aria-pressed="true"><span><b data-i18n="stAutoLayout"></b><small data-i18n="stAutoLayoutHint"></small></span><i aria-hidden="true"></i></button>
-        <div class="st-layouts" id="st-layouts" role="group" data-i18n-title="stLayout"></div>
-        <button type="button" class="switch st-switch" id="st-pins" aria-pressed="true"><span><b data-i18n="stPins"></b><small data-i18n="stPinsHint"></small></span><i aria-hidden="true"></i></button>
+        <div class="st-row"><span data-i18n="stLayBtn">Layer buttons</span><span class="st-seg" id="st-laybtn" role="group"></span></div>
+        <div class="st-row"><span data-i18n="stLayPos">Layer layout</span><span class="st-seg" id="st-laypos" role="group"></span></div>
       </div>
       <div class="st-sec"><h3 data-i18n="stRail">Timeline</h3>
         <div class="st-row"><span data-i18n="stRailStyle">Style</span><span class="st-seg" id="st-rail" role="group"></span></div>
@@ -190,6 +186,6 @@
   </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="app.js?v=197"></script>
+<script src="app.js?v=198"></script>
 </body>
 </html>

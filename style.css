@@ -1748,13 +1748,6 @@ html[data-layout="cinema"] .auto-strip { display: none !important; }
   html[data-layout="explorer"] .ledger-tabs { display: none !important; }
 }
 /* Layout cards in settings: a tiny drawing of where the panels go. */
-.st-layouts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
-.st-layouts button { appearance: none; display: grid; gap: 4px; justify-items: center; padding: 5px 4px 6px; border: 1px solid var(--rule); border-radius: 8px; background: none; color: var(--ink); font: 600 11px/1.2 var(--font-body); cursor: pointer; }
-.st-layouts button[aria-pressed="true"] { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); color: var(--cinnabar); }
-.st-layouts i { display: block; width: 100%; aspect-ratio: 7 / 5; border-radius: 4px; overflow: hidden; background: #6a8a76; }
-.st-layouts svg { width: 100%; height: 100%; display: block; }
-.st-layouts rect { fill: rgba(255,255,255,.92); }
-.st-layouts button.now:not([aria-pressed="true"]) { border-style: dashed; border-color: var(--cinnabar); }
 .st-switch > span { display: grid; gap: 1px; }
 .st-switch small { font: 400 11px/1.35 var(--font-body); color: var(--muted); }
 /* Quick layout switch: the chip after the gear (drawn as the current layout) and its menu. */
@@ -1775,31 +1768,36 @@ html[data-layout="cinema"] .cine-tools:hover, html[data-layout="cinema"] .cine-t
 html.embed .cine-tools, .comparing .cine-tools { display: none !important; }
 .layout-pop button > span { display: inline-flex; align-items: center; gap: 10px; }
 
-/* 设置 → 图层按钮 (html[data-laylook]); the default is icons with tips. */
-.chip.ico small, .lay-all { display: none; }
-/* Icons with their names under them; no tips needed. */
-html[data-laylook="labels"] .chip.ico { width: 48px; height: auto; padding: 5px 0 4px; display: inline-flex; flex-direction: column; gap: 3px; border-radius: 10px; }
-html[data-laylook="labels"] .chip.ico small { display: block; font: 500 10px/1.1 var(--font-body); white-space: nowrap; letter-spacing: -0.02em; }
-html[data-laylook="labels"] .lg > span { top: 16px; }
-/* Every layer in one scrolling row of round icons; a dot marks each group. */
-html[data-laylook="strip"] .era-layers { display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 4px; align-items: center; padding-bottom: 2px; }
-html[data-laylook="strip"] .era-layers .auto-row { flex: none; margin: 0 2px 0 0; padding: 0; border: 0; background: none; }
-html[data-laylook="strip"] .era-layers .auto-row .switch span { display: none; }
-html[data-laylook="strip"] .era-layers .lg { display: contents; }
-html[data-laylook="strip"] .era-layers .lg > span { display: block; position: static; flex: none; width: 4px; height: 4px; padding: 0; border-radius: 50%; background: var(--muted); opacity: 0.5; margin: 0 3px; font-size: 0; overflow: hidden; }
-html[data-laylook="strip"] .era-layers .chip { flex: none; }
-html[data-laylook="strip"] .era-layers .chip.ico, html[data-laylook="strip"] .era-layers .chip.look { border-radius: 50%; width: 32px; height: 32px; padding: 0; justify-content: center; }
-html[data-laylook="strip"] .era-layers .chip.look b, html[data-laylook="strip"] .era-layers .chip.look svg { display: none; }
-/* Only the layers that are on (and auto ones); 全部 opens the rest. */
-html[data-laylook="on"] .era-layers:not(.lay-open) { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-html[data-laylook="on"] .era-layers:not(.lay-open) .auto-row { flex: 1 0 100%; box-sizing: border-box; }
-html[data-laylook="on"] .era-layers:not(.lay-open) .lg { display: contents; }
-html[data-laylook="on"] .era-layers:not(.lay-open) .lg > span { display: none; }
-html[data-laylook="on"] .era-layers:not(.lay-open) .chip.ico[aria-pressed="false"]:not(.auto) { display: none; }
-html[data-laylook="on"] .lay-all { display: inline-flex; align-items: center; justify-self: start; height: 30px; padding: 0 10px; }
+/* 设置 → 图层按钮 (html[data-laybtn]: text | icon, the default | both) and 图层排列 (html[data-laypos]: group, the default | nowrap | wrap). */
+.chip.ico small { display: none; }
+/* Text only: the chips as they were before icons. */
+html[data-laybtn="text"] .chip.ico { display: inline-block; width: auto; height: auto; padding: 6px 10px; border-radius: 999px; }
+html[data-laybtn="text"] .chip.ico svg { display: none; }
+html[data-laybtn="text"] .chip.ico small { display: inline; font: inherit; }
+html[data-laybtn="text"] .chip.ico[aria-pressed="false"]:not(.auto) { color: var(--ink); }
+html[data-laybtn="text"] .chip.ico.auto::before { position: static; display: inline; width: auto; height: auto; margin-right: 3px; background: none; color: inherit; font-size: 10px; }
+html[data-laybtn="text"] .lg .chip.look { height: auto; }
+/* Icon + text: the name in small type under each icon. */
+html[data-laybtn="both"] .chip.ico { width: 48px; height: auto; padding: 5px 0 4px; display: inline-flex; flex-direction: column; gap: 3px; border-radius: 10px; }
+html[data-laybtn="both"] .chip.ico small { display: block; font: 500 10px/1.1 var(--font-body); white-space: nowrap; letter-spacing: -0.02em; }
+html[data-laybtn="both"]:not([data-laypos]) .lg > span { top: 16px; }
+/* One row: every button in a single line (scrolling sideways, or wrapping); a dot marks each group. */
+html[data-laypos] .era-layers { display: flex; align-items: center; gap: 5px 4px; }
+html[data-laypos] .era-layers .lg { display: contents; }
+html[data-laypos] .era-layers .lg > span { display: block; position: static; flex: none; width: 4px; height: 4px; padding: 0; border-radius: 50%; background: var(--muted); opacity: 0.5; margin: 0 3px; font-size: 0; overflow: hidden; }
+html[data-laypos] .era-layers .chip { flex: none; }
+html[data-laypos] .era-layers .auto-row + .lg > span { display: none; }
+html[data-laypos="nowrap"] .era-layers { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+html[data-laypos="nowrap"] .era-layers .auto-row { flex: none; margin: 0 2px 0 0; padding: 0; border: 0; background: none; }
+html[data-laypos="nowrap"] .era-layers .auto-row .switch span { display: none; }
+html[data-laypos="wrap"] .era-layers { flex-wrap: wrap; }
+html[data-laypos="wrap"] .era-layers .auto-row { flex: 1 0 100%; box-sizing: border-box; }
+/* Icons alone in one scrolling row are round, and the map style chip shows just its swatch. */
+html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.ico, html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.look { border-radius: 50%; width: 32px; height: 32px; padding: 0; justify-content: center; }
+html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.look b, html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.look svg { display: none; }
 @media (max-width: 720px) {
-  html[data-laylook="labels"] .era-layers .chip.ico { width: 44px; height: auto; padding: 6px 0 5px; }
-  html[data-laylook="labels"] .era-layers .chip.ico small { font-size: 9.5px; letter-spacing: -0.04em; }
-  html[data-laylook="strip"] .era-layers .chip.ico, html[data-laylook="strip"] .era-layers .chip.look { width: 38px; height: 38px; }
-  html[data-laylook="on"] .lay-all { height: 36px; }
+  html[data-laybtn="text"] .era-layers .chip.ico { padding: 7px 10px; font-size: 13px; }
+  html[data-laybtn="both"] .era-layers .chip.ico { width: 44px; height: auto; padding: 6px 0 5px; }
+  html[data-laybtn="both"] .era-layers .chip.ico small { font-size: 9.5px; letter-spacing: -0.04em; }
+  html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.ico, html[data-laypos="nowrap"]:not([data-laybtn]) .era-layers .chip.look { width: 38px; height: 38px; }
 }
