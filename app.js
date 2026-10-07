@@ -118,7 +118,7 @@ const UI = {
     units: { infantry: "步兵", cavalry: "骑兵", chariots: "战车", archers: "弓兵", crossbows: "弩兵", navy: "水军", siege: "攻城", firearms: "火器", artillery: "火炮", elephants: "象兵" },
     kinds: { campaign: "进军", journey: "行程", trade: "商路", canal: "运河", wall: "长城" }, exchange: "交流", spread: "传播", spreadGroups: { faith: "宗教传播", tech: "技术传播", crop: "作物传播" }, arrived: (y) => `${y}传到`, set_out: (y) => `${y}起`, world_t: "世界", worldHead: "同一年的世界", goRegion: "切换地区", allWorld: "全球", worldHint: "点击地区，地图和时间轴切换过去；点击事件阅读详情", noWorldEv: "前后几十年没有收录的大事", elsewhere: "同时期的世界", wsHead: (x) => `同时期的${x}`, wsNearShort: "邻国", wsWorld: "世界", wsNear: (n) => `${n}的邻国`, wsNone: "前后几年没有收录的大事", hideStrip: "隐藏", showStrip: "在时间轴上方显示同时期的世界",
     sel: { hint: "点击地图上的国家即可选中，地图和各栏只显示与它相关的内容；再点一次取消", off: "这一年不在地图上", offMap: "这一年的地图没有单独画出它", before: "这一年尚未建立", after: "这一年已不存在", jump: (y) => `跳到${y}`, events: (n) => `事件 ${n}`, people: (n) => `本时期人物 ${n}`, cities: "城市", clear: "取消选中", circa: "约", away: "已移出视野，时间轴仍跟随它", back: (n) => `回到${n}`, story: "播放它的故事", now: "今", more: (n) => `另 ${n} 国`, less: "收起" },
-    people_l: "人物", cmp: { one: "对比", open: "两地对比", sync: "同步视角", openTime: "两时对比", place: "两地", time: "两时", period: "时期", year: "年份", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, packs: "专题", rpMore: "这一年的君主、大事与国家", asState: "作为国家：", close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourMusic: " 音乐", tourNarr: " 旁白", tourNarrHint: "朗读每一站的解说（AI 语音，中文）", voices: { Charon: "男声", Kore: "女声" }, tourMusicHint: "导览和时间轴播放时的背景音乐（AI 生成）", tourImmersive: "沉浸", tourImmersiveHint: "放大图片，收起其它面板（Esc 退出）", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, followLife: "跟随一生", livesHere: "本时期人物的一生", livesAll: "人物一生", tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", admin: "政区", adminSeat: "治所", adminWas: "汉时旧名", adminSite: "此地历代 · 点击跳转", adminNow: "今", adminSnap: (y) => `以${y}为准 · AI 整理，已与 CHGIS 抽查比对`, adminUnsure: "位置待核", adminChgis: "查 CHGIS 记录", adminChgisWait: "正在查询 CHGIS…", adminChgisDown: "暂时连不上 CHGIS，稍后再试", adminChgisNone: "CHGIS 在这一年没有同名记录", adminChgisSrc: "来自 CHGIS 时空地名库（哈佛、复旦），实时查询", adminChgisMoved: "治所位置与本图略有不同", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
+    people_l: "人物", cmp: { one: "对比", open: "两地对比", sync: "同步视角", openTime: "两时对比", place: "两地", time: "两时", period: "时期", year: "年份", close: "关闭对比", pick: "对比地区", rulers: "君主", events: "前后大事", none: "前后几十年没有收录的大事" }, lasted: (n) => `共${n}年`, packs: "专题", rpMore: "这一年的君主、大事与国家", asState: "作为国家：", close: "关闭", search: "搜索", share: "分享这个视图", tours: "导览", toursHead: "导览 · 跟着地图读历史", tourStory: "读这段故事", tourMusic: " 音乐", tourNarr: " 旁白", tourNarrHint: "朗读每一站的解说（AI 语音，中文）", voices: { Charon: "男声", Kore: "女声" }, tourMusicHint: "导览和时间轴播放时的背景音乐（AI 生成）", tourImmersive: "沉浸", tourImmersiveHint: "放大图片，收起其它面板（Esc 退出）", tourBack: "返回导览", tourPrev: "上一步", tourNext: "下一步", tourPlay: "自动播放", tourPause: "暂停", tourEnd: "结束导览", tourDone: "导览结束", tourSteps: (n) => `${n} 站`, tourCount: (n) => `${n} 条导览`, followLife: "跟随一生", livesHere: "本时期人物的一生", livesAll: "人物一生", tourAt: (n) => `第${n}站`, toursHere: "本时期导览", toursOther: "其他时期", noTours: "本时期还没有导览", tourHint: "点击一条导览，地图会跟着故事移动", linkCopied: "链接已复制，可以发给别人", linkCopy: "复制这个链接：", searchPh: "搜索导览、事件、人物、君主、城市或年份（如 755、前221）", autoLayers: "自动图层", autoHint: "打开事件或导览时，自动显示相关图层，自动打开的图层标为虚线", autoOn: "已自动显示", autoAlso: "相关图层", tipOn: "已打开", stLayBtn: "图层按钮", stLayPos: "图层排列", layBtns: { text: "文字", icon: "图标", both: "图标+文字" }, layPos: { group: "分组", nowrap: "一行·滑动", wrap: "一行·换行" }, tipOff: "已关闭", tipAuto: "自动显示", sgroups: { time: "时间", era: "朝代", tour: "导览", event: "事件", person: "人物", ruler: "君主", city: "城市" }, noResults: "没有找到相关内容", jumpYear: "跳到这一年", capitals: "都城·人口", faith: "宗教思想", inventions: "发明", passes: "关隘", admin: "政区", adminSeat: "治所", adminWas: "汉时旧名", adminSite: "此地历代 · 点击跳转", adminNow: "今", adminSnap: (y) => `以${y}为准 · AI 整理，已与 CHGIS 抽查比对`, adminUnsure: "位置待核", adminChgis: "查 CHGIS 记录", adminChgisWait: "正在查询 CHGIS…", adminChgisDown: "暂时连不上 CHGIS，稍后再试", adminChgisNone: "CHGIS 在这一年没有同名记录", adminChgisSrc: "来自 CHGIS 时空地名库（哈佛、复旦），实时查询", adminChgisMoved: "治所位置与本图略有不同", roads: "官道", walls: "长城", wallBy: "修筑", wallLen: (n) => `约${n.toLocaleString()}公里`, ruin: "已废弃，现为遗迹", clans: "豪族", ckinds: { gentry: "门阀士族", bloc: "地域集团", military: "军事集团", faction: "朋党", merchant: "商帮" }, seats: "郡望/根据地", families: "代表家族", members: "代表人物", drafted: "AI 整理，未经核对", cityEvents: (n) => `城中大事（${n}）· 点击跳转`,  personEvents: (n) => `相关事件（${n}）· 点击跳转`, pranks: { capital: "都城", secondary: "陪都", major: "重要城市", port: "港口", frontier: "军事重镇" }, rkinds: { imperial: "驰道", post: "驿道", trade: "商道" }, via: "途经", inUse: "使用年代",
     fields: { general: "军事家", statesman: "政治家", thinker: "思想家", poet: "诗人", writer: "文学家", historian: "史学家", scientist: "科学家", physician: "医学家", engineer: "工程师", artist: "艺术家", religious: "宗教人物", explorer: "旅行家", scholar: "学者" },
     faiths: { buddhist: "佛教", daoist: "道教", confucian: "儒家", islam: "伊斯兰教", christian: "基督教", thought: "思想", other: "其他" },
     ifields: { craft: "工艺", writing: "文字", printing: "印刷", metallurgy: "冶金", military: "军事", astronomy: "天文", math: "数学", medicine: "医学", agriculture: "农业", navigation: "航海", engineering: "工程", money: "货币" },
@@ -143,7 +143,7 @@ const UI = {
     units: { infantry: "Infantry", cavalry: "Cavalry", chariots: "Chariots", archers: "Archers", crossbows: "Crossbows", navy: "Navy", siege: "Siege", firearms: "Firearms", artillery: "Artillery", elephants: "Elephants" },
     kinds: { campaign: "Campaign", journey: "Journey", trade: "Trade route", canal: "Canal", wall: "Wall" }, exchange: "Exchange", spread: "Spread", spreadGroups: { faith: "Faith spreads", tech: "Technique spreads", crop: "Crop spreads" }, arrived: (y) => `arrived ${y}`, set_out: (y) => `from ${y}`, world_t: "World", worldHead: "The world this year", goRegion: "Go to region", allWorld: "Whole world", worldHint: "Click a region to move the map and timeline there; click an event to read it", noWorldEv: "No major events recorded within a few decades", elsewhere: "Elsewhere", wsHead: (x) => `Meanwhile · ${x}`, wsNearShort: "Neighbours", wsWorld: "World", wsNear: (n) => `Around ${n}`, wsNone: "No recorded events in these years", hideStrip: "Hide", showStrip: "Show other regions above the timeline",
     sel: { hint: "Click a country on the map to select it: the map and panels then show only what concerns it. Click it again to clear", off: "Not on the map in this year", offMap: "The map for this year doesn't draw it separately", before: "Not yet founded in this year", after: "No longer exists in this year", jump: (y) => `Go to ${y}`, events: (n) => `${n} events`, people: (n) => `${n} people this period`, cities: "Cities", clear: "Clear selection", circa: "c. ", away: "Out of view; the timeline still follows it", back: (n) => `Back to ${n}`, story: "Play its story", now: "today", more: (n) => `${n} more`, less: "Fewer" },
-    people_l: "People", cmp: { one: "Compare", open: "Compare regions", sync: "Sync view", openTime: "Compare times", place: "Two places", time: "Two times", period: "Period", year: "Year", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, packs: "Packs", rpMore: "Rulers, events and countries this year", asState: "As a state: ", close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourMusic: " Music", tourNarr: " Narration", tourNarrHint: "Read each stop aloud (AI voice, in Chinese)", voices: { Charon: "Male", Kore: "Female" }, tourMusicHint: "Background music during tours and timeline playback (AI-generated)", tourImmersive: "Immersive", tourImmersiveHint: "Enlarge the picture and fold the other panels away (Esc to leave)", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, followLife: "Follow their life", livesHere: "Lives in this period", livesAll: "Lives", tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", admin: "Prefectures", adminSeat: "Seat", adminWas: "Han name", adminSite: "This seat by dynasty · click to jump", adminNow: "Today", adminSnap: (y) => `As in ${y} · AI-drafted, spot-checked against CHGIS`, adminUnsure: "position uncertain", adminChgis: "Look up in CHGIS", adminChgisWait: "Asking CHGIS…", adminChgisDown: "CHGIS can't be reached right now; try again later", adminChgisNone: "No record of this name in CHGIS for this year", adminChgisSrc: "From the CHGIS Temporal Gazetteer (Harvard, Fudan), looked up live", adminChgisMoved: "its seat differs a little from this map", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
+    people_l: "People", cmp: { one: "Compare", open: "Compare regions", sync: "Sync view", openTime: "Compare times", place: "Two places", time: "Two times", period: "Period", year: "Year", close: "Close compare", pick: "Compare with", rulers: "Rulers", events: "Around this year", none: "No major events recorded within a few decades" }, lasted: (n) => `${n} years`, packs: "Packs", rpMore: "Rulers, events and countries this year", asState: "As a state: ", close: "Close", search: "Search", share: "Share this view", tours: "Tours", toursHead: "Guided tours", tourStory: "Read the story", tourMusic: " Music", tourNarr: " Narration", tourNarrHint: "Read each stop aloud (AI voice, in Chinese)", voices: { Charon: "Male", Kore: "Female" }, tourMusicHint: "Background music during tours and timeline playback (AI-generated)", tourImmersive: "Immersive", tourImmersiveHint: "Enlarge the picture and fold the other panels away (Esc to leave)", tourBack: "Back to the tour", tourPrev: "Back", tourNext: "Next", tourPlay: "Play", tourPause: "Pause", tourEnd: "End tour", tourDone: "End of tour", tourSteps: (n) => `${n} stops`, tourCount: (n) => `${n} tour${n === 1 ? "" : "s"}`, followLife: "Follow their life", livesHere: "Lives in this period", livesAll: "Lives", tourAt: (n) => `Stop ${n}`, toursHere: "Tours for this period", toursOther: "Other periods", noTours: "No tours for this period yet", tourHint: "Pick a tour and the map follows the story", linkCopied: "Link copied", linkCopy: "Copy this link:", searchPh: "Search tours, events, people, rulers, cities or a year (755, 221 BC)", autoLayers: "Auto layers", autoHint: "Reading an event or a tour stop switches on the layers it needs; those get a dashed outline", autoOn: "Switched on for this", autoAlso: "Related layers", tipOn: "On", stLayBtn: "Layer buttons", stLayPos: "Layer layout", layBtns: { text: "Text", icon: "Icon", both: "Icon + text" }, layPos: { group: "Groups", nowrap: "One row, scroll", wrap: "One row, wrap" }, tipOff: "Off", tipAuto: "On for this story", sgroups: { time: "Year", era: "Periods", tour: "Tours", event: "Events", person: "People", ruler: "Rulers", city: "Cities" }, noResults: "Nothing found", jumpYear: "Go to this year", capitals: "Capitals", faith: "Faith", inventions: "Inventions", passes: "Passes", admin: "Prefectures", adminSeat: "Seat", adminWas: "Han name", adminSite: "This seat by dynasty · click to jump", adminNow: "Today", adminSnap: (y) => `As in ${y} · AI-drafted, spot-checked against CHGIS`, adminUnsure: "position uncertain", adminChgis: "Look up in CHGIS", adminChgisWait: "Asking CHGIS…", adminChgisDown: "CHGIS can't be reached right now; try again later", adminChgisNone: "No record of this name in CHGIS for this year", adminChgisSrc: "From the CHGIS Temporal Gazetteer (Harvard, Fudan), looked up live", adminChgisMoved: "its seat differs a little from this map", roads: "Roads", walls: "Great Walls", wallBy: "Built by", wallLen: (n) => `about ${n.toLocaleString()} km`, ruin: "Abandoned; ruins remain", clans: "Elites", ckinds: { gentry: "Great clans", bloc: "Regional bloc", military: "Military clique", faction: "Court faction", merchant: "Merchant guild" }, seats: "Home seats", families: "Families", members: "Key figures", drafted: "AI-drafted, not source-checked", cityEvents: (n) => `Events here (${n}) · click to jump`, personEvents: (n) => `Related events (${n}) · click to jump`, pranks: { capital: "Capital", secondary: "Secondary capital", major: "Major city", port: "Port", frontier: "Military stronghold" }, rkinds: { imperial: "Imperial highway", post: "Post road", trade: "Trade road" }, via: "Via", inUse: "In use",
     fields: { general: "Military", statesman: "Statesman", thinker: "Thinker", poet: "Poet", writer: "Writer", historian: "Historian", scientist: "Scientist", physician: "Physician", engineer: "Engineer", artist: "Artist", religious: "Religious figure", explorer: "Traveller", scholar: "Scholar" },
     faiths: { buddhist: "Buddhism", daoist: "Daoism", confucian: "Confucianism", islam: "Islam", christian: "Christianity", thought: "Thought", other: "Other" },
     ifields: { craft: "Craft", writing: "Writing", printing: "Printing", metallurgy: "Metalwork", military: "Military", astronomy: "Astronomy", math: "Mathematics", medicine: "Medicine", agriculture: "Farming", navigation: "Navigation", engineering: "Engineering", money: "Money" },
@@ -189,6 +189,7 @@ function applyLang() {
   // A pack's own note replaces the China borders note.
   if (state.pack?.only) document.querySelector('[data-i18n="note"]').textContent = tx(state.pack.manifest, "note") || t("notePack");
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); el.setAttribute("aria-label", el.title); });
+  iconChips();
   setMinButton($("era-min"), !!state.eraMin);
   renderLayoutChips();
   setRailButton(!!state.railMin);
@@ -1980,6 +1981,100 @@ function renderAutoStrip(auto) {
   box.innerHTML = (on.length ? `<span>${t("autoOn")}</span>` + on.map((k) => `<button type="button" class="chip layer auto" data-k="${k}">${esc(label(k))}</button>`).join("") : "") +
     (also.length ? `<span>${t("autoAlso")}</span>` + also.map((k) => `<button type="button" class="chip layer" aria-pressed="true" data-k="${k}">${esc(label(k))}</button>`).join("") : "");
   box.querySelectorAll("[data-k]").forEach((b) => b.addEventListener("click", () => $("l-" + b.dataset.k).click()));
+}
+// Layer switches are icons; the name shows in a tip: on hover with a mouse, and briefly after each tap on a phone
+// (with the new state), or while a finger holds the icon without switching it.
+const LAYER_ICONS = {
+  "t-3d": '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/>',
+  "t-geo": '<path d="M2 17l6-9 4 5 3-4 7 8"/><path d="M3 21c3-1.5 5 1.5 9 0s6 1.5 9 0"/>',
+  "t-neighbours": '<path d="M3 5h7l1 6-1 8H3z"/><path d="M14 5h7v14h-7l-1-6z" stroke-dasharray="2.6 2"/>',
+  "l-rulers": '<path d="M3.5 8l4 4.5L12 6l4.5 6.5 4-4.5L19 18H5z"/><path d="M5 21h14"/>',
+  "l-capitals": '<path d="M2 9l10-5 10 5"/><path d="M5 9v12M19 9v12M3 21h18M10 21v-5h4v5"/>',
+  "t-places": '<path d="M3 21V10h6M9 21V4h7v17M16 13h5v8M2 21h20M12 8h1M12 12h1M12 16h1"/>',
+  "l-admin": '<path d="M3 4h18v16H3z"/><path d="M3 11h7l2 3h9M10 4v7M14 14v6"/>',
+  "l-clans": '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/>',
+  "l-armies": '<path d="M4 4l11 11M20 4L9 15M13 17l4-4M11 17l-4-4M16 16l3 3M8 16l-3 3"/>',
+  "l-passes": '<path d="M3 21V10h18v11M2 10l2-4h16l2 4M9 21v-5a3 3 0 016 0v5"/>',
+  "l-walls": '<path d="M3 20V7h3v3h4.5V7h3v3H18V7h3v13z"/><path d="M10 20v-3a2 2 0 014 0v3"/>',
+  "l-roads": '<path d="M9 3L4 21M15 3l5 18M12 5v2M12 11v2M12 17v3"/>',
+  "l-routes": '<circle cx="5" cy="18" r="2"/><path d="M7 17c4-2 2-8 7-9 3-.6 4-1.5 5-3" stroke-dasharray="2.6 2.4"/><path d="M16 4.5l3.2.3.3 3.2"/>',
+  "l-people": '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+  "l-faith": '<path d="M12 20c-4 0-8-3-9-7 3 0 6 1 9 4 3-3 6-4 9-4-1 4-5 7-9 7z"/><path d="M12 17c-2-2-3-5-3-8 1.5 1 2.5 2 3 3 .5-1 1.5-2 3-3 0 3-1 6-3 8z"/>',
+  "l-inventions": '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/>',
+  "l-exchange": '<path d="M4 8h15l-3-3M20 16H5l3 3"/>',
+  "l-spread": '<circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M8 8a5.7 5.7 0 000 8M16 8a5.7 5.7 0 010 8M5 5a10 10 0 000 14M19 5a10 10 0 010 14"/>',
+};
+function iconChips() {
+  for (const b of document.querySelectorAll(".chip.ico[data-tip]")) {
+    if (!b.firstElementChild) b.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${LAYER_ICONS[b.id] || ""}</svg><small aria-hidden="true"></small>`;
+    b.querySelector("small").textContent = t(b.dataset.tip);
+    b.setAttribute("aria-label", t(b.dataset.tip));
+  }
+}
+// How the layer buttons look and sit (设置 → 图层按钮 / 图层排列): text, icon (default) or both; in their groups
+// (default), all in one scrolling row, or all in one wrapping run. html[data-laybtn] / [data-laypos] pick the CSS.
+const LAY_BTNS = ["text", "icon", "both"], LAY_POS = ["group", "nowrap", "wrap"];
+function setLayButtons({ btn = state.layBtn, pos = state.layPos } = {}, remember = true) {
+  state.layBtn = LAY_BTNS.includes(btn) ? btn : "icon";
+  state.layPos = LAY_POS.includes(pos) ? pos : "group";
+  const root = document.documentElement;
+  if (state.layBtn === "icon") root.removeAttribute("data-laybtn"); else root.dataset.laybtn = state.layBtn;
+  if (state.layPos === "group") root.removeAttribute("data-laypos"); else root.dataset.laypos = state.layPos;
+  hideLayerTip();
+  if (remember) try { localStorage.setItem("atlas-laybtn", state.layBtn); localStorage.setItem("atlas-laypos", state.layPos); } catch {}
+}
+const layerTip = { el: null, timer: 0, hold: 0, held: null, touch: false };
+function tipText(b) {
+  const name = t(b.dataset.tip);
+  if (b.dataset.tipHint) return `<b>${esc(name)}</b><span>${esc(t(b.dataset.tipHint))}</span>`;
+  const st = b.classList.contains("auto") ? t("tipAuto") : b.getAttribute("aria-pressed") === "true" ? t("tipOn") : t("tipOff");
+  return `<b>${esc(name)}</b><i>${esc(st)}</i>`;
+}
+function showLayerTip(b, ms) {
+  if (state.layBtn !== "icon" && !b.dataset.tipHint) return;
+  let el = layerTip.el;
+  if (!el) { el = layerTip.el = document.createElement("div"); el.className = "layer-tip"; el.setAttribute("role", "tooltip"); document.body.append(el); }
+  clearTimeout(layerTip.timer);
+  el.innerHTML = tipText(b);
+  el.hidden = false;
+  const r = b.getBoundingClientRect(), w = el.offsetWidth, h = el.offsetHeight;
+  const x = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2));
+  const above = r.top - h - 8 >= 8;
+  el.style.left = x + "px";
+  el.style.top = (above ? r.top - h - 8 : r.bottom + 8) + "px";
+  el.classList.toggle("below", !above);
+  el.style.setProperty("--arrow", r.left + r.width / 2 - x + "px");
+  if (ms) layerTip.timer = setTimeout(hideLayerTip, ms);
+}
+function hideLayerTip() { clearTimeout(layerTip.timer); if (layerTip.el) layerTip.el.hidden = true; }
+function initLayerTips() {
+  const box = document.querySelector(".era-layers");
+  const tipOf = (e) => e.target.closest?.("[data-tip]");
+  box.addEventListener("pointerover", (e) => { const b = tipOf(e); if (b && e.pointerType === "mouse") showLayerTip(b); });
+  box.addEventListener("pointerout", (e) => { if (e.pointerType === "mouse" && tipOf(e) && !tipOf(e).contains(e.relatedTarget)) hideLayerTip(); });
+  box.addEventListener("focusin", (e) => { const b = tipOf(e); if (b && b.matches(":focus-visible")) showLayerTip(b); });
+  box.addEventListener("focusout", hideLayerTip);
+  // A finger held on an icon shows its name and the lift does not switch it.
+  box.addEventListener("pointerdown", (e) => {
+    const b = tipOf(e);
+    layerTip.touch = e.pointerType !== "mouse";
+    if (!b || !layerTip.touch) return;
+    clearTimeout(layerTip.hold);
+    layerTip.held = null;
+    layerTip.hold = setTimeout(() => { layerTip.held = b; showLayerTip(b); }, 420);
+  });
+  const lift = () => { clearTimeout(layerTip.hold); if (layerTip.held) layerTip.timer = setTimeout(hideLayerTip, 1600); };
+  box.addEventListener("pointerup", lift);
+  box.addEventListener("pointercancel", () => { clearTimeout(layerTip.hold); layerTip.held = null; hideLayerTip(); });
+  box.addEventListener("contextmenu", (e) => { if (tipOf(e)) e.preventDefault(); });
+  box.addEventListener("click", (e) => {
+    const b = tipOf(e);
+    if (b && layerTip.held === b) { e.stopImmediatePropagation(); e.preventDefault(); layerTip.held = null; }
+  }, true);
+  // After a tap the tip names the layer and its new state (the switch's own handler has run by then).
+  box.addEventListener("click", (e) => { const b = tipOf(e); if (b && layerTip.touch) showLayerTip(b, 1600); });
+  box.closest(".era")?.addEventListener("scroll", hideLayerTip, { passive: true });
+  addEventListener("resize", hideLayerTip);
 }
 function renderOverlays() {
   scheduleDeclutter();
@@ -4927,7 +5022,6 @@ function setLayout(id, remember = true) {
 }
 function setAutoLayout(on, remember = true) {
   state.autoLayout = on;
-  $("st-autolayout").setAttribute("aria-pressed", String(on));
   if (remember) try { localStorage.setItem("atlas-autolayout", on ? "1" : "0"); } catch {}
   applyLayout();
 }
@@ -4944,7 +5038,6 @@ function setPins(pins, remember = true) {
     b.title = t(state.pins[k] ? "unpin" : "pin");
     b.setAttribute("aria-label", b.title);
   }
-  $("st-pins").setAttribute("aria-pressed", String(state.pins.l && state.pins.r));
   if (remember) try { localStorage.setItem("atlas-pins", JSON.stringify(state.pins)); } catch {}
   renderEdgeTabs();
 }
@@ -5065,8 +5158,6 @@ function initLayouts() {
   if (!layoutOk(state.layout)) state.layout = "classic";
   state.autoLayout ??= true;
   if (!state.pins) state.pins = { l: true, r: true };
-  $("st-autolayout").addEventListener("click", () => setAutoLayout(!state.autoLayout));
-  $("st-pins").addEventListener("click", () => { const on = !(state.pins.l && state.pins.r); setPins({ l: on, r: on }); });
   setPins(state.pins, false);
   setAutoLayout(state.autoLayout, false);
   renderLayoutChips();
@@ -5289,8 +5380,9 @@ const seg = (items, cur) => items.map(([v, label]) => `<button type="button" dat
 // Fills the parts that are drawn from state; the switches and chips moved here keep their own handlers.
 function renderSettings() {
   $("st-ver").textContent = `Atlas v${APP_VERSION}`;
-  $("st-layouts").innerHTML = LAYOUTS.map((l) => `<button type="button" data-v="${l.id}" aria-pressed="${l.id === state.layout}" class="${l.id === state.layoutShown ? "now" : ""}"><i><svg viewBox="0 0 56 40" aria-hidden="true">${l.svg}</svg></i>${esc(zh() ? l.name_zh : l.name)}</button>`).join("");
   $("st-styles").innerHTML = UI_STYLES.map((u) => `<button type="button" data-v="${u.id}" aria-pressed="${u.id === state.ui}"><i style="${u.preview}"><b></b></i>${esc(zh() ? u.name_zh : u.name)}</button>`).join("");
+  $("st-laybtn").innerHTML = seg(LAY_BTNS.map((k) => [k, t("layBtns")[k]]), state.layBtn);
+  $("st-laypos").innerHTML = seg(LAY_POS.map((k) => [k, t("layPos")[k]]), state.layPos);
   $("st-rail").innerHTML = seg([["full", t("stFull")], ["slim", t("stSlim")], ["dial", t("stDial")]], state.dial ? "dial" : state.railSlim ? "slim" : "full");
   $("st-dials").hidden = !state.dial;
   $("st-dials").innerHTML = DIAL_SKINS.map((d) => `<button type="button" data-v="${d.id}" aria-pressed="${d.id === state.dialSkin}">${dialPreview(d)}${esc(zh() ? d.name_zh : d.name)}</button>`).join("");
@@ -5332,6 +5424,8 @@ function resetSettings() {
   setRailSlim(false, true);
   setDial(false, true);
   setDialSkin("luopan");
+  setLayButtons({ btn: "icon", pos: "group" }, false);
+  try { localStorage.removeItem("atlas-laybtn"); localStorage.removeItem("atlas-laypos"); } catch {}
   setSpeed(1, true);
   setMusic(false);
   setNarration(false);
@@ -5345,7 +5439,8 @@ function initSettings() {
   $("st-reset").addEventListener("click", resetSettings);
   const on = (id, fn) => $(id).addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) { fn(b.dataset.v); renderSettings(); } });
   on("st-styles", (v) => setUIStyle(v));
-  on("st-layouts", (v) => setLayout(v));
+  on("st-laybtn", (v) => setLayButtons({ btn: v }));
+  on("st-laypos", (v) => setLayButtons({ pos: v }));
   on("st-rail", (v) => { setDial(v === "dial", true); if (v !== "dial") setRailSlim(v === "slim", true); });
   on("st-dials", (v) => { setDialSkin(v); setDialOpen(true); scheduleDialClose(); });
   on("st-speed", (v) => setSpeed(+v, true));
@@ -5812,6 +5907,10 @@ async function init() {
   initSettings();
   initLayouts();
   toggle("t-3d", "show3d", () => { state.flat3d = false; set3d(state.show3d, true); });
+  initLayerTips();
+  const savedLay = {};
+  try { savedLay.btn = localStorage.getItem("atlas-laybtn"); savedLay.pos = localStorage.getItem("atlas-laypos"); } catch {}
+  setLayButtons(savedLay, false);
   renderLookChips();
   renderPanelChip();
   $("look-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleLookPop(); });
